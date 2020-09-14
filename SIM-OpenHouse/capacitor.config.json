@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "SIM-OpenHouse",
+  "appName": "sim-openhouse",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
