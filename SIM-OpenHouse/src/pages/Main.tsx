@@ -1,24 +1,39 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol, IonButton, IonRouterLink} from '@ionic/react';
 import React from 'react';
-import ExploreContainer from '../components/ExploreContainer';
 import '../css/Main.css';
+import '../css/Global.css';
+import logo from '../img/main/SIMGE-White.png';
 
 const Main: React.FC = () => {
-
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Hello World</IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer />
+        <IonGrid className="TopHalf">
+            <IonRow>
+              <IonImg src={ logo }></IonImg>
+            </IonRow>
+            <IonRow>
+              <p id="heading">SIM Open House</p>
+            </IonRow>
+            <IonRow>
+              <p id="information">Date: 21 - 22 November 2020, Saturday - Sunday</p>
+            </IonRow>
+            <IonRow>
+              <p id="information">Time: 9am - 5pm</p>
+            </IonRow>
+        </IonGrid>
+
+        <IonGrid className="BottomHalf">
+          <IonRow class="ion-justify-content-center">
+            <IonButton id="registrationBtn" routerLink="/registration">REGISTER</IonButton>
+          </IonRow>
+          <IonRow class="ion-justify-content-center">
+            <IonButton id="loginBtn" routerLink="/login">LOGIN</IonButton>
+          </IonRow>
+          <IonRow class="ion-justify-content-center">
+            <IonRouterLink color="medium" routerLink="/forgetPassword">Forget Password?</IonRouterLink>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
