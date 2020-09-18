@@ -4,6 +4,8 @@ import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Main from './pages/Main';
 import ForgetPassword from './pages/ForgetPassword';
+import Registration from './pages/Registration';
+import Login from './pages/Login';
 import firebase from './firebase';
 
 /* Core CSS required for Ionic components to work properly */
@@ -31,6 +33,8 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route path="/main" component={Main} exact={true} />
         <Route path="/forgetPassword" component={ForgetPassword} exact={true} />
+        <Route path="/registration" component={Registration} exact={true} />
+        <Route path="/login" component={Login} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/main" />} />
       </IonRouterOutlet>
     </IonReactRouter>
