@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import Main from './pages/Main';
 import ForgetPassword from './pages/ForgetPassword';
 import firebase from './firebase';
 
@@ -29,9 +29,9 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/home" component={Home} exact={true} />
+        <Route path="/main" component={Main} exact={true} />
         <Route path="/forgetPassword" component={ForgetPassword} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
+        <Route exact path="/" render={() => <Redirect to="/main" />} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
