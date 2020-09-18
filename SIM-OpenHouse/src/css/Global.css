@@ -1,0 +1,7 @@
+:root {
+    /* Set the background of the entire app */
+    --ion-background-color: white;
+  
+    /* Set the font family of the entire app */
+    --ion-font-family: -apple-system, BlinkMacSystemFont, "Arial", "Helvetica", sans-serif;
+}
