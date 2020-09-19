@@ -18,8 +18,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
-import ExploreContainer from "../components/ExploreContainer";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 import "../css/Registration.css";
 
@@ -30,6 +29,7 @@ const Registration: React.FC = () => {
     console.log("i am submitted");
     console.log(data);
   };
+
   return (
     <IonPage>
       <IonHeader>
