@@ -19,17 +19,18 @@ import {
   IonButtons,
   IonIcon,
   IonItem, 
-  IonCheckbox
+  IonCheckbox 
 } from '@ionic/react';
 import React, { useRef, useState } from "react";
-import { useForm, Controller, useFormContext } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { arrowBackOutline } from 'ionicons/icons';
 
 import '../css/Global.css';
 import '../css/Registration.css';
+import { useHistory } from 'react-router-dom';
 
 const Registration: React.FC = () => {
-  const { register, handleSubmit, errors, watch } = useForm();
+  const { register, handleSubmit, errors, watch, formState } = useForm();
 
   const onSubmit = (data: any) => {
     console.log("Form submitted");
@@ -40,6 +41,8 @@ const Registration: React.FC = () => {
   password.current = watch("password", "");
 
   const [checked, setChecked] = useState(false);
+
+  const history = useHistory();
 
   return (
     <IonPage>
@@ -131,14 +134,13 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonItem>
-                  <IonCheckbox slot="start" checked={checked} onIonChange={e => setChecked(e.detail.checked)} name="privacyCheckbox"></IonCheckbox>
-                  <IonLabel style={{fontSize: "80%"}} className="ion-text-wrap" color="dark">I agree with SIM's Terms of Use and Privary Policy and thereby give my consent to receive marketing communications from SIM.{console.log(checked)}</IonLabel> 
+                <IonCheckbox name="privacyCheckbox" checked={checked} onIonChange={e => setChecked(e.detail.checked)} slot="start" ref={register({ validate: value => checked === true })}></IonCheckbox>
+                <IonLabel style={{fontSize: "80%", marginLeft: "10%"}} className="ion-text-wrap" color="dark">I agree with SIM's Terms of Use and Privary Policy and thereby give my consent to receive marketing communications from SIM.</IonLabel> 
               </IonItem>
-              {errors.privaryCheckbox && errors.privaryCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privary Policy checkbox not checked</div>}
+              {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
-
             <IonRow class="ion-justify-content-center">
-              <IonButton id="registrationBtn" type="submit">REGISTER</IonButton>
+              <IonButton id="registrationBtn" type="submit" onClick={() => history.push('/login')}>REGISTER</IonButton>
             </IonRow>
           </IonGrid>
         </form>
