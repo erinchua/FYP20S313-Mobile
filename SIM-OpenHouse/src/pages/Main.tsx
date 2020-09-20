@@ -31,7 +31,7 @@ const Main: React.FC = () => {
             <IonButton id="loginBtn" routerLink="/login">LOGIN</IonButton>
           </IonRow>
           <IonRow class="ion-justify-content-center">
-            <IonRouterLink color="medium" routerLink="/forgetPassword">Forget Password?</IonRouterLink>
+            <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>
           </IonRow>
         </IonGrid>
       </IonContent>
