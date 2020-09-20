@@ -1,0 +1,32 @@
+#toolBar {
+    --background: #44B5B5;
+}
+
+#title {
+    color: white;
+    font-size: 100%;
+}
+
+#backBtn {
+    color: white;
+}
+
+#registrationBtn {
+    --background: #37474F;
+    width: 50%;
+}
+
+.inputField {
+    font-size: 90%;
+    border-bottom: 1px solid #C8C8C8;
+}
+
+.errorMessage {
+    color: red;
+    font-size: small;
+    margin-top: 5%;
+}
+
+#highestQualificationLabel {
+    font-size: 90%;
+}
