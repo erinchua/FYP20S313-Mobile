@@ -34,6 +34,7 @@ import { useHistory } from "react-router-dom";
 
 const Registration: React.FC = () => {
   const { register, handleSubmit, errors, watch, formState } = useForm();
+  const history = useHistory();
 
   const { loggedIn } = useAuth();
 
