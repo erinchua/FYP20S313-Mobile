@@ -1,12 +1,14 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonLoading, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Main from './pages/Main';
 import ForgetPassword1 from './pages/ForgetPassword1';
 import ForgetPassword2 from './pages/ForgetPassword2';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
+
+import { AuthContext, useAuthInit } from './auth';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -28,18 +30,28 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 const App: React.FC = () => {
+  const { loading, auth } = useAuthInit();
+
+  if (loading) {
+    return <IonLoading isOpen />;
+  }
+
   return (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/main" component={Main} exact={true} />
-        <Route path="/registration" component={Registration} exact={true} />
-        <Route path="/login" component={Login} exact={true} />
-        <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
-        <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/main" />} />
-      </IonRouterOutlet>
-    </IonReactRouter>
+    <AuthContext.Provider value={ auth }> {/* ignore this error */}
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route path="/main" component={Main} exact={true} />
+          <Route path="/registration" component={Registration} exact={true} />
+          <Route path="/login" component={Login} exact={true} />
+          <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
+          <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
+
+          <Route path="/u" exact={false} />
+          <Route exact path="/" render={() => <Redirect to="/main" />} />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </AuthContext.Provider>
   </IonApp>
 )};
 
