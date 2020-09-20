@@ -18,31 +18,60 @@ import {
   IonToolbar,
   IonButtons,
   IonIcon,
-  IonItem, 
-  IonCheckbox 
-} from '@ionic/react';
+  IonItem,
+  IonCheckbox,
+  IonText,
+} from "@ionic/react";
 import React, { useRef, useState } from "react";
-import { useForm, Controller } from 'react-hook-form';
-import { arrowBackOutline } from 'ionicons/icons';
-
-import '../css/Global.css';
-import '../css/Registration.css';
-import { useHistory } from 'react-router-dom';
+import { useForm, Controller } from "react-hook-form";
+import { arrowBackOutline } from "ionicons/icons";
+import { useAuth } from "../auth";
+import { auth, db } from "../firebase";
+import { Redirect } from "react-router";
+import "../css/Global.css";
+import "../css/Registration.css";
+import { useHistory } from "react-router-dom";
 
 const Registration: React.FC = () => {
   const { register, handleSubmit, errors, watch, formState } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log("Form submitted");
-    console.log(data);
-  };
+  const { loggedIn } = useAuth();
 
+  const [status, setStatus] = useState({ loading: false, error: false });
+  const [checked, setChecked] = useState(false);
   const password = useRef({});
   password.current = watch("password", "");
 
-  const [checked, setChecked] = useState(false);
-
   const history = useHistory();
+
+  const addNewStudent = (data: any) => {
+    console.log(data);
+    db.collection("students").add({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      contactNo: data.contactNo,
+      dob: data.dob,
+      highestQualification: data.highestQualification,
+      nationality: data.nationality,
+    });
+  };
+  const onSubmit = async (data: any) => {
+    if (data.password !== data.confirmPassword) {
+      return console.log("Passwords don't match"); // replace this with error message
+    }
+    addNewStudent(data);
+    try {
+      setStatus({ loading: true, error: false });
+      await auth.createUserWithEmailAndPassword(data.email, data.password);
+      setStatus({ loading: false, error: false });
+    } catch (e) {
+      setStatus({ loading: false, error: true });
+      console.log(e);
+    }
+  };
+
+  if (loggedIn) return <Redirect to="/u/success" />;
 
   return (
     <IonPage>
@@ -77,7 +106,13 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="email" placeholder="Email" name="email" ref={register({ required: true, pattern:  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}></IonInput>
+                <IonInput
+                  className="inputField"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
+                ></IonInput>
                 {errors.email && errors.email.type === "required" && <div className="errorMessage">Email is required!</div>}
                 {errors.email && errors.email.type === "pattern" && <div className="errorMessage">Please enter a valid Email</div>}
               </IonCol>
@@ -127,20 +162,25 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="password" placeholder="Confirm Password" name="confirmPassword" ref={register({ required: true, validate: value => value === password.current })}></IonInput>
+                <IonInput className="inputField" type="password" placeholder="Confirm Password" name="confirmPassword" ref={register({ required: true, validate: (value) => value === password.current })}></IonInput>
                 {errors.confirmPassword && errors.confirmPassword.type === "required" && <div className="errorMessage">Confirm Password is required!</div>}
                 {errors.confirmPassword && errors.confirmPassword.type === "validate" && <div className="errorMessage">Password does not match!</div>}
               </IonCol>
             </IonRow>
             <IonRow>
               <IonItem>
-                <IonCheckbox name="privacyCheckbox" checked={checked} onIonChange={e => setChecked(e.detail.checked)} slot="start" ref={register({ validate: value => checked === true })}></IonCheckbox>
-                <IonLabel style={{fontSize: "80%", marginLeft: "10%"}} className="ion-text-wrap" color="dark">I agree with SIM's Terms of Use and Privary Policy and thereby give my consent to receive marketing communications from SIM.</IonLabel> 
+                <IonCheckbox name="privacyCheckbox" checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} slot="start" ref={register({ validate: (value) => checked === true })}></IonCheckbox>
+                <IonLabel style={{ fontSize: "80%", marginLeft: "10%" }} className="ion-text-wrap" color="dark">
+                  I agree with SIM's Terms of Use and Privary Policy and thereby give my consent to receive marketing communications from SIM.
+                </IonLabel>
               </IonItem>
               {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
             <IonRow class="ion-justify-content-center">
-              <IonButton id="registrationBtn" type="submit" onClick={() => history.push('/login')}>REGISTER</IonButton>
+              {status.error && <IonText>Error occured.</IonText>}
+              <IonButton id="registrationBtn" type="submit">
+                REGISTER
+              </IonButton>
             </IonRow>
           </IonGrid>
         </form>
