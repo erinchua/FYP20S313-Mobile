@@ -1,8 +1,5 @@
 import {
   IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
   IonCol,
   IonContent,
   IonDatetime,
@@ -23,14 +20,14 @@ import {
   IonText,
 } from "@ionic/react";
 import React, { useRef, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
+import { useForm  } from "react-hook-form";
 import { arrowBackOutline } from "ionicons/icons";
 import { useAuth } from "../auth";
 import { auth, db } from "../firebase";
-import { Redirect } from "react-router";
 import "../css/Global.css";
 import "../css/Registration.css";
-import { useHistory } from "react-router-dom";
 
 const Registration: React.FC = () => {
   const { register, handleSubmit, errors, watch, formState } = useForm();
@@ -56,14 +53,15 @@ const Registration: React.FC = () => {
       nationality: data.nationality,
     });
   };
+  
   const onSubmit = async (data: any) => {
     if (data.password !== data.confirmPassword) {
       return console.log("Passwords don't match"); // replace this with error message
     }
-    addNewStudent(data);
     try {
       setStatus({ loading: true, error: false });
       await auth.createUserWithEmailAndPassword(data.email, data.password);
+      addNewStudent(data);
       setStatus({ loading: false, error: false });
     } catch (e) {
       setStatus({ loading: false, error: true });
@@ -71,7 +69,9 @@ const Registration: React.FC = () => {
     }
   };
 
-  if (loggedIn) return <Redirect to="/u/success" />;
+  console.log(loggedIn);
+
+  if (loggedIn) return <Redirect to="/login" />;
 
   return (
     <IonPage>
