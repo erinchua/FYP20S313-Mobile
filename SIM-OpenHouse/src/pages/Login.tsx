@@ -1,28 +1,29 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonText, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
+import { arrowBackOutline } from "ionicons/icons";
 
 import { useAuth } from '../auth';
 import { auth } from '../firebase';
 
-import { arrowBackOutline } from "ionicons/icons";
 import '../css/Login.css';
 import '../css/Global.css';
 
 const Login: React.FC = () => {
   const { loggedIn } = useAuth();
 
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+  //const [email, setEmail] = useState('');
+  //const [pass, setPass] = useState('');
   const [status, setStatus] = useState({ loading: false, error: false });
 
-  const { reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
-  const handleLogin = async() => {
+  const handleLogin = async (data: any) => {
+    console.log(data);
     try {
       setStatus({ loading: true, error: false });
-      await auth.signInWithEmailAndPassword(email, pass);
+      await auth.signInWithEmailAndPassword(data.email, data.password);
       setStatus({ loading: false, error: false });
     } catch(e) {
       setStatus({ loading: false, error: true });
@@ -31,7 +32,7 @@ const Login: React.FC = () => {
   }
 
   if (loggedIn)
-    return <Redirect to="/home" /> // replace this with post-login page
+    return <Redirect to="/home" />
 
   return (
     <IonPage>
@@ -48,16 +49,16 @@ const Login: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit(handleLogin)}>
           <IonGrid>
             <IonRow>
               <IonCol>
-              <IonInput className="inputField" type="text" placeholder="Email" name="email"></IonInput>
+              <IonInput className="inputField" type="text" placeholder="Email" name="email" ref={register} />
               </IonCol>
             </IonRow>
             <IonRow>
               <IonCol>
-              <IonInput className="inputField" type="password" placeholder="Password" name="password"></IonInput>
+              <IonInput className="inputField" type="password" placeholder="Password" name="password" ref={register} />
               </IonCol>
             </IonRow>
 
@@ -69,7 +70,9 @@ const Login: React.FC = () => {
             </IonRow>
             <IonItemDivider></IonItemDivider>
           </IonGrid>
+          {status.error && <IonText>Error message here.</IonText>}
         </form>
+        <IonLoading isOpen={status.loading} message={'Loading...'} />
       </IonContent>
     </IonPage>
   );

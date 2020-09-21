@@ -1,10 +1,17 @@
-import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
 import React from 'react';
+import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonButton, IonRouterLink } from '@ionic/react';
+import { Redirect } from 'react-router';
+
+import { useAuth } from '../auth';
 import '../css/Main.css';
 import '../css/Global.css';
 import logo from '../img/main/SIMGE-White.png';
 
 const Main: React.FC = () => {
+  const { loggedIn } = useAuth();
+
+  if (loggedIn)
+    return <Redirect to="/home" />
 
   return (
     <IonPage>

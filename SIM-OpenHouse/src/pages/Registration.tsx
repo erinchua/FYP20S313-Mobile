@@ -56,7 +56,7 @@ const Registration: React.FC = () => {
     });
   };
   
-  const onSubmit = async (data: any) => {
+  const handleRegister = async (data: any) => {
     if (data.password !== data.confirmPassword) {
       return console.log("Passwords don't match"); // replace this with error message
     }
@@ -90,17 +90,17 @@ const Registration: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(handleRegister)}>
           <IonGrid>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="text" placeholder="First Name" name="firstName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })}></IonInput>
+                <IonInput className="inputField" type="text" placeholder="First Name" name="firstName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })} />
                 {errors.firstName && errors.firstName.type === "required" && <div className="errorMessage">First name is required!</div>}
                 {errors.firstName && errors.firstName.type === "minLength" && <div className="errorMessage">First name has to be more than 2 characters</div>}
                 {errors.firstName && errors.firstName.type === "pattern" && <div className="errorMessage">Please enter a valid First Name</div>}
               </IonCol>
               <IonCol>
-                <IonInput className="inputField" type="text" placeholder="Last Name" name="lastName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })}></IonInput>
+                <IonInput className="inputField" type="text" placeholder="Last Name" name="lastName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })} />
                 {errors.lastName && errors.lastName.type === "required" && <div className="errorMessage">Last name is required!</div>}
                 {errors.lastName && errors.lastName.type === "minLength" && <div className="errorMessage">Last name has to be more than 2 characters</div>}
                 {errors.lastName && errors.lastName.type === "pattern" && <div className="errorMessage">Please enter a valid Last Name</div>}
@@ -109,19 +109,16 @@ const Registration: React.FC = () => {
             <IonRow>
               <IonCol>
                 <IonInput
-                  className="inputField"
-                  type="email"
-                  placeholder="Email"
-                  name="email"
+                  className="inputField" type="email" placeholder="Email" name="email"
                   ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
-                ></IonInput>
+                />
                 {errors.email && errors.email.type === "required" && <div className="errorMessage">Email is required!</div>}
                 {errors.email && errors.email.type === "pattern" && <div className="errorMessage">Please enter a valid Email</div>}
               </IonCol>
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="tel" placeholder="Contact Number" minlength={8} maxlength={8} name="contactNo" ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/ })}></IonInput>
+                <IonInput className="inputField" type="tel" placeholder="Contact Number" minlength={8} maxlength={8} name="contactNo" ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/ })} />
                 {errors.contactNo && errors.contactNo.type === "required" && <div className="errorMessage">Contact number is required!</div>}
                 {errors.contactNo && errors.contactNo.type === "minLength" && <div className="errorMessage">Contact number consist of only 8 digits</div>}
                 {errors.contactNo && errors.contactNo.type === "maxLength" && <div className="errorMessage">Contact number consist of only 8 digits</div>}
@@ -350,7 +347,10 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="password" placeholder="Password" name="password" ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })}></IonInput>
+                <IonInput
+                  className="inputField" type="password" placeholder="Password" name="password"
+                  ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })}
+                />
                 {errors.password && errors.password.type === "required" && <div className="errorMessage">Password is required!</div>}
                 {errors.password && errors.password.type === "minLength" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
                 {errors.password && errors.password.type === "pattern" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
@@ -358,7 +358,7 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="password" placeholder="Confirm Password" name="confirmPassword" ref={register({ required: true, validate: (value) => value === password.current })}></IonInput>
+                <IonInput className="inputField" type="password" placeholder="Confirm Password" name="confirmPassword" ref={register({ required: true, validate: (value) => value === password.current })} />
                 {errors.confirmPassword && errors.confirmPassword.type === "required" && <div className="errorMessage">Confirm Password is required!</div>}
                 {errors.confirmPassword && errors.confirmPassword.type === "validate" && <div className="errorMessage">Password does not match!</div>}
               </IonCol>
