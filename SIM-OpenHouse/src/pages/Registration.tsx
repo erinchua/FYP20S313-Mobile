@@ -43,9 +43,9 @@ const Registration: React.FC = () => {
   const password = useRef({});
   password.current = watch("password", "");
 
-  const addNewStudent = (data: any) => {
+  const addNewStudent = (data: any, uid: any) => {
     console.log(data);
-    db.collection("students").add({
+    db.collection("students").doc(uid).set({
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
@@ -57,13 +57,11 @@ const Registration: React.FC = () => {
   };
   
   const handleRegister = async (data: any) => {
-    if (data.password !== data.confirmPassword) {
-      return console.log("Passwords don't match"); // replace this with error message
-    }
     try {
       setStatus({ loading: true, error: false });
-      await auth.createUserWithEmailAndPassword(data.email, data.password);
-      addNewStudent(data);
+      await auth.createUserWithEmailAndPassword(data.email, data.password).then((user) => {
+        addNewStudent(data, user.user?.uid);
+      });
       setStatus({ loading: false, error: false });
     } catch (e) {
       setStatus({ loading: false, error: true });
