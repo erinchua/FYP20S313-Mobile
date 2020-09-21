@@ -67,11 +67,12 @@ const Registration: React.FC = () => {
       setStatus({ loading: false, error: true });
       console.log(e);
     }
+
   };
 
   console.log(loggedIn);
 
-  if (loggedIn) return <Redirect to="/login" />;
+  if (loggedIn) return <Redirect to="/home" />;
 
   return (
     <IonPage>

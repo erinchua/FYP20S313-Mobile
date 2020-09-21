@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonText, IonLoading } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonText, IonLoading, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
@@ -16,6 +16,7 @@ const Login: React.FC = () => {
   //const [email, setEmail] = useState('');
   //const [pass, setPass] = useState('');
   const [status, setStatus] = useState({ loading: false, error: false });
+  const [showAlert, setShowAlert] = useState(false);
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -29,10 +30,12 @@ const Login: React.FC = () => {
       setStatus({ loading: false, error: true });
       console.log(e);
     }
+
   }
 
-  if (loggedIn)
+  if (loggedIn) {
     return <Redirect to="/home" />
+  }
 
   return (
     <IonPage>
@@ -63,14 +66,14 @@ const Login: React.FC = () => {
             </IonRow>
 
             <IonRow class="ion-justify-content-center">
-              <IonButton id="login_loginBtn" type="submit">LOGIN</IonButton>
+              <IonButton id="login_loginBtn" type="submit" onClick={() => setShowAlert(true)}>LOGIN</IonButton>
             </IonRow>
             <IonRow class="ion-justify-content-center">
               <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>
             </IonRow>
             <IonItemDivider></IonItemDivider>
           </IonGrid>
-          {status.error && <IonText>Error message here.</IonText>}
+          {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='my-custom-class' header={'Error Occured!'} message={'Please enter a valid email and password.'} buttons={['OK']}></IonAlert>}
         </form>
         <IonLoading isOpen={status.loading} message={'Loading...'} />
       </IonContent>
