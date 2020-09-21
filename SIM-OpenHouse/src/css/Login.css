@@ -16,8 +16,9 @@
     border-bottom: 1px solid #C8C8C8;
 }
 
-#loginButton {
+#login_loginBtn {
     --background: #37474F;
     width: 50%;
     margin-top: 10%;
+    margin-bottom: 5%;
 }

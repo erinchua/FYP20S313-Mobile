@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider } from '@ionic/react';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
@@ -30,8 +30,8 @@ const Login: React.FC = () => {
     }
   }
 
-  //if (loggedIn)
-  //  return <Redirect to="/u/success" /> // replace this with post-login page
+  if (loggedIn)
+    return <Redirect to="/home" /> // replace this with post-login page
 
   return (
     <IonPage>
@@ -62,8 +62,12 @@ const Login: React.FC = () => {
             </IonRow>
 
             <IonRow class="ion-justify-content-center">
-              <IonButton id="loginButton" type="submit">LOGIN</IonButton>
+              <IonButton id="login_loginBtn" type="submit">LOGIN</IonButton>
             </IonRow>
+            <IonRow class="ion-justify-content-center">
+              <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>
+            </IonRow>
+            <IonItemDivider></IonItemDivider>
           </IonGrid>
         </form>
       </IonContent>
