@@ -9,7 +9,7 @@ import ReactCodeInput from 'react-verification-code-input';
 
 
 const ForgetPassword2: React.FC = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit = (data: any) => {
         console.log("Submitted");
@@ -21,7 +21,7 @@ const ForgetPassword2: React.FC = () => {
         <IonHeader>
           <IonToolbar id="topBar">
             <IonButtons slot="start">
-                <IonButton>
+                <IonButton routerLink="/main" onClick={() => {reset()}}>
                     <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
                 </IonButton>
             </IonButtons>

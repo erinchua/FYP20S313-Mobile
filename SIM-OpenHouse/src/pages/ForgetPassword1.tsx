@@ -11,7 +11,7 @@ import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
 
 const ForgetPassword1: React.FC = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit = (data: any) => {
         console.log("Submitted");
@@ -24,7 +24,7 @@ const ForgetPassword1: React.FC = () => {
         <IonHeader>
           <IonToolbar id="topBar">
             <IonButtons slot="start">
-                <IonButton>
+                <IonButton routerLink="/main" onClick={() => {reset()}}>
                     <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
                 </IonButton>
             </IonButtons>
@@ -73,7 +73,7 @@ const ForgetPassword1: React.FC = () => {
                     </IonRow>
 
                     <IonRow class="ion-justify-content-center" style={{marginTop:"10%"}}>
-                        <IonButton size="large" id="nextBtn" type="submit">NEXT</IonButton>
+                        <IonButton size="large" id="sendCodeBtn" type="submit">SEND CODE</IonButton>
                     </IonRow>
                 </form>
             </IonGrid>
