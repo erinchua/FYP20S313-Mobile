@@ -1,6 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonIcon, IonButtons, IonButton, IonItem, IonInput } from '@ionic/react';
 import React from 'react';
-import ExploreContainer from '../components/ExploreContainer';
 import '../css/ForgetPassword1.css';
 import '../css/Global.css';
 import { arrowBackOutline } from 'ionicons/icons';
@@ -11,7 +10,7 @@ import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
 
 const ForgetPassword1: React.FC = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors, reset } = useForm();
 
     const onSubmit = (data: any) => {
         console.log("Submitted");
@@ -24,7 +23,7 @@ const ForgetPassword1: React.FC = () => {
         <IonHeader>
           <IonToolbar id="topBar">
             <IonButtons slot="start">
-                <IonButton>
+                <IonButton routerLink="/main" onClick={() => {reset()}}>
                     <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
                 </IonButton>
             </IonButtons>
@@ -50,7 +49,7 @@ const ForgetPassword1: React.FC = () => {
                     <IonRow>
                         <IonCol></IonCol>
                         <IonCol size="10">
-                            <p id="text1"><b>Please enter your registered Email ID.</b></p>
+                            <p id="text1"><b>Please enter your registered Email ID</b></p>
                             <p id="text2">We will send a verification code to your registered email ID.</p>
                             <IonItem>
                                 <IonInput id="emailID" type="email" placeholder="Email ID" name="emailID" 
@@ -73,7 +72,7 @@ const ForgetPassword1: React.FC = () => {
                     </IonRow>
 
                     <IonRow class="ion-justify-content-center" style={{marginTop:"10%"}}>
-                        <IonButton size="large" id="nextBtn" type="submit">NEXT</IonButton>
+                        <IonButton size="large" className="otpBtn" type="submit">SEND CODE</IonButton>
                     </IonRow>
                 </form>
             </IonGrid>
