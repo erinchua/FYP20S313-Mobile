@@ -12,14 +12,14 @@
 #heading {
     padding-left: 10px;
     font-weight: bolder;
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 #information {
     padding-left: 10px;
     color: white;
     font-weight: bold;
-    font-size: small;
+    font-size: 95%;
 }
 
 #registrationBtn {

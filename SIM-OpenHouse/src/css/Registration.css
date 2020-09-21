@@ -27,6 +27,6 @@
     margin-top: 5%;
 }
 
-#highestQualificationLabel {
+#highestQualificationLabel, #nationalityLabel {
     font-size: 90%;
 }

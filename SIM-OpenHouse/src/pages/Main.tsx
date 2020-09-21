@@ -1,10 +1,11 @@
-import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol, IonButton, IonRouterLink} from '@ionic/react';
+import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
 import React from 'react';
 import '../css/Main.css';
 import '../css/Global.css';
 import logo from '../img/main/SIMGE-White.png';
 
 const Main: React.FC = () => {
+
   return (
     <IonPage>
       <IonContent fullscreen>
@@ -25,10 +26,10 @@ const Main: React.FC = () => {
 
         <IonGrid className="BottomHalf">
           <IonRow class="ion-justify-content-center">
-            <IonButton id="registrationBtn" routerLink="/registration">REGISTER</IonButton>
+            <IonButton size="large" id="registrationBtn" routerLink="/registration">REGISTER</IonButton>
           </IonRow>
           <IonRow class="ion-justify-content-center">
-            <IonButton id="loginBtn" routerLink="/login">LOGIN</IonButton>
+            <IonButton size="large" id="loginBtn" routerLink="/login">LOGIN</IonButton>
           </IonRow>
           <IonRow class="ion-justify-content-center">
             <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>

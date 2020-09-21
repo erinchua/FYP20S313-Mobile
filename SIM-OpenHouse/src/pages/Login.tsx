@@ -1,10 +1,14 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider } from '@ionic/react';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
+import { useForm  } from "react-hook-form";
+
 import { useAuth } from '../auth';
 import { auth } from '../firebase';
-//import ExploreContainer from '../components/ExploreContainer';
+
+import { arrowBackOutline } from "ionicons/icons";
 import '../css/Login.css';
+import '../css/Global.css';
 
 const Login: React.FC = () => {
   const { loggedIn } = useAuth();
@@ -12,6 +16,8 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [status, setStatus] = useState({ loading: false, error: false });
+
+  const { reset } = useForm();
 
   const handleLogin = async() => {
     try {
@@ -24,23 +30,46 @@ const Login: React.FC = () => {
     }
   }
 
-  //if (loggedIn)
-  //  return <Redirect to="/u/success" /> // replace this with post-login page
+  if (loggedIn)
+    return <Redirect to="/home" /> // replace this with post-login page
 
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Login</IonTitle>
+        <IonToolbar id="toolBar">
+          <IonButtons slot="start">
+            <IonButton routerLink="/main" onClick={() => {reset()}}>
+              <IonIcon slot="icon-only" icon={arrowBackOutline} id="backBtn" />
+            </IonButton>
+          </IonButtons>
+
+          <IonTitle id="title">Login</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        {/* <ExploreContainer /> */}
+        <form onSubmit={handleLogin}>
+          <IonGrid>
+            <IonRow>
+              <IonCol>
+              <IonInput className="inputField" type="text" placeholder="Email" name="email"></IonInput>
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+              <IonInput className="inputField" type="password" placeholder="Password" name="password"></IonInput>
+              </IonCol>
+            </IonRow>
+
+            <IonRow class="ion-justify-content-center">
+              <IonButton id="login_loginBtn" type="submit">LOGIN</IonButton>
+            </IonRow>
+            <IonRow class="ion-justify-content-center">
+              <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>
+            </IonRow>
+            <IonItemDivider></IonItemDivider>
+          </IonGrid>
+        </form>
       </IonContent>
     </IonPage>
   );

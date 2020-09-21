@@ -7,6 +7,7 @@ import ForgetPassword1 from './pages/ForgetPassword1';
 import ForgetPassword2 from './pages/ForgetPassword2';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
+import Home from './pages/Home';
 
 import { AuthContext, useAuthInit } from './auth';
 
@@ -46,6 +47,7 @@ const App: React.FC = () => {
           <Route path="/login" component={Login} exact={true} />
           <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
           <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
+          <Route path="/home" component={Home} exact={true} />
 
           <Route path="/u" exact={false} />
           <Route exact path="/" render={() => <Redirect to="/main" />} />
