@@ -1,10 +1,11 @@
-import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol, IonButton, IonRouterLink} from '@ionic/react';
+import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
 import React from 'react';
 import '../css/Main.css';
 import '../css/Global.css';
 import logo from '../img/main/SIMGE-White.png';
 
 const Main: React.FC = () => {
+
   return (
     <IonPage>
       <IonContent fullscreen>
