@@ -1,26 +1,81 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonText, IonLoading } from '@ionic/react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router';
+import { useForm  } from "react-hook-form";
+import { arrowBackOutline } from "ionicons/icons";
+
+import { useAuth } from '../auth';
+import { auth } from '../firebase';
+
 import '../css/Login.css';
+import '../css/Global.css';
 
 const Login: React.FC = () => {
-    return (
-      <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Login</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent fullscreen>
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Blank</IonTitle>
-            </IonToolbar>
-          </IonHeader>
-          <ExploreContainer />
-        </IonContent>
-      </IonPage>
-    );
-  };
+  const { loggedIn } = useAuth();
+
+  //const [email, setEmail] = useState('');
+  //const [pass, setPass] = useState('');
+  const [status, setStatus] = useState({ loading: false, error: false });
+
+  const { register, handleSubmit, reset } = useForm();
+
+  const handleLogin = async (data: any) => {
+    console.log(data);
+    try {
+      setStatus({ loading: true, error: false });
+      await auth.signInWithEmailAndPassword(data.email, data.password);
+      setStatus({ loading: false, error: false });
+    } catch(e) {
+      setStatus({ loading: false, error: true });
+      console.log(e);
+    }
+  }
+
+  if (loggedIn)
+    return <Redirect to="/home" />
+
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar id="toolBar">
+          <IonButtons slot="start">
+            <IonButton routerLink="/main" onClick={() => {reset()}}>
+              <IonIcon slot="icon-only" icon={arrowBackOutline} id="backBtn" />
+            </IonButton>
+          </IonButtons>
+
+          <IonTitle id="title">Login</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+
+      <IonContent fullscreen>
+        <form onSubmit={handleSubmit(handleLogin)}>
+          <IonGrid>
+            <IonRow>
+              <IonCol>
+              <IonInput className="inputField" type="text" placeholder="Email" name="email" ref={register} />
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol>
+              <IonInput className="inputField" type="password" placeholder="Password" name="password" ref={register} />
+              </IonCol>
+            </IonRow>
+
+            <IonRow class="ion-justify-content-center">
+              <IonButton id="login_loginBtn" type="submit">LOGIN</IonButton>
+            </IonRow>
+            <IonRow class="ion-justify-content-center">
+              <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>
+            </IonRow>
+            <IonItemDivider></IonItemDivider>
+          </IonGrid>
+          {status.error && <IonText>Error message here.</IonText>}
+        </form>
+        <IonLoading isOpen={status.loading} message={'Loading...'} />
+      </IonContent>
+    </IonPage>
+  );
+};
   
   export default Login;

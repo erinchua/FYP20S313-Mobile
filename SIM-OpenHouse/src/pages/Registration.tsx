@@ -1,8 +1,5 @@
 import {
   IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
   IonCol,
   IonContent,
   IonDatetime,
@@ -20,29 +17,31 @@ import {
   IonIcon,
   IonItem,
   IonCheckbox,
-  IonText,
+  IonAlert,
 } from "@ionic/react";
 import React, { useRef, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { arrowBackOutline } from "ionicons/icons";
+import { Redirect } from "react-router";
+import { useForm  } from "react-hook-form";
+
+
 import { useAuth } from "../auth";
 import { auth, db } from "../firebase";
-import { Redirect } from "react-router";
+
+import { arrowBackOutline } from "ionicons/icons";
 import "../css/Global.css";
 import "../css/Registration.css";
-import { useHistory } from "react-router-dom";
 
 const Registration: React.FC = () => {
-  const { register, handleSubmit, errors, watch, formState } = useForm();
+  const { register, handleSubmit, errors, watch, reset } = useForm();
 
   const { loggedIn } = useAuth();
 
   const [status, setStatus] = useState({ loading: false, error: false });
   const [checked, setChecked] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
   const password = useRef({});
   password.current = watch("password", "");
-
-  const history = useHistory();
 
   const addNewStudent = (data: any) => {
     console.log(data);
@@ -56,14 +55,15 @@ const Registration: React.FC = () => {
       nationality: data.nationality,
     });
   };
-  const onSubmit = async (data: any) => {
+  
+  const handleRegister = async (data: any) => {
     if (data.password !== data.confirmPassword) {
       return console.log("Passwords don't match"); // replace this with error message
     }
-    addNewStudent(data);
     try {
       setStatus({ loading: true, error: false });
       await auth.createUserWithEmailAndPassword(data.email, data.password);
+      addNewStudent(data);
       setStatus({ loading: false, error: false });
     } catch (e) {
       setStatus({ loading: false, error: true });
@@ -71,14 +71,16 @@ const Registration: React.FC = () => {
     }
   };
 
-  if (loggedIn) return <Redirect to="/u/success" />;
+  console.log(loggedIn);
+
+  if (loggedIn) return <Redirect to="/login" />;
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar id="toolBar">
           <IonButtons slot="start">
-            <IonButton routerLink="/main">
+            <IonButton routerLink="/main" onClick={() => {reset()}}>
               <IonIcon slot="icon-only" icon={arrowBackOutline} id="backBtn" />
             </IonButton>
           </IonButtons>
@@ -88,17 +90,17 @@ const Registration: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(handleRegister)}>
           <IonGrid>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="text" placeholder="First Name" name="firstName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })}></IonInput>
+                <IonInput className="inputField" type="text" placeholder="First Name" name="firstName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })} />
                 {errors.firstName && errors.firstName.type === "required" && <div className="errorMessage">First name is required!</div>}
                 {errors.firstName && errors.firstName.type === "minLength" && <div className="errorMessage">First name has to be more than 2 characters</div>}
                 {errors.firstName && errors.firstName.type === "pattern" && <div className="errorMessage">Please enter a valid First Name</div>}
               </IonCol>
               <IonCol>
-                <IonInput className="inputField" type="text" placeholder="Last Name" name="lastName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })}></IonInput>
+                <IonInput className="inputField" type="text" placeholder="Last Name" name="lastName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })} />
                 {errors.lastName && errors.lastName.type === "required" && <div className="errorMessage">Last name is required!</div>}
                 {errors.lastName && errors.lastName.type === "minLength" && <div className="errorMessage">Last name has to be more than 2 characters</div>}
                 {errors.lastName && errors.lastName.type === "pattern" && <div className="errorMessage">Please enter a valid Last Name</div>}
@@ -107,23 +109,20 @@ const Registration: React.FC = () => {
             <IonRow>
               <IonCol>
                 <IonInput
-                  className="inputField"
-                  type="email"
-                  placeholder="Email"
-                  name="email"
+                  className="inputField" type="email" placeholder="Email" name="email"
                   ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
-                ></IonInput>
+                />
                 {errors.email && errors.email.type === "required" && <div className="errorMessage">Email is required!</div>}
                 {errors.email && errors.email.type === "pattern" && <div className="errorMessage">Please enter a valid Email</div>}
               </IonCol>
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="tel" placeholder="Contact Number" name="contactNo" ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/ })}></IonInput>
+                <IonInput className="inputField" type="tel" placeholder="Contact Number" minlength={8} maxlength={8} name="contactNo" ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/ })} />
                 {errors.contactNo && errors.contactNo.type === "required" && <div className="errorMessage">Contact number is required!</div>}
                 {errors.contactNo && errors.contactNo.type === "minLength" && <div className="errorMessage">Contact number consist of only 8 digits</div>}
                 {errors.contactNo && errors.contactNo.type === "maxLength" && <div className="errorMessage">Contact number consist of only 8 digits</div>}
-                {errors.contactNo && errors.contactNo.type === "pattern" && <div className="errorMessage">Please enter a valid Contact Number</div>}
+                {errors.contactNo && errors.contactNo.type === "pattern" && <div className="errorMessage">Please enter a valid Contact No.</div>}
               </IonCol>
               <IonCol>
                 <IonDatetime className="inputField" displayFormat="DD-MM-YYYY" placeholder="D.O.B" name="dob" ref={register({ required: true })}></IonDatetime>
@@ -146,15 +145,212 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="text" placeholder="Nationality" name="nationality" ref={register({ required: true, pattern: /^[A-Za-z]+$/i, minLength: 3 })}></IonInput>
+                <IonItem>
+                  <IonLabel id="nationalityLabel">Nationality</IonLabel>
+                  <IonSelect placeholder="Please Select" name="nationality" ref={register({ required: true })}>
+                    <IonSelectOption value="afghan">Afghan</IonSelectOption>
+                    <IonSelectOption value="albanian">Albanian</IonSelectOption>
+                    <IonSelectOption value="algerian">Algerian</IonSelectOption>
+                    <IonSelectOption value="american">American</IonSelectOption>
+                    <IonSelectOption value="andorran">Andorran</IonSelectOption>
+                    <IonSelectOption value="angolan">Angolan</IonSelectOption>
+                    <IonSelectOption value="antiguans">Antiguans</IonSelectOption>
+                    <IonSelectOption value="argentinean">Argentinean</IonSelectOption>
+                    <IonSelectOption value="armenian">Armenian</IonSelectOption>
+                    <IonSelectOption value="australian">Australian</IonSelectOption>
+                    <IonSelectOption value="austrian">Austrian</IonSelectOption>
+                    <IonSelectOption value="azerbaijani">Azerbaijani</IonSelectOption>
+                    <IonSelectOption value="bahamian">Bahamian</IonSelectOption>
+                    <IonSelectOption value="bahraini">Bahraini</IonSelectOption>
+                    <IonSelectOption value="bangladeshi">Bangladeshi</IonSelectOption>
+                    <IonSelectOption value="barbadian">Barbadian</IonSelectOption>
+                    <IonSelectOption value="barbudans">Barbudans</IonSelectOption>
+                    <IonSelectOption value="batswana">Batswana</IonSelectOption>
+                    <IonSelectOption value="belarusian">Belarusian</IonSelectOption>
+                    <IonSelectOption value="belgian">Belgian</IonSelectOption>
+                    <IonSelectOption value="belizean">Belizean</IonSelectOption>
+                    <IonSelectOption value="beninese">Beninese</IonSelectOption>
+                    <IonSelectOption value="bhutanese">Bhutanese</IonSelectOption>
+                    <IonSelectOption value="bolivian">Bolivian</IonSelectOption>
+                    <IonSelectOption value="bosnian">Bosnian</IonSelectOption>
+                    <IonSelectOption value="brazilian">Brazilian</IonSelectOption>
+                    <IonSelectOption value="british">British</IonSelectOption>
+                    <IonSelectOption value="bruneian">Bruneian</IonSelectOption>
+                    <IonSelectOption value="bulgarian">Bulgarian</IonSelectOption>
+                    <IonSelectOption value="burkinabe">Burkinabe</IonSelectOption>
+                    <IonSelectOption value="burmese">Burmese</IonSelectOption>
+                    <IonSelectOption value="burundian">Burundian</IonSelectOption>
+                    <IonSelectOption value="cambodian">Cambodian</IonSelectOption>
+                    <IonSelectOption value="cameroonian">Cameroonian</IonSelectOption>
+                    <IonSelectOption value="canadian">Canadian</IonSelectOption>
+                    <IonSelectOption value="cape verdean">Cape Verdean</IonSelectOption>
+                    <IonSelectOption value="central african">Central African</IonSelectOption>
+                    <IonSelectOption value="chadian">Chadian</IonSelectOption>
+                    <IonSelectOption value="chilean">Chilean</IonSelectOption>
+                    <IonSelectOption value="chinese">Chinese</IonSelectOption>
+                    <IonSelectOption value="colombian">Colombian</IonSelectOption>
+                    <IonSelectOption value="comoran">Comoran</IonSelectOption>
+                    <IonSelectOption value="congolese">Congolese</IonSelectOption>
+                    <IonSelectOption value="costa rican">Costa Rican</IonSelectOption>
+                    <IonSelectOption value="croatian">Croatian</IonSelectOption>
+                    <IonSelectOption value="cuban">Cuban</IonSelectOption>
+                    <IonSelectOption value="cypriot">Cypriot</IonSelectOption>
+                    <IonSelectOption value="czech">Czech</IonSelectOption>
+                    <IonSelectOption value="danish">Danish</IonSelectOption>
+                    <IonSelectOption value="djibouti">Djibouti</IonSelectOption>
+                    <IonSelectOption value="dominican">Dominican</IonSelectOption>
+                    <IonSelectOption value="dutch">Dutch</IonSelectOption>
+                    <IonSelectOption value="east timorese">East Timorese</IonSelectOption>
+                    <IonSelectOption value="ecuadorean">Ecuadorean</IonSelectOption>
+                    <IonSelectOption value="egyptian">Egyptian</IonSelectOption>
+                    <IonSelectOption value="emirian">Emirian</IonSelectOption>
+                    <IonSelectOption value="equatorial guinean">Equatorial Guinean</IonSelectOption>
+                    <IonSelectOption value="eritrean">Eritrean</IonSelectOption>
+                    <IonSelectOption value="estonian">Estonian</IonSelectOption>
+                    <IonSelectOption value="ethiopian">Ethiopian</IonSelectOption>
+                    <IonSelectOption value="fijian">Fijian</IonSelectOption>
+                    <IonSelectOption value="filipino">Filipino</IonSelectOption>
+                    <IonSelectOption value="finnish">Finnish</IonSelectOption>
+                    <IonSelectOption value="french">French</IonSelectOption>
+                    <IonSelectOption value="gabonese">Gabonese</IonSelectOption>
+                    <IonSelectOption value="gambian">Gambian</IonSelectOption>
+                    <IonSelectOption value="georgian">Georgian</IonSelectOption>
+                    <IonSelectOption value="german">German</IonSelectOption>
+                    <IonSelectOption value="ghanaian">Ghanaian</IonSelectOption>
+                    <IonSelectOption value="greek">Greek</IonSelectOption>
+                    <IonSelectOption value="grenadian">Grenadian</IonSelectOption>
+                    <IonSelectOption value="guatemalan">Guatemalan</IonSelectOption>
+                    <IonSelectOption value="guinea-bissauan">Guinea-Bissauan</IonSelectOption>
+                    <IonSelectOption value="guinean">Guinean</IonSelectOption>
+                    <IonSelectOption value="guyanese">Guyanese</IonSelectOption>
+                    <IonSelectOption value="haitian">Haitian</IonSelectOption>
+                    <IonSelectOption value="herzegovinian">Herzegovinian</IonSelectOption>
+                    <IonSelectOption value="honduran">Honduran</IonSelectOption>
+                    <IonSelectOption value="hungarian">Hungarian</IonSelectOption>
+                    <IonSelectOption value="icelander">Icelander</IonSelectOption>
+                    <IonSelectOption value="indian">Indian</IonSelectOption>
+                    <IonSelectOption value="indonesian">Indonesian</IonSelectOption>
+                    <IonSelectOption value="iranian">Iranian</IonSelectOption>
+                    <IonSelectOption value="iraqi">Iraqi</IonSelectOption>
+                    <IonSelectOption value="irish">Irish</IonSelectOption>
+                    <IonSelectOption value="israeli">Israeli</IonSelectOption>
+                    <IonSelectOption value="italian">Italian</IonSelectOption>
+                    <IonSelectOption value="ivorian">Ivorian</IonSelectOption>
+                    <IonSelectOption value="jamaican">Jamaican</IonSelectOption>
+                    <IonSelectOption value="japanese">Japanese</IonSelectOption>
+                    <IonSelectOption value="jordanian">Jordanian</IonSelectOption>
+                    <IonSelectOption value="kazakhstani">Kazakhstani</IonSelectOption>
+                    <IonSelectOption value="kenyan">Kenyan</IonSelectOption>
+                    <IonSelectOption value="kittian and nevisian">Kittian and Nevisian</IonSelectOption>
+                    <IonSelectOption value="kuwaiti">Kuwaiti</IonSelectOption>
+                    <IonSelectOption value="kyrgyz">Kyrgyz</IonSelectOption>
+                    <IonSelectOption value="laotian">Laotian</IonSelectOption>
+                    <IonSelectOption value="latvian">Latvian</IonSelectOption>
+                    <IonSelectOption value="lebanese">Lebanese</IonSelectOption>
+                    <IonSelectOption value="liberian">Liberian</IonSelectOption>
+                    <IonSelectOption value="libyan">Libyan</IonSelectOption>
+                    <IonSelectOption value="liechtensteiner">Liechtensteiner</IonSelectOption>
+                    <IonSelectOption value="lithuanian">Lithuanian</IonSelectOption>
+                    <IonSelectOption value="luxembourger">Luxembourger</IonSelectOption>
+                    <IonSelectOption value="macedonian">Macedonian</IonSelectOption>
+                    <IonSelectOption value="malagasy">Malagasy</IonSelectOption>
+                    <IonSelectOption value="malawian">Malawian</IonSelectOption>
+                    <IonSelectOption value="malaysian">Malaysian</IonSelectOption>
+                    <IonSelectOption value="maldivan">Maldivan</IonSelectOption>
+                    <IonSelectOption value="malian">Malian</IonSelectOption>
+                    <IonSelectOption value="maltese">Maltese</IonSelectOption>
+                    <IonSelectOption value="marshallese">Marshallese</IonSelectOption>
+                    <IonSelectOption value="mauritanian">Mauritanian</IonSelectOption>
+                    <IonSelectOption value="mauritian">Mauritian</IonSelectOption>
+                    <IonSelectOption value="mexican">Mexican</IonSelectOption>
+                    <IonSelectOption value="micronesian">Micronesian</IonSelectOption>
+                    <IonSelectOption value="moldovan">Moldovan</IonSelectOption>
+                    <IonSelectOption value="monacan">Monacan</IonSelectOption>
+                    <IonSelectOption value="mongolian">Mongolian</IonSelectOption>
+                    <IonSelectOption value="moroccan">Moroccan</IonSelectOption>
+                    <IonSelectOption value="mosotho">Mosotho</IonSelectOption>
+                    <IonSelectOption value="motswana">Motswana</IonSelectOption>
+                    <IonSelectOption value="mozambican">Mozambican</IonSelectOption>
+                    <IonSelectOption value="namibian">Namibian</IonSelectOption>
+                    <IonSelectOption value="nauruan">Nauruan</IonSelectOption>
+                    <IonSelectOption value="nepalese">Nepalese</IonSelectOption>
+                    <IonSelectOption value="new zealander">New Zealander</IonSelectOption>
+                    <IonSelectOption value="ni-vanuatu">Ni-Vanuatu</IonSelectOption>
+                    <IonSelectOption value="nicaraguan">Nicaraguan</IonSelectOption>
+                    <IonSelectOption value="nigerien">Nigerien</IonSelectOption>
+                    <IonSelectOption value="north korean">North Korean</IonSelectOption>
+                    <IonSelectOption value="northern irish">Northern Irish</IonSelectOption>
+                    <IonSelectOption value="norwegian">Norwegian</IonSelectOption>
+                    <IonSelectOption value="omani">Omani</IonSelectOption>
+                    <IonSelectOption value="pakistani">Pakistani</IonSelectOption>
+                    <IonSelectOption value="palauan">Palauan</IonSelectOption>
+                    <IonSelectOption value="panamanian">Panamanian</IonSelectOption>
+                    <IonSelectOption value="papua new guinean">Papua New Guinean</IonSelectOption>
+                    <IonSelectOption value="paraguayan">Paraguayan</IonSelectOption>
+                    <IonSelectOption value="peruvian">Peruvian</IonSelectOption>
+                    <IonSelectOption value="polish">Polish</IonSelectOption>
+                    <IonSelectOption value="portuguese">Portuguese</IonSelectOption>
+                    <IonSelectOption value="qatari">Qatari</IonSelectOption>
+                    <IonSelectOption value="romanian">Romanian</IonSelectOption>
+                    <IonSelectOption value="russian">Russian</IonSelectOption>
+                    <IonSelectOption value="rwandan">Rwandan</IonSelectOption>
+                    <IonSelectOption value="saint lucian">Saint Lucian</IonSelectOption>
+                    <IonSelectOption value="salvadoran">Salvadoran</IonSelectOption>
+                    <IonSelectOption value="samoan">Samoan</IonSelectOption>
+                    <IonSelectOption value="san marinese">San Marinese</IonSelectOption>
+                    <IonSelectOption value="sao tomean">Sao Tomean</IonSelectOption>
+                    <IonSelectOption value="saudi">Saudi</IonSelectOption>
+                    <IonSelectOption value="scottish">Scottish</IonSelectOption>
+                    <IonSelectOption value="senegalese">Senegalese</IonSelectOption>
+                    <IonSelectOption value="serbian">Serbian</IonSelectOption>
+                    <IonSelectOption value="seychellois">Seychellois</IonSelectOption>
+                    <IonSelectOption value="thai">Thai</IonSelectOption>
+                    <IonSelectOption value="sierra leonean">Sierra Leonean</IonSelectOption>
+                    <IonSelectOption value="tongan">Tongan</IonSelectOption>
+                    <IonSelectOption value="singaporean">Singaporean</IonSelectOption>
+                    <IonSelectOption value="tunisian">Tunisian</IonSelectOption>
+                    <IonSelectOption value="slovakian">Slovakian</IonSelectOption>
+                    <IonSelectOption value="tuvaluan">Tuvaluan</IonSelectOption>
+                    <IonSelectOption value="slovenian">Slovenian</IonSelectOption>
+                    <IonSelectOption value="ukrainian">Ukrainian</IonSelectOption>
+                    <IonSelectOption value="solomon islander">Solomon Islander</IonSelectOption>
+                    <IonSelectOption value="somali">Somali</IonSelectOption>
+                    <IonSelectOption value="south african">South African</IonSelectOption>
+                    <IonSelectOption value="south korean">South Korean</IonSelectOption>
+                    <IonSelectOption value="spanish">Spanish</IonSelectOption>
+                    <IonSelectOption value="sri lankan">Sri Lankan</IonSelectOption>
+                    <IonSelectOption value="sudanese">Sudanese</IonSelectOption>
+                    <IonSelectOption value="surinamer">Surinamer</IonSelectOption>
+                    <IonSelectOption value="swazi">Swazi</IonSelectOption>
+                    <IonSelectOption value="swedish">Swedish</IonSelectOption>
+                    <IonSelectOption value="swiss">Swiss</IonSelectOption>
+                    <IonSelectOption value="syrian">Syrian</IonSelectOption>
+                    <IonSelectOption value="taiwanese">Taiwanese</IonSelectOption>
+                    <IonSelectOption value="tajik">Tajik</IonSelectOption>
+                    <IonSelectOption value="tanzanian">Tanzanian</IonSelectOption>
+                    <IonSelectOption value="togolese">Togolese</IonSelectOption>
+                    <IonSelectOption value="trinidadian or tobagonian">Trinidadian or Tobagonian</IonSelectOption>
+                    <IonSelectOption value="turkish">Turkish</IonSelectOption>
+                    <IonSelectOption value="ugandan">Ugandan</IonSelectOption>
+                    <IonSelectOption value="uruguayan">Uruguayan</IonSelectOption>
+                    <IonSelectOption value="uzbekistani">Uzbekistani</IonSelectOption>
+                    <IonSelectOption value="venezuelan">Venezuelan</IonSelectOption>
+                    <IonSelectOption value="vietnamese">Vietnamese</IonSelectOption>
+                    <IonSelectOption value="welsh">Welsh</IonSelectOption>
+                    <IonSelectOption value="yemenite">Yemenite</IonSelectOption>
+                    <IonSelectOption value="zambian">Zambian</IonSelectOption>
+                    <IonSelectOption value="zimbabwean">Zimbabwean</IonSelectOption>
+                  </IonSelect>
+                </IonItem>
                 {errors.nationality && errors.nationality.type === "required" && <div className="errorMessage">Nationality is required!</div>}
-                {errors.nationality && errors.nationality.type === "pattern" && <div className="errorMessage">Please enter a valid Nationality</div>}
-                {errors.nationality && errors.nationality.type === "minLength" && <div className="errorMessage">Please enter a valid Nationality</div>}
               </IonCol>
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="password" placeholder="Password" name="password" ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ })}></IonInput>
+                <IonInput
+                  className="inputField" type="password" placeholder="Password" name="password"
+                  ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })}
+                />
                 {errors.password && errors.password.type === "required" && <div className="errorMessage">Password is required!</div>}
                 {errors.password && errors.password.type === "minLength" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
                 {errors.password && errors.password.type === "pattern" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
@@ -162,7 +358,7 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="password" placeholder="Confirm Password" name="confirmPassword" ref={register({ required: true, validate: (value) => value === password.current })}></IonInput>
+                <IonInput className="inputField" type="password" placeholder="Confirm Password" name="confirmPassword" ref={register({ required: true, validate: (value) => value === password.current })} />
                 {errors.confirmPassword && errors.confirmPassword.type === "required" && <div className="errorMessage">Confirm Password is required!</div>}
                 {errors.confirmPassword && errors.confirmPassword.type === "validate" && <div className="errorMessage">Password does not match!</div>}
               </IonCol>
@@ -177,10 +373,8 @@ const Registration: React.FC = () => {
               {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
             <IonRow class="ion-justify-content-center">
-              {status.error && <IonText>Error occured.</IonText>}
-              <IonButton id="registrationBtn" type="submit">
-                REGISTER
-              </IonButton>
+              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='my-custom-class' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}
+              <IonButton id="registrationBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER</IonButton>
             </IonRow>
           </IonGrid>
         </form>
