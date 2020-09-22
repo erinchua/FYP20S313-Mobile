@@ -9,6 +9,9 @@ import ForgetPassword3 from './pages/ForgetPassword3';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
 import AppU from './AppU';
+import Home from './pages/Home';
+import OpenHouseMain from './pages/OpenHouseMain';
+import Test from './pages/Test';
 
 import { AuthContext, useAuthInit } from './auth';
 
@@ -48,6 +51,8 @@ const App: React.FC = () => {
             <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
+            <Route path="/home" component={Home} exact={true} />
+            <Route path="openHouseMain" component={OpenHouseMain} exact={true} />
 
             <Route path="/u" component={AppU} exact={false} />
             <Route exact path="/" render={() => <Redirect to="/main" />} />

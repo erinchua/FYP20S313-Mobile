@@ -64,7 +64,7 @@ const Login: React.FC = () => {
           <IonGrid>
             <IonRow>
               <IonCol>
-              <IonInput className="inputField" type="text" placeholder="Email" name="email" ref={register} />
+              <IonInput className="inputField" type="text" placeholder="Email" name="email" ref={register} style={{marginTop: "5%"}}/>
               </IonCol>
             </IonRow>
             <IonRow>
@@ -80,6 +80,7 @@ const Login: React.FC = () => {
               <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>
             </IonRow>
             <IonItemDivider></IonItemDivider>
+            <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
           </IonGrid>
           {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email and password.'} buttons={['OK']}></IonAlert>}
         </form>
