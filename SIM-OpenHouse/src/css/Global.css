@@ -3,13 +3,28 @@
     --ion-font-family: -apple-system, BlinkMacSystemFont, "Arial", "Helvetica", sans-serif;
 }
 
+/* Top Nav */
+.topNav {
+    --background: #40B5B5;
+}
+
+.back_button {
+    color: #ffffff;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 100%;
+}
+
+/* Forget Password Button */
 .otpBtn {
     --background: #37474F;
     width: 50%;
     font-size: medium;
 }
 
-/*Alert Box CSS*/
+/* Alert Box */
 .alertBox  .alert-button-group {
     justify-content: center;
 }

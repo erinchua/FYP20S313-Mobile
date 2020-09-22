@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonText, IonLoading, IonAlert } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonLoading, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
@@ -39,13 +39,11 @@ const Login: React.FC = () => {
     } catch(e) {
       setStatus({ loading: false, error: true });
       console.log(e);
-    }
+    };
+  };
 
-  }
-
-  if (loggedIn) {
-    return <Redirect to="/home" />
-  }
+  if (loggedIn)
+    return <Redirect to="/u/home" />;
 
   return (
     <IonPage>

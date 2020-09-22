@@ -10,8 +10,7 @@ import { IonContent,
     IonButtons, 
     IonButton, 
     IonItem, 
-    IonInput, 
-    IonLabel, 
+    IonInput,
     IonList,
     IonAlert } from '@ionic/react';
 import React, {useRef, useState} from 'react';
@@ -19,6 +18,7 @@ import '../css/ForgetPassword3.css';
 import '../css/Global.css';
 import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
 import { useForm, Controller } from "react-hook-form";
+import {useHistory} from 'react-router-dom';
 
 
 const ForgetPassword3: React.FC = () => {
@@ -32,44 +32,63 @@ const ForgetPassword3: React.FC = () => {
     const newPassword = useRef({});
     newPassword.current = watch("newPassword", "");
 
+    const history = useHistory();
+
     {/*For alert */}
     const [resetPasswordSuccess, setResetPasswordSuccess] = useState(false);
+    const [resetPasswordFail, setResetPasswordFail] = useState(false);
 
     const displayAlert = () => {
         const newPassword = getValues("newPassword");
         const confirmNewPassword = getValues("confirmNewPassword");
         if ((newPassword !== "" || confirmNewPassword !== "") && (confirmNewPassword === newPassword)){
             setResetPasswordSuccess(true);
-            console.log("Match");
+            return console.log("Match");
         }
+        else {
+            setResetPasswordFail(true);
+            return console.log("Error");
+        }
+    };
 
-        console.log("Error");
+    const proceedToLogin = () => {
+        setResetPasswordSuccess(false);
+        history.push("/login");
     };
 
     return (
         <React.Fragment>
             <IonAlert
                 isOpen={resetPasswordSuccess}
-                onDidDismiss={() => setResetPasswordSuccess(false)}
+                onDidDismiss={proceedToLogin}
                 cssClass='alertBox'
                 header={'Reset Password Successful'}
                 message={'Your password has been reset successfully. Please login again.'}
                 buttons={['Close']}
              ></IonAlert>
 
+            <IonAlert
+                isOpen={resetPasswordFail}
+                onDidDismiss = {() => setResetPasswordFail(false)}
+                cssClass='alertBox'
+                header={'Error'}
+                message={'Please fill up the required fields first!'}
+                buttons={['Okay']}
+             ></IonAlert>
+
             <IonPage>
                 <IonHeader>
-                <IonToolbar id="topBar">
-                    <IonButtons slot="start">
-                        <IonButton routerLink="/main" onClick={() => {reset()}}>
-                            <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
-                        </IonButton>
-                    </IonButtons>
+                    <IonToolbar className="topNav">
+                        <IonButtons slot="start">
+                            <IonButton routerLink="/main" onClick={() => {reset()}}>
+                                <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
+                            </IonButton>
+                        </IonButtons>
 
-                    <IonTitle id="title">
-                        Reset Password 
-                    </IonTitle>
-                </IonToolbar>
+                        <IonTitle className="title">
+                            Reset Password 
+                        </IonTitle>
+                    </IonToolbar>
                 </IonHeader>
 
                 {/* Screen Content*/}
@@ -92,7 +111,7 @@ const ForgetPassword3: React.FC = () => {
                                     <IonItem>
                                         <IonInput id="newPasswordID" type="password" placeholder="New Password" name="newPassword" ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })}></IonInput>
                                     </IonItem>
-                                    {errors.newPassword && errors.newPassword.type === "required" && <div className="errorMessage">Password is required!</div>}
+                                    {errors.newPassword && errors.newPassword.type === "required" && <div className="errorMessage">Please type your new password!</div>}
                                     {errors.newPassword && errors.newPassword.type === "minLength" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
                                     {errors.newPassword && errors.newPassword.type === "pattern" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
                                 
