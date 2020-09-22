@@ -52,14 +52,10 @@ const App: React.FC = () => {
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
             <Route path="/home" component={Home} exact={true} />
-<<<<<<< Updated upstream
-            <Route path="openHouseMain" component={OpenHouseMain} exact={true} />
+            <Route path="/openHouseMain" component={OpenHouseMain} exact={true} />
 
+            <Route path="/test" component={Test} exact={true} />
             <Route path="/u" component={AppU} exact={false} />
-=======
-            
-            <Route path="/u" exact={false} />
->>>>>>> Stashed changes
             <Route exact path="/" render={() => <Redirect to="/main" />} />
           </IonRouterOutlet>
         </IonReactRouter>
