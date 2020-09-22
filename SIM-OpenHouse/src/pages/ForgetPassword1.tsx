@@ -1,4 +1,16 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonIcon, IonButtons, IonButton, IonItem, IonInput } from '@ionic/react';
+import { IonContent, 
+    IonHeader, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar, 
+    IonGrid, 
+    IonRow, 
+    IonCol, 
+    IonIcon, 
+    IonButtons, 
+    IonButton, 
+    IonItem, 
+    IonInput } from '@ionic/react';
 import React from 'react';
 import '../css/ForgetPassword1.css';
 import '../css/Global.css';
