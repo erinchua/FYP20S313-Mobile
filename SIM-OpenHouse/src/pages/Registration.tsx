@@ -1,28 +1,7 @@
-import {
-  IonButton,
-  IonCol,
-  IonContent,
-  IonDatetime,
-  IonGrid,
-  IonHeader,
-  IonInput,
-  IonLabel,
-  IonPage,
-  IonRow,
-  IonSelect,
-  IonSelectOption,
-  IonTitle,
-  IonToolbar,
-  IonButtons,
-  IonIcon,
-  IonItem,
-  IonCheckbox,
-  IonAlert,
-} from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonHeader, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar, IonButtons, IonIcon, IonItem, IonCheckbox, IonAlert } from "@ionic/react";
 import React, { useRef, useState } from "react";
 import { Redirect } from "react-router";
-import { useForm  } from "react-hook-form";
-
+import { useForm } from "react-hook-form";
 
 import { useAuth } from "../auth";
 import { auth, db } from "../firebase";
@@ -53,9 +32,11 @@ const Registration: React.FC = () => {
       dob: data.dob,
       highestQualification: data.highestQualification,
       nationality: data.nationality,
+      points: 0,
+      isSuspendedFromForum: false,
     });
   };
-  
+
   const handleRegister = async (data: any) => {
     try {
       setStatus({ loading: true, error: false });
@@ -67,7 +48,6 @@ const Registration: React.FC = () => {
       setStatus({ loading: false, error: true });
       console.log(e);
     }
-
   };
 
   console.log(loggedIn);
@@ -79,7 +59,12 @@ const Registration: React.FC = () => {
       <IonHeader>
         <IonToolbar id="toolBar">
           <IonButtons slot="start">
-            <IonButton routerLink="/main" onClick={() => {reset()}}>
+            <IonButton
+              routerLink="/main"
+              onClick={() => {
+                reset();
+              }}
+            >
               <IonIcon slot="icon-only" icon={arrowBackOutline} id="backBtn" />
             </IonButton>
           </IonButtons>
@@ -108,7 +93,10 @@ const Registration: React.FC = () => {
             <IonRow>
               <IonCol>
                 <IonInput
-                  className="inputField" type="email" placeholder="Email" name="email"
+                  className="inputField"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
                   ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
                 />
                 {errors.email && errors.email.type === "required" && <div className="errorMessage">Email is required!</div>}
@@ -347,7 +335,10 @@ const Registration: React.FC = () => {
             <IonRow>
               <IonCol>
                 <IonInput
-                  className="inputField" type="password" placeholder="Password" name="password"
+                  className="inputField"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
                   ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })}
                 />
                 {errors.password && errors.password.type === "required" && <div className="errorMessage">Password is required!</div>}
@@ -372,8 +363,10 @@ const Registration: React.FC = () => {
               {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
             <IonRow class="ion-justify-content-center">
-              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='my-custom-class' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}
-              <IonButton id="registrationBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER</IonButton>
+              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass="my-custom-class" header={"Error Occured!"} message={"Please enter a valid email."} buttons={["OK"]}></IonAlert>}
+              <IonButton id="registrationBtn" type="submit" onClick={() => setShowAlert(true)}>
+                REGISTER
+              </IonButton>
             </IonRow>
           </IonGrid>
         </form>
