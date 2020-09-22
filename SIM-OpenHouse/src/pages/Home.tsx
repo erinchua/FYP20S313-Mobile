@@ -5,6 +5,7 @@ import { auth } from '../firebase';
 
 import '../css/Global.css';
 import '../css/Home.css';
+import TopNavWithoutBA from '../components/TopNavWithoutBA';
 
 const Home: React.FC = () => {
   const handleLogout = async () => {
@@ -14,11 +15,8 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Home</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <TopNavWithoutBA title="Home" />
+
       <IonContent fullscreen>
         <IonGrid>
           <IonRow class="ion-justify-content-center">

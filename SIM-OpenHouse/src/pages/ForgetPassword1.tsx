@@ -17,24 +17,22 @@ const ForgetPassword1: React.FC = () => {
         console.log(data);
     };
 
-
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar id="topBar">
+          <IonToolbar className="topNav">
             <IonButtons slot="start">
                 <IonButton routerLink="/main" onClick={() => {reset()}}>
-                    <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
+                    <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
                 </IonButton>
             </IonButtons>
 
-            <IonTitle id="title">
+            <IonTitle className="title">
                 Forget Password?  
             </IonTitle>
           </IonToolbar>
         </IonHeader>
 
-        {/* Screen Content*/}
         <IonContent fullscreen style={{display: "flex"}}>
             <IonGrid>
                 <form onSubmit={handleSubmit(onSubmit)}>
