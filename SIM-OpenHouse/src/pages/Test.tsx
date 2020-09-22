@@ -44,17 +44,21 @@ const Test: React.FC = () => {
     const [showAlert, setShowAlert] = useState(false);
     const [showAlert2, setShowAlert2] = useState(false);
 
-    const [test, setTest] = useState<string>();
+    const [test1, setTest1] = useState<string>();
+    const [test2, setTest2] = useState<string>();
     
     const display = () => {
-        const values1 = getValues("test");
-        const values2 = getValues("test1");
-        if (values1 !== "") {
+        const values1 = getValues("input1");
+        const values2 = getValues("input2");
+        if (values1 !== "" || values2 !== "") {
             setShowAlert(true);
-            setShowAlert2(false);
+            console.log(values1, values2);
+            setTest1(values1);
+            setTest2(values2);
             return;
-        }
-        setTest(values1);
+        }    
+        setShowAlert2(true);
+        console.log("Fields are empty!");
     };
 
     return (
@@ -62,11 +66,12 @@ const Test: React.FC = () => {
             <IonAlert
                 isOpen={showAlert}
                 onDidDismiss={() => setShowAlert(false)}
-                cssClass='my-custom-class'
+                cssClass='alert-css'
+                mode='md'
                 header={'Have Value'}
                 subHeader={'Subtitle'}
                 message={'This is an alert message.'}
-                buttons={['Cancel', 'Open Modal']}
+                buttons={['Close']}
              ></IonAlert>
 
              <IonAlert
@@ -97,8 +102,8 @@ const Test: React.FC = () => {
                 <IonContent fullscreen style={{display: "flex"}}>
                     <IonGrid>
                         <form>
-                            <input name="test" ref={register} />
-                            <input name="test1" ref={register} />
+                            <input name="input1" ref={register} />
+                            <input name="input2" ref={register} />
 
                             <button
                                 type="button"
@@ -106,7 +111,14 @@ const Test: React.FC = () => {
                                 Get Values
                             </button>
 
-                            {test && (<h1>{test}</h1>)}
+                            {display && (
+                                <>
+                                    <div>
+                                        <h1>Value 1: {test1}</h1>
+                                        <h1>Value 2: {test2}</h1>
+                                    </div>
+                                </>
+                            )}
                             
                         </form>
 
