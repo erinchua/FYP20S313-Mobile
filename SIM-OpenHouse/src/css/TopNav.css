@@ -1,0 +1,17 @@
+/* Top Nav */
+.topNav {
+    --background: #40B5B5;
+}
+
+.back_button {
+    color: #ffffff;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 100%;
+}
+
+.menuBtn {
+    color: #ffffff;
+}

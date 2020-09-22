@@ -5,7 +5,8 @@ import { auth } from '../firebase';
 
 import '../css/Global.css';
 import '../css/Home.css';
-import TopNavWithoutBA from '../components/TopNavWithoutBA';
+
+import TopNavMenu from '../components/TopNavMenu';
 
 const Home: React.FC = () => {
   const handleLogout = async () => {
@@ -15,7 +16,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNavWithoutBA title="Home" />
+      <TopNavMenu title="Home" />
 
       <IonContent fullscreen>
         <IonGrid>

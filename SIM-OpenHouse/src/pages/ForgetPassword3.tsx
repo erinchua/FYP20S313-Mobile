@@ -14,11 +14,14 @@ import { IonContent,
     IonList,
     IonAlert } from '@ionic/react';
 import React, {useRef, useState} from 'react';
-import '../css/ForgetPassword3.css';
-import '../css/Global.css';
-import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
 import { useForm, Controller } from "react-hook-form";
 import {useHistory} from 'react-router-dom';
+import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
+
+import '../css/ForgetPassword3.css';
+import '../css/Global.css';
+
+import TopNavBA from '../components/TopNavBA';
 
 
 const ForgetPassword3: React.FC = () => {
@@ -85,13 +88,10 @@ const ForgetPassword3: React.FC = () => {
                             </IonButton>
                         </IonButtons>
 
-                        <IonTitle className="title">
-                            Reset Password 
-                        </IonTitle>
+                        <TopNavBA title="Reset Password"/>
                     </IonToolbar>
                 </IonHeader>
 
-                {/* Screen Content*/}
                 <IonContent fullscreen style={{display: "flex"}}>
                     <IonGrid>
                         <form onSubmit={handleSubmit(onSubmit)}>

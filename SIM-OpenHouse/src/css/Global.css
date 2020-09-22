@@ -3,20 +3,6 @@
     --ion-font-family: -apple-system, BlinkMacSystemFont, "Arial", "Helvetica", sans-serif;
 }
 
-/* Top Nav */
-.topNav {
-    --background: #40B5B5;
-}
-
-.back_button {
-    color: #ffffff;
-}
-
-.title {
-    color: #ffffff;
-    font-size: 100%;
-}
-
 /* Forget Password Button */
 .otpBtn {
     --background: #37474F;

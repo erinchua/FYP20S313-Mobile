@@ -12,11 +12,14 @@ import { IonContent,
     IonItem, 
     IonInput } from '@ionic/react';
 import React from 'react';
-import '../css/ForgetPassword2.css';
-import '../css/Global.css';
-import { arrowBackOutline, keypadOutline } from 'ionicons/icons';
 import { useForm, Controller } from "react-hook-form";
 import ReactCodeInput from 'react-verification-code-input';
+import { arrowBackOutline, keypadOutline } from 'ionicons/icons';
+
+import '../css/ForgetPassword2.css';
+import '../css/Global.css';
+
+import TopNavBA from '../components/TopNavBA';
 
 
 const ForgetPassword2: React.FC = () => {
@@ -37,9 +40,7 @@ const ForgetPassword2: React.FC = () => {
                 </IonButton>
             </IonButtons>
 
-            <IonTitle className="title">
-                Forget Password?  
-            </IonTitle>
+            <TopNavBA title="Forget Password?"/>
           </IonToolbar>
         </IonHeader>
 
