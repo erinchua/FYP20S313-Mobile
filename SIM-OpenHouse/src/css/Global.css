@@ -8,3 +8,18 @@
     width: 50%;
     font-size: medium;
 }
+
+/*Alert Box CSS*/
+.alertBox  .alert-button-group {
+    justify-content: center;
+}
+
+.alertBox .alert-title {
+    font-size: medium;
+    color: #434343;
+    font-weight: bold;
+}
+
+.alertBox .alert-message {
+    color: #434343;
+}

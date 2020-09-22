@@ -9,6 +9,7 @@ import ForgetPassword3 from './pages/ForgetPassword3';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Test from './pages/Test';
 
 import { AuthContext, useAuthInit } from './auth';
 

@@ -11,17 +11,22 @@ import { IonContent,
     IonButton, 
     IonItem, 
     IonInput, 
-    IonLabel, 
-    IonList,
+    IonList, 
     IonAlert } from '@ionic/react';
 import React, {useRef, useState} from 'react';
-import '../css/ForgetPassword3.css';
 import '../css/Global.css';
+import '../css/Test.css';
 import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
 import { useForm, Controller } from "react-hook-form";
+import TestControl from '../components/TestControl';
+import TestCom from '../components/TestCom';
+import ReactCodeInput from 'react-verification-code-input';
+
+{/*import { useHistory } from 'react-router-dom';*/}
+ 
 
 
-const ForgetPassword3: React.FC = () => {
+const Test: React.FC = () => {
     const { register, handleSubmit, errors, watch, reset, getValues } = useForm();
 
     const onSubmit = (data: any) => {
@@ -32,50 +37,92 @@ const ForgetPassword3: React.FC = () => {
     const newPassword = useRef({});
     newPassword.current = watch("newPassword", "");
 
-    {/*For alert */}
-    const [resetPasswordSuccess, setResetPasswordSuccess] = useState(false);
+    const newPasswordRef = useRef<HTMLIonInputElement>(null);
+    const confirmNewPasswordRef = useRef<HTMLIonInputElement>(null);
 
-    const displayAlert = () => {
-        const newPassword = getValues("newPassword");
-        const confirmNewPassword = getValues("confirmNewPassword");
-        if ((newPassword !== "" || confirmNewPassword !== "") && (confirmNewPassword === newPassword)){
-            setResetPasswordSuccess(true);
-            console.log("Match");
-        }
+    const validatePassword = () => {};
+    const [showAlert, setShowAlert] = useState(false);
+    const [showAlert2, setShowAlert2] = useState(false);
 
-        console.log("Error");
+    const [test1, setTest1] = useState<string>();
+    const [test2, setTest2] = useState<string>();
+    
+    const display = () => {
+        const values1 = getValues("input1");
+        const values2 = getValues("input2");
+        if (values1 !== "" || values2 !== "") {
+            setShowAlert(true);
+            console.log(values1, values2);
+            setTest1(values1);
+            setTest2(values2);
+            return;
+        }    
+        setShowAlert2(true);
+        console.log("Fields are empty!");
     };
 
     return (
         <React.Fragment>
             <IonAlert
-                isOpen={resetPasswordSuccess}
-                onDidDismiss={() => setResetPasswordSuccess(false)}
-                cssClass='alertBox'
-                header={'Reset Password Successful'}
-                message={'Your password has been reset successfully. Please login again.'}
+                isOpen={showAlert}
+                onDidDismiss={() => setShowAlert(false)}
+                cssClass='alert-css'
+                mode='md'
+                header={'Have Value'}
+                subHeader={'Subtitle'}
+                message={'This is an alert message.'}
                 buttons={['Close']}
+             ></IonAlert>
+
+             <IonAlert
+                isOpen={showAlert2}
+                onDidDismiss={() => setShowAlert2(false)}
+                cssClass='my-custom-class'
+                header={'No Value'}
+                message={'This is an alert message.'}
+                buttons={['Okay']}
              ></IonAlert>
 
             <IonPage>
                 <IonHeader>
-                <IonToolbar id="topBar">
+                    <IonToolbar id="topBar">
                     <IonButtons slot="start">
                         <IonButton routerLink="/main" onClick={() => {reset()}}>
                             <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
                         </IonButton>
                     </IonButtons>
-
+        
                     <IonTitle id="title">
                         Reset Password 
                     </IonTitle>
-                </IonToolbar>
+                    </IonToolbar>
                 </IonHeader>
-
+        
                 {/* Screen Content*/}
                 <IonContent fullscreen style={{display: "flex"}}>
                     <IonGrid>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form>
+                            <input name="input1" ref={register} />
+                            <input name="input2" ref={register} />
+
+                            <button
+                                type="button"
+                                onClick={display}>
+                                Get Values
+                            </button>
+
+                            {display && (
+                                <>
+                                    <div>
+                                        <h1>Value 1: {test1}</h1>
+                                        <h1>Value 2: {test2}</h1>
+                                    </div>
+                                </>
+                            )}
+                            
+                        </form>
+
+                        {/*<form onSubmit={handleSubmit(onSubmit)}>
                             <IonRow class="ion-justify-content-center">
                                 <IonCol></IonCol>
                                 <IonCol size="6" style={{textAlign: "center"}}>
@@ -83,7 +130,7 @@ const ForgetPassword3: React.FC = () => {
                                 </IonCol>
                                 <IonCol></IonCol>
                             </IonRow>
-
+        
                             <IonRow>
                                 <IonCol></IonCol>
                                 <IonCol size="10">
@@ -101,21 +148,26 @@ const ForgetPassword3: React.FC = () => {
                                     </IonItem>
                                     {errors.confirmNewPassword && errors.confirmNewPassword.type === "required" && <div className="errorMessage">Please confirm your password!</div>}
                                     {errors.confirmNewPassword && errors.confirmNewPassword.type === "validate" && <div className="errorMessage">Passwords do not match!</div>}
-                                    
+                                        
                                     </IonList>
                                 </IonCol>
                                 <IonCol></IonCol>
                             </IonRow>
-
-                            <IonRow class="ion-justify-content-center" style={{marginTop:"5%"}}>
-                                <IonButton size="large" id="resetPwdBtn" type="submit" onClick={displayAlert}>RESET PASSWORD</IonButton>
+                            <IonRow class="ion-justify-content-center">
                             </IonRow>
-                        </form>
+        
+                            <IonRow class="ion-justify-content-center" style={{marginTop:"5%"}}>
+                                <IonButton size="large" id="resetPwdBtn" type="submit" onClick={() => {
+                                    setShowAlert2(true);
+                                    const values=getValues();
+                                }}>RESET PASSWORD</IonButton>
+                            </IonRow>
+                        </form>*/}
                     </IonGrid>
                 </IonContent>
             </IonPage>
-    </React.Fragment>
+        </React.Fragment>
     );
-  };
-  
-  export default ForgetPassword3;
+  }
+
+export default Test;
