@@ -1,16 +1,3 @@
-#toolBar {
-    --background: #44B5B5;
-}
-
-#title {
-    color: white;
-    font-size: 100%;
-}
-
-#backBtn {
-    color: white;
-}
-
 .inputField {
     font-size: 90%;
     border-bottom: 1px solid #C8C8C8;

@@ -52,8 +52,7 @@ const App: React.FC = () => {
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
             <Route path="/home" component={Home} exact={true} />
-<<<<<<< Updated upstream
-            <Route path="openHouseMain" component={OpenHouseMain} exact={true} />
+            <Route path="/openHouseMain" component={OpenHouseMain} exact={true} />
 
             <Route path="/u" component={AppU} exact={false} />
 =======
