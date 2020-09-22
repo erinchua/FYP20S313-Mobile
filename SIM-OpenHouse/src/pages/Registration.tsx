@@ -363,10 +363,8 @@ const Registration: React.FC = () => {
               {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
             <IonRow class="ion-justify-content-center">
-              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass="my-custom-class" header={"Error Occured!"} message={"Please enter a valid email."} buttons={["OK"]}></IonAlert>}
-              <IonButton id="registrationBtn" type="submit" onClick={() => setShowAlert(true)}>
-                REGISTER
-              </IonButton>
+              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}
+              <IonButton id="registrationBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER</IonButton>
             </IonRow>
           </IonGrid>
         </form>
