@@ -57,7 +57,6 @@ const ForgetPassword3: React.FC = () => {
                             {errors.newPassword && errors.newPassword.type === "minLength" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
                             {errors.newPassword && errors.newPassword.type === "pattern" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
                         
-
                             <IonItem>
                                 <IonInput id="confirmNewPasswordID" type="password" placeholder="Confirm New Password" name="confirmNewPassword" ref={register({ required: true, validate: (value) => value === newPassword.current })}></IonInput>
                             </IonItem>
