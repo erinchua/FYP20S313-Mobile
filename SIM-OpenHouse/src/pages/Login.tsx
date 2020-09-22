@@ -48,14 +48,14 @@ const Login: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar id="toolBar">
+        <IonToolbar className="topNav">
           <IonButtons slot="start">
             <IonButton routerLink="/main" onClick={() => {reset()}}>
-              <IonIcon slot="icon-only" icon={arrowBackOutline} id="backBtn" />
+              <IonIcon slot="icon-only" icon={arrowBackOutline} className="back_button" />
             </IonButton>
           </IonButtons>
 
-          <IonTitle id="title">Login</IonTitle>
+          <IonTitle className="title">Login</IonTitle>
         </IonToolbar>
       </IonHeader>
 

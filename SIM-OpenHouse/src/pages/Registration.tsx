@@ -66,7 +66,7 @@ const Registration: React.FC = () => {
         <IonToolbar className="topNav">
           <IonButtons slot="start">
             <IonButton routerLink="/main" onClick={() => { reset(); }}>
-              <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
+              <IonIcon slot="icon-only" icon={arrowBackOutline} className="back_button" />
             </IonButton>
           </IonButtons>
 
