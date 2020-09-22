@@ -6,6 +6,7 @@ import { arrowBackOutline } from "ionicons/icons";
 
 import { useAuth } from '../auth';
 import { auth } from '../firebase';
+import firebase from 'firebase';
 
 import '../css/Login.css';
 import '../css/Global.css';
@@ -24,7 +25,16 @@ const Login: React.FC = () => {
     console.log(data);
     try {
       setStatus({ loading: true, error: false });
-      await auth.signInWithEmailAndPassword(data.email, data.password);
+
+      auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function() {
+        return auth.signInWithEmailAndPassword(data.email, data.password);
+      });
+
+      await auth.signInWithEmailAndPassword(data.email, data.password).then((user) => {
+        return user.user?.getIdToken().then((idToken) => {
+          sessionStorage.setItem('token: ', idToken);
+        });
+      });
       setStatus({ loading: false, error: false });
     } catch(e) {
       setStatus({ loading: false, error: true });
@@ -73,7 +83,7 @@ const Login: React.FC = () => {
             </IonRow>
             <IonItemDivider></IonItemDivider>
           </IonGrid>
-          {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='my-custom-class' header={'Error Occured!'} message={'Please enter a valid email and password.'} buttons={['OK']}></IonAlert>}
+          {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email and password.'} buttons={['OK']}></IonAlert>}
         </form>
         <IonLoading isOpen={status.loading} message={'Loading...'} />
       </IonContent>
