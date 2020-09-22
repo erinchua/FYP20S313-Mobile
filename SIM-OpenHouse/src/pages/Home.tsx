@@ -1,30 +1,16 @@
-import React, { useState } from 'react';
 import { IonButton, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import { Redirect } from 'react-router';
-import { useForm  } from "react-hook-form";
+import React from 'react';
 
-import { useAuth } from '../auth';
 import { auth } from '../firebase';
 
 import '../css/Global.css';
 import '../css/Home.css';
 
 const Home: React.FC = () => {
-  const { loggedIn } = useAuth();
-
-  const { handleSubmit } = useForm();
-
-  const handleLogout = async (data: any) => {
-    console.log(data);
+  const handleLogout = async () => {
     await auth.signOut();
     sessionStorage.clear();
-  }
-
-  console.log(loggedIn);
-
-  if (!loggedIn){
-    return <Redirect to="/" />
-  }
+  };
 
   return (
     <IonPage>
@@ -34,13 +20,11 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <form onSubmit={handleSubmit(handleLogout)}>
-          <IonGrid>
-            <IonRow class="ion-justify-content-center">
-              <IonButton type="submit">LOGOUT</IonButton>
-            </IonRow>
-          </IonGrid>
-        </form>
+        <IonGrid>
+          <IonRow class="ion-justify-content-center">
+            <IonButton type="submit" onClick={ handleLogout }>LOGOUT</IonButton>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
