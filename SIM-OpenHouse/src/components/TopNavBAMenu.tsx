@@ -4,8 +4,6 @@ import '../css/TopNav.css';
 import '../css/Global.css';
 import { arrowBackOutline } from 'ionicons/icons';
 
-import Menu from '../components/Menu';
-
 const TopNavBAMenu: React.FC<{
     title: string; 
     route: any;

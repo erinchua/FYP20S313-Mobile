@@ -10,6 +10,7 @@ import TopNavMenu from '../components/TopNavMenu';
 import Menu from '../components/Menu';
 
 const Home: React.FC = () => {
+
   const handleLogout = async () => {
     await auth.signOut();
     sessionStorage.clear();
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNavMenu title="Home" />
+      <TopNavMenu title="Home"/>
 
       <IonContent fullscreen>
         <Menu />

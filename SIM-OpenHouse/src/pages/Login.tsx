@@ -2,7 +2,6 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBu
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
-import { arrowBackOutline } from "ionicons/icons";
 
 import { useAuth } from '../auth';
 import { auth } from '../firebase';
@@ -49,8 +48,9 @@ const Login: React.FC = () => {
     };
   };
 
-  if (loggedIn)
-    return <Redirect to="/u/home" />;
+  if (loggedIn){
+    return <Redirect to="/u/home"/>;
+  }
 
   return (
     <IonPage>
