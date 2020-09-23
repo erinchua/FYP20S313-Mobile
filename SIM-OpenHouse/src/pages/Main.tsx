@@ -1,5 +1,5 @@
-import React from 'react';
 import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonButton, IonRouterLink } from '@ionic/react';
+import React from 'react';
 import { Redirect } from 'react-router';
 
 import { useAuth } from '../auth';
@@ -11,7 +11,7 @@ const Main: React.FC = () => {
   const { loggedIn } = useAuth();
 
   if (loggedIn)
-    return <Redirect to="/home" />
+    return <Redirect to="/u/home" />
 
   return (
     <IonPage>

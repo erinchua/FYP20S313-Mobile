@@ -1,12 +1,28 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonIcon, IonButtons, IonButton, IonItem, IonInput } from '@ionic/react';
-import React from 'react';
-import '../css/ForgetPassword1.css';
-import '../css/Global.css';
-import { arrowBackOutline } from 'ionicons/icons';
+import { IonContent, 
+    IonHeader, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar, 
+    IonGrid, 
+    IonRow, 
+    IonCol, 
+    IonIcon, 
+    IonButtons, 
+    IonButton, 
+    IonItem, 
+    IonInput } from '@ionic/react';
+import React, { useState } from 'react';
 import { useForm, Controller } from "react-hook-form";
 import emailjs from 'emailjs-com';
+import {useHistory, withRouter} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
+import { arrowBackOutline } from 'ionicons/icons';
+
+import '../css/ForgetPassword1.css';
+import '../css/Global.css';
+
+import TopNavBA from '../components/TopNavBA';
 
 
 const ForgetPassword1: React.FC = () => {
@@ -17,24 +33,14 @@ const ForgetPassword1: React.FC = () => {
         console.log(data);
     };
 
-
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar id="topBar">
-            <IonButtons slot="start">
-                <IonButton routerLink="/main" onClick={() => {reset()}}>
-                    <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
-                </IonButton>
-            </IonButtons>
-
-            <IonTitle id="title">
-                Forget Password?  
-            </IonTitle>
-          </IonToolbar>
+            <IonToolbar className="topNav">
+                <TopNavBA title="Forget Password?" route="/main" />
+            </IonToolbar>
         </IonHeader>
 
-        {/* Screen Content*/}
         <IonContent fullscreen style={{display: "flex"}}>
             <IonGrid>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -81,4 +87,4 @@ const ForgetPassword1: React.FC = () => {
     );
   };
   
-  export default ForgetPassword1;
+  export default withRouter(ForgetPassword1);

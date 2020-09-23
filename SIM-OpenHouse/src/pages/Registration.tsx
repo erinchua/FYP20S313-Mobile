@@ -1,28 +1,7 @@
-import {
-  IonButton,
-  IonCol,
-  IonContent,
-  IonDatetime,
-  IonGrid,
-  IonHeader,
-  IonInput,
-  IonLabel,
-  IonPage,
-  IonRow,
-  IonSelect,
-  IonSelectOption,
-  IonTitle,
-  IonToolbar,
-  IonButtons,
-  IonIcon,
-  IonItem,
-  IonCheckbox,
-  IonAlert,
-} from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonHeader, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar, IonButtons, IonIcon, IonItem, IonCheckbox, IonAlert } from "@ionic/react";
 import React, { useRef, useState } from "react";
 import { Redirect } from "react-router";
-import { useForm  } from "react-hook-form";
-
+import { useForm } from "react-hook-form";
 
 import { useAuth } from "../auth";
 import { auth, db } from "../firebase";
@@ -30,6 +9,14 @@ import { auth, db } from "../firebase";
 import { arrowBackOutline } from "ionicons/icons";
 import "../css/Global.css";
 import "../css/Registration.css";
+
+import TopNavBA from "../components/TopNavBA";
+
+function formatDate(isoDate: any) {
+  return new Date(isoDate).toLocaleDateString('en-UK', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+};
 
 const Registration: React.FC = () => {
   const { register, handleSubmit, errors, watch, reset } = useForm();
@@ -50,12 +37,14 @@ const Registration: React.FC = () => {
       lastName: data.lastName,
       email: data.email,
       contactNo: data.contactNo,
-      dob: data.dob,
+      dob: formatDate(data.dob),
       highestQualification: data.highestQualification,
       nationality: data.nationality,
+      points: 0,
+      isSuspendedFromForum: false,
     });
   };
-  
+
   const handleRegister = async (data: any) => {
     try {
       setStatus({ loading: true, error: false });
@@ -67,26 +56,15 @@ const Registration: React.FC = () => {
       setStatus({ loading: false, error: true });
       console.log(e);
     }
-
   };
 
   console.log(loggedIn);
 
-  if (loggedIn) return <Redirect to="/home" />;
+  if (loggedIn) return <Redirect to="/u/home" />;
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar id="toolBar">
-          <IonButtons slot="start">
-            <IonButton routerLink="/main" onClick={() => {reset()}}>
-              <IonIcon slot="icon-only" icon={arrowBackOutline} id="backBtn" />
-            </IonButton>
-          </IonButtons>
-
-          <IonTitle id="title">Registration</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <TopNavBA title="Registration" route="/main" />
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleRegister)}>
@@ -107,10 +85,8 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput
-                  className="inputField" type="email" placeholder="Email" name="email"
-                  ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
-                />
+                <IonInput className="inputField" type="email" placeholder="Email" name="email"
+                  ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
                 {errors.email && errors.email.type === "required" && <div className="errorMessage">Email is required!</div>}
                 {errors.email && errors.email.type === "pattern" && <div className="errorMessage">Please enter a valid Email</div>}
               </IonCol>
@@ -303,15 +279,10 @@ const Registration: React.FC = () => {
                     <IonSelectOption value="senegalese">Senegalese</IonSelectOption>
                     <IonSelectOption value="serbian">Serbian</IonSelectOption>
                     <IonSelectOption value="seychellois">Seychellois</IonSelectOption>
-                    <IonSelectOption value="thai">Thai</IonSelectOption>
                     <IonSelectOption value="sierra leonean">Sierra Leonean</IonSelectOption>
-                    <IonSelectOption value="tongan">Tongan</IonSelectOption>
                     <IonSelectOption value="singaporean">Singaporean</IonSelectOption>
-                    <IonSelectOption value="tunisian">Tunisian</IonSelectOption>
                     <IonSelectOption value="slovakian">Slovakian</IonSelectOption>
-                    <IonSelectOption value="tuvaluan">Tuvaluan</IonSelectOption>
                     <IonSelectOption value="slovenian">Slovenian</IonSelectOption>
-                    <IonSelectOption value="ukrainian">Ukrainian</IonSelectOption>
                     <IonSelectOption value="solomon islander">Solomon Islander</IonSelectOption>
                     <IonSelectOption value="somali">Somali</IonSelectOption>
                     <IonSelectOption value="south african">South African</IonSelectOption>
@@ -327,10 +298,15 @@ const Registration: React.FC = () => {
                     <IonSelectOption value="taiwanese">Taiwanese</IonSelectOption>
                     <IonSelectOption value="tajik">Tajik</IonSelectOption>
                     <IonSelectOption value="tanzanian">Tanzanian</IonSelectOption>
+                    <IonSelectOption value="thai">Thai</IonSelectOption>
                     <IonSelectOption value="togolese">Togolese</IonSelectOption>
+                    <IonSelectOption value="tongan">Tongan</IonSelectOption>
                     <IonSelectOption value="trinidadian or tobagonian">Trinidadian or Tobagonian</IonSelectOption>
+                    <IonSelectOption value="tunisian">Tunisian</IonSelectOption>
                     <IonSelectOption value="turkish">Turkish</IonSelectOption>
+                    <IonSelectOption value="tuvaluan">Tuvaluan</IonSelectOption>
                     <IonSelectOption value="ugandan">Ugandan</IonSelectOption>
+                    <IonSelectOption value="ukrainian">Ukrainian</IonSelectOption>
                     <IonSelectOption value="uruguayan">Uruguayan</IonSelectOption>
                     <IonSelectOption value="uzbekistani">Uzbekistani</IonSelectOption>
                     <IonSelectOption value="venezuelan">Venezuelan</IonSelectOption>
@@ -346,10 +322,8 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonInput
-                  className="inputField" type="password" placeholder="Password" name="password"
-                  ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })}
-                />
+                <IonInput className="inputField" type="password" placeholder="Password" name="password"
+                  ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })} />
                 {errors.password && errors.password.type === "required" && <div className="errorMessage">Password is required!</div>}
                 {errors.password && errors.password.type === "minLength" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
                 {errors.password && errors.password.type === "pattern" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
@@ -372,7 +346,7 @@ const Registration: React.FC = () => {
               {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
             <IonRow class="ion-justify-content-center">
-              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='my-custom-class' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}
+              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}
               <IonButton id="registrationBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER</IonButton>
             </IonRow>
           </IonGrid>

@@ -1,10 +1,25 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonIcon, IonButtons, IonButton, IonItem, IonInput } from '@ionic/react';
+import { IonContent, 
+    IonHeader, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar, 
+    IonGrid, 
+    IonRow, 
+    IonCol, 
+    IonIcon, 
+    IonButtons, 
+    IonButton, 
+    IonItem, 
+    IonInput } from '@ionic/react';
 import React from 'react';
-import '../css/ForgetPassword2.css';
-import '../css/Global.css';
-import { arrowBackOutline, keypadOutline } from 'ionicons/icons';
 import { useForm, Controller } from "react-hook-form";
 import ReactCodeInput from 'react-verification-code-input';
+import { arrowBackOutline, keypadOutline } from 'ionicons/icons';
+
+import '../css/ForgetPassword2.css';
+import '../css/Global.css';
+
+import TopNavBA from '../components/TopNavBA';
 
 
 const ForgetPassword2: React.FC = () => {
@@ -18,20 +33,11 @@ const ForgetPassword2: React.FC = () => {
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar id="topBar">
-            <IonButtons slot="start">
-                <IonButton routerLink="/main" onClick={() => {reset()}}>
-                    <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
-                </IonButton>
-            </IonButtons>
-
-            <IonTitle id="title">
-                Forget Password?  
-            </IonTitle>
-          </IonToolbar>
+            <IonToolbar className="topNav">
+                <TopNavBA title="Forget Password?" route="/main" />
+            </IonToolbar>
         </IonHeader>
 
-        {/* Screen Content*/}
         <IonContent fullscreen style={{display: "flex"}}>
             <IonGrid>
                 <form onSubmit={handleSubmit(onSubmit)}>
