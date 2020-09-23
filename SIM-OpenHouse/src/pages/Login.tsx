@@ -49,11 +49,7 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar className="topNav">
-          <TopNavBA title="Login" route="/main" />
-        </IonToolbar>
-      </IonHeader>
+      <TopNavBA title="Login" route="/main" />
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleLogin)}>

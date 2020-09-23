@@ -3,7 +3,6 @@ import React from 'react';
 
 import "../css/Global.css";
 import "../css/OpenHouseMain.css";
-import TopNavBAMenu from '../components/TopNavBAMenu';
 import gif from '../img/openHouseProgrammes/Open House Programmes.gif';
 import { arrowBackOutline } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,16 +14,7 @@ const OpenHouseMain: React.FC = () => {
 
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar className="topNav">
-                    <IonButtons slot="start">
-                        <IonButton routerLink="/u/home">
-                            <IonIcon slot="icon-only" icon={arrowBackOutline} className="back_button" />
-                        </IonButton>
-                    </IonButtons>
-                    <TopNavBAMenu title="Open House Programmes"/>
-                </IonToolbar>
-            </IonHeader>
+            <TopNavBAMenu title="Open House Programmes" route="/u/home"/>
 
             <IonContent fullscreen>
                 <Menu />

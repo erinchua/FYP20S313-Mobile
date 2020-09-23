@@ -64,11 +64,7 @@ const Registration: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar className="topNav">
-          <TopNavBA title="Registration" route="/main" />
-        </IonToolbar>
-      </IonHeader>
+      <TopNavBA title="Registration" route="/main" />
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleRegister)}>
