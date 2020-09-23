@@ -7,6 +7,7 @@ import '../css/Global.css';
 import '../css/Home.css';
 
 import TopNavMenu from '../components/TopNavMenu';
+import Menu from '../components/Menu';
 
 const Home: React.FC = () => {
   const handleLogout = async () => {
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
       <TopNavMenu title="Home" />
 
       <IonContent fullscreen>
+        <Menu />
         <IonGrid>
           <IonRow class="ion-justify-content-center">
             <IonButton type="submit" onClick={ handleLogout }>LOGOUT</IonButton>

@@ -6,7 +6,7 @@ import { arrowBackOutline } from 'ionicons/icons';
 
 import Menu from '../components/Menu';
 
-const TopNavMenu: React.FC<{
+const TopNavBAMenu: React.FC<{
     title: string; 
     route: any;
 }> = props => {
@@ -22,7 +22,7 @@ const TopNavMenu: React.FC<{
 
                 <IonButtons slot="primary">
                     <IonMenuToggle>
-                        <IonMenuButton className="menuBtn" auto-hide="false" menu="menu"></IonMenuButton>
+                        <IonMenuButton className="menuBtn" auto-hide="false" menu="menuID"></IonMenuButton>
                     </IonMenuToggle>
                 </IonButtons>                
 
@@ -32,4 +32,4 @@ const TopNavMenu: React.FC<{
     );
 }
 
-export default TopNavMenu;
+export default TopNavBAMenu;
