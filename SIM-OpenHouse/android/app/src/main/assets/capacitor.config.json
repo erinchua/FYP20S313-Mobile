@@ -4,6 +4,10 @@
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
+  "server": {
+    "url": "http://192.168.1.40:8100",
+    "cleartext": true
+  },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
