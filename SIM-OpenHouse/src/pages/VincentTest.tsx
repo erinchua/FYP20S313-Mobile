@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
 import "../css/Home.css";
 import { auth, db } from "../firebase";
+import CreateClubAndCouncil from "../components/CreateClubAndCouncil";
+
 //<script src="../Resource/qrcode.min.js"></script>;
 
 const VincentTest: React.FC = () => {
@@ -27,6 +29,7 @@ const VincentTest: React.FC = () => {
       contact.data();
     })
   ); */
+
   useEffect(() => {
     db.collection("ContactInfo")
       .get()
@@ -79,6 +82,7 @@ const VincentTest: React.FC = () => {
             );
           })}
         </ul>
+        <CreateClubAndCouncil />
       </IonContent>
     </IonPage>
   );
