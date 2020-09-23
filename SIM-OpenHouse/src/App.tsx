@@ -10,6 +10,7 @@ import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Test from "./pages/Test";
+import AppU from "./AppU";
 import VincentTest from "./pages/VincentTest";
 
 import { AuthContext, useAuthInit } from "./auth";
@@ -41,23 +42,23 @@ const App: React.FC = () => {
   return (
     <IonApp>
       {/* <AuthContext.Provider value={ auth }> ignore this error */}
-        <IonReactRouter>
-          <IonRouterOutlet>
-            <Route path="/main" component={Main} exact={true} />
-            <Route path="/registration" component={Registration} exact={true} />
-            <Route path="/login" component={Login} exact={true} />
-            <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
-            <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
-            <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
-            <Route path="/home" render={() => <Redirect to="/u/home"/>} />
-            <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain"/>} />
-            <Route path="/openHouseMain/guidedTours-day1" render={() => <Redirect to="/u/openHouseMain/guidedTours-day1"/>} />
-            <Route path="/vincenttest" component={VincentTest} exact={true} />
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route path="/main" component={Main} exact={true} />
+          <Route path="/registration" component={Registration} exact={true} />
+          <Route path="/login" component={Login} exact={true} />
+          <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
+          <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
+          <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
+          <Route path="/home" render={() => <Redirect to="/u/home" />} />
+          <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />} />
+          <Route path="/openHouseMain/guidedTours-day1" render={() => <Redirect to="/u/openHouseMain/guidedTours-day1" />} />
+          <Route path="/vincenttest" component={VincentTest} exact={true} />
 
-            <Route path="/u" component={AppU} exact={false} />
-            <Route exact path="/" render={() => <Redirect to="/main" />} />
-          </IonRouterOutlet>
-        </IonReactRouter>
+          <Route path="/u" component={AppU} exact={false} />
+          <Route exact path="/" render={() => <Redirect to="/main" />} />
+        </IonRouterOutlet>
+      </IonReactRouter>
       {/* </AuthContext.Provider> */}
     </IonApp>
   );
