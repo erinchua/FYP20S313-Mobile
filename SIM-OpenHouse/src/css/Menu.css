@@ -1,0 +1,27 @@
+.menuContent {
+    --background: #424242;
+}
+
+.menuList {
+    background: transparent;
+}
+
+.menuItem {
+    color: #c8c8c8;
+    --background: transparent;
+}
+
+.menuIcon {
+    color: #c8c8c8;
+    margin-left: 5%;
+}
+
+.menuLabel {
+    margin-left: 5%;
+}
+
+#divider {
+    min-height: 1px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}

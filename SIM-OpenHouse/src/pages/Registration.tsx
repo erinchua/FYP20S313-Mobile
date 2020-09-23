@@ -10,6 +10,8 @@ import { arrowBackOutline } from "ionicons/icons";
 import "../css/Global.css";
 import "../css/Registration.css";
 
+import TopNavBA from "../components/TopNavBA";
+
 function formatDate(isoDate: any) {
   return new Date(isoDate).toLocaleDateString('en-UK', {
     day: 'numeric', month: 'long', year: 'numeric'
@@ -64,13 +66,7 @@ const Registration: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar className="topNav">
-          <IonButtons slot="start">
-            <IonButton routerLink="/main" onClick={() => { reset(); }}>
-              <IonIcon slot="icon-only" icon={arrowBackOutline} className="back_button" />
-            </IonButton>
-          </IonButtons>
-
-          <IonTitle className="title">Registration</IonTitle>
+          <TopNavBA title="Registration" route="/main" />
         </IonToolbar>
       </IonHeader>
 

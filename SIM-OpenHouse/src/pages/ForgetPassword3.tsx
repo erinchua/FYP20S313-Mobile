@@ -82,13 +82,7 @@ const ForgetPassword3: React.FC = () => {
             <IonPage>
                 <IonHeader>
                     <IonToolbar className="topNav">
-                        <IonButtons slot="start">
-                            <IonButton routerLink="/main" onClick={() => {reset()}}>
-                                <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
-                            </IonButton>
-                        </IonButtons>
-
-                        <TopNavBA title="Reset Password"/>
+                        <TopNavBA title="Reset Password" route="/main" />
                     </IonToolbar>
                 </IonHeader>
 

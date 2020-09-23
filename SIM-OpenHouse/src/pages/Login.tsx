@@ -11,6 +11,8 @@ import firebase from 'firebase';
 import '../css/Login.css';
 import '../css/Global.css';
 
+import TopNavBA from '../components/TopNavBA';
+
 const Login: React.FC = () => {
   const { loggedIn } = useAuth();
 
@@ -49,13 +51,7 @@ const Login: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar className="topNav">
-          <IonButtons slot="start">
-            <IonButton routerLink="/main" onClick={() => {reset()}}>
-              <IonIcon slot="icon-only" icon={arrowBackOutline} className="back_button" />
-            </IonButton>
-          </IonButtons>
-
-          <IonTitle className="title">Login</IonTitle>
+          <TopNavBA title="Login" route="/main" />
         </IonToolbar>
       </IonHeader>
 

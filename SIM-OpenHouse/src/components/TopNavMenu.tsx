@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton} from '@ionic/react';
+import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton, IonMenuToggle} from '@ionic/react';
 import '../css/TopNav.css';
 import '../css/Global.css';
 
@@ -9,7 +9,9 @@ const TopNavMenu: React.FC<{title: string}> = props => {
         <IonHeader>
             <IonToolbar className="topNav">
                 <IonButtons slot="primary">
-                    <IonMenuButton className="menuBtn" auto-hide="false"></IonMenuButton>
+                    <IonMenuToggle>
+                        <IonMenuButton className="menuBtn" auto-hide="false" menu="menu"></IonMenuButton>
+                    </IonMenuToggle>
                 </IonButtons>
 
                 <IonTitle className="title">{props.title}</IonTitle>

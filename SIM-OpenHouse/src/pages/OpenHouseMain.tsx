@@ -8,6 +8,8 @@ import gif from '../img/openHouseProgrammes/Open House Programmes.gif';
 import { arrowBackOutline } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faMapPin, faStar } from '@fortawesome/free-solid-svg-icons';
+import TopNavBAMenu from '../components/TopNavBAMenu';
+import Menu from '../components/Menu';
 
 const OpenHouseMain: React.FC = () => {
 
@@ -15,11 +17,17 @@ const OpenHouseMain: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar className="topNav">
-                    <TopNavBAMenu title="Open House Programmes" route="/u/home"/>
+                    <IonButtons slot="start">
+                        <IonButton routerLink="/u/home">
+                            <IonIcon slot="icon-only" icon={arrowBackOutline} className="back_button" />
+                        </IonButton>
+                    </IonButtons>
+                    <TopNavBAMenu title="Open House Programmes"/>
                 </IonToolbar>
             </IonHeader>
-    
+
             <IonContent fullscreen>
+                <Menu />
                 <IonImg src={ gif }></IonImg>
                 <IonGrid>
                     <IonRow className="ion-justify-content-around" id="openHouseMainRow">
