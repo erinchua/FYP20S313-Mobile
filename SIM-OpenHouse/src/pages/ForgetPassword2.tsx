@@ -33,15 +33,9 @@ const ForgetPassword2: React.FC = () => {
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar className="topNav">
-            <IonButtons slot="start">
-                <IonButton routerLink="/main" onClick={() => {reset()}}>
-                    <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
-                </IonButton>
-            </IonButtons>
-
-            <TopNavBA title="Forget Password?"/>
-          </IonToolbar>
+            <IonToolbar className="topNav">
+                <TopNavBA title="Forget Password?" route="/main" />
+            </IonToolbar>
         </IonHeader>
 
         <IonContent fullscreen style={{display: "flex"}}>

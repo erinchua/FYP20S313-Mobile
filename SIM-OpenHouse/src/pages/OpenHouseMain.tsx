@@ -3,23 +3,21 @@ import React from 'react';
 
 import "../css/Global.css";
 import "../css/OpenHouseMain.css";
-import TopNavBAMenu from '../components/TopNavBAMenu';
 import gif from '../img/openHouseProgrammes/Open House Programmes.gif';
 import { arrowBackOutline } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faMapPin, faStar } from '@fortawesome/free-solid-svg-icons';
+import TopNavBAMenu from '../components/TopNavBAMenu';
+import Menu from '../components/Menu';
 
 const OpenHouseMain: React.FC = () => {
 
     return (
         <IonPage>
-            <IonHeader>
-                <IonToolbar className="topNav">
-                    <TopNavBAMenu title="Open House Programmes" route="/u/home"/>
-                </IonToolbar>
-            </IonHeader>
-    
+            <TopNavBAMenu title="Open House Programmes" route="/u/home"/>
+
             <IonContent fullscreen>
+                <Menu />
                 <IonImg src={ gif }></IonImg>
                 <IonGrid>
                     <IonRow className="ion-justify-content-around" id="openHouseMainRow">
