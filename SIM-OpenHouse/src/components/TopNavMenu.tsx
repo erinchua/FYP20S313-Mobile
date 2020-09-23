@@ -9,8 +9,8 @@ const TopNavMenu: React.FC<{title: string}> = props => {
         <IonHeader>
             <IonToolbar className="topNav">
                 <IonButtons slot="primary">
-                    <IonMenuToggle>
-                        <IonMenuButton className="menuBtn" auto-hide="false" menu="menu"></IonMenuButton>
+                    <IonMenuToggle autoHide={true}>
+                        <IonMenuButton className="menuBtn" auto-hide="false" menu="menuID"></IonMenuButton>
                     </IonMenuToggle>
                 </IonButtons>
 
