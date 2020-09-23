@@ -24,19 +24,24 @@ const Login: React.FC = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const handleLogin = async (data: any) => {
-    console.log(data);
+    //console.log(data);
     try {
       setStatus({ loading: true, error: false });
 
-      auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function() {
+      await auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
         return auth.signInWithEmailAndPassword(data.email, data.password);
+      }).then(user => {
+        return user.user?.getIdToken();
+      }).then((idToken: any) => {
+        //console.log(idToken);
+        sessionStorage.setItem('token:', idToken);
       });
 
-      await auth.signInWithEmailAndPassword(data.email, data.password).then((user) => {
+      /* await auth.signInWithEmailAndPassword(data.email, data.password).then((user) => {
         return user.user?.getIdToken().then((idToken) => {
           sessionStorage.setItem('token: ', idToken);
         });
-      });
+      }); */
       setStatus({ loading: false, error: false });
     } catch(e) {
       setStatus({ loading: false, error: true });
