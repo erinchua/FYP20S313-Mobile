@@ -3,6 +3,8 @@ import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMen
 import '../css/TopNav.css';
 import '../css/Global.css';
 
+import Menu from '../components/Menu';
+
 const TopNavMenu: React.FC<{title: string}> = props => {
 
     return(

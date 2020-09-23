@@ -40,7 +40,7 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      {/*<AuthContext.Provider value={ auth }>  ignore this error */}
+      <AuthContext.Provider value={ auth }>  {/*ignore this error */}
         <IonReactRouter>
           <IonRouterOutlet>
             <Route path="/main" component={Main} exact={true} />
@@ -56,7 +56,7 @@ const App: React.FC = () => {
             <Route exact path="/" render={() => <Redirect to="/main" />} />
           </IonRouterOutlet>
         </IonReactRouter>
-      {/*</AuthContext.Provider>*/}
+      </AuthContext.Provider>
     </IonApp>
   )
 };

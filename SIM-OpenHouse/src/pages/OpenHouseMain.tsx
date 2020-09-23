@@ -14,7 +14,7 @@ const OpenHouseMain: React.FC = () => {
 
     return (
         <IonPage>
-            <TopNavBAMenu title="Open House Programmes" route="/u/home"/>
+            <TopNavBAMenu title="Open House Programmes" route="/u/home" backarrow={ true } hamburger = { true }/>
 
             <IonContent fullscreen>
                 <Menu />
