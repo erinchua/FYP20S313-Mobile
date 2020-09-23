@@ -10,6 +10,14 @@ import { arrowBackOutline } from "ionicons/icons";
 import "../css/Global.css";
 import "../css/Registration.css";
 
+import TopNavBA from "../components/TopNavBA";
+
+function formatDate(isoDate: any) {
+  return new Date(isoDate).toLocaleDateString('en-UK', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+};
+
 const Registration: React.FC = () => {
   const { register, handleSubmit, errors, watch, reset } = useForm();
 
@@ -29,7 +37,7 @@ const Registration: React.FC = () => {
       lastName: data.lastName,
       email: data.email,
       contactNo: data.contactNo,
-      dob: data.dob,
+      dob: formatDate(data.dob),
       highestQualification: data.highestQualification,
       nationality: data.nationality,
       points: 0,
@@ -52,21 +60,11 @@ const Registration: React.FC = () => {
 
   console.log(loggedIn);
 
-  if (loggedIn) return <Redirect to="/home" />;
+  if (loggedIn) return <Redirect to="/u/home" />;
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar id="toolBar">
-          <IonButtons slot="start">
-            <IonButton routerLink="/main" onClick={() => { reset(); }}>
-              <IonIcon slot="icon-only" icon={arrowBackOutline} id="backBtn" />
-            </IonButton>
-          </IonButtons>
-
-          <IonTitle id="title">Registration</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <TopNavBA title="Registration" route="/main" />
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleRegister)}>

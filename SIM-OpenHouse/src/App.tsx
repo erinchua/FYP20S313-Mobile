@@ -40,9 +40,7 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <AuthContext.Provider value={auth}>
-        {" "}
-        {/* ignore this error */}
+      {/*<AuthContext.Provider value={ auth }>  ignore this error */}
         <IonReactRouter>
           <IonRouterOutlet>
             <Route path="/main" component={Main} exact={true} />
@@ -51,14 +49,16 @@ const App: React.FC = () => {
             <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
-            <Route path="/home" component={Home} exact={true} />
+            <Route path="/home" render={() => <Redirect to="/u/home"/>} />
+            <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain"/>} />
+            <Route path="/openHouseMain/guidedTours-day1" render={() => <Redirect to="/u/openHouseMain/guidedTours-day1"/>} />
             <Route path="/vincenttest" component={VincentTest} exact={true} />
 
-            <Route path="/u" exact={false} />
+            <Route path="/u" component={AppU} exact={false} />
             <Route exact path="/" render={() => <Redirect to="/main" />} />
           </IonRouterOutlet>
         </IonReactRouter>
-      </AuthContext.Provider>
+      {/*</AuthContext.Provider>*/}
     </IonApp>
   );
 };

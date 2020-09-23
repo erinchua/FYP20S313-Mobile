@@ -11,14 +11,18 @@ import { IonContent,
     IonButton, 
     IonItem, 
     IonInput } from '@ionic/react';
-import React from 'react';
-import '../css/ForgetPassword1.css';
-import '../css/Global.css';
-import { arrowBackOutline } from 'ionicons/icons';
+import React, { useState } from 'react';
 import { useForm, Controller } from "react-hook-form";
 import emailjs from 'emailjs-com';
+import {useHistory, withRouter} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
+import { arrowBackOutline } from 'ionicons/icons';
+
+import '../css/ForgetPassword1.css';
+import '../css/Global.css';
+
+import TopNavBA from '../components/TopNavBA';
 
 
 const ForgetPassword1: React.FC = () => {
@@ -32,17 +36,9 @@ const ForgetPassword1: React.FC = () => {
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar className="topNav">
-            <IonButtons slot="start">
-                <IonButton routerLink="/main" onClick={() => {reset()}}>
-                    <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
-                </IonButton>
-            </IonButtons>
-
-            <IonTitle className="title">
-                Forget Password?  
-            </IonTitle>
-          </IonToolbar>
+            <IonToolbar className="topNav">
+                <TopNavBA title="Forget Password?" route="/main" />
+            </IonToolbar>
         </IonHeader>
 
         <IonContent fullscreen style={{display: "flex"}}>
@@ -91,4 +87,4 @@ const ForgetPassword1: React.FC = () => {
     );
   };
   
-  export default ForgetPassword1;
+  export default withRouter(ForgetPassword1);

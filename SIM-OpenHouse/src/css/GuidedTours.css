@@ -1,0 +1,25 @@
+#guidedTours-schedule-day1 {
+    --background: #5f777E;
+    text-align: center;
+}
+
+#guidedTours-schedule-day1-text {
+    font-size: 80%;
+    font-weight: bold;
+    color: white;
+}
+
+#guidedTours-schedule-day2 {
+    --background: #65979E;
+    text-align: center;
+}
+
+#guidedTours-schedule-day2-text {
+    font-size: 80%;
+    font-weight: bold;
+    color: white;
+}
+
+#guidedTours-ionRowCol{
+    padding: 0;
+}

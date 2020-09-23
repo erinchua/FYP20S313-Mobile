@@ -1,0 +1,10 @@
+#guidedTours-schedule {
+    --background: #A9DBD9;
+}
+
+#guidedTours-schedule-text {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: #424242;
+}
