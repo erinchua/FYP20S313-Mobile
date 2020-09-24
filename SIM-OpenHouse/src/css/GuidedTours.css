@@ -1,23 +1,23 @@
-#guidedTours-schedule-day1 {
-    --background: #5f777E;
-    text-align: center;
+#guidedTours-schedule {
+    --background: #A9DBD9;
 }
 
-#guidedTours-schedule-day1-text {
-    font-size: 80%;
+#guidedTours-schedule-text {
+    font-size: 100%;
     font-weight: bold;
-    color: white;
+    text-align: center;
+    color: #424242;
 }
 
-#guidedTours-schedule-day2 {
+.guidedTours-heading {
     --background: #65979E;
     text-align: center;
-}
-
-#guidedTours-schedule-day2-text {
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    --color: white;
+    --color-checked: white;
     font-size: 80%;
     font-weight: bold;
-    color: white;
 }
 
 #guidedTours-ionRowCol{

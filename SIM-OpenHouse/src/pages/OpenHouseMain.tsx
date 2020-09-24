@@ -32,7 +32,7 @@ const OpenHouseMain: React.FC = () => {
                             </IonRouterLink>
                         </IonCol>
                         <IonCol size="3">
-                            <IonRouterLink routerLink="/u/openHouseMain/guidedTours-day1" routerDirection="forward" color="dark">
+                            <IonRouterLink routerLink="/u/openHouseMain/guidedTours" routerDirection="forward" color="dark">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon icon={faMapPin} size="3x"/>
                                 </IonRow>
