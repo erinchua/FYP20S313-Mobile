@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonGrid, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
 import React from 'react';
 
 import { auth } from '../firebase';
@@ -9,12 +9,10 @@ import gif from '../img/home/SIM Open House 2020 Banner.gif';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle,
-  faPhotoVideo, faBookOpen, faHands, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+  faPhotoVideo, faBookOpen, faHands, faBell } from '@fortawesome/free-solid-svg-icons';
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
 
-import Menu from '../components/Menu';
 import TopNav from '../components/TopNav'
-import { Redirect } from 'react-router';
 
 const Home: React.FC = () => {
 
@@ -28,8 +26,6 @@ const Home: React.FC = () => {
       <TopNav title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
       
       <IonContent fullscreen>
-        {/* <Menu /> */}
-
         <IonGrid id="homeGrid">
           <IonRow>
             <IonImg src={ gif }></IonImg>
@@ -181,9 +177,9 @@ const Home: React.FC = () => {
             <IonCol size-sizeSm="4" className="mainCol"></IonCol>
           </IonRow>
 
-          <IonRow class="ion-justify-content-center">
+          {/* <IonRow class="ion-justify-content-center">
             <IonButton type="submit" onClick={ handleLogout }>LOGOUT</IonButton>
-          </IonRow>
+          </IonRow> */}
 
         </IonGrid>
       </IonContent>

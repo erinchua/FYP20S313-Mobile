@@ -17,7 +17,6 @@ const OpenHouseMain: React.FC = () => {
             <TopNav title="Open House Programmes" route="/u/home" backarrow={ true } hamburger = { true }/>
 
             <IonContent fullscreen>
-                <Menu />
                 <IonImg src={ gif }></IonImg>
                 <IonGrid>
                     <IonRow className="ion-justify-content-around" id="openHouseMainRow">
