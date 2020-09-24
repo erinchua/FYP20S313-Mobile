@@ -52,7 +52,8 @@ const App: React.FC = () => {
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
           <Route path="/home" render={() => <Redirect to="/u/home" />} />
           <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />} />
-          <Route path="/openHouseMain/guidedTours-day1" render={() => <Redirect to="/u/openHouseMain/guidedTours-day1" />} />
+          <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
+          <Route path="/vincenttest" component={VincentTest} exact={true} />
 
           <Route path="/u" component={AppU} exact={false} />
           <Route exact path="/" render={() => <Redirect to="/main" />} />
