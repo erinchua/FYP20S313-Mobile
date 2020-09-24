@@ -11,13 +11,16 @@
 
 .guidedTours-heading {
     --background: #65979E;
-    text-align: center;
     --indicator-color: transparent;
     --background-checked: #5f777E;
+    --indicator-color: transparent;
+    text-align: center;
     --color: white;
     --color-checked: white;
-    font-size: 80%;
+    font-size: 70%;
     font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
 }
 
 #guidedTours-ionRowCol{

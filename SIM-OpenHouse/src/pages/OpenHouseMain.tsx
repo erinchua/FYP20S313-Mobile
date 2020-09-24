@@ -17,42 +17,46 @@ const OpenHouseMain: React.FC = () => {
             <TopNav title="Open House Programmes" route="/u/home" backarrow={ true } hamburger = { true }/>
 
             <IonContent fullscreen>
-                <IonImg src={ gif }></IonImg>
-                <IonGrid>
-                    <IonRow className="ion-justify-content-around" id="openHouseMainRow">
-                        <IonCol size="3"> 
-                            <IonRouterLink routerLink="/u/openHouseMain/programmeTalks" color="dark">
+                {/* <Menu /> */}
+                <IonGrid id="openHouseMain-grid">
+                    <IonRow>
+                        <IonImg src={ gif }></IonImg>
+                    </IonRow>
+
+                    <IonRow className="ion-justify-content-around openHouseMainRow">
+                        <IonCol size-sizeSm="4" className="openHouseMainCol"> 
+                            <IonRouterLink routerLink="/u/openHouseMain/programmeTalks">
                                 <IonRow className="ion-justify-content-center">
-                                    <FontAwesomeIcon icon={faChalkboardTeacher} size="3x"/>
+                                    <FontAwesomeIcon className="openHouseMain-icons" icon={faChalkboardTeacher} size="2x"/>
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
                                     <IonText id="openHouseMainText">Programme Talks</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol size="3">
-                            <IonRouterLink routerLink="/u/openHouseMain/guidedTours" routerDirection="forward" color="dark">
+                        <IonCol size-sizeSm="4" className="openHouseMainCol">
+                            <IonRouterLink routerLink="/u/openHouseMain/guidedTours" routerDirection="forward">
                                 <IonRow className="ion-justify-content-center">
-                                    <FontAwesomeIcon icon={faMapPin} size="3x"/>
+                                    <FontAwesomeIcon className="openHouseMain-icons" icon={faMapPin} size="2x"/>
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
                                     <IonText id="openHouseMainText">Guided Tours</IonText>
                                 </IonRow> 
-                            </IonRouterLink>   
+                            </IonRouterLink>  
                         </IonCol>
                     </IonRow>
-                    <IonRow className="ion-justify-content-around" id="openHouseMainRow">
-                        <IonCol size="3"> 
-                            <IonRouterLink routerLink="/u/openHouseMain/openHouseActivities" color="dark">
+                    <IonRow className="ion-justify-content-around openHouseMainRow">
+                        <IonCol size-sizeSm="4" className="openHouseMainCol"> 
+                            <IonRouterLink routerLink="/u/openHouseMain/openHouseActivities">
                                 <IonRow className="ion-justify-content-center">
-                                    <FontAwesomeIcon icon={faStar} size="3x"/>
+                                    <FontAwesomeIcon className="openHouseMain-icons" icon={faStar} size="2x"/>
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
                                     <IonText id="openHouseMainText">Open House Activities</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol size="3"></IonCol>
+                        <IonCol size-sizeSm="4" className="openHouseMainCol"></IonCol>
                     </IonRow>
                 </IonGrid>
             </IonContent>
