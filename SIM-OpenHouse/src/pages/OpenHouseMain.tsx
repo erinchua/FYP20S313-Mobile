@@ -7,14 +7,14 @@ import gif from '../img/openHouseProgrammes/Open House Programmes.gif';
 import { arrowBackOutline } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faMapPin, faStar } from '@fortawesome/free-solid-svg-icons';
-import TopNavBAMenu from '../components/TopNavBAMenu';
+import TopNav from '../components/TopNav';
 import Menu from '../components/Menu';
 
 const OpenHouseMain: React.FC = () => {
 
     return (
         <IonPage>
-            <TopNavBAMenu title="Open House Programmes" route="/u/home" backarrow={ true } hamburger = { true }/>
+            <TopNav title="Open House Programmes" route="/u/home" backarrow={ true } hamburger = { true }/>
 
             <IonContent fullscreen>
                 <Menu />

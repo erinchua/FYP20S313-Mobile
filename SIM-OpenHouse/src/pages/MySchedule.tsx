@@ -1,94 +1,20 @@
-import { IonContent, 
-    IonHeader, 
-    IonPage, 
-    IonTitle, 
-    IonToolbar, 
-    IonGrid, 
-    IonRow, 
-    IonCol, 
-    IonIcon, 
-    IonButtons, 
-    IonButton, 
-    IonItem, 
-    IonInput, 
-    IonList, 
-    IonAlert, IonMenu, IonSplitPane, IonItemDivider, IonLabel, IonMenuButton } from '@ionic/react';
-import React, {useRef, useState} from 'react';
-import '../css/Global.css';
-import '../css/Test.css';
-import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
-import { useForm, Controller } from "react-hook-form";
-import TestControl from '../components/TestControl';
-import TestCom from '../components/TestCom';
-import ReactCodeInput from 'react-verification-code-input';
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonItemDivider, IonLabel, IonList, IonMenu, IonMenuButton, IonPage, IonRouterLink, IonRow, IonSplitPane, IonText, IonToolbar } from '@ionic/react';
+import React from 'react';
+
+import "../css/Global.css";
+import "../css/MySchedule.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
 import { faCalendar, faCalendarAlt, faComments, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faHome, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TopNavBAMenu from '../components/TopNavBAMenu';
 
-{/*import { useHistory } from 'react-router-dom';*/}
- 
+import TopNav from '../components/TopNav';
+import Menu from '../components/Menu';
 
-
-const Test: React.FC = () => {
-    const { register, handleSubmit, errors, watch, reset, getValues } = useForm();
-
-    const onSubmit = (data: any) => {
-        console.log("Submitted");
-        console.log(data);
-    };
-
-    const newPassword = useRef({});
-    newPassword.current = watch("newPassword", "");
-
-    const newPasswordRef = useRef<HTMLIonInputElement>(null);
-    const confirmNewPasswordRef = useRef<HTMLIonInputElement>(null);
-
-    const validatePassword = () => {};
-    const [showAlert, setShowAlert] = useState(false);
-    const [showAlert2, setShowAlert2] = useState(false);
-
-    const [test1, setTest1] = useState<string>();
-    const [test2, setTest2] = useState<string>();
-    
-    const display = () => {
-        const values1 = getValues("input1");
-        const values2 = getValues("input2");
-        if (values1 !== "" || values2 !== "") {
-            setShowAlert(true);
-            console.log(values1, values2);
-            setTest1(values1);
-            setTest2(values2);
-            return;
-        }    
-        setShowAlert2(true);
-        console.log("Fields are empty!");
-    };
+const MySchedule: React.FC = () => {
 
     return (
-        <React.Fragment>
-            <IonAlert
-                isOpen={showAlert}
-                onDidDismiss={() => setShowAlert(false)}
-                cssClass='alert-css'
-                mode='md'
-                header={'Have Value'}
-                subHeader={'Subtitle'}
-                message={'This is an alert message.'}
-                buttons={['Close']}
-             ></IonAlert>
-
-             <IonAlert
-                isOpen={showAlert2}
-                onDidDismiss={() => setShowAlert2(false)}
-                cssClass='my-custom-class'
-                header={'No Value'}
-                message={'This is an alert message.'}
-                buttons={['Okay']}
-             ></IonAlert>
-
-            <IonContent fullscreen>
+        <IonContent fullscreen>
                 <IonSplitPane contentId="main">
                     {/*--  the side menu  --*/}
                     <IonMenu contentId="main" side="end" menuId="menuID">
@@ -167,58 +93,13 @@ const Test: React.FC = () => {
 
                     {/*-- the main content --*/}
                     <IonPage id="main">
-                        <TopNavBAMenu title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+                        <TopNav title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
                         <IonMenuButton menu="menuID"></IonMenuButton>
                         <h2>Content here</h2>
                     </IonPage>
                 </IonSplitPane>
             </IonContent>
-             
-
-            {/* <IonPage>
-                <IonHeader>
-                    <IonToolbar id="topBar">
-                    <IonButtons slot="start">
-                        <IonButton routerLink="/main" onClick={() => {reset()}}>
-                            <IonIcon id="back_button" slot="icon-only" icon={arrowBackOutline} />
-                        </IonButton>
-                    </IonButtons>
-        
-                    <IonTitle id="title">
-                        Reset Password 
-                    </IonTitle>
-                    </IonToolbar>
-                </IonHeader>
-        
-                {/* Screen Content*/}
-                {/*<IonContent fullscreen style={{display: "flex"}}>
-                    <IonGrid>
-                        <form>
-                            <input name="input1" ref={register} />
-                            <input name="input2" ref={register} />
-
-                            <button
-                                type="button"
-                                onClick={display}>
-                                Get Values
-                            </button>
-
-                            {display && (
-                                <>
-                                    <div>
-                                        <h1>Value 1: {test1}</h1>
-                                        <h1>Value 2: {test2}</h1>
-                                    </div>
-                                </>
-                            )}
-                            
-                        </form>
-
-                    </IonGrid>
-                </IonContent>
-            </IonPage> */}
-        </React.Fragment>
     );
-  }
+};
 
-export default Test;
+export default MySchedule;

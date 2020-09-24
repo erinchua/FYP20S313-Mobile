@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IonMenu,
     IonContent, 
     IonItem, 
@@ -12,8 +12,18 @@ import { faHome, faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedA
     faPhotoVideo, faBookOpen, faHands, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
+import { auth } from '../firebase';
+import { NavContext } from '@ionic/react';
 
 const Menu: React.FC = props => {
+
+    const { navigate } = useContext(NavContext);
+    
+    const handleLogout = async () => {
+        await auth.signOut();
+        sessionStorage.clear();
+        navigate('/main');
+    };
 
     return(
         <IonMenu side="end" contentId="menuContent" menuId="first" id="menuID">
@@ -82,7 +92,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faQrcode} />
                         <IonLabel className="menuLabel">QR Scanner</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" onClick={ handleLogout }>
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faSignOutAlt} />
                         <IonLabel className="menuLabel">Logout</IonLabel>
                     </IonItem>

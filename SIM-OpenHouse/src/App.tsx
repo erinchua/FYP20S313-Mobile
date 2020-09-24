@@ -41,15 +41,15 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <AuthContext.Provider value={ auth }> {/* ignore this error */}
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route path="/main" component={Main} exact={true} />
-          <Route path="/registration" component={Registration} exact={true} />
-          <Route path="/login" component={Login} exact={true} />
-          <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
-          <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
-          <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
+      <AuthContext.Provider value={ auth! }>  {/*ignore this error */}
+        <IonReactRouter>
+          <IonRouterOutlet>
+            <Route path="/main" component={Main} exact={true} />
+            <Route path="/registration" component={Registration} exact={true} />
+            <Route path="/login" component={Login} exact={true} />
+            <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
+            <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
+            <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
           <Route path="/home" render={() => <Redirect to="/u/home" />} />
           <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />} />
           <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
