@@ -42,16 +42,16 @@ const TopNav: React.FC<{
                 <IonToolbar className="topNav">
                     { props.backarrow ?
                     <IonButtons slot="start">
-                        <IonMenuToggle>
-                            <IonButton routerLink={props.route}>
-                                <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
-                            </IonButton>
-                        </IonMenuToggle>
+                        <IonButton routerLink={props.route}>
+                            <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
+                        </IonButton>
                     </IonButtons> : ''
                     }
                     { props.hamburger ?
                     <IonButtons slot="primary">
-                        <IonMenuButton className="menuBtn" auto-hide="false" menu="first"></IonMenuButton>
+                        <IonMenuToggle>
+                            <IonMenuButton className="menuBtn" auto-hide="false" menu="first"></IonMenuButton>
+                        </IonMenuToggle>
                     </IonButtons> : ''    
                     }            
 
