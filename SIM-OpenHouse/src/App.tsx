@@ -34,16 +34,21 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 
+import DocInserter from "./dbfiller";
+
 const App: React.FC = () => {
   const { loading, auth } = useAuthInit();
 
   if (loading) return <IonLoading isOpen />;
+
+  console.log(auth);
 
   return (
     <IonApp>
       <AuthContext.Provider value={ auth! }>  {/*ignore this error */}
         <IonReactRouter>
           <IonRouterOutlet>
+            <Route path="/firestore" component={DocInserter} exact={true} />
             <Route path="/main" component={Main} exact={true} />
             <Route path="/registration" component={Registration} exact={true} />
             <Route path="/login" component={Login} exact={true} />
