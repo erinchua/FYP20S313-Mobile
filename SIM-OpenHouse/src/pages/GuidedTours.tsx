@@ -3,8 +3,8 @@ import React from 'react';
 
 import "../css/Global.css";
 import "../css/GuidedTours.css";
-import TopNavBAMenu from '../components/TopNavBAMenu';
 import GuidedTourNav from '../components/GuidedTourNav';
+import Menu from '../components/Menu';
 
 const GuidedTours: React.FC = () => {
 
@@ -15,6 +15,7 @@ const GuidedTours: React.FC = () => {
             </IonHeader>
     
             <IonContent fullscreen>
+                <Menu/> 
                 <IonGrid id="guidedTours-ionRowCol">
                     <IonRow className="ion-justify-content-center" id="guidedTours-ionRowCol">
                         <IonCol size="6" id="guidedTours-ionRowCol">
@@ -31,6 +32,9 @@ const GuidedTours: React.FC = () => {
                                 </IonToolbar>
                             </IonRouterLink>
                         </IonCol>
+                    </IonRow>
+                    <IonRow>
+                        
                     </IonRow>
                 </IonGrid>
             </IonContent>

@@ -17,6 +17,7 @@ import Menu from '../components/Menu';
 import TopNavBAMenu from '../components/TopNavBAMenu'
 
 const Home: React.FC = () => {
+
   const handleLogout = async () => {
     await auth.signOut();
     sessionStorage.clear();
