@@ -22,7 +22,7 @@ import { arrowBackOutline } from 'ionicons/icons';
 import '../css/ForgetPassword1.css';
 import '../css/Global.css';
 
-import TopNavBA from '../components/TopNavBA';
+import TopNav from '../components/TopNav';
 
 
 const ForgetPassword1: React.FC = () => {
@@ -35,11 +35,7 @@ const ForgetPassword1: React.FC = () => {
 
     return (
       <IonPage>
-        <IonHeader>
-            <IonToolbar className="topNav">
-                <TopNavBA title="Forget Password?" route="/main" />
-            </IonToolbar>
-        </IonHeader>
+        <TopNav title="Forget Password?" route="/main" backarrow={ true } hamburger = { false }/>
 
         <IonContent fullscreen style={{display: "flex"}}>
             <IonGrid>

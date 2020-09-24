@@ -21,7 +21,7 @@ import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
 import '../css/ForgetPassword3.css';
 import '../css/Global.css';
 
-import TopNavBA from '../components/TopNavBA';
+import TopNav from '../components/TopNav';
 
 
 const ForgetPassword3: React.FC = () => {
@@ -80,11 +80,7 @@ const ForgetPassword3: React.FC = () => {
              ></IonAlert>
 
             <IonPage>
-                <IonHeader>
-                    <IonToolbar className="topNav">
-                        <TopNavBA title="Reset Password" route="/main" />
-                    </IonToolbar>
-                </IonHeader>
+                <TopNav title="Reset Password" route="/main" backarrow={ true } hamburger = { false }/>
 
                 <IonContent fullscreen style={{display: "flex"}}>
                     <IonGrid>

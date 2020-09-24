@@ -12,9 +12,9 @@ import { faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faIn
   faPhotoVideo, faBookOpen, faHands, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
 
-import TopNavMenu from '../components/TopNavMenu';
 import Menu from '../components/Menu';
-import TopNavBAMenu from '../components/TopNavBAMenu'
+import TopNav from '../components/TopNav'
+import { Redirect } from 'react-router';
 
 const Home: React.FC = () => {
 
@@ -25,10 +25,10 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNavBAMenu title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+      <TopNav title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
       
       <IonContent fullscreen>
-        <Menu />
+        {/* <Menu /> */}
 
         <IonGrid id="homeGrid">
           <IonRow>
@@ -181,9 +181,9 @@ const Home: React.FC = () => {
             <IonCol size-sizeSm="4" className="mainCol"></IonCol>
           </IonRow>
 
-          {/* <IonRow class="ion-justify-content-center">
+          <IonRow class="ion-justify-content-center">
             <IonButton type="submit" onClick={ handleLogout }>LOGOUT</IonButton>
-          </IonRow> */}
+          </IonRow>
 
         </IonGrid>
       </IonContent>

@@ -9,7 +9,7 @@ import firebase from 'firebase';
 import '../css/Login.css';
 import '../css/Global.css';
 
-import TopNavBA from '../components/TopNavBA';
+import TopNav from '../components/TopNav';
 
 const Login: React.FC = () => {
   const { loggedIn } = useAuth();
@@ -53,7 +53,7 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNavBA title="Login" route="/main" />
+      <TopNav title="Login" route="/main" backarrow={ true } hamburger = { false }/>
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleLogin)}>
