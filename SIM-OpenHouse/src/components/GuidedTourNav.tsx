@@ -8,7 +8,7 @@ const GuidedTourNav: React.FC = () => {
 
     return(
         <>
-        <TopNavBAMenu title="Guided Tours" route="/u/openHouseMain"/>
+        <TopNavBAMenu title="Guided Tours" route="/u/openHouseMain" backarrow={ true } hamburger={ true } />
         <IonToolbar id="guidedTours-schedule">
             <IonTitle id="guidedTours-schedule-text">Schedule</IonTitle>
         </IonToolbar>
