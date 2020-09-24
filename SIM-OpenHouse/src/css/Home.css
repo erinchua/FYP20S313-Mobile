@@ -1,0 +1,25 @@
+#homeGrid {
+    background: #efefef;
+    padding: 0;
+    min-height: 100%;
+}
+
+.mainRow {
+    padding-top: 3%;
+}
+
+.mainCol {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.homeIcons {
+    color: #434343;
+} 
+
+.homeText {
+    font-size: 80%;
+    margin-top: 10%;
+    text-align: center;
+    color: #434343;
+}
