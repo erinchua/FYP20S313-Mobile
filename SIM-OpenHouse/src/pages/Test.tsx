@@ -12,7 +12,7 @@ import { IonContent,
     IonItem, 
     IonInput, 
     IonList, 
-    IonAlert } from '@ionic/react';
+    IonAlert, IonMenu, IonSplitPane, IonItemDivider, IonLabel, IonMenuButton } from '@ionic/react';
 import React, {useRef, useState} from 'react';
 import '../css/Global.css';
 import '../css/Test.css';
@@ -21,6 +21,11 @@ import { useForm, Controller } from "react-hook-form";
 import TestControl from '../components/TestControl';
 import TestCom from '../components/TestCom';
 import ReactCodeInput from 'react-verification-code-input';
+import { faReadme } from '@fortawesome/free-brands-svg-icons';
+import { faCalendar, faCalendarAlt, faComments, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
+import { faHome, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import TopNavBAMenu from '../components/TopNavBAMenu';
 
 {/*import { useHistory } from 'react-router-dom';*/}
  
@@ -83,7 +88,94 @@ const Test: React.FC = () => {
                 buttons={['Okay']}
              ></IonAlert>
 
-            <IonPage>
+            <IonContent fullscreen>
+                <IonSplitPane contentId="main">
+                    {/*--  the side menu  --*/}
+                    <IonMenu contentId="main" side="end" menuId="menuID">
+                        <IonContent id="menuContent" className="menuContent" scrollEvents={true} scrollY={true}>
+                                <IonList className="menuList">
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home">                     
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faHome} />
+                                        <IonLabel className="menuLabel">Home</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/openHouseMain">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faCalendar} />
+                                        <IonLabel className="menuLabel">Open House Programmes</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faCalendarAlt} />
+                                        <IonLabel className="menuLabel">My Schedule</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faComments} />
+                                        <IonLabel className="menuLabel">Forum</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faMapSigns} />
+                                        <IonLabel className="menuLabel">Campus Facilitiies Map</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faMapMarkedAlt} />
+                                        <IonLabel className="menuLabel">Getting to SIM HQ</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faInfoCircle} />
+                                        <IonLabel className="menuLabel">Useful Info</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faPhotoVideo} />
+                                        <IonLabel className="menuLabel">Social Media</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faBookOpen} />
+                                        <IonLabel className="menuLabel">Study@SIM</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faHands} />
+                                        <IonLabel className="menuLabel">Student Life@SIM</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faBell} />
+                                        <IonLabel className="menuLabel">Announcements</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faReadme} />
+                                        <IonLabel className="menuLabel">Brochures</IonLabel>
+                                    </IonItem>
+                                    
+                                    <IonItemDivider id="divider"></IonItemDivider>
+
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faUserCircle} />
+                                        <IonLabel className="menuLabel">My Profile</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faCog} />
+                                        <IonLabel className="menuLabel">Settings</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faQrcode} />
+                                        <IonLabel className="menuLabel">QR Scanner</IonLabel>
+                                    </IonItem>
+                                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faSignOutAlt} />
+                                        <IonLabel className="menuLabel">Logout</IonLabel>
+                                    </IonItem>
+                                </IonList>
+                            </IonContent>
+                    </IonMenu>
+
+                    {/*-- the main content --*/}
+                    <IonPage id="main">
+                        <TopNavBAMenu title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+                        <IonMenuButton menu="menuID"></IonMenuButton>
+                        <h2>Content here</h2>
+                    </IonPage>
+                </IonSplitPane>
+            </IonContent>
+             
+
+            {/* <IonPage>
                 <IonHeader>
                     <IonToolbar id="topBar">
                     <IonButtons slot="start">
@@ -99,7 +191,7 @@ const Test: React.FC = () => {
                 </IonHeader>
         
                 {/* Screen Content*/}
-                <IonContent fullscreen style={{display: "flex"}}>
+                {/*<IonContent fullscreen style={{display: "flex"}}>
                     <IonGrid>
                         <form>
                             <input name="input1" ref={register} />
@@ -122,50 +214,9 @@ const Test: React.FC = () => {
                             
                         </form>
 
-                        {/*<form onSubmit={handleSubmit(onSubmit)}>
-                            <IonRow class="ion-justify-content-center">
-                                <IonCol></IonCol>
-                                <IonCol size="6" style={{textAlign: "center"}}>
-                                    <IonIcon id="shield_logo" icon={shieldCheckmarkOutline} />
-                                </IonCol>
-                                <IonCol></IonCol>
-                            </IonRow>
-        
-                            <IonRow>
-                                <IonCol></IonCol>
-                                <IonCol size="10">
-                                    <IonList>
-                                    <p id="text1"><b>Please enter your new password</b></p>
-                                    <IonItem>
-                                        <IonInput id="newPasswordID" type="password" placeholder="New Password" name="newPassword" ref={register({ required: true, minLength: 8, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,/<>#^~`@$!%*?&])[A-Za-z\d.,/<>#~`^@$!%*?&]{8,}$/ })}></IonInput>
-                                    </IonItem>
-                                    {errors.newPassword && errors.newPassword.type === "required" && <div className="errorMessage">Password is required!</div>}
-                                    {errors.newPassword && errors.newPassword.type === "minLength" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
-                                    {errors.newPassword && errors.newPassword.type === "pattern" && <div className="errorMessage">Password has to be at least 8 characters and must contain 1 uppercase, 1 lowercase, 1 number and 1 special character</div>}
-                                
-                                    <IonItem>
-                                        <IonInput id="confirmNewPasswordID" type="password" placeholder="Confirm New Password" name="confirmNewPassword" ref={register({ required: true, validate: (value) => value === newPassword.current })}></IonInput>
-                                    </IonItem>
-                                    {errors.confirmNewPassword && errors.confirmNewPassword.type === "required" && <div className="errorMessage">Please confirm your password!</div>}
-                                    {errors.confirmNewPassword && errors.confirmNewPassword.type === "validate" && <div className="errorMessage">Passwords do not match!</div>}
-                                        
-                                    </IonList>
-                                </IonCol>
-                                <IonCol></IonCol>
-                            </IonRow>
-                            <IonRow class="ion-justify-content-center">
-                            </IonRow>
-        
-                            <IonRow class="ion-justify-content-center" style={{marginTop:"5%"}}>
-                                <IonButton size="large" id="resetPwdBtn" type="submit" onClick={() => {
-                                    setShowAlert2(true);
-                                    const values=getValues();
-                                }}>RESET PASSWORD</IonButton>
-                            </IonRow>
-                        </form>*/}
                     </IonGrid>
                 </IonContent>
-            </IonPage>
+            </IonPage> */}
         </React.Fragment>
     );
   }

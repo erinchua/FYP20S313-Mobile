@@ -35,7 +35,7 @@ const TopNavBAMenu: React.FC<{
                     }
                     { props.hamburger ?
                     <IonButtons slot="primary">
-                        <IonMenuButton className="menuBtn" auto-hide="false" menu="menuID"></IonMenuButton>
+                        <IonMenuButton className="menuBtn" auto-hide="false" menu="first"></IonMenuButton>
                     </IonButtons> : ''    
                     }            
 
