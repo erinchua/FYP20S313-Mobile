@@ -55,10 +55,11 @@ const App: React.FC = () => {
           <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
           <Route path="/vincenttest" component={VincentTest} exact={true} />
 
-          <Route path="/u" component={AppU} exact={false} />
-          <Route exact path="/" render={() => <Redirect to="/main" />} />
-        </IonRouterOutlet>
-      </IonReactRouter>
+            <Route path="/test" component={Test} exact={false} />
+            <Route path="/u" component={AppU} exact={false} />
+            <Route exact path="/" render={() => <Redirect to="/main" />} />
+          </IonRouterOutlet>
+        </IonReactRouter>
       </AuthContext.Provider>
     </IonApp>
   );
