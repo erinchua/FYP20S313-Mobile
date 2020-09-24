@@ -3,6 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 import {  IonRouterOutlet } from '@ionic/react';
 import Home from './pages/Home';
 import OpenHouseMain from './pages/OpenHouseMain';
+import ProgrammeTalks from './pages/ProgrammeTalks';
 import GuidedTours from './pages/GuidedTours';
 import MySchedule from './pages/MySchedule';
 
@@ -37,6 +38,7 @@ const App: React.FC = () => {
     <IonRouterOutlet>
       <Route path="/u/home" component={Home} exact={true} />
       <Route path="/u/openHouseMain" component={OpenHouseMain} exact={true} />
+      <Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} exact={true} />
       <Route path="/u/openHouseMain/guidedTours-day1" component={GuidedTours} exact={true} />
       <Route path="/u/mySchedule" component={MySchedule} exact={true} />
     </IonRouterOutlet>

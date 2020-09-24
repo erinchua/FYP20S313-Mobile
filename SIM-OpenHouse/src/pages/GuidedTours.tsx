@@ -29,7 +29,6 @@ const GuidedTours: React.FC = () => {
             </IonHeader>
     
             <IonContent fullscreen>
-                <Menu/> 
                 <IonGrid id="guidedTours-ionRowCol">
                     <IonRow id="guidedTours-ionRowCol">
                         <IonCol id="guidedTours-ionRowCol">
