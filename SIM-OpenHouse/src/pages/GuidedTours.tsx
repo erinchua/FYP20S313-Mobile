@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import "../css/Global.css";
 import "../css/GuidedTours.css";
-import TopNavBAMenu from '../components/TopNavBAMenu';
+import TopNav from '../components/TopNav';
 import GuidedTourContent from '../components/GuidedTourContent';
 import Menu from '../components/Menu';
 
@@ -22,7 +22,7 @@ const GuidedTours: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <TopNavBAMenu title="Guided Tours" route="/u/openHouseMain" backarrow={ true } hamburger={ true } />
+                <TopNav title="Guided Tours" route="/u/openHouseMain" backarrow={ true } hamburger={ true } />
                 <IonToolbar id="guidedTours-schedule">
                     <IonTitle id="guidedTours-schedule-text">Schedule</IonTitle>
                 </IonToolbar>
