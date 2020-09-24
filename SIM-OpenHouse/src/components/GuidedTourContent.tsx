@@ -7,9 +7,8 @@ const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
 
     return(
         <>
-        <IonRow>
             <IonGrid id="guidedTours-tableGrid">
-                <IonRow id="guidedTours-tableHeader">
+                <IonRow id="guidedTours-tableHeader" className="ion-justify-content-center">
                     <IonCol id="guidedTours-Data">Tour No.</IonCol>
                     <IonCol id="guidedTours-Data">Tour</IonCol>
                     <IonCol id="guidedTours-Data">Reporting Time</IonCol>
@@ -17,25 +16,24 @@ const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
                     <IonCol id="guidedTours-Data">Add to My Schedule</IonCol>
                 </IonRow>
                 {props.day1 === "day1" ? 
-                    <IonRow>
+                    <IonRow className="ion-justify-content-center">
                         <IonCol id="guidedTours-Data">1</IonCol>
-                        <IonCol id="guidedTours-Data">Sample</IonCol>
+                        <IonCol id="guidedTours-Data">Day One</IonCol>
                         <IonCol id="guidedTours-Data">Sample</IonCol>
                         <IonCol id="guidedTours-Data">Sample</IonCol>
                         <IonCol id="guidedTours-Data">Sample</IonCol>
                     </IonRow> : '' 
                 }
                 {props.day2 === "day2" ? 
-                    <IonRow>
-                        <IonCol id="guidedTours-Data">2</IonCol>
-                        <IonCol id="guidedTours-Data">Sample</IonCol>
+                    <IonRow className="ion-justify-content-center">
+                        <IonCol id="guidedTours-Data">1</IonCol>
+                        <IonCol id="guidedTours-Data">Day Two</IonCol>
                         <IonCol id="guidedTours-Data">Sample</IonCol>
                         <IonCol id="guidedTours-Data">Sample</IonCol>
                         <IonCol id="guidedTours-Data">Sample</IonCol>
                     </IonRow> : '' 
                 }
             </IonGrid>
-        </IonRow>
         </>
     );
 }
