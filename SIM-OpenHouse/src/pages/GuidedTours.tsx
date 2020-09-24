@@ -3,7 +3,6 @@ import React from 'react';
 
 import "../css/Global.css";
 import "../css/GuidedTours.css";
-import TopNavBAMenu from '../components/TopNavBAMenu';
 import GuidedTourNav from '../components/GuidedTourNav';
 import Menu from '../components/Menu';
 
