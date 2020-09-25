@@ -32,11 +32,11 @@ const Registration: React.FC = () => {
 
   const addNewStudent = (data: any, uid: any) => {
     console.log(data);
-    db.collection("students").doc(uid).set({
+    db.collection("Students").doc(uid).set({
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
-      contactNo: data.contactNo,
+      contactNo: Number(data.contactNo),
       dob: formatDate(data.dob),
       highestQualification: data.highestQualification,
       nationality: data.nationality,

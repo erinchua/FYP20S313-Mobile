@@ -25,7 +25,7 @@ import { faReadme } from '@fortawesome/free-brands-svg-icons';
 import { faCalendar, faCalendarAlt, faComments, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faHome, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TopNavBAMenu from '../components/TopNavBAMenu';
+//import TopNavBAMenu from '../components/TopNavBAMenu';
 
 {/*import { useHistory } from 'react-router-dom';*/}
  
@@ -167,7 +167,7 @@ const Test: React.FC = () => {
 
                     {/*-- the main content --*/}
                     <IonPage id="main">
-                        <TopNavBAMenu title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+                        {/* <TopNavBAMenu title="Home" route='/u/home' backarrow={ false } hamburger = { true }/> */}
                         <IonMenuButton menu="menuID"></IonMenuButton>
                         <h2>Content here</h2>
                     </IonPage>
