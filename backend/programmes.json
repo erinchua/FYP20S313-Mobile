@@ -7,22 +7,282 @@
             "fullTime": false
         },
         "academicLevel": "Bachelor",
-        "discipline": "Specialty",
-        "subDiscipline": "Aviation",
+        "discipline": ["Specialty"],
+        "subDiscipline": ["Aviation"],
         "entryQualifications": "Diploma",
         "awardedBy": "RMIT"
     },
     {
         "id": "programme-002",
-        "programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up))",
+        "programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up)",
         "modeOfStudy": {
             "partTime": true,
             "fullTime": false
         },
         "academicLevel": "Bachelor",
-        "discipline": "Specialty",
-        "subDiscipline": "Construction and Management",
+        "discipline": ["Specialty"],
+        "subDiscipline": ["Construction and Management"],
         "entryQualifications": "Diploma",
         "awardedBy": "RMIT"
+    },
+    {
+        "id": "programme-003",
+        "programmeTitle": "Bachelor of Information Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Information Technology"],
+        "entryQualifications": "A level",
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-004",
+        "programmeTitle": "Master of Business Administration",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-005",
+        "programmeTitle": "Bachelor of Nursing (Honours)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Nursing", "Specialty"],
+        "subDiscipline": ["Nursing"],
+        "entryQualifications": "Diploma",
+        "awardedBy": "University of Sydney"
+    },
+    {
+        "id": "programme-006",
+        "programmeTitle": "Bachelor of Nursing (Post-Registration)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Nursing", "Specialty"],
+        "subDiscipline": ["Nursing"],
+        "entryQualifications": "Diploma",
+        "awardedBy": "University of Sydney"
+    },
+    {
+        "id": "programme-007",
+        "programmeTitle": "Postgraduate Award in Cyber Security and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Cyber Security and Management"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-008",
+        "programmeTitle": "Postgraduate Award in Engineering Business Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Engineering and Business"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-009",
+        "programmeTitle": "Postgraduate Award in Programme and Project Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Project Management"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-010",
+        "programmeTitle": "Postgraduate Award in Supply Chain and Logistics Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Logistics and Supply Chain Management"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-011",
+        "programmeTitle": "Master of Science in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-012",
+        "programmeTitle": "Master of Science in Data Science and Artificial Intelligence",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-013",
+        "programmeTitle": "Master of Science in Data Science and Financial Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-014",
+        "programmeTitle": "Postgraduate Certificate in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-015",
+        "programmeTitle": "Postgraduate Diploma in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-016",
+        "programmeTitle": "Postgraduate Diploma in Data Science and Artificial Intelligence",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-017",
+        "programmeTitle": "Postgraduate Diploma in Data Science and Financial Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": "Degree",
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-018",
+        "programmeTitle": "Graduate Certificate in Business Analytics",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business", "IT & Computer Science"],
+        "subDiscipline": ["Business Analytics", "Information Technology"],
+        "entryQualifications": "Degree",
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-019",
+        "programmeTitle": "Graduate Diploma in Business Analytics",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business", "IT & Computer Science"],
+        "subDiscipline": ["Business Analytics", "Information Technology"],
+        "entryQualifications": "Degree",
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-020",
+        "programmeTitle": "Graduate Diploma in Digital Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Marketing"],
+        "entryQualifications": "Degree",
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-021",
+        "programmeTitle": "Graduate Diploma in Human Resource Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Human Resource Management"],
+        "entryQualifications": "Degree",
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-022",
+        "programmeTitle": "Specialist Diploma in Aviation Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Diploma",
+        "discipline": ["Specialty"],
+        "subDiscipline": ["Aviation"],
+        "entryQualifications": "Diploma",
+        "awardedBy": "Singapore Institute of Management"
     }
 ]
