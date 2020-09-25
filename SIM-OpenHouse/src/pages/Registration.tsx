@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../auth";
 import { auth, db } from "../firebase";
 
-import { arrowBackOutline } from "ionicons/icons";
 import "../css/Global.css";
 import "../css/Registration.css";
 

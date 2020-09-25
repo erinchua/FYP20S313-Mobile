@@ -60,12 +60,12 @@ const Login: React.FC = () => {
           <IonGrid>
             <IonRow>
               <IonCol>
-              <IonInput className="inputField" type="text" placeholder="Email" name="email" ref={register} style={{marginTop: "5%"}}/>
+              <IonInput required className="inputField" type="text" placeholder="Email" name="email" ref={register} style={{marginTop: "5%"}}/>
               </IonCol>
             </IonRow>
             <IonRow>
               <IonCol>
-              <IonInput className="inputField" type="password" placeholder="Password" name="password" ref={register} />
+              <IonInput required className="inputField" type="password" placeholder="Password" name="password" ref={register} />
               </IonCol>
             </IonRow>
 

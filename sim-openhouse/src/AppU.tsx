@@ -6,6 +6,7 @@ import OpenHouseMain from './pages/OpenHouseMain';
 import ProgrammeTalks from './pages/ProgrammeTalks';
 import GuidedTours from './pages/GuidedTours';
 import MySchedule from './pages/MySchedule';
+import OpenHouseActivities from './pages/OpenHouseActivities';
 
 import { useAuth } from './auth';
 
@@ -41,6 +42,7 @@ const App: React.FC = () => {
       <Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} exact={true} />
       <Route path="/u/openHouseMain/guidedTours" component={GuidedTours} exact={true} />
       <Route path="/u/mySchedule" component={MySchedule} exact={true} />
+      <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
     </IonRouterOutlet>
   )
 };

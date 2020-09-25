@@ -8,10 +8,9 @@
     text-align: center;
 }
 
-#guidedTours-Data {
+.guidedTours-Data {
     border: 1px solid #C8C8C8;
     text-align: center;
     min-width: 20%;
-    flex-wrap: wrap;
     font-size: 85%;
 }
