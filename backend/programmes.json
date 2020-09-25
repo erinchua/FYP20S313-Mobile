@@ -1,11 +1,28 @@
 [
     {
+        "id": "programme-001",
         "programmeTitle": "Bachelor of Applied Science (Aviation) (Top-up)",
         "modeOfStudy": {
             "partTime": true,
             "fullTime": false
         },
-        "discipline"
+        "academicLevel": "Bachelor",
+        "discipline": "Specialty",
+        "subDiscipline": "Aviation",
+        "entryQualifications": "Diploma",
+        "awardedBy": "RMIT"
     },
-
+    {
+        "id": "programme-002",
+        "programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up))",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": "Specialty",
+        "subDiscipline": "Construction and Management",
+        "entryQualifications": "Diploma",
+        "awardedBy": "RMIT"
+    }
 ]
