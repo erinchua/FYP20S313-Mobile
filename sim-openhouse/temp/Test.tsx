@@ -18,14 +18,14 @@ import '../css/Global.css';
 import '../css/Test.css';
 import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
 import { useForm, Controller } from "react-hook-form";
-import TestControl from '../components/TestControl';
-import TestCom from '../components/TestCom';
+import TestControl from '../src/components/TestControl';
+import TestCom from '../src/components/TestCom';
 import ReactCodeInput from 'react-verification-code-input';
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
 import { faCalendar, faCalendarAlt, faComments, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faHome, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TopNav from '../components/TopNav';
+import TopNav from '../src/components/TopNav';
 
 {/*import { useHistory } from 'react-router-dom';*/}
  
