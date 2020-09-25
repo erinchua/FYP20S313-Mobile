@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNav title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+      <TopNav title="My Schedule" route='/u/home' backarrow={ false } hamburger = { true }/>
       
       <IonContent fullscreen>
         <IonGrid id="homeGrid">

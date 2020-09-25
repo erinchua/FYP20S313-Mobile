@@ -25,11 +25,7 @@ import { faReadme } from '@fortawesome/free-brands-svg-icons';
 import { faCalendar, faCalendarAlt, faComments, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faHome, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-<<<<<<< Updated upstream
-//import TopNavBAMenu from '../components/TopNavBAMenu';
-=======
 import TopNav from '../components/TopNav';
->>>>>>> Stashed changes
 
 {/*import { useHistory } from 'react-router-dom';*/}
  
@@ -170,11 +166,7 @@ const Test: React.FC = () => {
 
                     {/*-- the main content --*/}
                     <IonPage id="main">
-<<<<<<< Updated upstream
-                        {/* <TopNavBAMenu title="Home" route='/u/home' backarrow={ false } hamburger = { true }/> */}
-=======
                         <TopNav title="Home" route='/u/home' backarrow={ false } hamburger = { true }/>
->>>>>>> Stashed changes
                         <IonMenuButton menu="menuID"></IonMenuButton>
                         <h2>Content here</h2>
                     </IonPage>
