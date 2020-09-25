@@ -9,7 +9,12 @@
         "academicLevel": "Bachelor",
         "discipline": ["Specialty"],
         "subDiscipline": ["Aviation"],
-        "entryQualifications": "Diploma",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
         "awardedBy": "RMIT"
     },
     {
@@ -22,7 +27,12 @@
         "academicLevel": "Bachelor",
         "discipline": ["Specialty"],
         "subDiscipline": ["Construction and Management"],
-        "entryQualifications": "Diploma",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
         "awardedBy": "RMIT"
     },
     {
@@ -35,7 +45,12 @@
         "academicLevel": "Bachelor",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Information Technology"],
-        "entryQualifications": "A level",
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
         "awardedBy": "University of Wollongong"
     },
     {
@@ -48,7 +63,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business"],
         "subDiscipline": ["Business"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of Birmingham"
     },
     {
@@ -61,7 +81,12 @@
         "academicLevel": "Bachelor",
         "discipline": ["Nursing", "Specialty"],
         "subDiscipline": ["Nursing"],
-        "entryQualifications": "Diploma",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
         "awardedBy": "University of Sydney"
     },
     {
@@ -74,7 +99,12 @@
         "academicLevel": "Bachelor",
         "discipline": ["Nursing", "Specialty"],
         "subDiscipline": ["Nursing"],
-        "entryQualifications": "Diploma",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
         "awardedBy": "University of Sydney"
     },
     {
@@ -87,7 +117,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Cyber Security and Management"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of Warwick"
     },
     {
@@ -100,7 +135,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business"],
         "subDiscipline": ["Engineering and Business"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of Warwick"
     },
     {
@@ -113,7 +153,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business"],
         "subDiscipline": ["Project Management"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of Warwick"
     },
     {
@@ -126,7 +171,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business"],
         "subDiscipline": ["Business", "Logistics and Supply Chain Management"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of Warwick"
     },
     {
@@ -139,7 +189,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of London"
     },
     {
@@ -152,7 +207,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of London"
     },
     {
@@ -165,7 +225,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of London"
     },
     {
@@ -178,7 +243,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of London"
     },
     {
@@ -191,7 +261,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of London"
     },
     {
@@ -204,7 +279,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of London"
     },
     {
@@ -217,7 +297,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["IT & Computer Science"],
         "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "University of London"
     },
     {
@@ -230,7 +315,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business", "IT & Computer Science"],
         "subDiscipline": ["Business Analytics", "Information Technology"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "Singapore Institute of Management"
     },
     {
@@ -243,7 +333,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business", "IT & Computer Science"],
         "subDiscipline": ["Business Analytics", "Information Technology"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "Singapore Institute of Management"
     },
     {
@@ -256,7 +351,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business"],
         "subDiscipline": ["Marketing"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "Singapore Institute of Management"
     },
     {
@@ -269,7 +369,12 @@
         "academicLevel": "Postgraduate/Masters",
         "discipline": ["Business"],
         "subDiscipline": ["Human Resource Management"],
-        "entryQualifications": "Degree",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
         "awardedBy": "Singapore Institute of Management"
     },
     {
@@ -282,7 +387,143 @@
         "academicLevel": "Diploma",
         "discipline": ["Specialty"],
         "subDiscipline": ["Aviation"],
-        "entryQualifications": "Diploma",
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
         "awardedBy": "Singapore Institute of Management"
+    },
+
+
+
+
+
+    {
+        "id": "programme-023",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-024",
+        "programmeTitle": "Bachelor of Computer Science (Big Data)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Big Data"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-025",
+        "programmeTitle": "Bachelor of Computer Science (Digital Systems Security)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Digital Systems Security"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-026",
+        "programmeTitle": "Master of Science in Cyber Security and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science "],
+        "subDiscipline": ["Cyber Security and Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-024",
+        "programmeTitle": "Master of Science in Engineering Business Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Engineering and Business"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-025",
+        "programmeTitle": "Master of Science in Programme and Project Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Project Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-025",
+        "programmeTitle": "Master of Science in Supply Chain & Logistics Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Logistics and Supply Chain Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
     }
 ]
