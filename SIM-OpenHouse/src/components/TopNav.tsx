@@ -32,10 +32,6 @@ const TopNav: React.FC<{
 
     };
 
-    const handleMenu = () => {
-        console.log("Im working");
-    };
-
     return(
         <>
             <IonHeader>
