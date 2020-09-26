@@ -1,0 +1,16 @@
+#programmeTalksGrid {
+    --ion-grid-width-xs: 100%;
+    padding: 0;
+}
+
+.segmentHeader {
+    padding: 0;
+}
+
+.segmentBtn {
+    --background: #E8D091;
+    --background-checked: #A9DBD9;
+    --color: #ffffff;
+    --color-checked: #ffffff;
+    --indicator-color: transparent;
+}
