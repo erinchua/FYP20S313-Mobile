@@ -1,59 +1,63 @@
-import { IonBadge, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonLabel, IonPage, IonRouterLink, IonRouterOutlet, IonRow, IonSegment, IonSegmentButton, IonTab, IonTabBar, IonTabButton, IonTabs, IonText, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useState } from 'react';
+import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import React, { useRef, useState } from 'react';
 
-import "../css/Global.css";
-import "../css/ProgrammeTalks.css";
-import TopNav from '../components/TopNav';
-import { calendar, personCircle, map, informationCircle } from 'ionicons/icons';
+import { auth } from '../firebase';
+
+import '../css/Global.css';
+import '../css/ProgrammeTalks.css';
+
+import TopNav from '../components/TopNav'
 
 const ProgrammeTalks: React.FC = () => {
+    const [tab, setTab] = useState('schedule');
+    const [dayNum, setDayNum] = useState('day1');
 
-    // const [dayNum, setDayNum] = useState('day1');
+    const tabRef = useRef<HTMLIonSegmentButtonElement>(null);
 
-    // const handleClick = () => {
-    //     setDayNum('day1');
-    // }
+    const tabClick = () => {
+        const tabNo = tabRef.current!.id!;
+        if (tabNo == 'progTalkSchedule') {
+            console.log(tabNo);
+        } else if (tabNo == 'progTalkLiveTalk') {
+            console.log(tabNo);
+        }
+        
+    }
 
-    // const handleClick2 = () => {
-    //     setDayNum('day2');
-    // }
+    const handleClick = () => {
+        setDayNum('day1');
+    }
 
-    return (
+    const handleClick2 = () => {
+        setDayNum('day2');
+    }
+
+    return(
         <IonPage>
-            <TopNav title="Programme Talks" route='/u/openHouseMain' backarrow={ true } hamburger = { true }/>
-            {/* <IonHeader>
-                <IonToolbar>
-                    <IonTabs>
-                        <IonTabBar slot="bottom">
-                            <IonTabButton tab="schedule">
-                                <IonIcon icon={calendar} />
-                                <IonLabel>Schedule</IonLabel>
-                                <IonBadge>6</IonBadge>
-                            </IonTabButton>
+            <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={ true } hamburger={ true } />
+            
+            <IonContent fullscreen>
+                <IonGrid id="programmeTalksGrid">
+                    <IonRow>
+                        <IonHeader className="segmentHeader">
+                            <IonToolbar className="segmentHeader">
+                                <IonSegment value="schedule">
+                                    <IonSegmentButton value="schedule" className="segmentBtn" id="progTalkSchedule" ref={tabRef} onClick={tabClick}>Schedule</IonSegmentButton>
+                                    <IonSegmentButton value="liveTalks" className="segmentBtn" id="progTalkLiveTalk">Live Talks</IonSegmentButton>
+                                    <IonSegmentButton value="pastRecordings" className="segmentBtn" id="progTalkPastRec">Past Recordings</IonSegmentButton>
+                                </IonSegment>
+                            </IonToolbar>
+                        </IonHeader>
+                    </IonRow>
 
-                            <IonTabButton tab="speakers">
-                                <IonIcon icon={personCircle} />
-                                <IonLabel>Speakers</IonLabel>
-                            </IonTabButton>
 
-                            <IonTabButton tab="map">
-                                <IonIcon icon={map} />
-                                <IonLabel>Map</IonLabel>
-                            </IonTabButton>
+                </IonGrid>
 
-                            <IonTabButton tab="about">
-                                <IonIcon icon={informationCircle} />
-                                <IonLabel>About</IonLabel>
-                            </IonTabButton>
-                        </IonTabBar>
-                    </IonTabs>
-                </IonToolbar>
-            </IonHeader> */}
-
-            <IonContent>
 
             </IonContent>
+
         </IonPage>
+
     );
 };
 
