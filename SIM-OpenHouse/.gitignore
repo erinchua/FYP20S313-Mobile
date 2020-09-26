@@ -4,13 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
+/android
 
 # testing
 /coverage
 
 # production
 /build
-/android
 
 # misc
 .DS_Store

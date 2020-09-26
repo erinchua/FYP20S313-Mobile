@@ -6,11 +6,10 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../auth";
 import { auth, db } from "../firebase";
 
-import { arrowBackOutline } from "ionicons/icons";
 import "../css/Global.css";
 import "../css/Registration.css";
 
-import TopNavBA from "../components/TopNavBA";
+import TopNav from "../components/TopNav";
 
 function formatDate(isoDate: any) {
   return new Date(isoDate).toLocaleDateString('en-UK', {
@@ -32,11 +31,11 @@ const Registration: React.FC = () => {
 
   const addNewStudent = (data: any, uid: any) => {
     console.log(data);
-    db.collection("students").doc(uid).set({
+    db.collection("Students").doc(uid).set({
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
-      contactNo: data.contactNo,
+      contactNo: Number(data.contactNo),
       dob: formatDate(data.dob),
       highestQualification: data.highestQualification,
       nationality: data.nationality,
@@ -64,7 +63,7 @@ const Registration: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNavBA title="Registration" route="/main" />
+      <TopNav title="Registration" route="/main" backarrow={ true } hamburger = { false }/>
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleRegister)}>

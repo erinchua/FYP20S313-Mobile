@@ -1,0 +1,62 @@
+[
+    {
+        "id": "SIM",
+        "universityName": "SIM",
+        "url": "https://www.simge.edu.sg/"
+    },
+    {
+        "id": "GrenobleEcole",
+        "universityName": "Grenoble Ecole de Management",
+        "url": "https://en.grenoble-em.com/"
+    },
+    {
+        "id": "LaTrobeU",
+        "universityName": "La Trobe University",
+        "url": "https://www.latrobe.edu.au/"
+    },
+    {
+        "id": "RMITU",
+        "universityName": "RMIT University",
+        "url": "https://www.rmit.edu.au/"
+    },
+    {
+        "id": "UoBirmingham",
+        "universityName": "University of Birmingham",
+        "url": "https://www.birmingham.ac.uk/index.aspx"
+    },
+    {
+        "id": "UoBuffalo",
+        "universityName": "University of Buffalo",
+        "url": "https://www.buffalo.edu/"
+    },
+    {
+        "id": "UoLondon",
+        "universityName": "University of London",
+        "url": ""
+    },
+    {
+        "id": "UoManchester",
+        "universityName": "University of Manchester",
+        "url": "https://www.manchester.ac.uk/"
+    },
+    {
+        "id": "UoStirling",
+        "universityName": "University of Stirling",
+        "url": "https://www.stir.ac.uk/news/2019/09/stirling-crowned-uk-sports-university-of-the-year/"
+    },
+    {
+        "id": "UoSydney",
+        "universityName": "University of Sydney",
+        "url": "https://www.sydney.edu.au/nursing"
+    },
+    {
+        "id": "UoWarwick",
+        "universityName": "University of Warwick",
+        "url": "https://www2.warwick.ac.uk/fac/sci/wmg/about/"
+    },
+    {
+        "id": "UoWollongong",
+        "universityName": "University of Wollongong",
+        "url": "https://www.uow.edu.au/index.html"
+    }
+]

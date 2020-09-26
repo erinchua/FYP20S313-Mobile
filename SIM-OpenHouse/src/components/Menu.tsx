@@ -1,37 +1,39 @@
-import React, { useState } from 'react';
-import { IonHeader, 
-    IonToolbar, 
-    IonButtons, 
-    IonButton, 
-    IonTitle, 
-    IonIcon, 
-    IonMenu, 
+import React, { useContext, useState } from 'react';
+import { IonMenu,
     IonContent, 
     IonItem, 
     IonList, 
-    IonLabel, IonItemDivider, IonRouterLink} from '@ionic/react';
+    IonLabel, 
+    IonItemDivider} from '@ionic/react';
 import '../css/Menu.css';
 import '../css/Global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 import { faHome, faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle,
     faPhotoVideo, faBookOpen, faHands, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
+import { auth } from '../firebase';
+import { NavContext } from '@ionic/react';
 
 const Menu: React.FC = props => {
+
+    const { navigate } = useContext(NavContext);
+    
+    const handleLogout = async () => {
+        await auth.signOut();
+        sessionStorage.clear();
+        navigate('/main');
+    };
 
     return(
         <IonMenu side="end" contentId="menuContent" menuId="first" id="menuID">
             <IonContent id="menuContent" className="menuContent" scrollEvents={true} scrollY={true}>
                 <IonList className="menuList">
-
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home" routerDirection="forward">                     
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home">                     
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faHome} />
                         <IonLabel className="menuLabel">Home</IonLabel>
                     </IonItem>
-
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/openHouseMain" routerDirection="forward">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/openHouseMain">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faCalendar} />
                         <IonLabel className="menuLabel">Open House Programmes</IonLabel>
                     </IonItem>
@@ -90,7 +92,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faQrcode} />
                         <IonLabel className="menuLabel">QR Scanner</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" onClick={ handleLogout }>
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faSignOutAlt} />
                         <IonLabel className="menuLabel">Logout</IonLabel>
                     </IonItem>

@@ -6,11 +6,10 @@ import { useForm  } from "react-hook-form";
 import { useAuth } from '../auth';
 import { auth } from '../firebase';
 import firebase from 'firebase';
-
 import '../css/Login.css';
 import '../css/Global.css';
 
-import TopNavBA from '../components/TopNavBA';
+import TopNav from '../components/TopNav';
 
 const Login: React.FC = () => {
   const { loggedIn } = useAuth();
@@ -54,19 +53,19 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNavBA title="Login" route="/main" />
+      <TopNav title="Login" route="/main" backarrow={ true } hamburger = { false }/>
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleLogin)}>
           <IonGrid>
             <IonRow>
               <IonCol>
-              <IonInput className="inputField" type="text" placeholder="Email" name="email" ref={register} style={{marginTop: "5%"}}/>
+              <IonInput required className="inputField" type="text" placeholder="Email" name="email" ref={register} style={{marginTop: "5%"}}/>
               </IonCol>
             </IonRow>
             <IonRow>
               <IonCol>
-              <IonInput className="inputField" type="password" placeholder="Password" name="password" ref={register} />
+              <IonInput required className="inputField" type="password" placeholder="Password" name="password" ref={register} />
               </IonCol>
             </IonRow>
 
