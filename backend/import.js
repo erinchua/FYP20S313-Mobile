@@ -13,7 +13,7 @@ fs.readdir(pathDir, (err, files) => {
     files.forEach(file => {
         let fileName = path.parse(file).name;
 
-        if (fileName == args[0]) {
+        if (fileName == args) {
             let dataCol = require(`${pathDir}${file}`);
             let counter = 0;
 
