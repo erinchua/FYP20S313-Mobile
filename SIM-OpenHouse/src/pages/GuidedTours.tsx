@@ -11,36 +11,16 @@ const GuidedTours: React.FC = () => {
 
     // const initialValue = {day: ['day1', 'day2']};
 
-    const [dayNum, setDayNum] = useState(['', '']);
+    const [dayNum, setDayNum] = useState('day1');
+
 
     const handleClick = () => {
-        setDayNum(['day1',''])
-        handle();
+        setDayNum('day1');
     }
 
     const handleClick2 = () => {
-        setDayNum(['','day2'])
-        handle();
+        setDayNum('day2');
     }
-
-    const handle = () => {
-        if (dayNum[0] === 'day1' && dayNum[1] === ''){
-            console.log('1. ' + dayNum)
-        }
-        if (dayNum[1] === 'day2' && dayNum[0] === ''){
-            console.log('2. ' + dayNum)
-        }
-        
-    }
-
-
-    // const handleClick = () => {
-    //     setDayNum('day1');
-    // }
-
-    // const handleClick2 = () => {
-    //     setDayNum('day2');
-    // }
 
     // const dayRef = useRef<HTMLIonSegmentButtonElement>(null);
     // const [dayNum, setDayNum] = useState('');
@@ -69,14 +49,14 @@ const GuidedTours: React.FC = () => {
                     <IonRow id="guidedTours-ionRowCol">
                         <IonCol id="guidedTours-ionRowCol">
                             <IonToolbar>
-                                <IonSegment value="day1" id="guidedTours-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
-                                    <IonSegmentButton value="day1" id="day1" className="guidedTours-heading" onClick={handleClick}>Day 1: 21 Nov 2020</IonSegmentButton>
-                                    <IonSegmentButton value="day2" id="day2" className="guidedTours-heading" onClick={handleClick2}>Day 2: 22 Nov 2020</IonSegmentButton>
+                                <IonSegment value={dayNum} id="guidedTours-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+                                    <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleClick}>Day 1: 21 Nov 2020</IonSegmentButton>
+                                    <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleClick2}>Day 2: 22 Nov 2020</IonSegmentButton>
                                 </IonSegment>
                             </IonToolbar>
                         </IonCol>
                     </IonRow>
-                    <GuidedTourContent day1={dayNum[0]} day2={dayNum[1]}/>
+                    <GuidedTourContent day1={dayNum} day2={dayNum}/>
                 </IonGrid>
 
             </IonContent>
