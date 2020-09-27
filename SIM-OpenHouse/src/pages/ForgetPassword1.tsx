@@ -1,23 +1,16 @@
 import { IonContent, 
-    IonHeader, 
     IonPage, 
-    IonTitle, 
-    IonToolbar, 
     IonGrid, 
     IonRow, 
     IonCol, 
-    IonIcon, 
-    IonButtons, 
     IonButton, 
     IonItem, 
     IonInput } from '@ionic/react';
 import React, { useState } from 'react';
-import { useForm, Controller } from "react-hook-form";
-import emailjs from 'emailjs-com';
-import {useHistory, withRouter} from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
-import { arrowBackOutline } from 'ionicons/icons';
 
 import '../css/ForgetPassword1.css';
 import '../css/Global.css';
@@ -38,7 +31,7 @@ const ForgetPassword1: React.FC = () => {
         <TopNav title="Forget Password?" route="/main" backarrow={ true } hamburger = { false }/>
 
         <IonContent fullscreen style={{display: "flex"}}>
-            <IonGrid>
+            <IonGrid className="forgetPwdGrid">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <IonRow class="ion-justify-content-center">
                         <IonCol></IonCol>

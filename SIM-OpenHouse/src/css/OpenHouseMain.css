@@ -1,6 +1,11 @@
 #openHouseMain-grid {
+    background: #efefef;
     padding: 0;
     min-height: 100%;
+}
+
+.gifCol {
+    padding: 0;
 }
 
 #openHouseMainText {

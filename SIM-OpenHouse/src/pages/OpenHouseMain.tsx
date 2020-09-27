@@ -19,7 +19,9 @@ const OpenHouseMain: React.FC = () => {
             <IonContent fullscreen>
                 <IonGrid id="openHouseMain-grid">
                     <IonRow>
-                        <IonImg src={ gif }></IonImg>
+                        <IonCol size-sizeSm="12" className="gifCol">
+                            <IonImg src={ gif }></IonImg>
+                        </IonCol>
                     </IonRow>
 
                     <IonRow className="ion-justify-content-around openHouseMainRow">

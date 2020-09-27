@@ -41,7 +41,7 @@ const ProgrammeTalks: React.FC = () => {
                     <IonRow>
                         <IonHeader className="segmentHeader">
                             <IonToolbar className="segmentHeader">
-                                <IonSegment value="schedule">
+                                <IonSegment scrollable value="schedule">
                                     <IonSegmentButton value="schedule" className="segmentBtn" id="progTalkSchedule" ref={tabRef} onClick={tabClick}>Schedule</IonSegmentButton>
                                     <IonSegmentButton value="liveTalks" className="segmentBtn" id="progTalkLiveTalk">Live Talks</IonSegmentButton>
                                     <IonSegmentButton value="pastRecordings" className="segmentBtn" id="progTalkPastRec">Past Recordings</IonSegmentButton>
