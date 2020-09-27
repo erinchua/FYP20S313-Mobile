@@ -11,11 +11,11 @@ const GuidedTours: React.FC = () => {
     const [dayNum, setDayNum] = useState('day1');
 
 
-    const handleClick = () => {
+    const handleDayOne = () => {
         setDayNum('day1');
     }
 
-    const handleClick2 = () => {
+    const handleDayTwo = () => {
         setDayNum('day2');
     }
    
@@ -32,8 +32,8 @@ const GuidedTours: React.FC = () => {
                         <IonCol id="guidedTours-ionRowCol">
                             <IonToolbar>
                                 <IonSegment scrollable value={dayNum} id="guidedTours-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
-                                    <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleClick}>Day 1: 21 Nov 2020</IonSegmentButton>
-                                    <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleClick2}>Day 2: 22 Nov 2020</IonSegmentButton>
+                                    <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleDayOne}>Day 1: 21 Nov 2020</IonSegmentButton>
+                                    <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleDayTwo}>Day 2: 22 Nov 2020</IonSegmentButton>
                                 </IonSegment>
                             </IonToolbar>
                         </IonCol>

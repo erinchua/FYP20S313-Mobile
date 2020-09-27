@@ -17,7 +17,6 @@ import './css/Menu.css';
 /* Temp files */
 import Test from "../temp/Test";
 import VincentTest from "../temp/VincentTest";
-import DocInserter from "../temp/dbfiller";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -102,7 +101,6 @@ const App: React.FC = () => {
 
             {/* Test components */}
             {/* <Route path="/vincenttest" component={VincentTest} exact={true} />
-            <Route path="/firestore" component={DocInserter} exact={true} />
             <Route path="/test" component={Test} exact={false} /> */}
             {/* <Route path="/u/home" component={Home} exact={true}/>
             <Route path="/u/openHouseMain" component={OpenHouseMain} exact={true}/>

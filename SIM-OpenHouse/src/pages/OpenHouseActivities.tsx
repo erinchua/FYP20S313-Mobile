@@ -7,17 +7,18 @@ import '../css/OpenHouseActivities.css';
 import { giftOutline, qrCodeOutline } from 'ionicons/icons';
 import PerformancesContent from '../components/PerformancesContent';
 import GamesContent from '../components/GamesContent';
+import PrizesContent from '../components/PrizesContent';
 
 const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
 
     const [dayNum, setDayNum] = useState('day1');
     const [headingTitle, setHeadingTitle] = useState('Performances');
 
-    const handleClick = () => {
+    const handleDayOne = () => {
         setDayNum('day1');
     }
 
-    const handleClick2 = () => {
+    const handleDayTwo = () => {
         setDayNum('day2');
     }
 
@@ -26,6 +27,14 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
     }
     const handleGames = () => {
         setHeadingTitle('GamesNActivities');
+    }
+    
+    const handlePrizes = () => {
+        setHeadingTitle('Prizes');
+    }
+
+    const handleQr = () => {
+        setHeadingTitle('QR');
     }
 
     return (
@@ -47,10 +56,10 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                                 <IonCol className="openHouseActivities-grid" size-sizeSm="4">
                                     <IonRow className="openHouseActivities-grid">
                                         <IonCol className="openHouseActivities-grid">
-                                            <IonSegmentButton value="Prize" id="openHouseActivities-prizesHeader">
+                                            <IonSegmentButton value="Prizes" onClick={handlePrizes} id="openHouseActivities-prizesHeader">
                                                 <IonIcon icon={giftOutline} />                                            
                                             </IonSegmentButton>
-                                            <IonSegmentButton value="QR" id="openHouseActivities-prizesHeader">
+                                            <IonSegmentButton value="QR" onClick={handleQr} id="openHouseActivities-prizesHeader">
                                                 <IonIcon icon={qrCodeOutline} />
                                             </IonSegmentButton>
                                         </IonCol>
@@ -60,6 +69,8 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                         </IonToolbar>
                     </IonRow>
                 </IonGrid>
+
+                {/* Performances */}
                 {headingTitle === 'Performances' ? 
                     <>
                     <IonGrid id="performancesContent-ionRowCol">
@@ -67,8 +78,8 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                             <IonCol id="performancesContent-ionRowCol">
                                 <IonToolbar>
                                     <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                                        <IonSegmentButton value="day1" onClick={() => handleClick()} className="performancesContent-heading">Day 1: 21 Nov 2020</IonSegmentButton>
-                                        <IonSegmentButton value="day2" onClick={() => handleClick2()} className="performancesContent-heading">Day 2: 22 Nov 2020</IonSegmentButton>
+                                        <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="performancesContent-heading">Day 1: 21 Nov 2020</IonSegmentButton>
+                                        <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="performancesContent-heading">Day 2: 22 Nov 2020</IonSegmentButton>
                                     </IonSegment>
                                 </IonToolbar>
                             </IonCol>
@@ -77,6 +88,8 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                     <PerformancesContent day1={dayNum} day2={dayNum} />
                     </> : ''
                 }
+
+                {/* Games & Activities */}
                 {headingTitle === 'GamesNActivities' ? 
                     <>
                     <IonGrid id="gamesContent-ionRowCol">
@@ -84,8 +97,8 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                             <IonCol id="gamesContent-ionRowCol">
                                 <IonToolbar>
                                     <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                                        <IonSegmentButton value="day1" onClick={() => handleClick()} className="gamesContent-heading">Day 1: 21 Nov 2020</IonSegmentButton>
-                                        <IonSegmentButton value="day2" onClick={() => handleClick2()} className="gamesContent-heading">Day 2: 22 Nov 2020</IonSegmentButton>
+                                        <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="gamesContent-heading">Day 1: 21 Nov 2020</IonSegmentButton>
+                                        <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="gamesContent-heading">Day 2: 22 Nov 2020</IonSegmentButton>
                                     </IonSegment>
                                 </IonToolbar>
                             </IonCol>
@@ -94,8 +107,16 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                     <GamesContent day1={dayNum} day2={dayNum} />
                     </> : ''
                 }
-                
 
+                {/* Prizes */}
+                {headingTitle === 'Prizes' ? 
+                    <>
+                    <PrizesContent />
+                    </> : ''
+                }
+
+                {/* QR Scanner */}
+                
             </IonContent>
         </IonPage>
     );
