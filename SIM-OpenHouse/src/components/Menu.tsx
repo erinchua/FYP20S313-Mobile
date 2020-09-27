@@ -24,9 +24,10 @@ const Menu: React.FC = props => {
         sessionStorage.clear();
         // navigate('/main');
     };
+    
 
     return(
-        <IonMenu side="end" contentId="menuContent" menuId="first" id="menuID">
+        <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="first" id="menuID">
             <IonContent id="menuContent" className="menuContent" scrollEvents={true} scrollY={true}>
                 <IonList className="menuList">
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home">                     
@@ -37,7 +38,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faCalendar} />
                         <IonLabel className="menuLabel">Open House Programmes</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/mySchedule">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faCalendarAlt} />
                         <IonLabel className="menuLabel">My Schedule</IonLabel>
                     </IonItem>

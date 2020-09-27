@@ -55,8 +55,6 @@ const TopNav: React.FC<{
                 </IonToolbar>
             </IonHeader>
 
-            <Menu />
-
             {/* <IonMenu side="end" contentId="menuContent" menuId="first" id="menuID">
                 <IonContent id="menuContent" className="menuContent" scrollEvents={true} scrollY={true}>
                     <IonList className="menuList">

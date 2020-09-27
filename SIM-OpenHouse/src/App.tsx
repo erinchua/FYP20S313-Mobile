@@ -13,7 +13,7 @@ import AppU from "./AppU";
 import { AuthContext, useAuthInit } from "./auth";
 import './css/TopNav.css';
 import './css/Global.css';
-
+import './css/Menu.css';
 /* Temp files */
 import Test from "../temp/Test";
 import VincentTest from "../temp/VincentTest";
@@ -37,6 +37,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import Menu from "./components/Menu";
 // import TopNav from "./components/TopNav";
 // import Home from "./pages/Home";
 // import OpenHouseMain from "./pages/OpenHouseMain";
@@ -54,8 +55,6 @@ const App: React.FC = () => {
   const [route, setRoute] = useState<String>("");
   const [hamburger, setHamburger] = useState<Boolean>(false);
 
-  if (loading) return <IonLoading isOpen />;
-
   const toggleMenuOptions = (backArrowData: Boolean, titleData: String, routeData: String, hamburgerData: Boolean, renderTopBarData: Boolean) => {
     setRenderTopBar(renderTopBarData);
     setBackArrow(backArrowData);
@@ -64,6 +63,9 @@ const App: React.FC = () => {
     setRoute(routeData);
   }
 
+  if (loading) return <IonLoading isOpen />;
+
+ 
   // const toggleBackArrow = (data : Boolean) => {
   //   setBackArrow(data);
   // };
@@ -82,6 +84,7 @@ const App: React.FC = () => {
         {/* { renderTopBar ? 
         <TopNav backarrow={backArrow} title= { title }  route={route} hamburger={hamburger}/> : ''
         } */}
+        <Menu/>
         <IonReactRouter>
           <IonRouterOutlet>
             {/* <Route path="/main" exact={true} render={() => {toggleMenuOptions(false, "", "", false, false); <Redirect to="/main"/<}}/>
