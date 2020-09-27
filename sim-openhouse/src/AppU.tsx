@@ -33,7 +33,7 @@ const App: React.FC = () => {
   const { loggedIn } = useAuth();
 
   if (!loggedIn)
-    return <Redirect to="/" />
+    return <Redirect to="/main" />
 
   return (
     <IonRouterOutlet>

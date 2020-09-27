@@ -177,9 +177,9 @@ const Home: React.FC = () => {
             <IonCol size-sizeSm="4" className="mainCol"></IonCol>
           </IonRow>
 
-          {/* <IonRow class="ion-justify-content-center">
+          <IonRow class="ion-justify-content-center">
             <IonButton type="submit" onClick={ handleLogout }>LOGOUT</IonButton>
-          </IonRow> */}
+          </IonRow>
 
         </IonGrid>
       </IonContent>

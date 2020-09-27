@@ -1,0 +1,2054 @@
+[
+    {
+        "id": "programme-001",
+        "programmeTitle": "Bachelor of Applied Science (Aviation) (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty"],
+        "subDiscipline": ["Aviation"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-002",
+        "programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty"],
+        "subDiscipline": ["Construction and Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-003",
+        "programmeTitle": "Bachelor of Information Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Information Technology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-004",
+        "programmeTitle": "Master of Business Administration",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-005",
+        "programmeTitle": "Bachelor of Nursing (Honours)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Nursing", "Specialty"],
+        "subDiscipline": ["Nursing"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Sydney"
+    },
+    {
+        "id": "programme-006",
+        "programmeTitle": "Bachelor of Nursing (Post-Registration)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Nursing", "Specialty"],
+        "subDiscipline": ["Nursing"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Sydney"
+    },
+    {
+        "id": "programme-007",
+        "programmeTitle": "Postgraduate Award in Cyber Security and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Cyber Security and Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-008",
+        "programmeTitle": "Postgraduate Award in Engineering Business Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Engineering and Business"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-009",
+        "programmeTitle": "Postgraduate Award in Programme and Project Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Project Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-010",
+        "programmeTitle": "Postgraduate Award in Supply Chain and Logistics Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Logistics and Supply Chain Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-011",
+        "programmeTitle": "Master of Science in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-012",
+        "programmeTitle": "Master of Science in Data Science and Artificial Intelligence",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-013",
+        "programmeTitle": "Master of Science in Data Science and Financial Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-014",
+        "programmeTitle": "Postgraduate Certificate in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-015",
+        "programmeTitle": "Postgraduate Diploma in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-016",
+        "programmeTitle": "Postgraduate Diploma in Data Science and Artificial Intelligence",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-017",
+        "programmeTitle": "Postgraduate Diploma in Data Science and Financial Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Big Data", "Data Science", "Financial Technology (FinTech)"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-018",
+        "programmeTitle": "Graduate Certificate in Business Analytics",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business", "IT & Computer Science"],
+        "subDiscipline": ["Business Analytics", "Information Technology"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-019",
+        "programmeTitle": "Graduate Diploma in Business Analytics",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business", "IT & Computer Science"],
+        "subDiscipline": ["Business Analytics", "Information Technology"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-020",
+        "programmeTitle": "Graduate Diploma in Digital Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Marketing"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-021",
+        "programmeTitle": "Graduate Diploma in Human Resource Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Human Resource Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-022",
+        "programmeTitle": "Specialist Diploma in Aviation Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Diploma",
+        "discipline": ["Specialty"],
+        "subDiscipline": ["Aviation"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-023",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-024",
+        "programmeTitle": "Bachelor of Computer Science (Big Data)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Big Data"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-025",
+        "programmeTitle": "Bachelor of Computer Science (Digital Systems Security)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Digital Systems Security"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-026",
+        "programmeTitle": "Master of Science in Cyber Security and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["IT & Computer Science "],
+        "subDiscipline": ["Cyber Security and Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-027",
+        "programmeTitle": "Master of Science in Engineering Business Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Engineering and Business"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-028",
+        "programmeTitle": "Master of Science in Programme and Project Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Project Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-029",
+        "programmeTitle": "Master of Science in Supply Chain & Logistics Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Logistics and Supply Chain Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick"
+    },
+    {
+        "id": "programme-030",
+        "programmeTitle": "Bachelor of Arts (Honours) Events Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Tourism, Hospitality & Events Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling"
+    },
+    {
+        "id": "programme-031",
+        "programmeTitle": "Bachelor of Arts (Honours) Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Marketing"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling"
+    },
+    {
+        "id": "programme-032",
+        "programmeTitle": "Bachelor of Arts (Honours) Retail Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Retail Marketing"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling"
+    },
+    {
+        "id": "programme-033",
+        "programmeTitle": "Bachelor of Arts (Honours) Sports Studies and Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Sports Studies and Marketing"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling"
+    },
+    {
+        "id": "programme-034",
+        "programmeTitle": "Bachelor of Science (Honours) in Accounting and Finance",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Accounting and Finance"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-035",
+        "programmeTitle": "Bachelor of Science (Honours) in Banking and Finance",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Banking and Finance"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-036",
+        "programmeTitle": "Bachelor of Science (Honours) in Business and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-037",
+        "programmeTitle": "Master of Science in Professional Accountancy",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Accounting and Finance"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-038",
+        "programmeTitle": "Graduate Diploma in Finance",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Banking", "Finance"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-039",
+        "programmeTitle": "Graduate Diploma in Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-040",
+        "programmeTitle": "Bachelor of Business (Accountancy)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Accounting"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-041",
+        "programmeTitle": "Bachelor of Business (Economics and Finance)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Economics and Finance"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-042",
+        "programmeTitle": "Bachelor of Business (Logistics and Supply Chain Management)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Logistics and Supply Chain Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-043",
+        "programmeTitle": "Bachelor of Business (Management)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-044",
+        "programmeTitle": "Bachelor of Business (Marketing)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Marketing"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-045",
+        "programmeTitle": "MSc Management in International Business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["International Business"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Grenoble Ecole de Management"
+    },
+    {
+        "id": "programme-046",
+        "programmeTitle": "Bachelor of Business (Event Management) (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Tourism, Hospitality & Events Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "La Trobe University"
+    },
+    {
+        "id": "programme-047",
+        "programmeTitle": "Bachelor of Business (Tourism and Hospitality) (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Tourism, Hospitality & Events Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "La Trobe University"
+    },
+    {
+        "id": "programme-048",
+        "programmeTitle": "Bachelor of Business (International Business)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "International Business"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-049",
+        "programmeTitle": "Bachelor of Communication (Professional Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Communication"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-050",
+        "programmeTitle": "Bachelor of Design (Communication Design) (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Design"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University"
+    },
+    {
+        "id": "programme-051",
+        "programmeTitle": "Bachelor of Business Information Systems",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Business", "Information Technology"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-052",
+        "programmeTitle": "Bachelor of Computer Science (Cyber Security)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Cyber Security"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-053",
+        "programmeTitle": "Bachelor of Computer Science (Game and Mobile Development)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Game and Mobile Development"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-054",
+        "programmeTitle": "Bachelor of Psychological Science",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Psychology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong"
+    },
+    {
+        "id": "programme-055",
+        "programmeTitle": "Diploma in Information Technology",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Information Technology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-056",
+        "programmeTitle": "Information Technology Foundation Studies",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Information Technology"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-057",
+        "programmeTitle": "Management Foundation Studies",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-058",
+        "programmeTitle": "Diploma in Accounting",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": ["Business"],
+        "subDiscipline": ["Accounting"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-059",
+        "programmeTitle": "Diploma in Banking and Finance",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Banking and Finance"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-060",
+        "programmeTitle": "Diploma in International Business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "International Business"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-061",
+        "programmeTitle": "Diploma in Management Studies",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": ["Business"],
+        "subDiscipline": ["Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management"
+    },
+    {
+        "id": "programme-062",
+        "programmeTitle": "Graduate Diploma in Business Analytics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business", "IT & Computer Science"],
+        "subDiscipline": ["Business", "Business Analytics", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-063",
+        "programmeTitle": "Bachelor of Science (Honours) in Computer Science",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Data Science", "Machine Learning", "Web and Mobile Development"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-064",
+        "programmeTitle": "Bachelor of Science (Honours) in Computer Science (Machine Learning and Artificial Intelligence)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Data Science", "Machine Learning", "Web and Mobile Development"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-065",
+        "programmeTitle": "Bachelor of Science (Honours) in Computer Science (Web and Mobile Development)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["IT & Computer Science"],
+        "subDiscipline": ["Artificial Intelligence", "Data Science", "Machine Learning", "Web and Mobile Development"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-066",
+        "programmeTitle": "Bachelor of Science (Honours) in Data Science and Business Analytics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business", "IT & Computer Science"],
+        "subDiscipline": ["Business", "Business Analytics", "Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-067",
+        "programmeTitle": "International Foundation Programme",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": ["Arts & Social Sciences", "Business"],
+        "subDiscipline": ["Social Sciences"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-068",
+        "programmeTitle": "Graduate Diploma in Economics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Economics"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-069",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Economics"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-070",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics and Politics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Economics", "Politics"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-071",
+        "programmeTitle": "Bachelor of Science (Honours) in International Relations",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["International Relations", "Politics"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-072",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics and Finance",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Economics", "Finance", "Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-073",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics and Management",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Economics", "Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-074",
+        "programmeTitle": "Bachelor of Science (Honours) in Management and Digital Innovation",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-075",
+        "programmeTitle": "Certificate of Higher Education in Social Sciences",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Accounting", "Banking", "Economics", "Finance"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-076",
+        "programmeTitle": "Graduate Diploma in Data Science",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management", "Mathematics"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London"
+    },
+    {
+        "id": "programme-077",
+        "programmeTitle": "Bachelor of Science (Honours) Accounting and Finance (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Accounting and Finance"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-078",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management with Communications (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management", "Communication"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-079",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management with Communications and Year in Industry (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management", "Communication"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-080",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management with Industrial Placement (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-081",
+        "programmeTitle": "Bachelor of Science (Honours) International Business (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "International Business"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-082",
+        "programmeTitle": "Master of Science International Business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business", "International Business"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-083",
+        "programmeTitle": "Master of Science Management",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-084",
+        "programmeTitle": "Master of Science Management: Entrepreneurship and Innovation",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Entrepreneurship and Innovation", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-085",
+        "programmeTitle": "Master of Science Management: Organisational Leadership and Change",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Organisational Leadership and Change", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-086",
+        "programmeTitle": "Master of Science Management: Strategy",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": ["Business"],
+        "subDiscipline": ["Strategy", "Management"],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Birmingham"
+    },
+    {
+        "id": "programme-087",
+        "programmeTitle": "Bachelor of Science (Business Administration and Geographic Information Science)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty", "Business"],
+        "subDiscipline": ["Geographic Information Science", "Business Administration"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-088",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty", "Arts & Social Sciences"],
+        "subDiscipline": ["Geographic Information Science", "Communication"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-089",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty", "Arts & Social Sciences"],
+        "subDiscipline": ["Geographic Information Science", "Economics"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-090",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty", "Arts & Social Sciences"],
+        "subDiscipline": ["Geographic Information Science", "International Trade"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-091",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty", "Arts & Social Sciences"],
+        "subDiscipline": ["Geographic Information Science", "Psychology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-092",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty", "Arts & Social Sciences"],
+        "subDiscipline": ["Geographic Information Science", "Sociology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-093",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Specialty"],
+        "subDiscipline": ["Geographic Information Science"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-094",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business", "Arts & Social Sciences"],
+        "subDiscipline": ["Business Administration", "Communication"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-095",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business", "Arts & Social Sciences"],
+        "subDiscipline": ["Business Administration", "Economics"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-096",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business", "Arts & Social Sciences"],
+        "subDiscipline": ["Business Administration", "International Trade"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-097",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business", "Arts & Social Sciences"],
+        "subDiscipline": ["Business Administration", "Psychology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-098",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business", "Arts & Social Sciences"],
+        "subDiscipline": ["Business Administration", "Sociology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-099",
+        "programmeTitle": "Bachelor of Science (Business Administration)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Business"],
+        "subDiscipline": ["Business"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0100",
+        "programmeTitle": "Bachelor of Arts (Communication and Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Communication", "Economics"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0101",
+        "programmeTitle": "Bachelor of Arts (Communication and International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Communication", "International Trade"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0102",
+        "programmeTitle": "Bachelor of Arts (Communication and Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Communication", "Psychology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0103",
+        "programmeTitle": "Bachelor of Arts (Communication and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Communication", "Sociology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0104",
+        "programmeTitle": "Bachelor of Arts (Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Communication"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0105",
+        "programmeTitle": "Bachelor of Arts (Economics and International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Economics", "International Trade"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0106",
+        "programmeTitle": "Bachelor of Arts (Economics and Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Economics", "Psychology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0107",
+        "programmeTitle": "Bachelor of Arts (Economics and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Economics", "Sociology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0108",
+        "programmeTitle": "Bachelor of Arts (Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Economics"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0109",
+        "programmeTitle": "Bachelor of Arts (International Trade and Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["International Trade", "Psychology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0110",
+        "programmeTitle": "Bachelor of Arts (International Trade and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["International Trade", "Sociology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0111",
+        "programmeTitle": "Bachelor of Arts (International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["International Trade"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0112",
+        "programmeTitle": "Bachelor of Arts (Psychology and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Psychology", "Sociology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0113",
+        "programmeTitle": "Bachelor of Arts (Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Psychology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    },
+    {
+        "id": "programme-0114",
+        "programmeTitle": "Bachelor of Arts (Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": ["Arts & Social Sciences"],
+        "subDiscipline": ["Sociology"],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of Buffalo"
+    }
+]
