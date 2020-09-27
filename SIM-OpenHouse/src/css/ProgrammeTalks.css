@@ -3,8 +3,13 @@
     padding: 0;
 }
 
+.segmentRow {
+    min-width: 100%;
+}
+
 .segmentHeader {
     padding: 0;
+    min-width: 100%;
 }
 
 .segmentBtn {

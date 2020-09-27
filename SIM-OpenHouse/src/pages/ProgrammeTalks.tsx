@@ -12,25 +12,25 @@ const ProgrammeTalks: React.FC = () => {
     const [tab, setTab] = useState('schedule');
     const [dayNum, setDayNum] = useState('day1');
 
-    const tabRef = useRef<HTMLIonSegmentButtonElement>(null);
-
-    const tabClick = () => {
-        const tabNo = tabRef.current!.id!;
-        if (tabNo == 'progTalkSchedule') {
-            console.log(tabNo);
-        } else if (tabNo == 'progTalkLiveTalk') {
-            console.log(tabNo);
-        }
-        
-    }
-
-    const handleClick = () => {
+    const handleDayOne = () => {
         setDayNum('day1');
     }
 
-    const handleClick2 = () => {
+    const handleDayTwo = () => {
         setDayNum('day2');
     }
+
+    const handleSchedule = () => {
+        setTab('schedule');
+    }
+    const handleLiveTalks = () => {
+        setTab('liveTalks');
+    }
+    
+    const handlePastRec = () => {
+        setTab('pastRecordings');
+    }
+
 
     return(
         <IonPage>
@@ -41,10 +41,10 @@ const ProgrammeTalks: React.FC = () => {
                     <IonRow>
                         <IonHeader className="segmentHeader">
                             <IonToolbar className="segmentHeader">
-                                <IonSegment scrollable value="schedule">
-                                    <IonSegmentButton value="schedule" className="segmentBtn" id="progTalkSchedule" ref={tabRef} onClick={tabClick}>Schedule</IonSegmentButton>
-                                    <IonSegmentButton value="liveTalks" className="segmentBtn" id="progTalkLiveTalk">Live Talks</IonSegmentButton>
-                                    <IonSegmentButton value="pastRecordings" className="segmentBtn" id="progTalkPastRec">Past Recordings</IonSegmentButton>
+                                <IonSegment scrollable value={tab}>
+                                    <IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>Schedule</IonSegmentButton>
+                                    <IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>Live Talks</IonSegmentButton>
+                                    <IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>Past Recordings</IonSegmentButton>
                                 </IonSegment>
                             </IonToolbar>
                         </IonHeader>
