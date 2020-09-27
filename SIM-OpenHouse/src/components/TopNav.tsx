@@ -15,10 +15,10 @@ import { useHistory } from 'react-router-dom';
 import { NavContext } from '@ionic/react';
 
 const TopNav: React.FC<{
-    title: string; 
+    title: String; 
     route: any;
-    backarrow: boolean;
-    hamburger: boolean;
+    backarrow: Boolean;
+    hamburger: Boolean;
 }> = props => {
 
     const { loggedIn } = useAuth();
@@ -28,7 +28,7 @@ const TopNav: React.FC<{
     const handleLogout = async () => {
         await auth.signOut();
         sessionStorage.clear();
-        navigate('/main');
+        // navigate('/main');
 
     };
 
@@ -54,8 +54,6 @@ const TopNav: React.FC<{
                     <IonTitle className="title">{props.title}</IonTitle>
                 </IonToolbar>
             </IonHeader>
-
-            <Menu />
 
             {/* <IonMenu side="end" contentId="menuContent" menuId="first" id="menuID">
                 <IonContent id="menuContent" className="menuContent" scrollEvents={true} scrollY={true}>

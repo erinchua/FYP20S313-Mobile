@@ -1,0 +1,18 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "sim-openhouse",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "server": {
+    "cleartext": true,
+    "url": "http://192.168.50.189:8100",
+    "originalUrl": "http://192.168.72.21:8100"
+  }
+}

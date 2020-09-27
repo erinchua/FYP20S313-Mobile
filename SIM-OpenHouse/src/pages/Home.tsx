@@ -1,5 +1,5 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { auth } from '../firebase';
 
@@ -13,9 +13,12 @@ import { faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faIn
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
 
 import TopNav from '../components/TopNav'
+import { NavContext } from '@ionic/react';
 
 const Home: React.FC = () => {
 
+  const { navigate } = useContext(NavContext);
+  
   const handleLogout = async () => {
     await auth.signOut();
     sessionStorage.clear();
@@ -23,7 +26,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNav title="My Schedule" route='/u/home' backarrow={ false } hamburger = { true }/>
+      <TopNav title="My Home" route='/u/home' backarrow={ false } hamburger = { true }/>
       
       <IonContent fullscreen>
         <IonGrid id="homeGrid">
