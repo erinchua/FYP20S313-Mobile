@@ -14,7 +14,7 @@ import { AuthContext, useAuthInit } from "./auth";
 
 /* Temp files */
 import Test from "../temp/Test";
-import VincentTest from "../temp/VincentTest";
+import VincentTest from "./temp/VincentTest";
 import DocInserter from "../temp/dbfiller";
 
 /* Core CSS required for Ionic components to work properly */
@@ -45,7 +45,9 @@ const App: React.FC = () => {
 
   return (
     <IonApp>
-      <AuthContext.Provider value={ auth! }>  {/*ignore this error */}
+      <AuthContext.Provider value={auth!}>
+        {" "}
+        {/*ignore this error */}
         <IonReactRouter>
           <IonRouterOutlet>
             <Route path="/main" component={Main} exact={true} />
@@ -59,8 +61,8 @@ const App: React.FC = () => {
             <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
 
             {/* Test components */}
-            {/* <Route path="/vincenttest" component={VincentTest} exact={true} />
-            <Route path="/firestore" component={DocInserter} exact={true} />
+            <Route path="/vincenttest" component={VincentTest} exact={true} />
+            {/* <Route path="/firestore" component={DocInserter} exact={true} />
             <Route path="/test" component={Test} exact={false} /> */}
 
             <Route path="/u" component={AppU} exact={false} />
