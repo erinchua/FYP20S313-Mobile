@@ -1,7 +1,7 @@
 import { IonButton, IonContent, IonHeader, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList, IonPage, IonRouterLink, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import './css/Home.css';
-import { db } from './firebase';
+import { db } from '../src/firebase';
 
 const DocInserter: React.FC = () => {
   const insertDoc = () => {

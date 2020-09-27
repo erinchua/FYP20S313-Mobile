@@ -59,9 +59,9 @@ const App: React.FC = () => {
             <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
 
             {/* Test components */}
-            <Route path="/vincenttest" component={VincentTest} exact={true} />
+            {/* <Route path="/vincenttest" component={VincentTest} exact={true} />
             <Route path="/firestore" component={DocInserter} exact={true} />
-            <Route path="/test" component={Test} exact={false} />
+            <Route path="/test" component={Test} exact={false} /> */}
 
             <Route path="/u" component={AppU} exact={false} />
             <Route exact path="/" render={() => <Redirect to="/main" />} />
