@@ -22,7 +22,7 @@ const Menu: React.FC = props => {
     const handleLogout = async () => {
         await auth.signOut();
         sessionStorage.clear();
-        navigate('/main');
+        // navigate('/main');
     };
 
     return(

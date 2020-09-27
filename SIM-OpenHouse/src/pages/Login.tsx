@@ -52,7 +52,7 @@ const Login: React.FC = () => {
   }
 
   return (
-    <IonPage>
+    <IonPage className="ionPage">
       <TopNav title="Login" route="/main" backarrow={ true } hamburger = { false }/>
 
       <IonContent fullscreen>
