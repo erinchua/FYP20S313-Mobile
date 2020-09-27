@@ -31,7 +31,9 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonGrid id="homeGrid">
           <IonRow>
-            <IonImg src={ gif }></IonImg>
+            <IonCol size-sizeSm="12" className="gifCol">
+              <IonImg src={ gif }></IonImg>
+            </IonCol>
           </IonRow>
 
           {/* Row 1 */}

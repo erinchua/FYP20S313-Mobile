@@ -83,7 +83,7 @@ const ForgetPassword3: React.FC = () => {
                 <TopNav title="Reset Password" route="/main" backarrow={ true } hamburger = { false }/>
 
                 <IonContent fullscreen style={{display: "flex"}}>
-                    <IonGrid>
+                    <IonGrid className="forgetPwdGrid">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <IonRow class="ion-justify-content-center">
                                 <IonCol></IonCol>

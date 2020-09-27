@@ -4,6 +4,10 @@
     min-height: 100%;
 }
 
+.gifCol {
+    padding: 0;
+}
+
 .mainRow {
     padding-top: 3%;
 }
