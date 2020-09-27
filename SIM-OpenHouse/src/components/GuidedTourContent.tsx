@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonCol, IonGrid, IonRow, IonIcon } from '@ionic/react';
+import { IonCol, IonGrid, IonRow, IonIcon, IonButton } from '@ionic/react';
 import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,7 +23,7 @@ const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
                         <IonCol className="guidedTours-Data ion-text-wrap">Day One</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
-                        <IonCol className="guidedTours-Data ion-text-wrap"><FontAwesomeIcon icon={faPlus} size="1x"/></IonCol>
+                        <IonCol className="guidedTours-Data ion-text-wrap"><IonButton className="guidedTours-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x"/></IonButton></IonCol>
                     </IonRow> : '' 
                 }
                 {props.day2 === "day2" ? 
@@ -32,7 +32,7 @@ const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
                         <IonCol className="guidedTours-Data ion-text-wrap">Day Two</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
-                        <IonCol className="guidedTours-Data ion-text-wrap"><FontAwesomeIcon icon={faPlus} size="1x"/></IonCol>
+                        <IonCol className="guidedTours-Data ion-text-wrap"><IonButton className="guidedTours-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x"/></IonButton></IonCol>
                     </IonRow> : '' 
                 }
             </IonGrid>

@@ -8,6 +8,7 @@ import { giftOutline, qrCodeOutline } from 'ionicons/icons';
 import PerformancesContent from '../components/PerformancesContent';
 import GamesContent from '../components/GamesContent';
 import PrizesContent from '../components/PrizesContent';
+import QRScanner from '../components/QRScan';
 
 const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
 
@@ -116,7 +117,11 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                 }
 
                 {/* QR Scanner */}
-                
+                {headingTitle === 'QR' ? 
+                    <>
+                    <QRScanner />
+                    </> : ''
+                }
             </IonContent>
         </IonPage>
     );
