@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IonButton, IonCol, IonGrid, IonInput, IonItem, IonLabel, IonRow, IonSelect, IonSelectOption, IonTextarea } from "@ionic/react";
 import { useForm } from "react-hook-form";
-import { auth, db, storage } from "../src/firebase";
+import { auth, db, storage } from "../firebase";
 
 const CreateClubAndCouncil: React.FC = () => {
   const { register, handleSubmit, errors } = useForm();

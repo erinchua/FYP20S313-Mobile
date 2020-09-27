@@ -13,8 +13,9 @@ import AppU from "./AppU";
 import { AuthContext, useAuthInit } from "./auth";
 
 /* Temp files */
-import Test from "../temp/Test";
-import VincentTest from "../temp/VincentTest";
+import Test from "./temp/Test";
+import VincentTest from "./temp/VincentTest";
+import QRscan from "./temp/QRScan";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -59,7 +60,8 @@ const App: React.FC = () => {
 
             {/* Test components */}
             {/* <Route path="/vincenttest" component={VincentTest} exact={true} />
-            <Route path="/test" component={Test} exact={false} /> */}
+            <Route path="/test" component={Test} exact={false} />
+            <Route path="/qrscan" component={QRscan} exact={false} /> */}
 
             <Route path="/u" component={AppU} exact={false} />
             <Route exact path="/" render={() => <Redirect to="/main" />} />

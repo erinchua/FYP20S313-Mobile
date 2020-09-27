@@ -2,7 +2,7 @@ import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonPage,
 import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
 import "../css/Home.css";
-import { auth, db } from "../src/firebase";
+import { auth, db } from "../firebase";
 import CreateClubAndCouncil from "./CreateClubAndCouncil";
 
 //<script src="../Resource/qrcode.min.js"></script>;

@@ -19,7 +19,7 @@ fs.readdir(pathDir, (err, files) => {
 
             dataCol.forEach(obj => {
                 db.collection(fileName).doc(obj.id).set(obj).catch(err => {
-                    console.log("Error occured:", err);
+                    console.log(`Error occured: ${err}`);
                 });
                 counter++;
             });
