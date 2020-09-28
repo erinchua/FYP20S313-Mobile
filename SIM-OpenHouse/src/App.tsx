@@ -1,5 +1,5 @@
-import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Redirect, Route, withRouter } from "react-router-dom";
 import { IonApp, IonLoading, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Main from "./pages/Main";
@@ -11,6 +11,9 @@ import Login from "./pages/Login";
 import AppU from "./AppU";
 
 import { AuthContext, useAuthInit } from "./auth";
+import './css/TopNav.css';
+import './css/Global.css';
+import './css/Menu.css';
 
 /* Temp files */
 import Test from "./temp/Test";
@@ -35,30 +38,76 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import Menu from "./components/Menu";
+// import TopNav from "./components/TopNav";
+// import Home from "./pages/Home";
+// import OpenHouseMain from "./pages/OpenHouseMain";
+// import GuidedTours from "./pages/GuidedTours";
+// import MySchedule from "./pages/MySchedule";
+// import ProgrammeTalks from "./pages/ProgrammeTalks";
+// import OpenHouseActivities from "./pages/OpenHouseActivities";
 
 const App: React.FC = () => {
+
   const { loading, auth } = useAuthInit();
+  const [renderTopBar, setRenderTopBar] = useState<Boolean>(false);
+  const [backArrow, setBackArrow] = useState<Boolean>(false);
+  const [title, setTitle ] = useState<String>("");
+  const [route, setRoute] = useState<String>("");
+  const [hamburger, setHamburger] = useState<Boolean>(false);
+
+  const toggleMenuOptions = (backArrowData: Boolean, titleData: String, routeData: String, hamburgerData: Boolean, renderTopBarData: Boolean) => {
+    setRenderTopBar(renderTopBarData);
+    setBackArrow(backArrowData);
+    setTitle(titleData);
+    setHamburger(hamburgerData);
+    setRoute(routeData);
+  }
 
   if (loading) return <IonLoading isOpen />;
+
+ 
+  // const toggleBackArrow = (data : Boolean) => {
+  //   setBackArrow(data);
+  // };
+  // const toggleTitle = (data : String) => {
+  //   setTitle(data);
+  // };
+  // const toggleBurger = (data : Boolean) => {
+  //   setHamburger(data);
+  // };
 
   console.log(auth);
 
   return (
     <IonApp>
       <AuthContext.Provider value={ auth! }>  {/*ignore this error */}
+        {/* { renderTopBar ? 
+        <TopNav backarrow={backArrow} title= { title }  route={route} hamburger={hamburger}/> : ''
+        } */}
+        <Menu/>
         <IonReactRouter>
           <IonRouterOutlet>
-            <Route path="/main" component={Main} exact={true} />
-            <Route path="/registration" component={Registration} exact={true} />
-            <Route path="/login" component={Login} exact={true} />
+            {/* <Route path="/main" exact={true} render={() => {toggleMenuOptions(false, "", "", false, false); <Redirect to="/main"/<}}/>
+            <Route path="/registration" exact={true} render={() => {toggleMenuOptions(true, "Registration", "", false, true); return <Registration/>;}}/>
+            <Route path="/login" exact={true} render={() => {toggleMenuOptions(true, "Login", "", false, true); return <Login/>;}}/> */}
+            <Route path="/main" component={Main} exact={true}/>
+            <Route path="/registration" component={Registration} exact={true}/>
+            <Route path="/login" component={Login} exact={true}/>
             <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
-            <Route path="/home" render={() => <Redirect to="/u/home" />} />
-            <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />} />
+            <Route path="/home" render={() => <Redirect to="/u/home" />}/>
+            <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />}/>
             <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
 
             {/* Test components */}
+            {/* <Route path="/u/home" component={Home} exact={true}/>
+            <Route path="/u/openHouseMain" component={OpenHouseMain} exact={true}/>
+            <Route path="/u/openHouseMain/guidedTours" component={GuidedTours} exact={true} />
+            <Route path="/u/mySchedule" component={MySchedule} exact={true} />
+            <Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} />
+            <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} /> */}
             {/* <Route path="/vincenttest" component={VincentTest} exact={true} />
             <Route path="/test" component={Test} exact={false} />
             <Route path="/qrscan" component={QRscan} exact={false} /> */}
