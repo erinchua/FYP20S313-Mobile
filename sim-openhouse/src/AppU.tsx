@@ -8,8 +8,6 @@ import ProgTalkInfo from './components/ProgTalkInfo';
 import GuidedTours from './pages/GuidedTours';
 import OpenHouseActivities from './pages/OpenHouseActivities';
 import MySchedule from './pages/MySchedule';
-import ProgrammeTalks from './pages/ProgrammeTalks';
-import OpenHouseActivities from './pages/OpenHouseActivities';
 import Forum from './pages/Forum';
 
 
