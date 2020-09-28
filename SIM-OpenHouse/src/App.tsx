@@ -39,13 +39,6 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import Menu from "./components/Menu";
-// import TopNav from "./components/TopNav";
-// import Home from "./pages/Home";
-// import OpenHouseMain from "./pages/OpenHouseMain";
-// import GuidedTours from "./pages/GuidedTours";
-// import MySchedule from "./pages/MySchedule";
-// import ProgrammeTalks from "./pages/ProgrammeTalks";
-// import OpenHouseActivities from "./pages/OpenHouseActivities";
 
 const App: React.FC = () => {
 
@@ -64,18 +57,8 @@ const App: React.FC = () => {
     setRoute(routeData);
   }
 
-  if (loading) return <IonLoading isOpen />;
-
- 
-  // const toggleBackArrow = (data : Boolean) => {
-  //   setBackArrow(data);
-  // };
-  // const toggleTitle = (data : String) => {
-  //   setTitle(data);
-  // };
-  // const toggleBurger = (data : Boolean) => {
-  //   setHamburger(data);
-  // };
+  if (loading) 
+    return <IonLoading isOpen />;
 
   console.log(auth);
 

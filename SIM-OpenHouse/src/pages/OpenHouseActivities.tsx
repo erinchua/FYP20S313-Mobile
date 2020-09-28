@@ -1,4 +1,4 @@
-import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
+import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon, IonButton } from '@ionic/react';
 import React, { useState } from 'react';
 
 import TopNav from '../components/TopNav';
@@ -8,7 +8,7 @@ import { giftOutline, qrCodeOutline } from 'ionicons/icons';
 import PerformancesContent from '../components/PerformancesContent';
 import GamesContent from '../components/GamesContent';
 import PrizesContent from '../components/PrizesContent';
-import QRScanner from '../components/QRScan';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
 
@@ -37,6 +37,11 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
     const handleQr = () => {
         setHeadingTitle('QR');
     }
+
+    const openScanner = async () => {
+        const data = await BarcodeScanner.scan();
+        console.log(`Barcode data: ${data.text}`);
+    };
 
     return (
         <IonPage>
@@ -119,9 +124,10 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
                 {/* QR Scanner */}
                 {headingTitle === 'QR' ? 
                     <>
-                    <QRScanner />
+                    <IonButton onClick={openScanner}>Scan barcode</IonButton>
                     </> : ''
                 }
+                
             </IonContent>
         </IonPage>
     );
