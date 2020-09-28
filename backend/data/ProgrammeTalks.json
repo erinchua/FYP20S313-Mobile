@@ -1,0 +1,80 @@
+[
+  {
+    "id": "talk-001",
+    "talkName": "University of Wollongong - Computer Science Undergraduate",
+    "awardingUni": "University of Wollongong",
+    "date": "21-Nov-2020",
+    "startTime": "10:00AM",
+    "endTime": "11:00AM",
+    "venue": "SIM HQ BLK A LT A.2.08",
+    "capacityLimit": 50,
+    "noRegistered": 0,
+    "isLive": true,
+    "hasRecording": true
+  },
+  {
+    "id": "talk-002",
+    "talkName": "University of London - Computer Science Undergraduate",
+    "awardingUni": "University of London",
+    "date": "21-Nov-2020",
+    "startTime": "10:00AM",
+    "endTime": "11:00AM",
+    "venue": "SIM HQ BLK B LT B.2.01",
+    "capacityLimit": 50,
+    "noRegistered": 0,
+    "isLive": false,
+    "hasRecording": false
+  },
+  {
+    "id": "talk-003",
+    "talkName": "La Trobe - Business Undergraduate",
+    "awardingUni": "La Trobe University",
+    "date": "21-Nov-2020",
+    "startTime": "11:00AM",
+    "endTime": "12:00PM",
+    "venue": "SIM HQ BLK A LT A.2.08",
+    "capacityLimit": 50,
+    "noRegistered": 0,
+    "isLive": false,
+    "hasRecording": false
+  },
+  {
+    "id": "talk-004",
+    "talkName": "RMIT - Business Undergraduate",
+    "awardingUni": "RMIT University",
+    "date": "21-Nov-2020",
+    "startTime": "11:00AM",
+    "endTime": "12:00PM",
+    "venue": "SIM HQ BLK A LT A.2.08",
+    "capacityLimit": 50,
+    "noRegistered": 0,
+    "isLive": true,
+    "hasRecording": true
+  },
+  {
+    "id": "talk-005",
+    "talkName": "University at Buffalo - Arts & Social Sciences Undergraduate",
+    "awardingUni": "University at Buffalo",
+    "date": "21-Nov-2020",
+    "startTime": "1:00PM",
+    "endTime": "2:00PM",
+    "venue": "SIM HQ BLK A LT A.2.08",
+    "capacityLimit": 50,
+    "noRegistered": 0,
+    "isLive": false,
+    "hasRecording": false
+  },
+  {
+    "id": "talk-006",
+    "talkName": "University of Stirling - Arts & Social Sciences Undergraduate",
+    "awardingUni": "University of Stirling",
+    "date": "21-Nov-2020",
+    "startTime": "1:00PM",
+    "endTime": "2:00PM",
+    "venue": "SIM HQ BLK A LT A.2.08",
+    "capacityLimit": 50,
+    "noRegistered": 0,
+    "isLive": true,
+    "hasRecording": true
+  }
+]
