@@ -38,6 +38,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+
 import Menu from "./components/Menu";
 
 const App: React.FC = () => {
@@ -65,10 +66,8 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <AuthContext.Provider value={ auth! }>  {/*ignore this error */}
-        {/* { renderTopBar ? 
-        <TopNav backarrow={backArrow} title= { title }  route={route} hamburger={hamburger}/> : ''
-        } */}
         <Menu/>
+
         <IonReactRouter>
           <IonRouterOutlet>
             {/* <Route path="/main" exact={true} render={() => {toggleMenuOptions(false, "", "", false, false); <Redirect to="/main"/<}}/>
@@ -82,15 +81,10 @@ const App: React.FC = () => {
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
             <Route path="/home" render={() => <Redirect to="/u/home" />}/>
             <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />}/>
+            <Route path="/progTalkInfo" render={() => <Redirect to="/u/openHouseMain/programmeTalks/progTalkInfo" />} />
             <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
 
             {/* Test components */}
-            {/* <Route path="/u/home" component={Home} exact={true}/>
-            <Route path="/u/openHouseMain" component={OpenHouseMain} exact={true}/>
-            <Route path="/u/openHouseMain/guidedTours" component={GuidedTours} exact={true} />
-            <Route path="/u/mySchedule" component={MySchedule} exact={true} />
-            <Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} />
-            <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} /> */}
             {/* <Route path="/vincenttest" component={VincentTest} exact={true} />
             <Route path="/test" component={Test} exact={false} />
             <Route path="/qrscan" component={QRscan} exact={false} /> */}

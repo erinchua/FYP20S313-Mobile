@@ -4,7 +4,7 @@ import { IonMenu,
     IonItem, 
     IonList, 
     IonLabel, 
-    IonItemDivider} from '@ionic/react';
+    IonItemDivider, IonHeader, IonToolbar, IonTitle} from '@ionic/react';
 import '../css/Menu.css';
 import '../css/Global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,7 +27,7 @@ const Menu: React.FC = props => {
     
 
     return(
-        <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="first" id="menuID">
+        <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="first" id="menuID">            
             <IonContent id="menuContent" className="menuContent" scrollEvents={true} scrollY={true}>
                 <IonList className="menuList">
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home">                     
