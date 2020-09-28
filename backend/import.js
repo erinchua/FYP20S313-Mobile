@@ -7,15 +7,14 @@ const pathDir = "./data/";
 const args = process.argv.slice(2)[0];
 
 fs.readdir(pathDir, (err, files) => {
-  if (err) return console.log(`${err} Error reading directory`);
-  let read = false;
-  files.forEach((file) => {
-    var fileName = path.parse(file).name;
+    if (err) return console.log(`${err} Error reading directory`);
+    let read = false;
 
     files.forEach(file => {
         let fileName = path.parse(file).name;
+        let fileExt = path.parse(file).ext;
 
-        if (fileName == args) {
+        if (fileName == args && fileExt == '.json') {
             let dataCol = require(`${pathDir}${file}`);
             let counter = 0;
 
