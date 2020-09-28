@@ -23,7 +23,7 @@ const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
                         <IonCol className="guidedTours-Data ion-text-wrap">Day One</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
-                        <IonCol className="guidedTours-Data ion-text-wrap"><IonButton className="guidedTours-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x"/></IonButton></IonCol>
+                        <IonCol className="guidedTours-Data ion-text-wrap"><IonButton className="guidedTours-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="lg"/></IonButton></IonCol>
                     </IonRow> : '' 
                 }
                 {props.day2 === "day2" ? 
@@ -32,7 +32,7 @@ const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
                         <IonCol className="guidedTours-Data ion-text-wrap">Day Two</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
                         <IonCol className="guidedTours-Data ion-text-wrap">Sample</IonCol>
-                        <IonCol className="guidedTours-Data ion-text-wrap"><IonButton className="guidedTours-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x"/></IonButton></IonCol>
+                        <IonCol className="guidedTours-Data ion-text-wrap"><IonButton className="guidedTours-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="lg"/></IonButton></IonCol>
                     </IonRow> : '' 
                 }
             </IonGrid>

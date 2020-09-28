@@ -18,7 +18,7 @@ import './css/Menu.css';
 /* Temp files */
 import Test from "./temp/Test";
 import VincentTest from "./temp/VincentTest";
-import QRscan from "./temp/QRScan";
+import QRscan from "./components/QRScan";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
