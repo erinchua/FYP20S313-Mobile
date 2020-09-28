@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import React from 'react';
 
 import '../css/Global.css';
@@ -24,7 +24,7 @@ const GamesContent: React.FC<{day1: any; day2: any}> = props => {
                     <IonCol className="gamesContent-Data ion-text-wrap">Day One</IonCol>
                     <IonCol className="gamesContent-Data ion-text-wrap">Sample</IonCol>
                     <IonCol className="gamesContent-Data ion-text-wrap">Sample</IonCol>
-                    <IonCol className="gamesContent-Data ion-text-wrap"><FontAwesomeIcon icon={faPlus} size="1x"/></IonCol>
+                    <IonCol className="gamesContent-Data ion-text-wrap"><IonButton className="gamesContent-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x"/></IonButton></IonCol>
                 </IonRow> : '' 
             }
             {props.day2 === 'day2' ? 
@@ -33,7 +33,7 @@ const GamesContent: React.FC<{day1: any; day2: any}> = props => {
                     <IonCol className="gamesContent-Data ion-text-wrap">Day Two</IonCol>
                     <IonCol className="gamesContent-Data ion-text-wrap">Sample</IonCol>
                     <IonCol className="gamesContent-Data ion-text-wrap">Sample</IonCol>
-                    <IonCol className="gamesContent-Data ion-text-wrap"><FontAwesomeIcon icon={faPlus} size="1x"/></IonCol>
+                    <IonCol className="gamesContent-Data ion-text-wrap"><IonButton className="gamesContent-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x" /></IonButton></IonCol>
                 </IonRow> : '' 
             }
         </IonGrid>

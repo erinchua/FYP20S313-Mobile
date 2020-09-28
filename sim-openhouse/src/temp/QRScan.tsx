@@ -1,6 +1,6 @@
 import {  IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
-import './Home.css';
+import '../css/Home.css';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 const QRScan: React.FC = () => {
