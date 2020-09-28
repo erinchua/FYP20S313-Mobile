@@ -1,4 +1,4 @@
-import {  IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import {  IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
@@ -14,7 +14,13 @@ const QRScan: React.FC = () => {
 
   return (
         <>
-        <IonButton onClick={openScanner}>Scan barcode</IonButton>
+        <IonGrid>
+          <IonRow className="ion-justify-content-center">
+            <IonCol>
+              <IonButton color="dark" expand="block" onClick={openScanner}>Scan barcode</IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
         </>
   );
 };

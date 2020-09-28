@@ -22,7 +22,7 @@ const PerformancesContent: React.FC<{day1: any; day2: any}> = props => {
                     <IonCol className="performancesContent-Data ion-text-wrap">1</IonCol>
                     <IonCol className="performancesContent-Data ion-text-wrap">Day One</IonCol>
                     <IonCol className="performancesContent-Data ion-text-wrap">Sample</IonCol>
-                    <IonCol className="performancesContent-Data ion-text-wrap"><IonButton className="performancesContent-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x"/></IonButton></IonCol>
+                    <IonCol className="performancesContent-Data ion-text-wrap"><IonButton className="performancesContent-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="lg"/></IonButton></IonCol>
                 </IonRow> : '' 
             }
             {props.day2 === 'day2' ? 
@@ -30,7 +30,7 @@ const PerformancesContent: React.FC<{day1: any; day2: any}> = props => {
                     <IonCol className="performancesContent-Data ion-text-wrap">1</IonCol>
                     <IonCol className="performancesContent-Data ion-text-wrap">Day Two</IonCol>
                     <IonCol className="performancesContent-Data ion-text-wrap">Sample</IonCol>
-                    <IonCol className="performancesContent-Data ion-text-wrap"><IonButton className="performancesContent-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="1x"/></IonButton></IonCol>
+                    <IonCol className="performancesContent-Data ion-text-wrap"><IonButton className="performancesContent-DataBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}><FontAwesomeIcon icon={faPlus} size="lg"/></IonButton></IonCol>
                 </IonRow> : '' 
             }
         </IonGrid>

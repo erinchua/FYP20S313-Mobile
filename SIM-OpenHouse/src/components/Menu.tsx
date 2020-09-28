@@ -42,7 +42,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faCalendarAlt} />
                         <IonLabel className="menuLabel">My Schedule</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/forum">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faComments} />
                         <IonLabel className="menuLabel">Forum</IonLabel>
                     </IonItem>

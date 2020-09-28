@@ -8,8 +8,8 @@ const PrizesContent: React.FC = () => {
 
     return (
         <>
-        <IonText><div style={{marginTop: "2%", marginBottom: "-7%", marginLeft: "3%", fontWeight: "bold", fontSize: "95%"}}>Prizes</div></IonText>
-        <IonItemDivider></IonItemDivider>
+        <IonText><div style={{marginTop: "2%", marginBottom: "-7%", marginLeft: "3%", fontWeight: "bold", fontSize: "95%" }}>Prizes</div></IonText>
+        <IonItemDivider color="#EFEFEF"></IonItemDivider>
         <IonText color="medium"><div style={{margin: "2%", fontSize: "80%"}}>* Redemption booth is located at Blk A Atrium (Near the lift lobby)</div></IonText>
         <IonGrid id="prizesContent-tableGrid">
             <IonRow id="prizesContent-tableHeader" className="ion-justify-content-center">

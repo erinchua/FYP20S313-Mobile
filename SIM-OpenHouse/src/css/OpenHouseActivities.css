@@ -1,3 +1,7 @@
+#openHouseActivities-content {
+    --background: #EFEFEF;
+}
+
 .openHouseActivities-grid {
     padding: 0;
 }

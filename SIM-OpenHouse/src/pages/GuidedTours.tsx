@@ -26,7 +26,7 @@ const GuidedTours: React.FC = () => {
                 <IonTitle id="guidedTours-schedule-text">Schedule</IonTitle>
             </IonToolbar>
     
-            <IonContent fullscreen>
+            <IonContent fullscreen id="guidedTours-content">
                 <IonGrid id="guidedTours-ionRowCol">
                     <IonRow id="guidedTours-ionRowCol">
                         <IonCol id="guidedTours-ionRowCol">

@@ -11,14 +11,14 @@ import Login from "./pages/Login";
 import AppU from "./AppU";
 
 import { AuthContext, useAuthInit } from "./auth";
-import './css/TopNav.css';
-import './css/Global.css';
-import './css/Menu.css';
+import "./css/TopNav.css";
+import "./css/Global.css";
+import "./css/Menu.css";
 
 /* Temp files */
 import Test from "./temp/Test";
 import VincentTest from "./temp/VincentTest";
-import QRscan from "./temp/QRScan";
+import QRscan from "./components/QRScan";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -42,11 +42,10 @@ import "./theme/variables.css";
 import Menu from "./components/Menu";
 
 const App: React.FC = () => {
-
   const { loading, auth } = useAuthInit();
   const [renderTopBar, setRenderTopBar] = useState<Boolean>(false);
   const [backArrow, setBackArrow] = useState<Boolean>(false);
-  const [title, setTitle ] = useState<String>("");
+  const [title, setTitle] = useState<String>("");
   const [route, setRoute] = useState<String>("");
   const [hamburger, setHamburger] = useState<Boolean>(false);
 
@@ -56,26 +55,29 @@ const App: React.FC = () => {
     setTitle(titleData);
     setHamburger(hamburgerData);
     setRoute(routeData);
-  }
+  };
 
-  if (loading) 
-    return <IonLoading isOpen />;
+  if (loading) return <IonLoading isOpen />;
 
   console.log(auth);
 
   return (
     <IonApp>
-      <AuthContext.Provider value={ auth! }>  {/*ignore this error */}
-        <Menu/>
-
+      <AuthContext.Provider value={auth!}>
+        {" "}
+        {/*ignore this error */}
+        {/* { renderTopBar ? 
+        <TopNav backarrow={backArrow} title= { title }  route={route} hamburger={hamburger}/> : ''
+        } */}
+        <Menu />
         <IonReactRouter>
           <IonRouterOutlet>
             {/* <Route path="/main" exact={true} render={() => {toggleMenuOptions(false, "", "", false, false); <Redirect to="/main"/<}}/>
             <Route path="/registration" exact={true} render={() => {toggleMenuOptions(true, "Registration", "", false, true); return <Registration/>;}}/>
             <Route path="/login" exact={true} render={() => {toggleMenuOptions(true, "Login", "", false, true); return <Login/>;}}/> */}
-            <Route path="/main" component={Main} exact={true}/>
-            <Route path="/registration" component={Registration} exact={true}/>
-            <Route path="/login" component={Login} exact={true}/>
+            <Route path="/main" component={Main} exact={true} />
+            <Route path="/registration" component={Registration} exact={true} />
+            <Route path="/login" component={Login} exact={true} />
             <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
@@ -85,9 +87,16 @@ const App: React.FC = () => {
             <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
 
             {/* Test components */}
-            {/* <Route path="/vincenttest" component={VincentTest} exact={true} />
-            <Route path="/test" component={Test} exact={false} />
-            <Route path="/qrscan" component={QRscan} exact={false} /> */}
+            {/* <Route path="/u/home" component={Home} exact={true}/>
+            <Route path="/u/openHouseMain" component={OpenHouseMain} exact={true}/>
+            <Route path="/u/openHouseMain/guidedTours" component={GuidedTours} exact={true} />
+            <Route path="/u/mySchedule" component={MySchedule} exact={true} />
+            <Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} />
+            <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} /> */}
+            <Route path="/vincenttest" component={VincentTest} exact={true} />
+
+            {/* <Route path="/test" component={Test} exact={false} />
+            <Route path="/qrscan" component={QRscan} exact={false} />  */}
 
             <Route path="/u" component={AppU} exact={false} />
             <Route exact path="/" render={() => <Redirect to="/main" />} />
