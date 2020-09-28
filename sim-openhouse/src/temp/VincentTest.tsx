@@ -5,12 +5,11 @@ import "../css/Home.css";
 import { auth, db } from "../firebase";
 import CreateClubAndCouncil from "./CreateClubAndCouncil";
 import ViewClubAndCouncil from "./ViewClubAndCouncil";
+import ViewContactInfo from "./ViewContactInfo";
 
 //<script src="../Resource/qrcode.min.js"></script>;
 
 const VincentTest: React.FC = () => {
-  const [contacts, setContact] = useState<any[]>([]);
-
   /*  useEffect(() => {
     const fetchData = async () => {
       const data = await db
@@ -30,20 +29,6 @@ const VincentTest: React.FC = () => {
       contact.data();
     })
   ); */
-
-  useEffect(() => {
-    db.collection("ContactInfo")
-      .get()
-      .then((snapshot) => {
-        const contact: any = [];
-        snapshot.forEach((doc) => {
-          const data = doc.data();
-          contact.push(data);
-        });
-        setContact(contact);
-      })
-      .catch((error) => console.log(error));
-  }, []);
 
   /*  const qrcode = new QRCode(document.getElementById("qrcode")); */
 
@@ -71,20 +56,10 @@ const VincentTest: React.FC = () => {
         <div>
           <QRCode value="ThomasLee@gmail.com,Thomas,Lee" />{" "}
         </div>
-        <ul>
-          {contacts.map((contact) => {
-            return (
-              <div>
-                <li>{contact.enquiryType} </li>
-                <li>{contact.operatingHours} </li>
-                <li>{contact.contactNo} </li>
-                <li>{contact.email} </li>
-              </div>
-            );
-          })}
-        </ul>
+
         {/* <CreateClubAndCouncil /> */}
-        <ViewClubAndCouncil categoryType="InternationalStudent"></ViewClubAndCouncil>
+        {/* <ViewClubAndCouncil categoryType="InternationalStudent"></ViewClubAndCouncil> */}
+        <ViewContactInfo></ViewContactInfo>
       </IonContent>
     </IonPage>
   );
