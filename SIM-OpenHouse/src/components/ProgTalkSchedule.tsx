@@ -14,6 +14,7 @@ const ProgTalkSchedule: React.FC<{
     day2: any;
 }> = props => {
 
+    {/* Register Alert */}
     const [registerSuccess, setRegisterSuccess] = useState(false);
     const [registerFail, setRegisterFail] = useState(false);
 
@@ -110,7 +111,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -135,7 +136,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
