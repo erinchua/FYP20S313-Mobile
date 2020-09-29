@@ -5,6 +5,10 @@ import "../css/Global.css";
 import "../css/Forum.css";
 import TopNav from '../components/TopNav';
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
+import {  faFlag, faUser } from "@fortawesome/free-solid-svg-icons";
+
 
 const Forum: React.FC = () => {
 
@@ -32,10 +36,40 @@ const Forum: React.FC = () => {
                 <IonToolbar id="forum-heading-container">
                     <IonTitle id="forum-heading">All Discussions</IonTitle>
                 </IonToolbar>
-                <IonList className="forum-question-container">
-                    <IonLabel>
-                        <IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of Wollongong) course?</IonText>
-                    </IonLabel>
+                <IonList>
+                    <IonGrid className="forum-question-container">
+                        <IonRow>
+                            <IonCol size="10" className="forum-question-col">
+                                <IonLabel>
+                                    <IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of Wollongong) course?</IonText>
+                                </IonLabel>
+                            </IonCol>
+                            <IonCol size="2" className="ion-align-self-start forum-question-col">
+                                <IonButton id="forum-question-flagBtn" size="small" style={{float: 'right', margin: '-2%'}}><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+                            </IonCol>
+                        </IonRow>
+                        <IonRow className="ion-align-items-end ion-justify-content-start" style={{marginTop: "5%"}}>
+                            <IonCol size="1" className="forum-question-col ion-align-self-end">
+                                <FontAwesomeIcon icon={faClock} size="sm"/>
+                            </IonCol>
+                            <IonCol size="4" className="forum-question-col ion-align-self-end">
+                                <IonText className="forum-question-details">21-11-2020, 5.30pm</IonText>
+                            </IonCol>
+                            <IonCol size="1" className="forum-question-col ion-align-self-end">
+                                <FontAwesomeIcon icon={faCommentAlt} size="sm"/>
+                            </IonCol>
+                            <IonCol size="2" className="forum-question-col ion-align-self-end">
+                                <IonText className="forum-question-details">0</IonText>
+                            </IonCol>
+                            <IonCol size="1" className="forum-question-col ion-align-self-end">
+                                <FontAwesomeIcon icon={faUser} size="sm"/>
+                            </IonCol>
+                            <IonCol size="3" className="forum-question-col ion-align-self-end">
+                                <IonText className="forum-question-details">Martin John</IonText>
+                            </IonCol>
+                            
+                        </IonRow>
+                    </IonGrid>
                 </IonList>
                 </>
                 : <form onSubmit={handleSubmit(onSubmit)}>        

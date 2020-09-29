@@ -60,11 +60,26 @@
 }
 
 .forum-question-container {
-    padding-left: 5%;
+    padding-left: 3%;
+    padding-right: 0;
 }
 
 .forum-question {
     font-size: 90%;
     font-weight: bold;
     color: #434343;
+}
+
+.forum-question-col {
+    padding: 0;
+}
+
+.forum-question-details {
+    font-size: 75%;
+}
+
+#forum-question-flagBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
 }
