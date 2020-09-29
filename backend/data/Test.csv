@@ -1,0 +1,4 @@
+awardedBy,modeOfStudy.fullTime,modeOfStudy.partTime,entryQualifications.diploma,entryQualifications.degree,entryQualifications.oLevel,entryQualifications.aLevel,subDiscipline,programmeTitle,academicLevel,discipline,id
+RMIT University,false,true,true,false,false,false,"[""Aviation""]",Bachelor of Applied Science (Aviation) (Top-up),Bachelor,"[""Specialty""]",programme-001
+RMIT University,false,true,true,false,false,false,"[""Construction and Management""]",Bachelor of Applied Science (Construction Management) (Honours) (Top-up),Bachelor,"[""Specialty""]",programme-002
+University of Wollongong,false,true,false,false,false,true,"[""Information Technology""]",Bachelor of Information Technology,Bachelor,"[""IT & Computer Science""]",programme-003
