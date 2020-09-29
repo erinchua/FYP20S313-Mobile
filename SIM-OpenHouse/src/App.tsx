@@ -38,6 +38,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+
 import Menu from "./components/Menu";
 
 const App: React.FC = () => {
@@ -80,8 +81,9 @@ const App: React.FC = () => {
             <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
-            <Route path="/home" render={() => <Redirect to="/u/home" />} />
-            <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />} />
+            <Route path="/home" render={() => <Redirect to="/u/home" />}/>
+            <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />}/>
+            <Route path="/progTalkInfo" render={() => <Redirect to="/u/openHouseMain/programmeTalks/progTalkInfo" />} />
             <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
 
             {/* Test components */}
