@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { auth, db } from "../firebase";
 import { TalkSchedule, toTalkSchedule } from '../openHouseProg';
