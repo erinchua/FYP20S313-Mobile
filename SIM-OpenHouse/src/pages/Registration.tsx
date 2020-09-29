@@ -336,7 +336,7 @@ const Registration: React.FC = () => {
               </IonCol>
             </IonRow>
             <IonRow>
-              <IonItem>
+              <IonItem id="registration-check">
                 <IonCheckbox name="privacyCheckbox" checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} slot="start" ref={register({ validate: (value) => checked === true })}></IonCheckbox>
                 <IonLabel style={{ fontSize: "80%", marginLeft: "10%" }} className="ion-text-wrap" color="dark">
                   I agree with SIM's Terms of Use and Privary Policy and thereby give my consent to receive marketing communications from SIM.

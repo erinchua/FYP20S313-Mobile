@@ -17,3 +17,7 @@
 #highestQualificationLabel, #nationalityLabel {
     font-size: 90%;
 }
+
+#registration-check {
+    --inner-border-width: 0;
+}

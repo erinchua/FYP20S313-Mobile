@@ -8,7 +8,7 @@ import { giftOutline, qrCodeOutline } from 'ionicons/icons';
 import PerformancesContent from '../components/PerformancesContent';
 import GamesContent from '../components/GamesContent';
 import PrizesContent from '../components/PrizesContent';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import QRScanner from '../components/QRScan';
 
 const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
 
@@ -38,16 +38,11 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
         setHeadingTitle('QR');
     }
 
-    const openScanner = async () => {
-        const data = await BarcodeScanner.scan();
-        console.log(`Barcode data: ${data.text}`);
-    };
-
     return (
         <IonPage>
             <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={ true } hamburger={ true } />
             
-            <IonContent fullscreen>
+            <IonContent fullscreen id="openHouseActivities-content">
                 {/* Main Heading */}
                 <IonGrid className="openHouseActivities-grid">
                     <IonRow className="openHouseActivities-grid">
@@ -123,9 +118,7 @@ const OpenHouseActivities: React.FC<{headingTitle: any}> = (props) => {
 
                 {/* QR Scanner */}
                 {headingTitle === 'QR' ? 
-                    <>
-                    <IonButton onClick={openScanner}>Scan barcode</IonButton>
-                    </> : ''
+                    <QRScanner /> : ''
                 }
                 
             </IonContent>
