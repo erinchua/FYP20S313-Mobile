@@ -1,4 +1,4 @@
-const db = require('./config/adminConfig');
+const db = require("./config/adminConfig");
 
 const fs = require("fs");
 const path = require("path");
@@ -9,7 +9,7 @@ const args = process.argv.slice(2)[0];
 fs.readdir(pathDir, (err, files) => {
     if (err) return console.log(`${err} Error reading directory`);
     let read = false;
-
+  
     files.forEach(file => {
         let fileName = path.parse(file).name;
         let fileExt = path.parse(file).ext;
@@ -18,13 +18,17 @@ fs.readdir(pathDir, (err, files) => {
             let dataCol = require(`${pathDir}${file}`);
             let counter = 0;
 
-            dataCol.forEach(obj => {
-                db.collection(fileName).doc(obj.id).set(obj).catch(err => {
-                    console.log(`Error occured: ${err}`);
-                });
-                counter++;
+        dataCol.forEach((obj) => {
+          db.collection(fileName)
+            .doc(obj.id)
+            .set(obj)
+            .catch((err) => {
+              console.log(`Error occured: ${err}`);
             });
-            console.log(`${counter} documents added to ${fileName}`);
-        }
+          counter++;
+        });
+        console.log(`${counter} documents added to ${fileName}`);
+      }
     });
+  });
 });

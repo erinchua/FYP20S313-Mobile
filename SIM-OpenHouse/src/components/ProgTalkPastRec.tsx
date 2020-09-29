@@ -1,0 +1,56 @@
+import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
+import React from 'react';
+
+import '../css/Global.css';
+import '../css/ProgrammeTalks.css'
+
+import { faFileVideo } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const ProgTalkPastRec: React.FC<{
+    day1: any; 
+    day2: any;
+}> = props => {
+
+    return (
+        <>
+            <IonGrid className="progTalk-TableGrid">
+                <IonRow className="ion-justify-content-center progTalk-TableHeader">
+                    <IonCol size-sizeSm="4" className="progTalk-Data ion-text-wrap">Programme Talk</IonCol>
+                    <IonCol size-sizeSm="4" className="progTalk-Data ion-text-wrap">Awarding University</IonCol>
+                    <IonCol size-sizeSm="4" className="progTalk-Data ion-text-wrap">View Recording</IonCol>
+                </IonRow>
+
+                {props.day1 === 'day1' ? 
+                    <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                        <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
+                                University of Wollongong - Computer Science Undergraduate Programme Talk
+                        </IonCol>                       
+                        <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">University of Wollongong</IonCol>
+                        <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
+                            <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}>
+                                <FontAwesomeIcon icon={faFileVideo} size="lg"/>
+                            </IonButton>
+                        </IonCol>
+                    </IonRow> : '' 
+                }
+
+                {props.day2 === 'day2' ? 
+                    <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                    <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
+                        University of London - Computer Science Undergraduate Programme Talk  
+                    </IonCol>                 
+                    <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">University of London</IonCol>
+                    <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
+                        <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}}>
+                            <FontAwesomeIcon icon={faFileVideo} size="lg"/>
+                        </IonButton>
+                    </IonCol>
+                </IonRow> : '' 
+                }
+            </IonGrid>
+        </>
+    );
+};
+
+export default ProgTalkPastRec;

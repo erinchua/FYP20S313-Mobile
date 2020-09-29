@@ -1,0 +1,70 @@
+#forum-content {
+    --background: #EFEFEF;
+}
+
+/* Forum Rules */
+#forumRulesGrid {
+    margin-left: 3%;
+}
+
+#important-notice {
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#forum-rules {
+    color: #537A94;
+    font-weight: bold;
+    margin-top: 3%;
+    font-size: 90%;
+}
+
+#forum-instructions {
+    color: #537A94;
+    margin-top: 3%;
+    font-size: 80%;
+}
+
+#forum-checkbox-container {
+    margin-top: 10%;
+    --background: #EFEFEF;
+    --inner-border-width: 0;
+}
+
+#forum-checkbox-text {
+    font-size: 75%;
+}
+
+#forumRulesBtn {
+    --background: #37474F;
+    margin-top: 10%;
+}
+
+/* View Forum */
+#forum-searchbar-container {
+    --background: #A9DBD9;
+}
+
+#forum-searchbar {
+    --border-radius: 5px;
+}
+
+#forum-heading-container {
+    --background: transparent;
+}
+
+#forum-heading {
+    font-size: 90%;
+    font-weight: bold;
+    color: #434343;
+}
+
+.forum-question-container {
+    padding-left: 5%;
+}
+
+.forum-question {
+    font-size: 90%;
+    font-weight: bold;
+    color: #434343;
+}
