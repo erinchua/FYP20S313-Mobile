@@ -41,7 +41,16 @@ const Registration: React.FC = () => {
       nationality: data.nationality,
       points: 0,
       isSuspendedFromForum: false,
-    });
+    })
+    db.collection("PersonalScheduler").doc(uid).set({
+      isConflicted: false,
+      openhouseProgrammeID: [],
+      openhouseProgrammeName: [],
+      openhouseProgrammeDateTimeStart: [],
+      openhouseProgrammeDateTimeEnd: [],
+      openhouseProgrammeVenue: [],
+    })
+
   };
 
   const handleRegister = async (data: any) => {
@@ -63,7 +72,7 @@ const Registration: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNav title="Registration" route="/main" backarrow={ true } hamburger = { false }/>
+      <TopNav title="Registration" route="/main" backarrow={true} hamburger={false} />
 
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleRegister)}>
@@ -85,7 +94,7 @@ const Registration: React.FC = () => {
             <IonRow>
               <IonCol>
                 <IonInput className="inputField" type="email" placeholder="Email" name="email"
-                  ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}/>
+                  ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })} />
                 {errors.email && errors.email.type === "required" && <div className="errorMessage">Email is required!</div>}
                 {errors.email && errors.email.type === "pattern" && <div className="errorMessage">Please enter a valid Email</div>}
               </IonCol>
@@ -122,6 +131,7 @@ const Registration: React.FC = () => {
                 <IonItem>
                   <IonLabel id="nationalityLabel">Nationality</IonLabel>
                   <IonSelect placeholder="Please Select" name="nationality" ref={register({ required: true })}>
+                    <IonSelectOption value="singaporean">Singaporean</IonSelectOption>
                     <IonSelectOption value="afghan">Afghan</IonSelectOption>
                     <IonSelectOption value="albanian">Albanian</IonSelectOption>
                     <IonSelectOption value="algerian">Algerian</IonSelectOption>
@@ -279,7 +289,6 @@ const Registration: React.FC = () => {
                     <IonSelectOption value="serbian">Serbian</IonSelectOption>
                     <IonSelectOption value="seychellois">Seychellois</IonSelectOption>
                     <IonSelectOption value="sierra leonean">Sierra Leonean</IonSelectOption>
-                    <IonSelectOption value="singaporean">Singaporean</IonSelectOption>
                     <IonSelectOption value="slovakian">Slovakian</IonSelectOption>
                     <IonSelectOption value="slovenian">Slovenian</IonSelectOption>
                     <IonSelectOption value="solomon islander">Solomon Islander</IonSelectOption>

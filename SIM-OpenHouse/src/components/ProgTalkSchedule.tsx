@@ -12,14 +12,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ProgTalkSchedule: React.FC<{
     day1: any;
     day2: any;
+    openhouseDates: any;
 }> = props => {
 
     const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
     const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
-
+    console.log("Openhouse dates: " + props.openhouseDates)
     useEffect(() => {
         db.collection("ProgrammeTalks")
-            .where("date", "==", "21-Nov-2020")
+            .where("date", "==", props.openhouseDates[0])
             .get()
             .then((snapshot) => {
                 const programmeTalk: any = [];
@@ -32,7 +33,7 @@ const ProgTalkSchedule: React.FC<{
             .catch((error) => console.log(error));
 
         db.collection("ProgrammeTalks")
-            .where("date", "==", "22-Nov-2020")
+            .where("date", "==", props.openhouseDates[1])
             .get()
             .then((snapshot) => {
                 const programmeTalk: any = [];
@@ -44,7 +45,7 @@ const ProgTalkSchedule: React.FC<{
             })
             .catch((error) => console.log(error));
 
-    }, []);
+    }, [props.openhouseDates]);
     return (
         <>
             <IonGrid className="progTalk-TableGrid">

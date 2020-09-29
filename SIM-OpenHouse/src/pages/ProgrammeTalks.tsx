@@ -2,6 +2,7 @@ import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonImg, 
 import React, { useEffect, useRef, useState } from "react";
 import { withRouter } from "react-router-dom";
 
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,10 +13,12 @@ import TopNav from "../components/TopNav";
 import ProgTalkSchedule from "../components/ProgTalkSchedule";
 import ProgTalkLiveTalks from "../components/ProgTalkLiveTalks";
 import ProgTalkPastRec from "../components/ProgTalkPastRec";
+import { db } from "../firebase";
 
 const ProgrammeTalks: React.FC = () => {
   const [tab, setTab] = useState("schedule");
   const [dayNum, setDayNum] = useState("day1");
+
 
   // useEffect (() => {
   //     handleSchedule();
@@ -40,7 +43,31 @@ const ProgrammeTalks: React.FC = () => {
     setTab("pastRecordings");
   };
 
+  const [openhouseDate, setOpenhouseDate] = useState([])
+
+  useEffect(() => {
+    db.collection("Openhouse")
+      .get()
+      .then((snapshot) => {
+        const dates: any = [];
+        snapshot.forEach((doc) => {
+          const data = doc.get('day')
+          data.forEach((day: any) => {
+            dates.push(day.date)
+            console.log("Date are : " + data.date);
+          })
+          dates.push(data.date);
+        });
+        setOpenhouseDate(dates);
+      })
+      .catch((error) => console.log(error));
+
+
+  }, [])
+  console.log("openhouse dates :" + openhouseDate)
   return (
+
+
     <IonPage>
       <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
 
@@ -97,7 +124,7 @@ const ProgrammeTalks: React.FC = () => {
               </IonRow>
             </IonGrid>
 
-            <ProgTalkSchedule day1={dayNum} day2={dayNum} />
+            <ProgTalkSchedule day1={dayNum} day2={dayNum} openhouseDates={openhouseDate} />
           </>
         ) : (
             ""
