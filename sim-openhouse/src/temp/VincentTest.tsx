@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
 import "../css/Home.css";
 import { auth, db } from "../firebase";
-import CreateClubAndCouncil from "./CreateClubAndCouncil";
+// import CreateClubAndCouncil from "./CreateClubAndCouncil";
 import ViewClubAndCouncil from "./ViewClubAndCouncil";
 import ViewContactInfo from "./ViewContactInfo";
+import ViewProgrammeTalk from "./ViewProgrammeTalk";
 
 //<script src="../Resource/qrcode.min.js"></script>;
 
@@ -59,7 +60,8 @@ const VincentTest: React.FC = () => {
 
         {/* <CreateClubAndCouncil /> */}
         {/* <ViewClubAndCouncil categoryType="InternationalStudent"></ViewClubAndCouncil> */}
-        <ViewContactInfo></ViewContactInfo>
+        {/* <ViewContactInfo></ViewContactInfo> */}
+        <ViewProgrammeTalk date="21-Nov-2020"></ViewProgrammeTalk>
       </IonContent>
     </IonPage>
   );

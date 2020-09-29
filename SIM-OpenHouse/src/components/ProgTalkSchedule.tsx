@@ -1,5 +1,7 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@ionic/react';
-import React, { useReducer, useRef, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { auth, db } from "../firebase";
+
 
 import '../css/Global.css';
 import '../css/ProgrammeTalks.css'
@@ -8,7 +10,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProgTalkSchedule: React.FC<{
-    day1: any; 
+    day1: any;
     day2: any;
 }> = props => {
 
@@ -32,6 +34,37 @@ const ProgTalkSchedule: React.FC<{
             
 
 
+    const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
+    const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
+
+    useEffect(() => {
+        db.collection("ProgrammeTalks")
+            .where("date", "==", "21-Nov-2020")
+            .get()
+            .then((snapshot) => {
+                const programmeTalk: any = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    programmeTalk.push(data);
+                });
+                setProgrammeTalkDay1(programmeTalk);
+            })
+            .catch((error) => console.log(error));
+
+        db.collection("ProgrammeTalks")
+            .where("date", "==", "22-Nov-2020")
+            .get()
+            .then((snapshot) => {
+                const programmeTalk: any = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    programmeTalk.push(data);
+                });
+                setProgrammeTalkDay2(programmeTalk);
+            })
+            .catch((error) => console.log(error));
+
+    }, []);
     return (
         <>
             <IonAlert
@@ -63,42 +96,51 @@ const ProgTalkSchedule: React.FC<{
                     <IonCol size-sizeSm="2" className="progTalk-Data ion-text-wrap">Add to My Schedule</IonCol>
                 </IonRow>
 
-                {props.day1 === 'day1' ? 
-                    <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
-                        <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
-                            <IonRouterLink href="progTalkInfo" id="uniLink" >
-                                University of Wollongong - Computer Science Undergraduate Programme Talk
-                            </IonRouterLink>    
-                        </IonCol>
-                        
-                        <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">University of Wollongong</IonCol>
-                        <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">10:00 AM to 11:00 AM</IonCol>
-                        <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">SIM HQ BLK A LT A.2.08</IonCol>
-                        <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                            <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}} onClick={displayRegisterAlert}>
-                                <FontAwesomeIcon icon={faPlus} size="lg"/>
-                            </IonButton>
-                        </IonCol>
-                    </IonRow> : '' 
-                }
+                {props.day1 === 'day1' ?
+                    programmeTalkDay1.map((programmeTalk: any) => {
+                        return (
+                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                                <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
+                                    <IonRouterLink href="progTalkInfo" id="uniLink" >
+                                        {programmeTalk.talkName}
+                                    </IonRouterLink>
+                                </IonCol>
 
-                {props.day2 === 'day2' ? 
-                    <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
-                        <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
-                            <IonRouterLink href="ProgTalkInfo" id="uniLink">
-                                University of London - Computer Science Undergraduate Programme Talk
-                            </IonRouterLink>    
-                        </IonCol>
-                        
-                        <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">University of London</IonCol>
-                        <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">10:00 AM to 11:00 AM</IonCol>
-                        <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">SIM HQ BLK B LT B.2.01</IonCol>
-                        <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                            <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{marginTop: "-5%", marginBottom: "-5%"}} onClick={displayRegisterAlert}>
-                                <FontAwesomeIcon icon={faPlus} size="lg"/>
-                            </IonButton>
-                        </IonCol>
-                    </IonRow> : '' 
+                                <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni} </IonCol>
+                                <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
+                                <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
+                                <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                        <FontAwesomeIcon icon={faPlus} size="lg" />
+                                    </IonButton>
+                                </IonCol>
+                            </IonRow>
+                        )
+                    })
+                    : ''}
+
+
+
+                {props.day2 === 'day2' ?
+                    programmeTalkDay2.map((programmeTalk: any) => {
+                        return (
+                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                                <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
+                                    <IonRouterLink href="ProgTalkInfo" id="uniLink">
+                                        {programmeTalk.talkName}
+                                    </IonRouterLink>
+                                </IonCol>
+
+                                <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
+                                <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
+                                <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
+                                <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                        <FontAwesomeIcon icon={faPlus} size="lg" />
+                                    </IonButton>
+                                </IonCol>
+                            </IonRow>)
+                    }) : ''
                 }
             </IonGrid>
         </>
