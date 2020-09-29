@@ -10,7 +10,6 @@ const GuidedTours: React.FC = () => {
 
     const [dayNum, setDayNum] = useState('day1');
 
-
     const handleDayOne = () => {
         setDayNum('day1');
     }
@@ -40,7 +39,6 @@ const GuidedTours: React.FC = () => {
                     </IonRow>
                     <GuidedTourContent day1={dayNum} day2={dayNum}/>
                 </IonGrid>
-
             </IonContent>
         </IonPage>
     );

@@ -6,7 +6,7 @@ import { IonContent,
     IonButton, 
     IonItem, 
     IonInput } from '@ionic/react';
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,14 +16,19 @@ import '../css/ForgetPassword1.css';
 import '../css/Global.css';
 
 import TopNav from '../components/TopNav';
+import { auth } from '../firebase';
 
 
 const ForgetPassword1: React.FC = () => {
-    const { register, handleSubmit, errors, reset } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (data: any) => {
-        console.log("Submitted");
-        console.log(data);
+        //console.log(auth);
+        auth.sendPasswordResetEmail(data.emailID).then(() => {
+            //alert for verification email sent
+        }).catch(err => {
+            return console.log(`An error has occured. ${err}`);
+        });
     };
 
     return (

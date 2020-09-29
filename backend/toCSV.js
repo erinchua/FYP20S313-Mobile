@@ -13,12 +13,10 @@ const firestoreToCSV = async () => {
     console.log(colData);
 
     converter.json2csv(colData, (err, csv) => {
-        if (err)
-            return console.log(`${err} Error occured`);
+        if (err) return console.log(`${err} Error occured`);
 
         fs.writeFileSync(`${pathDir}${args}.csv`, csv, err => {
-            if (err)
-                return console.log(`${err} Error writing file`)
+            if (err) return console.log(`${err} Error writing file`)
         });
     });
 };

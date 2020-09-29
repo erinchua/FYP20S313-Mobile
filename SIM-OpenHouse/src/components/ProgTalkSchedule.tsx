@@ -1,5 +1,8 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { db } from '../firebase';
+import { TalkSchedule, toTalkSchedule } from '../openHouseProg';
 
 import '../css/Global.css';
 import '../css/ProgrammeTalks.css'
@@ -7,10 +10,14 @@ import '../css/ProgrammeTalks.css'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ProgTalkSchedule: React.FC<{
-    day1: any; 
-    day2: any;
-}> = props => {
+const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
+    const [talks, setTalks] = useState<TalkSchedule[]>([]);
+
+    useEffect(() => {
+        return db.collection('ProgrammesTalks').onSnapshot(({ docs }) => setTalks(docs.map(toTalkSchedule)));
+    }, []);
+
+    console.log(talks);
 
     return (
         <>
