@@ -29,6 +29,9 @@ const Main: React.FC = () => {
             <IonRow>
               <p id="information">Time: 9am - 5pm</p>
             </IonRow>
+            <IonRow>
+              <p id="information">Venue: SIM HQ</p>
+            </IonRow>
         </IonGrid>
 
         <IonGrid className="BottomHalf">
