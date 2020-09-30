@@ -9,42 +9,42 @@ import '../css/ProgrammeTalks.css'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
-    const [talks, setTalks] = useState<TalkSchedule[]>([]);
+const ProgTalkSchedule: React.FC<{
+    day1: any;
+    day2: any;
+    openhouseDates: any;
+}> = props => {
 
-    useEffect(() => {
-        return db.collection('ProgrammesTalks').onSnapshot(({ docs }) => setTalks(docs.map(toTalkSchedule)));
-    }, []);
+    // const [talks, setTalks] = useState<TalkSchedule[]>([]);
 
-    console.log(talks);
-
-    {/* Register Alert */}
+    const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
+    const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
+    console.log("Openhouse dates: " + props.openhouseDates)
+    {/* Register Alert */ }
     const [registerSuccess, setRegisterSuccess] = useState(false);
     const [registerFail, setRegisterFail] = useState(false);
 
     const displayRegisterAlert = () => {
         {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
-         of the programme the user wants to add*/}
-        
+          of the programme the user wants to add*/}
+
         {/* if (exist) {
-             setRegisterSuccess(true);
+              setRegisterSuccess(true);
+              setRegisterSuccess(false);
+          } else {
+              setRegisterFail(true);
              setRegisterSuccess(false);
-         } else {
-             setRegisterFail(true);
-            setRegisterSuccess(false);
-        } */}
+         } */}
 
-        {/* set state to disable the + btn in else {} */}
+        {/* set state to disable the + btn in else {} */ }
     };
-            
-
-
-    const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
-    const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
 
     useEffect(() => {
+
+        // return db.collection('ProgrammesTalks').onSnapshot(({ docs }) => setTalks(docs.map(toTalkSchedule)));
+
         db.collection("ProgrammeTalks")
-            .where("date", "==", "21-Nov-2020")
+            .where("date", "==", props.openhouseDates[0])
             .get()
             .then((snapshot) => {
                 const programmeTalk: any = [];
@@ -57,7 +57,7 @@ const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
             .catch((error) => console.log(error));
 
         db.collection("ProgrammeTalks")
-            .where("date", "==", "22-Nov-2020")
+            .where("date", "==", props.openhouseDates[1])
             .get()
             .then((snapshot) => {
                 const programmeTalk: any = [];
@@ -70,6 +70,7 @@ const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
             .catch((error) => console.log(error));
 
     }, []);
+
     return (
         <>
             <IonAlert
@@ -80,7 +81,7 @@ const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
                 header={'Successfully Registered'}
                 message={'You have successfully registered for the programme talk and it has been successfully added to My Schedule.'}
                 buttons={['Close']}
-             ></IonAlert>
+            ></IonAlert>
 
             <IonAlert
                 isOpen={registerFail}
@@ -90,7 +91,7 @@ const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
                 header={'Registration Unsuccessful'}
                 message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
                 buttons={['Close']}
-             ></IonAlert>
+            ></IonAlert>
 
             <IonGrid className="progTalk-TableGrid">
                 <IonRow className="ion-justify-content-center progTalk-TableHeader">
