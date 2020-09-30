@@ -14,6 +14,7 @@ const ProgTalkInfo: React.FC<{
     venue: string;
 }> = props => {
     
+    {/* Register Alert */}
     const [registerSuccess, setRegisterSuccess] = useState(false);
     const [registerFail, setRegisterFail] = useState(false);
 

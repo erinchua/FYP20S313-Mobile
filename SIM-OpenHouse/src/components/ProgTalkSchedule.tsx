@@ -1,7 +1,7 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@ionic/react';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { auth, db } from "../firebase";
-
+import { TalkSchedule, toTalkSchedule } from '../openHouseProg';
 
 import '../css/Global.css';
 import '../css/ProgrammeTalks.css'
@@ -9,11 +9,16 @@ import '../css/ProgrammeTalks.css'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ProgTalkSchedule: React.FC<{
-    day1: any;
-    day2: any;
-}> = props => {
+const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
+    const [talks, setTalks] = useState<TalkSchedule[]>([]);
 
+    useEffect(() => {
+        return db.collection('ProgrammesTalks').onSnapshot(({ docs }) => setTalks(docs.map(toTalkSchedule)));
+    }, []);
+
+    console.log(talks);
+
+    {/* Register Alert */}
     const [registerSuccess, setRegisterSuccess] = useState(false);
     const [registerFail, setRegisterFail] = useState(false);
 
@@ -110,7 +115,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -135,7 +140,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
