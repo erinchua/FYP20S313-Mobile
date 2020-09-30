@@ -12,40 +12,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ProgTalkPastRec: React.FC<{
     day1: any;
     day2: any;
+    recordedTalk: any;
+    openhouseDates: any;
 }> = props => {
-    const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
-    const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
+    const recordedTalkDay1 = props.recordedTalk
+        .filter((talk: any) => {
+            return talk.date == props.openhouseDates[0]
+        })
 
-    useEffect(() => {
-        db.collection("ProgrammeTalks")
-            .where("date", "==", "21-Nov-2020")
-            .where("hasRecording", "==", true)
-            .get()
-            .then((snapshot) => {
-                const programmeTalk: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    programmeTalk.push(data);
-                });
-                setProgrammeTalkDay1(programmeTalk);
-            })
-            .catch((error) => console.log(error));
+    const recordedTalkDay2 = props.recordedTalk
+        .filter((talk: any) => {
+            return talk.date == props.openhouseDates[1]
+        })
 
-        db.collection("ProgrammeTalks")
-            .where("date", "==", "22-Nov-2020")
-            .where("hasRecording", "==", true)
-            .get()
-            .then((snapshot) => {
-                const programmeTalk: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    programmeTalk.push(data);
-                });
-                setProgrammeTalkDay2(programmeTalk);
-            })
-            .catch((error) => console.log(error));
-
-    }, []);
     return (
         <>
             <IonGrid className="progTalk-TableGrid">
@@ -56,7 +35,7 @@ const ProgTalkPastRec: React.FC<{
                 </IonRow>
 
                 {props.day1 === 'day1' ?
-                    programmeTalkDay1.map((programmeTalk) => {
+                    recordedTalkDay1.map((programmeTalk: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
                                 <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
@@ -76,7 +55,7 @@ const ProgTalkPastRec: React.FC<{
                 }
 
                 {props.day2 === 'day2' ?
-                    programmeTalkDay2.map((programmeTalk) => {
+                    recordedTalkDay2.map((programmeTalk: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
                                 <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">

@@ -2,6 +2,7 @@ import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonImg, 
 import React, { useEffect, useRef, useState } from "react";
 import { withRouter } from "react-router-dom";
 
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,10 +13,12 @@ import TopNav from "../components/TopNav";
 import ProgTalkSchedule from "../components/ProgTalkSchedule";
 import ProgTalkLiveTalks from "../components/ProgTalkLiveTalks";
 import ProgTalkPastRec from "../components/ProgTalkPastRec";
+import { db } from "../firebase";
 
 const ProgrammeTalks: React.FC = () => {
   const [tab, setTab] = useState("schedule");
   const [dayNum, setDayNum] = useState("day1");
+
 
   // useEffect (() => {
   //     handleSchedule();
@@ -41,8 +44,43 @@ const ProgrammeTalks: React.FC = () => {
     setTab("pastRecordings");
   };
 
+  const [openhouseDates, setOpenhouseDates] = useState([])
+  const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
+
+  const liveTalk = programmeTalk.filter(talk => { return talk.isLive == true })
+  const recordedTalk = programmeTalk.filter(talk => { return talk.hasRecording == true })
+
+  useEffect(() => {
+    const dates: any = [];
+
+    db.collection("Openhouse")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          const data = doc.get('day')
+          data.forEach((day: any) => { dates.push(day.date) })
+        });
+        setOpenhouseDates(dates);
+      })
+      .catch((error) => console.log(error));
+
+    db.collection("ProgrammeTalks")
+      .get()
+      .then((snapshot) => {
+        const programmeTalk: any = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          programmeTalk.push(data);
+        });
+        setProgrammeTalk(programmeTalk);
+      })
+      .catch((error) => console.log(error));
+
+  }, [])
+
   return (
     <IonPage>
+
       <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
 
       <IonContent fullscreen className="progTalkIonContent">
@@ -96,7 +134,7 @@ const ProgrammeTalks: React.FC = () => {
               </IonRow>
             </IonGrid>
 
-            <ProgTalkSchedule day1={dayNum} day2={dayNum} />
+            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} />
           </>
         ) : (
             ""
@@ -122,7 +160,7 @@ const ProgrammeTalks: React.FC = () => {
               </IonRow>
             </IonGrid>
 
-            <ProgTalkLiveTalks day1={dayNum} day2={dayNum} />
+            <ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
           </>
         ) : (
             ""
@@ -160,7 +198,7 @@ const ProgrammeTalks: React.FC = () => {
               </IonRow>
             </IonGrid>
 
-            <ProgTalkPastRec day1={dayNum} day2={dayNum} />
+            <ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
           </>
         ) : (
             ""
