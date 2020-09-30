@@ -1,4 +1,4 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonModal, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 
@@ -20,6 +20,11 @@ const Forum: React.FC = () => {
     const [count, setCount] = useState(0);
 
     const [showPopover, setShowPopover] = useState(false);
+
+    const [showPostModal, setShowPostModal] = useState(false);
+    const [showUserModal, setShowUserModal] = useState(false);
+
+    const [modalSegmentValue, setModalSegmentValue] = useState('');
 
     const onSubmit = () => {
         setCount(1);
@@ -181,6 +186,30 @@ const Forum: React.FC = () => {
                     </IonGrid>
                 </form>
             }
+
+            {/* Post Question Modal */}
+            <IonModal isOpen={showPostModal} cssClass='post-question-modal' onDidDismiss={() => setShowPostModal(false)}>
+                <IonGrid id="postQns-modal-container">
+                    <IonRow style={{paddingTop: '1%'}}>
+                        <IonLabel id="postQns-title">Post Question</IonLabel>
+                    </IonRow>
+                    <IonItemDivider></IonItemDivider>
+                    <IonRow id="postQns-modal-inputArea">
+                        <IonTextarea placeholder="Type your question here..."></IonTextarea>
+                    </IonRow>
+                    <IonRow className="ion-justify-content-around">
+                        <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
+                        <IonButton id="postQns-post-button">POST</IonButton>
+                    </IonRow>
+                </IonGrid>
+            </IonModal>
+
+            {/* Forum User Modal */}
+            <IonModal isOpen={showUserModal} cssClass='forum-user-modal' onDidDismiss={() => setShowUserModal(false)}>
+                <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true } />
+                <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowUserModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
+            </IonModal>
+
             </IonContent>
 
             {/* Bottom Tabs (After Forum Rules) */}
@@ -188,9 +217,9 @@ const Forum: React.FC = () => {
                 <>
                 <IonFooter>
                     <IonToolbar>
-                        <IonSegment scrollable onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                            <IonSegmentButton value="postQuestionBtn"><IonIcon icon={addCircleSharp} /></IonSegmentButton>
-                            <IonSegmentButton value="forumUserBtn"><FontAwesomeIcon icon={faUser} /></IonSegmentButton>
+                        <IonSegment value={modalSegmentValue} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                            <IonSegmentButton value="postQuestionBtn" onClick={() => [setShowPostModal(true), setModalSegmentValue('postQuestionBtn')]}><IonIcon icon={addCircleSharp} /></IonSegmentButton>
+                            <IonSegmentButton value="forumUserBtn" onClick={() => [setShowUserModal(true), setModalSegmentValue('forumUserBtn')]}><FontAwesomeIcon icon={faUser} /></IonSegmentButton>
                         </IonSegment>
                     </IonToolbar>
                 </IonFooter>

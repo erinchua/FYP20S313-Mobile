@@ -113,3 +113,40 @@
     margin-top: 5%;
     font-size: 80%;
 }
+
+/* Post Question Modal */
+.post-question-modal {
+    --max-height: 60%;
+    --max-width: 90%;
+    --border-radius: 3%;
+}
+
+#postQns-modal-container {
+    width: 100%;
+}
+
+#postQns-title {
+    font-weight: bold;
+    color: #434343;
+    font-size: 90%;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: -6%;
+}
+
+#postQns-modal-inputArea {
+    height: 70%;
+    border: 1px solid #C8C8C8;
+    margin: 3% 0%;
+}
+
+#postQns-close-button {
+    --border-color: #37474F;
+    color: #37474F;
+    width: 30%;
+}
+
+#postQns-post-button {
+    --background: #37474F;
+    width: 30%;
+}
