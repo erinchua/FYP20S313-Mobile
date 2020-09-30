@@ -8,48 +8,18 @@ import { GuidedTours, toGuidedTours } from '../openHouseProg';
 
 import { auth, db } from "../firebase";
 
-const GuidedTourContent: React.FC<{ day1: any; day2: any }> = props => {
-    const [guidedTourDay1, setGuidedTourDay1] = useState<any[]>([]);
-    const [guidedTourDay2, setGuidedTourDay2] = useState<any[]>([]);
+const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; openhouseDates: any }> = props => {
 
-    // const [tours, setTours] = useState<GuidedTours[]>([]);
+    const guidedTourDay1 = props.guidedTours
+        .filter((tour: any) => {
+            return tour.date == props.openhouseDates[0]
+        })
 
-    useEffect(() => {
+    const guidedTourDay2 = props.guidedTours
+        .filter((tour: any) => {
+            return tour.date == props.openhouseDates[1]
+        })
 
-        /*        Shi ying
-        return db.collection('GuidedTours').onSnapshot(({ docs }) => setTours(docs.map(toGuidedTours)));
-           }, []); 
-           console.log(tours);
-           */
-
-
-        db.collection("GuidedTours")
-            .where("date", "==", "21-Nov-2020")
-            .get()
-            .then((snapshot) => {
-                const guidedTours: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    guidedTours.push(data);
-                });
-                setGuidedTourDay1(guidedTours);
-            })
-            .catch((error) => console.log(error));
-
-        db.collection("GuidedTours")
-            .where("date", "==", "22-Nov-2020")
-            .get()
-            .then((snapshot) => {
-                const guidedTours: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    guidedTours.push(data);
-                });
-                setGuidedTourDay2(guidedTours);
-            })
-            .catch((error) => console.log(error));
-
-    }, []);
 
     return (
         <>
@@ -62,7 +32,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any }> = props => {
                     <IonCol className="guidedTours-Data ion-text-wrap">Add to My Schedule</IonCol>
                 </IonRow>
                 {props.day1 === "day1" ?
-                    guidedTourDay1.map((guidedTour, index) => {
+                    guidedTourDay1.map((guidedTour: any, index: any) => {
                         return (
                             <IonRow className="ion-justify-content-center">
                                 <IonCol className="guidedTours-Data ion-text-wrap">{index + 1}</IonCol>
@@ -76,7 +46,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any }> = props => {
                     : ''
                 }
                 {props.day2 === "day2" ?
-                    guidedTourDay2.map((guidedTour, index) => {
+                    guidedTourDay2.map((guidedTour: any, index: any) => {
                         return (
                             <IonRow className="ion-justify-content-center">
                                 <IonCol className="guidedTours-Data ion-text-wrap">{index + 1}</IonCol>
