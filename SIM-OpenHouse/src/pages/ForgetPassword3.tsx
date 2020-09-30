@@ -1,22 +1,19 @@
 import { IonContent, 
-    IonHeader, 
     IonPage, 
-    IonTitle, 
-    IonToolbar, 
     IonGrid, 
     IonRow, 
     IonCol, 
     IonIcon, 
-    IonButtons, 
     IonButton, 
     IonItem, 
     IonInput,
     IonList,
     IonAlert } from '@ionic/react';
 import React, {useRef, useState} from 'react';
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import {useHistory} from 'react-router-dom';
-import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
+import { shieldCheckmarkOutline } from 'ionicons/icons';
+import { auth } from '../firebase';
 
 import '../css/ForgetPassword3.css';
 import '../css/Global.css';
@@ -28,8 +25,10 @@ const ForgetPassword3: React.FC = () => {
     const { register, handleSubmit, errors, watch, reset, getValues } = useForm();
 
     const onSubmit = (data: any) => {
-        console.log("Submitted");
-        console.log(data);
+        //console.log("Submitted");
+        //console.log(data);
+        const code: any = new URLSearchParams(window.location.search).get('oobCode');
+        auth.confirmPasswordReset(code, data.newPassword).catch(err => { return console.log(err) });
     };
 
     const newPassword = useRef({});

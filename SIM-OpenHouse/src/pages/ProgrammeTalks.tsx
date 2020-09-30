@@ -1,5 +1,5 @@
-import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from "@ionic/react";
-import React, { useEffect, useRef, useState } from "react";
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from "@ionic/react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 
 

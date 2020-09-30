@@ -1,4 +1,4 @@
-import {  IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import {  IonButton, IonCol, IonGrid, IonRow } from '@ionic/react';
 import React from 'react';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 

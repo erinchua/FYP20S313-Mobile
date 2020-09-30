@@ -1,6 +1,5 @@
 import React from 'react';
 import {IonRow, IonButton} from '@ionic/react';
-import ReactCodeInput from 'react-verification-code-input';
 
 const TestController: React.FC<{
     onVerify: () => void;

@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { IonCol, IonGrid, IonRow, IonButton } from '@ionic/react';
 import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { GuidedTours, toGuidedTours } from '../openHouseProg';
-
-import { auth, db } from "../firebase";
 
 const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; openhouseDates: any }> = props => {
 
