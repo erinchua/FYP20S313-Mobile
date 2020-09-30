@@ -11,40 +11,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ProgTalkLiveTalks: React.FC<{
     day1: any;
     day2: any;
+    liveTalk: any
+    openhouseDates: any
 }> = props => {
-    const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
-    const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
 
-    useEffect(() => {
-        db.collection("ProgrammeTalks")
-            .where("date", "==", "21-Nov-2020")
-            .where("isLive", "==", true)
-            .get()
-            .then((snapshot) => {
-                const programmeTalk: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    programmeTalk.push(data);
-                });
-                setProgrammeTalkDay1(programmeTalk);
-            })
-            .catch((error) => console.log(error));
 
-        db.collection("ProgrammeTalks")
-            .where("date", "==", "22-Nov-2020")
-            .where("isLive", "==", true)
-            .get()
-            .then((snapshot) => {
-                const programmeTalk: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    programmeTalk.push(data);
-                });
-                setProgrammeTalkDay2(programmeTalk);
-            })
-            .catch((error) => console.log(error));
+    const liveTalkDay1 = props.liveTalk.filter((talk: any) => {
+        return talk.date == props.openhouseDates[0]
+    })
 
-    }, []);
+    const liveTalkDay2 = props.liveTalk.filter((talk: any) => {
+        return talk.date == props.openhouseDates[1]
+    })
 
     return (
         <>
@@ -58,7 +36,7 @@ const ProgTalkLiveTalks: React.FC<{
                 </IonRow>
 
                 {props.day1 === 'day1' ?
-                    programmeTalkDay1.map((programmeTalk) => {
+                    liveTalkDay1.map((programmeTalk: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalkSchedule-DataRow">
                                 <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
@@ -78,7 +56,7 @@ const ProgTalkLiveTalks: React.FC<{
                 }
 
                 {props.day2 === 'day2' ?
-                    programmeTalkDay2.map((programmeTalk) => {
+                    liveTalkDay2.map((programmeTalk: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
                                 <IonCol size-sizeSm="3" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">

@@ -43,32 +43,43 @@ const ProgrammeTalks: React.FC = () => {
     setTab("pastRecordings");
   };
 
-  const [openhouseDate, setOpenhouseDate] = useState([])
+  const [openhouseDates, setOpenhouseDates] = useState([])
+  const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
+
+  const liveTalk = programmeTalk.filter(talk => { return talk.isLive == true })
+  const recordedTalk = programmeTalk.filter(talk => { return talk.hasRecording == true })
 
   useEffect(() => {
+    const dates: any = [];
+
     db.collection("Openhouse")
       .get()
       .then((snapshot) => {
-        const dates: any = [];
         snapshot.forEach((doc) => {
           const data = doc.get('day')
-          data.forEach((day: any) => {
-            dates.push(day.date)
-            console.log("Date are : " + data.date);
-          })
-          dates.push(data.date);
+          data.forEach((day: any) => { dates.push(day.date) })
         });
-        setOpenhouseDate(dates);
+        setOpenhouseDates(dates);
       })
       .catch((error) => console.log(error));
 
+    db.collection("ProgrammeTalks")
+      .get()
+      .then((snapshot) => {
+        const programmeTalk: any = [];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          programmeTalk.push(data);
+        });
+        setProgrammeTalk(programmeTalk);
+      })
+      .catch((error) => console.log(error));
 
   }, [])
-  console.log("openhouse dates :" + openhouseDate)
+
   return (
-
-
     <IonPage>
+
       <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
 
       <IonContent fullscreen className="progTalkIonContent">
@@ -124,7 +135,7 @@ const ProgrammeTalks: React.FC = () => {
               </IonRow>
             </IonGrid>
 
-            <ProgTalkSchedule day1={dayNum} day2={dayNum} openhouseDates={openhouseDate} />
+            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} />
           </>
         ) : (
             ""
@@ -150,7 +161,7 @@ const ProgrammeTalks: React.FC = () => {
               </IonRow>
             </IonGrid>
 
-            <ProgTalkLiveTalks day1={dayNum} day2={dayNum} />
+            <ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
           </>
         ) : (
             ""
@@ -188,7 +199,7 @@ const ProgrammeTalks: React.FC = () => {
               </IonRow>
             </IonGrid>
 
-            <ProgTalkPastRec day1={dayNum} day2={dayNum} />
+            <ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
           </>
         ) : (
             ""

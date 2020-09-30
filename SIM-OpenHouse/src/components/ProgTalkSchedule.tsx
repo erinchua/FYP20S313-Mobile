@@ -12,14 +12,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ProgTalkSchedule: React.FC<{
     day1: any;
     day2: any;
+    programmeTalk: any;
     openhouseDates: any;
+
 }> = props => {
 
-    // const [talks, setTalks] = useState<TalkSchedule[]>([]);
+    const programmeTalkDay1 = props.programmeTalk
+        .filter((talk: any) => {
+            return talk.date == props.openhouseDates[0]
+        })
 
-    const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
-    const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
-    console.log("Openhouse dates: " + props.openhouseDates)
+    const programmeTalkDay2 = props.programmeTalk
+        .filter((talk: any) => {
+            return talk.date == props.openhouseDates[1]
+        })
+
     {/* Register Alert */ }
     const [registerSuccess, setRegisterSuccess] = useState(false);
     const [registerFail, setRegisterFail] = useState(false);
@@ -39,37 +46,7 @@ const ProgTalkSchedule: React.FC<{
         {/* set state to disable the + btn in else {} */ }
     };
 
-    useEffect(() => {
 
-        // return db.collection('ProgrammesTalks').onSnapshot(({ docs }) => setTalks(docs.map(toTalkSchedule)));
-
-        db.collection("ProgrammeTalks")
-            .where("date", "==", props.openhouseDates[0])
-            .get()
-            .then((snapshot) => {
-                const programmeTalk: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    programmeTalk.push(data);
-                });
-                setProgrammeTalkDay1(programmeTalk);
-            })
-            .catch((error) => console.log(error));
-
-        db.collection("ProgrammeTalks")
-            .where("date", "==", props.openhouseDates[1])
-            .get()
-            .then((snapshot) => {
-                const programmeTalk: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    programmeTalk.push(data);
-                });
-                setProgrammeTalkDay2(programmeTalk);
-            })
-            .catch((error) => console.log(error));
-
-    }, []);
 
     return (
         <>

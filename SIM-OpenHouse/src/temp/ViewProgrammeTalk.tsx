@@ -3,6 +3,7 @@ import { auth, db } from "../firebase";
 
 const ViewProgrammeTalk = (props: { date: string }) => {
   const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
+
   useEffect(() => {
     db.collection("ProgrammeTalks")
       .where("date", "==", props.date)
