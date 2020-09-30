@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
 
 const ViewContactInfo = () => {
   const [contactInfo, setContactInfo] = useState<any[]>([]);

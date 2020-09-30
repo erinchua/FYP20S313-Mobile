@@ -5,25 +5,23 @@ const converter = require('json-2-csv');
 const pathDir = './data/';
 const args = process.argv.slice(2)[0];
 
-const csvToJson = () => {
-    const csvFile = fs.readFileSync(`${pathDir}${args}.csv`, 'utf-8', err => {
-        if (err) return console.log(`${err} Error occured`);
+const csvFile = fs.readFileSync(`${pathDir}${args}.csv`, 'utf-8', err => {
+    if (err) return console.log(`${err} Error occured`);
+});
+
+converter.csv2json(csvFile, (err, json) => {
+    if (err) return console.log(`${err} Error occured`);
+    console.log(json);
+
+    fs.writeFileSync(`${pathDir}${args}Converted.json`, JSON.stringify(json, null, 2), err => {
+        if (err) return console.log(`${err} Error writing file`)
     });
 
-    converter.csv2json(csvFile, (err, json) => {
-        if (err) return console.log(`${err} Error occured`);
-        console.log(json);
-
-        fs.writeFileSync(`${pathDir}${args}Converted.json`, JSON.stringify(json, null, 2), err => {
-            if (err) return console.log(`${err} Error writing file`)
-        });
-
-        // To store in Firestore
-        /* json.forEach(elem => {
-            db.collection('toJSONTest').doc(elem.id).set(elem).catch(err => {
-                return console.log(err);
-            })
-        }); */
-    });
-};
-csvToJson();
+    // To store in Firestore
+    /* json.forEach(elem => {
+        db.collection('toJSONTest').doc(elem.id).set(elem).catch(err => {
+            return console.log(err);
+        })
+    }); */
+});
+    

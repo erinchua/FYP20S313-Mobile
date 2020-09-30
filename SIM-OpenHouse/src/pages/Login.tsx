@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonLoading, IonAlert, IonText } from '@ionic/react';
+import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonLoading, IonAlert, IonText } from '@ionic/react';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
@@ -16,6 +16,7 @@ const Login: React.FC = () => {
 
   const [status, setStatus] = useState({ loading: false, error: false });
   const [showAlert, setShowAlert] = useState(false);
+  const [loginType, setLoginType] = useState("default");
 
   const { register, handleSubmit } = useForm();
 
@@ -68,6 +69,9 @@ const Login: React.FC = () => {
             </IonRow>
             <IonItemDivider></IonItemDivider>
             <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
+            <IonRow class="ion-justify-content-center">
+              <IonButton id="login_loginBtn" type="submit" onClick={() => setShowAlert(true)}>Google</IonButton>
+            </IonRow>
           </IonGrid>
           {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email and password.'} buttons={['OK']}></IonAlert>}
         </form>

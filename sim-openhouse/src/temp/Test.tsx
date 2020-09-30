@@ -1,26 +1,12 @@
 import { IonContent, 
-    IonHeader, 
     IonPage, 
-    IonTitle, 
-    IonToolbar, 
-    IonGrid, 
-    IonRow, 
-    IonCol, 
-    IonIcon, 
-    IonButtons, 
-    IonButton, 
     IonItem, 
-    IonInput, 
     IonList, 
     IonAlert, IonMenu, IonSplitPane, IonItemDivider, IonLabel, IonMenuButton } from '@ionic/react';
 import React, {useRef, useState} from 'react';
 import '../css/Global.css';
 import '../css/Test.css';
-import { arrowBackOutline, shieldCheckmarkOutline } from 'ionicons/icons';
-import { useForm, Controller } from "react-hook-form";
-import TestControl from '../components/TestControl';
-import TestCom from '../components/TestCom';
-import ReactCodeInput from 'react-verification-code-input';
+import { useForm } from "react-hook-form";
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
 import { faCalendar, faCalendarAlt, faComments, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faHome, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';

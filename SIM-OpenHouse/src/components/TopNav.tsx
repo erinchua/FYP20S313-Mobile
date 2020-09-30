@@ -1,17 +1,10 @@
-import React, { useState, useContext } from 'react';
-import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton, IonMenuToggle, IonContent, IonItem, IonItemDivider, IonLabel, IonList, IonMenu} from '@ionic/react';
+import React, { useContext } from 'react';
+import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton } from '@ionic/react';
 import '../css/TopNav.css';
 import '../css/Global.css';
 import { arrowBackOutline } from 'ionicons/icons';
 import { useAuth } from '../auth';
 import { auth } from '../firebase';
-import Menu from './Menu';
-import { faReadme } from '@fortawesome/free-brands-svg-icons';
-import { faCalendar, faCalendarAlt, faComments, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
-import { faHome, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Redirect } from 'react-router';
-import { useHistory } from 'react-router-dom';
 import { NavContext } from '@ionic/react';
 
 const TopNav: React.FC<{
