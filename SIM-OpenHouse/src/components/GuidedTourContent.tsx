@@ -4,15 +4,54 @@ import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { db } from '../firebase';
 import { GuidedTours, toGuidedTours } from '../openHouseProg';
 
 import { auth, db } from "../firebase";
-const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
-    const [tours, setTours] = useState<GuidedTours[]>([]);
 
+const GuidedTourContent: React.FC<{ day1: any; day2: any }> = props => {
     const [guidedTourDay1, setGuidedTourDay1] = useState<any[]>([]);
     const [guidedTourDay2, setGuidedTourDay2] = useState<any[]>([]);
+
+    // const [tours, setTours] = useState<GuidedTours[]>([]);
+
+    useEffect(() => {
+
+        /*        Shi ying
+        return db.collection('GuidedTours').onSnapshot(({ docs }) => setTours(docs.map(toGuidedTours)));
+           }, []); 
+           console.log(tours);
+           */
+
+
+        db.collection("GuidedTours")
+            .where("date", "==", "21-Nov-2020")
+            .get()
+            .then((snapshot) => {
+                const guidedTours: any = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    guidedTours.push(data);
+                });
+                setGuidedTourDay1(guidedTours);
+            })
+            .catch((error) => console.log(error));
+
+        db.collection("GuidedTours")
+            .where("date", "==", "22-Nov-2020")
+            .get()
+            .then((snapshot) => {
+                const guidedTours: any = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    guidedTours.push(data);
+                });
+                setGuidedTourDay2(guidedTours);
+            })
+            .catch((error) => console.log(error));
+
+    }, []);
+
+    return (
         <>
             <IonGrid id="guidedTours-tableGrid">
                 <IonRow id="guidedTours-tableHeader" className="ion-justify-content-center">
