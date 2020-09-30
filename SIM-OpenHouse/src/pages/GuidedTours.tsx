@@ -1,5 +1,6 @@
 import { IonCol, IonContent, IonGrid, IonPage, IonRow, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { db } from "../firebase";
 
 import "../css/Global.css";
 import "../css/GuidedTours.css";
@@ -9,6 +10,8 @@ import GuidedTourContent from '../components/GuidedTourContent';
 const GuidedTours: React.FC = () => {
 
     const [dayNum, setDayNum] = useState('day1');
+    const [openhouseDates, setOpenhouseDates] = useState([])
+    const [guidedTours, setGuidedTours] = useState<any[]>([]);
 
     const handleDayOne = () => {
         setDayNum('day1');
@@ -17,14 +20,40 @@ const GuidedTours: React.FC = () => {
     const handleDayTwo = () => {
         setDayNum('day2');
     }
-   
+    useEffect(() => {
+        const dates: any = [];
+
+        db.collection("Openhouse")
+            .get()
+            .then((snapshot) => {
+                snapshot.forEach((doc) => {
+                    const data = doc.get('day')
+                    data.forEach((day: any) => { dates.push(day.date) })
+                });
+                setOpenhouseDates(dates);
+            })
+            .catch((error) => console.log(error));
+
+        db.collection("GuidedTours")
+            .get()
+            .then((snapshot) => {
+                const tours: any = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    tours.push(data);
+                });
+                setGuidedTours(tours);
+            })
+            .catch((error) => console.log(error));
+
+    }, [])
     return (
         <IonPage>
-            <TopNav title="Guided Tours" route="/u/openHouseMain" backarrow={ true } hamburger={ true } />
+            <TopNav title="Guided Tours" route="/u/openHouseMain" backarrow={true} hamburger={true} />
             <IonToolbar id="guidedTours-schedule">
                 <IonTitle id="guidedTours-schedule-text">Schedule</IonTitle>
             </IonToolbar>
-    
+
             <IonContent fullscreen id="guidedTours-content">
                 <IonGrid id="guidedTours-ionRowCol">
                     <IonRow id="guidedTours-ionRowCol">
@@ -37,7 +66,7 @@ const GuidedTours: React.FC = () => {
                             </IonToolbar>
                         </IonCol>
                     </IonRow>
-                    <GuidedTourContent day1={dayNum} day2={dayNum}/>
+                    <GuidedTourContent day1={dayNum} day2={dayNum} guidedTours={guidedTours} openhouseDates={openhouseDates} />
                 </IonGrid>
             </IonContent>
         </IonPage>
