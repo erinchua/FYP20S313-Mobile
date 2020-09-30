@@ -1,0 +1,179 @@
+.myScheduleIonContent {
+    --background: #efefef;
+}
+
+.myScheduleGrid {
+    padding: 0;
+}
+
+/* Open House Date */
+.openHouseDateRow {
+    background: #d0ba8e;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    max-width: 100%;
+}
+
+.openHouseDateCol {
+    text-align: center;
+    font-size: small;
+}
+
+.openHouseDateTitleText {
+    font-weight: bold;
+}
+
+.openHouseDateText {
+    font-size: small;
+}
+
+/* Day Tabs */
+.mySchedule-IonRowCol {
+    padding: 0;
+}
+
+.mySchedule-DayTab {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+/* Schedule Table Grid */
+#hourHeader {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    min-width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.progNameHeader {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    min-width: 25%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.myScheduleTableHeader {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    min-width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.myScheduleTableTimeHeader {
+    background: #F0ECE3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    min-width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+}
+
+.myScheduleTable-ProgNameData {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    min-width: 20%;
+    min-width: 25%;    
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleTable-Data {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    min-width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleTable-DataBtn {
+    --background: transparent;
+    --color: #434343;
+    --box-shadow: transparent;
+}
+
+/* Open House Activities Table */
+.openHouseActTableRow {
+    max-width: 100%;
+    background: #C7B198;
+}
+
+.openHouseActTableTitle {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+#boothNoHeader {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    min-width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.myScheduleActTableHeader {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    min-width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.myScheduleTable-BoothData {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    min-width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}

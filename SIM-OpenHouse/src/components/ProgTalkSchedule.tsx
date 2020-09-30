@@ -34,12 +34,12 @@ const ProgTalkSchedule: React.FC<{
           of the programme the user wants to add*/}
 
         {/* if (exist) {
-              setRegisterSuccess(true);
-              setRegisterSuccess(false);
-          } else {
-              setRegisterFail(true);
-             setRegisterSuccess(false);
-         } */}
+             setRegisterSuccess(true);
+             setRegisterFail(false);
+         } else {
+             setRegisterFail(true);
+            setRegisterSuccess(false);
+        } */}
 
         {/* set state to disable the + btn in else {} */ }
     };
