@@ -14,15 +14,12 @@ import TopNav from '../components/TopNav';
 const Login: React.FC = () => {
   const { loggedIn } = useAuth();
 
-  //const [email, setEmail] = useState('');
-  //const [pass, setPass] = useState('');
   const [status, setStatus] = useState({ loading: false, error: false });
   const [showAlert, setShowAlert] = useState(false);
 
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const handleLogin = async (data: any) => {
-    //console.log(data);
     try {
       setStatus({ loading: true, error: false });
 
@@ -34,12 +31,6 @@ const Login: React.FC = () => {
         //console.log(idToken);
         sessionStorage.setItem('token:', idToken);
       });
-
-      /* await auth.signInWithEmailAndPassword(data.email, data.password).then((user) => {
-        return user.user?.getIdToken().then((idToken) => {
-          sessionStorage.setItem('token: ', idToken);
-        });
-      }); */
       setStatus({ loading: false, error: false });
     } catch(e) {
       setStatus({ loading: false, error: true });

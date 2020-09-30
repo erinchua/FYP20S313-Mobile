@@ -1,10 +1,15 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonGrid, IonItem, IonLabel, IonList, IonPage, IonRow, IonSearchbar, IonText, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState } from 'react';
+import { useForm } from "react-hook-form";
 
 import "../css/Global.css";
 import "../css/Forum.css";
 import TopNav from '../components/TopNav';
-import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
+import {  faFlag, faUser } from "@fortawesome/free-solid-svg-icons";
+import { addCircleSharp, informationCircleOutline } from "ionicons/icons";
+
 
 const Forum: React.FC = () => {
 
@@ -13,6 +18,8 @@ const Forum: React.FC = () => {
     const [checked, setChecked] = useState(false);
     
     const [count, setCount] = useState(0);
+
+    const [showPopover, setShowPopover] = useState(false);
 
     const onSubmit = () => {
         setCount(1);
@@ -30,14 +37,103 @@ const Forum: React.FC = () => {
                     <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
                 </IonToolbar>
                 <IonToolbar id="forum-heading-container">
-                    <IonTitle id="forum-heading">All Discussions</IonTitle>
+                    <IonGrid>
+                        <IonRow className="ion-justify-content-start">
+                            <IonCol size="10" className="ion-align-self-center forum-col">
+                                <IonTitle id="forum-heading">All Discussions</IonTitle>
+                            </IonCol>
+
+                            {/* Popup for Information Button */}
+                            <IonPopover isOpen={showPopover} cssClass='my-custom-class' onDidDismiss={e => setShowPopover(false)}>
+                                <IonGrid>
+                                    <IonRow id="popover-infoDetails">
+                                        <IonText>1. Remain respectful of other users at all times.</IonText>
+                                    </IonRow>
+                                    <IonRow id="popover-infoDetails">
+                                        <IonText>2. Please do not spam. The definition of spam is an irrelevant or advertising post. Any post that is considered spam will be removed.</IonText>
+                                    </IonRow>
+                                    <IonRow id="popover-infoDetails">
+                                        <IonText>3. Do not post offensive posts, links or images.</IonText>
+                                    </IonRow>
+                                    <IonRow id="popover-infoDetails">
+                                        <IonText>4. Please do not post threads text in all CAPITALS since this is considered to be shouting.</IonText>
+                                    </IonRow>
+                                    <IonRow id="popover-infoDetails">
+                                        <IonText>Anyone who breaks any of the above rules will be banned from the forum. Let's keep this forum safe for everyone.</IonText>
+                                    </IonRow>
+                                </IonGrid>
+                            </IonPopover>
+
+                            <IonCol size="2" className="forum-col">
+                                <IonButton id="forum-informationBtn" size="small" onClick={() => setShowPopover(true)}><IonIcon size="sm" icon={informationCircleOutline} /></IonButton>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
                 </IonToolbar>
-                <IonList className="forum-question-container">
-                    <IonLabel>
-                        <IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of Wollongong) course?</IonText>
-                    </IonLabel>
+
+                {/* Display all Questions */}
+                <IonList className="forum-container">
+                    <IonGrid>
+                        <IonRow>
+                            <IonLabel>
+                                <IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of Wollongong) course?</IonText>
+                            </IonLabel>
+                        </IonRow>
+                        <IonRow className="ion-justify-content-end">
+                            <IonText className="forum-question-details" id="forum-userName">~ Martin John</IonText>
+                        </IonRow>
+                        <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
+                            <IonCol size="1" className="forum-col ion-align-self-end">
+                                <FontAwesomeIcon icon={faClock} size="sm"/>
+                            </IonCol>
+                            <IonCol size="6" className="forum-col ion-align-self-end">
+                                <IonText className="forum-question-details">21-11-2020, 5.30pm</IonText>
+                            </IonCol>
+                            <IonCol size="1" className="forum-col ion-align-self-end">
+                                <FontAwesomeIcon icon={faCommentAlt} size="sm"/>
+                            </IonCol>
+                            <IonCol size="3" className="forum-col ion-align-self-end">
+                                <IonText className="forum-question-details">1000</IonText>
+                            </IonCol>
+                            <IonCol size="1" className="ion-align-self-end forum-col">
+                                <IonButton id="forum-question-flagBtn" size="small"><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
                 </IonList>
+
+                <IonList className="forum-container">
+                    <IonGrid>
+                        <IonRow>
+                            <IonLabel>
+                                <IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of Wollongong) course?</IonText>
+                            </IonLabel>
+                        </IonRow>
+                        <IonRow className="ion-justify-content-end">
+                            <IonText className="forum-question-details" id="forum-userName">~ Martin John</IonText>
+                        </IonRow>
+                        <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
+                            <IonCol size="1" className="forum-col ion-align-self-end">
+                                <FontAwesomeIcon icon={faClock} size="sm"/>
+                            </IonCol>
+                            <IonCol size="6" className="forum-col ion-align-self-end">
+                                <IonText className="forum-question-details">21-11-2020, 5.30pm</IonText>
+                            </IonCol>
+                            <IonCol size="1" className="forum-col ion-align-self-end">
+                                <FontAwesomeIcon icon={faCommentAlt} size="sm"/>
+                            </IonCol>
+                            <IonCol size="3" className="forum-col ion-align-self-end">
+                                <IonText className="forum-question-details">1000</IonText>
+                            </IonCol>
+                            <IonCol size="1" className="ion-align-self-end forum-col">
+                                <IonButton id="forum-question-flagBtn" size="small"><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
+                </IonList>
+                {/* End of Display all Questions */}
                 </>
+
                 : <form onSubmit={handleSubmit(onSubmit)}>        
                     <IonGrid id="forumRulesGrid">
                         <IonRow id="important-notice">
@@ -86,6 +182,20 @@ const Forum: React.FC = () => {
                 </form>
             }
             </IonContent>
+
+            {/* Bottom Tabs (After Forum Rules) */}
+            {count === 1 && checked === true ? 
+                <>
+                <IonFooter>
+                    <IonToolbar>
+                        <IonSegment scrollable onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                            <IonSegmentButton value="postQuestionBtn"><IonIcon icon={addCircleSharp} /></IonSegmentButton>
+                            <IonSegmentButton value="forumUserBtn"><FontAwesomeIcon icon={faUser} /></IonSegmentButton>
+                        </IonSegment>
+                    </IonToolbar>
+                </IonFooter>
+                </> : ''
+            }
         </IonPage>
     );
 };

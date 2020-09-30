@@ -1,7 +1,7 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
-import React, { useState, useEffect } from 'react';
+import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@ionic/react';
+import React, { useEffect, useState } from 'react';
 import { auth, db } from "../firebase";
-
+import { TalkSchedule, toTalkSchedule } from '../openHouseProg';
 
 import '../css/Global.css';
 import '../css/ProgrammeTalks.css'
@@ -14,6 +14,33 @@ const ProgTalkSchedule: React.FC<{
     day2: any;
     openhouseDates: any;
 }> = props => {
+
+    useEffect(() => {
+        return db.collection('ProgrammesTalks').onSnapshot(({ docs }) => setTalks(docs.map(toTalkSchedule)));
+    }, []);
+
+    console.log(talks);
+
+    {/* Register Alert */}
+    const [registerSuccess, setRegisterSuccess] = useState(false);
+    const [registerFail, setRegisterFail] = useState(false);
+
+    const displayRegisterAlert = () => {
+        {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
+         of the programme the user wants to add*/}
+        
+        {/* if (exist) {
+             setRegisterSuccess(true);
+             setRegisterSuccess(false);
+         } else {
+             setRegisterFail(true);
+            setRegisterSuccess(false);
+        } */}
+
+        {/* set state to disable the + btn in else {} */}
+    };
+            
+
 
     const [programmeTalkDay1, setProgrammeTalkDay1] = useState<any[]>([]);
     const [programmeTalkDay2, setProgrammeTalkDay2] = useState<any[]>([]);
@@ -48,6 +75,26 @@ const ProgTalkSchedule: React.FC<{
     }, [props.openhouseDates]);
     return (
         <>
+            <IonAlert
+                isOpen={registerSuccess}
+                onDidDismiss={() => setRegisterSuccess(false)}
+                cssClass='alertBox'
+                mode='md'
+                header={'Successfully Registered'}
+                message={'You have successfully registered for the programme talk and it has been successfully added to My Schedule.'}
+                buttons={['Close']}
+             ></IonAlert>
+
+            <IonAlert
+                isOpen={registerFail}
+                onDidDismiss={() => setRegisterFail(false)}
+                cssClass='alertBox'
+                mode='md'
+                header={'Registration Unsuccessful'}
+                message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
+                buttons={['Close']}
+             ></IonAlert>
+
             <IonGrid className="progTalk-TableGrid">
                 <IonRow className="ion-justify-content-center progTalk-TableHeader">
                     <IonCol size-sizeSm="3" className="progTalk-Data ion-text-wrap">Programme Talk</IonCol>
@@ -71,7 +118,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -96,7 +143,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size-sizeSm="2" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>

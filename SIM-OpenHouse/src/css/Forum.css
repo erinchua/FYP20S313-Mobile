@@ -41,6 +41,11 @@
 }
 
 /* View Forum */
+.forum-container {
+    margin-bottom: 3%;
+}
+
+
 #forum-searchbar-container {
     --background: #A9DBD9;
 }
@@ -57,14 +62,54 @@
     font-size: 90%;
     font-weight: bold;
     color: #434343;
+    padding-left: 1%;
 }
 
-.forum-question-container {
-    padding-left: 5%;
+.forum-container {
+    padding: 3%;
 }
 
 .forum-question {
     font-size: 90%;
     font-weight: bold;
     color: #434343;
+}
+
+.forum-col {
+    padding: 0;
+}
+
+.forum-question-details {
+    font-size: 75%;
+}
+
+#forum-question-flagBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+    float: right;
+    margin-bottom: -10%;
+}
+
+#forum-question-detail-container {
+    margin-top: 5%;
+}
+
+#forum-userName {
+    font-style: italic;
+    color: #434343;
+    margin-top: 3%;
+}
+
+#forum-informationBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+    float: right;
+}
+
+#popover-infoDetails {
+    color: #434343;
+    margin-top: 5%;
+    font-size: 80%;
 }

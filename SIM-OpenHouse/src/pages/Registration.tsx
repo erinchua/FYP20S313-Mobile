@@ -18,7 +18,7 @@ function formatDate(isoDate: any) {
 };
 
 const Registration: React.FC = () => {
-  const { register, handleSubmit, errors, watch, reset } = useForm();
+  const { register, handleSubmit, errors, watch } = useForm();
 
   const { loggedIn } = useAuth();
 
@@ -79,15 +79,15 @@ const Registration: React.FC = () => {
           <IonGrid>
             <IonRow>
               <IonCol>
-                <IonInput className="inputField" type="text" placeholder="First Name" name="firstName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })} />
+                <IonInput className="inputField" type="text" placeholder="First Name" name="firstName" ref={register({ required: true, minLength: 2, pattern: /^[A-Za-z]+$/i })} />
                 {errors.firstName && errors.firstName.type === "required" && <div className="errorMessage">First name is required!</div>}
-                {errors.firstName && errors.firstName.type === "minLength" && <div className="errorMessage">First name has to be more than 2 characters</div>}
+                {errors.firstName && errors.firstName.type === "minLength" && <div className="errorMessage">First name has to be 2 or more characters</div>}
                 {errors.firstName && errors.firstName.type === "pattern" && <div className="errorMessage">Please enter a valid First Name</div>}
               </IonCol>
               <IonCol>
-                <IonInput className="inputField" type="text" placeholder="Last Name" name="lastName" ref={register({ required: true, minLength: 3, pattern: /^[A-Za-z]+$/i })} />
+                <IonInput className="inputField" type="text" placeholder="Last Name" name="lastName" ref={register({ required: true, minLength: 2, pattern: /^[A-Za-z]+$/i })} />
                 {errors.lastName && errors.lastName.type === "required" && <div className="errorMessage">Last name is required!</div>}
-                {errors.lastName && errors.lastName.type === "minLength" && <div className="errorMessage">Last name has to be more than 2 characters</div>}
+                {errors.lastName && errors.lastName.type === "minLength" && <div className="errorMessage">Last name has to be 2 or more characters</div>}
                 {errors.lastName && errors.lastName.type === "pattern" && <div className="errorMessage">Please enter a valid Last Name</div>}
               </IonCol>
             </IonRow>

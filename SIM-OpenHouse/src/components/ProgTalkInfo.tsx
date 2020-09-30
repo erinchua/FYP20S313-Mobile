@@ -14,16 +14,31 @@ const ProgTalkInfo: React.FC<{
     venue: string;
 }> = props => {
     
+    {/* Register Alert */}
     const [registerSuccess, setRegisterSuccess] = useState(false);
     const [registerFail, setRegisterFail] = useState(false);
 
+    const displayRegisterAlert = () => {
+        {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
+         of the programme the user wants to add*/}
+        
+        {/* if (exist) {
+             setRegisterSuccess(true);
+             setRegisterSuccess(false);
+         } else {
+             setRegisterFail(true);
+            setRegisterSuccess(false);
+        } */}
+
+        {/* set state to disable the + btn in else {} */}
+    };
 
     return (
         <React.Fragment>
             <IonAlert
                 isOpen={registerSuccess}
                 onDidDismiss={() => setRegisterSuccess(false)}
-                cssClass='alert-css'
+                cssClass='alertBox'
                 mode='md'
                 header={'Successfully Registered'}
                 message={'You have successfully registered for the programme talk and it has been successfully added to My Schedule.'}
@@ -33,10 +48,10 @@ const ProgTalkInfo: React.FC<{
             <IonAlert
                 isOpen={registerFail}
                 onDidDismiss={() => setRegisterFail(false)}
-                cssClass='alert-css'
+                cssClass='alertBox'
                 mode='md'
                 header={'Registration Unsuccessful'}
-                message={'There exists an open house programme in your scheduler at this time. Please remove the existing programme from your scheduler first!'}
+                message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
                 buttons={['Close']}
              ></IonAlert>
 
@@ -106,7 +121,7 @@ const ProgTalkInfo: React.FC<{
                         </IonRow>
 
                         <IonRow class="ion-justify-content-center" style={{marginTop:"10%"}}>
-                            <IonButton size="large" id="registerProgTalkBtn" type="submit">REGISTER</IonButton>
+                            <IonButton size="large" id="registerProgTalkBtn" type="submit" onClick={displayRegisterAlert}>REGISTER</IonButton>
                         </IonRow>
                     </IonGrid>
                     

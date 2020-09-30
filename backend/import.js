@@ -19,12 +19,9 @@ fs.readdir(pathDir, (err, files) => {
       let counter = 0;
 
       dataCol.forEach((obj) => {
-        db.collection(fileName)
-          .doc(obj.id)
-          .set(obj)
-          .catch((err) => {
-            console.log(`Error occured: ${err}`);
-          });
+        db.collection(fileName).doc(obj.id).set(obj).catch((err) => {
+          return console.log(`Error occured: ${err}`);
+        });
         counter++;
       });
       console.log(`${counter} documents added to ${fileName}`);

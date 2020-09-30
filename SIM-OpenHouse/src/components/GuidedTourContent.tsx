@@ -1,48 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { IonCol, IonGrid, IonRow, IonIcon, IonButton } from '@ionic/react';
+import React, { useEffect, useState } from 'react';
+import { IonCol, IonGrid, IonRow, IonButton } from '@ionic/react';
 import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { db } from '../firebase';
+import { GuidedTours, toGuidedTours } from '../openHouseProg';
 
 import { auth, db } from "../firebase";
-
-
-const GuidedTourContent: React.FC<{ day1: any; day2: any }> = props => {
+const GuidedTourContent: React.FC<{day1: any; day2: any}> = props => {
+    const [tours, setTours] = useState<GuidedTours[]>([]);
 
     const [guidedTourDay1, setGuidedTourDay1] = useState<any[]>([]);
     const [guidedTourDay2, setGuidedTourDay2] = useState<any[]>([]);
-
-    useEffect(() => {
-        db.collection("GuidedTours")
-            .where("date", "==", "21-Nov-2020")
-            .get()
-            .then((snapshot) => {
-                const guidedTours: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    guidedTours.push(data);
-                });
-                setGuidedTourDay1(guidedTours);
-            })
-            .catch((error) => console.log(error));
-
-        db.collection("GuidedTours")
-            .where("date", "==", "22-Nov-2020")
-            .get()
-            .then((snapshot) => {
-                const guidedTours: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    guidedTours.push(data);
-                });
-                setGuidedTourDay2(guidedTours);
-            })
-            .catch((error) => console.log(error));
-
-    }, []);
-
-    return (
         <>
             <IonGrid id="guidedTours-tableGrid">
                 <IonRow id="guidedTours-tableHeader" className="ion-justify-content-center">
@@ -80,6 +50,17 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any }> = props => {
                     })
                     : ''
                 }
+                {/* {tours.map((data: any) => (
+                    <IonItem key={data.id}>
+                        <IonLabel className="ion-padding">
+                        <p>{data.tourName}</p>
+                        <p>{data.date}</p>
+                        <p>{data.endTime}</p>
+                        <p>{data.statTime}</p>
+                        <p>{data.venue}</p>
+                        </IonLabel>
+                    </IonItem>
+                ))} */}
             </IonGrid>
         </>
     );
