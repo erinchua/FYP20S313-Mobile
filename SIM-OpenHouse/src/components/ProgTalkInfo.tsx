@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonPage, IonContent, IonAlert } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonPage, IonContent, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
 
 import '../css/Global.css';

@@ -1,6 +1,5 @@
-import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon, IonButton } from '@ionic/react';
-import React, { useState, useEffect } from 'react';
-import { db } from "../firebase";
+import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
+import React, { useState } from 'react';
 
 import TopNav from '../components/TopNav';
 import '../css/Global.css';
