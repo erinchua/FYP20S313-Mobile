@@ -32,6 +32,7 @@ const ProgrammeTalks: React.FC = () => {
   const handleSchedule = () => {
     setTab("schedule");
   };
+
   const handleLiveTalks = () => {
     setTab("liveTalks");
   };
@@ -70,7 +71,6 @@ const ProgrammeTalks: React.FC = () => {
           <>
             <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
               <IonRow className="progTalk-IonRowCol">
-                <IonCol className="progTalk-IonRowCol">
                   <IonToolbar>
                     <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                       <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
@@ -81,7 +81,6 @@ const ProgrammeTalks: React.FC = () => {
                       </IonSegmentButton>
                     </IonSegment>
                   </IonToolbar>
-                </IonCol>
               </IonRow>
 
               <IonRow>

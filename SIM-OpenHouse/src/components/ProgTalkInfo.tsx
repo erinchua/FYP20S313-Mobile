@@ -24,7 +24,7 @@ const ProgTalkInfo: React.FC<{
         
         {/* if (exist) {
              setRegisterSuccess(true);
-             setRegisterSuccess(false);
+             setRegisterFail(false);
          } else {
              setRegisterFail(true);
             setRegisterSuccess(false);

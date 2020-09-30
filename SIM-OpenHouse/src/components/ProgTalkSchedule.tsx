@@ -28,7 +28,7 @@ const ProgTalkSchedule: React.FC<{ day1: any; day2: any; }> = props => {
         
         {/* if (exist) {
              setRegisterSuccess(true);
-             setRegisterSuccess(false);
+             setRegisterFail(false);
          } else {
              setRegisterFail(true);
             setRegisterSuccess(false);
