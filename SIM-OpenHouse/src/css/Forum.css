@@ -114,6 +114,10 @@
     font-size: 80%;
 }
 
+.forum-segmentBtn {
+    max-width: 100%;
+}
+
 /* Post Question Modal */
 .post-question-modal {
     --max-height: 60%;
@@ -149,4 +153,46 @@
 #postQns-post-button {
     --background: #37474F;
     width: 30%;
+}
+
+/* Forum User */
+#forumUser-ionRowCol {
+    padding: 0;
+}
+
+.forumUser-heading {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 70%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+/* Forum User - My Questions/Comments */
+#forumQnsCom-tableGrid {
+    padding: 0;
+}
+
+#forumQnsCom-tableHeader {
+    font-weight: bold;
+    font-size: 85%;
+    text-align: center;
+}
+
+.forumQnsCom-Data {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 15%;
+    font-size: 80%;
+}
+
+.forumQnsCom-DataBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
 }

@@ -1,4 +1,4 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonModal, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 
@@ -7,9 +7,10 @@ import "../css/Forum.css";
 import TopNav from '../components/TopNav';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
-import {  faFlag, faUser } from "@fortawesome/free-solid-svg-icons";
-import { addCircleSharp, informationCircleOutline } from "ionicons/icons";
-
+import {  faFlag } from "@fortawesome/free-solid-svg-icons";
+import { addCircleSharp, personSharp } from "ionicons/icons";
+import {  useHistory } from "react-router-dom";
+import ForumRules from '../components/Forum/ForumRules';
 
 const Forum: React.FC = () => {
 
@@ -19,10 +20,8 @@ const Forum: React.FC = () => {
     
     const [count, setCount] = useState(0);
 
-    const [showPopover, setShowPopover] = useState(false);
-
     const [showPostModal, setShowPostModal] = useState(false);
-    const [showUserModal, setShowUserModal] = useState(false);
+    let history = useHistory();
 
     const [modalSegmentValue, setModalSegmentValue] = useState('');
 
@@ -33,7 +32,7 @@ const Forum: React.FC = () => {
    
     return (
         <IonPage>
-            <TopNav title="Forum" route="/u/home" backarrow={ true } hamburger={ true } />
+            <TopNav title="Forum" route="/u/home" backarrow={ true } hamburger={ true }/>
             
             <IonContent fullscreen id="forum-content">
             {count === 1 && checked === true ?
@@ -41,36 +40,15 @@ const Forum: React.FC = () => {
                 <IonToolbar id="forum-searchbar-container">
                     <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
                 </IonToolbar>
+
                 <IonToolbar id="forum-heading-container">
                     <IonGrid>
                         <IonRow className="ion-justify-content-start">
                             <IonCol size="10" className="ion-align-self-center forum-col">
                                 <IonTitle id="forum-heading">All Discussions</IonTitle>
-                            </IonCol>
-
-                            {/* Popup for Information Button */}
-                            <IonPopover isOpen={showPopover} cssClass='my-custom-class' onDidDismiss={e => setShowPopover(false)}>
-                                <IonGrid>
-                                    <IonRow id="popover-infoDetails">
-                                        <IonText>1. Remain respectful of other users at all times.</IonText>
-                                    </IonRow>
-                                    <IonRow id="popover-infoDetails">
-                                        <IonText>2. Please do not spam. The definition of spam is an irrelevant or advertising post. Any post that is considered spam will be removed.</IonText>
-                                    </IonRow>
-                                    <IonRow id="popover-infoDetails">
-                                        <IonText>3. Do not post offensive posts, links or images.</IonText>
-                                    </IonRow>
-                                    <IonRow id="popover-infoDetails">
-                                        <IonText>4. Please do not post threads text in all CAPITALS since this is considered to be shouting.</IonText>
-                                    </IonRow>
-                                    <IonRow id="popover-infoDetails">
-                                        <IonText>Anyone who breaks any of the above rules will be banned from the forum. Let's keep this forum safe for everyone.</IonText>
-                                    </IonRow>
-                                </IonGrid>
-                            </IonPopover>
-
+                            </IonCol>                            
                             <IonCol size="2" className="forum-col">
-                                <IonButton id="forum-informationBtn" size="small" onClick={() => setShowPopover(true)}><IonIcon size="sm" icon={informationCircleOutline} /></IonButton>
+                                <ForumRules />
                             </IonCol>
                         </IonRow>
                     </IonGrid>
@@ -204,12 +182,6 @@ const Forum: React.FC = () => {
                 </IonGrid>
             </IonModal>
 
-            {/* Forum User Modal */}
-            <IonModal isOpen={showUserModal} cssClass='forum-user-modal' onDidDismiss={() => setShowUserModal(false)}>
-                <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true } />
-                <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowUserModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
-            </IonModal>
-
             </IonContent>
 
             {/* Bottom Tabs (After Forum Rules) */}
@@ -217,9 +189,9 @@ const Forum: React.FC = () => {
                 <>
                 <IonFooter>
                     <IonToolbar>
-                        <IonSegment value={modalSegmentValue} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                            <IonSegmentButton value="postQuestionBtn" onClick={() => [setShowPostModal(true), setModalSegmentValue('postQuestionBtn')]}><IonIcon icon={addCircleSharp} /></IonSegmentButton>
-                            <IonSegmentButton value="forumUserBtn" onClick={() => [setShowUserModal(true), setModalSegmentValue('forumUserBtn')]}><FontAwesomeIcon icon={faUser} /></IonSegmentButton>
+                        <IonSegment scrollable value={modalSegmentValue} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                            <IonSegmentButton className="forum-segmentBtn" value="postQuestionBtn" onClick={() => [setShowPostModal(true), setModalSegmentValue('postQuestionBtn')]}><IonIcon icon={addCircleSharp} /></IonSegmentButton>
+                            <IonSegmentButton className="forum-segmentBtn" value="forumUserBtn" onClick={(e) => {e.preventDefault(); history.push('/u/forumUser');}}><IonIcon icon={personSharp} /></IonSegmentButton>
                         </IonSegment>
                     </IonToolbar>
                 </IonFooter>
