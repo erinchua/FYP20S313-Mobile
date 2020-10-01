@@ -10,6 +10,7 @@ import OpenHouseActivities from './pages/OpenHouseActivities';
 import MySchedule from './pages/MySchedule';
 import Forum from './pages/Forum';
 import ForumUser from './pages/ForumUser';
+import CampusFacilitiesMap from './pages/CampusFacilitiesMap';
 
 import { useAuth } from './auth';
 
@@ -49,6 +50,7 @@ const App: React.FC = () => {
       <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
       <Route path="/u/forum" component={Forum} exact={true} />
       <Route path="/u/forumUser" component={ForumUser} exact={true} />
+      <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
     </IonRouterOutlet>
   )
 };

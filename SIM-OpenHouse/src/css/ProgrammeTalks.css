@@ -72,16 +72,22 @@
     text-align: center;
 }
 
-.progTalk-Data {
+.progTalk-DataHeader {
     border: 1px solid #C8C8C8;
     text-align: center;
     min-width: 20%;
-    font-size: 85%;
+    font-size: 75%;
     min-height: 20%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .progTalk-DataInfo {
-    font-size: 75%;
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 70%;
+    min-height: 20%;
 }
 
 .progTalk-DataBtn {
