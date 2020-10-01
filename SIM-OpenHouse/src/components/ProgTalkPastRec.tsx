@@ -27,21 +27,21 @@ const ProgTalkPastRec: React.FC<{
         <>
             <IonGrid className="progTalk-TableGrid">
                 <IonRow className="ion-justify-content-center progTalk-TableHeader">
-                    <IonCol size-sizeSm="4" className="progTalk-Data ion-text-wrap">Programme Talk</IonCol>
-                    <IonCol size-sizeSm="4" className="progTalk-Data ion-text-wrap">Awarding University</IonCol>
-                    <IonCol size-sizeSm="4" className="progTalk-Data ion-text-wrap">View Recording</IonCol>
+                    <IonCol size-sizeSm="4" className="progTalk-DataHeader ion-text-wrap">Programme Talk</IonCol>
+                    <IonCol size-sizeSm="4" className="progTalk-DataHeader ion-text-wrap">Awarding University</IonCol>
+                    <IonCol size-sizeSm="4" className="progTalk-DataHeader ion-text-wrap">View Recording</IonCol>
                 </IonRow>
 
                 {props.day1 === 'day1' ?
                     recordedTalkDay1.map((programmeTalk: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
-                                <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
+                                <IonCol size-sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">
                                     {programmeTalk.talkName}
 
                                 </IonCol>
-                                <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
-                                <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
+                                <IonCol size-sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
+                                <IonCol size-sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="addCol">
                                     <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faFileVideo} size="lg" />
                                     </IonButton>
@@ -56,11 +56,11 @@ const ProgTalkPastRec: React.FC<{
                     recordedTalkDay2.map((programmeTalk: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
-                                <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap progName">
+                                <IonCol size-sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">
                                     {programmeTalk.talkName}
                                 </IonCol>
-                                <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
-                                <IonCol size-sizeSm="4" className="progTalk-Data progTalk-DataInfo ion-text-wrap" id="addCol">
+                                <IonCol size-sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
+                                <IonCol size-sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="addCol">
                                     <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faFileVideo} size="lg" />
                                     </IonButton>
