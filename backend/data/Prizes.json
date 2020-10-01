@@ -1,0 +1,50 @@
+[
+    {
+        "id": "prize-001",
+        "prizeName": "Teddy Bear",
+        "prizePointsCost": "4",
+        "isRedeemed": false
+    },
+    {
+        "id": "prize-002",
+        "prizeName": "Pen SIM exlusive ",
+        "prizePointsCost": "1",
+        "isRedeemed": false
+    },
+    {
+        "id": "prize-003",
+        "prizeName": "Notebook SIM exclusive ",
+        "prizePointsCost": "1",
+        "isRedeemed": false
+    },
+    {
+        "id": "prize-004",
+        "prizeName": "Tumbler Boittle SIM exclusive",
+        "prizePointsCost": "3",
+        "isRedeemed": false
+    },
+    {
+        "id": "prize-005",
+        "prizeName": "Thumbdrive 128GB",
+        "prizePointsCost": "3",
+        "isRedeemed": true
+    },
+    {
+        "id": "prize-006",
+        "prizeName": "Wireless Bluetooth Earpiece",
+        "prizePointsCost": "4",
+        "isRedeemed": false
+    },
+    {
+        "id": "prize-007",
+        "prizeName": "Android Chrome Cast ",
+        "prizePointsCost": "3",
+        "isRedeemed": true
+    },
+    {
+        "id": "prize-008",
+        "prizeName": "Bluetooth Speaker",
+        "prizePointsCost": "3",
+        "isRedeemed": false
+    }
+]
