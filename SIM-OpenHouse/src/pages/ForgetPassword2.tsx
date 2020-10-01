@@ -1,20 +1,16 @@
 import { IonContent, 
-    IonHeader, 
     IonPage, 
-    IonTitle, 
-    IonToolbar, 
     IonGrid, 
     IonRow, 
     IonCol, 
     IonIcon, 
-    IonButtons, 
     IonButton, 
     IonItem, 
     IonInput } from '@ionic/react';
 import React from 'react';
-import { useForm, Controller } from "react-hook-form";
-import ReactCodeInput from 'react-verification-code-input';
-import { arrowBackOutline, keypadOutline } from 'ionicons/icons';
+import { useForm } from "react-hook-form";
+//import ReactCodeInput from 'react-verification-code-input';
+import { keypadOutline } from 'ionicons/icons';
 
 import '../css/ForgetPassword2.css';
 import '../css/Global.css';
@@ -23,7 +19,7 @@ import TopNav from '../components/TopNav';
 
 
 const ForgetPassword2: React.FC = () => {
-    const { register, handleSubmit, errors, reset } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (data: any) => {
         console.log("Submitted");

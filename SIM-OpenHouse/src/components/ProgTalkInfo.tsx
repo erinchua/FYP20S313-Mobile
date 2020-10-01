@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonPage, IonContent, IonAlert } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonPage, IonContent, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
 
 import '../css/Global.css';
@@ -24,7 +24,7 @@ const ProgTalkInfo: React.FC<{
         
         {/* if (exist) {
              setRegisterSuccess(true);
-             setRegisterSuccess(false);
+             setRegisterFail(false);
          } else {
              setRegisterFail(true);
             setRegisterSuccess(false);

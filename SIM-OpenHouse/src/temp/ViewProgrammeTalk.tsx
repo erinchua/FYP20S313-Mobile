@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
 
 const ViewProgrammeTalk = (props: { date: string }) => {
   const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);

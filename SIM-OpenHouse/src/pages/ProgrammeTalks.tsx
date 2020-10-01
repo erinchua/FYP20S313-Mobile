@@ -1,5 +1,5 @@
-import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from "@ionic/react";
-import React, { useEffect, useRef, useState } from "react";
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from "@ionic/react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 
 
@@ -35,6 +35,7 @@ const ProgrammeTalks: React.FC = () => {
   const handleSchedule = () => {
     setTab("schedule");
   };
+
   const handleLiveTalks = () => {
     setTab("liveTalks");
   };
@@ -108,7 +109,6 @@ const ProgrammeTalks: React.FC = () => {
           <>
             <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
               <IonRow className="progTalk-IonRowCol">
-                <IonCol className="progTalk-IonRowCol">
                   <IonToolbar>
                     <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                       <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
@@ -119,7 +119,6 @@ const ProgrammeTalks: React.FC = () => {
                       </IonSegmentButton>
                     </IonSegment>
                   </IonToolbar>
-                </IonCol>
               </IonRow>
 
               <IonRow>

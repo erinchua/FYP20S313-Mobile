@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Redirect, Route, withRouter } from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect, Route } from "react-router-dom";
 import { IonApp, IonLoading, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Main from "./pages/Main";
@@ -16,9 +16,9 @@ import "./css/Global.css";
 import "./css/Menu.css";
 
 /* Temp files */
-import Test from "./temp/Test";
+//import Test from "./temp/Test";
 import VincentTest from "./temp/VincentTest";
-import QRscan from "./components/QRScan";
+//import QRscan from "./components/QRScan";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";

@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { IonMenu,
     IonContent, 
     IonItem, 
     IonList, 
     IonLabel, 
-    IonItemDivider, IonHeader, IonToolbar, IonTitle} from '@ionic/react';
+    IonItemDivider } from '@ionic/react';
 import '../css/Menu.css';
 import '../css/Global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
