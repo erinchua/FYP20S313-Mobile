@@ -18,11 +18,11 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
         <>
             <IonGrid id="gamesContent-tableGrid">
                 <IonRow id="gamesContent-tableHeader" className="ion-justify-content-center">
-                    <IonCol className="gamesContent-Data ion-text-wrap">Booth No.</IonCol>
-                    <IonCol className="gamesContent-Data ion-text-wrap">Booth Name</IonCol>
-                    <IonCol className="gamesContent-Data ion-text-wrap">Venue</IonCol>
-                    <IonCol className="gamesContent-Data ion-text-wrap">Points</IonCol>
-                    <IonCol className="gamesContent-Data ion-text-wrap">Add to My Schedule</IonCol>
+                    <IonCol className="gamesContent-Header ion-text-wrap">Booth No.</IonCol>
+                    <IonCol className="gamesContent-Header ion-text-wrap">Booth Name</IonCol>
+                    <IonCol className="gamesContent-Header ion-text-wrap">Venue</IonCol>
+                    <IonCol className="gamesContent-Header ion-text-wrap">Points</IonCol>
+                    <IonCol className="gamesContent-Header ion-text-wrap">Add to My Schedule</IonCol>
                 </IonRow>
                 {props.day1 === 'day1' ?
                     gamesActivitiesDay1.map((activity: any, index: any) => {

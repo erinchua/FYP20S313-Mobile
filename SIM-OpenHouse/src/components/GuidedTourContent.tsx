@@ -22,11 +22,11 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
         <>
             <IonGrid id="guidedTours-tableGrid">
                 <IonRow id="guidedTours-tableHeader" className="ion-justify-content-center">
-                    <IonCol className="guidedTours-Data ion-text-wrap">Tour No.</IonCol>
-                    <IonCol className="guidedTours-Data ion-text-wrap">Tour</IonCol>
-                    <IonCol className="guidedTours-Data ion-text-wrap">Reporting Time</IonCol>
-                    <IonCol className="guidedTours-Data ion-text-wrap">Venue</IonCol>
-                    <IonCol className="guidedTours-Data ion-text-wrap">Add to My Schedule</IonCol>
+                    <IonCol className="guidedTours-Header ion-text-wrap">Tour No.</IonCol>
+                    <IonCol className="guidedTours-Header ion-text-wrap">Tour</IonCol>
+                    <IonCol className="guidedTours-Header ion-text-wrap">Reporting Time</IonCol>
+                    <IonCol className="guidedTours-Header ion-text-wrap">Venue</IonCol>
+                    <IonCol className="guidedTours-Header ion-text-wrap">Add to My Schedule</IonCol>
                 </IonRow>
                 {props.day1 === "day1" ?
                     guidedTourDay1.map((guidedTour: any, index: any) => {

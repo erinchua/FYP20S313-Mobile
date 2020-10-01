@@ -1,14 +1,14 @@
 import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItemDivider, IonLabel, IonModal, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 
-import "../css/Global.css"
-import "../css/Forum.css"
-import TopNav from '../components/TopNav';
-import ForumRules from '../components/Forum/ForumRules';
+import "../../css/Global.css"
+import "../../css/Forum.css"
+import TopNav from '../../components/TopNav';
+import ForumRules from '../../components/Forum/ForumRules';
 import { addCircleSharp, personSharp } from 'ionicons/icons';
 import { useHistory } from 'react-router';
-import ForumQuestions from '../components/Forum/ForumQuestions';
-import ForumComments from '../components/Forum/ForumComments';
+import ForumQuestions from '../../components/Forum/ForumQuestions';
+import ForumComments from '../../components/Forum/ForumComments';
 
 const ForumUser: React.FC = () => {
 
