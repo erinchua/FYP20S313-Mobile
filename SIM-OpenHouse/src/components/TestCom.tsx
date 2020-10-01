@@ -1,7 +1,7 @@
 import React from 'react';
 import {IonRow} from '@ionic/react';
 import ReactCodeInput from 'react-verification-code-input';
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const TestCom: React.FC<{onType: () => void; result: string;}> = props => {
 

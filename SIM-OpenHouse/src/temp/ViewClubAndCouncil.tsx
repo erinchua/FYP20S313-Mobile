@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
 
 const ViewClubAndCouncil = (props: { categoryType: string }) => {
   const [clubCouncil, setClubCouncil] = useState<any[]>([]);

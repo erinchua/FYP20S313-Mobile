@@ -1,7 +1,5 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
-import { auth, db } from "../firebase";
-import { TalkSchedule, toTalkSchedule } from '../openHouseProg';
+import React, { useState } from 'react';
 
 import '../css/Global.css';
 import '../css/ProgrammeTalks.css'
@@ -36,12 +34,12 @@ const ProgTalkSchedule: React.FC<{
           of the programme the user wants to add*/}
 
         {/* if (exist) {
-              setRegisterSuccess(true);
-              setRegisterSuccess(false);
-          } else {
-              setRegisterFail(true);
-             setRegisterSuccess(false);
-         } */}
+             setRegisterSuccess(true);
+             setRegisterFail(false);
+         } else {
+             setRegisterFail(true);
+            setRegisterSuccess(false);
+        } */}
 
         {/* set state to disable the + btn in else {} */ }
     };

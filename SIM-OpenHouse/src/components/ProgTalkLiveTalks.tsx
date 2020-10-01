@@ -1,6 +1,5 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink } from '@ionic/react';
-import React, { useState, useEffect } from 'react';
-import { auth, db } from "../firebase";
+import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
+import React from 'react';
 
 import '../css/Global.css';
 import '../css/ProgrammeTalks.css'

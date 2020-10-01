@@ -26,9 +26,8 @@ const ForgetPassword1: React.FC = () => {
         //console.log(auth);
         auth.sendPasswordResetEmail(data.emailID).then(() => {
             //alert for verification email sent
-        }).catch(err => {
-            return console.log(`An error has occured. ${err}`);
-        });
+            console.log("Email sent");
+        }).catch(err => { return console.log(err) });
     };
 
     return (
