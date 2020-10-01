@@ -1,0 +1,26 @@
+.inputField {
+    font-size: 90%;
+    border-bottom: 1px solid #C8C8C8;
+}
+
+.errorMessage {
+    color: red;
+    font-size: small;
+    margin-top: 5%;
+}
+
+#highestQualificationLabel, #nationalityLabel {
+    font-size: 90%;
+}
+
+#singleSignOn-check {
+    --inner-border-width: 0;
+}
+
+#continueBtn {
+    --background: #37474F;
+    width: 50%;
+    height: 50px;
+    font-size: 100%;
+    margin-top: 10%;
+}

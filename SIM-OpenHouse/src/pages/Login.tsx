@@ -67,15 +67,20 @@ const Login: React.FC = () => {
             <IonRow class="ion-justify-content-center">
               <IonRouterLink color="medium" routerLink="/forgetPassword1">Forget Password?</IonRouterLink>
             </IonRow>
-            <IonItemDivider></IonItemDivider>
-            <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
-            <IonRow class="ion-justify-content-center">
-              <IonButton id="login_loginBtn" type="submit" onClick={() => setShowAlert(true)}>Google</IonButton>
-            </IonRow>
           </IonGrid>
           {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email and password.'} buttons={['OK']}></IonAlert>}
         </form>
         <IonLoading isOpen={status.loading} message={'Loading...'} />
+        <IonGrid>
+          <IonItemDivider></IonItemDivider>
+          <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
+          <IonRow class="ion-justify-content-center">
+            <IonButton id="login_googleBtn" type="submit" onClick={() => setShowAlert(true)}>LOGIN WITH GOOGLE</IonButton>
+          </IonRow>
+          <IonRow class="ion-justify-content-center">
+            <IonButton id="login_facebookBtn" type="submit" onClick={() => setShowAlert(true)}>LOGIN WITH FACEBOOK</IonButton>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );

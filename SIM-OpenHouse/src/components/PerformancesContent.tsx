@@ -19,10 +19,10 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
         <>
             <IonGrid id="performancesContent-tableGrid">
                 <IonRow id="performancesContent-tableHeader" className="ion-justify-content-center">
-                    <IonCol className="performancesContent-Data ion-text-wrap">Performance</IonCol>
-                    <IonCol className="performancesContent-Data ion-text-wrap">Time</IonCol>
-                    <IonCol className="performancesContent-Data ion-text-wrap">Venue</IonCol>
-                    <IonCol className="performancesContent-Data ion-text-wrap">Add to My Schedule</IonCol>
+                    <IonCol className="performancesContent-Header ion-text-wrap">Performance</IonCol>
+                    <IonCol className="performancesContent-Header ion-text-wrap">Time</IonCol>
+                    <IonCol className="performancesContent-Header ion-text-wrap">Venue</IonCol>
+                    <IonCol className="performancesContent-Header ion-text-wrap">Add to My Schedule</IonCol>
                 </IonRow>
                 {props.day1 === 'day1' ?
                     performanceDay1.map((performance: any) => {

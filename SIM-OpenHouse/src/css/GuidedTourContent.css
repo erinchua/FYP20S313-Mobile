@@ -4,15 +4,22 @@
 
 #guidedTours-tableHeader {
     font-weight: bold;
-    font-size: 85%;
     text-align: center;
+}
+
+.guidedTours-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 75%;
+    padding: 2% 0%;
 }
 
 .guidedTours-Data {
     border: 1px solid #C8C8C8;
     text-align: center;
     min-width: 20%;
-    font-size: 85%;
+    font-size: 70%;
 }
 
 .guidedTours-DataBtn {
