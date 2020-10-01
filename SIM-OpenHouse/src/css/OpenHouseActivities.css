@@ -68,15 +68,22 @@
 
 #performancesContent-tableHeader {
     font-weight: bold;
-    font-size: 85%;
     text-align: center;
+}
+
+.performancesContent-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 75%;
+    padding: 2% 0%;
 }
 
 .performancesContent-Data {
     border: 1px solid #C8C8C8;
     text-align: center;
     min-width: 20%;
-    font-size: 85%;
+    font-size: 70%;
 }
 
 .performancesContent-DataBtn {
@@ -109,15 +116,22 @@
 
 #gamesContent-tableHeader {
     font-weight: bold;
-    font-size: 85%;
     text-align: center;
+}
+
+.gamesContent-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 75%;
+    padding: 2% 0%;
 }
 
 .gamesContent-Data {
     border: 1px solid #C8C8C8;
     text-align: center;
     min-width: 20%;
-    font-size: 85%;
+    font-size: 70%;
 }
 
 .gamesContent-DataBtn {
@@ -133,15 +147,22 @@
 
 #prizesContent-tableHeader {
     font-weight: bold;
-    font-size: 85%;
     text-align: center;
+}
+
+.prizesContent-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 75%;
+    padding: 2% 0%;
 }
 
 .prizesContent-Data {
     border: 1px solid #C8C8C8;
     text-align: center;
     min-width: 20%;
-    font-size: 85%;
+    font-size: 70%;
 }
 
 #redeemButton {

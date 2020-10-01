@@ -8,8 +8,9 @@ import ProgTalkInfo from './components/ProgTalkInfo';
 import GuidedTours from './pages/GuidedTours';
 import OpenHouseActivities from './pages/OpenHouseActivities';
 import MySchedule from './pages/MySchedule';
-import Forum from './pages/Forum';
-import ForumUser from './pages/ForumUser';
+import Forum from './pages/Forum/Forum';
+import ForumUser from './pages/Forum/ForumUser';
+import ForumViewQuestion from './pages/Forum/ForumViewQuestion';
 
 import { useAuth } from './auth';
 
@@ -49,6 +50,7 @@ const App: React.FC = () => {
       <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
       <Route path="/u/forum" component={Forum} exact={true} />
       <Route path="/u/forumUser" component={ForumUser} exact={true} />
+      <Route path="/u/forumViewQuestion" component={ForumViewQuestion} exact={true} />
     </IonRouterOutlet>
   )
 };

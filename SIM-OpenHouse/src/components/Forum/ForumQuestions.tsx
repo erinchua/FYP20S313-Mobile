@@ -13,11 +13,11 @@ const ForumQuestions: React.FC = () => {
         <>
         <IonGrid id="forumQnsCom-tableGrid">
             <IonRow id="forumQnsCom-tableHeader" className="ion-justify-content-center">
-                <IonCol className="forumQnsCom-Data ion-text-wrap">My Question</IonCol>
-                <IonCol className="forumQnsCom-Data ion-text-wrap">Posted Date/Time</IonCol>
-                <IonCol className="forumQnsCom-Data ion-text-wrap"><IonRow className="ion-justify-content-center">No. of</IonRow><IonRow className="ion-justify-content-center"><FontAwesomeIcon icon={faCommentDots} size="lg" /></IonRow></IonCol>
-                <IonCol className="forumQnsCom-Data ion-text-wrap">Edit Question</IonCol>
-                <IonCol className="forumQnsCom-Data ion-text-wrap">Delete Question</IonCol>
+                <IonCol className="forumQnsCom-Header ion-text-wrap">My Question</IonCol>
+                <IonCol className="forumQnsCom-Header ion-text-wrap">Posted Date/Time</IonCol>
+                <IonCol className="forumQnsCom-Header ion-text-wrap"><IonRow className="ion-justify-content-center">No. of</IonRow><IonRow className="ion-justify-content-center"><FontAwesomeIcon icon={faCommentDots} size="lg" /></IonRow></IonCol>
+                <IonCol className="forumQnsCom-Header ion-text-wrap">Edit Question</IonCol>
+                <IonCol className="forumQnsCom-Header ion-text-wrap">Delete Question</IonCol>
             </IonRow>
             <IonRow className="ion-justify-content-center">
                 <IonCol className="forumQnsCom-Data ion-text-wrap">Where's the ATM?</IonCol>

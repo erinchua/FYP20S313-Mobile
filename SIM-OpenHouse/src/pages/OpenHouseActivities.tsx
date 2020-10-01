@@ -1,5 +1,5 @@
 import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { db } from '../firebase'
 import TopNav from '../components/TopNav';
 import '../css/Global.css';
@@ -10,7 +10,7 @@ import GamesContent from '../components/GamesContent';
 import PrizesContent from '../components/PrizesContent';
 import QRScanner from '../components/QRScan';
 
-const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
+const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
 
     const [dayNum, setDayNum] = useState('day1');
     const [headingTitle, setHeadingTitle] = useState('Performances');
@@ -19,8 +19,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
     const [gamesActivities, setGamesActivities] = useState<any[]>([]);
     const [prizes, setPrizes] = useState<any[]>([]);
 
-
-
+    
     const handleDayOne = () => {
         setDayNum('day1');
     }
@@ -43,6 +42,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
     const handleQr = () => {
         setHeadingTitle('QR');
     }
+
     useEffect(() => {
         const dates: any = [];
 
@@ -93,7 +93,8 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
             })
             .catch((error) => console.log(error));
 
-    }, [])
+    }, []);
+
     return (
         <IonPage>
             <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={true} hamburger={true} />

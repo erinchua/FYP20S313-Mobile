@@ -176,19 +176,27 @@
 /* Forum User - My Questions/Comments */
 #forumQnsCom-tableGrid {
     padding: 0;
+    overflow-x: scroll !important;
 }
 
 #forumQnsCom-tableHeader {
     font-weight: bold;
-    font-size: 85%;
     text-align: center;
+}
+
+.forumQnsCom-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 15%;
+    font-size: 72%;
+    padding: 2% 0%;
 }
 
 .forumQnsCom-Data {
     border: 1px solid #C8C8C8;
     text-align: center;
     min-width: 15%;
-    font-size: 80%;
+    font-size: 70%;
 }
 
 .forumQnsCom-DataBtn {

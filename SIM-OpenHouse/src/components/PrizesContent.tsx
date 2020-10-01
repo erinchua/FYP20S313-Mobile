@@ -21,10 +21,10 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
             <IonText color="medium"><div style={{ margin: "2%", fontSize: "80%" }}>* Redemption booth is located at Blk A Atrium (Near the lift lobby)</div></IonText>
             <IonGrid id="prizesContent-tableGrid">
                 <IonRow id="prizesContent-tableHeader" className="ion-justify-content-center">
-                    <IonCol size-sizeSm="3" className="prizesContent-Data ion-text-wrap">Prizes No.</IonCol>
-                    <IonCol size-sizeSm="3" className="prizesContent-Data ion-text-wrap">Prize</IonCol>
-                    <IonCol size-sizeSm="2" className="prizesContent-Data ion-text-wrap">Points to Redeem</IonCol>
-                    <IonCol size-sizeSm="4" className="prizesContent-Data ion-text-wrap">Redeem</IonCol>
+                    <IonCol size-sizeSm="3" className="prizesContent-Header ion-text-wrap">Prizes No.</IonCol>
+                    <IonCol size-sizeSm="3" className="prizesContent-Header ion-text-wrap">Prize</IonCol>
+                    <IonCol size-sizeSm="2" className="prizesContent-Header ion-text-wrap">Points to Redeem</IonCol>
+                    <IonCol size-sizeSm="4" className="prizesContent-Header ion-text-wrap">Redeem</IonCol>
                 </IonRow>
                 {availablePrizes.map((prize: any, index: any) => {
                     return (
