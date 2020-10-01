@@ -9,6 +9,7 @@ import ForgetPassword3 from "./pages/ForgetPassword3";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import AppU from "./AppU";
+import SingleSignOn from "./pages/SingleSignOn";
 
 import { AuthContext, useAuthInit } from "./auth";
 import "./css/TopNav.css";
@@ -78,6 +79,7 @@ const App: React.FC = () => {
             <Route path="/main" component={Main} exact={true} />
             <Route path="/registration" component={Registration} exact={true} />
             <Route path="/login" component={Login} exact={true} />
+            <Route path="/singleSignOn" component={SingleSignOn} exact={true} />
             <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
             <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />

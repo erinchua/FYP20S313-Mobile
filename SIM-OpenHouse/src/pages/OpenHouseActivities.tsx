@@ -1,6 +1,6 @@
 import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-
+import { db } from '../firebase'
 import TopNav from '../components/TopNav';
 import '../css/Global.css';
 import '../css/OpenHouseActivities.css';
@@ -9,17 +9,17 @@ import PerformancesContent from '../components/PerformancesContent';
 import GamesContent from '../components/GamesContent';
 import PrizesContent from '../components/PrizesContent';
 import QRScanner from '../components/QRScan';
-import { db } from '../firebase';
 
-const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
+const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
 
     const [dayNum, setDayNum] = useState('day1');
     const [headingTitle, setHeadingTitle] = useState('Performances');
     const [openhouseDates, setOpenhouseDates] = useState([])
     const [performances, setPerformances] = useState<any[]>([]);
     const [gamesActivities, setGamesActivities] = useState<any[]>([]);
+    const [prizes, setPrizes] = useState<any[]>([]);
 
-
+    
     const handleDayOne = () => {
         setDayNum('day1');
     }
@@ -81,8 +81,20 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
             })
             .catch((error) => console.log(error));
 
+        db.collection("Prizes")
+            .get()
+            .then((snapshot) => {
+                const prizes: any = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    prizes.push(data);
+                });
+                setPrizes(prizes);
+            })
+            .catch((error) => console.log(error));
+
     }, []);
-    
+
     return (
         <IonPage>
             <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={true} hamburger={true} />
@@ -157,7 +169,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
                 {/* Prizes */}
                 {headingTitle === 'Prizes' ?
                     <>
-                        <PrizesContent />
+                        <PrizesContent prizes={prizes} />
                     </> : ''
                 }
 

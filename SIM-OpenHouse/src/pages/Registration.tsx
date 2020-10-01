@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert } from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert, IonItemDivider, IonText } from "@ionic/react";
 import React, { useRef, useState } from "react";
 import { Redirect } from "react-router";
 import { useForm } from "react-hook-form";
@@ -351,7 +351,7 @@ const Registration: React.FC = () => {
                   I agree with SIM's Terms of Use and Privary Policy and thereby give my consent to receive marketing communications from SIM.
                 </IonLabel>
               </IonItem>
-              {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage">*Terms of Use and Privacy Policy checkbox not checked</div>}
+              {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage" style={{marginBottom: '-10%'}}>*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
             <IonRow class="ion-justify-content-center">
               {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}
@@ -359,6 +359,16 @@ const Registration: React.FC = () => {
             </IonRow>
           </IonGrid>
         </form>
+        <IonGrid>
+          <IonItemDivider></IonItemDivider>
+          <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
+          <IonRow class="ion-justify-content-center">
+            <IonButton id="registration_googleBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER WITH GOOGLE</IonButton>
+          </IonRow>
+          <IonRow class="ion-justify-content-center">
+            <IonButton id="registration_facebookBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER WITH FACEBOOK</IonButton>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
