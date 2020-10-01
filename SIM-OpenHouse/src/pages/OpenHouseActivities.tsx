@@ -1,6 +1,6 @@
 import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { db } from '../firebase'
 import TopNav from '../components/TopNav';
 import '../css/Global.css';
 import '../css/OpenHouseActivities.css';
@@ -17,6 +17,8 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
     const [openhouseDates, setOpenhouseDates] = useState([])
     const [performances, setPerformances] = useState<any[]>([]);
     const [gamesActivities, setGamesActivities] = useState<any[]>([]);
+    const [prizes, setPrizes] = useState<any[]>([]);
+
 
 
     const handleDayOne = () => {
@@ -76,6 +78,18 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
                     activities.push(data);
                 });
                 setGamesActivities(activities);
+            })
+            .catch((error) => console.log(error));
+
+        db.collection("Prizes")
+            .get()
+            .then((snapshot) => {
+                const prizes: any = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    prizes.push(data);
+                });
+                setPrizes(prizes);
             })
             .catch((error) => console.log(error));
 
@@ -154,7 +168,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
                 {/* Prizes */}
                 {headingTitle === 'Prizes' ?
                     <>
-                        <PrizesContent />
+                        <PrizesContent prizes={prizes} />
                     </> : ''
                 }
 
