@@ -96,7 +96,7 @@ const App: React.FC = () => {
             <Route path="/vincenttest" component={VincentTest} exact={true} />
 
             {/* <Route path="/test" component={Test} exact={false} />
-            <Route path="/qrscan" component={QRscan} exact={false} />  */}
+            <Route path="/u/qrscan" component={QRscan} exact={true} /> */}
 
             <Route path="/u" component={AppU} exact={false} />
             <Route exact path="/" render={() => <Redirect to="/main" />} />

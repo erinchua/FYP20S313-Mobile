@@ -1,5 +1,5 @@
 import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import TopNav from '../components/TopNav';
 import '../css/Global.css';
@@ -9,6 +9,7 @@ import PerformancesContent from '../components/PerformancesContent';
 import GamesContent from '../components/GamesContent';
 import PrizesContent from '../components/PrizesContent';
 import QRScanner from '../components/QRScan';
+import { db } from '../firebase';
 
 const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
 
@@ -41,6 +42,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
     const handleQr = () => {
         setHeadingTitle('QR');
     }
+
     useEffect(() => {
         const dates: any = [];
 
@@ -79,7 +81,8 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = (props) => {
             })
             .catch((error) => console.log(error));
 
-    }, [])
+    }, []);
+    
     return (
         <IonPage>
             <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={true} hamburger={true} />
