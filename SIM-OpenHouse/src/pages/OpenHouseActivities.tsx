@@ -105,13 +105,13 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                     <IonRow className="openHouseActivities-grid">
                         <IonToolbar>
                             <IonSegment scrollable value={headingTitle} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                                <IonCol className="openHouseActivities-grid" size-sizeSm="4">
+                                <IonCol className="openHouseActivities-grid" sizeSm="4">
                                     <IonSegmentButton value="Performances" onClick={handlePerformance} className="openHouseActivities-heading ion-text-wrap">Performances</IonSegmentButton>
                                 </IonCol>
-                                <IonCol className="openHouseActivities-grid" size-sizeSm="4">
+                                <IonCol className="openHouseActivities-grid" sizeSm="4">
                                     <IonSegmentButton value="GamesNActivities" onClick={handleGames} className="openHouseActivities-heading ion-text-wrap">Games & Activities</IonSegmentButton>
                                 </IonCol>
-                                <IonCol className="openHouseActivities-grid" size-sizeSm="4">
+                                <IonCol className="openHouseActivities-grid" sizeSm="4">
                                     <IonRow className="openHouseActivities-grid">
                                         <IonCol className="openHouseActivities-grid">
                                             <IonSegmentButton value="Prizes" onClick={handlePrizes} id="openHouseActivities-prizesHeader">
