@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonSlide, IonSlides, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonSlide, IonSlides, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 import '../css/Global.css';
@@ -22,9 +22,20 @@ const admissionApplication: React.FC = () => {
                         <IonTitle id="admissionAppTitle">How to Apply</IonTitle>
                     </IonRow>
                 
+                    {/* Admission & Application Steps */}
                     <IonRow>
-                        
+                        <IonCol sizeSm="12" className="stepMainCol">
+                            <IonRow className="stepRow">
+                                <IonCol sizeSm="12" className="stepTitle">Step 1</IonCol>
+                            </IonRow>
+
+                            <IonRow className="stepRow">
+                                <IonCol sizeSm="12" className="stepTitle">Step 1</IonCol>
+                            </IonRow>
+
+                        </IonCol>
                     </IonRow>
+
                 </IonGrid>
                 
             </IonContent>

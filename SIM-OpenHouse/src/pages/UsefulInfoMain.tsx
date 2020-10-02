@@ -19,7 +19,7 @@ const UsefulInfoMain: React.FC = () => {
             <IonContent fullscreen={true}>
                 <IonGrid id="usefulInfoGrid">
                     <IonRow className="ion-justify-content-around mainRow">
-                        <IonCol size-sizeSm="6" className="mainCol">
+                        <IonCol sizeSm="6" className="mainCol">
                             <IonRouterLink routerLink="/u/usefulInfoMain/admissionApplication">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="usefulInfoIcons" size="2x" icon={faFileAlt} />
@@ -31,7 +31,7 @@ const UsefulInfoMain: React.FC = () => {
                             </IonRouterLink>
                         </IonCol>
 
-                        <IonCol size-sizeSm="6" className="mainCol">
+                        <IonCol sizeSm="6" className="mainCol">
                             <IonRouterLink routerLink="/u/usefulInfoMain/contactInfo">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="usefulInfoIcons" size="2x" icon={faAddressBook} />
@@ -45,7 +45,7 @@ const UsefulInfoMain: React.FC = () => {
                     </IonRow>
 
                     <IonRow className="ion-justify-content-around mainRow">
-                        <IonCol size-sizeSm="6" className="mainCol">
+                        <IonCol sizeSm="6" className="mainCol">
                             <IonRouterLink routerLink="/u/usefulInfoMain/openHouseFeedback">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="usefulInfoIcons" size="2x" icon={faCommentAlt} />
@@ -57,7 +57,7 @@ const UsefulInfoMain: React.FC = () => {
                             </IonRouterLink>
                         </IonCol>
 
-                        <IonCol size-sizeSm="6" className="mainCol">
+                        <IonCol sizeSm="6" className="mainCol">
                             <IonRouterLink routerLink="/u/usefulInfoMain/commonFAQs">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="usefulInfoIcons" size="2x" icon={faQuestionCircle} />
