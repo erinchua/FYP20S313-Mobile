@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {  IonRouterOutlet } from '@ionic/react';
+
 import Home from './pages/Home';
 import OpenHouseMain from './pages/OpenHouseMain';
 import ProgrammeTalks from './pages/ProgrammeTalks';
@@ -12,6 +13,8 @@ import Forum from './pages/Forum/Forum';
 import ForumUser from './pages/Forum/ForumUser';
 import ForumViewQuestion from './pages/Forum/ForumViewQuestion';
 import CampusFacilitiesMap from './pages/CampusFacilitiesMap';
+import UsefulInfoMain from './pages/UsefulInfoMain';
+import AdmissionApplication from './pages/AdmissionApplication';
 
 import { useAuth } from './auth';
 
@@ -34,6 +37,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
 const App: React.FC = () => {
   const { loggedIn } = useAuth();
 
@@ -53,6 +57,8 @@ const App: React.FC = () => {
       <Route path="/u/forumUser" component={ForumUser} exact={true} />
       <Route path="/u/forumViewQuestion" component={ForumViewQuestion} exact={true} />
       <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
+      <Route path="/u/usefulInfoMain" component={UsefulInfoMain} exact={true} />
+      <Route path="/u/usefulInfoMain/admissionApplication" component={AdmissionApplication} exact={true} />
     </IonRouterOutlet>
   )
 };

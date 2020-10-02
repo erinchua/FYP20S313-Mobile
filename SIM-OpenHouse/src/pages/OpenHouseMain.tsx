@@ -19,13 +19,13 @@ const OpenHouseMain: React.FC = () => {
             <IonContent fullscreen>
                 <IonGrid id="openHouseMain-grid">
                     <IonRow>
-                        <IonCol size-sizeSm="12" className="gifCol">
+                        <IonCol sizeSm="12" className="gifCol">
                             <IonImg src={ gif }></IonImg>
                         </IonCol>
                     </IonRow>
 
                     <IonRow className="ion-justify-content-around openHouseMainRow">
-                        <IonCol size-sizeSm="4" className="openHouseMainCol"> 
+                        <IonCol sizeSm="4" className="openHouseMainCol"> 
                             <IonRouterLink routerLink="/u/openHouseMain/programmeTalks">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="openHouseMain-icons" icon={faChalkboardTeacher} size="2x"/>
@@ -35,7 +35,7 @@ const OpenHouseMain: React.FC = () => {
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol size-sizeSm="4" className="openHouseMainCol">
+                        <IonCol sizeSm="4" className="openHouseMainCol">
                             <IonRouterLink routerLink="/u/openHouseMain/guidedTours" routerDirection="forward">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="openHouseMain-icons" icon={faMapPin} size="2x"/>
@@ -47,7 +47,7 @@ const OpenHouseMain: React.FC = () => {
                         </IonCol>
                     </IonRow>
                     <IonRow className="ion-justify-content-around openHouseMainRow">
-                        <IonCol size-sizeSm="4" className="openHouseMainCol"> 
+                        <IonCol sizeSm="4" className="openHouseMainCol"> 
                             <IonRouterLink routerLink="/u/openHouseMain/openHouseActivities">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="openHouseMain-icons" icon={faStar} size="2x"/>
@@ -57,7 +57,7 @@ const OpenHouseMain: React.FC = () => {
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol size-sizeSm="4" className="openHouseMainCol"></IonCol>
+                        <IonCol sizeSm="4" className="openHouseMainCol"></IonCol>
                     </IonRow>
                 </IonGrid>
             </IonContent>
