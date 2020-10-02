@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
 
 import { useAuth } from '../auth';
-import { auth } from '../firebase';
+import { auth, googleProvider } from '../firebase';
 import firebase from 'firebase';
 import '../css/Login.css';
 import '../css/Global.css';
@@ -38,6 +38,22 @@ const Login: React.FC = () => {
       console.log(e);
     };
   };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await auth.signInWithRedirect(googleProvider).then(() => {
+        return auth.getRedirectResult()
+      }).then(result => {
+        if (result.credential) {
+          //const token = result.credential.accessToken;
+        }
+
+        const user = result.user;
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   if (loggedIn){
     return <Redirect to="/u/home"/>;

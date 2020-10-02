@@ -11,6 +11,7 @@ import MySchedule from './pages/MySchedule';
 import Forum from './pages/Forum/Forum';
 import ForumUser from './pages/Forum/ForumUser';
 import ForumViewQuestion from './pages/Forum/ForumViewQuestion';
+import CampusFacilitiesMap from './pages/CampusFacilitiesMap';
 
 import { useAuth } from './auth';
 
@@ -51,6 +52,7 @@ const App: React.FC = () => {
       <Route path="/u/forum" component={Forum} exact={true} />
       <Route path="/u/forumUser" component={ForumUser} exact={true} />
       <Route path="/u/forumViewQuestion" component={ForumViewQuestion} exact={true} />
+      <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
     </IonRouterOutlet>
   )
 };

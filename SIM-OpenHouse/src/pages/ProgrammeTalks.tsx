@@ -1,19 +1,19 @@
-import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from "@ionic/react";
-import React, { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
+import React, { useEffect, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
-import "../css/Global.css";
-import "../css/ProgrammeTalks.css";
+import '../css/Global.css';
+import '../css/ProgrammeTalks.css';
 
-import TopNav from "../components/TopNav";
-import ProgTalkSchedule from "../components/ProgTalkSchedule";
-import ProgTalkLiveTalks from "../components/ProgTalkLiveTalks";
-import ProgTalkPastRec from "../components/ProgTalkPastRec";
-import { db } from "../firebase";
+import TopNav from '../components/TopNav';
+import ProgTalkSchedule from '../components/ProgTalkSchedule';
+import ProgTalkLiveTalks from '../components/ProgTalkLiveTalks';
+import ProgTalkPastRec from '../components/ProgTalkPastRec';
+import { db } from '../firebase';
 
 const ProgrammeTalks: React.FC = () => {
   const [tab, setTab] = useState("schedule");
