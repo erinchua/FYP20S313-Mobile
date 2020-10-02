@@ -26,12 +26,14 @@
 #registrationBtn {
     --background: #37474F;
     width: 50%;
+    height: 50px;
     margin-top: 20%;
 }
 
 #loginBtn {
     --background: #CCCCCC;
     width: 50%;
+    height: 50px;
     color: #5E5E5E;
     margin-top: 5%;
     margin-bottom: 5%;

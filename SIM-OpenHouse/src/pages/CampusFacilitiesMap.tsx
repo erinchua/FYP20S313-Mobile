@@ -25,7 +25,6 @@ const CampusFacilitiesMap: React.FC = () => {
             <TopNav title="Campus Facilities Map" route='/u/home' backarrow={ true } hamburger = { true }/>
             
             <IonContent fullscreen={true} className="campusFacilMapIonContent">
-                
                 <IonSlides pager={true} options={slideOpts} id="campusFacilSlides">
                     {/* Block A */}
                     <IonSlide className="slide">

@@ -1,0 +1,16 @@
+#admissionAppTitleGrid {
+    padding: 0;
+}
+
+#admissonAppTitleRow {
+    background: #A9DBD9;
+    padding: 4%;
+    padding-bottom: 4%;
+}
+
+#admissionAppTitle {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: #424242;
+}
