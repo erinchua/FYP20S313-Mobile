@@ -16,7 +16,6 @@ const Login: React.FC = () => {
 
   const [status, setStatus] = useState({ loading: false, error: false });
   const [showAlert, setShowAlert] = useState(false);
-  const [loginType, setLoginType] = useState("default");
 
   const { register, handleSubmit } = useForm();
 
@@ -39,17 +38,13 @@ const Login: React.FC = () => {
     };
   };
 
-  const handleGoogleLogin = async () => {
+  const googleLogin = async () => {
     try {
-      await auth.signInWithRedirect(googleProvider).then(() => {
-        return auth.getRedirectResult()
-      }).then(result => {
-        if (result.credential) {
-          //const token = result.credential.accessToken;
-        }
-
-        const user = result.user;
-      });
+      setStatus({ loading: true, error: false });
+      googleProvider.addScope('email');
+      await auth.signInWithRedirect(googleProvider);
+      setShowAlert(true);
+      setStatus({ loading: false, error: false });
     } catch (e) {
       console.log(e);
     }
@@ -91,7 +86,7 @@ const Login: React.FC = () => {
           <IonItemDivider></IonItemDivider>
           <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
           <IonRow class="ion-justify-content-center">
-            <IonButton id="login_googleBtn" type="submit" onClick={() => setShowAlert(true)}>LOGIN WITH GOOGLE</IonButton>
+            <IonButton id="login_googleBtn" type="submit" onClick={() => googleLogin()}>LOGIN WITH GOOGLE</IonButton>
           </IonRow>
           <IonRow class="ion-justify-content-center">
             <IonButton id="login_facebookBtn" type="submit" onClick={() => setShowAlert(true)}>LOGIN WITH FACEBOOK</IonButton>
