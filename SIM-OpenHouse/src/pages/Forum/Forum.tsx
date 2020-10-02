@@ -147,10 +147,10 @@ const Forum: React.FC = () => {
                         </IonRow>
                         <IonRow className="ion-justify-content-center">
                             <IonItem id="forum-checkbox-container">
-                                <IonCol size="2" size-sizeSm="2" className="ion-align-self-center">
+                                <IonCol size="2" sizeSm="2" className="ion-align-self-center">
                                     <IonCheckbox name="forumCheckbox" checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} ref={register({ validate: (value) => checked === true })}></IonCheckbox>
                                 </IonCol>
-                                <IonCol size="10" size-sizeSm="10">
+                                <IonCol size="10" sizeSm="10">
                                     <IonText id="forum-checkbox-text">
                                     *I have read the above forum rules and agree to abide to the rules stated above. I understand that should I break any of the rules above, I may be banned from the forum.
                                     </IonText>

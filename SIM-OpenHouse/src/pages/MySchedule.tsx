@@ -26,11 +26,11 @@ const MySchedule: React.FC = () => {
             <IonContent fullscreen={true} className="myScheduleIonContent">
                 <IonGrid className="myScheduleGrid">
                     <IonRow className="ion-justify-content-center openHouseDateRow">
-                        <IonCol size-sizeSm="6" className="openHouseDateCol">
+                        <IonCol sizeSm="6" className="openHouseDateCol">
                             <span className="openHouseDateTitleText">From: </span> 
                             <span className="openHouseDateText">21 November 2020</span> {/* Date is not hardcoded */}
                         </IonCol>
-                        <IonCol size-sizeSm="6" className="openHouseDateCol">
+                        <IonCol sizeSm="6" className="openHouseDateCol">
                             <span className="openHouseDateTitleText">To: </span> 
                             <span className="openHouseDateText">22 November 2020</span> {/* Date is not hardcoded */}
                         </IonCol>

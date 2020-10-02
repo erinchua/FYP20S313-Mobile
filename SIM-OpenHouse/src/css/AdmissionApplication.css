@@ -1,0 +1,33 @@
+#admissionAppTitleGrid {
+    background: #efefef;
+    padding: 0;
+    min-height: 100%;
+}
+
+#admissonAppTitleRow {
+    background: #A9DBD9;
+    padding: 4%;
+    padding-bottom: 4%;
+    min-width: 100%;
+}
+
+#admissionAppTitle {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: #424242;
+}
+
+.stepMainCol {
+    border: 2px solid #f0e3dc;
+    margin-top: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    background: #ffffff;
+}
+
+.stepTitle {
+    color: #424242;
+    font-size: 90%;
+    font-weight: bold;
+}
