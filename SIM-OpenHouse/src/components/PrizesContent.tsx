@@ -28,7 +28,7 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
                 </IonRow>
                 {availablePrizes.map((prize: any, index: any) => {
                     return (
-                        <IonRow className="ion-justify-content-center">
+                        <IonRow className="ion-justify-content-center" key={prize.id}>
                             <IonCol sizeSm="3" className="prizesContent-Data ion-text-wrap">{index + 1}</IonCol>
                             <IonCol sizeSm="3" className="prizesContent-Data ion-text-wrap">{prize.prizeName}</IonCol>
                             <IonCol sizeSm="2" className="prizesContent-Data ion-text-wrap">{prize.prizePointsCost}</IonCol>
@@ -39,7 +39,7 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
 
                 {redeemedPrizes.map((prize: any, index: any) => {
                     return (
-                        <IonRow className="ion-justify-content-center">
+                        <IonRow className="ion-justify-content-center" key={prize.id}>
                             <IonCol sizeSm="3" className="prizesContent-Data ion-text-wrap">NIL</IonCol>
                             <IonCol sizeSm="3" className="prizesContent-Data ion-text-wrap">{prize.prizeName}</IonCol>
                             <IonCol sizeSm="2" className="prizesContent-Data ion-text-wrap">{prize.prizePointsCost}</IonCol>

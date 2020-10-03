@@ -16,6 +16,7 @@ const Login: React.FC = () => {
 
   const [status, setStatus] = useState({ loading: false, error: false });
   const [showAlert, setShowAlert] = useState(false);
+  //const [exitingUser, setExistingUser] = useState(true);
 
   const { register, handleSubmit } = useForm();
 
@@ -31,6 +32,7 @@ const Login: React.FC = () => {
         //console.log(idToken);
         sessionStorage.setItem('token:', idToken);
       });
+
       setStatus({ loading: false, error: false });
     } catch(e) {
       setStatus({ loading: false, error: true });
@@ -41,18 +43,28 @@ const Login: React.FC = () => {
   const googleLogin = async () => {
     try {
       setStatus({ loading: true, error: false });
-      googleProvider.addScope('email');
-      await auth.signInWithRedirect(googleProvider);
+
+      await auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
+        return auth.signInWithRedirect(googleProvider);
+      }).then(() => {
+        return auth.getRedirectResult();
+      }).then(user => {
+        /* if (user.additionalUserInfo?.isNewUser) {
+          setExistingUser(false);
+        } */
+        return user.user?.getIdToken();
+      }).then((idToken: any) => {
+        sessionStorage.setItem('token', idToken);
+      });
+      
       setShowAlert(true);
       setStatus({ loading: false, error: false });
     } catch (e) {
       console.log(e);
-    }
-  }
+    };
+  };
 
-  if (loggedIn){
-    return <Redirect to="/u/home"/>;
-  }
+  if (loggedIn) return <Redirect to="/u/home" />;
 
   return (
     <IonPage className="ionPage">
@@ -81,7 +93,6 @@ const Login: React.FC = () => {
           </IonGrid>
           {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email and password.'} buttons={['OK']}></IonAlert>}
         </form>
-        <IonLoading isOpen={status.loading} message={'Loading...'} />
         <IonGrid>
           <IonItemDivider></IonItemDivider>
           <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
@@ -92,6 +103,7 @@ const Login: React.FC = () => {
             <IonButton id="login_facebookBtn" type="submit" onClick={() => setShowAlert(true)}>LOGIN WITH FACEBOOK</IonButton>
           </IonRow>
         </IonGrid>
+        <IonLoading isOpen={status.loading} />
       </IonContent>
     </IonPage>
   );

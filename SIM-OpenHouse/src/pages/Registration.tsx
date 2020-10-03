@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert, IonItemDivider, IonText } from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert, IonItemDivider, IonText, IonLoading } from "@ionic/react";
 import React, { useRef, useState } from "react";
 import { Redirect } from "react-router";
 import { useForm } from "react-hook-form";
@@ -369,6 +369,7 @@ const Registration: React.FC = () => {
             <IonButton id="registration_facebookBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER WITH FACEBOOK</IonButton>
           </IonRow>
         </IonGrid>
+        <IonLoading isOpen={status.loading} />
       </IonContent>
     </IonPage>
   );
