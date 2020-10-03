@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItemDivider, IonLabel, IonModal, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItemDivider, IonLabel, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonTextarea, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 
 import "../../css/Global.css"
@@ -42,7 +42,7 @@ const ForumUser: React.FC = () => {
                     </IonRow>
                 </IonGrid>
             </IonToolbar>
-    
+
             <IonContent fullscreen id="forum-content">
                 <IonGrid id="forumUser-ionRowCol">
                     <IonRow id="forumUser-ionRowCol">
@@ -60,7 +60,6 @@ const ForumUser: React.FC = () => {
                     <ForumQuestions /> : <ForumComments />
                 }
                 
-
                 {/* Post Question Modal */}
                 <IonModal isOpen={showPostModal} cssClass='post-question-modal' onDidDismiss={() => setShowPostModal(false)}>
                     <IonGrid id="postQns-modal-container">

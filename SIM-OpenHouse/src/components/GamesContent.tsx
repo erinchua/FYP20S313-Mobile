@@ -27,7 +27,7 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                 {props.day1 === 'day1' ?
                     gamesActivitiesDay1.map((activity: any, index: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center">
+                            <IonRow className="ion-justify-content-center" key={activity.id}>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{index + 1}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.gameBoothName}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>
@@ -41,7 +41,7 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                 {props.day2 === 'day2' ?
                     gamesActivitiesDay2.map((activity: any, index: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center">
+                            <IonRow className="ion-justify-content-center" key={activity.id}>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{index + 1}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.gameBoothName}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>

@@ -1,11 +1,14 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
+import firebase from 'firebase';
 
 import '../css/Global.css';
 import '../css/ProgrammeTalks.css'
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { db } from '../firebase';
+import { useAuth } from '../auth';
 
 const ProgTalkSchedule: React.FC<{
     day1: any;
@@ -14,6 +17,7 @@ const ProgTalkSchedule: React.FC<{
     openhouseDates: any;
 
 }> = props => {
+    const { userID } = useAuth();
 
     const programmeTalkDay1 = props.programmeTalk
         .filter((talk: any) => {
@@ -44,7 +48,23 @@ const ProgTalkSchedule: React.FC<{
         {/* set state to disable the + btn in else {} */ }
     };
 
-
+    const addToSchedule = (programmeTalk: any) => {
+        try {
+            // make check for schedule conflict then below
+            db.collection('PersonalScheduler').doc(userID).update({
+                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion({
+                    openhouseProgrammeID: programmeTalk.id,
+                    openhouseProgrammeName: programmeTalk.talkName,
+                    openhouseProgrammeDateTimeStart: programmeTalk.startTime,
+                    openhouseProgrammeDateTimeEnd: programmeTalk.endTime,
+                    openhouseProgrammeVenue: programmeTalk.venue
+                })
+            })
+            displayRegisterAlert();
+        } catch (e) {
+            console.log(e);
+        }
+    };
 
     return (
         <>
@@ -80,7 +100,7 @@ const ProgTalkSchedule: React.FC<{
                 {props.day1 === 'day1' ?
                     programmeTalkDay1.map((programmeTalk: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
                                     <IonRouterLink href="progTalkInfo" id="uniLink" >
                                         {programmeTalk.talkName}
@@ -91,21 +111,19 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
                             </IonRow>
                         )
-                    })
-                    : ''}
-
-
+                    }) : ''
+                }
 
                 {props.day2 === 'day2' ?
                     programmeTalkDay2.map((programmeTalk: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
                                     <IonRouterLink href="ProgTalkInfo" id="uniLink">
                                         {programmeTalk.talkName}
@@ -116,7 +134,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRegisterAlert}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
