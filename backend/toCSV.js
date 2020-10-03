@@ -5,16 +5,19 @@ const converter = require('json-2-csv');
 const pathDir = './data/';
 const args = process.argv.slice(2)[0];
 
-const snapshot = await db.collection(args).get().catch(err => {
-    console.log(`Error occured: ${err}`)
-});
-const colData = snapshot.docs.map(doc => doc.data());
-console.log(colData);
-
-converter.json2csv(colData, (err, csv) => {
-    if (err) return console.log(`${err} Error occured`);
-
-    fs.writeFileSync(`${pathDir}${args}.csv`, csv, err => {
-        if (err) return console.log(`${err} Error writing file`)
+async function convertJsonToCsv() {
+    const snapshot = await db.collection(args).get().catch(err => {
+        console.log(`Error occured: ${err}`)
     });
-});
+    const colData = snapshot.docs.map(doc => doc.data());
+    console.log(colData);
+
+    converter.json2csv(colData, (err, csv) => {
+        if (err) return console.log(`${err} Error occured`);
+
+        fs.writeFileSync(`${pathDir}${args}.csv`, csv, err => {
+            if (err) return console.log(`${err} Error writing file`)
+        });
+    });
+};
+convertJsonToCsv();

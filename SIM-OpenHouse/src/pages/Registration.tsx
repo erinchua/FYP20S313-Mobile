@@ -29,9 +29,9 @@ const Registration: React.FC = () => {
   const password = useRef({});
   password.current = watch("password", "");
 
-  const addNewStudent = (data: any, uid: any) => {
+  const addNewStudent = async (data: any, uid: any) => {
     console.log(data);
-    db.collection("Students").doc(uid).set({
+    await db.collection("Students").doc(uid).set({
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
@@ -42,15 +42,10 @@ const Registration: React.FC = () => {
       points: 0,
       isSuspendedFromForum: false,
     })
-    db.collection("PersonalScheduler").doc(uid).set({
+    await db.collection("PersonalScheduler").doc(uid).set({
       isConflicted: false,
-      openhouseProgrammeID: [],
-      openhouseProgrammeName: [],
-      openhouseProgrammeDateTimeStart: [],
-      openhouseProgrammeDateTimeEnd: [],
-      openhouseProgrammeVenue: [],
+      registeredProgrammes: []
     })
-
   };
 
   const handleRegister = async (data: any) => {

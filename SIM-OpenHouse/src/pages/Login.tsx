@@ -97,7 +97,7 @@ const Login: React.FC = () => {
           <IonItemDivider></IonItemDivider>
           <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
           <IonRow class="ion-justify-content-center">
-            <IonButton id="login_googleBtn" type="submit" onClick={() => googleLogin()}>LOGIN WITH GOOGLE</IonButton>
+            <IonButton id="login_googleBtn" type="submit" onClick={googleLogin}>LOGIN WITH GOOGLE</IonButton>
           </IonRow>
           <IonRow class="ion-justify-content-center">
             <IonButton id="login_facebookBtn" type="submit" onClick={() => setShowAlert(true)}>LOGIN WITH FACEBOOK</IonButton>
