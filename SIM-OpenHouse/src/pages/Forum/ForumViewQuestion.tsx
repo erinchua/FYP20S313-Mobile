@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonButton, IonRouterLink, IonToolbar, IonSearchbar, IonCol, IonList, IonLabel, IonText } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonButton, IonRouterLink, IonToolbar, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader } from '@ionic/react';
 import React from 'react';
 
 import '../../css/Global.css';
@@ -14,7 +14,10 @@ const ForumViewQuestion: React.FC = () => {
 
     return (
         <IonPage>
-            <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true }/>
+            <IonHeader>
+                <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true }/>
+            </IonHeader>
+
             <IonToolbar id="forum-searchbar-container">
                 <IonGrid>
                     <IonRow className="ion-justify-content-start">

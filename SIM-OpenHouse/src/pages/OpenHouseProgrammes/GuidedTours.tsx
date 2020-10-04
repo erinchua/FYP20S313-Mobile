@@ -1,9 +1,9 @@
-import { IonCol, IonContent, IonGrid, IonPage, IonRow, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
 import { db } from "../../firebase";
 
-import "../../css/Global.css";
-import "../../css/GuidedTours.css";
+import '../../css/Global.css';
+import '../../css/GuidedTours.css';
 import TopNav from '../../components/TopNav';
 import GuidedTourContent from '../../components/OpenHouseProgrammes/GuidedTourContent';
 
@@ -49,10 +49,12 @@ const GuidedTours: React.FC = () => {
     }, [])
     return (
         <IonPage>
-            <TopNav title="Guided Tours" route="/u/openHouseMain" backarrow={true} hamburger={true} />
-            <IonToolbar id="guidedTours-schedule">
-                <IonTitle id="guidedTours-schedule-text">Schedule</IonTitle>
-            </IonToolbar>
+            <IonHeader>
+                <TopNav title="Guided Tours" route="/u/openHouseMain" backarrow={true} hamburger={true} />
+                <IonToolbar id="guidedTours-schedule">
+                    <IonTitle id="guidedTours-schedule-text">Schedule</IonTitle>
+                </IonToolbar>
+            </IonHeader>
 
             <IonContent fullscreen id="guidedTours-content">
                 <IonGrid id="guidedTours-ionRowCol">

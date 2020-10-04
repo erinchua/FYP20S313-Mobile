@@ -8,7 +8,7 @@ import { IonContent,
     IonItem, 
     IonInput,
     IonList,
-    IonAlert } from '@ionic/react';
+    IonAlert, IonHeader } from '@ionic/react';
 import React, {useRef, useState} from 'react';
 import { useForm } from "react-hook-form";
 import {useHistory} from 'react-router-dom';
@@ -79,9 +79,11 @@ const ForgetPassword3: React.FC = () => {
              ></IonAlert>
 
             <IonPage>
-                <TopNav title="Reset Password" route="/main" backarrow={ true } hamburger = { false }/>
-
-                <IonContent fullscreen style={{display: "flex"}}>
+                <IonHeader>
+                    <TopNav title="Reset Password" route="/main" backarrow={ true } hamburger = { false }/>
+                </IonHeader>
+                
+                <IonContent fullscreen>
                     <IonGrid className="forgetPwdGrid">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <IonRow class="ion-justify-content-center">

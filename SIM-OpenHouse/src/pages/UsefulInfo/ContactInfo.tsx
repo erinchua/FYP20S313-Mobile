@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonPage, IonRouterLink, IonRow, IonTitle } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonTitle } from '@ionic/react';
 import React, { useRef } from 'react';
 
 import '../../css/Global.css';
@@ -12,7 +12,9 @@ const ContactInfo: React.FC = () => {
     
     return (
         <IonPage>
-            <TopNav title="Contact Information" route='/u/usefulInfoMain' backarrow={ true } hamburger = { true }/>
+            <IonHeader>
+                <TopNav title="Contact Information" route='/u/usefulInfoMain' backarrow={ true } hamburger = { true }/>
+            </IonHeader>
 
             <IonContent fullscreen={true}>
                 <IonGrid id="contactInfoGrid">

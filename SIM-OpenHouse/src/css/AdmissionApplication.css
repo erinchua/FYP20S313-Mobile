@@ -1,4 +1,4 @@
-#admissionAppTitleGrid {
+#admissionAppGrid {
     background: #efefef;
     padding: 0;
     min-height: 100%;
@@ -12,7 +12,7 @@
 }
 
 #admissionAppTitle {
-    font-size: 100%;
+    font-size: 85%;
     font-weight: bold;
     text-align: center;
     color: #424242;
@@ -55,11 +55,6 @@
     font-size: 85%;
 }
 
-.simConnnectUrl {
-    --color: #44B5B5;
-    font-weight: bold;
-}
-
 #additionalInfoTitleRow {
     padding-top: 5%;
     padding-bottom: 3%;
@@ -77,8 +72,31 @@
     border-top: 2px solid #c8c8c8;
 }
 
-.additionalInfoHeaderToolbar {
+.additionalInfoHeaderCol {
+    min-width: 100%;
+    padding: 0;
+}
+
+.additionalInfoHeaderInnerRow {
     --background: #efefef;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.additionalInfoHeaderInnerCol {
+    padding: 0;
+}
+
+.toggleAdmissionInfoBtnCol {
+    text-align: right; 
+    padding: 0;
+}
+
+.toggleAdmissionInfoBtn {
+    --color: #424242;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-right: 0%;
 }
 
 .additionalInfoHeader {
@@ -100,6 +118,7 @@
 
 .labelUrlStyle {
     --color: #44B5B5;
+    font-weight: bold;
 }
 
 #supportingDocInfo {

@@ -1,4 +1,4 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonDatetime, IonGrid, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonSelect, IonSelectOption, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCheckbox, IonCol, IonContent, IonDatetime, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonSelect, IonSelectOption, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -18,7 +18,10 @@ const SingleSignOn: React.FC = () => {
     return (
         <>
         <IonPage>
-            <TopNav title="Sign In With Facebook/Google" route="/main" backarrow={true} hamburger={false} />
+            <IonHeader>
+                <TopNav title="Sign In With Facebook/Google" route="/main" backarrow={true} hamburger={false} />
+            </IonHeader>
+            
             <IonContent fullscreen>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <IonGrid>
