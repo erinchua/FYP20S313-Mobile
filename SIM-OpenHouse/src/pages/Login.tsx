@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonLoading, IonAlert, IonText } from '@ionic/react';
+import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonRouterLink, IonItemDivider, IonLoading, IonAlert, IonText, IonHeader } from '@ionic/react';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
@@ -68,8 +68,10 @@ const Login: React.FC = () => {
 
   return (
     <IonPage className="ionPage">
-      <TopNav title="Login" route="/main" backarrow={ true } hamburger = { false }/>
-
+      <IonHeader>
+        <TopNav title="Login" route="/main" backarrow={ true } hamburger = { false }/>
+      </IonHeader>
+      
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleLogin)}>
           <IonGrid>

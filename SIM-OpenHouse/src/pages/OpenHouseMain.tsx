@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
 import React from 'react';
 
 import "../css/Global.css";
@@ -14,8 +14,10 @@ const OpenHouseMain: React.FC = () => {
 
     return (
         <IonPage>
-            <TopNav title="Open House Programmes" route="/u/home" backarrow={ true } hamburger = { true }/>
-
+            <IonHeader>
+                <TopNav title="Open House Programmes" route="/u/home" backarrow={ true } hamburger = { true }/>
+            </IonHeader>
+            
             <IonContent fullscreen>
                 <IonGrid id="openHouseMain-grid">
                     <IonRow>

@@ -17,6 +17,7 @@ import UsefulInfoMain from './pages/UsefulInfoMain';
 import AdmissionApplication from './pages/AdmissionApplication';
 import ContactInfo from './pages/ContactInfo';
 import OpenHouseFeedback from './pages/OpenHouseFeedback';
+import CommonFaqs from './pages/CommonFaqs';
 
 import { useAuth } from './auth';
 
@@ -61,6 +62,7 @@ const App: React.FC = () => {
       <Route path="/u/usefulInfoMain/admissionApplication" component={AdmissionApplication} exact={true} />
       <Route path="/u/usefulInfoMain/contactInfo" component={ContactInfo} exact={true} />
       <Route path="/u/usefulInfoMain/openHouseFeedback" component={OpenHouseFeedback} exact={true} />
+      <Route path="/u/usefulInfoMain/commonFAQs" component={CommonFaqs} exact={true} />
     </IonRouterOutlet>
   )
 };

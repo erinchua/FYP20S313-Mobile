@@ -1,4 +1,4 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 
@@ -32,7 +32,9 @@ const Forum: React.FC = () => {
    
     return (
         <IonPage>
-            <TopNav title="Forum" route="/u/home" backarrow={ true } hamburger={ true }/>
+            <IonHeader>
+                <TopNav title="Forum" route="/u/home" backarrow={ true } hamburger={ true }/>
+            </IonHeader>
             
             <IonContent fullscreen id="forum-content">
             {count === 1 && checked === true ?

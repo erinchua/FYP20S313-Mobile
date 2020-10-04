@@ -1,0 +1,19 @@
+#faqGrid {
+    background: #efefef;
+    padding: 0;
+    min-height: 100%;
+}
+
+#faqTitleRow {
+    background: #d9d9d9;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    min-width: 100%;
+}
+
+#faqTitle {
+    font-size: 85%;
+    font-weight: bold;
+    text-align: left;
+    color: #424242;
+}

@@ -27,24 +27,22 @@ const TopNav: React.FC<{
 
     return(
         <>
-            <IonHeader>
-                <IonToolbar className="topNav">
-                    { props.backarrow ?
-                    <IonButtons slot="start">
-                        <IonButton routerLink={props.route}>
-                            <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
-                        </IonButton>
-                    </IonButtons> : ''
-                    }
-                    { props.hamburger ?
-                    <IonButtons slot="primary">
-                        <IonMenuButton className="menuBtn" auto-hide="true" menu="first"></IonMenuButton>
-                    </IonButtons> : ''    
-                    }            
+            <IonToolbar className="topNav">
+                { props.backarrow ?
+                <IonButtons slot="start">
+                    <IonButton routerLink={props.route}>
+                        <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
+                    </IonButton>
+                </IonButtons> : ''
+                }
+                { props.hamburger ?
+                <IonButtons slot="primary">
+                    <IonMenuButton className="menuBtn" auto-hide="true" menu="first"></IonMenuButton>
+                </IonButtons> : ''    
+                }            
 
-                    <IonTitle className="title">{props.title}</IonTitle>
-                </IonToolbar>
-            </IonHeader>
+                <IonTitle className="title">{props.title}</IonTitle>
+            </IonToolbar>
 
         </>
     );

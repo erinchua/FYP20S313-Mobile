@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
 import React, { useContext } from 'react';
 
 import { auth } from '../firebase';
@@ -26,7 +26,9 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNav title="My Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+      <IonHeader>
+        <TopNav title="My Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+      </IonHeader>
       
       <IonContent fullscreen>
         <IonGrid id="homeGrid">

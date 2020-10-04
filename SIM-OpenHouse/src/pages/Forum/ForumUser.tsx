@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonIcon, IonItemDivider, IonLabel, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonTextarea, IonToolbar } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItemDivider, IonLabel, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonTextarea, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 
 import "../../css/Global.css"
@@ -29,7 +29,10 @@ const ForumUser: React.FC = () => {
    
     return (
         <IonPage>
-            <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true } />
+            <IonHeader>
+                <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true } />
+            </IonHeader>
+
             <IonToolbar id="forum-searchbar-container">
                 <IonGrid>
                     <IonRow className="ion-justify-content-start">

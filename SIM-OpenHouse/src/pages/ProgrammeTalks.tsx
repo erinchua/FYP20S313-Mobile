@@ -80,9 +80,10 @@ const ProgrammeTalks: React.FC = () => {
 
   return (
     <IonPage>
-
-      <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
-
+      <IonHeader>
+        <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
+      </IonHeader>
+      
       <IonContent fullscreen className="progTalkIonContent">
         <IonGrid id="progTalksGrid">
           <IonRow>
