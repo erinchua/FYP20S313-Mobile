@@ -182,10 +182,6 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="mainCol"></IonCol>
           </IonRow>
 
-          <IonRow class="ion-justify-content-center">
-            <IonButton type="submit" onClick={ handleLogout }>LOGOUT</IonButton>
-          </IonRow>
-
         </IonGrid>
       </IonContent>
     </IonPage>
