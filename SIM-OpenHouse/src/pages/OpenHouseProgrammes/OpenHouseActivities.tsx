@@ -1,14 +1,14 @@
 import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import { db } from '../firebase'
-import TopNav from '../components/TopNav';
-import '../css/Global.css';
-import '../css/OpenHouseActivities.css';
+import { db } from '../../firebase'
+import TopNav from '../../components/TopNav';
+import '../../css/Global.css';
+import '../../css/OpenHouseActivities.css';
 import { giftOutline, qrCodeOutline } from 'ionicons/icons';
-import PerformancesContent from '../components/PerformancesContent';
-import GamesContent from '../components/GamesContent';
-import PrizesContent from '../components/PrizesContent';
-import QRScanner from '../components/QRScan';
+import PerformancesContent from '../../components/OpenHouseProgrammes/PerformancesContent';
+import GamesContent from '../../components/OpenHouseProgrammes/GamesContent';
+import PrizesContent from '../../components/OpenHouseProgrammes/PrizesContent';
+import QRScanner from '../../components/QRScan';
 
 const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
 

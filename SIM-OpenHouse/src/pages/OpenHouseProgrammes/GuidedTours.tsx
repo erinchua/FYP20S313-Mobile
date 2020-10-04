@@ -1,11 +1,11 @@
 import { IonCol, IonContent, IonGrid, IonPage, IonRow, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
-import { db } from "../firebase";
+import { db } from "../../firebase";
 
-import "../css/Global.css";
-import "../css/GuidedTours.css";
-import TopNav from '../components/TopNav';
-import GuidedTourContent from '../components/GuidedTourContent';
+import "../../css/Global.css";
+import "../../css/GuidedTours.css";
+import TopNav from '../../components/TopNav';
+import GuidedTourContent from '../../components/OpenHouseProgrammes/GuidedTourContent';
 
 const GuidedTours: React.FC = () => {
 

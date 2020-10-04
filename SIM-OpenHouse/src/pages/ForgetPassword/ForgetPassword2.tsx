@@ -12,10 +12,10 @@ import { useForm } from "react-hook-form";
 //import ReactCodeInput from 'react-verification-code-input';
 import { keypadOutline } from 'ionicons/icons';
 
-import '../css/ForgetPassword2.css';
-import '../css/Global.css';
+import '../../css/ForgetPassword2.css';
+import '../../css/Global.css';
 
-import TopNav from '../components/TopNav';
+import TopNav from '../../components/TopNav';
 
 
 const ForgetPassword2: React.FC = () => {

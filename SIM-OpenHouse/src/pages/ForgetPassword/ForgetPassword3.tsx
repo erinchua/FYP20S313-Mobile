@@ -13,12 +13,12 @@ import React, {useRef, useState} from 'react';
 import { useForm } from "react-hook-form";
 import {useHistory} from 'react-router-dom';
 import { shieldCheckmarkOutline } from 'ionicons/icons';
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 
-import '../css/ForgetPassword3.css';
-import '../css/Global.css';
+import '../../css/ForgetPassword3.css';
+import '../../css/Global.css';
 
-import TopNav from '../components/TopNav';
+import TopNav from '../../components/TopNav';
 
 
 const ForgetPassword3: React.FC = () => {

@@ -1,11 +1,11 @@
 import { IonCol, IonContent, IonGrid, IonPage, IonRouterLink, IonRow, IonTitle } from '@ionic/react';
 import React, { useRef } from 'react';
 
-import '../css/Global.css';
-import '../css/ContactInfo.css';
+import '../../css/Global.css';
+import '../../css/ContactInfo.css';
 
-import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
+import TopNav from '../../components/TopNav';
+import Menu from '../../components/Menu';
 
 
 const ContactInfo: React.FC = () => {
