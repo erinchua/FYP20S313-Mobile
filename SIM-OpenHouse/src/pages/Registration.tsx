@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert, IonItemDivider, IonText, IonLoading } from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert, IonItemDivider, IonText, IonLoading, IonHeader } from "@ionic/react";
 import React, { useRef, useState } from "react";
 import { Redirect, useHistory } from "react-router";
 import { useForm } from "react-hook-form";
@@ -72,8 +72,10 @@ const Registration: React.FC = () => {
 
   return (
     <IonPage>
-      <TopNav title="Registration" route="/main" backarrow={true} hamburger={false} />
-
+      <IonHeader>
+        <TopNav title="Registration" route="/main" backarrow={true} hamburger={false} />
+      </IonHeader>
+      
       <IonContent fullscreen>
         <form onSubmit={handleSubmit(handleRegister)}>
           <IonGrid>

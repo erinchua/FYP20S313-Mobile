@@ -102,3 +102,9 @@
     width: 50%;
     font-size: medium;
 }
+
+.errorMsg {
+    color: red;
+    font-size: small;
+    padding-left: 3%;
+}

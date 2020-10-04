@@ -1,4 +1,4 @@
-import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon } from '@ionic/react';
+import { IonPage, IonContent, IonToolbar, IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonIcon, IonHeader } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase'
 import TopNav from '../../components/TopNav';
@@ -97,8 +97,10 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
 
     return (
         <IonPage>
-            <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={true} hamburger={true} />
-
+            <IonHeader>
+                <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={true} hamburger={true} />
+            </IonHeader>
+            
             <IonContent fullscreen id="openHouseActivities-content">
                 {/* Main Heading */}
                 <IonGrid className="openHouseActivities-grid">

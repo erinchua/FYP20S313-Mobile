@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
 import React from 'react';
 
 import '../../css/Global.css';
@@ -14,8 +14,10 @@ const UsefulInfoMain: React.FC = () => {
 
     return (
         <IonPage>
-            <TopNav title="Useful Info" route='/u/home' backarrow={ true } hamburger = { true }/>
-
+            <IonHeader>
+                <TopNav title="Useful Info" route='/u/home' backarrow={ true } hamburger = { true }/>
+            </IonHeader>
+           
             <IonContent fullscreen={true}>
                 <IonGrid id="usefulInfoGrid">
                     <IonRow className="ion-justify-content-around mainRow">
