@@ -28,6 +28,7 @@
     color: red;
     font-size: small;
     margin-top: 5%;
+    min-width: 100%;
 }
 
 #highestQualificationLabel, #nationalityLabel {
@@ -36,4 +37,5 @@
 
 #registration-check {
     --inner-border-width: 0;
+    min-width: 100%;
 }
