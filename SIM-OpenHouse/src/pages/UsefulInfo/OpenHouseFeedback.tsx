@@ -1,12 +1,22 @@
+<<<<<<< HEAD:SIM-OpenHouse/src/pages/UsefulInfo/OpenHouseFeedback.tsx
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonLabel, IonPage, IonRadio, IonRadioGroup, IonRow, IonSelect, IonSelectOption, IonTextarea, IonTitle } from '@ionic/react';
 import React from 'react';
+=======
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonLabel, IonList, IonPage, IonRadio, IonRadioGroup, IonRouterLink, IonRow, IonSelect, IonSelectOption, IonTextarea, IonTitle } from '@ionic/react';
+import React, { useRef } from 'react';
+>>>>>>> BeaBranch:SIM-OpenHouse/src/pages/OpenHouseFeedback.tsx
 import { useForm } from 'react-hook-form';
 
 import '../../css/Global.css';
 import '../../css/OpenHouseFeedback.css';
 
+<<<<<<< HEAD:SIM-OpenHouse/src/pages/UsefulInfo/OpenHouseFeedback.tsx
 import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
+=======
+import TopNav from '../components/TopNav';
+import Menu from '../components/Menu';
+>>>>>>> BeaBranch:SIM-OpenHouse/src/pages/OpenHouseFeedback.tsx
 
 
 const OpenHouseFeedback: React.FC = () => {

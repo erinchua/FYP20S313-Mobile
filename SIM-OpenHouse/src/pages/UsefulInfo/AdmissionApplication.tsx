@@ -1,4 +1,8 @@
+<<<<<<< HEAD:SIM-OpenHouse/src/pages/UsefulInfo/AdmissionApplication.tsx
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonPage, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+=======
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonPage, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+>>>>>>> BeaBranch:SIM-OpenHouse/src/pages/AdmissionApplication.tsx
 import React, { useRef } from 'react';
 
 import '../../css/Global.css';
