@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { IonCol, IonGrid, IonRow, IonButton, IonAlert } from '@ionic/react';
+
 import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
+
 import { db } from '../firebase';
 import { useAuth } from '../auth';
 

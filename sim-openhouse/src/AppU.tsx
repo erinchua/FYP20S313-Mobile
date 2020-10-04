@@ -17,7 +17,7 @@ import UsefulInfoMain from './pages/UsefulInfo/UsefulInfoMain';
 import AdmissionApplication from './pages/UsefulInfo/AdmissionApplication';
 import ContactInfo from './pages/UsefulInfo/ContactInfo';
 import OpenHouseFeedback from './pages/UsefulInfo/OpenHouseFeedback';
-import CommonFaqs from './pages/CommonFaqs';
+import CommonFaqs from './pages/UsefulInfo/CommonFaqs';
 
 import { useAuth } from './auth';
 

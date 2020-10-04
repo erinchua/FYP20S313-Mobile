@@ -2,8 +2,8 @@ import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, Io
 import React, { useState, useEffect } from 'react';
 import { db } from "../../firebase";
 
-import "../../css/Global.css";
-import "../../css/GuidedTours.css";
+import '../../css/Global.css';
+import '../../css/GuidedTours.css';
 import TopNav from '../../components/TopNav';
 import GuidedTourContent from '../../components/OpenHouseProgrammes/GuidedTourContent';
 

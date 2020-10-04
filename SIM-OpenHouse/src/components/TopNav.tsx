@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton } from '@ionic/react';
+
 import '../css/TopNav.css';
 import '../css/Global.css';
 import { arrowBackOutline } from 'ionicons/icons';
+
 import { useAuth } from '../auth';
 import { auth } from '../firebase';
 import { NavContext } from '@ionic/react';

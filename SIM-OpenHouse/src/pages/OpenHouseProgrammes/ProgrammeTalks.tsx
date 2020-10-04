@@ -2,7 +2,6 @@ import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage,
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,10 +18,6 @@ const ProgrammeTalks: React.FC = () => {
   const [tab, setTab] = useState("schedule");
   const [dayNum, setDayNum] = useState("day1");
 
-
-  // useEffect (() => {
-  //     handleSchedule();
-  // }, []);
 
   const handleDayOne = () => {
     setDayNum("day1");
