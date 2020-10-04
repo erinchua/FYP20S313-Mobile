@@ -77,7 +77,7 @@ const CampusFacilitiesMap: React.FC = () => {
                             {/* Rows below to be generated dynamically along with the data*/}
                             {facilitiesBlkA.map((facility: any) => {
                                 return (
-                                    <IonRow className="campusFacilTableRow" id="campusFacilDataRowA">
+                                    <IonRow className="campusFacilTableRow" id="campusFacilDataRowA" key={facility.id}>
                                         <IonCol size-sizeSm="6" className="campusFacilTableData ion-text-wrap" style={{ borderRight: "1px solid #dddddd" }}>
                                             <span id="facilNameData">{facility.facilityName}</span>
                                         </IonCol>
@@ -120,7 +120,7 @@ const CampusFacilitiesMap: React.FC = () => {
                             {/* Rows below to be generated dynamically along with the data*/}
                             {facilitiesBlkB.map((facility: any) => {
                                 return (
-                                    <IonRow className="campusFacilTableRow" id="campusFacilDataRowB">
+                                    <IonRow className="campusFacilTableRow" id="campusFacilDataRowB" key={facility.id}>
                                         <IonCol size-sizeSm="6" className="campusFacilTableData ion-text-wrap" style={{ borderRight: "1px solid #dddddd" }}>
                                             <span id="facilNameData">{facility.facilityName}</span>
                                         </IonCol>
@@ -164,7 +164,7 @@ const CampusFacilitiesMap: React.FC = () => {
                             {
                                 facilitiesBlkC.map((facility: any) => {
                                     return (
-                                        <IonRow className="campusFacilTableRow" id="campusFacilDataRowC">
+                                        <IonRow className="campusFacilTableRow" id="campusFacilDataRowC" key={facility.id}>
                                             <IonCol size-sizeSm="6" className="campusFacilTableData ion-text-wrap" style={{ borderRight: "1px solid #dddddd" }}>
                                                 <span id="facilNameData">{facility.facilityName}</span>
                                             </IonCol>
@@ -210,7 +210,7 @@ const CampusFacilitiesMap: React.FC = () => {
                             {/* Rows below to be generated dynamically along with the data*/}
                             {facilitiesBlkD.map((facility: any) => {
                                 return (
-                                    <IonRow className="campusFacilTableRow" id="campusFacilDataRowD">
+                                    <IonRow className="campusFacilTableRow" id="campusFacilDataRowD" key={facility.id}>
                                         <IonCol size-sizeSm="6" className="campusFacilTableData ion-text-wrap" style={{ borderRight: "1px solid #dddddd" }}>
                                             <span id="facilNameData">{facility.facilityName}</span>
                                         </IonCol>

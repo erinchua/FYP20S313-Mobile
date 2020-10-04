@@ -4,11 +4,14 @@ import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
+import { db } from '../firebase';
+import { useAuth } from '../auth';
 
 const MyScheduleContent: React.FC<{
     day1: any; 
     day2: any
 }> = props => {
+    const { userID } = useAuth();
     
     {/* Remove Programme Alert */}
     const [confirmRemoveAlert, setConfirmRemoveAlert] = useState(false);
@@ -17,6 +20,12 @@ const MyScheduleContent: React.FC<{
     const displayRemoveProgAlert = () => {
         setConfirmRemoveAlert(true);        
     };
+
+    useEffect(() => {
+        /* db.collection('PersonalScheduler').doc(userID).onSnapshot(doc => {
+            console.log(doc.data())
+        }); */
+    })
     
     return(
         <>

@@ -27,7 +27,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                 {props.day1 === 'day1' ?
                     performanceDay1.map((performance: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center">
+                            <IonRow className="ion-justify-content-center" key={performance.id}>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.performanceName}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.startTime + " to " + performance.endTime}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.venue}</IonCol>
@@ -40,7 +40,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                 {props.day2 === 'day2' ?
                     performanceDay2.map((performance: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center">
+                            <IonRow className="ion-justify-content-center" key={performance.id}>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.performanceName}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.startTime + " to " + performance.endTime}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.venue}</IonCol>
