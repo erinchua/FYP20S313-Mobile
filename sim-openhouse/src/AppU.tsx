@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import {  IonRouterOutlet } from '@ionic/react';
+import { IonRouterOutlet } from '@ionic/react';
 
 import Home from './pages/Home';
 import OpenHouseMain from './pages/OpenHouseMain';
@@ -15,6 +15,8 @@ import ForumViewQuestion from './pages/Forum/ForumViewQuestion';
 import CampusFacilitiesMap from './pages/CampusFacilitiesMap';
 import UsefulInfoMain from './pages/UsefulInfoMain';
 import AdmissionApplication from './pages/AdmissionApplication';
+import ContactInfo from './pages/ContactInfo';
+import OpenHouseFeedback from './pages/OpenHouseFeedback';
 
 import { useAuth } from './auth';
 
@@ -37,12 +39,10 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-
 const App: React.FC = () => {
   const { loggedIn } = useAuth();
 
-  if (!loggedIn)
-    return <Redirect to="/main" />;
+  if (!loggedIn) return <Redirect to="/main" />;
 
   return (
     <IonRouterOutlet>
@@ -59,6 +59,8 @@ const App: React.FC = () => {
       <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
       <Route path="/u/usefulInfoMain" component={UsefulInfoMain} exact={true} />
       <Route path="/u/usefulInfoMain/admissionApplication" component={AdmissionApplication} exact={true} />
+      <Route path="/u/usefulInfoMain/contactInfo" component={ContactInfo} exact={true} />
+      <Route path="/u/usefulInfoMain/openHouseFeedback" component={OpenHouseFeedback} exact={true} />
     </IonRouterOutlet>
   )
 };

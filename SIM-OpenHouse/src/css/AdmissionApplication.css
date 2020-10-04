@@ -55,7 +55,7 @@
     font-size: 85%;
 }
 
-#simConnnectUrl {
+.simConnnectUrl {
     --color: #44B5B5;
     font-weight: bold;
 }
@@ -92,4 +92,53 @@
 
 #beforeApplyInfo {
     background: #ffffff;
+    padding: 3%;
+    color: #434343;
+    font-size: 80%;
+    text-align: left;
+}
+
+.labelUrlStyle {
+    --color: #44B5B5;
+}
+
+#supportingDocInfo {
+    background: #ffffff;
+    padding: 3%;
+    color: #434343;
+    font-size: 80%;
+    text-align: left;
+}
+
+#supportingDocInfoList {
+    padding-bottom: 2%;
+}
+
+.orderedList {
+    padding-left: 4%;
+    padding-right: 3%;
+}
+
+#applicationFeeInfo {
+    background: #ffffff;
+    padding: 3%;
+    color: #434343;
+    font-size: 80%;
+    text-align: left;
+}
+
+#verifyDocInfo {
+    background: #ffffff;
+    padding: 3%;
+    color: #434343;
+    font-size: 80%;
+    text-align: left;
+}
+
+#applicationOutcomeInfo {
+    background: #ffffff;
+    padding: 3%;
+    color: #434343;
+    font-size: 80%;
+    text-align: left;
 }

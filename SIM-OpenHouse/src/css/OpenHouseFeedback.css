@@ -1,0 +1,104 @@
+.openHouseFeedbackIonContent {
+    --background: #efefef;
+}
+
+#openHouseFeedbackGrid {
+    background: #efefef;
+    padding: 0;
+    min-height: 100%;
+}
+
+#openHouseFeedbackMainTitleRow {
+    background: #ffffff;
+    padding: 3%;
+    min-width: 100%;
+}
+
+#openHouseFeedbackMainTitle {
+    text-align: left;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#openHouseFeedbackSubtitle {
+    text-align: left;
+    font-size: 80%;
+    padding-top: 2%;
+    color: #808080;
+}
+
+.openHouseFeedbackTitleRow {
+    background: #DFD3C3;
+    padding: 3%;
+    min-width: 100%;
+}
+
+.openHouseFeedbackTitle {
+    text-align: left;
+    font-weight: bold;
+    font-size: 85%;
+    padding-left: 0;
+}
+
+#attendedDateRow {
+    min-width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#attendedDateItem {
+    min-width: 100%;
+    --background: #efefef;
+}
+
+#attendedDateSelect {
+    min-width: 80%;
+    border-bottom: 1px solid #808080;
+    --placeholder-color: #434343;
+    padding-left: 0;
+    font-size: 80%;
+}
+
+#feedbackNatureRow {
+    min-width: 100%;
+}
+
+#feedbackNatureMainItem {
+    min-width: 100%;
+    --background: #efefef;
+}
+
+#feedbackNatureItem {
+    min-width: 100%;
+    --background: #efefef;
+    font-size: 85%;
+    color: #434343;
+    padding: 0;
+    height: 20%;
+}
+
+#feedbackNatureRadioGroup {
+    min-width: 100%;
+}
+
+.feedbackNatureRadio {
+    margin-right: 3%;
+    --color-checked: #434343;
+    padding: 0;
+}
+
+#feedbackTextarea {
+    border: 1px solid #c8c8c8;
+    margin: 2%;
+    padding: 0;
+    color: #434343;
+    font-size: 85%;
+    word-wrap: normal;
+    --placeholder-color: #434343;
+}
+
+#feedbackBtn {
+    --background: #37474F;
+    width: 50%;
+    font-size: medium;
+}

@@ -31,7 +31,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                 {props.day1 === "day1" ?
                     guidedTourDay1.map((guidedTour: any, index: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center">
+                            <IonRow className="ion-justify-content-center" key={guidedTour.id}>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{index + 1}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.tourName}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.startTime}</IonCol>
@@ -45,7 +45,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                 {props.day2 === "day2" ?
                     guidedTourDay2.map((guidedTour: any, index: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center">
+                            <IonRow className="ion-justify-content-center" key={guidedTour.id}>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{index + 1}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.tourName}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.startTime}</IonCol>
@@ -56,17 +56,6 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                     })
                     : ''
                 }
-                {/* {tours.map((data: any) => (
-                    <IonItem key={data.id}>
-                        <IonLabel className="ion-padding">
-                        <p>{data.tourName}</p>
-                        <p>{data.date}</p>
-                        <p>{data.endTime}</p>
-                        <p>{data.statTime}</p>
-                        <p>{data.venue}</p>
-                        </IonLabel>
-                    </IonItem>
-                ))} */}
             </IonGrid>
         </>
     );

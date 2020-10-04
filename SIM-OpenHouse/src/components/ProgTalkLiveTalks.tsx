@@ -37,7 +37,7 @@ const ProgTalkLiveTalks: React.FC<{
                 {props.day1 === 'day1' ?
                     liveTalkDay1.map((programmeTalk: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center" id="progTalkSchedule-DataRow">
+                            <IonRow className="ion-justify-content-center" id="progTalkSchedule-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
                                     {programmeTalk.talkName}
                                 </IonCol>
@@ -57,7 +57,7 @@ const ProgTalkLiveTalks: React.FC<{
                 {props.day2 === 'day2' ?
                     liveTalkDay2.map((programmeTalk: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
                                     {programmeTalk.talkName}
                                 </IonCol>

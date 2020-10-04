@@ -35,7 +35,7 @@ const ProgTalkPastRec: React.FC<{
                 {props.day1 === 'day1' ?
                     recordedTalkDay1.map((programmeTalk: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">
                                     {programmeTalk.talkName}
 
@@ -55,7 +55,7 @@ const ProgTalkPastRec: React.FC<{
                 {props.day2 === 'day2' ?
                     recordedTalkDay2.map((programmeTalk: any) => {
                         return (
-                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow">
+                            <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">
                                     {programmeTalk.talkName}
                                 </IonCol>
