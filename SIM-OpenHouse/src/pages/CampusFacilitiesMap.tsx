@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonImg, IonPage, IonRow, IonSlide, IonSlides } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRow, IonSlide, IonSlides } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
 
 import '../css/Global.css';
@@ -44,8 +44,10 @@ const CampusFacilitiesMap: React.FC = () => {
 
     return (
         <IonPage>
-            <TopNav title="Campus Facilities Map" route='/u/home' backarrow={true} hamburger={true} />
-
+            <IonHeader>
+                <TopNav title="Campus Facilities Map" route='/u/home' backarrow={true} hamburger={true} />
+            </IonHeader>
+            
             <IonContent fullscreen={true} className="campusFacilMapIonContent">
 
                 <IonSlides pager={true} options={slideOpts} id="campusFacilSlides">

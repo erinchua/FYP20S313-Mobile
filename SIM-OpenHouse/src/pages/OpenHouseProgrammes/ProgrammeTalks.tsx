@@ -2,27 +2,22 @@ import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage,
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
-import '../css/Global.css';
-import '../css/ProgrammeTalks.css';
+import '../../css/Global.css';
+import '../../css/ProgrammeTalks.css';
 
-import TopNav from '../components/TopNav';
-import ProgTalkSchedule from '../components/ProgTalkSchedule';
-import ProgTalkLiveTalks from '../components/ProgTalkLiveTalks';
-import ProgTalkPastRec from '../components/ProgTalkPastRec';
-import { db } from '../firebase';
+import TopNav from '../../components/TopNav';
+import ProgTalkSchedule from '../../components/OpenHouseProgrammes/ProgTalkSchedule';
+import ProgTalkLiveTalks from '../../components/OpenHouseProgrammes/ProgTalkLiveTalks';
+import ProgTalkPastRec from '../../components/OpenHouseProgrammes/ProgTalkPastRec';
+import { db } from '../../firebase';
 
 const ProgrammeTalks: React.FC = () => {
   const [tab, setTab] = useState("schedule");
   const [dayNum, setDayNum] = useState("day1");
 
-
-  // useEffect (() => {
-  //     handleSchedule();
-  // }, []);
 
   const handleDayOne = () => {
     setDayNum("day1");
@@ -80,9 +75,10 @@ const ProgrammeTalks: React.FC = () => {
 
   return (
     <IonPage>
-
-      <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
-
+      <IonHeader>
+        <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
+      </IonHeader>
+      
       <IonContent fullscreen className="progTalkIonContent">
         <IonGrid id="progTalksGrid">
           <IonRow>

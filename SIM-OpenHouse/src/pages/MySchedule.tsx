@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 
 import '../css/Global.css';
@@ -21,7 +21,9 @@ const MySchedule: React.FC = () => {
 
     return (
         <IonPage>
-            <TopNav title="My Schedule" route='/u/home' backarrow={ true } hamburger = { true }/>
+            <IonHeader>
+                <TopNav title="My Schedule" route='/u/home' backarrow={ true } hamburger = { true }/>
+            </IonHeader>
             
             <IonContent fullscreen={true} className="myScheduleIonContent">
                 <IonGrid className="myScheduleGrid">

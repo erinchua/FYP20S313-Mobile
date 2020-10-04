@@ -1,8 +1,8 @@
 import { IonGrid, IonRow, IonCol, IonText, IonItemDivider, IonButton } from '@ionic/react';
 import React from 'react';
 
-import '../css/Global.css';
-import '../css/OpenHouseActivities.css'
+import '../../css/Global.css';
+import '../../css/OpenHouseActivities.css'
 
 const PrizesContent: React.FC<{ prizes: any }> = props => {
 

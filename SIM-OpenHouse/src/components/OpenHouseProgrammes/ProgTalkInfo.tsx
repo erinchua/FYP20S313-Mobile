@@ -1,10 +1,10 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonPage, IonContent, IonAlert } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonPage, IonContent, IonAlert, IonHeader } from '@ionic/react';
 import React, { useState } from 'react';
 
-import '../css/Global.css';
-import '../css/ProgrammeTalks.css'
+import '../../css/Global.css';
+import '../../css/ProgrammeTalks.css'
 
-import TopNav from './TopNav';
+import TopNav from '../TopNav';
 
 const ProgTalkInfo: React.FC<{
     progTalk: string; 
@@ -56,8 +56,10 @@ const ProgTalkInfo: React.FC<{
              ></IonAlert>
 
             <IonPage>
-                <TopNav title="Programme Talks" route="/u/openHouseMain/programmeTalks" backarrow={ true } hamburger={ true } />
-            
+                <IonHeader>
+                    <TopNav title="Programme Talks" route="/u/openHouseMain/programmeTalks" backarrow={ true } hamburger={ true } />
+                </IonHeader>
+                
                 <IonContent fullscreen className="progTalkIonContent">
                     <IonGrid id="progTalkInfoGrid">
                         {/* Programme Talk */}

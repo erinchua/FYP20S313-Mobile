@@ -2,13 +2,13 @@ import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@io
 import React, { useState } from 'react';
 import firebase from 'firebase';
 
-import '../css/Global.css';
-import '../css/ProgrammeTalks.css'
+import '../../css/Global.css';
+import '../../css/ProgrammeTalks.css'
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { db } from '../firebase';
-import { useAuth } from '../auth';
+import { db } from '../../firebase';
+import { useAuth } from '../../auth';
 
 const ProgTalkSchedule: React.FC<{
     day1: any;

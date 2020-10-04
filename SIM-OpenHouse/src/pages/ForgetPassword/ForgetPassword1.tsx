@@ -5,25 +5,24 @@ import { IonContent,
     IonCol, 
     IonButton, 
     IonItem, 
-    IonInput } from '@ionic/react';
+    IonInput, IonHeader } from '@ionic/react';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
-import '../css/ForgetPassword1.css';
-import '../css/Global.css';
+import '../../css/ForgetPassword1.css';
+import '../../css/Global.css';
 
-import TopNav from '../components/TopNav';
-import { auth } from '../firebase';
+import TopNav from '../../components/TopNav';
+import { auth } from '../../firebase';
 
 
 const ForgetPassword1: React.FC = () => {
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (data: any) => {
-        //console.log(auth);
         auth.sendPasswordResetEmail(data.emailID).then(() => {
             //alert for verification email sent
             console.log("Email sent");
@@ -32,9 +31,11 @@ const ForgetPassword1: React.FC = () => {
 
     return (
       <IonPage>
-        <TopNav title="Forget Password?" route="/main" backarrow={ true } hamburger = { false }/>
-
-        <IonContent fullscreen style={{display: "flex"}}>
+        <IonHeader>
+            <TopNav title="Forget Password?" route="/main" backarrow={ true } hamburger = { false }/>
+        </IonHeader>
+        
+        <IonContent fullscreen>
             <IonGrid className="forgetPwdGrid">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <IonRow class="ion-justify-content-center">

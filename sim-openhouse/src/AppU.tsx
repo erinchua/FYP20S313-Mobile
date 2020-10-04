@@ -3,20 +3,21 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonRouterOutlet } from '@ionic/react';
 
 import Home from './pages/Home';
-import OpenHouseMain from './pages/OpenHouseMain';
-import ProgrammeTalks from './pages/ProgrammeTalks';
-import ProgTalkInfo from './components/ProgTalkInfo';
-import GuidedTours from './pages/GuidedTours';
-import OpenHouseActivities from './pages/OpenHouseActivities';
+import OpenHouseMain from './pages/OpenHouseProgrammes/OpenHouseMain';
+import ProgrammeTalks from './pages/OpenHouseProgrammes/ProgrammeTalks';
+import ProgTalkInfo from './components/OpenHouseProgrammes/ProgTalkInfo';
+import GuidedTours from './pages/OpenHouseProgrammes/GuidedTours';
+import OpenHouseActivities from './pages/OpenHouseProgrammes/OpenHouseActivities';
 import MySchedule from './pages/MySchedule';
 import Forum from './pages/Forum/Forum';
 import ForumUser from './pages/Forum/ForumUser';
 import ForumViewQuestion from './pages/Forum/ForumViewQuestion';
 import CampusFacilitiesMap from './pages/CampusFacilitiesMap';
-import UsefulInfoMain from './pages/UsefulInfoMain';
-import AdmissionApplication from './pages/AdmissionApplication';
-import ContactInfo from './pages/ContactInfo';
-import OpenHouseFeedback from './pages/OpenHouseFeedback';
+import UsefulInfoMain from './pages/UsefulInfo/UsefulInfoMain';
+import AdmissionApplication from './pages/UsefulInfo/AdmissionApplication';
+import ContactInfo from './pages/UsefulInfo/ContactInfo';
+import OpenHouseFeedback from './pages/UsefulInfo/OpenHouseFeedback';
+import CommonFaqs from './pages/UsefulInfo/CommonFaqs';
 
 import { useAuth } from './auth';
 
@@ -61,6 +62,7 @@ const App: React.FC = () => {
       <Route path="/u/usefulInfoMain/admissionApplication" component={AdmissionApplication} exact={true} />
       <Route path="/u/usefulInfoMain/contactInfo" component={ContactInfo} exact={true} />
       <Route path="/u/usefulInfoMain/openHouseFeedback" component={OpenHouseFeedback} exact={true} />
+      <Route path="/u/usefulInfoMain/commonFAQs" component={CommonFaqs} exact={true} />
     </IonRouterOutlet>
   )
 };
