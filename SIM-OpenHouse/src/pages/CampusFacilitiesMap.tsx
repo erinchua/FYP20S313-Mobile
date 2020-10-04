@@ -53,7 +53,7 @@ const CampusFacilitiesMap: React.FC = () => {
                 <IonSlides pager={true} options={slideOpts} id="campusFacilSlides">
                     {/* Block A */}
                     <IonSlide className="slide">
-                        <IonGrid className="slideGridRowCol">
+                        <IonGrid className="slideGridRowCol" style={{paddingBottom: "10%"}}>
                             <IonRow className="slideGridRowCol">
                                 <IonCol size-sizeSm="12" className="imgCol slideGridRowCol">
                                     <IonImg src={blkA} alt="Blk A" className="campusFacilImg"></IonImg>
