@@ -1,12 +1,16 @@
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import React from 'react';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import firebase from 'firebase';
 
 import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { db } from '../../firebase';
+import { useAuth } from '../../auth';
 
 const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openhouseDates: any }> = props => {
+    const { userID } = useAuth();
 
     const gamesActivitiesDay1 = props.gamesActivities.filter((activity: any) => {
         return activity.date == props.openhouseDates[0]
@@ -14,6 +18,18 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
     const gamesActivitiesDay2 = props.gamesActivities.filter((activity: any) => {
         return activity.date == props.openhouseDates[1]
     })
+
+    const addToSchedule = (programmeTalk: any) => {
+        try {
+            // make check for schedule conflict then below
+            db.collection('PersonalScheduler').doc(userID).update({
+                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
     return (
         <>
             <IonGrid id="gamesContent-tableGrid">
@@ -32,7 +48,11 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.gameBoothName}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.pointsAward}</IonCol>
-                                <IonCol className="gamesContent-Data ion-text-wrap"><IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faPlus} size="lg" /></IonButton></IonCol>
+                                <IonCol className="gamesContent-Data ion-text-wrap">
+                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)}>
+                                        <FontAwesomeIcon icon={faPlus} size="lg" />
+                                    </IonButton>
+                                </IonCol>
                             </IonRow>
                         )
                     })
@@ -46,7 +66,11 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.gameBoothName}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.pointsAward}</IonCol>
-                                <IonCol className="gamesContent-Data ion-text-wrap"><IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faPlus} size="lg" /></IonButton></IonCol>
+                                <IonCol className="gamesContent-Data ion-text-wrap">
+                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)}>
+                                        <FontAwesomeIcon icon={faPlus} size="lg" />
+                                    </IonButton>
+                                </IonCol>
                             </IonRow>
                         )
                     })

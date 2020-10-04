@@ -12,12 +12,14 @@ import MySchedule from './pages/MySchedule';
 import Forum from './pages/Forum/Forum';
 import ForumUser from './pages/Forum/ForumUser';
 import ForumViewQuestion from './pages/Forum/ForumViewQuestion';
+import ForumSearch from './pages/Forum/ForumSearch';
 import CampusFacilitiesMap from './pages/CampusFacilitiesMap';
 import UsefulInfoMain from './pages/UsefulInfo/UsefulInfoMain';
 import AdmissionApplication from './pages/UsefulInfo/AdmissionApplication';
 import ContactInfo from './pages/UsefulInfo/ContactInfo';
 import OpenHouseFeedback from './pages/UsefulInfo/OpenHouseFeedback';
 import CommonFaqs from './pages/UsefulInfo/CommonFaqs';
+import GettingToSimHq from './pages/GettingToSimHq';
 import MyProfile from './pages/MyProfile';
 
 import { useAuth } from './auth';
@@ -57,6 +59,7 @@ const App: React.FC = () => {
       <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
       <Route path="/u/forum" component={Forum} exact={true} />
       <Route path="/u/forumUser" component={ForumUser} exact={true} />
+      <Route path="/u/forumSearch" component={ForumSearch} exact={true} />
       <Route path="/u/forumViewQuestion" component={ForumViewQuestion} exact={true} />
       <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
       <Route path="/u/usefulInfoMain" component={UsefulInfoMain} exact={true} />
@@ -64,6 +67,7 @@ const App: React.FC = () => {
       <Route path="/u/usefulInfoMain/contactInfo" component={ContactInfo} exact={true} />
       <Route path="/u/usefulInfoMain/openHouseFeedback" component={OpenHouseFeedback} exact={true} />
       <Route path="/u/usefulInfoMain/commonFAQs" component={CommonFaqs} exact={true} />
+      <Route path="/u/gettingToSIMHQ" component={GettingToSimHq} exact={true} />
       <Route path="/u/myProfile" component={MyProfile} exact={true} />
     </IonRouterOutlet>
   )

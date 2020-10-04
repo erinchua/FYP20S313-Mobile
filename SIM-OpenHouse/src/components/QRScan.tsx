@@ -18,6 +18,7 @@ const QRScan: React.FC = () => {
     let increment = firebase.firestore.FieldValue.increment(0);
 
     switch (data.text) {
+      //change string accordingly before deployment
       case "plusTen":
         increment = firebase.firestore.FieldValue.increment(10);
         break;
