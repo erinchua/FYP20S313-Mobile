@@ -1,11 +1,11 @@
-import { IonButton, IonCol, IonGrid, IonLabel, IonRow, IonText } from '@ionic/react';
+import { IonCol, IonGrid, IonLabel, IonRow, IonText } from '@ionic/react';
 import React from 'react';
 
 import '../../css/Global.css';
 import '../../css/Forum.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
-import { faFlag } from '@fortawesome/free-solid-svg-icons';
+import Forum_FlagModal from './Forum_FlagModal';
 
 const Forum_CommentReply: React.FC = () => {
 
@@ -28,7 +28,7 @@ const Forum_CommentReply: React.FC = () => {
                     <IonText id="comment-details">22-11-2020, 9.13am</IonText>
                 </IonCol>
                 <IonCol size="1" className="ion-align-self-end forum-col">
-                    <IonButton id="comment-flagBtn" size="small"><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+                    <Forum_FlagModal />
                 </IonCol>
             </IonRow>
         </IonGrid>

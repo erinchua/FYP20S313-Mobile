@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonRouterLink, IonToolbar, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonRouterLink, IonToolbar, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonTitle } from '@ionic/react';
 import React from 'react';
 
 import '../../css/Global.css';
@@ -6,12 +6,12 @@ import '../../css/Forum.css';
 import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCommentAlt, faComment } from '@fortawesome/free-regular-svg-icons';
-import Forum_WithComment from '../../components/Forum/Forum_WithComment';
+import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
-import Forum_AddCommentModal from '../../components/Forum/Forum_AddCommentModal';
 
-const ForumViewQuestion: React.FC = () => {
+const ForumSearch: React.FC = () => {
+
+    const search = 'Wollongong';
     
     return (
         <IonPage>
@@ -20,23 +20,29 @@ const ForumViewQuestion: React.FC = () => {
             </IonHeader>
 
             <IonToolbar id="forum-searchbar-container">
+                <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
+            </IonToolbar>
+
+            <IonToolbar id="forum-heading-container">
                 <IonGrid>
                     <IonRow className="ion-justify-content-start">
-                        <IonCol size="10" className="forum-col">
-                            <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
-                        </IonCol>
-                        <IonCol size="2" className="forum-col ion-align-self-center">
+                        <IonCol size="10" className="ion-align-self-center forum-col">
+                            <IonTitle id="forum-heading">Search Results for: <span style={{color: 'black'}}>{search}</span></IonTitle>
+                        </IonCol>                            
+                        <IonCol size="2" className="forum-col">
                             <ForumRules />
                         </IonCol>
                     </IonRow>
                 </IonGrid>
             </IonToolbar>
             <IonContent  fullscreen id="forum-content">
+
+                {/* Display all Questions */}
                 <IonList className="forum-container">
                     <IonGrid>
                         <IonRow>
                             <IonLabel>
-                                <IonRouterLink href="/u/forumViewQuestion"><IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of Wollongong) course?</IonText></IonRouterLink>
+                                <IonRouterLink href="/u/forumViewQuestion"><IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of {search}) course?</IonText></IonRouterLink>
                             </IonLabel>
                         </IonRow>
                         <IonRow className="ion-justify-content-end">
@@ -60,27 +66,10 @@ const ForumViewQuestion: React.FC = () => {
                             </IonCol>
                         </IonRow>
                     </IonGrid>
-                </IonList>
-                <IonGrid id="add-comment-container">
-                    <IonRow>
-                        <IonCol className="ion-align-self-center">
-                            <IonText id="addComment-commentText">Comments</IonText>
-                        </IonCol>
-                        <IonCol className="ion-align-self-center">
-                            <Forum_AddCommentModal />
-                        </IonCol>
-                    </IonRow>
-                </IonGrid>
-
-                {/* When there's no comment */}
-                {/* <Forum_NoComment /> */}
-
-                {/* When there's 2 comments, reply to comment and deleted comment*/}
-                <Forum_WithComment />
-                
+                </IonList>                
             </IonContent>
         </IonPage>
     );
 };
 
-export default ForumViewQuestion;
+export default ForumSearch;
