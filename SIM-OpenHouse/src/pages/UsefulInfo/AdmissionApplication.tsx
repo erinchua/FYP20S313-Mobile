@@ -1,8 +1,8 @@
 import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonIcon, IonImg, IonPage, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useRef } from 'react';
 
-import '../css/Global.css';
-import '../css/AdmissionApplication.css';
+import '../../css/Global.css';
+import '../../css/AdmissionApplication.css';
 import { addCircle, removeCircle } from 'ionicons/icons';
 import Step1 from '../img/usefulInfo/application-icon-01.png'
 import Step2 from '../img/usefulInfo/OPSE_logo.jpg'
@@ -10,8 +10,8 @@ import Step3 from '../img/usefulInfo/application-icon-02.png'
 import Step4 from '../img/usefulInfo/application-icon-03.png'
 import Step5 from '../img/usefulInfo/application-icon-04.png'
 
-import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
+import TopNav from '../../components/TopNav';
+import Menu from '../../components/Menu';
 
 
 const AdmissionApplication: React.FC = () => {

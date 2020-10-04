@@ -12,11 +12,11 @@ import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 
-import '../css/ForgetPassword1.css';
-import '../css/Global.css';
+import '../../css/ForgetPassword1.css';
+import '../../css/Global.css';
 
-import TopNav from '../components/TopNav';
-import { auth } from '../firebase';
+import TopNav from '../../components/TopNav';
+import { auth } from '../../firebase';
 
 
 const ForgetPassword1: React.FC = () => {

@@ -1,6 +1,6 @@
 import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert, IonItemDivider, IonText, IonLoading } from "@ionic/react";
 import React, { useRef, useState } from "react";
-import { Redirect } from "react-router";
+import { Redirect, useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 
 import { useAuth } from "../auth";
@@ -24,7 +24,8 @@ const Registration: React.FC = () => {
 
   const [status, setStatus] = useState({ loading: false, error: false });
   const [checked, setChecked] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
   const password = useRef({});
   password.current = watch("password", "");
@@ -55,15 +56,19 @@ const Registration: React.FC = () => {
         addNewStudent(data, user.user?.uid);
       });
       setStatus({ loading: false, error: false });
+      setShowSuccessAlert(true);
     } catch (e) {
       setStatus({ loading: false, error: true });
       console.log(e);
-    }
+    }     
   };
 
   console.log(loggedIn);
 
-  if (loggedIn) return <Redirect to="/u/home" />;
+  if (loggedIn && showSuccessAlert === false){
+    return <Redirect to="/u/home" />;
+  };
+
 
   return (
     <IonPage>
@@ -346,11 +351,12 @@ const Registration: React.FC = () => {
                   I agree with SIM's Terms of Use and Privary Policy and thereby give my consent to receive marketing communications from SIM.
                 </IonLabel>
               </IonItem>
-              {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage" style={{marginBottom: '-10%'}}>*Terms of Use and Privacy Policy checkbox not checked</div>}
+              {errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage" style={{marginBottom: '5%'}}>*Terms of Use and Privacy Policy checkbox not checked</div>}
             </IonRow>
             <IonRow class="ion-justify-content-center">
-              {status.error && <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}
-              <IonButton id="registration_registrationBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER</IonButton>
+              <IonAlert isOpen={showSuccessAlert} onDidDismiss={() => setShowSuccessAlert(false)} cssClass='alertBox' header={'Registration Success'} message={'Account has been successfully registered.'} buttons={['CLOSE']}></IonAlert>
+              {status.error && <IonAlert isOpen={showErrorAlert} onDidDismiss={() => setShowErrorAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}            
+              <IonButton id="registration_registrationBtn" type="submit" onClick={() => [setShowErrorAlert(true), setShowSuccessAlert(false)]}>REGISTER</IonButton>
             </IonRow>
           </IonGrid>
         </form>
@@ -358,10 +364,10 @@ const Registration: React.FC = () => {
           <IonItemDivider></IonItemDivider>
           <IonText color="medium"><div className="ion-text-center" style={{marginTop: "5%", fontWeight: "bold"}}>OR</div></IonText>
           <IonRow class="ion-justify-content-center">
-            <IonButton id="registration_googleBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER WITH GOOGLE</IonButton>
+            <IonButton id="registration_googleBtn" type="submit" onClick={() => setShowErrorAlert(true)}>REGISTER WITH GOOGLE</IonButton>
           </IonRow>
           <IonRow class="ion-justify-content-center">
-            <IonButton id="registration_facebookBtn" type="submit" onClick={() => setShowAlert(true)}>REGISTER WITH FACEBOOK</IonButton>
+            <IonButton id="registration_facebookBtn" type="submit" onClick={() => setShowErrorAlert(true)}>REGISTER WITH FACEBOOK</IonButton>
           </IonRow>
         </IonGrid>
         <IonLoading isOpen={status.loading} />

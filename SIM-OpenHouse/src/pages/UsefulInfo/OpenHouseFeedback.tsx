@@ -1,11 +1,11 @@
 import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonItem, IonLabel, IonList, IonPage, IonRadio, IonRadioGroup, IonRouterLink, IonRow, IonSelect, IonSelectOption, IonTextarea, IonTitle } from '@ionic/react';
 import React, { useRef } from 'react';
 
-import '../css/Global.css';
-import '../css/OpenHouseFeedback.css';
+import '../../css/Global.css';
+import '../../css/OpenHouseFeedback.css';
 
-import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
+import TopNav from '../../components/TopNav';
+import Menu from '../../components/Menu';
 import { useForm } from 'react-hook-form';
 import { text } from '@fortawesome/fontawesome-svg-core';
 

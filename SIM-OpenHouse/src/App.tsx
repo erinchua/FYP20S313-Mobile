@@ -4,9 +4,9 @@ import { IonApp, IonLoading, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 import Main from "./pages/Main";
-import ForgetPassword1 from "./pages/ForgetPassword1";
-import ForgetPassword2 from "./pages/ForgetPassword2";
-import ForgetPassword3 from "./pages/ForgetPassword3";
+import ForgetPassword1 from "./pages/ForgetPassword/ForgetPassword1";
+import ForgetPassword2 from "./pages/ForgetPassword/ForgetPassword2";
+import ForgetPassword3 from "./pages/ForgetPassword/ForgetPassword3";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import AppU from "./AppU";

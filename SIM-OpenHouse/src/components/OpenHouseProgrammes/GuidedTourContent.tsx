@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonCol, IonGrid, IonRow, IonButton } from '@ionic/react';
-import '../css/Global.css';
-import '../css/GuidedTourContent.css';
+import '../../css/Global.css';
+import '../../css/GuidedTourContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 

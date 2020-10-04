@@ -1,8 +1,8 @@
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import React from 'react';
 
-import '../css/Global.css';
-import '../css/OpenHouseActivities.css'
+import '../../css/Global.css';
+import '../../css/OpenHouseActivities.css'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
