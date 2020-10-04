@@ -3,7 +3,7 @@ import React from 'react';
 
 import "../../css/Global.css";
 import "../../css/OpenHouseMain.css";
-import gif from '../img/openHouseProgrammes/Open House Programmes.gif';
+import gif from '../../img/openHouseProgrammes/Open House Programmes.gif';
 import { arrowBackOutline } from 'ionicons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faMapPin, faStar } from '@fortawesome/free-solid-svg-icons';
