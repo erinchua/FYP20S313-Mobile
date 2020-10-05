@@ -24,6 +24,7 @@ const MyScheduleContent: React.FC<{
     const [scheduleDay2, setScheduleDay2] = useState([]);
 
     const programmeItemsDay1 = props.openHouseProgs.filter((item: any) => {
+        console.log(item.date)
         return item.date == props.openhouseDates[0];
     });
 
@@ -39,12 +40,12 @@ const MyScheduleContent: React.FC<{
         const itemDay1 = [];
         const itemDay2 = [];
         
-        db.collection('PersonalScheduler').doc(userID).get().then((doc: any) => {
+        /* db.collection('PersonalScheduler').doc(userID).get().then((doc: any) => {
             const registeredProgs = doc.data().registeredProgrammes;
             registeredProgs.forEach((regItem: any) => {
                 console.log(regItem)
             });
-        }).catch(err => console.log(err));
+        }).catch(err => console.log(err)); */
     }, []);
 
     //console.log("schedule content", programmeItemsDay1);

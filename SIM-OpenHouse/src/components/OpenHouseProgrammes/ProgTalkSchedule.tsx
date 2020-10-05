@@ -20,6 +20,7 @@ const ProgTalkSchedule: React.FC<{
 
     const programmeTalkDay1 = props.programmeTalk
         .filter((talk: any) => {
+            console.log(talk.date)
             return talk.date == props.openhouseDates[0]
         })
 
