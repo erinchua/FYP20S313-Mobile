@@ -1,0 +1,31 @@
+/* Student Life Main */
+#studentLifeMain-content {
+    --background: #EFEFEF;
+}
+
+#studentLifeMain-grid {
+    padding: 0;
+    min-height: 100%;
+}
+
+.studentLifeMain-row {
+    padding-top: 3%;
+}
+
+.studentLifeMain-col {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.studentLifeMain-icons {
+    color: #434343;
+}
+
+.studentLifeMain-text {
+    color: #434343;
+    text-align: center;
+    font-size: 80%;
+    margin-top: 10%;
+}
+
+/* Clubs & Councils@SIM */
