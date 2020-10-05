@@ -1,11 +1,11 @@
-import { IonContent, IonGrid, IonHeader, IonPage, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 import '../css/GettingToSimHq.css';
 import '../css/Global.css';
 import TopNav from '../components/TopNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faCar } from '@fortawesome/free-solid-svg-icons';
+import { faBus, faCar, faParking, faTrain } from '@fortawesome/free-solid-svg-icons';
 
 const GettingToSimHq: React.FC = () => {
 
@@ -14,7 +14,7 @@ const GettingToSimHq: React.FC = () => {
             <IonHeader>
                 <TopNav title="Getting To SIM HQ" route="/u/home" backarrow={ true } hamburger={ true }/>
             </IonHeader>
-            <IonContent fullscreen>
+            <IonContent fullscreen id="gettingToSimHq-content">
                 <IonGrid className="gettingToSimHqGrid">
                     <IonRow>
                         <div style={{width: "100%"}}>
@@ -37,9 +37,57 @@ const GettingToSimHq: React.FC = () => {
                         </IonToolbar>
                     </IonRow>
                     <IonRow>
-                        <IonGrid>
-                            
+                        <IonGrid className="gettingToSimHq-tableGrid">
+                            <IonRow className="gettingToSimHq-tableRow">
+                                <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Location</IonCol>
+                                <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Bus Number</IonCol>
+                            </IonRow>
+                            <IonRow className="gettingToSimHq-tableRow">
+                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">SIMHQ <br/>12091 <br/>Clementi Rd</IonCol>
+                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">52, 61, 74, 75, 151, 154, 184, 74E, 151E, 154B</IonCol>
+                            </IonRow>
+                            <IonRow className="gettingToSimHq-tableRow">
+                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">Opp SIM HQ <br/>12099 <br/>Clementi Rd</IonCol>
+                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">52, 61, 74, 75, 151, 154, 184, 74E, 151E</IonCol>
+                            </IonRow>
                         </IonGrid>
+                    </IonRow>
+                    <IonRow>
+                        <IonToolbar className="gettingToSimHq-heading-toolBar">
+                            <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faTrain} size="lg"/>By MRT</IonTitle>
+                        </IonToolbar>
+                    </IonRow>
+                    <IonRow>
+                        <IonGrid className="gettingToSimHq-tableGrid">
+                            <IonRow className="gettingToSimHq-tableRow">
+                                <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">MRT Line</IonCol>
+                                <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Nearest MRT</IonCol>
+                            </IonRow>
+                            <IonRow className="gettingToSimHq-tableRow">
+                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">Downtown Line</IonCol>
+                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">King Albert Park MRT <br/>Beauty World MRT <br/>Sixth Avenue</IonCol>
+                            </IonRow>
+                            <IonRow className="gettingToSimHq-tableRow">
+                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">East West Line</IonCol>
+                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">Clementi MRT <br/>Dover MRT</IonCol>
+                            </IonRow>
+                        </IonGrid>
+                    </IonRow>
+                    <IonRow>
+                        <IonToolbar className="gettingToSimHq-heading-toolBar">
+                            <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faParking} size="lg"/>Car Park Info</IonTitle>
+                        </IonToolbar>
+                    </IonRow>
+                    <IonRow>
+                        <IonText className="gettingToSimHq-description">
+                            (With effect from 1 February 2017) <br/>
+                            Applicable to all white lots within SIM HQ car park <br/>
+                            Charges: Cars - $1.28 (inclusive of GST), based on 30-minute block charging <br/>
+                            Operating Hours: 6.00am to 11.59pm (Daily including weekends. Closed on Public Holidays) <br/>
+                            Grace Period: 15 minutes <br/>
+                            <br/>
+                            <IonRouterLink id="gettingToSimHq-link" href="https://www.google.com/maps/dir//SIM+Global+Education+Singapore/@1.3730975,103.8407254,12z/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x31da1080893304bd:0xc889e76f4e447e42!3e0">Get here now</IonRouterLink>
+                        </IonText>
                     </IonRow>
                 </IonGrid>
             </IonContent>

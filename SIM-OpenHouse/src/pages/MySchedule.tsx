@@ -94,11 +94,11 @@ const MySchedule: React.FC = () => {
                     <IonRow className="ion-justify-content-center openHouseDateRow">
                         <IonCol sizeSm="6" className="openHouseDateCol">
                             <span className="openHouseDateTitleText">From: </span> 
-                            <span className="openHouseDateText">21 November 2020</span> {/* Date is not hardcoded */}
+                            <span className="openHouseDateText">{openhouseDates[0]}</span> {/* Date is not hardcoded */}
                         </IonCol>
                         <IonCol sizeSm="6" className="openHouseDateCol">
                             <span className="openHouseDateTitleText">To: </span> 
-                            <span className="openHouseDateText">22 November 2020</span> {/* Date is not hardcoded */}
+                            <span className="openHouseDateText">{openhouseDates[1]}</span> {/* Date is not hardcoded */}
                         </IonCol>
                     </IonRow>
 
@@ -106,11 +106,11 @@ const MySchedule: React.FC = () => {
                         <IonToolbar>
                             <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                                 <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="mySchedule-DayTab">
-                                    Day 1: 21 Nov 2020  {/* Date is not hardcoded, only Day 1: is */}
+                                    Day 1: {openhouseDates[0]}  {/* Date is not hardcoded, only Day 1: is */}
                                 </IonSegmentButton>
                                 
                                 <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="mySchedule-DayTab">
-                                    Day 2: 22 Nov 2020  {/* Date is not hardcoded, only Day 2: is */}
+                                    Day 2: {openhouseDates[1]}  {/* Date is not hardcoded, only Day 2: is */}
                                 </IonSegmentButton>
                             </IonSegment>
                         </IonToolbar>
