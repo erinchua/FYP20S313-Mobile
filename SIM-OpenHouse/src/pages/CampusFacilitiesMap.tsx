@@ -22,10 +22,10 @@ const CampusFacilitiesMap: React.FC = () => {
     };
 
     const [campusFacilities, setCampusFacilities] = useState([]);
-    const facilitiesBlkA = campusFacilities.filter((facility: any) => { return facility.blockName == 'A' })
-    const facilitiesBlkB = campusFacilities.filter((facility: any) => { return facility.blockName == 'B' })
-    const facilitiesBlkC = campusFacilities.filter((facility: any) => { return facility.blockName == 'C' })
-    const facilitiesBlkD = campusFacilities.filter((facility: any) => { return facility.blockName == 'D' })
+    const facilitiesBlkA = campusFacilities.filter((facility: any) => { return facility.blockName === 'A' });
+    const facilitiesBlkB = campusFacilities.filter((facility: any) => { return facility.blockName === 'B' });
+    const facilitiesBlkC = campusFacilities.filter((facility: any) => { return facility.blockName === 'C' });
+    const facilitiesBlkD = campusFacilities.filter((facility: any) => { return facility.blockName === 'D' });
 
 
     useEffect(() => {

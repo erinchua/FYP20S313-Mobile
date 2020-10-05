@@ -8,27 +8,27 @@ import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
 
 import { db } from '../firebase';
 import { useAuth } from '../auth';
+import { ScheduleItem } from '../schedule';
 
 const MyScheduleContent: React.FC<{
     day1: any; 
     day2: any;
-    openHouseProgs: any;
     openhouseDates: any;
+    openHouseProgs: any;
 }> = props => {
     const { userID } = useAuth();
     
     {/* Remove Programme Alert */}
     const [confirmRemoveAlert, setConfirmRemoveAlert] = useState(false);
     const [removeSuccess, setRemoveSuccess] = useState(false);
-    const [scheduleDay1, setScheduleDay1] = useState([]);
-    const [scheduleDay2, setScheduleDay2] = useState([]);
+    const [scheduleDay1, setScheduleDay1] = useState<ScheduleItem[]>([]);
+    const [scheduleDay2, setScheduleDay2] = useState<ScheduleItem[]>([]);
 
-    const programmeItemsDay1 = props.openHouseProgs.filter((item: any) => {
-        console.log(item.date)
+    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => {
         return item.date == props.openhouseDates[0];
     });
 
-    const programmeItemsDay2 = props.openHouseProgs.filter((item: any) => {
+    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => {
         return item.date == props.openhouseDates[1];
     });
 
@@ -36,19 +36,34 @@ const MyScheduleContent: React.FC<{
         setConfirmRemoveAlert(true);        
     };
 
-    useEffect(() => {
-        const itemDay1 = [];
-        const itemDay2 = [];
-        
-        /* db.collection('PersonalScheduler').doc(userID).get().then((doc: any) => {
-            const registeredProgs = doc.data().registeredProgrammes;
-            registeredProgs.forEach((regItem: any) => {
-                console.log(regItem)
-            });
-        }).catch(err => console.log(err)); */
-    }, []);
+    const handleDelete = () => {
 
-    //console.log("schedule content", programmeItemsDay1);
+    }
+
+    /* useEffect(() => {
+        db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
+            const registered = snapshot.data().registeredProgrammes;
+            const day1 = [], day2 = [];
+            registered.forEach((item: any) => {
+                const itemType = item.split("-");
+                switch (itemType[0]) {
+                    case "talk":
+                        // find object in openHouseProgsDay1 and openHouseProgsDay2 that matches id with item
+                        // push to day1 or day2
+                        const itemDay1 = openHouseProgsDay1.find((prog: any) => prog);
+                        const itemDay2 = openHouseProgsDay2.find((prog: any) => prog.id == item);
+                        //console.log(itemDay1)
+                    case "tour":
+                    case "performance":
+                    case "activity":
+                }
+            });
+        })
+    }, []); */
+
+    //console.log(openHouseProgs)
+    //console.log("day1", openHouseProgsDay1);
+    //console.log("day2", openHouseProgsDay2);
     
     return(
         <>

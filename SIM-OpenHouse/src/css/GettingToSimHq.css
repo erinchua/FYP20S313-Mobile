@@ -6,9 +6,8 @@
     padding: 0;
 }
 
-.gettingToSimHq-heading-toolBar {
-    --background: #dbe1e6;
-    --min-height: 100%;
+.gettingToSimHq-heading-row {
+    background: #dbe1e7;
     padding: 3% 0;
 }
 
