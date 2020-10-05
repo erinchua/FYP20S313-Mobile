@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
 import { IonRouterOutlet } from '@ionic/react';
 
 import Home from './pages/Home';
@@ -22,7 +22,7 @@ import CommonFaqs from './pages/UsefulInfo/CommonFaqs';
 import GettingToSimHq from './pages/GettingToSimHq';
 import MyProfile from './pages/MyProfile';
 import StudentLife from './pages/StudentLife@SIM/StudentLifeMain';
-import Clubs_Councils from './pages/StudentLife@SIM/Clubs_Councils';
+import Clubs_Councils_Routing from './pages/StudentLife@SIM/Clubs_Councils_Routing';
 import StudentCare from './pages/StudentLife@SIM/StudentCare';
 import Scholarships from './pages/StudentLife@SIM/Scholarships';
 import Bursary from './pages/StudentLife@SIM/Bursary';
@@ -75,10 +75,11 @@ const App: React.FC = () => {
       <Route path="/u/gettingToSIMHQ" component={GettingToSimHq} exact={true} />
       <Route path="/u/myProfile" component={MyProfile} exact={true} />
       <Route path="/u/studentLife@SIM" component={StudentLife} exact={true} />
-      <Route path="/u/studentLife@SIM/clubs&councils@SIM" component={Clubs_Councils} exact={true} />
+      <Route path="/u/studentLife@SIM/clubs&councils@SIM" render={props => <Clubs_Councils_Routing {...props} />} />
       <Route path="/u/studentLife@SIM/studentCare" component={StudentCare} exact={true} />
       <Route path="/u/studentLife@SIM/scholarships" component={Scholarships} exact={true} />
       <Route path="/u/studentLife@SIM/bursary" component={Bursary} exact={true} />
+
     </IonRouterOutlet>
   )
 };

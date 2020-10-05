@@ -21,20 +21,16 @@ const GettingToSimHq: React.FC = () => {
                             <iframe width="100%" height="250" frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0} src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=461%20Clementi%20Rd,%20Singapore%20599491+(Singapore%20Institute%20of%20Management)&amp;t=k&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                         </div>
                     </IonRow>
-                    <IonRow>
-                        <IonToolbar className="gettingToSimHq-heading-toolBar">
-                            <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faCar} size="lg"/>By Car</IonTitle>
-                        </IonToolbar>
+                    <IonRow className="gettingToSimHq-heading-row">
+                        <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faCar} size="lg"/>By Car</IonTitle>
                     </IonRow>
                     <IonRow>
                         <IonText className="gettingToSimHq-description">
                             The campus is easily accessible via Pan-Expressway (PIE), go via Exit 26A and turn into Clementi Road.
                         </IonText>
                     </IonRow>
-                    <IonRow>
-                        <IonToolbar className="gettingToSimHq-heading-toolBar">
-                            <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faBus} size="lg"/>By Bus</IonTitle>
-                        </IonToolbar>
+                    <IonRow className="gettingToSimHq-heading-row">
+                        <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faBus} size="lg"/>By Bus</IonTitle>
                     </IonRow>
                     <IonRow>
                         <IonGrid className="gettingToSimHq-tableGrid">
@@ -52,10 +48,8 @@ const GettingToSimHq: React.FC = () => {
                             </IonRow>
                         </IonGrid>
                     </IonRow>
-                    <IonRow>
-                        <IonToolbar className="gettingToSimHq-heading-toolBar">
-                            <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faTrain} size="lg"/>By MRT</IonTitle>
-                        </IonToolbar>
+                    <IonRow className="gettingToSimHq-heading-row">
+                        <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faTrain} size="lg"/>By MRT</IonTitle>
                     </IonRow>
                     <IonRow>
                         <IonGrid className="gettingToSimHq-tableGrid">
@@ -73,10 +67,8 @@ const GettingToSimHq: React.FC = () => {
                             </IonRow>
                         </IonGrid>
                     </IonRow>
-                    <IonRow>
-                        <IonToolbar className="gettingToSimHq-heading-toolBar">
-                            <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faParking} size="lg"/>Car Park Info</IonTitle>
-                        </IonToolbar>
+                    <IonRow className="gettingToSimHq-heading-row">
+                        <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faParking} size="lg"/>Car Park Info</IonTitle>
                     </IonRow>
                     <IonRow>
                         <IonText className="gettingToSimHq-description">
