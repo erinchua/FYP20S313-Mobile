@@ -39,7 +39,7 @@ const ProgrammeTalks: React.FC = () => {
     setTab("pastRecordings");
   };
 
-  const [openhouseDates, setOpenhouseDates] = useState([])
+  const [openhouseDates, setOpenhouseDates] = useState([]);
   const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
 
   const liveTalk = programmeTalk.filter(talk => { return talk.isLive == true })
@@ -71,7 +71,7 @@ const ProgrammeTalks: React.FC = () => {
       })
       .catch((error) => console.log(error));
 
-  }, [])
+  }, []);
 
   return (
     <IonPage>

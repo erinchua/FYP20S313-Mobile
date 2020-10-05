@@ -15,7 +15,6 @@ const ProgTalkSchedule: React.FC<{
     day2: any;
     programmeTalk: any;
     openhouseDates: any;
-
 }> = props => {
     const { userID } = useAuth();
 
@@ -52,19 +51,15 @@ const ProgTalkSchedule: React.FC<{
         try {
             // make check for schedule conflict then below
             db.collection('PersonalScheduler').doc(userID).update({
-                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion({
-                    openhouseProgrammeID: programmeTalk.id,
-                    openhouseProgrammeName: programmeTalk.talkName,
-                    openhouseProgrammeDateTimeStart: programmeTalk.startTime,
-                    openhouseProgrammeDateTimeEnd: programmeTalk.endTime,
-                    openhouseProgrammeVenue: programmeTalk.venue
-                })
+                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
             })
             displayRegisterAlert();
         } catch (e) {
             console.log(e);
         }
     };
+
+    //console.log(programmeTalkDay1)
 
     return (
         <>

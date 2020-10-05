@@ -11,23 +11,43 @@ import { useAuth } from '../auth';
 
 const MyScheduleContent: React.FC<{
     day1: any; 
-    day2: any
+    day2: any;
+    openHouseProgs: any;
+    openhouseDates: any;
 }> = props => {
     const { userID } = useAuth();
     
     {/* Remove Programme Alert */}
     const [confirmRemoveAlert, setConfirmRemoveAlert] = useState(false);
     const [removeSuccess, setRemoveSuccess] = useState(false);
+    const [scheduleDay1, setScheduleDay1] = useState([]);
+    const [scheduleDay2, setScheduleDay2] = useState([]);
+
+    const programmeItemsDay1 = props.openHouseProgs.filter((item: any) => {
+        return item.date == props.openhouseDates[0];
+    });
+
+    const programmeItemsDay2 = props.openHouseProgs.filter((item: any) => {
+        return item.date == props.openhouseDates[1];
+    });
 
     const displayRemoveProgAlert = () => {
         setConfirmRemoveAlert(true);        
     };
 
     useEffect(() => {
-        /* db.collection('PersonalScheduler').doc(userID).onSnapshot(doc => {
-            console.log(doc.data())
-        }); */
-    })
+        const itemDay1 = [];
+        const itemDay2 = [];
+        
+        db.collection('PersonalScheduler').doc(userID).get().then((doc: any) => {
+            const registeredProgs = doc.data().registeredProgrammes;
+            registeredProgs.forEach((regItem: any) => {
+                console.log(regItem)
+            });
+        }).catch(err => console.log(err));
+    }, []);
+
+    //console.log("schedule content", programmeItemsDay1);
     
     return(
         <>
