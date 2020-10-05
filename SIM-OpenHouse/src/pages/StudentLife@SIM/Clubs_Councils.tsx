@@ -1,39 +1,43 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
 import TopNav from '../../components/TopNav';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookReader, faHandHoldingHeart, faHandsHelping, faSwimmer } from '@fortawesome/free-solid-svg-icons';
+import arts_culture from '../../img/studentLife@SIM/arts_culture.png';
+import international_students_clubs from '../../img/studentLife@SIM/internationalStudentsClubs.png';
+import special_interest_clubs from '../../img/studentLife@SIM/specialInterestClubs.png';
+import studentCouncils from '../../img/studentLife@SIM/studentCouncils.png';
+import sports_fitness from '../../img/studentLife@SIM/sports&fitness.png';
 
-const StudentLifeMain: React.FC = () => {
+const Clubs_Councils: React.FC = () => {
 
     return (
         <IonPage>
             <IonHeader>
-                <TopNav title="Student Life@SIM" route="/u/home" backarrow={ true } hamburger={ true }/>
+                <TopNav title="Clubs & Councils@SIM" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
             </IonHeader>
+
             <IonContent fullscreen id="studentLifeMain-content">
                 <IonGrid id="studentLifeMain-grid">
                     <IonRow className="ion-justify-content-around studentLifeMain-row">
                         <IonCol sizeSm="6" className="studentLifeMain-col">
                             <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM">
                                 <IonRow className="ion-justify-content-center">
-                                    <FontAwesomeIcon className="studentLifeMain-icons" icon={faSwimmer} size="2x"/>
+                                    <IonImg src={arts_culture} />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Clubs & Councils@SIM</IonText>
+                                    <IonText className="studentLifeMain-text">Arts & Culture</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
                         <IonCol sizeSm="6" className="studentLifeMain-col">
                             <IonRouterLink routerLink="/u/studentLife@SIM/studentCare">
                                 <IonRow className="ion-justify-content-center">
-                                    <FontAwesomeIcon className="studentLifeMain-icons" icon={faHandHoldingHeart} size="2x"/>
+                                    <IonImg src={international_students_clubs} />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Student Care</IonText>
+                                    <IonText className="studentLifeMain-text">International Students Clubs</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
@@ -43,23 +47,36 @@ const StudentLifeMain: React.FC = () => {
                         <IonCol sizeSm="6">
                             <IonRouterLink routerLink="/u/studentLife@SIM/scholarships">
                                 <IonRow className="ion-justify-content-center">
-                                    <FontAwesomeIcon className="studentLifeMain-icons" icon={faBookReader} size="2x"/>
+                                    <IonImg src={studentCouncils} />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Scholarships</IonText>
+                                    <IonText className="studentLifeMain-text">Student Councils</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
                         <IonCol sizeSm="6">
                             <IonRouterLink routerLink="/u/studentLife@SIM/bursary">
                                 <IonRow className="ion-justify-content-center">
-                                    <FontAwesomeIcon className="studentLifeMain-icons" icon={faHandsHelping} size="2x"/>
+                                    <IonImg src={special_interest_clubs} />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Bursary</IonText>
+                                    <IonText className="studentLifeMain-text">Special Interest Clubs</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
+                    </IonRow>
+                    <IonRow className="ion-justify-content-around studentLifeMain-row">
+                        <IonCol sizeSm="6">
+                            <IonRouterLink routerLink="/u/studentLife@SIM/scholarships">
+                                <IonRow className="ion-justify-content-center">
+                                    <IonImg src={sports_fitness} />
+                                </IonRow>
+                                <IonRow className="ion-justify-content-center">
+                                    <IonText className="studentLifeMain-text">Sports & Fitness</IonText>
+                                </IonRow>
+                            </IonRouterLink>
+                        </IonCol>
+                        <IonCol sizeSm="6"></IonCol>
                     </IonRow>
                 </IonGrid>
             </IonContent>
@@ -67,4 +84,4 @@ const StudentLifeMain: React.FC = () => {
     );
 };
 
-export default StudentLifeMain;
+export default Clubs_Councils;
