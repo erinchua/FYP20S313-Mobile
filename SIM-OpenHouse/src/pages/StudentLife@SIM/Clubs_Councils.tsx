@@ -9,8 +9,9 @@ import international_students_clubs from '../../img/studentLife@SIM/internationa
 import special_interest_clubs from '../../img/studentLife@SIM/specialInterestClubs.png';
 import studentCouncils from '../../img/studentLife@SIM/studentCouncils.png';
 import sports_fitness from '../../img/studentLife@SIM/sports&fitness.png';
+import { RouteComponentProps } from 'react-router-dom';
 
-const Clubs_Councils: React.FC = () => {
+const Clubs_Councils: React.FC<RouteComponentProps> = () => {
 
     return (
         <IonPage>
@@ -18,65 +19,66 @@ const Clubs_Councils: React.FC = () => {
                 <TopNav title="Clubs & Councils@SIM" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
             </IonHeader>
 
-            <IonContent fullscreen id="studentLifeMain-content">
-                <IonGrid id="studentLifeMain-grid">
-                    <IonRow className="ion-justify-content-around studentLifeMain-row">
-                        <IonCol sizeSm="6" className="studentLifeMain-col">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM">
+            <IonContent fullscreen className="studentLife-content">
+                <IonGrid id="clubsCouncils-grid">
+                    <IonRow className="ion-justify-content-around clubsCouncils-row">
+                        <IonCol sizeSm="6" className="clubsCouncils-col">
+                            <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM/arts&culture">
                                 <IonRow className="ion-justify-content-center">
-                                    <IonImg src={arts_culture} />
+                                    <IonImg src={arts_culture} className="clubsCouncils-img" />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Arts & Culture</IonText>
+                                    <IonText className="clubsCouncils-text">Arts & Culture</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol sizeSm="6" className="studentLifeMain-col">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/studentCare">
+                        <IonCol sizeSm="6" className="clubsCouncils-col">
+                            <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM/internationalStudentsClubs">
                                 <IonRow className="ion-justify-content-center">
-                                    <IonImg src={international_students_clubs} />
+                                    <IonImg src={international_students_clubs} className="clubsCouncils-img" />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">International Students Clubs</IonText>
+                                    <IonText className="clubsCouncils-text">International Students Clubs</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
                     </IonRow>
 
-                    <IonRow className="ion-justify-content-around studentLifeMain-row">
-                        <IonCol sizeSm="6">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/scholarships">
+                    <IonRow className="ion-justify-content-around clubsCouncils-row">
+                        <IonCol sizeSm="6" className="clubsCouncils-col">
+                            <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM/studentCouncils">
                                 <IonRow className="ion-justify-content-center">
-                                    <IonImg src={studentCouncils} />
+                                    <IonImg src={studentCouncils} className="clubsCouncils-img" />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Student Councils</IonText>
+                                    <IonText className="clubsCouncils-text">Student Councils</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol sizeSm="6">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/bursary">
+                        <IonCol sizeSm="6" className="clubsCouncils-col">
+                            <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM/specialInterestClubs">
                                 <IonRow className="ion-justify-content-center">
-                                    <IonImg src={special_interest_clubs} />
+                                    <IonImg src={special_interest_clubs} className="clubsCouncils-img" />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Special Interest Clubs</IonText>
+                                    <IonText className="clubsCouncils-text">Special Interest Clubs</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
                     </IonRow>
-                    <IonRow className="ion-justify-content-around studentLifeMain-row">
-                        <IonCol sizeSm="6">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/scholarships">
+
+                    <IonRow className="ion-justify-content-around clubsCouncils-row">
+                        <IonCol sizeSm="6" className="clubsCouncils-col">
+                            <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM/sports&fitness">
                                 <IonRow className="ion-justify-content-center">
-                                    <IonImg src={sports_fitness} />
+                                    <IonImg src={sports_fitness} className="clubsCouncils-img" />
                                 </IonRow>
                                 <IonRow className="ion-justify-content-center">
-                                    <IonText className="studentLifeMain-text">Sports & Fitness</IonText>
+                                    <IonText className="clubsCouncils-text">Sports & Fitness</IonText>
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol sizeSm="6"></IonCol>
+                        <IonCol sizeSm="6" className="clubsCouncils-col"></IonCol>
                     </IonRow>
                 </IonGrid>
             </IonContent>

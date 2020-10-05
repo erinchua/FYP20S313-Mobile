@@ -13,7 +13,11 @@ const StudentCare: React.FC = () => {
                 <TopNav title="Student Care" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
             </IonHeader>
             <IonContent fullscreen id="studentLifeMain-content">
-                
+                <IonGrid>
+                    <IonRow>
+                        <IonText>Work, play and live well</IonText>
+                    </IonRow>
+                </IonGrid>
             </IonContent>
         </IonPage>
     );

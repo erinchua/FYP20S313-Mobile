@@ -14,11 +14,11 @@ const StudentLifeMain: React.FC = () => {
             <IonHeader>
                 <TopNav title="Student Life@SIM" route="/u/home" backarrow={ true } hamburger={ true }/>
             </IonHeader>
-            <IonContent fullscreen id="studentLifeMain-content">
+            <IonContent fullscreen className="studentLife-content">
                 <IonGrid id="studentLifeMain-grid">
                     <IonRow className="ion-justify-content-around studentLifeMain-row">
                         <IonCol sizeSm="6" className="studentLifeMain-col">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/clubs&councils@SIM">
+                            <IonRouterLink href="/u/studentLife@SIM/clubs&councils@SIM">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="studentLifeMain-icons" icon={faSwimmer} size="2x"/>
                                 </IonRow>
@@ -28,7 +28,7 @@ const StudentLifeMain: React.FC = () => {
                             </IonRouterLink>
                         </IonCol>
                         <IonCol sizeSm="6" className="studentLifeMain-col">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/studentCare">
+                            <IonRouterLink href="/u/studentLife@SIM/studentCare">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="studentLifeMain-icons" icon={faHandHoldingHeart} size="2x"/>
                                 </IonRow>
@@ -40,8 +40,8 @@ const StudentLifeMain: React.FC = () => {
                     </IonRow>
 
                     <IonRow className="ion-justify-content-around studentLifeMain-row">
-                        <IonCol sizeSm="6">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/scholarships">
+                        <IonCol sizeSm="6" className="studentLifeMain-col">
+                            <IonRouterLink href="/u/studentLife@SIM/scholarships">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="studentLifeMain-icons" icon={faBookReader} size="2x"/>
                                 </IonRow>
@@ -50,8 +50,8 @@ const StudentLifeMain: React.FC = () => {
                                 </IonRow>
                             </IonRouterLink>
                         </IonCol>
-                        <IonCol sizeSm="6">
-                            <IonRouterLink routerLink="/u/studentLife@SIM/bursary">
+                        <IonCol sizeSm="6" className="studentLifeMain-col">
+                            <IonRouterLink href="/u/studentLife@SIM/bursary">
                                 <IonRow className="ion-justify-content-center">
                                     <FontAwesomeIcon className="studentLifeMain-icons" icon={faHandsHelping} size="2x"/>
                                 </IonRow>
