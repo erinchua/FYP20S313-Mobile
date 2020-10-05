@@ -7,11 +7,11 @@ import '../../css/OpenHouseActivities.css'
 const PrizesContent: React.FC<{ prizes: any }> = props => {
 
     const availablePrizes = props.prizes.filter((prize: any) => {
-        return prize.isRedeemed == false
-    })
+        return prize.isRedeemed === false;
+    });
     const redeemedPrizes = props.prizes.filter((prize: any) => {
-        return prize.isRedeemed == true
-    })
+        return prize.isRedeemed === true;
+    });
 
     return (
 
