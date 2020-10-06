@@ -19,12 +19,14 @@ const ForumSearch: React.FC = () => {
                 <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true }/>
             </IonHeader>
 
-            <IonToolbar id="forum-searchbar-container">
-                <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
-            </IonToolbar>
+            <IonContent  fullscreen id="forum-content">
+                <IonGrid id="forum-searchbar-container">
+                    <IonRow>
+                        <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
+                    </IonRow>
+                </IonGrid>
 
-            <IonToolbar id="forum-heading-container">
-                <IonGrid>
+                <IonGrid id="forum-heading-container">
                     <IonRow className="ion-justify-content-start">
                         <IonCol size="10" className="ion-align-self-center forum-col">
                             <IonTitle id="forum-heading">Search Results for: <span style={{color: 'black'}}>{search}</span></IonTitle>
@@ -34,8 +36,6 @@ const ForumSearch: React.FC = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-            </IonToolbar>
-            <IonContent  fullscreen id="forum-content">
 
                 {/* Display all Questions */}
                 <IonList className="forum-container">

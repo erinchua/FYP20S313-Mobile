@@ -18,9 +18,9 @@ const ForumViewQuestion: React.FC = () => {
             <IonHeader>
                 <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true }/>
             </IonHeader>
-
-            <IonToolbar id="forum-searchbar-container">
-                <IonGrid>
+            
+            <IonContent  fullscreen id="forum-content">
+                <IonGrid id="forum-searchbar-container">
                     <IonRow className="ion-justify-content-start">
                         <IonCol size="10" className="forum-col">
                             <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
@@ -30,8 +30,6 @@ const ForumViewQuestion: React.FC = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-            </IonToolbar>
-            <IonContent  fullscreen id="forum-content">
                 <IonList className="forum-container">
                     <IonGrid>
                         <IonRow>

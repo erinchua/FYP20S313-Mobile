@@ -48,7 +48,8 @@
 
 
 #forum-searchbar-container {
-    --background: #A9DBD9;
+    background: #A9DBD9;
+    padding: 0;
 }
 
 #forum-searchbar {
@@ -57,6 +58,8 @@
 
 #forum-heading-container {
     --background: transparent;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #forum-heading {
@@ -116,10 +119,10 @@
 }
 
 /* Post Question Modal */
-.post-question-modal {
-    --max-height: 60%;
+.post-question-modal .modal-wrapper{
     --max-width: 90%;
     --border-radius: 3%;
+    --max-height: 60%;
 }
 
 #postQns-modal-container {
@@ -139,6 +142,7 @@
     height: 70%;
     border: 1px solid #C8C8C8;
     margin: 3% 0%;
+    width: 100%;
 }
 
 #postQns-close-button {
@@ -173,7 +177,6 @@
 /* Forum User - My Questions/Comments */
 #forumQnsCom-tableGrid {
     padding: 0;
-    overflow-x: scroll !important;
 }
 
 #forumQnsCom-tableHeader {
@@ -194,6 +197,7 @@
     text-align: center;
     min-width: 15%;
     font-size: 70%;
+    padding: 1% 0%;
 }
 
 .forumQnsCom-DataBtn {
