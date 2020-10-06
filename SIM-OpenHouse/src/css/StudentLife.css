@@ -57,7 +57,7 @@
 
 /* Clubs & Councils@SIM's Details */
 .clubsCouncils-list {
-    margin: 2%;
+    margin: 3%;
     border-radius: 10px;
 }
 
@@ -79,4 +79,162 @@
 
 .clubsCouncils-details-description {
     font-size: 80%;
+}
+
+/* Student Care */
+#studentCare-topHeader-container {
+    background: #a9dbd9;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+#studentCare-grid {
+    padding: 0;
+    min-height: 100%;
+}
+
+#studentCare-topHeader-text {
+    font-size: 90%;
+    color: white;
+    font-weight: bold;
+    padding-left: 1%;
+}
+
+#studentCare-description {
+    font-size: 80%;
+    color: #424242;
+    padding: 2% 1%;
+}
+
+.studentCare-tripThumbnail {
+    --border-radius: 10px;
+    --size: 100%; 
+}
+
+.studentCare-tripText {
+    font-size: 80%;
+    text-align: center;
+    font-style: italic;
+    color: #808080;
+    margin-top: 3%;
+}
+
+#studentCare-trip-container {
+    margin: 3% 0%;
+}
+
+.studentCare-list {
+    margin: 3%;
+    border-radius: 10px;
+}
+
+.studentCare-thumbnail {
+    --border-radius: 10px;
+    --size: 90%;
+}
+
+.studentCare-details-grid {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.studentCare-details-heading {
+    font-size: 90%;
+    font-weight: bold;
+    margin-bottom: 3%;
+    text-transform: uppercase;
+    color: #424242;
+}
+
+.studentCare-details-description {
+    font-size: 80%;
+    color: #434343;
+}
+
+/* Scholarships */
+#scholarship-grid {
+    padding: 0;
+}
+
+.scholarship-mainRow {
+    background: white;
+}
+
+#scholarships-ionRowCol {
+    padding: 0;
+}
+
+.scholarships-heading {
+    --background: #e8d091;
+    --indicator-color: transparent;
+    --background-checked: #a9dbd9;
+    text-align: center;
+    --color: #424242;
+    --color-checked: #424242;
+    font-size: 70%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+    width: 50%;
+}
+
+#scholarship-FAQ-button {
+    --background: transparent;
+    --color: #424242;
+    --box-shadow: transparent;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.scholarship-mainHeading {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+}
+
+.scholarship-mainDescription {
+    font-size: 80%;
+    color: #808080;
+    padding: 1%;
+}
+
+.scholarship-toggle-button {
+    --background: transparent;
+    --color: #424242;
+    --box-shadow: transparent;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-right: 0%;
+}
+
+.scholarship-toggle-header {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+    padding: 3% 0%;
+}
+
+.scholarship-toggle-container {
+    padding: 0;
+}
+
+.scholarship-categories-header {
+    font-size: 85%;
+    color: #4F6571;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.scholarship-description {
+    font-size: 80%;
+    color: #434343;
+    margin: 3% 0%;
+}
+
+.scholarship-toggle-details-container {
+    background: white;
+}
+
+.scholarship-inner-row {
+    border-bottom: 2px solid #c8c8c8;
 }

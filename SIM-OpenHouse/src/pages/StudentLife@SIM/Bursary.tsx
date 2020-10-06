@@ -12,7 +12,7 @@ const Bursary: React.FC = () => {
             <IonHeader>
                 <TopNav title="Bursary" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
             </IonHeader>
-            <IonContent fullscreen id="studentLifeMain-content">
+            <IonContent fullscreen className="studentLife-content">
                 
             </IonContent>
         </IonPage>
