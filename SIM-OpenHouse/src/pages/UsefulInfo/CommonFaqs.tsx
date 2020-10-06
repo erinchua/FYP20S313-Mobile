@@ -4,14 +4,24 @@ import { useForm } from 'react-hook-form';
 
 import '../../css/Global.css';
 import '../../css/CommonFaqs.css';
-import { addCircle } from 'ionicons/icons';
+import { addCircle, removeCircle } from 'ionicons/icons';
 
 import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
 
 
-
 const CommonFaqs: React.FC = () => {
+    const info = useRef<HTMLIonRowElement>(null);
+    const showIcon = useRef<HTMLIonIconElement>(null);
+
+    const displayInfoCol = () => {
+        info.current!.hidden = !info.current!.hidden;
+        if (showIcon.current!.icon == addCircle)
+            showIcon.current!.icon = removeCircle;
+        else
+            showIcon.current!.icon = addCircle;
+    };
+
     return(
         <IonPage>
             <IonHeader>
@@ -24,30 +34,31 @@ const CommonFaqs: React.FC = () => {
                         <IonTitle id="faqTitle">Open House FAQs</IonTitle>
                     </IonRow>
 
-                    {/* Application Outcome */}
+                    {/* FAQ Accordion */}
                     <IonRow className="faqHeaderRow">
                         <IonCol className="faqHeaderCol">
                             <IonRow className="faqHeaderInnerRow">
                                 <IonCol size="10" sizeSm="10" style={{padding: "0"}}>
                                     <IonTitle className="faqInfoHeader">
                                         <div className="ion-text-wrap">
-                                            Application Outcome & Acceptance of Offer
+                                           Question
                                         </div>
                                     </IonTitle>
                                 </IonCol>
 
-                                {/* <IonCol size="2" sizeSm="2"className="toggleFaqInfoBtnCol">
+                                <IonCol size="2" sizeSm="2"className="toggleFaqInfoBtnCol">
                                     <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
                                         <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
                                     </IonButton>
-                                </IonCol> */}
+                                </IonCol>
                             </IonRow>
 
                             <IonRow>
-                                {/* <IonCol sizeSm="12" id="applicationOutcomeInfo" ref={info} hidden={true}>
-                                    <p>Applicants will be informed by e-mail of the application outcome within one month before the course starts.</p>
-                                    <p>When you have received the offer, you must go online to confirm the offer and accept the student contract document.</p>
-                                </IonCol> */}
+                                <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={true}>
+                                    <div className="ion-text-wrap">
+                                        <p>Answer</p>
+                                    </div>
+                                </IonCol>
                             </IonRow>
                         </IonCol>
                     </IonRow>

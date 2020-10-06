@@ -1,22 +1,14 @@
-import { IonContent, 
-    IonPage, 
-    IonGrid, 
-    IonRow, 
-    IonCol, 
-    IonIcon, 
-    IonButton, 
-    IonItem, 
-    IonInput,
-    IonList,
+import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonIcon, IonButton, IonItem, IonInput, IonList,
     IonAlert, IonHeader } from '@ionic/react';
 import React, {useRef, useState} from 'react';
 import { useForm } from "react-hook-form";
 import {useHistory} from 'react-router-dom';
-import { shieldCheckmarkOutline } from 'ionicons/icons';
-import { auth } from '../../firebase';
 
 import '../../css/ForgetPassword3.css';
 import '../../css/Global.css';
+import { shieldCheckmarkOutline } from 'ionicons/icons';
+
+import { auth } from '../../firebase';
 
 import TopNav from '../../components/TopNav';
 

@@ -1,17 +1,13 @@
 import React, { useContext } from 'react';
-import { IonMenu,
-    IonContent, 
-    IonItem, 
-    IonList, 
-    IonLabel, 
-    IonItemDivider } from '@ionic/react';
+import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonItemDivider } from '@ionic/react';
+
 import '../css/Menu.css';
 import '../css/Global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle,
     faPhotoVideo, faBookOpen, faHands, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
+
 import { auth } from '../firebase';
 import { NavContext } from '@ionic/react';
 
@@ -24,11 +20,10 @@ const Menu: React.FC = props => {
         sessionStorage.clear();
         // navigate('/main');
     };
-    
 
     return(
         <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="first" id="menuID">             
-            <IonContent id="menuContent" className="menuContent" scrollEvents={true} scrollY={true}>
+            <IonContent id="menuContent" className="menuContent" scrollEvents={true}>
                 <IonList className="menuList">
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home">                     
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faHome} />
@@ -50,11 +45,11 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faMapSigns} />
                         <IonLabel className="menuLabel">Campus Facilities Map</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/gettingToSIMHQ">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faMapMarkedAlt} />
                         <IonLabel className="menuLabel">Getting to SIM HQ</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/usefulInfoMain">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faInfoCircle} />
                         <IonLabel className="menuLabel">Useful Info</IonLabel>
                     </IonItem>
@@ -81,7 +76,7 @@ const Menu: React.FC = props => {
                     
                     <IonItemDivider id="divider"></IonItemDivider>
 
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/myProfile">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faUserCircle} />
                         <IonLabel className="menuLabel">My Profile</IonLabel>
                     </IonItem>

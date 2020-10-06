@@ -1,0 +1,65 @@
+#gettingToSimHq-content {
+    --background: #EFEFEF;
+}
+
+.gettingToSimHqGrid {
+    padding: 0;
+}
+
+.gettingToSimHq-heading-row {
+    background: #dbe1e7;
+    padding: 3% 0;
+}
+
+.gettingToSimHq-title {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.gettingToSimHq-titleIcon {
+    margin-right: 3%;
+}
+
+.gettingToSimHq-description {
+    font-size: 80%;
+    padding: 2% 2% 5% 2%;
+    background: white;
+    min-width: 100%;
+}
+
+.gettingToSimHq-tableGrid {
+    padding: 0;
+    background: white;
+}
+
+.gettingToSimHq-tableHeading {
+    font-size: 90%;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #C8C8C8;
+    background:#FBE9E7;
+    padding: 2% 0%;
+    min-height: 100%;
+    color: #424242;
+}
+
+.gettingToSimHq-table-LeftData {
+    font-size: 80%;
+    text-align: center;
+    border: 1px solid #C8C8C8;
+    color: #434343;
+    
+}
+
+.gettingToSimHq-table-RightData {
+    font-size: 80%;
+    text-align: left;
+    border: 1px solid #C8C8C8;
+    color: #434343;
+}
+
+#gettingToSimHq-link {
+    color: #434343;
+    font-weight: bold;
+    text-decoration: underline;
+}

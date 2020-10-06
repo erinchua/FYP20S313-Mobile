@@ -39,7 +39,7 @@ const ProgrammeTalks: React.FC = () => {
     setTab("pastRecordings");
   };
 
-  const [openhouseDates, setOpenhouseDates] = useState([])
+  const [openhouseDates, setOpenhouseDates] = useState([]);
   const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
 
   const liveTalk = programmeTalk.filter(talk => { return talk.isLive == true })
@@ -71,7 +71,7 @@ const ProgrammeTalks: React.FC = () => {
       })
       .catch((error) => console.log(error));
 
-  }, [])
+  }, []);
 
   return (
     <IonPage>
@@ -108,10 +108,10 @@ const ProgrammeTalks: React.FC = () => {
                   <IonToolbar>
                     <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                       <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                        Day 1: 21 Nov 2020
+                        Day 1: {openhouseDates[0]}
                       </IonSegmentButton>
                       <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                        Day 2: 22 Nov 2020
+                        Day 2: {openhouseDates[1]}
                       </IonSegmentButton>
                     </IonSegment>
                   </IonToolbar>
@@ -145,10 +145,10 @@ const ProgrammeTalks: React.FC = () => {
                   <IonToolbar>
                     <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                       <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                        Day 1: 21 Nov 2020
+                        Day 1: {openhouseDates[0]}
                       </IonSegmentButton>
                       <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                        Day 2: 22 Nov 2020
+                        Day 2: {openhouseDates[1]}
                       </IonSegmentButton>
                     </IonSegment>
                   </IonToolbar>
@@ -171,10 +171,10 @@ const ProgrammeTalks: React.FC = () => {
                   <IonToolbar>
                     <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                       <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                        Day 1: 21 Nov 2020
+                        Day 1: {openhouseDates[0]}
                       </IonSegmentButton>
                       <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                        Day 2: 22 Nov 2020
+                        Day 2: {openhouseDates[1]}
                       </IonSegmentButton>
                     </IonSegment>
                   </IonToolbar>

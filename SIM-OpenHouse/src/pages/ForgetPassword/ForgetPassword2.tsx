@@ -1,19 +1,11 @@
-import { IonContent, 
-    IonPage, 
-    IonGrid, 
-    IonRow, 
-    IonCol, 
-    IonIcon, 
-    IonButton, 
-    IonItem, 
-    IonInput, IonHeader } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonIcon, IonButton, IonItem, IonInput, IonHeader } from '@ionic/react';
 import React from 'react';
 import { useForm } from "react-hook-form";
 //import ReactCodeInput from 'react-verification-code-input';
-import { keypadOutline } from 'ionicons/icons';
 
 import '../../css/ForgetPassword2.css';
 import '../../css/Global.css';
+import { keypadOutline } from 'ionicons/icons';
 
 import TopNav from '../../components/TopNav';
 

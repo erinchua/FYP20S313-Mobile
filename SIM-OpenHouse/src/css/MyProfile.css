@@ -1,0 +1,100 @@
+#profileGrid {
+    background: #efefef;
+    padding: 0 0 5% 0;
+    min-height: 100%;
+}
+
+#editProfileBtnCol {
+    padding-bottom: 3%;
+}
+
+#editProfileBtn {
+    --background: #37474F;
+    font-size: 80%;
+}
+
+#qrCodeCol {
+    min-width: 40%;
+    min-height: 40%;
+    padding: 5%;
+}
+.profileRow {
+    margin-right: 2%;
+}
+
+.profileIconCol {
+    color: #424242;
+}
+
+.readOnlyIonInput {
+    border-bottom: 1px solid #808080;
+    font-size: 80%;
+    color: #434343;
+}
+
+#highestQualSelect {
+    min-width: 100%;
+    padding-left: 0;
+}
+
+#editPasswordBtn {
+    color: #434343;
+}
+
+/* Alert Box CSS */
+.changePasswordAlertBox .alert-wrapper {
+    min-width: 90%;
+    margin: 5%; 
+    padding-bottom: 3%;
+}
+
+.changePasswordAlertBox .cancelChangePasswordBtn {
+    color: #37474F;
+    border: 1px solid #37474F;
+    border-radius: 8px;
+}
+
+.changePasswordAlertBox .changePasswordBtn {
+    background: #37474F;
+    color: #ffffff;
+    border-radius: 8px;
+    margin-left: 5%;
+}
+
+/* Modal CSS */
+.editPasswordModalContent {
+    --background: #efefef;
+}
+
+.editPasswordModal .modal-wrapper {
+    position: absolute;
+    bottom: initial;
+    min-height: initial;
+    top: initial;
+    height: 60%;
+}
+
+#editPasswordModalGrid {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.editPasswordModalItem {
+    --background: #efefef;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 80%;
+}
+
+.passwordInput {
+    color: #434343;
+    --placeholder-color: #424242;
+    font-size: 85%;
+}
+
+.editPasswordBtn {
+    --background: #37474F;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, RouteComponentProps } from 'react-router-dom';
 import { IonRouterOutlet } from '@ionic/react';
 
 import Home from './pages/Home';
@@ -12,12 +12,20 @@ import MySchedule from './pages/MySchedule';
 import Forum from './pages/Forum/Forum';
 import ForumUser from './pages/Forum/ForumUser';
 import ForumViewQuestion from './pages/Forum/ForumViewQuestion';
+import ForumSearch from './pages/Forum/ForumSearch';
 import CampusFacilitiesMap from './pages/CampusFacilitiesMap';
 import UsefulInfoMain from './pages/UsefulInfo/UsefulInfoMain';
 import AdmissionApplication from './pages/UsefulInfo/AdmissionApplication';
 import ContactInfo from './pages/UsefulInfo/ContactInfo';
 import OpenHouseFeedback from './pages/UsefulInfo/OpenHouseFeedback';
 import CommonFaqs from './pages/UsefulInfo/CommonFaqs';
+import GettingToSimHq from './pages/GettingToSimHq';
+import MyProfile from './pages/MyProfile';
+import StudentLife from './pages/StudentLife@SIM/StudentLifeMain';
+import Clubs_Councils_Routing from './pages/StudentLife@SIM/Clubs_Councils_Routing';
+import StudentCare from './pages/StudentLife@SIM/StudentCare';
+import Scholarships from './pages/StudentLife@SIM/Scholarships';
+import Bursary from './pages/StudentLife@SIM/Bursary';
 
 import { useAuth } from './auth';
 
@@ -56,6 +64,7 @@ const App: React.FC = () => {
       <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
       <Route path="/u/forum" component={Forum} exact={true} />
       <Route path="/u/forumUser" component={ForumUser} exact={true} />
+      <Route path="/u/forumSearch" component={ForumSearch} exact={true} />
       <Route path="/u/forumViewQuestion" component={ForumViewQuestion} exact={true} />
       <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
       <Route path="/u/usefulInfoMain" component={UsefulInfoMain} exact={true} />
@@ -63,6 +72,14 @@ const App: React.FC = () => {
       <Route path="/u/usefulInfoMain/contactInfo" component={ContactInfo} exact={true} />
       <Route path="/u/usefulInfoMain/openHouseFeedback" component={OpenHouseFeedback} exact={true} />
       <Route path="/u/usefulInfoMain/commonFAQs" component={CommonFaqs} exact={true} />
+      <Route path="/u/gettingToSIMHQ" component={GettingToSimHq} exact={true} />
+      <Route path="/u/myProfile" component={MyProfile} exact={true} />
+      <Route path="/u/studentLife@SIM" component={StudentLife} exact={true} />
+      <Route path="/u/studentLife@SIM/clubs&councils@SIM" render={props => <Clubs_Councils_Routing {...props} />} />
+      <Route path="/u/studentLife@SIM/studentCare" component={StudentCare} exact={true} />
+      <Route path="/u/studentLife@SIM/scholarships" component={Scholarships} exact={true} />
+      <Route path="/u/studentLife@SIM/bursary" component={Bursary} exact={true} />
+
     </IonRouterOutlet>
   )
 };

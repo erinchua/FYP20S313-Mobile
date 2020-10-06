@@ -22,10 +22,10 @@ const CampusFacilitiesMap: React.FC = () => {
     };
 
     const [campusFacilities, setCampusFacilities] = useState([]);
-    const facilitiesBlkA = campusFacilities.filter((facility: any) => { return facility.blockName == 'A' })
-    const facilitiesBlkB = campusFacilities.filter((facility: any) => { return facility.blockName == 'B' })
-    const facilitiesBlkC = campusFacilities.filter((facility: any) => { return facility.blockName == 'C' })
-    const facilitiesBlkD = campusFacilities.filter((facility: any) => { return facility.blockName == 'D' })
+    const facilitiesBlkA = campusFacilities.filter((facility: any) => { return facility.blockName === 'A' });
+    const facilitiesBlkB = campusFacilities.filter((facility: any) => { return facility.blockName === 'B' });
+    const facilitiesBlkC = campusFacilities.filter((facility: any) => { return facility.blockName === 'C' });
+    const facilitiesBlkD = campusFacilities.filter((facility: any) => { return facility.blockName === 'D' });
 
 
     useEffect(() => {
@@ -53,7 +53,7 @@ const CampusFacilitiesMap: React.FC = () => {
                 <IonSlides pager={true} options={slideOpts} id="campusFacilSlides">
                     {/* Block A */}
                     <IonSlide className="slide">
-                        <IonGrid className="slideGridRowCol">
+                        <IonGrid className="slideGridRowCol" style={{paddingBottom: "10%"}}>
                             <IonRow className="slideGridRowCol">
                                 <IonCol size-sizeSm="12" className="imgCol slideGridRowCol">
                                     <IonImg src={blkA} alt="Blk A" className="campusFacilImg"></IonImg>

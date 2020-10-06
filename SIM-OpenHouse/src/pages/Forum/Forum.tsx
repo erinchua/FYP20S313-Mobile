@@ -7,10 +7,10 @@ import "../../css/Forum.css";
 import TopNav from '../../components/TopNav';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
-import {  faFlag } from "@fortawesome/free-solid-svg-icons";
 import { addCircleSharp, personSharp } from "ionicons/icons";
 import {  useHistory } from "react-router-dom";
 import ForumRules from '../../components/Forum/ForumRules';
+import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
 
 const Forum: React.FC = () => {
 
@@ -81,7 +81,7 @@ const Forum: React.FC = () => {
                                 <IonText className="forum-question-details">0</IonText>
                             </IonCol>
                             <IonCol size="1" className="ion-align-self-end forum-col">
-                                <IonButton id="forum-question-flagBtn" size="small"><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+                                <Forum_FlagModal />
                             </IonCol>
                         </IonRow>
                     </IonGrid>
@@ -111,7 +111,7 @@ const Forum: React.FC = () => {
                                 <IonText className="forum-question-details">1</IonText>
                             </IonCol>
                             <IonCol size="1" className="ion-align-self-end forum-col">
-                                <IonButton id="forum-question-flagBtn" size="small"><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+                                <Forum_FlagModal />
                             </IonCol>
                         </IonRow>
                     </IonGrid>
@@ -175,7 +175,7 @@ const Forum: React.FC = () => {
                     </IonRow>
                     <IonItemDivider></IonItemDivider>
                     <IonRow id="postQns-modal-inputArea">
-                        <IonTextarea placeholder="Type your question here..."></IonTextarea>
+                        <IonTextarea placeholder="Type your question here..." required></IonTextarea>
                     </IonRow>
                     <IonRow className="ion-justify-content-around">
                         <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
@@ -186,7 +186,7 @@ const Forum: React.FC = () => {
 
             </IonContent>
 
-            {/* Bottom Tabs (After Forum Rules) */}
+            {/* Bottom Tabs */}
             {count === 1 && checked === true ? 
                 <>
                 <IonFooter>
