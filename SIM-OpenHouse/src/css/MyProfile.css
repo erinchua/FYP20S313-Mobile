@@ -41,6 +41,7 @@
     color: #434343;
 }
 
+/* Alert Box CSS */
 .changePasswordAlertBox .alert-wrapper {
     min-width: 90%;
     margin: 5%; 
@@ -59,3 +60,41 @@
     border-radius: 8px;
     margin-left: 5%;
 }
+
+/* Modal CSS */
+.editPasswordModalContent {
+    --background: #efefef;
+}
+
+.editPasswordModal .modal-wrapper {
+    position: absolute;
+    bottom: initial;
+    min-height: initial;
+    top: initial;
+    height: 60%;
+}
+
+#editPasswordModalGrid {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.editPasswordModalItem {
+    --background: #efefef;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 80%;
+}
+
+.passwordInput {
+    color: #434343;
+    --placeholder-color: #424242;
+    font-size: 85%;
+}
+
+.editPasswordBtn {
+    --background: #37474F;
+}
+
