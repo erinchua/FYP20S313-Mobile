@@ -16,31 +16,54 @@ const MyProfile: React.FC = () => {
 
     const { register, handleSubmit, errors, getValues, reset, watch } = useForm();
 
-    const [firstName, setFirstName] = useState<string>();
-    const [lastName, setLastName] = useState<string>();
-    const [email, setEmail] = useState<string>();
-    const [contactNo, setContactNo] = useState<string>(); 
+    const [firstName, setFirstName] = useState<string>('');
+    const [lastName, setLastName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [contactNo, setContactNo] = useState<string>(''); 
     const [dob, setDob] = useState();
-    const [highestQualification, setHighestQualification] = useState();
+    const [highestQualification, setHighestQualification] = useState('');
     const [nationality, setNationality] = useState();
     const [password, setPassword] = useState();
+    const [readOnly, setReadOnly] = useState(true);
+    const [contactNoDisabled, setContactNoDisabled] = useState(true);
+    const [highestQualDisabled, setHighestQualDisabled] = useState(true);
+    const [contactNoReadOnly, setContactNoReadOnly] = useState(true);
+
+    const [profileNav, setProfileNav] = useState(true);
+    const [showEditProfileBtn, setShowEditProfileBtn] = useState(true);
+    const [showChangePassword, setShowChangePassword] = useState(true);
 
 
-    {/* Edit Password Fields Alert */}
-    // const [editPasswordAlert, setEditPasswordAlert] = useState(false);
+    {/* Edit Profile */}
+    const editProfile = () => {
+        setContactNoDisabled(false);
+        setHighestQualDisabled(false);
+        setContactNoReadOnly(false);
+        
+        setProfileNav(false);
+        setShowEditProfileBtn(false);
+        setShowChangePassword(false);
+    };
+
+    const onSubmitEditProfile = () => {
+        console.log("edited");
+    };
+
+
+    {/* Change Password Modal & Alert */}
+    const [changePasswordModal, setChangePasswordModal] = useState(false);
     const [changePasswordSuccess, setChangePasswordSuccess] = useState(false);
 
-    const [editPasswordModal, setEditPasswordModal] = useState(false);
     const currentPasswordRef = useRef({});
-    const newPasswordRef = useRef();
+    const newPasswordRef = useRef({});
     currentPasswordRef.current = watch("currentPassword", "");
     newPasswordRef.current = watch("newPassword", "");
 
-    const displayEditPassword = () => {
-        setEditPasswordModal(true);
+    const displayChangePassword = () => {
+        setChangePasswordModal(true);
     };
 
-    const onSubmit = (data: any) => {
+    const onSubmitChangePassword = (data: any) => {
         const currentPassword = getValues("currentPassword");
         const newPassword = getValues("newPassword");
         const confirmNewPassword = getValues("confirmNewPassword");
@@ -48,7 +71,7 @@ const MyProfile: React.FC = () => {
         if ((currentPassword !== "" && newPassword !== "" && confirmNewPassword !== "") && 
         (newPassword !== currentPassword && confirmNewPassword === newPassword)) {            
             console.log("Submitted");
-            setEditPasswordModal(false)
+            setChangePasswordModal(false)
             reset({
                 currentPassword: "",
                 newPassword: "",
@@ -60,7 +83,7 @@ const MyProfile: React.FC = () => {
 
     const cancelEditPassword = () => {
         console.log("Cancel");
-        setEditPasswordModal(false)
+        setChangePasswordModal(false)
         reset({
             currentPassword: "",
             newPassword: "",
@@ -70,10 +93,10 @@ const MyProfile: React.FC = () => {
     
     return(
         <React.Fragment>
-            <IonModal isOpen={editPasswordModal} cssClass='editPasswordModal' onDidDismiss={() => setEditPasswordModal(false)}>
+            <IonModal isOpen={changePasswordModal} cssClass='editPasswordModal' onDidDismiss={() => setChangePasswordModal(false)}>
                 <IonContent fullscreen className="editPasswordModalContent">
                     <IonGrid id="editPasswordModalGrid">
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit(onSubmitChangePassword)}>
                             {/* Current Password */}
                             <IonRow className="editPasswordModalRow" class="ion-align-items-center">
                                 <IonCol size="12" sizeSm="12" className="editPasswordModalCol" class="ion-text-left">
@@ -112,14 +135,13 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
                             </IonRow>
 
-
                             <IonRow class="ion-align-items-center" style={{marginTop:"5%"}}>
-                                <IonCol size="4" sizeSm="4" class="ion-text-center">
+                                <IonCol size="4" sizeSm="4" class="ion-text-right">
                                     <IonButton className="editPasswordBtn" onClick={cancelEditPassword}>CANCEL</IonButton>
                                 </IonCol>
 
                                 <IonCol size="8" sizeSm="8" class="ion-text-center">
-                                    <IonButton className="editPasswordBtn" type="submit" onClick={onSubmit}>CHANGE PASSWORD</IonButton>
+                                    <IonButton className="editPasswordBtn" type="submit" onClick={onSubmitChangePassword}>CHANGE PASSWORD</IonButton>
                                 </IonCol>
                             </IonRow>
 
@@ -128,61 +150,6 @@ const MyProfile: React.FC = () => {
 
                 </IonContent>
             </IonModal>
-
-            {/* <IonAlert
-                isOpen={editPasswordAlert}
-                onDidDismiss={() => setEditPasswordAlert(false)}
-                cssClass='alertBox changePasswordAlertBox'
-                mode='md'
-                header={'Change Password'}
-                inputs={[
-                    {
-                        name: 'currentPassword',
-                        type: 'password',
-                        placeholder: 'Current Password',
-                    },
-                    {
-                        name: 'newPassword',
-                        type: 'password',
-                        placeholder: 'New Password'
-                        },
-                        {
-                        name: 'confirmNewPassword',
-                        type: 'password',
-                        placeholder: 'Confirm New Password'
-                        }
-                ]}
-                buttons={[
-                    {
-                        text: 'Cancel',
-                        cssClass: 'cancelChangePasswordBtn',
-                        handler: () => {
-                            reset({
-                                currentPassword: "",
-                                newPassword: "",
-                                confirmNewPassword: ""
-                            });
-                            console.log('Cancel');
-                        }
-                    },
-                    { 
-                        text: 'Change Password',
-                        cssClass: 'changePasswordBtn',
-                        handler: (data: any) => {
-                            {/* Current Password Validation 
-                            if (data.currentPassword !== null && data.currentPassword !== "") {
-                                console.log("Hello")
-                                
-                                setEditPasswordAlert(false);
-                                setChangePasswordSuccess(true);
-                            }
-                            
-
-                            {/* Logic to update password *
-                        }
-                    }
-                ]}
-            ></IonAlert>*/}
 
             <IonAlert
                 isOpen={changePasswordSuccess}
@@ -208,116 +175,139 @@ const MyProfile: React.FC = () => {
 
             <IonPage>
                 <IonHeader>
-                    <TopNav title="My Profile" route='/u/home' backarrow={ true } hamburger = { true }/>
+                    {profileNav ?
+                        <TopNav title="My Profile" route='/u/home' backarrow={ true } hamburger = { true }/>
+                        : 
+                            <TopNav title="Edit My Profile" route='/u/home' backarrow={ false } hamburger = { true }/>
+                    }
                 </IonHeader>
 
                 <IonContent fullscreen={true}>
                     <IonGrid id="profileGrid">
-                        <IonRow id="editProfileBtnRow" class="ion-align-items-right">
-                            <IonCol size="12" sizeSm="12" class="ion-text-right" id="editProfileBtnCol">
-                                <IonButton id="editProfileBtn">EDIT PROFILE</IonButton>
-                            </IonCol>
-                        </IonRow>
+                        <form onSubmit={handleSubmit(onSubmitEditProfile)}>
+                            {/* Edit Profile Button */}
+                            {showEditProfileBtn ?
+                                <IonRow id="editProfileBtnRow" class="ion-align-items-right">
+                                    <IonCol size="12" sizeSm="12" class="ion-text-right" id="editProfileBtnCol">
+                                        <IonButton id="editProfileBtn" onClick={editProfile}>EDIT PROFILE</IonButton>
+                                    </IonCol>
+                                </IonRow>
+                                : null
+                            }
 
-                        {/* Generated QR Code */}
-                        <IonRow id="qrCodeRow" class="ion-align-items-center">
-                            <IonCol size="12" sizeSm="12" class="ion-text-center" id="qrCodeCol">
-                                QR Code here
-                            </IonCol>
-                        </IonRow>
+                            {/* Generated QR Code */}
+                            <IonRow id="qrCodeRow" class="ion-align-items-center">
+                                <IonCol size="12" sizeSm="12" class="ion-text-center" id="qrCodeCol">
+                                    <span id="qrCode">QR Code here</span>
+                                </IonCol>
+                            </IonRow>
 
-                        {/* Name */}
-                        <IonRow className="profileRow" class="ion-align-items-center">
-                            <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                <FontAwesomeIcon icon={faAddressCard} size="lg" />
-                            </IonCol>
+                            {/* Name */}
+                            <IonRow className="profileRow" class="ion-align-items-center">
+                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                    <FontAwesomeIcon icon={faAddressCard} size="lg" />
+                                </IonCol>
 
-                            <IonCol size="5" sizeSm="5" class="ion-text-left">
-                                <IonInput value={firstName} readonly className="readOnlyIonInput">First Name</IonInput>
-                            </IonCol>
+                                <IonCol size="5" sizeSm="5" class="ion-text-left">
+                                    <IonInput value={firstName} name="firstName" readonly={readOnly} className="readOnlyIonInput">First Name</IonInput>
+                                </IonCol>
 
-                            <IonCol size="5" sizeSm="5" class="ion-text-left">
-                                <IonInput value={lastName} readonly className="readOnlyIonInput">Last Name</IonInput>
-                            </IonCol>
-                        </IonRow>
+                                <IonCol size="5" sizeSm="5" class="ion-text-left">
+                                    <IonInput value={lastName} name="lastName" readonly={readOnly} className="readOnlyIonInput">Last Name</IonInput>
+                                </IonCol>
+                            </IonRow>
 
-                        {/* Email */}
-                        <IonRow className="profileRow" class="ion-align-items-center">
-                            <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                <FontAwesomeIcon icon={faEnvelope} size="lg" />
-                            </IonCol>
+                            {/* Email */}
+                            <IonRow className="profileRow" class="ion-align-items-center">
+                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                    <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                                </IonCol>
 
-                            <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                <IonInput value={email} readonly className="readOnlyIonInput">Email</IonInput>
-                            </IonCol>
-                        </IonRow>
+                                <IonCol size="10" sizeSm="10" class="ion-text-left">
+                                    <IonInput value={email} name="email" readonly={readOnly} className="readOnlyIonInput">Email</IonInput>
+                                </IonCol>
+                            </IonRow>
 
-                        {/* Contact No. */}
-                        <IonRow className="profileRow" class="ion-align-items-center">
-                            <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                <FontAwesomeIcon icon={faMobileAlt} size="lg" />
-                            </IonCol>
+                            {/* Contact No. */}
+                            <IonRow className="profileRow" class="ion-align-items-center">
+                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                    <FontAwesomeIcon icon={faMobileAlt} size="lg" />
+                                </IonCol>
 
-                            <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                <IonInput value={contactNo} readonly className="readOnlyIonInput">Contact No.</IonInput>
-                            </IonCol>
-                        </IonRow>
+                                <IonCol size="10" sizeSm="10" class="ion-text-left">
+                                    <IonInput value={contactNo} type="tel" name="contactNo" readonly={contactNoReadOnly} disabled={contactNoDisabled} className="readOnlyIonInput" id="contactNoField" minlength={8} maxlength={8} ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/ })}>{contactNo}</IonInput>
+                                    {errors.contactNo && errors.contactNo.type === "required" && <p className="errorMsg">Contact number is required!</p>}
+                                    {/* {errors.contactNo && errors.contactNo.type === "minLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
+                                    {errors.contactNo && errors.contactNo.type === "maxLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
+                                    {errors.contactNo && errors.contactNo.type === "pattern" && <p className="errorMsg">Please enter a valid Contact No.</p>} */}
+                                </IonCol>
+                            </IonRow>
 
-                        {/* DOB */}
-                        <IonRow className="profileRow" class="ion-align-items-center">
-                            <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                <FontAwesomeIcon icon={faBirthdayCake} size="lg" />
-                            </IonCol>
+                            {/* DOB */}
+                            <IonRow className="profileRow" class="ion-align-items-center">
+                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                    <FontAwesomeIcon icon={faBirthdayCake} size="lg" />
+                                </IonCol>
 
-                            <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                <IonInput value={dob} readonly className="readOnlyIonInput">DOB</IonInput>
-                            </IonCol>
-                        </IonRow>
+                                <IonCol size="10" sizeSm="10" class="ion-text-left">
+                                    <IonInput value={dob} name="dob" readonly={readOnly} className="readOnlyIonInput">DOB</IonInput>
+                                </IonCol>
+                            </IonRow>
 
-                        {/* Highest Qualification */}
-                        <IonRow className="profileRow" class="ion-align-items-center">
-                            <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                <FontAwesomeIcon icon={faUserGraduate} size="lg" />
-                            </IonCol>
+                            {/* Highest Qualification */}
+                            <IonRow className="profileRow" class="ion-align-items-center">
+                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                    <FontAwesomeIcon icon={faUserGraduate} size="lg" />
+                                </IonCol>
 
-                            <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                <IonSelect id="highestQualSelect" className="readOnlyIonInput" name="highestQualification" value={highestQualification} disabled>
-                                    <IonSelectOption value="aLevel" className="highestQualSelectOption">'A' Level</IonSelectOption>
-                                    <IonSelectOption value="oLevel" className="highestQualSelectOption">'O' Level</IonSelectOption>
-                                    <IonSelectOption value="degree" className="highestQualSelectOption">Degree</IonSelectOption>
-                                    <IonSelectOption value="diploma" className="highestQualSelectOption">Diploma</IonSelectOption>
-                                </IonSelect>
-                            </IonCol>
-                        </IonRow>
+                                <IonCol size="10" sizeSm="10" class="ion-text-left">
+                                    <IonSelect id="highestQualSelect" className="readOnlyIonInput" name="highestQualification" value={highestQualification} disabled={highestQualDisabled} ref={register({ required: true })}>
+                                        <IonSelectOption value="aLevel" className="highestQualSelectOption">'A' Level</IonSelectOption>
+                                        <IonSelectOption value="oLevel" className="highestQualSelectOption">'O' Level</IonSelectOption>
+                                        <IonSelectOption value="degree" className="highestQualSelectOption">Degree</IonSelectOption>
+                                        <IonSelectOption value="diploma" className="highestQualSelectOption">Diploma</IonSelectOption>
+                                    </IonSelect>
+                                </IonCol>
+                            </IonRow>
 
-                        {/* Nationality */}
-                        <IonRow className="profileRow" class="ion-align-items-center">
-                            <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                <FontAwesomeIcon icon={faGlobe} size="lg" />
-                            </IonCol>
+                            {/* Nationality */}
+                            <IonRow className="profileRow" class="ion-align-items-center">
+                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                    <FontAwesomeIcon icon={faGlobe} size="lg" />
+                                </IonCol>
 
-                            <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                <IonInput value={nationality} readonly className="readOnlyIonInput">Nationality</IonInput>
-                            </IonCol>
-                        </IonRow>
+                                <IonCol size="10" sizeSm="10" class="ion-text-left">
+                                    <IonInput value={nationality} name="nationality" readonly={readOnly} className="readOnlyIonInput">Nationality</IonInput>
+                                </IonCol>
+                            </IonRow>
 
-                        {/* Password */}
-                        <IonRow className="profileRow" class="ion-align-items-center">
-                            <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                <FontAwesomeIcon icon={faLock} size="lg" />
-                            </IonCol>
+                            {/* Password */}
+                            {showChangePassword ?
+                                <IonRow className="profileRow" class="ion-align-items-center">
+                                    <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                        <FontAwesomeIcon icon={faLock} size="lg" />
+                                    </IonCol>
 
-                            <IonCol size="8" sizeSm="8" class="ion-text-left">
-                                <IonInput type="password" value={password} readonly className="readOnlyIonInput">Password</IonInput>
-                            </IonCol>
+                                    <IonCol size="8" sizeSm="8" class="ion-text-left">
+                                        <IonInput type="password" value={password} name="password" readonly={readOnly} className="readOnlyIonInput">Password</IonInput>
+                                    </IonCol>
 
-                            <IonCol size="2" sizeSm="2" class="ion-text-center">
-                                <IonButton id="editPasswordBtn" fill="clear" size="default" onClick={displayEditPassword}>
-                                    <FontAwesomeIcon icon={faEdit} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
+                                    <IonCol size="2" sizeSm="2" class="ion-text-center">
+                                        <IonButton id="editPasswordBtn" fill="clear" size="default" onClick={displayChangePassword}>
+                                            <FontAwesomeIcon icon={faEdit} size="lg" />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
+                                : (
+                                    <IonRow id="editProfileBtnRow" class="ion-align-items-center">
+                                        <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
+                                            <IonButton id="saveEditProfileBtn" onClick={onSubmitEditProfile}>SAVE</IonButton>
+                                        </IonCol>
+                                    </IonRow>
+                                )
+                            }
+                        
+                        </form>
                     </IonGrid>
                 </IonContent>
             </IonPage>
