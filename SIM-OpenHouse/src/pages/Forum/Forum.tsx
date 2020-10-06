@@ -39,22 +39,23 @@ const Forum: React.FC = () => {
             <IonContent fullscreen id="forum-content">
             {count === 1 && checked === true ?
                 <>
-                <IonToolbar id="forum-searchbar-container">
-                    <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
-                </IonToolbar>
+                <IonGrid id="forum-searchbar-container">
+                    <IonRow>
+                        <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
+                    </IonRow>
+                </IonGrid>
+                    
 
-                <IonToolbar id="forum-heading-container">
-                    <IonGrid>
-                        <IonRow className="ion-justify-content-start">
-                            <IonCol size="10" className="ion-align-self-center forum-col">
-                                <IonTitle id="forum-heading">All Discussions</IonTitle>
-                            </IonCol>                            
-                            <IonCol size="2" className="forum-col">
-                                <ForumRules />
-                            </IonCol>
-                        </IonRow>
-                    </IonGrid>
-                </IonToolbar>
+                <IonGrid id="forum-heading-container">
+                    <IonRow className="ion-justify-content-start">
+                        <IonCol size="10" className="ion-align-self-center forum-col">
+                            <IonTitle id="forum-heading">All Discussions</IonTitle>
+                        </IonCol>                            
+                        <IonCol size="2" className="forum-col">
+                            <ForumRules />
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
 
                 {/* Display all Questions */}
                 <IonList className="forum-container">
@@ -169,19 +170,21 @@ const Forum: React.FC = () => {
 
             {/* Post Question Modal */}
             <IonModal isOpen={showPostModal} cssClass='post-question-modal' onDidDismiss={() => setShowPostModal(false)}>
-                <IonGrid id="postQns-modal-container">
-                    <IonRow style={{paddingTop: '1%'}}>
-                        <IonLabel id="postQns-title">Post Question</IonLabel>
-                    </IonRow>
-                    <IonItemDivider></IonItemDivider>
-                    <IonRow id="postQns-modal-inputArea">
-                        <IonTextarea placeholder="Type your question here..." required></IonTextarea>
-                    </IonRow>
-                    <IonRow className="ion-justify-content-around">
-                        <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
-                        <IonButton id="postQns-post-button">POST</IonButton>
-                    </IonRow>
-                </IonGrid>
+                <IonContent>
+                    <IonGrid id="postQns-modal-container">
+                        <IonRow style={{paddingTop: '1%'}}>
+                            <IonLabel id="postQns-title">Post Question</IonLabel>
+                        </IonRow>
+                        <IonItemDivider></IonItemDivider>
+                        <IonRow id="postQns-modal-inputArea">
+                            <IonTextarea rows={11} placeholder="Type your question here..." required></IonTextarea>
+                        </IonRow>
+                        <IonRow className="ion-justify-content-around">
+                            <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
+                            <IonButton id="postQns-post-button">POST</IonButton>
+                        </IonRow>
+                    </IonGrid>
+                </IonContent>
             </IonModal>
 
             </IonContent>

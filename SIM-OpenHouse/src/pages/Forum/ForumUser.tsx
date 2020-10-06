@@ -33,8 +33,8 @@ const ForumUser: React.FC = () => {
                 <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true } />
             </IonHeader>
 
-            <IonToolbar id="forum-searchbar-container">
-                <IonGrid>
+            <IonContent fullscreen id="forum-content">
+                <IonGrid id="forum-searchbar-container">
                     <IonRow className="ion-justify-content-start">
                         <IonCol size="10" className="forum-col">
                             <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
@@ -44,9 +44,7 @@ const ForumUser: React.FC = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-            </IonToolbar>
-
-            <IonContent fullscreen id="forum-content">
+                
                 <IonGrid id="forumUser-ionRowCol">
                     <IonRow id="forumUser-ionRowCol">
                         <IonCol id="forumUser-ionRowCol">
@@ -65,19 +63,21 @@ const ForumUser: React.FC = () => {
                 
                 {/* Post Question Modal */}
                 <IonModal isOpen={showPostModal} cssClass='post-question-modal' onDidDismiss={() => setShowPostModal(false)}>
-                    <IonGrid id="postQns-modal-container">
-                        <IonRow style={{paddingTop: '1%'}}>
-                            <IonLabel id="postQns-title">Post Question</IonLabel>
-                        </IonRow>
-                        <IonItemDivider></IonItemDivider>
-                        <IonRow id="postQns-modal-inputArea">
-                            <IonTextarea placeholder="Type your question here..."></IonTextarea>
-                        </IonRow>
-                        <IonRow className="ion-justify-content-around">
-                            <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
-                            <IonButton id="postQns-post-button">POST</IonButton>
-                        </IonRow>
-                    </IonGrid>
+                    <IonContent>
+                        <IonGrid id="postQns-modal-container">
+                            <IonRow style={{paddingTop: '1%'}}>
+                                <IonLabel id="postQns-title">Post Question</IonLabel>
+                            </IonRow>
+                            <IonItemDivider></IonItemDivider>
+                            <IonRow id="postQns-modal-inputArea">
+                                <IonTextarea rows={11} placeholder="Type your question here..." required></IonTextarea>
+                            </IonRow>
+                            <IonRow className="ion-justify-content-around">
+                                <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
+                                <IonButton id="postQns-post-button">POST</IonButton>
+                            </IonRow>
+                        </IonGrid>
+                    </IonContent>
                 </IonModal>
             </IonContent>
 
