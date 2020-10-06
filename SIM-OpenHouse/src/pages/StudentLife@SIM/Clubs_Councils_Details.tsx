@@ -1,5 +1,5 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonList, IonPage, IonRow, IonText, IonThumbnail, IonTitle } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
@@ -7,6 +7,7 @@ import TopNav from '../../components/TopNav';
 import { RouteComponentProps } from 'react-router';
 import AnimeGaming from '../../img/studentLife@SIM/arts&Culture/AnimeGaming.jpg';
 import DanceArt from '../../img/studentLife@SIM/arts&Culture/DanceArt.png';
+import { db } from '../../firebase';
 
 interface Clubs_Councils_Details_Props extends RouteComponentProps<{
     id: string;
@@ -22,8 +23,36 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
         'Sports & Fitness'
     ]);
 
+    const [clubCouncils, setClubCouncils] = useState([])
 
+    useEffect(() => {
+        const clubCouncils: any = []
+        db.collection('ClubsAndCouncils').get().then((snapshot) => {
+            snapshot.forEach((doc) => {
+                const data = doc.data()
+                clubCouncils.push(data)
+            })
+            setClubCouncils(clubCouncils)
+        })
+    },
+        [])
+    const artCulture = clubCouncils.filter((club: any) => {
+        return club.categoryType == 'Arts & culture'
+    })
+    const internationalStud = clubCouncils.filter((club: any) => {
+        return club.categoryType == 'InternationalStudent'
+    })
+    const studCouncil = clubCouncils.filter((club: any) => {
+        return club.categoryType == 'StudentCouncil'
+    })
+    const specialInterest = clubCouncils.filter((club: any) => {
+        return club.categoryType == 'SpecialInterest'
+    })
+    const sportFitness = clubCouncils.filter((club: any) => {
+        return club.categoryType == 'SportsFitness'
+    })
 
+    console.log("arts is" + clubCouncils)
     return (
         <IonPage>
             <IonHeader>
@@ -49,25 +78,32 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
                 {/* Arts & Culture */}
                 {match.params.id === 'arts&culture' ?
                     <>
-                        <IonList className="clubsCouncils-list">
-                            <IonGrid className="clubsCouncils-details-grid">
-                                <IonRow>
-                                    <IonCol size="4" className="ion-align-self-center">
-                                        <IonThumbnail className="clubsCouncils-thumbnail">
-                                            <img src={AnimeGaming} />
-                                        </IonThumbnail>
-                                    </IonCol>
-                                    <IonCol size="8" className="ion-align-self-center">
-                                        <IonRow>
-                                            <IonText className="clubsCouncils-details-heading">Japanese Culture and Gaming Society</IonText>
-                                        </IonRow>
-                                        <IonRow>
-                                            <IonText className="clubsCouncils-details-description">Immerse yourself in our gaming community and the colourful world of Japanese animation, cosplay, manga, and the Japanese culture.</IonText>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                            </IonGrid>
-                        </IonList>
+                        {artCulture.map((club: any) => {
+                            return (
+                                <div>
+                                    <IonList className="clubsCouncils-list">
+                                        <IonGrid className="clubsCouncils-details-grid">
+                                            <IonRow>
+                                                <IonCol size="4" className="ion-align-self-center">
+                                                    <IonThumbnail className="clubsCouncils-thumbnail">
+                                                        <img src={club.clubsAndCouncilsLogo} alt={club.clubsAndCouncilTitle} />
+                                                    </IonThumbnail>
+                                                </IonCol>
+                                                <IonCol size="8" className="ion-align-self-center">
+                                                    <IonRow>
+                                                        <IonText className="clubsCouncils-details-heading">{club.clubsAndCouncilTitle}</IonText>
+                                                    </IonRow>
+                                                    <IonRow>
+                                                        <IonText className="clubsCouncils-details-description">{club.clubsAndCouncilDescription}</IonText>
+                                                    </IonRow>
+                                                </IonCol>
+                                            </IonRow>
+                                        </IonGrid>
+                                    </IonList>
+                                </div>
+                            )
+                        })}
+
 
                         <IonList className="clubsCouncils-list">
                             <IonGrid className="clubsCouncils-details-grid">
