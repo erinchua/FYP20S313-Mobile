@@ -36,7 +36,7 @@ const MyScheduleContent: React.FC<{
     const handleDelete = async (item: any) => {
         try {
             db.collection('PersonalScheduler').doc(userID).update({
-                registeredProgrammes: firebase.firestore.FieldValue.arrayRemove(item.id)
+                registeredProgrammes: firebase.firestore.FieldValue.arrayRemove(item)
             });
         } catch(e) {
             console.log(e);
@@ -198,36 +198,8 @@ const MyScheduleContent: React.FC<{
                                 </IonButton> */}
                             </IonCol>
                         </IonRow>
-
-                        {/* My Schedule Table (Open House Activities) */}
-                        <IonRow className="ion-justify-content-center openHouseActTableRow">
-                            <IonCol size-sizeSm="12" className="openHouseActTableTitle ion-text-wrap">Open House Activities - Games & Activities</IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Open House Activities) Table Header*/}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="ion-text-wrap" id="boothNoHeader">Booth No.</IonCol>
-                            <IonCol size-sizeSm="4" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleActTableHeader ion-text-wrap">Venue</IonCol>
-                            <IonCol size-sizeSm="2" className="myScheduleActTableHeader ion-text-wrap">Points</IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleActTableHeader ion-text-wrap"></IonCol>
-                        </IonRow>
-
-                        {/* Row will be dynamically generated */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="2" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
                     </> : '' 
                 }
-
                 
                 {props.day2 === "day2" ? 
                     <>
@@ -334,34 +306,73 @@ const MyScheduleContent: React.FC<{
                                 </IonButton> */}
                             </IonCol>
                         </IonRow>
-
-                        {/* My Schedule Table (Open House Activities) */}
-                        <IonRow className="ion-justify-content-center openHouseActTableRow">
-                            <IonCol sizeSm="12" className="openHouseActTableTitle ion-text-wrap">Open House Activities - Games & Activities</IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Open House Activities) Table Header*/}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="ion-text-wrap" id="boothNoHeader">Booth No.</IonCol>
-                            <IonCol sizeSm="4" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleActTableHeader ion-text-wrap">Venue</IonCol>
-                            <IonCol sizeSm="2" className="myScheduleActTableHeader ion-text-wrap">Points</IonCol>
-                            <IonCol sizeSm="1" className="myScheduleActTableHeader ion-text-wrap"></IonCol>
-                        </IonRow>
-
-                        {/* Row will be dynamically generated */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="2" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
                     </> : '' 
+                }
+
+                {/* My Schedule Table (Open House Activities) */}
+                <IonRow className="ion-justify-content-center openHouseActTableRow">
+                    <IonCol size-sizeSm="12" className="openHouseActTableTitle ion-text-wrap">Open House Activities - Games & Activities</IonCol>
+                </IonRow>
+
+                {/* My Schedule Table (Open House Activities) Table Header*/}
+                <IonRow className="ion-justify-content-center">
+                    <IonCol size-sizeSm="2" className="ion-text-wrap" id="boothNoHeader">Booth No.</IonCol>
+                    <IonCol size-sizeSm="4" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
+                    <IonCol size-sizeSm="3" className="myScheduleActTableHeader ion-text-wrap">Venue</IonCol>
+                    <IonCol size-sizeSm="2" className="myScheduleActTableHeader ion-text-wrap">Points</IonCol>
+                    <IonCol size-sizeSm="1" className="myScheduleActTableHeader ion-text-wrap"></IonCol>
+                </IonRow>
+
+                {props.day1 === "day1" ?
+                    openHouseProgsDay1.map((item: any) => {
+                        if (item.id.split("-")[0] == "activity")
+                            return (
+                                <IonRow className="ion-justify-content-center" key={item.id}>
+                                    <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol size-sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
+                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol size-sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
+                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => handleDelete(item.id)}>
+                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            )
+                    }) : '' 
+                }
+
+                {/* My Schedule Table (Open House Activities) */}
+                {/* <IonRow className="ion-justify-content-center openHouseActTableRow">
+                    <IonCol sizeSm="12" className="openHouseActTableTitle ion-text-wrap">Open House Activities - Games & Activities</IonCol>
+                </IonRow> */}
+
+                {/* My Schedule Table (Open House Activities) Table Header*/}
+                {/* <IonRow className="ion-justify-content-center">
+                    <IonCol sizeSm="2" className="ion-text-wrap" id="boothNoHeader">Booth No.</IonCol>
+                    <IonCol sizeSm="4" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
+                    <IonCol sizeSm="3" className="myScheduleActTableHeader ion-text-wrap">Venue</IonCol>
+                    <IonCol sizeSm="2" className="myScheduleActTableHeader ion-text-wrap">Points</IonCol>
+                    <IonCol sizeSm="1" className="myScheduleActTableHeader ion-text-wrap"></IonCol>
+                </IonRow> */}
+
+                {props.day2 === "day2" ? 
+                    openHouseProgsDay2.map((item: any) => {
+                        if (item.id.split("-")[0] == "activity")
+                            return (
+                                <IonRow className="ion-justify-content-center" key={item.id}>
+                                    <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
+                                    <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
+                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => handleDelete(item.id)}>
+                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            )
+                    }) : '' 
                 }
             </IonGrid>
         </>
