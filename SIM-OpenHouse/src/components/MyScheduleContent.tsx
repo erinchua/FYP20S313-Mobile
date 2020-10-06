@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import { IonCol, IonGrid, IonRow, IonButton, IonAlert } from '@ionic/react';
-
-import '../css/Global.css';
-import '../css/GuidedTourContent.css';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
+import firebase from 'firebase';
 
 import { db } from '../firebase';
 import { useAuth } from '../auth';
-import { ScheduleItem } from '../schedule';
+import '../css/Global.css';
+import '../css/GuidedTourContent.css';
 
 const MyScheduleContent: React.FC<{
     day1: any; 
@@ -18,14 +17,12 @@ const MyScheduleContent: React.FC<{
 }> = props => {
     const { userID } = useAuth();
     
-    {/* Remove Programme Alert */}
+    /* Remove Programme Alert */
     const [confirmRemoveAlert, setConfirmRemoveAlert] = useState(false);
     const [removeSuccess, setRemoveSuccess] = useState(false);
-    const [scheduleDay1, setScheduleDay1] = useState<ScheduleItem[]>([]);
-    const [scheduleDay2, setScheduleDay2] = useState<ScheduleItem[]>([]);
 
     const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => {
-        return item.date == props.openhouseDates[0];
+        return item.date == props.openhouseDates[0]; // openHouseDates is undefine because of parent error
     });
 
     const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => {
@@ -36,33 +33,18 @@ const MyScheduleContent: React.FC<{
         setConfirmRemoveAlert(true);        
     };
 
-    const handleDelete = () => {
-
-    }
-
-    /* useEffect(() => {
-        db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
-            const registered = snapshot.data().registeredProgrammes;
-            const day1 = [], day2 = [];
-            registered.forEach((item: any) => {
-                const itemType = item.split("-");
-                switch (itemType[0]) {
-                    case "talk":
-                        // find object in openHouseProgsDay1 and openHouseProgsDay2 that matches id with item
-                        // push to day1 or day2
-                        const itemDay1 = openHouseProgsDay1.find((prog: any) => prog);
-                        const itemDay2 = openHouseProgsDay2.find((prog: any) => prog.id == item);
-                        //console.log(itemDay1)
-                    case "tour":
-                    case "performance":
-                    case "activity":
-                }
+    const handleDelete = async (item: any) => {
+        try {
+            db.collection('PersonalScheduler').doc(userID).update({
+                registeredProgrammes: firebase.firestore.FieldValue.arrayRemove(item.id)
             });
-        })
-    }, []); */
+        } catch(e) {
+            console.log(e);
+        }
+    };
 
-    //console.log(openHouseProgs)
-    //console.log("day1", openHouseProgsDay1);
+    //console.log("props", props.openHouseProgs)
+    console.log("day1", openHouseProgsDay1);
     //console.log("day2", openHouseProgsDay2);
     
     return(
