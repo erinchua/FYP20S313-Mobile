@@ -28,7 +28,8 @@ const GuidedTours: React.FC = () => {
             .then((snapshot) => {
                 snapshot.forEach((doc) => {
                     const data = doc.get('day')
-                    data.forEach((day: any) => { dates.push(day.date) })
+                    if (Array.isArray(data))
+                        data.forEach((day: any) => { dates.push(day.date) })
                 });
                 setOpenhouseDates(dates);
             })
