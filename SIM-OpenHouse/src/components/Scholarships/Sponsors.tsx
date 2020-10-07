@@ -60,21 +60,26 @@ const Sponsors: React.FC = () => {
                     <IonRow className="scholarship-toggle-details-container" ref={safra} hidden={true}>
                         <IonCol size="12">
                             <IonRow>
-                                <IonText className="scholarship-categories-header">Academic Excellence and Leadership</IonText>
-                            </IonRow>
-                            <IonRow>
                                 <IonText className="scholarship-description">
-                                    Awards are granted to outstanding students who have achieved academic excellence and 
-                                    demonstrated leadership qualities both in and outside the classroom.
-                                </IonText>
-                            </IonRow>
-                            <IonRow>
-                                <IonText className="scholarship-categories-header">Sports and Artistic Talent</IonText>
-                            </IonRow>
-                            <IonRow>
-                                <IonText className="scholarship-description">
-                                    Awards are granted to athletes who possess an impressive track record of achievement in 
-                                    sports or individuals with outstanding artistic talents.
+                                    <p>
+                                    SAFRA members can tap on the SAFRA-SIM GE Sponsorship under the SAFRA Education Scheme to further their education. 
+                                    SIM Global Education will sponsor up to a maximum of ten Nominated Members, by SAFRA, for each academic year.
+                                    </p>
+                                    <p>
+                                    The sponsorship is only applicable for full-time SIM diploma programmes and part-time University of London (UOL) 
+                                    undergraduate degree programmes.
+                                    </p>
+                                    <p>
+                                    Successful members will be granted 50% sponsorship of course fees for diploma programmes. 
+                                    Full SIM course fees sponsorship is granted for part time UOL undergraduate degree programmes 
+                                    but the sponsorship excludes fees payable to UOL.
+                                    </p>
+                                    <p>There are two application periods per year:</p>
+                                    <ul className="scholarship-unorderedList">
+                                        <li className="scholarship-unorderedList-description">March</li>
+                                        <li className="scholarship-unorderedList-description">September</li>
+                                    </ul>
+                                    <p>For more information, please visit the SAFRA website at <IonRouterLink href="www.safra.sg">www.safra.sg</IonRouterLink>.</p>
                                 </IonText>
                             </IonRow>
                         </IonCol>
@@ -83,7 +88,6 @@ const Sponsors: React.FC = () => {
             </IonRow>
 
             <IonRow id="scholarship-moreInfo">
-                <IonText>For more information, please visit the SAFRA website at <IonRouterLink href="www.safra.sg">www.safra.sg</IonRouterLink>.</IonText>
                 <IonText>For enquiries, please email <a href="mailto:oelaine@safra.sg">oelaine@safra.sg</a></IonText>
             </IonRow>
             

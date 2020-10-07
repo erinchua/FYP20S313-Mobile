@@ -152,15 +152,6 @@
 }
 
 /* Scholarships */
-#scholarship-grid {
-    padding: 0;
-}
-
-.scholarship-mainRow {
-    background: white;
-    padding: 0% 2%;
-}
-
 #scholarships-ionRowCol {
     padding: 0;
 }
@@ -178,6 +169,15 @@
     max-width: 100%;
     width: 50%;
     padding: 1% 0%;
+}
+
+#scholarship-grid {
+    padding: 0;
+}
+
+.scholarship-mainRow {
+    background: white;
+    padding: 0% 2%;
 }
 
 #scholarship-FAQ-button {
@@ -278,4 +278,105 @@
     font-weight: bold;
 }
 
-/* Sponsors */
+/* Bursary */
+#bursary-ionRowCol {
+    padding: 0;
+}
+
+.bursary-heading {
+    --background: #e8d091;
+    --indicator-color: transparent;
+    --background-checked: #a9dbd9;
+    text-align: center;
+    --color: #424242;
+    --color-checked: #424242;
+    font-size: 70%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+    width: 50%;
+    padding: 1% 0%;
+}
+
+#bursary-grid {
+    padding: 0;
+}
+
+.bursary-mainRow {
+    background: white;
+    padding: 0% 2%;
+}
+
+#bursary-FAQ-button {
+    --background: transparent;
+    --color: #424242;
+    --box-shadow: transparent;
+    font-weight: bold;
+    margin-bottom: 2px;
+    float: right;
+}
+
+.bursary-mainHeading {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+}
+
+.bursary-mainDescription {
+    font-size: 80%;
+    color: #808080;
+    padding: 1% 1% 3% 1%;
+}
+
+.bursary-toggle-button {
+    --background: transparent;
+    --color: #424242;
+    --box-shadow: transparent;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    float: right;
+    padding: 0% 2%;
+}
+
+.bursary-toggle-header {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+    padding: 5% 2%;
+}
+
+.bursary-toggle-container {
+    padding: 0;
+}
+
+.bursary-description {
+    font-size: 80%;
+    color: #434343;
+    padding: 3%;
+    text-align: left;
+}
+
+.bursary-toggle-details-container {
+    background: white;
+}
+
+.bursary-inner-row {
+    border-top: 2px solid #C8C8C8;
+}
+
+.bursary-unorderedList {
+    padding-left: 4%;
+    padding-right: 3%;
+}
+
+.bursary-unorderedList-description {
+    padding-bottom: 2%;
+}
+
+#bursary-moreInfo {
+    padding: 5% 3% 3% 3%;
+    font-size: 90%;
+    color: #424242;
+    border-top: 2px solid #C8C8C8;
+    font-weight: bold;
+}
