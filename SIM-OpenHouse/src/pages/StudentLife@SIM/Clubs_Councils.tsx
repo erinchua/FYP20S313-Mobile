@@ -1,6 +1,6 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { db } from '../../firebase'
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
 import TopNav from '../../components/TopNav';
@@ -13,10 +13,24 @@ import { RouteComponentProps } from 'react-router-dom';
 
 const Clubs_Councils: React.FC<RouteComponentProps> = () => {
 
+    const [clubCouncils, setClubCouncils] = useState([])
+
+    useEffect(() => {
+        const clubCouncils: any = []
+        db.collection('ClubsAndCouncils').get().then((snapshot) => {
+            snapshot.forEach((doc) => {
+                const data = doc.data()
+                clubCouncils.push(data)
+            })
+            setClubCouncils(clubCouncils)
+        })
+    },
+        [])
+
     return (
         <IonPage>
             <IonHeader>
-                <TopNav title="Clubs & Councils@SIM" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
+                <TopNav title="Clubs & Councils@SIM" route="/u/studentLife@SIM" backarrow={true} hamburger={true} />
             </IonHeader>
 
             <IonContent fullscreen className="studentLife-content">

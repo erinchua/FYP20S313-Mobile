@@ -19,7 +19,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     const [gamesActivities, setGamesActivities] = useState<any[]>([]);
     const [prizes, setPrizes] = useState<any[]>([]);
 
-    
+
     const handleDayOne = () => {
         setDayNum('day1');
     }
@@ -101,7 +101,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
             <IonHeader>
                 <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={true} hamburger={true} />
             </IonHeader>
-            
+
             <IonContent fullscreen id="openHouseActivities-content">
                 {/* Main Heading */}
                 <IonGrid className="openHouseActivities-grid">

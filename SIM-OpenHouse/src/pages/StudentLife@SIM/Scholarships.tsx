@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton } from '@ionic/react';
 import React, { useState } from 'react';
 
 import '../../css/Global.css';
@@ -28,12 +28,10 @@ const Scholarships: React.FC = () => {
                 <IonGrid id="scholarships-ionRowCol">
                     <IonRow id="scholarships-ionRowCol">
                         <IonCol id="scholarships-ionRowCol">
-                            <IonToolbar>
-                                <IonSegment scrollable value={heading} id="scholarships-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
-                                    <IonSegmentButton value="simGeScholarship" className="scholarships-heading" onClick={() => handleHeading()}>SIM GE Scholarship</IonSegmentButton>
-                                    <IonSegmentButton value="sponsors" className="scholarships-heading" onClick={() => handleHeading2()}>Sponsors</IonSegmentButton>
-                                </IonSegment>
-                            </IonToolbar>
+                            <IonSegment scrollable value={heading} id="scholarships-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+                                <IonSegmentButton value="simGeScholarship" className="scholarships-heading" onClick={() => handleHeading()}>SIM GE Scholarship</IonSegmentButton>
+                                <IonSegmentButton value="sponsors" className="scholarships-heading" onClick={() => handleHeading2()}>Sponsors</IonSegmentButton>
+                            </IonSegment>
                         </IonCol>
                     </IonRow>
 

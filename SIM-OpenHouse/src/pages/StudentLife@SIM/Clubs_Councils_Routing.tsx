@@ -7,7 +7,7 @@ import { Route, RouteComponentProps } from 'react-router-dom';
 import Clubs_Councils from './Clubs_Councils';
 import Clubs_Councils_Details from './Clubs_Councils_Details';
 
-const Clubs_Councils_Routing: React.FC<RouteComponentProps> = ({match}) => {
+const Clubs_Councils_Routing: React.FC<RouteComponentProps> = ({ match }) => {
 
     return (
         <IonRouterOutlet>
