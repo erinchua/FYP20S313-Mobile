@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import '../../css/Global.css';
 import '../../css/Study@SIMProgList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faFilter } from '@fortawesome/free-solid-svg-icons';
 import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
 import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
 import RMIT from '../../img/study@SIM/RMITUniversity.png';
@@ -20,14 +20,34 @@ import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
+import CompareProgPopover from '../../components/Study@SIM/CompareProgPopover';
 
 
 const StudySIMProgList: React.FC = () => {
     const [progCompareNo, setProgCompareNo] = useState(0);
+    const [compareProg, setCompareProg] = useState(false);
 
-    const countCompareCourse = () => {
-        console.log("Before: " + progCompareNo);
+    {/* Adding programme for comparison - Need to be generated dynamically */}
+    const compareProgramme = () => {
+        if (compareProg == false) {
+            setProgCompareNo(progCompareNo + 1);
+            setCompareProg(true);
+        } 
+        if (compareProg == true) {
+            setProgCompareNo(progCompareNo - 1);
+            setCompareProg(false);
+        }
     };
+
+    {/* Display Popover */}
+    const [showCompareProgPopover, setShowCompareProgPopover] = useState<{open: boolean, event: Event | undefined}>({
+        open: false,
+        event: undefined,
+      });
+
+    const displayCompareProgPopover = () => {
+        setShowCompareProgPopover({open: true, event: undefined});
+    }
 
     return (
         <IonPage>
@@ -44,7 +64,7 @@ const StudySIMProgList: React.FC = () => {
                             </IonCol>
 
                             <IonCol size="4" sizeSm="4" class="ion-text-right" className="studySIMProgListCol">
-                                <IonButton id="compareBtn" fill="clear">
+                                <IonButton id="compareBtn" fill="clear" onClick={displayCompareProgPopover}>
                                     <IonLabel className="compareLabel">Compare</IonLabel>
                                     <IonBadge id="compareBadge">{progCompareNo}</IonBadge>
                                 </IonButton>
@@ -59,8 +79,6 @@ const StudySIMProgList: React.FC = () => {
                     </IonGrid>
                 </IonToolbar>
             </IonHeader>
-
-            
 
             <IonContent fullscreen={true} id="studySIMProgListContent">
                 <IonGrid id="studySIMProgListGrid">
@@ -95,14 +113,23 @@ const StudySIMProgList: React.FC = () => {
 
                             <IonRow className="progCompareBtnRow">
                                 <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                    <IonButton id="progCompareBtn" size="small" type="submit" onClick={countCompareCourse}>Compare</IonButton>
+                                    {compareProg ?
+                                        <IonButton id="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                            <FontAwesomeIcon style={{paddingLeft: "3%"}} icon={faCheck} />
+                                        </IonButton>
+                                        : 
+                                        (<IonButton id="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
+                                    }
+
                                 </IonCol>
                             </IonRow>
                         </IonCol>
                     </IonRow>
-                    
-
+                
                 </IonGrid>
+
+                {/* <CompareProgPopover isOpen={showCompareProgPopover.open} onDidDismiss={showCompareProgPopover.open} event={showCompareProgPopover.event} /> */}
+                
             </IonContent>
         </IonPage>
     );

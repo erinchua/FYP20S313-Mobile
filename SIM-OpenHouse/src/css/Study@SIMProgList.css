@@ -97,3 +97,9 @@
     --background: #C79A52;
     text-transform: none !important;
 }
+
+#progCompareBtnSelected {
+    margin: 0;
+    --background: #37474F;
+    text-transform: none !important;
+}
