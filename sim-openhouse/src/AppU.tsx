@@ -26,6 +26,9 @@ import Clubs_Councils_Routing from './pages/StudentLife@SIM/Clubs_Councils_Routi
 import StudentCare from './pages/StudentLife@SIM/StudentCare';
 import Scholarships from './pages/StudentLife@SIM/Scholarships';
 import Bursary from './pages/StudentLife@SIM/Bursary';
+import Announcements from './pages/Announcements';
+import Settings from './pages/Settings';
+import StudySIMMain from './pages/Study@SIM/Study@SIMMain';
 
 import { useAuth } from './auth';
 
@@ -79,6 +82,9 @@ const App: React.FC = () => {
       <Route path="/u/studentLife@SIM/studentCare" component={StudentCare} exact={true} />
       <Route path="/u/studentLife@SIM/scholarships" component={Scholarships} exact={true} />
       <Route path="/u/studentLife@SIM/bursary" component={Bursary} exact={true} />
+      <Route path="/u/announcements" component={Announcements} exact={true} />
+      <Route path="/u/settings" component={Settings} exact={true} />
+      <Route path="/u/study@SIMMain" component={StudySIMMain} exact={true} />
 
     </IonRouterOutlet>
   )

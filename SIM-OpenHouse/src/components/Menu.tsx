@@ -22,7 +22,7 @@ const Menu: React.FC = props => {
     };
 
     return(
-        <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="first" id="menuID">             
+        <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="first" id="menuID" className="mainMenu">             
             <IonContent id="menuContent" className="menuContent" scrollEvents={true}>
                 <IonList className="menuList">
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home">                     
@@ -65,7 +65,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faHands} />
                         <IonLabel className="menuLabel">Student Life@SIM</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/announcements">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faBell} />
                         <IonLabel className="menuLabel">Announcements</IonLabel>
                     </IonItem>
@@ -80,7 +80,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faUserCircle} />
                         <IonLabel className="menuLabel">My Profile</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/settings">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faCog} />
                         <IonLabel className="menuLabel">Settings</IonLabel>
                     </IonItem>

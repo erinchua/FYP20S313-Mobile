@@ -41,26 +41,6 @@
     color: #434343;
 }
 
-/* Alert Box CSS */
-.changePasswordAlertBox .alert-wrapper {
-    min-width: 90%;
-    margin: 5%; 
-    padding-bottom: 3%;
-}
-
-.changePasswordAlertBox .cancelChangePasswordBtn {
-    color: #37474F;
-    border: 1px solid #37474F;
-    border-radius: 8px;
-}
-
-.changePasswordAlertBox .changePasswordBtn {
-    background: #37474F;
-    color: #ffffff;
-    border-radius: 8px;
-    margin-left: 5%;
-}
-
 /* Modal CSS */
 .editPasswordModalContent {
     --background: #efefef;
@@ -71,7 +51,8 @@
     bottom: initial;
     min-height: initial;
     top: initial;
-    height: 60%;
+    height: 65%;
+    width: 95%;
 }
 
 #editPasswordModalGrid {
@@ -98,3 +79,20 @@
     --background: #37474F;
 }
 
+#contactNoField .native-input{
+    padding-left: 0;
+}
+
+#saveEditProfileBtnCol {
+    padding-top: 5%;
+}
+
+#saveEditProfileBtn {
+    --background: #37474F;
+    font-size: 80%;
+}
+
+.errorMsg {
+    color: red;
+    font-size: small;
+}

@@ -4,11 +4,13 @@
 
 .menuList {
     background: transparent;
+    padding: 0;
 }
 
 .menuItem {
     color: #c8c8c8;
     --background: transparent;
+
 }
 
 .menuIcon {
