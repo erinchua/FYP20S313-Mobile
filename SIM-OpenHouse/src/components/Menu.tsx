@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonItemDivider } from '@ionic/react';
+import React, { useContext, useRef } from 'react';
+import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonItemDivider, IonMenuToggle } from '@ionic/react';
 
 import '../css/Menu.css';
 import '../css/Global.css';
