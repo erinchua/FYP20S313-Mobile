@@ -95,7 +95,6 @@ const CommonFaqs: React.FC = () => {
                                                             </div>
                                                         </IonTitle>
                                                     </IonCol>
-                        
 
                                                     <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
                                                         <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
