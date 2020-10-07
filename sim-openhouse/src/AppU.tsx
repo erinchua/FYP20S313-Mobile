@@ -30,6 +30,7 @@ import Announcements from './pages/Announcements';
 import Settings from './pages/Settings';
 import StudySIMMain from './pages/Study@SIM/Study@SIMMain';
 import StudySIMProgList from './pages/Study@SIM/Study@SIMProgList';
+import Brochures from './pages/Brochures';
 
 import { useAuth } from './auth';
 
@@ -87,6 +88,7 @@ const App: React.FC = () => {
       <Route path="/u/settings" component={Settings} exact={true} />
       <Route path="/u/study@SIMMain" component={StudySIMMain} exact={true} />
       <Route path="/u/study@SIMMain/study@SIMProgList" component={StudySIMProgList} exact={true} />
+      <Route path="/u/brochures" component={Brochures} exact={true} />
 
     </IonRouterOutlet>
   )

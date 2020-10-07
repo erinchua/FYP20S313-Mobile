@@ -61,7 +61,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faBookOpen} />
                         <IonLabel className="menuLabel">Study@SIM</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/studentLife@SIM">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faHands} />
                         <IonLabel className="menuLabel">Student Life@SIM</IonLabel>
                     </IonItem>
@@ -69,7 +69,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faBell} />
                         <IonLabel className="menuLabel">Announcements</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/brochures">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faReadme} />
                         <IonLabel className="menuLabel">Brochures</IonLabel>
                     </IonItem>
