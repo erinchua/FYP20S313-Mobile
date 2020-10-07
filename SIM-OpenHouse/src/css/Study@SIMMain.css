@@ -31,11 +31,11 @@
     color: #424242;
 }
 
-.mainRow {
+.studyMainRow {
     margin-top: 5%;
 }
 
-.mainCol {
+.studyMainCol {
     padding-top: 3%;
     padding-bottom: 3%;
 }
@@ -50,3 +50,4 @@
     text-align: center;
     color: #434343;
 }
+
