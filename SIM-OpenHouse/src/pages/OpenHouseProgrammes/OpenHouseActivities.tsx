@@ -50,8 +50,9 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
             .get()
             .then((snapshot) => {
                 snapshot.forEach((doc) => {
-                    const data = doc.data()
-                    data.forEach((day: any) => { dates.push(day.date) })
+                    const data = doc.get('day')
+                    if (Array.isArray(data))
+                        data.forEach((day: any) => { dates.push(day.date) })
                 });
                 setOpenhouseDates(dates);
             })
