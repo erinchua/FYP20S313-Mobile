@@ -307,7 +307,6 @@
     "clubsAndCouncilsLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/ClubsAndCouncil%2FSpecialInterest%2FMathmaticalSciences.png?alt=media&token=d732e065-de91-4f75-8926-ad84d58c2edf",
     "categoryType": "SpecialInterest"
   },
-
   {
     "id": "club-045",
     "clubsAndCouncilTitle": "Student Toastmasters",
@@ -494,7 +493,7 @@
     "id": "club-071",
     "clubsAndCouncilTitle": "Tchoukball",
     "clubsAndCouncilDescription": "A non-contact handball game, similar to an amalgamation of handball, netball, and volleyball, this sport is quickly becoming a new must-see phenomenon at local sports events – join the craze!",
-    "clubsAndCouncilsLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/ClubsAndCouncil%2FSportsFitness%2FTennis.png?alt=media&token=90761b7f-c339-4096-b5f7-3c74a571c739",
+    "clubsAndCouncilsLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/ClubsAndCouncil%2FSportsFitness%2FTchoukball.jpg?alt=media&token=07be0cf8-bc4f-48fa-be18-5bb039359a06",
     "categoryType": "SportsFitness"
   },
   {
@@ -518,7 +517,6 @@
     "clubsAndCouncilsLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/ClubsAndCouncil%2FSportsFitness%2FUltimateFrisbee.png?alt=media&token=354a3c90-eed9-45a2-acb7-36d87ee717f7",
     "categoryType": "SportsFitness"
   },
-
   {
     "id": "club-075",
     "clubsAndCouncilTitle": "Volleyball",
