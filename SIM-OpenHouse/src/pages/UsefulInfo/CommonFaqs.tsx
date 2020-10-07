@@ -80,7 +80,6 @@ const CommonFaqs: React.FC = () => {
                 <IonGrid id="faqGrid">
                     {/* Open House FAQs */}
                     {tab === "openHouseFAQs" ?
-                        <>
                             {/* Open House FAQ Accordion */}
                             {openhouseFaq.map(({ id, faqQuestion, faqAnswer }) => {
                                 return (
@@ -95,6 +94,7 @@ const CommonFaqs: React.FC = () => {
                                                             </div>
                                                         </IonTitle>
                                                     </IonCol>
+                        <>
 
                                                     <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
                                                         <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
