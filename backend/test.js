@@ -4,7 +4,7 @@ const db = require('./config/adminConfig')
 //db.collection('Test').doc('test').update({testarray: admin.firestore.FieldValue.arrayUnion('hello')});
 
 const userID = "KxJfH2BPsQaEQgwjS8SLEog1nSX2";
-db.collection('PersonalScheduler').doc(userID).get().then(doc => {
+/* db.collection('PersonalScheduler').doc(userID).get().then(doc => {
     const items = [];
     const activities = doc.data().registeredProgrammes;
     activities.forEach(item => {
@@ -34,4 +34,51 @@ db.collection('PersonalScheduler').doc(userID).get().then(doc => {
         })
         console.log(mapped)
     }, 1000);
+}); */
+
+const prog = {
+    awardingUni: "University of London",
+    capacityLimit: 50,
+    date: "21-Nov-2020",
+    endTime: "11:00AM",
+    hasRecording: false,
+    id: "talk-002",
+    isLive: false,
+    noRegistered: 0,
+    startTime: "10:00AM",
+    talkName: "University of London - Computer Science Undergraduate",
+    venue: "SIM HQ BLK B LT B.2.01" 
+}
+db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
+    const registered = snapshot.data().registeredProgrammes;
+    
+        registered.forEach((item) => {
+            const itemType = item.split("-");
+
+            switch (itemType[0]) {
+                case "talk":
+                    db.collection('ProgrammeTalks').doc(item).onSnapshot(doc => {
+                        //console.log(doc.data().startTime.slice(-2, doc.data().startTime.length))
+                        if (prog.date == doc.data().date) {
+                            //console.log(true)
+                            let progStart = Number(prog.startTime.split(":")[0]), progEnd = Number(prog.endTime.split(":")[0]);
+                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
+                            //console.log(progStart, itemStart)
+                            if (prog.startTime.slice(-2, prog.startTime.length) == "PM") progStart += 12;
+                            if (prog.endTime.slice(-2, prog.startTime.length) == "PM") progStart += 12;
+                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
+                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+
+                            if ((progStart >= itemStart && progStart <= itemEnd) || (progEnd >= itemStart && progEnd <= itemEnd))
+                                console.log(true)
+                        }
+                    });
+                /* case "tour":
+                    return db.collection('GuidedTours').doc(item).onSnapshot(doc => {});
+                case "performance":
+                    return db.collection('Performances').doc(item).onSnapshot(doc => {}); */
+                default:
+                    return;
+            }
+        });
 });

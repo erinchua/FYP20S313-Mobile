@@ -1,6 +1,7 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import firebase from 'firebase';
+import { sync } from 'ionicons/icons';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
@@ -9,6 +10,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../../firebase';
 import { useAuth } from '../../auth';
+import { isConflict } from '../../checker';
 
 const ProgTalkSchedule: React.FC<{
     day1: any;
@@ -18,9 +20,13 @@ const ProgTalkSchedule: React.FC<{
 }> = props => {
     const { userID } = useAuth();
 
+    {/* Register Alert */ }
+    //const [registerSuccess, setRegisterSuccess] = useState(false);
+    //const [registerFail, setRegisterFail] = useState(false);
+    const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
+
     const programmeTalkDay1 = props.programmeTalk
         .filter((talk: any) => {
-            console.log(talk.date)
             return talk.date == props.openhouseDates[0]
         })
 
@@ -28,10 +34,6 @@ const ProgTalkSchedule: React.FC<{
         .filter((talk: any) => {
             return talk.date == props.openhouseDates[1]
         })
-
-    {/* Register Alert */ }
-    const [registerSuccess, setRegisterSuccess] = useState(false);
-    const [registerFail, setRegisterFail] = useState(false);
 
     const displayRegisterAlert = () => {
         {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
@@ -48,25 +50,26 @@ const ProgTalkSchedule: React.FC<{
         {/* set state to disable the + btn in else {} */ }
     };
 
-    const addToSchedule = (programmeTalk: any) => {
+    const addToSchedule = async (programmeTalk: any) => {
         try {
+            isConflict(programmeTalk, userID);
             // make check for schedule conflict then below
-            db.collection('PersonalScheduler').doc(userID).update({
+            setAlert({ registerSuccess: false, registerFail: false, loading: true });
+            await db.collection('PersonalScheduler').doc(userID).update({
                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
-            })
-            displayRegisterAlert();
+            });
+            setAlert({ registerSuccess: true, registerFail: false, loading: false });
         } catch (e) {
+            setAlert({ registerSuccess: false, registerFail: false, loading: false });
             console.log(e);
         }
     };
 
-    //console.log(programmeTalkDay1)
-
     return (
         <>
             <IonAlert
-                isOpen={registerSuccess}
-                onDidDismiss={() => setRegisterSuccess(false)}
+                isOpen={alert.registerSuccess}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Successfully Registered'}
@@ -75,8 +78,8 @@ const ProgTalkSchedule: React.FC<{
             ></IonAlert>
 
             <IonAlert
-                isOpen={registerFail}
-                onDidDismiss={() => setRegisterFail(false)}
+                isOpen={alert.registerFail}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Registration Unsuccessful'}
@@ -138,6 +141,7 @@ const ProgTalkSchedule: React.FC<{
                     }) : ''
                 }
             </IonGrid>
+            <IonLoading isOpen={alert.loading} />
         </>
     );
 };
