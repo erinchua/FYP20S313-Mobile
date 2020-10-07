@@ -10,10 +10,10 @@ export interface ScheduleItem {
 export function toSchedule(doc: any): ScheduleItem {
     return {
         id: doc.id,
-        name: doc.talkName || doc.tourName || doc.performanceName || doc.activityName,
+        name: doc.talkName || doc.tourName || doc.performanceName || doc.gameBoothName,
         date: doc.date,
         startTime: doc.startTime,
-        endTime: doc.endTime,
+        endTime: doc.endTime || null,
         venue: doc.venue
     };
 };

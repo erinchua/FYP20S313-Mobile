@@ -15,10 +15,6 @@ const MySchedule: React.FC = () => {
     const { userID } = useAuth();
     const [dayNum, setDayNum] = useState("day1");
     const [openhouseDates, setOpenhouseDates] = useState([]);
-    const [programmeTalks, setProgrammeTalks] = useState<ScheduleItem[]>([]);
-    const [guidedTours, setGuidedTours] = useState<ScheduleItem[]>([]);
-    const [performances, setPerformances] = useState<ScheduleItem[]>([]);
-    const [gamesActivities, setGamesActivities] = useState<ScheduleItem[]>([]);
     const [openHouseProgs, setOpenHouseProgs] = useState<ScheduleItem[]>([]);
 
     const handleDayOne = () => {
@@ -30,58 +26,49 @@ const MySchedule: React.FC = () => {
     };
 
     useEffect(() => {
-        const dates: any = [];
     
-        db.collection('Openhouse').get().then((snapshot) => {
-            snapshot.forEach((doc) => {
-                const data = doc.get('day')
-                data.forEach((day: any) => { dates.push(day.date) })
+        db.collection('Openhouse').get().then(snapshot => {
+            const dates: any = [];
+            snapshot.forEach(doc => {
+                const data = doc.get('day');
+                //console.log(data);
+                data.forEach((day: any) => dates.push(day.date)); // suddenly not working?? TypeError: data.forEach is not a function
             });
+            //console.log(dates);
             setOpenhouseDates(dates);
         }).catch((error) => console.log(error));
 
-        // Have problem
-        db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+        db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
             const registered = snapshot.data().registeredProgrammes;
-            //const talks: any = [], tours: any = [], perform: any = [], games: any = [];
             const scheduleProgs: any = [];
             registered.forEach((item: any) => {
                 const itemType = item.split("-");
                 switch (itemType[0]) {
                     case "talk":
-                        //console.log(item);
-                        db.collection('ProgrammeTalks').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
-                        break;
+                        return db.collection('ProgrammeTalks').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
                     case "tour":
-                        //db.collection('GuidedTours').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
-                        break;
+                        return db.collection('GuidedTours').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
                     case "performance":
-                        //db.collection('Performances').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
-                        break;
+                        return db.collection('Performances').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
                     case "activity":
-                        //db.collection('GamesActivities').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
-                        break;
+                        return db.collection('GamesActivities').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
                     default:
                         return;
                 }
             });
-            console.log(scheduleProgs) // this one returns no value, length is 0
-            // setProgrammeTalks(talks.map(toSchedule));
-            // setGuidedTours(tours.map(toSchedule));
-            // setPerformances(perform.map(toSchedule));
-            // setGamesActivities(games.map(toSchedule));
-            setOpenHouseProgs(scheduleProgs.map(toSchedule));
+            
+            setTimeout(() => setOpenHouseProgs(scheduleProgs.map(toSchedule)), 500);
         });
     
         // No problem
-        db.collection('ProgrammeTalks').get().then(snapshot => {
+        /* db.collection('ProgrammeTalks').get().then(snapshot => {
             const items: any = [];
             snapshot.forEach((doc) => items.push(doc.data()));
             console.log(items) // this one returns a value, length is 6
             return setProgrammeTalks(items.map(toSchedule));
-        }).catch(err => console.log(err));;
+        }).catch(err => console.log(err));
 
-        /* db.collection('GuidedTours').get().then(snapshot => {
+        db.collection('GuidedTours').get().then(snapshot => {
             const items: any = [];
             snapshot.forEach((doc) => items.push(doc.data()));
             return setGuidedTours(items.map(toSchedule));
@@ -100,8 +87,6 @@ const MySchedule: React.FC = () => {
         }).catch(err => console.log(err)); */
 
     }, []);
-
-    //console.log(programmeTalks)
 
     return (
         <IonPage>
@@ -137,7 +122,7 @@ const MySchedule: React.FC = () => {
                     </IonRow>
                 </IonGrid>
 
-                <MyScheduleContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} openHouseProgs={[...programmeTalks, ...guidedTours, ...performances, ...gamesActivities]} />
+                <MyScheduleContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} openHouseProgs={openHouseProgs} />
             </IonContent>
         </IonPage>
     );
