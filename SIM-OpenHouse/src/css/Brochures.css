@@ -2,3 +2,83 @@
 .brochures-content {
     --background: #EFEFEF;
 }
+
+#brochures-ionRowCol {
+    padding: 0;
+}
+
+.brochures-heading {
+    --background: #e8d091;
+    --indicator-color: transparent;
+    --background-checked: #a9dbd9;
+    text-align: center;
+    --color: #424242;
+    --color-checked: #424242;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+    width: 50%;
+    padding: 1% 0%;
+}
+
+#brochures-grid {
+    padding: 0;
+}
+
+.brochures-toggle-container {
+    padding: 0;
+}
+
+.brochures-toggle-button {
+    --background: transparent;
+    --color: #424242;
+    --box-shadow: transparent;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    float: right;
+    padding: 0% 2%;
+}
+
+.brochures-toggle-header {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+    padding: 5% 2% 1% 2%;
+}
+
+.brochures-toggle-subHeader {
+    font-size: 70%;
+    color: #424242;
+    padding: 1% 2% 5% 2%;
+}
+
+.brochures-description {
+    font-size: 80%;
+    color: #434343;
+    padding: 3%;
+    text-align: left;
+}
+
+.brochures-toggle-details-container {
+    background: white;
+}
+
+.brochures-inner-row {
+    border-bottom: 2px solid #C8C8C8;
+}
+
+.brochures-coverImg {
+    height: 70%;
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+.brochures-prospectus-button {
+    --border-color: #37474F;
+    color: #37474F;
+    height: 50px;
+    margin-top: 15%;
+    font-size: 85%;
+}
