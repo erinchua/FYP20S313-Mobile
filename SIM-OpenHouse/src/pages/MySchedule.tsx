@@ -32,7 +32,8 @@ const MySchedule: React.FC = () => {
             snapshot.forEach(doc => {
                 const data = doc.get('day');
                 //console.log(data);
-                data.forEach((day: any) => dates.push(day.date)); // suddenly not working?? TypeError: data.forEach is not a function
+                if (Array.isArray(data))
+                    data.forEach((day: any) => dates.push(day.date));
             });
             //console.log(dates);
             setOpenhouseDates(dates);
