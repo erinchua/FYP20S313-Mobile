@@ -1,4 +1,4 @@
-import { IonCol, IonGrid, IonRow, IonButton, IonAlert } from '@ionic/react';
+import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
@@ -18,40 +18,45 @@ const MyScheduleContent: React.FC<{
     const { userID } = useAuth();
     
     /* Remove Programme Alert */
-    const [confirmRemoveAlert, setConfirmRemoveAlert] = useState(false);
-    const [removeSuccess, setRemoveSuccess] = useState(false);
+    //const [confirmRemoveAlert, setConfirmRemoveAlert] = useState(false);
+    //const [removeSuccess, setRemoveSuccess] = useState(false);
+    const [alert, setAlert] = useState({ confirmRemove: false, removeSuccess: false, loading: false });
+    const [toBeDeleted, setToBeDeleted] = useState("");
 
     const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => {
-        return item.date == props.openhouseDates[0]; // openHouseDates is undefine because of parent error
+        return item.date == props.openhouseDates[0];
     });
 
     const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => {
         return item.date == props.openhouseDates[1];
     });
 
-    const displayRemoveProgAlert = () => {
-        setConfirmRemoveAlert(true);        
+    const displayRemoveProgAlert = (id: any) => {
+        setAlert({ confirmRemove: true, removeSuccess: false, loading: false });
+        setToBeDeleted(id);
     };
 
     const handleDelete = async (item: any) => {
         try {
-            db.collection('PersonalScheduler').doc(userID).update({
+            setAlert({ confirmRemove: false, removeSuccess: false, loading: true });
+            await db.collection('PersonalScheduler').doc(userID).update({
                 registeredProgrammes: firebase.firestore.FieldValue.arrayRemove(item)
             });
+            setAlert({ confirmRemove: false, removeSuccess: true, loading: false });
         } catch(e) {
+            setAlert({ confirmRemove: false, removeSuccess: false, loading: false });
             console.log(e);
         }
     };
 
     //console.log("props", props.openHouseProgs)
-    console.log("day1", openHouseProgsDay1);
-    //console.log("day2", openHouseProgsDay2);
+    //console.log(props.openhouseDates)
     
     return(
         <>
             <IonAlert
-                isOpen={confirmRemoveAlert}
-                onDidDismiss={() => setConfirmRemoveAlert(false)}
+                isOpen={alert.confirmRemove}
+                //onDidDismiss={() => { return }}
                 cssClass='alertBox'
                 mode='md'
                 header={'Confirm removal of programme from scheduler'}
@@ -61,22 +66,21 @@ const MyScheduleContent: React.FC<{
                         text: 'No',
                         role: 'cancel',
                         cssClass: 'secondary',
-                        handler: cancel => {
+                        handler: () => {
                             console.log('Confirm Cancel: cancel delete');
+                            setAlert({ confirmRemove: false, removeSuccess: false, loading: false });
                         }
                     }, {
                         text: 'Yes',
                         handler: () => {
-                            setConfirmRemoveAlert(false);
-                            setRemoveSuccess(true);
-                            {/* Logic to remove the data in the row of the selected remove button */}
+                            handleDelete(toBeDeleted);
                         }
                     }]}
             ></IonAlert>
 
             <IonAlert
-                isOpen={removeSuccess}
-                onDidDismiss={() => setRemoveSuccess(false)}
+                isOpen={alert.removeSuccess}
+                onDidDismiss={() => setAlert({ confirmRemove: false, removeSuccess: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Successfully Removed Programme'}
@@ -102,7 +106,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">9:00AM  to 10:00AM</IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">Sample</IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton>
                             </IonCol>
@@ -115,7 +119,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -128,7 +132,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -141,7 +145,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -154,7 +158,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -167,7 +171,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -180,7 +184,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -193,7 +197,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -210,7 +214,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">9:00AM  to 10:00AM</IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">Sample</IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton>
                             </IonCol>
@@ -223,7 +227,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -236,7 +240,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -249,7 +253,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -262,7 +266,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -275,7 +279,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -288,7 +292,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -301,7 +305,7 @@ const MyScheduleContent: React.FC<{
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
                             <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={displayRemoveProgAlert}>
+                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
                                     <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                 </IonButton> */}
                             </IonCol>
@@ -328,12 +332,12 @@ const MyScheduleContent: React.FC<{
                         if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
                                     <IonCol size-sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
-                                    <IonCol size-sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
+                                    <IonCol size-sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.points}</IonCol>
                                     <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => handleDelete(item.id)}>
+                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                         </IonButton>
                                     </IonCol>
@@ -361,12 +365,12 @@ const MyScheduleContent: React.FC<{
                         if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
                                     <IonCol sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
-                                    <IonCol sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.id}</IonCol>
+                                    <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
+                                    <IonCol sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.points}</IonCol>
                                     <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => handleDelete(item.id)}>
+                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                         </IonButton>
                                     </IonCol>
@@ -375,6 +379,7 @@ const MyScheduleContent: React.FC<{
                     }) : '' 
                 }
             </IonGrid>
+            <IonLoading isOpen={alert.loading} />
         </>
     );
 }

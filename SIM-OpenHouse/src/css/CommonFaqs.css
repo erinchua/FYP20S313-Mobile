@@ -3,12 +3,12 @@
     padding: 0;
 }
 
-.segmentHeader {
+.faqSegmentHeader {
     padding: 0;
     min-width: 100%;
 }
 
-.segmentBtn {
+.faqSegmentBtn {
     --background: #d9d9d9;
     --background-checked: #A9DBD9;
     --color: #424242;

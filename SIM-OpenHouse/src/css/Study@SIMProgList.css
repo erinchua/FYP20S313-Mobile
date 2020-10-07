@@ -4,6 +4,7 @@
 
 #studySIMProgListContent {
     --background: #efefef;
+    z-index: -1;
 }
 
 #studySIMProgListGrid {
@@ -57,6 +58,10 @@
     margin-right: 0;
 }
 
+.studySIMProgListColDetails {
+    padding-right: 3%;
+}
+
 .progCourseRow {
     padding-bottom: 2%;
 }
@@ -95,5 +100,11 @@
 #progCompareBtn {
     margin: 0;
     --background: #C79A52;
+    text-transform: none !important;
+}
+
+#progCompareBtnSelected {
+    margin: 0;
+    --background: #37474F;
     text-transform: none !important;
 }

@@ -13,7 +13,7 @@ import TopNav from "../components/TopNav";
 
 function formatDate(isoDate: any) {
   return new Date(isoDate).toLocaleDateString('en-UK', {
-    day: 'numeric', month: 'long', year: 'numeric'
+    day: 'numeric', month: 'short', year: 'numeric'
   });
 };
 
@@ -119,9 +119,9 @@ const Registration: React.FC = () => {
                 <IonItem>
                   <IonLabel id="highestQualificationLabel">Highest Qualification</IonLabel>
                   <IonSelect placeholder="Please select" name="highestQualification" ref={register({ required: true })}>
-                    <IonSelectOption value="aLevel">'A' Level</IonSelectOption>
-                    <IonSelectOption value="oLevel">'O' Level</IonSelectOption>
-                    <IonSelectOption value="degree">Degree</IonSelectOption>
+                    <IonSelectOption value="A-Level">'A' Level</IonSelectOption>
+                    <IonSelectOption value="O-Level">'O' Level</IonSelectOption>
+                    <IonSelectOption value="Degree">Degree</IonSelectOption>
                     <IonSelectOption value="Diploma">Diploma</IonSelectOption>
                   </IonSelect>
                 </IonItem>

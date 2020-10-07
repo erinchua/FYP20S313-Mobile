@@ -229,13 +229,13 @@ const SimGeScholarship: React.FC = () => {
                         <IonCol size="12">
                             <IonRow>
                                 <IonText className="scholarship-description">
-                                    There are two application periods per year: <br/>
+                                    <p>There are two application periods per year:</p>
                                     <ul className="scholarship-unorderedList">
                                         <li className="scholarship-unorderedList-description">March</li>
                                         <li className="scholarship-unorderedList-description">September</li>
                                     </ul>
-                                    Applicants must separately seek admission to their programmes of choice and must be accepted for 
-                                    admission before being awarded the scholarship.
+                                    <p>Applicants must separately seek admission to their programmes of choice and must be accepted for 
+                                    admission before being awarded the scholarship.</p>
                                 </IonText>
                             </IonRow>
                         </IonCol>
@@ -259,7 +259,7 @@ const SimGeScholarship: React.FC = () => {
                         <IonCol size="12">
                             <IonRow>
                                 <IonText className="scholarship-description">
-                                    Interested applicants are required to submit the following documents in softcopies (scanned and zipped): <br/>
+                                    <p>Interested applicants are required to submit the following documents in softcopies (scanned and zipped):</p>
                                     <ul className="scholarship-unorderedList">
                                         <li className="scholarship-unorderedList-description">Scholarship Application Form (The next SIM GE Scholarship application is in March 2021. Please check the website again for the application form)</li>
                                         <li className="scholarship-unorderedList-description">All official academic documents (from Secondary to Tertiary Level), in original language with English translation, if applicable.</li>
@@ -285,7 +285,7 @@ const SimGeScholarship: React.FC = () => {
                                         <li className="scholarship-unorderedList-description">Academic – Tampines Meridian Junior College H2 Grade 3Bs</li>
                                         <li className="scholarship-unorderedList-description">Arts – UOL Avg 55</li>
                                     </ul>
-                                    Please submit only one scholarship application per applicant.
+                                    <p>Please submit only one scholarship application per applicant.</p>
                                 </IonText>
                             </IonRow>
                         </IonCol>
