@@ -158,6 +158,7 @@
 
 .scholarship-mainRow {
     background: white;
+    padding: 0% 2%;
 }
 
 #scholarships-ionRowCol {
@@ -176,6 +177,7 @@
     --border-color: transparent;
     max-width: 100%;
     width: 50%;
+    padding: 1% 0%;
 }
 
 #scholarship-FAQ-button {
@@ -184,6 +186,7 @@
     --box-shadow: transparent;
     font-weight: bold;
     margin-bottom: 2px;
+    float: right;
 }
 
 .scholarship-mainHeading {
@@ -195,7 +198,7 @@
 .scholarship-mainDescription {
     font-size: 80%;
     color: #808080;
-    padding: 1%;
+    padding: 1% 1% 3% 1%;
 }
 
 .scholarship-toggle-button {
@@ -204,14 +207,15 @@
     --box-shadow: transparent;
     margin-top: 5%;
     margin-bottom: 2%;
-    margin-right: 0%;
+    float: right;
+    padding: 0% 2%;
 }
 
 .scholarship-toggle-header {
     font-size: 90%;
     font-weight: bold;
     color: #424242;
-    padding: 3% 0%;
+    padding: 5% 2%;
 }
 
 .scholarship-toggle-container {
@@ -228,7 +232,8 @@
 .scholarship-description {
     font-size: 80%;
     color: #434343;
-    margin: 3% 0%;
+    padding: 3%;
+    text-align: left;
 }
 
 .scholarship-toggle-details-container {
@@ -236,5 +241,41 @@
 }
 
 .scholarship-inner-row {
-    border-bottom: 2px solid #c8c8c8;
+    border-top: 2px solid #C8C8C8;
 }
+
+.scholarship-unorderedList {
+    padding-left: 4%;
+    padding-right: 3%;
+}
+
+.scholarship-unorderedList-description {
+    padding-bottom: 2%;
+}
+
+.scholarship-tenure-col {
+    border: 1px solid #C8C8C8;
+}
+
+#tenure-months, #tenure-programmeTitle {
+    text-align: center;
+}
+
+.tenure-headings {
+    font-weight: bold;
+    color: #424242;
+}
+
+.tenure-descriptions {
+    color: #434343;
+}
+
+#scholarship-moreInfo {
+    padding: 5% 3% 3% 3%;
+    font-size: 90%;
+    color: #424242;
+    border-top: 2px solid #C8C8C8;
+    font-weight: bold;
+}
+
+/* Sponsors */
