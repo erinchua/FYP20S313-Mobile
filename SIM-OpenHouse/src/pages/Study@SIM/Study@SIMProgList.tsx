@@ -25,6 +25,10 @@ import Menu from '../../components/Menu';
 const StudySIMProgList: React.FC = () => {
     const [progCompareNo, setProgCompareNo] = useState(0);
 
+    const countCompareCourse = () => {
+        console.log("Before: " + progCompareNo);
+    };
+
     return (
         <IonPage>
             <IonHeader>
@@ -91,7 +95,7 @@ const StudySIMProgList: React.FC = () => {
 
                             <IonRow className="progCompareBtnRow">
                                 <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                    <IonButton id="progCompareBtn" size="small" type="submit">Compare</IonButton>
+                                    <IonButton id="progCompareBtn" size="small" type="submit" onClick={countCompareCourse}>Compare</IonButton>
                                 </IonCol>
                             </IonRow>
                         </IonCol>
