@@ -2,13 +2,13 @@ import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, Io
 import React, { useRef, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { db } from '../../firebase'
+
 import '../../css/Global.css';
 import '../../css/CommonFaqs.css';
 import { addCircle, removeCircle } from 'ionicons/icons';
 
 import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
-import { idText } from 'typescript';
 
 
 const CommonFaqs: React.FC = () => {
@@ -62,13 +62,13 @@ const CommonFaqs: React.FC = () => {
             <IonContent fullscreen={true}>
                 <IonGrid id="faqTabGrid">
                     <IonRow>
-                        <IonHeader className="segmentHeader">
-                            <IonToolbar className="segmentHeader">
-                                <IonSegment scrollable value={tab} className="segmentHeader">
-                                    <IonSegmentButton value="openHouseFAQs" className="segmentBtn ion-text-wrap" id="openHouseFAQs" onClick={handleOpenHouseFAQs}>
+                        <IonHeader className="faqSegmentHeader">
+                            <IonToolbar className="faqSegmentHeader">
+                                <IonSegment scrollable value={tab} className="faqSegmentHeader">
+                                    <IonSegmentButton value="openHouseFAQs" className="faqSegmentBtn ion-text-wrap" id="openHouseFAQs" onClick={handleOpenHouseFAQs}>
                                         Open House FAQs
                                     </IonSegmentButton>
-                                    <IonSegmentButton value="generalFAQs" className="segmentBtn ion-text-wrap" id="generalFAQs" onClick={handleGeneralFAQs}>
+                                    <IonSegmentButton value="generalFAQs" className="faqSegmentBtn ion-text-wrap" id="generalFAQs" onClick={handleGeneralFAQs}>
                                         General FAQs
                                     </IonSegmentButton>
                                 </IonSegment>
