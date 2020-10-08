@@ -1,5 +1,5 @@
-import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
-import React from 'react';
+import { IonGrid, IonRow, IonCol, IonButton, IonLoading } from '@ionic/react';
+import React, { useState } from 'react';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import firebase from 'firebase';
@@ -11,6 +11,7 @@ import { useAuth } from '../../auth';
 
 const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openhouseDates: any }> = props => {
     const { userID } = useAuth();
+    const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
 
     const gamesActivitiesDay1 = props.gamesActivities.filter((activity: any) => {
         return activity.date == props.openhouseDates[0]
@@ -19,13 +20,16 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
         return activity.date == props.openhouseDates[1]
     })
 
-    const addToSchedule = (programmeTalk: any) => {
+    const addToSchedule = async (programmeTalk: any) => {
         try {
             // make check for schedule conflict then below
-            db.collection('PersonalScheduler').doc(userID).update({
+            setAlert({ registerSuccess: false, registerFail: false, loading: true });
+            await db.collection('PersonalScheduler').doc(userID).update({
                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
-            })
+            });
+            setAlert({ registerSuccess: true, registerFail: false, loading: false });
         } catch (e) {
+            setAlert({ registerSuccess: false, registerFail: false, loading: false });
             console.log(e);
         }
     };
@@ -77,6 +81,7 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                     : ''
                 }
             </IonGrid>
+            <IonLoading isOpen={alert.loading} />
         </>
     );
 
