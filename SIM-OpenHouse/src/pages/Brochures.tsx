@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 
 import '../css/Global.css';
@@ -23,17 +23,16 @@ const Brochures: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <TopNav title="Brochures" route="/u/home" backarrow={ true } hamburger={ true }/>
+
+                <IonToolbar>
+                    <IonSegment scrollable value={heading} id="brochures-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+                        <IonSegmentButton value="study@SIM" className="brochures-heading" onClick={() => handleHeading()}><div>Study@SIM</div></IonSegmentButton>
+                        <IonSegmentButton value="studentLife@SIM" className="brochures-heading" onClick={() => handleHeading2()}>Student Life@SIM</IonSegmentButton>
+                    </IonSegment>
+                </IonToolbar>
             </IonHeader>
             <IonContent fullscreen className="brochures-content">
                 <IonGrid id="brochures-ionRowCol">
-                    <IonRow id="brochures-ionRowCol">
-                        <IonCol id="brochures-ionRowCol">
-                            <IonSegment scrollable value={heading} id="brochures-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
-                                <IonSegmentButton value="study@SIM" className="brochures-heading" onClick={() => handleHeading()}><div>Study@SIM</div></IonSegmentButton>
-                                <IonSegmentButton value="studentLife@SIM" className="brochures-heading" onClick={() => handleHeading2()}>Student Life@SIM</IonSegmentButton>
-                            </IonSegment>
-                        </IonCol>
-                    </IonRow>
 
                     {heading === 'study@SIM' ? 
                         <Study_SIM /> : ''

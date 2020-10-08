@@ -82,3 +82,20 @@
     margin-top: 15%;
     font-size: 85%;
 }
+
+#brochures-titleRow {
+    border-bottom: 2px solid #C8C8C8;
+}
+
+#brochures-title {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+    padding: 10% 2% 5% 2%;
+}
+
+.brochuresProg-toggle-header {
+    font-size: 85%;
+    color: #424242;
+    padding: 5% 2%;
+}
