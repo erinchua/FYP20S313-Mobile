@@ -4,6 +4,7 @@
 
 #studySIMProgListContent {
     --background: #efefef;
+    z-index: -1;
 }
 
 #studySIMProgListGrid {
@@ -55,6 +56,10 @@
 #studyProgUniImg {
     max-width: 60%;
     margin-right: 0;
+}
+
+.studySIMProgListColDetails {
+    padding-right: 3%;
 }
 
 .progCourseRow {
