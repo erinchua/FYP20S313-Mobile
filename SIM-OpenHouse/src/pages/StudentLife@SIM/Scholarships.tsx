@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 
 import '../../css/Global.css';
@@ -23,17 +23,17 @@ const Scholarships: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <TopNav title="Scholarships" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
+
+                <IonToolbar>
+                    <IonSegment scrollable value={heading} id="scholarships-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+                        <IonSegmentButton value="simGeScholarship" className="scholarships-heading" onClick={() => handleHeading()}>SIM GE Scholarship</IonSegmentButton>
+                        <IonSegmentButton value="sponsors" className="scholarships-heading" onClick={() => handleHeading2()}>Sponsors</IonSegmentButton>
+                    </IonSegment>
+                </IonToolbar>
             </IonHeader>
+            
             <IonContent fullscreen className="studentLife-content">
                 <IonGrid id="scholarships-ionRowCol">
-                    <IonRow id="scholarships-ionRowCol">
-                        <IonCol id="scholarships-ionRowCol">
-                            <IonSegment scrollable value={heading} id="scholarships-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
-                                <IonSegmentButton value="simGeScholarship" className="scholarships-heading" onClick={() => handleHeading()}>SIM GE Scholarship</IonSegmentButton>
-                                <IonSegmentButton value="sponsors" className="scholarships-heading" onClick={() => handleHeading2()}>Sponsors</IonSegmentButton>
-                            </IonSegment>
-                        </IonCol>
-                    </IonRow>
 
                     {heading === 'simGeScholarship' ? 
                         <SimGeScholarship /> : ''
