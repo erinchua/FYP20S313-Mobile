@@ -131,7 +131,7 @@ const Home: React.FC = () => {
             </IonCol>
             
             <IonCol sizeSm="4" className="homeMainCol">
-              <IonRouterLink routerLink="/u/study@SIMMain">
+              <IonRouterLink href="/u/study@SIMMain">
                 <IonRow className="ion-justify-content-center">
                     <FontAwesomeIcon className="homeIcons" size="2x" icon={faBookOpen} />
                 </IonRow>

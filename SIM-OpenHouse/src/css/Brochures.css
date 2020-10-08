@@ -69,8 +69,8 @@
 }
 
 .brochures-coverImg {
-    height: 70%;
-    width: 70%;
+    height: 90%;
+    width: 90%;
     display: block;
     margin: 0 auto;
 }
@@ -79,6 +79,42 @@
     --border-color: #37474F;
     color: #37474F;
     height: 50px;
-    margin-top: 15%;
+    margin-top: 5%;
+    margin-bottom: 20%;
     font-size: 85%;
+}
+
+#brochures-titleRow {
+    border-bottom: 2px solid #C8C8C8;
+}
+
+#brochures-title {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+    padding: 10% 2% 5% 2%;
+}
+
+.brochuresProg-toggle-header {
+    font-size: 85%;
+    color: #424242;
+    padding: 5% 2%;
+}
+
+#noBrochures {
+    text-align: center;
+    padding: 10% 0%;
+    font-size: 80%;
+    font-style: italic;
+    color: #434343;
+}
+
+.brochures-studentLife-button {
+    --background: #37474F;
+    color: white;
+    height: 50px;
+    margin-top: 5%;
+    font-size: 85%;
+    width: 80%;
+    text-transform: none;
 }
