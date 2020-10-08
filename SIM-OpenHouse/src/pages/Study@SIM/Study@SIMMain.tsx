@@ -1,5 +1,6 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonItem, IonPage, IonRouterLink, IonRow, IonSelect, IonSelectOption, IonText, IonTitle } from '@ionic/react';
 import React, { useRef, useState } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
 import '../../css/Global.css';
 import '../../css/Study@SIMMain.css';
@@ -11,7 +12,7 @@ import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
 
 
-const StudySIMMain: React.FC = () => {
+const StudySIMMain: React.FC<RouteComponentProps> = () => {
     const [studySIMProgSelect, setStudySIMProgSelect] = useState<string>('undergradProg');
     
 

@@ -46,7 +46,6 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faBell} />
                         <IonLabel className="menuLabel">Announcements</IonLabel>
                     </IonItem>
-
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/myProfile">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faUserCircle} />
                         <IonLabel className="menuLabel">My Profile</IonLabel>
