@@ -20,18 +20,142 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
         return performance.date == props.openhouseDates[1]
     })
 
-    const addToSchedule = async (programmeTalk: any) => {
+    const addToSchedule = async (programme: any) => {
         try {
-            // make check for schedule conflict then below
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
-            await db.collection('PersonalScheduler').doc(userID).update({
-                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
+
+            await db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+                const registered = snapshot.data().registeredProgrammes;
+                
+                if (registered != null) {
+                    if (registered.length > 0) {
+                        
+                        for (let item of registered) {
+                            const itemType = item.split("-");
+            
+                            switch (itemType[0]) {
+                                case "talk":
+                                    return db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
+                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
+
+                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
+                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+            
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                                            } else {
+                                                db.collection('PersonalScheduler').doc(userID).update({
+                                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                                });
+                                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                            }
+
+                                        } else {
+                                            db.collection('PersonalScheduler').doc(userID).update({
+                                                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                            });
+                                            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                        }
+                                    });
+
+                                case "tour":
+                                    return db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
+                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
+
+                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
+                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+            
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                                            } else {
+                                                db.collection('PersonalScheduler').doc(userID).update({
+                                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                                });
+                                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                            }
+
+                                        } else {
+                                            db.collection('PersonalScheduler').doc(userID).update({
+                                                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                            });
+                                            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                        }
+                                    });
+
+                                case "performance":
+                                    return db.collection('Performances').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
+                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
+
+                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
+                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+            
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                                            } else {
+                                                db.collection('PersonalScheduler').doc(userID).update({
+                                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                                });
+                                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                            }
+
+                                        } else {
+                                            db.collection('PersonalScheduler').doc(userID).update({
+                                                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                            });
+                                            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                        }
+                                    });
+
+                                default:
+                                    setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                            }
+
+                            if (!alert.registerSuccess) {
+                                break;
+                            }
+                        }
+
+                    } else {
+                        db.collection('PersonalScheduler').doc(userID).update({
+                            registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                        });
+                        setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                    }
+
+                } else {
+                    db.collection('PersonalScheduler').doc(userID).update({
+                        registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                    });
+                    setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                }
             });
-            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+
+            if (alert.registerSuccess) {
+                // disable button
+            }
+
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });
-            console.log(e);
-        }
+            return console.log(e)
+        };
     };
 
     return (
