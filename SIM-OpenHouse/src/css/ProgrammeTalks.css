@@ -75,7 +75,6 @@
 .progTalk-DataHeader {
     border: 1px solid #C8C8C8;
     text-align: center;
-    min-width: 20%;
     font-size: 75%;
     min-height: 20%;
     padding-top: 2%;
@@ -85,9 +84,10 @@
 .progTalk-DataInfo {
     border: 1px solid #C8C8C8;
     text-align: center;
-    min-width: 20%;
     font-size: 70%;
     min-height: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .progTalk-DataBtn {

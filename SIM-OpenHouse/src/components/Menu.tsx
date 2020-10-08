@@ -1,5 +1,5 @@
-import React, { useContext, useRef } from 'react';
-import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonItemDivider, IonMenuToggle } from '@ionic/react';
+import React, { useContext, useRef, useState } from 'react';
+import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonItemDivider, IonMenuToggle, IonFooter, IonToolbar } from '@ionic/react';
 
 import '../css/Menu.css';
 import '../css/Global.css';
@@ -21,8 +21,9 @@ const Menu: React.FC = props => {
         // navigate('/main');
     };
 
+
     return(
-        <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="first" id="menuID" className="mainMenu">             
+        <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="mainMenu" id="menuID" className="mainMenu">             
             <IonContent id="menuContent" className="menuContent" scrollEvents={true}>
                 <IonList className="menuList">
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/home">                     
@@ -37,45 +38,14 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faCalendarAlt} />
                         <IonLabel className="menuLabel">My Schedule</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/forum">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faComments} />
-                        <IonLabel className="menuLabel">Forum</IonLabel>
-                    </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/campusFacilitiesMap">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faMapSigns} />
-                        <IonLabel className="menuLabel">Campus Facilities Map</IonLabel>
-                    </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/gettingToSIMHQ">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faMapMarkedAlt} />
-                        <IonLabel className="menuLabel">Getting to SIM HQ</IonLabel>
-                    </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/usefulInfoMain">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faInfoCircle} />
-                        <IonLabel className="menuLabel">Useful Info</IonLabel>
-                    </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faPhotoVideo} />
-                        <IonLabel className="menuLabel">Social Media</IonLabel>
-                    </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faBookOpen} />
-                        <IonLabel className="menuLabel">Study@SIM</IonLabel>
-                    </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/studentLife@SIM">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faHands} />
-                        <IonLabel className="menuLabel">Student Life@SIM</IonLabel>
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/brochures">
+                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faReadme} />
+                        <IonLabel className="menuLabel">Brochures</IonLabel>
                     </IonItem>
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/announcements">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faBell} />
                         <IonLabel className="menuLabel">Announcements</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/brochures">
-                        <FontAwesomeIcon className="menuIcon" size="lg" icon={faReadme} />
-                        <IonLabel className="menuLabel">Brochures</IonLabel>
-                    </IonItem>
-                    
-                    <IonItemDivider id="divider"></IonItemDivider>
-
                     <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/myProfile">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faUserCircle} />
                         <IonLabel className="menuLabel">My Profile</IonLabel>
@@ -88,12 +58,20 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faQrcode} />
                         <IonLabel className="menuLabel">QR Scanner</IonLabel>
                     </IonItem>
+                </IonList>
+                
+            </IonContent>
+
+            <IonFooter className="ion-no-border">
+                <IonToolbar id="mainMenuToolbar">
                     <IonItem className="menuItem clickable ion-activatable" lines="none" onClick={ handleLogout }>
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faSignOutAlt} />
                         <IonLabel className="menuLabel">Logout</IonLabel>
                     </IonItem>
-                </IonList>
-            </IonContent>
+                </IonToolbar>
+            </IonFooter>
+            
+            
         </IonMenu>
     );
 }

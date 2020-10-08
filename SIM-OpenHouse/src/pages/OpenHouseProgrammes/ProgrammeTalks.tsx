@@ -78,29 +78,25 @@ const ProgrammeTalks: React.FC = () => {
     <IonPage>
       <IonHeader>
         <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
+
+        <IonToolbar className="segmentHeader">
+          <IonSegment scrollable value={tab} className="segmentHeader">
+            <IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>
+              Schedule
+            </IonSegmentButton>
+            <IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>
+              Live Talks
+            </IonSegmentButton>
+            <IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>
+              Past Recordings
+            </IonSegmentButton>
+          </IonSegment>
+        </IonToolbar>
+
       </IonHeader>
       
       <IonContent fullscreen className="progTalkIonContent">
-        <IonGrid id="progTalksGrid">
-          <IonRow>
-            <IonHeader className="segmentHeader">
-              <IonToolbar className="segmentHeader">
-                <IonSegment scrollable value={tab} className="segmentHeader">
-                  <IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>
-                    Schedule
-                  </IonSegmentButton>
-                  <IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>
-                    Live Talks
-                  </IonSegmentButton>
-                  <IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>
-                    Past Recordings
-                  </IonSegmentButton>
-                </IonSegment>
-              </IonToolbar>
-            </IonHeader>
-          </IonRow>
-        </IonGrid>
-
+        
         {/* Programme Talks Schedule */}
         {tab === "schedule" ? (
           <>
@@ -135,7 +131,8 @@ const ProgrammeTalks: React.FC = () => {
           </>
         ) : (
             ""
-          )}
+          )
+        }
 
         {/* Live Talks */}
         {tab === "liveTalks" ? (

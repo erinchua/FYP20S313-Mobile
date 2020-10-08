@@ -1,0 +1,98 @@
+#studySIMProgInfoGrid {
+    padding: 0;
+    background: #ffffff;
+    min-height: 100%;
+}
+
+.studySIMProgInfoRow {
+    background: #ffffff;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.studyProgInfoUniImg {
+    max-width: 60%;
+    margin-right: 0;
+}
+
+.studySIMProgInfoHeaderCol {
+    padding-right: 3%;
+}
+
+.progCourseInfoRow {
+    padding-bottom: 2%;
+}
+
+.progCourseInfoTitle {
+    padding: 0;
+    font-size: 80%;
+    font-weight: bold;
+    color: #424242;
+}
+
+.progCourseInfoAwardingUniCol {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.progCourseInfoAwardingUniLabel {
+    font-size: 80%;
+    font-weight: bold;
+    color: #666666;
+}
+
+.progCourseInfoAwardingUniName {
+    font-size: 80%;
+    color: #666666;
+}
+
+.dlProgInfoBtn {
+    color: #434343;
+}
+
+/* Programme Info Accordion */
+.progCourseInfoHeaderRow {
+    padding: 0;
+    border-bottom: 2px solid #c8c8c8;
+    background: #efefef;
+}
+
+.progCourseInfoHeaderCol {
+    min-width: 100%;
+    padding: 0;
+}
+
+.progCourseInfoHeaderInnerRow {
+    --background: #efefef;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.progCourseInfoHeader {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    color: #424242;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.toggleProgCourseInfoBtnCol {
+    text-align: right; 
+    padding: 0;
+}
+
+.toggleProgCourseInfoBtn {
+    --color: #424242;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-right: 0;
+}
+
+.progCourseInfoDetails {
+    background: #ffffff;
+    padding: 0 3% 3% 3%;
+    color: #434343;
+    font-size: 80%;
+    text-align: left;
+}
