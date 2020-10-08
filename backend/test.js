@@ -4,7 +4,7 @@ const db = require('./config/adminConfig')
 //db.collection('Test').doc('test').update({testarray: admin.firestore.FieldValue.arrayUnion('hello')});
 
 const userID = "KxJfH2BPsQaEQgwjS8SLEog1nSX2";
-/* db.collection('PersonalScheduler').doc(userID).get().then(doc => {
+db.collection('PersonalScheduler').doc(userID).get().then(doc => {
     const items = [];
     const activities = doc.data().registeredProgrammes;
     activities.forEach(item => {
@@ -13,11 +13,11 @@ const userID = "KxJfH2BPsQaEQgwjS8SLEog1nSX2";
             case "talk":
                 return db.collection('ProgrammeTalks').doc(item).onSnapshot(doc => items.push(doc.data()))
             case "tour":
-                return db.collection('GuidedTours').doc(item).onSnapshot(doc => items.push(doc.data()))
+                //return db.collection('GuidedTours').doc(item).onSnapshot(doc => items.push(doc.data()))
             case "performance":
-                return db.collection('Performances').doc(item).onSnapshot(doc => items.push(doc.data()))
+                //return db.collection('Performances').doc(item).onSnapshot(doc => items.push(doc.data()))
             case "activity":
-                return db.collection('GamesActivities').doc(item).onSnapshot(doc => items.push(doc.data()))
+                //return db.collection('GamesActivities').doc(item).onSnapshot(doc => items.push(doc.data()))
             default:
         }
     });
@@ -34,9 +34,9 @@ const userID = "KxJfH2BPsQaEQgwjS8SLEog1nSX2";
         })
         console.log(mapped)
     }, 1000);
-}); */
+});
 
-const prog = {
+/* const prog = {
     awardingUni: "University of London",
     capacityLimit: 50,
     date: "21-Nov-2020",
@@ -60,7 +60,7 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
                     db.collection('ProgrammeTalks').doc(item).onSnapshot(doc => {
                         //console.log(doc.data().startTime.slice(-2, doc.data().startTime.length))
                         if (prog.date == doc.data().date) {
-                            //console.log(true)
+                            console.log("date", true)
                             let progStart = Number(prog.startTime.split(":")[0]), progEnd = Number(prog.endTime.split(":")[0]);
                             let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
                             //console.log(progStart, itemStart)
@@ -69,16 +69,26 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
                             if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
                             if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
 
-                            if ((progStart >= itemStart && progStart <= itemEnd) || (progEnd >= itemStart && progEnd <= itemEnd))
-                                console.log(true)
-                        }
+                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd))
+                                console.log("time", true)
+                            else console.log("time", false)
+                        } else console.log("date", false)
                     });
-                /* case "tour":
-                    return db.collection('GuidedTours').doc(item).onSnapshot(doc => {});
-                case "performance":
-                    return db.collection('Performances').doc(item).onSnapshot(doc => {}); */
+                //case "tour":
+                    //return db.collection('GuidedTours').doc(item).onSnapshot(doc => {});
+                //case "performance":
+                    //return db.collection('Performances').doc(item).onSnapshot(doc => {});
                 default:
                     return;
             }
         });
-});
+}); */
+
+/* db.collection("Openhouse").orderBy('id', 'desc').limit(1).get().then(snapshot => {
+    snapshot.forEach(doc => {
+        const data = doc.data().day;
+        data.forEach(day => {
+            console.log(day.date)
+        })
+    })
+}) */

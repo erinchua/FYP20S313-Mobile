@@ -22,7 +22,6 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
 
     const addToSchedule = async (programmeTalk: any) => {
         try {
-            // make check for schedule conflict then below
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
             await db.collection('PersonalScheduler').doc(userID).update({
                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
