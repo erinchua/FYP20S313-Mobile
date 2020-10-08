@@ -1,4 +1,4 @@
-import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonPage, IonTitle, IonToolbar, IonSegmentButton, IonSegment } from "@ionic/react";
+import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonPage, IonTitle, IonToolbar, IonSegmentButton, IonSegment, IonCheckbox } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
 import "../css/Home.css";
@@ -11,19 +11,25 @@ import ViewProgrammeTalk from "./ViewProgrammeTalk";
 //<script src="../Resource/qrcode.min.js"></script>;
 
 const VincentTest: React.FC = () => {
-  /*  useEffect(() => {
+
+  const [programmes, setProgrammes] = useState([])
+
+  useEffect(() => {
+    const programmes: any = []
     const fetchData = async () => {
       const data = await db
-        .collection("ContactInfo")
+        .collection("TestProgrammes")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            console.log(doc);
+            const data = doc.data()
+            programmes.push(data)
           });
+          setProgrammes(programmes)
         });
     };
     fetchData();
-  }, []); */
+  }, []);
 
   /* console.log(
     contacts.map((contact) => {
@@ -61,7 +67,50 @@ const VincentTest: React.FC = () => {
         {/* <CreateClubAndCouncil /> */}
         {/* <ViewClubAndCouncil categoryType="InternationalStudent"></ViewClubAndCouncil> */}
         {/* <ViewContactInfo></ViewContactInfo> */}
-        <ViewProgrammeTalk date="21-Nov-2020"></ViewProgrammeTalk>
+        {/* <ViewProgrammeTalk date="21-Nov-2020"></ViewProgrammeTalk> */}
+
+        {/* {programmes.map(({ programOverview = [], applicationPeriod = [], programmeStructure = [], overseaOpportunity = [], intakeMonths = [], duration = [] }) => {
+          return (
+            <div>
+              {programOverview.map((item) => {
+                return (
+                  <li>{item}</li>
+                )
+              })}
+              <li>Jan 2021 Intake: {applicationPeriod.jan2021}</li>
+              <li>Coursework: {programmeStructure.coursework ? 'Yes' : 'No'}</li>
+              <li>Examination: {programmeStructure.examination ? 'Yes' : 'No'}</li>
+              <li>Exchange: {overseaOpportunity.exchange ? 'Yes' : 'No'}</li>
+              <li>Transfer: {overseaOpportunity.transfer ? 'Yes' : 'No'}</li>
+              <li>Intake Months Part Time: {intakeMonths.partTime}</li>
+              <li>Duration Part Time: {duration.partTime}</li>
+              <br />
+            </div>
+          )
+
+        })
+        } */}
+        <p>Full time & Part time</p>
+        <IonCheckbox onChange checked={false} ></IonCheckbox>
+        <br />
+        <p>Full time</p>
+        <IonCheckbox></IonCheckbox>
+        <br />
+        <p>Part time</p>
+        <IonCheckbox></IonCheckbox>
+        <br />
+
+        {programmes.map((programme: any) => {
+          return (
+            <div>
+              <li>{programme.programmeTitle}</li>
+              <li>{programme.awardedBy}</li>
+              <li>{programme.modeOfStudy.fullTime ? 'Full-Time' : ''}</li>
+              <li>{programme.modeOfStudy.partTime ? 'Part-Time' : ''}</li>
+              <br />
+            </div>
+          )
+        })}
       </IonContent>
     </IonPage>
   );
