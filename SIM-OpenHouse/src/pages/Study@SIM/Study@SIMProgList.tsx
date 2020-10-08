@@ -5,7 +5,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import '../../css/Global.css';
 import '../../css/Study@SIMProgList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faFilter, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faFilter } from '@fortawesome/free-solid-svg-icons';
 import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
 import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
 import RMIT from '../../img/study@SIM/RMITUniversity.png';
@@ -25,7 +25,7 @@ import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPop
 
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
-    id: string;
+    discipline: string;
 }> { }
 
 const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
@@ -82,27 +82,27 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                             <IonRow id="studySIMProgListHeaderRow" class="ion-align-items-center">
                                 <IonCol size="6" sizeSm="6" class="ion-text-left" className="studySIMProgListCol" style={{paddingLeft: "3%"}}>
                                     <IonTitle className="studyProgListTitle">
-                                        {match.params.id === 'artSocialSciences' ?
+                                        {match.params.discipline === 'artSocialSciences' ?
                                             <div className="ion-text-wrap">{disciplineName[0]}</div>
                                             :''
                                         }
 
-                                        {match.params.id === 'business' ?
+                                        {match.params.discipline === 'business' ?
                                             <div className="ion-text-wrap">{disciplineName[1]}</div>
                                             :''
                                         }
 
-                                        {match.params.id === 'itComputerScience' ?
+                                        {match.params.discipline === 'itComputerScience' ?
                                             <div className="ion-text-wrap">{disciplineName[2]}</div>
                                             :''
                                         }
 
-                                        {match.params.id === 'nursing' ?
+                                        {match.params.discipline === 'nursing' ?
                                             <div className="ion-text-wrap">{disciplineName[3]}</div>
                                             :''
                                         }
 
-                                        {match.params.id === 'speciality' ?
+                                        {match.params.discipline === 'speciality' ?
                                             <div className="ion-text-wrap">{disciplineName[4]}</div>                                            
                                             : ''
                                         }
@@ -138,19 +138,19 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                 <IonContent fullscreen={true} id="studySIMProgListContent">
                     <IonGrid id="studySIMProgListGrid">                    
                         {/* Art & Social Sciences Programme List */}
-                        {match.params.id === 'artSocialSciences' ?
+                        {match.params.discipline === 'artSocialSciences' ?
                         <>
                             <IonRow className="studySIMProgListRow" class="ion-align-items-center">
                                 <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                    <img src={Grenoble} id="studyProgUniImg"></img>
+                                    <img src={Grenoble} className="studyProgUniImg"></img>
                                 </IonCol>
 
                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                     {/* Programme Title */}
                                     <IonRow className="progCourseRow">
-                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/study@SIMProgList/progInfo">
-                                            <IonTitle id="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
+                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/artSocialSciences/study@SIMProgInfo">
+                                            <IonTitle className="progCourseTitle">
+                                                <div className="ion-text-wrap">MSc Management in International Business</div>
                                             </IonTitle>
                                         </IonRouterLink>
                                     </IonRow>
@@ -158,13 +158,13 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     {/* Awarding Uni */}
                                     <IonRow className="progCourseRow">
                                         <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniLabel">
+                                            <IonLabel className="progCourseAwardingUniLabel">
                                                 <div className="ion-text-wrap">Awarded by:</div>
                                             </IonLabel>
                                         </IonCol>
 
                                         <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniName">
+                                            <IonLabel className="progCourseAwardingUniName">
                                                 <div className="ion-text-wrap">Grenoble Ecole de Management</div>
                                             </IonLabel>
                                         </IonCol>
@@ -173,11 +173,11 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     <IonRow className="progCompareBtnRow">
                                         <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
                                             {compareProg ?
-                                                <IonButton id="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
                                                     <FontAwesomeIcon style={{paddingLeft: "3%"}} icon={faCheck} />
                                                 </IonButton>
                                                 : 
-                                                (<IonButton id="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
+                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
                                             }
 
                                         </IonCol>
@@ -189,19 +189,19 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         }
 
                         {/* Business Programme List */}
-                        {match.params.id === 'business' ?
+                        {match.params.discipline === 'business' ?
                         <>
                             <IonRow className="studySIMProgListRow" class="ion-align-items-center">
                                 <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                    <img src={Grenoble} id="studyProgUniImg"></img>
+                                    <img src={Grenoble} className="studyProgUniImg"></img>
                                 </IonCol>
 
                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                     {/* Programme Title */}
                                     <IonRow className="progCourseRow">
-                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/study@SIMProgList/progInfo">
-                                            <IonTitle id="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
+                                        <IonRouterLink className="progCourseTitleLink" href="/u/study@SIMMain/business/study@SIMProgInfo">
+                                            <IonTitle className="progCourseTitle">
+                                                <div className="ion-text-wrap">MSc Management in International Business</div>
                                             </IonTitle>
                                         </IonRouterLink>
                                     </IonRow>
@@ -209,13 +209,13 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     {/* Awarding Uni */}
                                     <IonRow className="progCourseRow">
                                         <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniLabel">
+                                            <IonLabel className="progCourseAwardingUniLabel">
                                                 <div className="ion-text-wrap">Awarded by:</div>
                                             </IonLabel>
                                         </IonCol>
 
                                         <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniName">
+                                            <IonLabel className="progCourseAwardingUniName">
                                                 <div className="ion-text-wrap">Grenoble Ecole de Management</div>
                                             </IonLabel>
                                         </IonCol>
@@ -224,11 +224,11 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     <IonRow className="progCompareBtnRow">
                                         <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
                                             {compareProg ?
-                                                <IonButton id="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
                                                     <FontAwesomeIcon style={{paddingLeft: "3%"}} icon={faCheck} />
                                                 </IonButton>
                                                 : 
-                                                (<IonButton id="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
+                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
                                             }
 
                                         </IonCol>
@@ -240,19 +240,19 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         }
 
                         {/* IT & Computer Science Programme List */}
-                        {match.params.id === 'itComputerScience' ?
+                        {match.params.discipline === 'itComputerScience' ?
                         <>
                             <IonRow className="studySIMProgListRow" class="ion-align-items-center">
                                 <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                    <img src={Grenoble} id="studyProgUniImg"></img>
+                                    <img src={Grenoble} className="studyProgUniImg"></img>
                                 </IonCol>
 
                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                     {/* Programme Title */}
                                     <IonRow className="progCourseRow">
-                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/study@SIMProgList/progInfo">
-                                            <IonTitle id="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
+                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/itComputerScience/study@SIMProgInfo">
+                                            <IonTitle className="progCourseTitle">
+                                                <div className="ion-text-wrap">MSc Management in International Business</div>
                                             </IonTitle>
                                         </IonRouterLink>
                                     </IonRow>
@@ -260,13 +260,13 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     {/* Awarding Uni */}
                                     <IonRow className="progCourseRow">
                                         <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniLabel">
+                                            <IonLabel className="progCourseAwardingUniLabel">
                                                 <div className="ion-text-wrap">Awarded by:</div>
                                             </IonLabel>
                                         </IonCol>
 
                                         <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniName">
+                                            <IonLabel className="progCourseAwardingUniName">
                                                 <div className="ion-text-wrap">Grenoble Ecole de Management</div>
                                             </IonLabel>
                                         </IonCol>
@@ -275,11 +275,11 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     <IonRow className="progCompareBtnRow">
                                         <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
                                             {compareProg ?
-                                                <IonButton id="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
                                                     <FontAwesomeIcon style={{paddingLeft: "3%"}} icon={faCheck} />
                                                 </IonButton>
                                                 : 
-                                                (<IonButton id="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
+                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
                                             }
 
                                         </IonCol>
@@ -291,19 +291,19 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         }
 
                         {/* Nursing Programme List */}
-                        {match.params.id === 'nursing' ?
+                        {match.params.discipline === 'nursing' ?
                         <>
                             <IonRow className="studySIMProgListRow" class="ion-align-items-center">
                                 <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                    <img src={Grenoble} id="studyProgUniImg"></img>
+                                    <img src={Grenoble} className="studyProgUniImg"></img>
                                 </IonCol>
 
                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                     {/* Programme Title */}
                                     <IonRow className="progCourseRow">
-                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/study@SIMProgList/progInfo">
-                                            <IonTitle id="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
+                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/nursing/study@SIMProgInfo">
+                                            <IonTitle className="progCourseTitle">
+                                                <div className="ion-text-wrap">MSc Management in International Business</div>
                                             </IonTitle>
                                         </IonRouterLink>
                                     </IonRow>
@@ -311,13 +311,13 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     {/* Awarding Uni */}
                                     <IonRow className="progCourseRow">
                                         <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniLabel">
+                                            <IonLabel className="progCourseAwardingUniLabel">
                                                 <div className="ion-text-wrap">Awarded by:</div>
                                             </IonLabel>
                                         </IonCol>
 
                                         <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniName">
+                                            <IonLabel className="progCourseAwardingUniName">
                                                 <div className="ion-text-wrap">Grenoble Ecole de Management</div>
                                             </IonLabel>
                                         </IonCol>
@@ -326,11 +326,11 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     <IonRow className="progCompareBtnRow">
                                         <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
                                             {compareProg ?
-                                                <IonButton id="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
                                                     <FontAwesomeIcon style={{paddingLeft: "3%"}} icon={faCheck} />
                                                 </IonButton>
                                                 : 
-                                                (<IonButton id="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
+                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
                                             }
 
                                         </IonCol>
@@ -342,19 +342,19 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         }
 
                         {/* Speciality Programme List */}
-                        {match.params.id === 'speciality' ?
+                        {match.params.discipline === 'speciality' ?
                         <>
                             <IonRow className="studySIMProgListRow" class="ion-align-items-center">
                                 <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                    <img src={Grenoble} id="studyProgUniImg"></img>
+                                    <img src={Grenoble} className="studyProgUniImg"></img>
                                 </IonCol>
 
                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                     {/* Programme Title */}
                                     <IonRow className="progCourseRow">
-                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/study@SIMProgList/progInfo">
-                                            <IonTitle id="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
+                                        <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/speciality/study@SIMProgInfo">
+                                            <IonTitle className="progCourseTitle">
+                                                <div className="ion-text-wrap">MSc Management in International Business</div>
                                             </IonTitle>
                                         </IonRouterLink>
                                     </IonRow>
@@ -362,13 +362,13 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     {/* Awarding Uni */}
                                     <IonRow className="progCourseRow">
                                         <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniLabel">
+                                            <IonLabel className="progCourseAwardingUniLabel">
                                                 <div className="ion-text-wrap">Awarded by:</div>
                                             </IonLabel>
                                         </IonCol>
 
                                         <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                            <IonLabel id="progCourseAwardingUniName">
+                                            <IonLabel className="progCourseAwardingUniName">
                                                 <div className="ion-text-wrap">Grenoble Ecole de Management</div>
                                             </IonLabel>
                                         </IonCol>
@@ -377,11 +377,11 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     <IonRow className="progCompareBtnRow">
                                         <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
                                             {compareProg ?
-                                                <IonButton id="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
                                                     <FontAwesomeIcon style={{paddingLeft: "3%"}} icon={faCheck} />
                                                 </IonButton>
                                                 : 
-                                                (<IonButton id="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
+                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
                                             }
 
                                         </IonCol>
@@ -401,7 +401,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         event={showCompareProgPopover.event} 
                         onDidDismiss={e => setShowCompareProgPopover({open: false, event: undefined})}
                     >
-                        <CompareProgPopoverContent />              
+                        <CompareProgPopoverContent removeProg={()=>(console.log('Add removeProg function here'))} removeAllProg={()=>(console.log('Add removeAllProg function here'))} viewResults={()=>(console.log('Add viewResults function here'))}/>              
                     </IonPopover>
                     
                 </IonContent>
