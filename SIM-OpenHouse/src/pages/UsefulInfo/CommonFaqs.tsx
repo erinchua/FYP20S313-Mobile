@@ -57,26 +57,20 @@ const CommonFaqs: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <TopNav title="Common FAQs" route='/u/usefulInfoMain' backarrow={true} hamburger={true} />
+            
+                <IonToolbar className="faqSegmentHeader">
+                    <IonSegment scrollable value={tab} className="faqSegmentHeader">
+                        <IonSegmentButton value="openHouseFAQs" className="faqSegmentBtn ion-text-wrap" id="openHouseFAQs" onClick={handleOpenHouseFAQs}>
+                            Open House FAQs
+                        </IonSegmentButton>
+                        <IonSegmentButton value="generalFAQs" className="faqSegmentBtn ion-text-wrap" id="generalFAQs" onClick={handleGeneralFAQs}>
+                            General FAQs
+                        </IonSegmentButton>
+                    </IonSegment>
+                </IonToolbar>
             </IonHeader>
 
             <IonContent fullscreen={true}>
-                <IonGrid id="faqTabGrid">
-                    <IonRow>
-                        <IonHeader className="faqSegmentHeader">
-                            <IonToolbar className="faqSegmentHeader">
-                                <IonSegment scrollable value={tab} className="faqSegmentHeader">
-                                    <IonSegmentButton value="openHouseFAQs" className="faqSegmentBtn ion-text-wrap" id="openHouseFAQs" onClick={handleOpenHouseFAQs}>
-                                        Open House FAQs
-                                    </IonSegmentButton>
-                                    <IonSegmentButton value="generalFAQs" className="faqSegmentBtn ion-text-wrap" id="generalFAQs" onClick={handleGeneralFAQs}>
-                                        General FAQs
-                                    </IonSegmentButton>
-                                </IonSegment>
-                            </IonToolbar>
-                        </IonHeader>
-                    </IonRow>
-                </IonGrid>
-
                 <IonGrid id="faqGrid">
                     {/* Open House FAQs */}
                     {tab === "openHouseFAQs" ?
