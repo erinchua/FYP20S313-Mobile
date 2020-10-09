@@ -8,7 +8,8 @@ import { giftOutline, qrCodeOutline } from 'ionicons/icons';
 import PerformancesContent from '../../components/OpenHouseProgrammes/PerformancesContent';
 import GamesContent from '../../components/OpenHouseProgrammes/GamesContent';
 import PrizesContent from '../../components/OpenHouseProgrammes/PrizesContent';
-import QRScanner from '../../components/QRScan';
+import QRScanner from '../QRScan';
+import { Redirect } from 'react-router';
 
 const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
 
@@ -178,7 +179,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
 
                 {/* QR Scanner */}
                 {headingTitle === 'QR' ?
-                    <QRScanner /> : ''
+                    <Redirect to="/u/QRScan" from="/u/openHouseMain/openHouseActivities" /> : ''
                 }
 
             </IonContent>

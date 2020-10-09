@@ -165,8 +165,8 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                 onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
-                header={'Successfully Registered'}
-                message={'You have successfully registered for the programme talk and it has been successfully added to My Schedule.'}
+                header={'Successfully Added'}
+                message={'You have successfully added this performance to My Schedule.'}
                 buttons={['Close']}
             ></IonAlert>
 
@@ -175,8 +175,8 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                 onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
-                header={'Registration Unsuccessful'}
-                message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
+                header={'Error Occurred'}
+                message={'There exists a performance in your scheduler at this timing. Please remove the existing performance from your scheduler first!'}
                 buttons={['Close']}
             ></IonAlert>
 

@@ -90,11 +90,11 @@ const ProgTalkSchedule: React.FC<{
 
             <IonGrid className="progTalk-TableGrid">
                 <IonRow className="ion-justify-content-center progTalk-TableHeader">
-                    <IonCol sizeSm="3" className="progTalk-DataHeader ion-text-wrap">Programme Talk</IonCol>
-                    <IonCol sizeSm="3" className="progTalk-DataHeader ion-text-wrap">Awarding University</IonCol>
-                    <IonCol sizeSm="2" className="progTalk-DataHeader ion-text-wrap">Time</IonCol>
-                    <IonCol sizeSm="2" className="progTalk-DataHeader ion-text-wrap">Venue</IonCol>
-                    <IonCol sizeSm="2" className="progTalk-DataHeader ion-text-wrap">Add to My Schedule</IonCol>
+                    <IonCol size="3" sizeSm="3" className="progTalk-DataHeader ion-text-wrap">Programme Talk</IonCol>
+                    <IonCol size="3" sizeSm="3" className="progTalk-DataHeader ion-text-wrap">Awarding University</IonCol>
+                    <IonCol size="2" sizeSm="2" className="progTalk-DataHeader ion-text-wrap">Time</IonCol>
+                    <IonCol size="2" sizeSm="2" className="progTalk-DataHeader ion-text-wrap">Venue</IonCol>
+                    <IonCol size="2" sizeSm="2" className="progTalk-DataHeader ion-text-wrap">Add to My Schedule</IonCol>
                 </IonRow>
 
                 {props.day1 === 'day1' ?
@@ -108,10 +108,10 @@ const ProgTalkSchedule: React.FC<{
                                 
                                 </IonCol>
 
-                                <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni} </IonCol>
-                                <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
-                                <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
-                                <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
+                                <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni} </IonCol>
+                                <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
+                                <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
+                                <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
                                     <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
@@ -131,10 +131,10 @@ const ProgTalkSchedule: React.FC<{
                                     </IonRouterLink>
                                 </IonCol>
 
-                                <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
-                                <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
-                                <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
-                                <IonCol sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
+                                <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
+                                <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
+                                <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
+                                <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
                                     <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
