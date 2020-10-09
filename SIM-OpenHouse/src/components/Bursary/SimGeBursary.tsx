@@ -296,7 +296,7 @@ const SimGeBursary: React.FC = () => {
                                     The collection of personal data such as NRICs, and other supporting documents are required to facilitate the 
                                     processing of applications, including verifications of the identities of applicants and household members. 
                                     For information on SIM PDPA Policy, please refer to 
-                                    <IonRouterLink href="https://www.simge.edu.sg/contact-us/personal-data-protection-act/">https://www.simge.edu.sg/contact-us/personal-data-protection-act/</IonRouterLink>.
+                                    <IonRouterLink href="https://www.simge.edu.sg/contact-us/personal-data-protection-act/"> https://www.simge.edu.sg/contact-us/personal-data-protection-act/</IonRouterLink>.
                                     </p>
                                 </IonText>
                             </IonRow>

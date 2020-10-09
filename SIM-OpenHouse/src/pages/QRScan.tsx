@@ -39,7 +39,7 @@ const QRScan: React.FC = () => {
             <TopNav title="QR Scanner" route="/u/home" backarrow={ true } hamburger={ true }/>
           </IonHeader>
 
-          <IonContent>
+          <IonContent fullscreen className="QR-content">
             <IonGrid>
               <IonRow className="ion-justify-content-center">
                 <IonCol>
