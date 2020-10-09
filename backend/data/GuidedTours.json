@@ -4,39 +4,39 @@
         "tourName": "Campus Tour BLK A",
         "date": "21-Nov-2020",
         "venue": "SIM HQ BLK A Atrium",
-        "startTime": "9.30 AM",
-        "endTime": "10.30 AM"
+        "startTime": "9:30AM",
+        "endTime": "10:30AM"
     },
     {
         "id": "tour-002",
         "tourName": "Campus Tour BLK B",
         "date": "21-Nov-2020",
         "venue": "SIM HQ BLK B",
-        "startTime": "10.30 AM",
-        "endTime": "11.30 AM"
+        "startTime": "10:30AM",
+        "endTime": "11:30AM"
     },
     {
         "id": "tour-003",
         "tourName": "Campus Tour BLK C",
         "date": "21-Nov-2020",
         "venue": "SIM HQ BLK C",
-        "startTime": "11.30 AM",
-        "endTime": "12.30 PM"
+        "startTime": "11:30AM",
+        "endTime": "12:30PM"
     },
     {
         "id": "tour-004",
         "tourName": "Campus Tour BLK A",
         "date": "22-Nov-2020",
         "venue": "SIM HQ BLK A Atrium",
-        "startTime": "10.30 AM",
-        "endTime": "11.30 PM"
+        "startTime": "10:30AM",
+        "endTime": "11:30PM"
     },
     {
         "id": "tour-005",
         "tourName": "Campus Tour BLK B & C",
         "date": "22-Nov-2020",
         "venue": "SIM HQ BLK B & C",
-        "startTime": "11.30 AM",
-        "endTime": "1.00 PM"
+        "startTime": "11:30AM",
+        "endTime": "1:00PM"
     }
 ]
