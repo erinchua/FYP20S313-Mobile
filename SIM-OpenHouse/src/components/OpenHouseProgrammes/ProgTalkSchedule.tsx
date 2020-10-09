@@ -102,7 +102,7 @@ const ProgTalkSchedule: React.FC<{
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
-                                <Link to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
+                                    <Link id="uniLink" to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
                                 </IonCol>
 
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni} </IonCol>
