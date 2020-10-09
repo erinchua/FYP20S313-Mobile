@@ -10,6 +10,7 @@ import { faReadme } from '@fortawesome/free-brands-svg-icons';
 
 import { auth } from '../firebase';
 import { NavContext } from '@ionic/react';
+import QRScan from '../pages/QRScan';
 
 const Menu: React.FC = props => {
 
@@ -20,7 +21,6 @@ const Menu: React.FC = props => {
         sessionStorage.clear();
         // navigate('/main');
     };
-
 
     return(
         <IonMenu swipeGesture={false} side="end" contentId="menuContent" menuId="mainMenu" id="menuID" className="mainMenu">             
@@ -54,7 +54,7 @@ const Menu: React.FC = props => {
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faCog} />
                         <IonLabel className="menuLabel">Settings</IonLabel>
                     </IonItem>
-                    <IonItem className="menuItem clickable ion-activatable" lines="none">
+                    <IonItem className="menuItem clickable ion-activatable" lines="none" routerLink="/u/QRScan">
                         <FontAwesomeIcon className="menuIcon" size="lg" icon={faQrcode} />
                         <IonLabel className="menuLabel">QR Scanner</IonLabel>
                     </IonItem>

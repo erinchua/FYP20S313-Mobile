@@ -30,6 +30,8 @@ import Announcements from './pages/Announcements';
 import Settings from './pages/Settings';
 import StudySIM_Routing from './pages/Study@SIM/Study@SIM_Routing';
 import Brochures from './pages/Brochures';
+import QRScan from './pages/QRScan';
+import SocialMedia from './pages/SocialMedia';
 
 import { useAuth } from './auth';
 
@@ -87,6 +89,8 @@ const App: React.FC = () => {
       <Route path="/u/settings" component={Settings} exact={true} />
       <Route path="/u/study@SIMMain" render={props => <StudySIM_Routing {...props} />} />
       <Route path="/u/brochures" component={Brochures} exact={true} />
+      <Route path="/u/QRScan" component={QRScan} exact={true} />
+      <Route path="/u/socialMedia" component={SocialMedia} exact={true} />
 
     </IonRouterOutlet>
   )
