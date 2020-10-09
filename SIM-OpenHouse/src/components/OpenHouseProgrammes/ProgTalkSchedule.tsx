@@ -10,6 +10,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../../firebase';
 import { useAuth } from '../../auth';
+import {Link} from 'react-router-dom';
 import { conflictCheck } from '../../checker';
 
 const ProgTalkSchedule: React.FC<{
@@ -101,9 +102,10 @@ const ProgTalkSchedule: React.FC<{
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
-                                    <IonRouterLink href="progTalkInfo" id="uniLink"  >
-                                        {programmeTalk.talkName}
-                                    </IonRouterLink>
+                                <Link to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
+                                   
+                                        
+                                
                                 </IonCol>
 
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni} </IonCol>
