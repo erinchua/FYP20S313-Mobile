@@ -65,7 +65,7 @@ const ForgetPassword1: React.FC = () => {
                     </IonRow>
 
                     <IonRow class="ion-justify-content-center" style={{marginTop:"10%"}}>
-                        <IonButton size="large" className="otpBtn" type="submit">SEND CODE</IonButton>
+                        <IonButton size="large" className="otpBtn" type="submit" onClick={onSubmit}>SEND CODE</IonButton>
                     </IonRow>
                 </form>
             </IonGrid>
