@@ -1,10 +1,12 @@
-import { IonGrid, IonRow, IonCol, IonText, IonItemDivider, IonButton } from '@ionic/react';
-import React from 'react';
+import { IonGrid, IonRow, IonCol, IonText, IonItemDivider, IonButton, IonAlert } from '@ionic/react';
+import React, { useState } from 'react';
 
 import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
 
 const PrizesContent: React.FC<{ prizes: any }> = props => {
+
+    const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
 
     const availablePrizes = props.prizes.filter((prize: any) => {
         return prize.isRedeemed === false;
@@ -16,7 +18,27 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
     return (
 
         <>
-            <IonText><div style={{ marginTop: "2%", marginBottom: "-7%", marginLeft: "3%", fontWeight: "bold", fontSize: "95%" }}>Prizes</div></IonText>
+            <IonAlert
+                isOpen={alert.registerSuccess}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
+                cssClass='alertBox'
+                mode='md'
+                header={'Successfully Redeemed'}
+                message={'Congratulations! You have successfully redeemed this prize!'}
+                buttons={['Close']}
+            ></IonAlert>
+
+            <IonAlert
+                isOpen={alert.registerFail}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
+                cssClass='alertBox'
+                mode='md'
+                header={'Error Occurred'}
+                message={'Sorry! This prize has been fully redeemed!'}
+                buttons={['Close']}
+            ></IonAlert>
+
+            <IonText><div style={{ marginTop: "2%", marginBottom: "-7%", marginLeft: "3%", fontWeight: "bold", fontSize: "95%", color: "#424242" }}>Prizes</div></IonText>
             <IonItemDivider color="#EFEFEF"></IonItemDivider>
             <IonText color="medium"><div style={{ margin: "2%", fontSize: "80%" }}>* Redemption booth is located at Blk A Atrium (Near the lift lobby)</div></IonText>
             <IonGrid id="prizesContent-tableGrid">

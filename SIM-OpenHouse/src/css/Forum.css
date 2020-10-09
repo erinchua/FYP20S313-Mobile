@@ -33,6 +33,7 @@
 
 #forum-checkbox-text {
     font-size: 75%;
+    color: #424242;
 }
 
 #forumRulesBtn {
@@ -65,14 +66,14 @@
 #forum-heading {
     font-size: 90%;
     font-weight: bold;
-    color: #434343;
+    color: #424242;
     padding-left: 1%;
 }
 
 .forum-question {
     font-size: 90%;
     font-weight: bold;
-    color: #434343;
+    color: #424242;
 }
 
 .forum-col {
@@ -81,6 +82,7 @@
 
 .forum-question-details {
     font-size: 75%;
+    color: #434343;
 }
 
 #forum-question-flagBtn {
@@ -230,6 +232,7 @@
     font-size: 90%;
     margin-top: 45%;
     margin-bottom: 45%;
+    color: #434343;
 }
 
 /* When there's 2 comment at Forum View Question */
@@ -239,6 +242,7 @@
 
 #comment-text {
     font-size: 80%;
+    color: #424242;
 }
 
 #comment-userName {
@@ -250,6 +254,7 @@
 
 #comment-details {
     font-size: 75%;
+    color: #434343;
 }
 
 #comment-detail-container {

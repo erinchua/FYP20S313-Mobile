@@ -175,3 +175,8 @@
     --background: #999999;
     
 }
+
+/* QR */
+.QR-content {
+    --background: #EFEFEF;
+}

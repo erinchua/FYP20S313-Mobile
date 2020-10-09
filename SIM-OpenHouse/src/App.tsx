@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { IonApp, IonLoading, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
@@ -42,6 +42,8 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 
 import Menu from "./components/Menu";
+import ProgrammeTalks from "./pages/OpenHouseProgrammes/ProgrammeTalks";
+import ProgTalkInfo from "./components/OpenHouseProgrammes/ProgTalkInfo";
 
 const App: React.FC = () => {
   const { loading, auth } = useAuthInit();
@@ -74,6 +76,7 @@ const App: React.FC = () => {
         <Menu />
         <IonReactRouter>
           <IonRouterOutlet>
+            <Switch>
             {/* <Route path="/main" exact={true} render={() => {toggleMenuOptions(false, "", "", false, false); <Redirect to="/main"/<}}/>
             <Route path="/registration" exact={true} render={() => {toggleMenuOptions(true, "Registration", "", false, true); return <Registration/>;}}/>
             <Route path="/login" exact={true} render={() => {toggleMenuOptions(true, "Login", "", false, true); return <Login/>;}}/> */}
@@ -86,7 +89,8 @@ const App: React.FC = () => {
             <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
             <Route path="/home" render={() => <Redirect to="/u/home" />}/>
             <Route path="/openHouseMain" render={() => <Redirect to="/u/openHouseMain" />}/>
-            <Route path="/progTalkInfo" render={() => <Redirect to="/u/openHouseMain/programmeTalks/progTalkInfo" />} />
+            {/* <Route path="/programmeTalks" component={ProgrammeTalks} exact={true}/> */}
+            <Route path="/programmeTalks/progTalkInfo/:id" component={ProgTalkInfo} />
             <Route path="/openHouseMain/guidedTours" render={() => <Redirect to="/u/openHouseMain/guidedTours" />} />
 
             {/* Test components */}
@@ -103,6 +107,7 @@ const App: React.FC = () => {
 
             <Route path="/u" component={AppU} exact={false} />
             <Route exact path="/" render={() => <Redirect to="/main" />} />
+            </Switch>
           </IonRouterOutlet>
         </IonReactRouter>
       </AuthContext.Provider>

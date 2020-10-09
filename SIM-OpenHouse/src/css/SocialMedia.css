@@ -1,3 +1,8 @@
 .socialMedia-content {
     --background: #EFEFEF;
 }
+
+#socialMedia-grid {
+    padding: 0;
+    width: 100% !important;
+}

@@ -1,22 +1,31 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonPage, IonContent, IonAlert, IonHeader } from '@ionic/react';
-import React, { useState } from 'react';
-
+import React, { useState,useEffect } from 'react';
+import {RouteComponentProps} from 'react-router'
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
+import { db } from '../../firebase';
 
 import TopNav from '../TopNav';
 
-const ProgTalkInfo: React.FC<{
-    progTalk: string; 
-    awardingUni: string;
-    date: Date;
-    time: string;
-    venue: string;
-}> = props => {
-    
+const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
+
     {/* Register Alert */}
     const [registerSuccess, setRegisterSuccess] = useState(false);
     const [registerFail, setRegisterFail] = useState(false);
+
+    {/*Programme Talk selected */}
+    const [programmeTalk,setProgrammeTalk] = useState([])
+
+    const fetchData = async () =>{
+
+        const talkRef = db.collection('ProgrammeTalks').doc(match.params.id)
+        const doc :any =  (await talkRef.get()).data()
+        setProgrammeTalk(doc)
+    }
+    useEffect(()=>{
+        fetchData()
+        
+    },[])
 
     const displayRegisterAlert = () => {
         {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
@@ -69,8 +78,7 @@ const ProgTalkInfo: React.FC<{
                             </IonCol>
 
                             <IonCol size="8" sizeSm="8" className="progTalkInfoData">
-                                Sample
-                                <p>{props.progTalk}</p>
+                                {programmeTalk.talkName}
                             </IonCol>
                         </IonRow>
 
@@ -81,8 +89,7 @@ const ProgTalkInfo: React.FC<{
                             </IonCol>
 
                             <IonCol size="8" sizeSm="8" className="progTalkInfoData">
-                                Sample
-                                <p>{props.awardingUni}</p>
+                                {programmeTalk.awardingUni}
                             </IonCol>
                         </IonRow>
 
@@ -93,8 +100,7 @@ const ProgTalkInfo: React.FC<{
                             </IonCol>
 
                             <IonCol size="8" sizeSm="8" className="progTalkInfoData">
-                                Sample
-                                <p>{props.date}</p>
+                                {programmeTalk.date}
                             </IonCol>
                         </IonRow>
 
@@ -105,8 +111,7 @@ const ProgTalkInfo: React.FC<{
                             </IonCol>
 
                             <IonCol size="8" sizeSm="8" className="progTalkInfoData">
-                                Sample
-                                <p>{props.time}</p>
+                                {programmeTalk.startTime+" to "+programmeTalk.endTime}
                             </IonCol>
                         </IonRow>
 
@@ -117,8 +122,7 @@ const ProgTalkInfo: React.FC<{
                             </IonCol>
 
                             <IonCol size="8" sizeSm="8" className="progTalkInfoData">
-                                Sample
-                                <p>{props.venue}</p>
+                                {programmeTalk.venue}
                             </IonCol>
                         </IonRow>
 
