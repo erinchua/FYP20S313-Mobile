@@ -37,6 +37,26 @@ const CourseComparator: React.FC<CourseComparator_Props> = ({ match }) => {
                     <TopNav title="Compare Programmes" route='/u/study@SIMMain/artSocialSciences' backarrow={ true } hamburger = { true }/>
                 :''
                 }
+
+                {match.params.discipline === 'business' ?
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/business' backarrow={ true } hamburger = { true }/>
+                :''
+                }
+
+                {match.params.discipline === 'itComputerScience' ?
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/itComputerScience' backarrow={ true } hamburger = { true }/>
+                :''
+                }
+
+                {match.params.discipline === 'nursing' ?
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/nursing' backarrow={ true } hamburger = { true }/>
+                :''
+                }
+
+                {match.params.discipline === 'speciality' ?
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/speciality' backarrow={ true } hamburger = { true }/>
+                :''
+                }
             </IonHeader>
 
             <IonContent fullscreen={true}>

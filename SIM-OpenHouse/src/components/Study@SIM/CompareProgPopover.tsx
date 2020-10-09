@@ -22,6 +22,8 @@ const CompareProgPopoverContent: React.FC<{
     removeProg: any;
     removeAllProg: any;
     viewResults: any;
+    params: any;
+    href: any;
 }> = props => {
 
     return (
@@ -66,7 +68,13 @@ const CompareProgPopoverContent: React.FC<{
                                 </IonCol>
 
                                 <IonCol size="6" sizeSm="6" class="ion-text-center" style={{padding: "0"}}>
-                                    <IonButton id="viewResultsBtn" onClick={props.viewResults} href="/u/study@SIMMain/courseComparator">VIEW RESULTS</IonButton>
+                                {props.params ?
+                                    <>
+                                    <IonButton id="viewResultsBtn" onClick={props.viewResults} href={props.href}>VIEW RESULTS</IonButton>
+                                    </>
+                                    :''
+                                }
+                                
                                 </IonCol>
                             </IonRow>
                         </IonToolbar>
