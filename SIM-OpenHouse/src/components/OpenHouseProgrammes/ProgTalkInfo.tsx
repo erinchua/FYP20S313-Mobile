@@ -73,7 +73,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
                     <IonGrid id="progTalkInfoGrid">
                         {/* Programme Talk */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Programme Talk:
                             </IonCol>
 
@@ -84,7 +84,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
 
                         {/* Awarding Uni */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Awarding University:
                             </IonCol>
 
@@ -95,7 +95,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
 
                         {/* Date */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Date:
                             </IonCol>
 
@@ -107,7 +107,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
 
                         {/* Time */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Time:
                             </IonCol>
 
@@ -119,7 +119,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
 
                         {/* Venue */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Venue:
                             </IonCol>
 
