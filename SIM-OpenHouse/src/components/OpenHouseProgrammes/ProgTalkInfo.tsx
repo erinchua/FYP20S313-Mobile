@@ -73,58 +73,55 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
                     <IonGrid id="progTalkInfoGrid">
                         {/* Programme Talk */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Programme Talk:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.talkName}
                             </IonCol>
                         </IonRow>
 
                         {/* Awarding Uni */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Awarding University:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.awardingUni}
                             </IonCol>
                         </IonRow>
 
                         {/* Date */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Date:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
-                                
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.date}
                             </IonCol>
                         </IonRow>
 
                         {/* Time */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Time:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
-                                
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.startTime+" to "+programmeTalk.endTime}
                             </IonCol>
                         </IonRow>
 
                         {/* Venue */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Venue:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
-                                
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.venue}
                             </IonCol>
                         </IonRow>

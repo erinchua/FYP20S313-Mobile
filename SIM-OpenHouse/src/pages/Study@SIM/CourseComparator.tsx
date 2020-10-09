@@ -1,4 +1,4 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonPage, IonRow, IonTitle } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonPage, IonRow, IonSlide, IonSlides, IonText, IonTitle } from '@ionic/react';
 import React, { useRef, useState } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
@@ -35,31 +35,108 @@ const CourseComparator: React.FC<CourseComparator_Props> = ({ match }) => {
             <IonHeader>
                 {match.params.discipline === 'artSocialSciences' ?
                     <TopNav title="Compare Programmes" route='/u/study@SIMMain/artSocialSciences' backarrow={ true } hamburger = { true }/>
-                :''
+                    :''
                 }
 
                 {match.params.discipline === 'business' ?
                     <TopNav title="Compare Programmes" route='/u/study@SIMMain/business' backarrow={ true } hamburger = { true }/>
-                :''
+                    :''
                 }
 
                 {match.params.discipline === 'itComputerScience' ?
                     <TopNav title="Compare Programmes" route='/u/study@SIMMain/itComputerScience' backarrow={ true } hamburger = { true }/>
-                :''
+                    :''
                 }
 
                 {match.params.discipline === 'nursing' ?
                     <TopNav title="Compare Programmes" route='/u/study@SIMMain/nursing' backarrow={ true } hamburger = { true }/>
-                :''
+                    :''
                 }
 
                 {match.params.discipline === 'speciality' ?
                     <TopNav title="Compare Programmes" route='/u/study@SIMMain/speciality' backarrow={ true } hamburger = { true }/>
-                :''
+                    :''
                 }
             </IonHeader>
 
             <IonContent fullscreen={true}>
+                {match.params.discipline === 'artSocialSciences' ?
+                    <IonGrid id="courseComparatorGrid">
+                        <IonRow className="courseComparatorRow" class="ion-align-items-center" > 
+                            <div className="horizontalScroll">  
+                                {/* Title Col */}
+                                <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-text-center">
+                                    <IonTitle className="courseComparatorTitle">
+                                        <div className="ion-text-wrap">Programme</div>
+                                    </IonTitle>
+                                </IonCol>
+                                
+                                {/* Programmes added */}
+                                {/* Prog Col */}
+                                <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
+                                    {/* Uni Img */}
+                                    <IonRow class="ion-align-items-center">
+                                        <IonCol class="ion-text-center">
+                                            <img src={Buffalo} className="courseComparatorUniImg"></img>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    {/* Programme Name */}
+                                    <IonRow class="ion-align-items-center">
+                                        <IonCol class="ion-text-center">
+                                            <IonText className="courseComparatorProgName">
+                                                <div className="ion-text-wrap">Bachelor of Arts (Communication & Economics)</div>
+                                            </IonText>
+                                        </IonCol>
+                                    </IonRow>
+                                </IonCol>
+
+                                {/* Prog Col */}
+                                <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
+                                    {/* Uni Img */}
+                                    <IonRow class="ion-align-items-center">
+                                        <IonCol class="ion-text-center">
+                                            <img src={Buffalo} className="courseComparatorUniImg"></img>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    {/* Programme Name */}
+                                    <IonRow class="ion-align-items-center">
+                                        <IonCol class="ion-text-center">
+                                            <IonText className="courseComparatorProgName">
+                                                <div className="ion-text-wrap">Bachelor of Arts (Communication & Economics)</div>
+                                            </IonText>
+                                        </IonCol>
+                                    </IonRow>
+                                </IonCol>
+
+                                {/* Prog Col */}
+                                <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
+                                    {/* Uni Img */}
+                                    <IonRow class="ion-align-items-center">
+                                        <IonCol class="ion-text-center">
+                                            <img src={Buffalo} className="courseComparatorUniImg"></img>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    {/* Programme Name */}
+                                    <IonRow class="ion-align-items-center">
+                                        <IonCol class="ion-text-center">
+                                            <IonText className="courseComparatorProgName">
+                                                <div className="ion-text-wrap">Bachelor of Arts (Communication & Economics)</div>
+                                            </IonText>
+                                        </IonCol>
+                                    </IonRow>
+                                </IonCol>                            
+                            </div>
+
+                        </IonRow>
+
+                    </IonGrid>
+
+                    :''
+                }
+
 
             </IonContent>
         </IonPage>
