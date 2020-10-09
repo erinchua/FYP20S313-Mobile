@@ -7,7 +7,11 @@ import { db } from '../../firebase';
 
 import TopNav from '../TopNav';
 
-const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
+interface RouteParams extends RouteComponentProps<{
+    id: string;
+}> { }
+
+const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
 
     {/* Register Alert */}
     const [registerSuccess, setRegisterSuccess] = useState(false);
