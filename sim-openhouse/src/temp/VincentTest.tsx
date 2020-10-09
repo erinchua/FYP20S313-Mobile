@@ -91,7 +91,7 @@ const VincentTest: React.FC = () => {
         })
         } */}
         <p>Full time & Part time</p>
-        <IonCheckbox onChange checked={false} ></IonCheckbox>
+        <IonCheckbox checked={false} ></IonCheckbox>
         <br />
         <p>Full time</p>
         <IonCheckbox></IonCheckbox>

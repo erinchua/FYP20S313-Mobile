@@ -54,7 +54,7 @@
     margin-bottom: 3%;
 }
 
-#studyProgUniImg {
+.studyProgUniImg {
     max-width: 60%;
     margin-right: 0;
 }
@@ -67,7 +67,7 @@
     padding-bottom: 2%;
 }
 
-#progCourseTitle {
+.progCourseTitle {
     padding: 0;
     font-size: 80%;
     font-weight: bold;
@@ -79,13 +79,13 @@
     padding-right: 0;
 }
 
-#progCourseAwardingUniLabel {
+.progCourseAwardingUniLabel {
     font-size: 80%;
     font-weight: bold;
     color: #424242;
 }
 
-#progCourseAwardingUniName {
+.progCourseAwardingUniName {
     font-size: 80%;
     color: #434343;
 }
@@ -98,13 +98,13 @@
     padding: 0;
 }
 
-#progCompareBtn {
+.progCompareBtn {
     margin: 0;
     --background: #C79A52;
     text-transform: none !important;
 }
 
-#progCompareBtnSelected {
+.progCompareBtnSelected {
     margin: 0;
     --background: #37474F;
     text-transform: none !important;

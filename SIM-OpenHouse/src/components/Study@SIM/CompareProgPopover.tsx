@@ -18,7 +18,11 @@ import Sydney from '../../img/study@SIM/UniversityOfSydney.png';
 import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
 import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
-const CompareProgPopoverContent: React.FC<{}> = () => {
+const CompareProgPopoverContent: React.FC<{
+    removeProg: any;
+    removeAllProg: any;
+    viewResults: any;
+}> = props => {
 
     return (
         <>
@@ -29,13 +33,13 @@ const CompareProgPopoverContent: React.FC<{}> = () => {
                         <IonItem className="compareProgPopoverItem" lines="none">
                             <IonRow class="ion-align-items-center">
                                 <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                    <img src={Grenoble} id="studyProgUniImg"></img>
+                                    <img src={Grenoble} className="studyProgUniImg"></img>
                                 </IonCol>
 
                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                     {/* Programme Title */}
                                     <IonRow className="progCourseRow">
-                                        <IonTitle id="progCourseTitle">
+                                        <IonTitle className="progCourseTitle">
                                             <div className="ion-text-wrap">MSc Management in International Business</div>
                                         </IonTitle>
                                     </IonRow>
@@ -45,7 +49,7 @@ const CompareProgPopoverContent: React.FC<{}> = () => {
 
                         {/* Slider to remove programme */}
                         <IonItemOptions side="end">
-                            <IonItemOption onClick={() => console.log('remove prog')} className="compareProgPopoverSlider">
+                            <IonItemOption onClick={props.removeProg} className="compareProgPopoverSlider">
                                 <FontAwesomeIcon icon={faTimes} />
                             </IonItemOption>
                         </IonItemOptions>
@@ -58,11 +62,11 @@ const CompareProgPopoverContent: React.FC<{}> = () => {
                         <IonToolbar id="compareProgPopoverBtnToolbar" class="ion-align-items-center">
                             <IonRow class="ion-align-items-center" style={{width: "100%"}}>
                                 <IonCol size="6" sizeSm="6" class="ion-text-center" style={{padding: "0"}}>
-                                    <IonButton id="removeAllProgBtn" fill="outline">CLEAR ALL</IonButton>
+                                    <IonButton id="removeAllProgBtn" fill="outline" onClick={props.removeAllProg}>CLEAR ALL</IonButton>
                                 </IonCol>
 
                                 <IonCol size="6" sizeSm="6" class="ion-text-center" style={{padding: "0"}}>
-                                    <IonButton id="viewResultsBtn">VIEW RESULTS</IonButton>
+                                    <IonButton id="viewResultsBtn" onClick={props.viewResults} href="/u/study@SIMMain/courseComparator">VIEW RESULTS</IonButton>
                                 </IonCol>
                             </IonRow>
                         </IonToolbar>
