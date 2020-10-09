@@ -172,7 +172,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                 cssClass='alertBox'
                 mode='md'
                 header={'Successfully Registered'}
-                message={'You have successfully registered for the programme talk and it has been successfully added to My Schedule.'}
+                message={'You have successfully registered for the guided tour and it has been successfully added to My Schedule.'}
                 buttons={['Close']}
             ></IonAlert>
 
@@ -182,7 +182,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                 cssClass='alertBox'
                 mode='md'
                 header={'Registration Unsuccessful'}
-                message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
+                message={'There exists a guided tour in your scheduler at this timing. Please remove the existing tour from your scheduler first!'}
                 buttons={['Close']}
             ></IonAlert>
 

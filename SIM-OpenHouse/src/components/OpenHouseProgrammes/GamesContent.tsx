@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonLoading } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonLoading, IonAlert } from '@ionic/react';
 import React, { useState } from 'react';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -35,6 +35,26 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
 
     return (
         <>
+            <IonAlert
+                isOpen={alert.registerSuccess}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
+                cssClass='alertBox'
+                mode='md'
+                header={'Successfully Added'}
+                message={'You have successfully added the game & activity to My Schedule.'}
+                buttons={['Close']}
+            ></IonAlert>
+
+            <IonAlert
+                isOpen={alert.registerFail}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
+                cssClass='alertBox'
+                mode='md'
+                header={'Error Occurred'}
+                message={'There exists a game & activity in your scheduler at this timing. Please remove the existing activity from your scheduler first!'}
+                buttons={['Close']}
+            ></IonAlert>
+            
             <IonGrid id="gamesContent-tableGrid">
                 <IonRow id="gamesContent-tableHeader" className="ion-justify-content-center">
                     <IonCol className="gamesContent-Header ion-text-wrap">Booth No.</IonCol>
