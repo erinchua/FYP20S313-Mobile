@@ -64,11 +64,11 @@ const ProgTalkInfo: React.FC<{
                     <IonGrid id="progTalkInfoGrid">
                         {/* Programme Talk */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Programme Talk:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 Sample
                                 <p>{props.progTalk}</p>
                             </IonCol>
@@ -76,11 +76,11 @@ const ProgTalkInfo: React.FC<{
 
                         {/* Awarding Uni */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Awarding University:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 Sample
                                 <p>{props.awardingUni}</p>
                             </IonCol>
@@ -88,11 +88,11 @@ const ProgTalkInfo: React.FC<{
 
                         {/* Date */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Date:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 Sample
                                 <p>{props.date}</p>
                             </IonCol>
@@ -100,11 +100,11 @@ const ProgTalkInfo: React.FC<{
 
                         {/* Time */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Time:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 Sample
                                 <p>{props.time}</p>
                             </IonCol>
@@ -112,11 +112,11 @@ const ProgTalkInfo: React.FC<{
 
                         {/* Venue */}
                         <IonRow>
-                            <IonCol sizeSm="4" className="progTalkInfoHeader">
+                            <IonCol size="4" sizeSm="4" className="progTalkInfoHeader">
                                 Venue:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 Sample
                                 <p>{props.venue}</p>
                             </IonCol>
