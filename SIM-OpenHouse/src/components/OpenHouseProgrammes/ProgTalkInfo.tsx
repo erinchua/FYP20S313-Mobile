@@ -77,7 +77,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
                                 Programme Talk:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.talkName}
                             </IonCol>
                         </IonRow>
@@ -88,7 +88,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
                                 Awarding University:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.awardingUni}
                             </IonCol>
                         </IonRow>
@@ -99,8 +99,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
                                 Date:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
-                                
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.date}
                             </IonCol>
                         </IonRow>
@@ -111,8 +110,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
                                 Time:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
-                                
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.startTime+" to "+programmeTalk.endTime}
                             </IonCol>
                         </IonRow>
@@ -123,8 +121,7 @@ const ProgTalkInfo: React.FC<RouteComponentProps> = ({match}) => {
                                 Venue:
                             </IonCol>
 
-                            <IonCol sizeSm="8" className="progTalkInfoData">
-                                
+                            <IonCol size="8" sizeSm="8" className="progTalkInfoData">
                                 {programmeTalk.venue}
                             </IonCol>
                         </IonRow>
