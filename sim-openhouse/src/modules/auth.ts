@@ -1,4 +1,4 @@
-import { auth as firebaseAuth } from './firebase';
+import { auth as firebaseAuth } from '../firebase';
 import React, { useContext, useEffect, useState } from 'react';
 
 interface Auth {

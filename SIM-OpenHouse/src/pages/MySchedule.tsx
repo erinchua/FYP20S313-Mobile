@@ -2,20 +2,22 @@ import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, Io
 import React, { useEffect, useState } from 'react';
 
 import { db } from '../firebase';
-import { useAuth } from '../auth';
-import { ScheduleItem, toSchedule } from '../schedule';
+import { useAuth } from '../modules/auth';
+import { ScheduleItem, toSchedule } from '../modules/map';
 import '../css/Global.css';
 import '../css/MySchedule.css';
 
 import TopNav from '../components/TopNav';
 import Menu from '../components/Menu';
 import MyScheduleContent from '../components/MyScheduleContent';
+import { toDateObject } from '../modules/convert';
 
 const MySchedule: React.FC = () => {
     const { userID } = useAuth();
     const [dayNum, setDayNum] = useState("day1");
     const [openhouseDates, setOpenhouseDates] = useState([]);
     const [openHouseProgs, setOpenHouseProgs] = useState<ScheduleItem[]>([]);
+    const [openHouseHours, setOpenHouseHours] = useState<any[]>([]);
 
     const handleDayOne = () => {
         setDayNum("day1");
@@ -29,14 +31,22 @@ const MySchedule: React.FC = () => {
     
         db.collection('Openhouse').get().then(snapshot => {
             const dates: any = [];
+            const hours: any = [];
             snapshot.forEach(doc => {
                 const data = doc.get('day');
-                //console.log(data);
+
                 if (Array.isArray(data))
-                    data.forEach((day: any) => dates.push(day.date));
+                    data.forEach((day: any) => {
+                        dates.push(day.date);
+
+                        const duration = Math.floor((+toDateObject(day.date, day.endTime) - +toDateObject(day.date, day.startTime)) / 3600000);
+                        //console.log(duration)
+                        hours.push(Array.from(Array(duration).keys()));
+                    });
             });
-            //console.log(dates);
             setOpenhouseDates(dates);
+            setOpenHouseHours(hours);
+            //console.log(openHouseHours)
         }).catch((error) => console.log(error));
 
         db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
@@ -123,7 +133,7 @@ const MySchedule: React.FC = () => {
                     </IonRow>
                 </IonGrid>
 
-                <MyScheduleContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} openHouseProgs={openHouseProgs} />
+                <MyScheduleContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} openHouseHours={openHouseHours} openHouseProgs={openHouseProgs} />
             </IonContent>
         </IonPage>
     );

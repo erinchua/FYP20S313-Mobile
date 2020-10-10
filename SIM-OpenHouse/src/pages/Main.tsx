@@ -2,7 +2,7 @@ import { IonContent, IonPage, IonImg, IonGrid, IonRow, IonButton, IonRouterLink 
 import React from 'react';
 import { Redirect } from 'react-router';
 
-import { useAuth } from '../auth';
+import { useAuth } from '../modules/auth';
 import '../css/Main.css';
 import '../css/Global.css';
 import logo from '../img/main/SIMGE-White.png';

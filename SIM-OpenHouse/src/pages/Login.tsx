@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
 
-import { useAuth } from '../auth';
+import { useAuth } from '../modules/auth';
 import { auth, googleProvider } from '../firebase';
 import firebase from 'firebase';
 import '../css/Login.css';

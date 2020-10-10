@@ -18,7 +18,7 @@ export function toDateObject(date: string, time: string) {
     const minutes = +timeSplit[1].slice(0, 2), meridiem = timeSplit[1].slice(-2, timeSplit[1].length);
     const seconds = 0, milliseconds = 0;
 
-    if (meridiem.toUpperCase() === "PM") hours += 12;
+    if ((hours > 0 && hours < 12) && meridiem.toUpperCase() === "PM") hours += 12;
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
 };
