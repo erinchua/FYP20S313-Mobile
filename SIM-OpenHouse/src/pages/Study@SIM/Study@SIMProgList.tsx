@@ -11,7 +11,7 @@ import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
 import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
 import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopoverContent';
-import CourseFilterPopoverContent from '../../components/Study@SIM/CourseFilterPopoverContent';
+import FilterPopoverContent from '../../components/FilterPopoverContent';
 
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
@@ -443,32 +443,32 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         onDidDismiss={e => setShowProgCourseFilterPopover({open: false, event: undefined})}
                     >
                         {match.params.discipline === "artSocialSciences" ?
-                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
-                            params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} />              
+                            <FilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} filterFor={"study@SIM"} />              
                             : ''
                         }
 
                         {match.params.discipline === "business" ?
-                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
-                            params={match.params.discipline === "business"} href={"/u/study@SIMMain/business"} />              
+                            <FilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "business"} href={"/u/study@SIMMain/business"} filterFor={"study@SIM"} />              
                             : ''
                         }
 
                         {match.params.discipline === "itComputerScience" ?
-                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
-                            params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} />              
+                            <FilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} filterFor={"study@SIM"} />              
                             : ''
                         }
 
                         {match.params.discipline === "nursing" ?
-                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
-                            params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} />             
+                            <FilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} filterFor={"study@SIM"} />             
                             : ''
                         }
 
                         {match.params.discipline === "speciality" ?
-                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
-                            params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} />              
+                            <FilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} filterFor={"study@SIM"} />              
                             : ''
                         }
                     

@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonPopover, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
@@ -12,7 +12,10 @@ import TopNav from '../../components/TopNav';
 import ProgTalkSchedule from '../../components/OpenHouseProgrammes/ProgTalkSchedule';
 import ProgTalkLiveTalks from '../../components/OpenHouseProgrammes/ProgTalkLiveTalks';
 import ProgTalkPastRec from '../../components/OpenHouseProgrammes/ProgTalkPastRec';
+import FilterPopoverContent from '../../components/FilterPopoverContent';
+
 import { db } from '../../firebase';
+
 
 const ProgrammeTalks: React.FC = () => {
   const [tab, setTab] = useState("schedule");
@@ -74,6 +77,13 @@ const ProgrammeTalks: React.FC = () => {
 
   }, []);
 
+
+  {/* Display Filter Menu Popover */}
+  const [showProgTalkFilterPopover, setShowProgTalkFilterPopover] = useState<{open: boolean, event: Event | undefined}>({
+    open: false,
+    event: undefined,
+  });
+
   return (
     <IonPage>
       <IonHeader>
@@ -114,17 +124,19 @@ const ProgrammeTalks: React.FC = () => {
                   </IonToolbar>
               </IonRow>
 
+              {/* Filter Button */}
               <IonRow>
                 <IonHeader className="filterHeader">
                   <IonToolbar className="filterHeaderToolBar">
                     <IonButtons slot="end" id="filterIcon">
-                      <IonButton>
+                      <IonButton onClick={(e) => {setShowProgTalkFilterPopover({open: true, event: e.nativeEvent})}}>
                         <FontAwesomeIcon size="lg" icon={faFilter} />
                       </IonButton>
                     </IonButtons>
                   </IonToolbar>
                 </IonHeader>
               </IonRow>
+
             </IonGrid>
 
             <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} />
@@ -156,9 +168,8 @@ const ProgrammeTalks: React.FC = () => {
 
             <ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
           </>
-        ) : (
-            ""
-          )}
+          ) : ("")
+        }
 
         {/* Past Recordings */}
         {tab === "pastRecordings" ? (
@@ -179,11 +190,13 @@ const ProgrammeTalks: React.FC = () => {
                 </IonCol>
               </IonRow>
 
+
+              {/* Filter Button */}
               <IonRow>
                 <IonHeader className="filterHeader">
                   <IonToolbar className="filterHeaderToolBar">
                     <IonButtons slot="end" id="filterIcon">
-                      <IonButton>
+                      <IonButton onClick={(e) => {setShowProgTalkFilterPopover({open: true, event: e.nativeEvent})}}>
                         <FontAwesomeIcon size="lg" icon={faFilter} />
                       </IonButton>
                     </IonButtons>
@@ -194,9 +207,32 @@ const ProgrammeTalks: React.FC = () => {
 
             <ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
           </>
-        ) : (
-            ""
-          )}
+          ) : ("")
+        }
+
+
+        {/* Filter Programmes Popover */}
+        <IonPopover id="progCourseFilterPopover" 
+            cssClass='progCourseFilterPopover' 
+            isOpen={showProgTalkFilterPopover.open} 
+            event={showProgTalkFilterPopover.event} 
+            onDidDismiss={e => setShowProgTalkFilterPopover({open: false, event: undefined})}
+        >
+          {tab === "schedule" ?
+            <FilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+            params={""} href={"/u/openHouseMain/programmeTalks#schedule"}  filterFor={"progTalk"} /> 
+            :''
+          }  
+
+          {tab === "pastRecordings" ?
+            <FilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+            params={""} href={"/u/openHouseMain/programmeTalks#pastRecordings"}  filterFor={"progTalk"} /> 
+            :''
+          }             
+            
+        </IonPopover>
+        
+
       </IonContent>
     </IonPage>
   );
