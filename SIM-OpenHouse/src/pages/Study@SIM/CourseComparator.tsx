@@ -21,6 +21,7 @@ import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
+import CourseComparatorDetails from '../../components/Study@SIM/CourseComparatorDetails';
 
 
 interface CourseComparator_Props extends RouteComponentProps<{
@@ -61,83 +62,29 @@ const CourseComparator: React.FC<CourseComparator_Props> = ({ match }) => {
 
             <IonContent fullscreen={true}>
                 {match.params.discipline === 'artSocialSciences' ?
-                    <IonGrid id="courseComparatorGrid">
-                        <IonRow className="courseComparatorRow" class="ion-align-items-center" > 
-                            <div className="horizontalScroll">  
-                                {/* Title Col */}
-                                <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-text-center">
-                                    <IonTitle className="courseComparatorTitle">
-                                        <div className="ion-text-wrap">Programme</div>
-                                    </IonTitle>
-                                </IonCol>
-                                
-                                {/* Programmes added */}
-                                {/* Prog Col */}
-                                <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
-                                    {/* Uni Img */}
-                                    <IonRow class="ion-align-items-center">
-                                        <IonCol class="ion-text-center">
-                                            <img src={Buffalo} className="courseComparatorUniImg"></img>
-                                        </IonCol>
-                                    </IonRow>
-
-                                    {/* Programme Name */}
-                                    <IonRow class="ion-align-items-center">
-                                        <IonCol class="ion-text-center">
-                                            <IonText className="courseComparatorProgName">
-                                                <div className="ion-text-wrap">Bachelor of Arts (Communication & Economics)</div>
-                                            </IonText>
-                                        </IonCol>
-                                    </IonRow>
-                                </IonCol>
-
-                                {/* Prog Col */}
-                                <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
-                                    {/* Uni Img */}
-                                    <IonRow class="ion-align-items-center">
-                                        <IonCol class="ion-text-center">
-                                            <img src={Buffalo} className="courseComparatorUniImg"></img>
-                                        </IonCol>
-                                    </IonRow>
-
-                                    {/* Programme Name */}
-                                    <IonRow class="ion-align-items-center">
-                                        <IonCol class="ion-text-center">
-                                            <IonText className="courseComparatorProgName">
-                                                <div className="ion-text-wrap">Bachelor of Arts (Communication & Economics)</div>
-                                            </IonText>
-                                        </IonCol>
-                                    </IonRow>
-                                </IonCol>
-
-                                {/* Prog Col */}
-                                <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
-                                    {/* Uni Img */}
-                                    <IonRow class="ion-align-items-center">
-                                        <IonCol class="ion-text-center">
-                                            <img src={Buffalo} className="courseComparatorUniImg"></img>
-                                        </IonCol>
-                                    </IonRow>
-
-                                    {/* Programme Name */}
-                                    <IonRow class="ion-align-items-center">
-                                        <IonCol class="ion-text-center">
-                                            <IonText className="courseComparatorProgName">
-                                                <div className="ion-text-wrap">Bachelor of Arts (Communication & Economics)</div>
-                                            </IonText>
-                                        </IonCol>
-                                    </IonRow>
-                                </IonCol>                            
-                            </div>
-
-                        </IonRow>
-
-                    </IonGrid>
-
+                    <CourseComparatorDetails />
                     :''
                 }
 
+                {match.params.discipline === 'business' ?
+                    <CourseComparatorDetails />
+                    :''
+                }
 
+                {match.params.discipline === 'itComputerScience' ?
+                    <CourseComparatorDetails />
+                    :''
+                }
+
+                {match.params.discipline === 'nursing' ?
+                    <CourseComparatorDetails />
+                    :''
+                }
+
+                {match.params.discipline === 'speciality' ?
+                    <CourseComparatorDetails />
+                    :''
+                }
             </IonContent>
         </IonPage>
     );
