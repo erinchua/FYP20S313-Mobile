@@ -7,8 +7,8 @@ import firebase from 'firebase';
 import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
 import { db } from '../../firebase';
-import { useAuth } from '../../auth';
-import { toDateObject } from '../../convert';
+import { useAuth } from '../../modules/auth';
+import { toDateObject } from '../../modules/convert';
 
 const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; openhouseDates: any }> = props => {
     const { userID } = useAuth();

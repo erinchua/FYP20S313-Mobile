@@ -6,15 +6,14 @@ import firebase from 'firebase';
 import '../../css/Global.css';
 import '../../css/GuidedTourContent.css';
 import { db } from '../../firebase';
-import { useAuth } from '../../auth';
-import { toDateObject } from '../../convert';
+import { useAuth } from '../../modules/auth';
+import { toDateObject } from '../../modules/convert';
 import { register } from '../../serviceWorker';
 import { resolve } from 'dns';
 
 const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; openhouseDates: any }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [conflict, setConflict] = useState(false);
 
     const guidedTourDay1 = props.guidedTours
         .filter((tour: any) => {

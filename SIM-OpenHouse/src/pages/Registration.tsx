@@ -3,9 +3,9 @@ import React, { useRef, useState } from "react";
 import { Redirect, useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 
-import { useAuth } from "../auth";
+import { useAuth } from "../modules/auth";
 import { auth, db } from "../firebase";
-import { formatDate } from "../convert";
+import { formatDate } from "../modules/convert";
 
 import "../css/Global.css";
 import "../css/Registration.css";

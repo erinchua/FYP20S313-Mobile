@@ -5,7 +5,7 @@ import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
 import firebase from 'firebase';
 
 import { db } from '../firebase';
-import { useAuth } from '../auth';
+import { useAuth } from '../modules/auth';
 import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 
@@ -13,23 +13,18 @@ const MyScheduleContent: React.FC<{
     day1: any; 
     day2: any;
     openhouseDates: any;
+    openHouseHours: any;
     openHouseProgs: any;
 }> = props => {
     const { userID } = useAuth();
     
-    /* Remove Programme Alert */
-    //const [confirmRemoveAlert, setConfirmRemoveAlert] = useState(false);
-    //const [removeSuccess, setRemoveSuccess] = useState(false);
     const [alert, setAlert] = useState({ confirmRemove: false, removeSuccess: false, loading: false });
     const [toBeDeleted, setToBeDeleted] = useState("");
 
-    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => {
-        return item.date == props.openhouseDates[0];
-    });
-
-    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => {
-        return item.date == props.openhouseDates[1];
-    });
+    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] });
+    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[1] });
+    const openHouseHoursDay1 = props.openHouseHours[0];
+    const openHouseHoursDay2 = props.openHouseHours[1];
 
     const displayRemoveProgAlert = (id: any) => {
         setAlert({ confirmRemove: true, removeSuccess: false, loading: false });
@@ -49,8 +44,8 @@ const MyScheduleContent: React.FC<{
         }
     };
 
-    //console.log("props", props.openHouseProgs)
-    //console.log(props.openhouseDates)
+    console.log(props.openHouseHours[0])
+    console.log("progs", props.openHouseProgs[0])
     
     return(
         <>
@@ -99,26 +94,25 @@ const MyScheduleContent: React.FC<{
 
                 {props.day1 === "day1" ? 
                     openHouseProgsDay1.map((item: any) => {
-                        if (item.id.split("-")[0] !== "activity")
-                            return (
-                                <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">9am</IonCol>
-                                    {openHouseProgsDay1.map((item:any) => {
-                                        return (
-                                            <IonRow key={item.id}>
-                                                <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">ProgName1</IonCol>
-                                                <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">9:00AM  to 10:00AM</IonCol>
-                                                <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">Sample</IonCol>
-                                                <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                                    <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                                    </IonButton>
-                                                </IonCol>
-                                            </IonRow>
-                                        )
-                                    })}
-                                </IonRow>
-                            )
+                        return (
+                            <IonRow className="ion-justify-content-center" key={item.id}>
+                                <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">9am</IonCol>
+                                {openHouseProgsDay1.map((item:any) => {
+                                    return (
+                                        <IonRow key={item.id}>
+                                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">ProgName1</IonCol>
+                                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">9:00AM  to 10:00AM</IonCol>
+                                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">Sample</IonCol>
+                                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
+                                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
+                                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                                </IonButton>
+                                            </IonCol>
+                                        </IonRow>
+                                    )
+                                })}
+                            </IonRow>
+                        )
                     }) : '' 
                 }
                 

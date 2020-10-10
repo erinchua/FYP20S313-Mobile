@@ -10,8 +10,8 @@ import '../../css/ProgrammeTalks.css'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../../firebase';
-import { useAuth } from '../../auth';
-import { toDateObject } from '../../convert';
+import { useAuth } from '../../modules/auth';
+import { toDateObject } from '../../modules/convert';
 
 const ProgTalkSchedule: React.FC<{
     day1: any;
@@ -31,21 +31,6 @@ const ProgTalkSchedule: React.FC<{
         .filter((talk: any) => {
             return talk.date == props.openhouseDates[1]
         })
-
-    const displayRegisterAlert = () => {
-        {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
-          of the programme the user wants to add*/}
-
-        {/* if (exist) {
-             setRegisterSuccess(true);
-             setRegisterFail(false);
-         } else {
-             setRegisterFail(true);
-            setRegisterSuccess(false);
-        } */}
-
-        {/* set state to disable the + btn in else {} */ }
-    };
 
     const addToSchedule = async (programme: any) => {
         try {
