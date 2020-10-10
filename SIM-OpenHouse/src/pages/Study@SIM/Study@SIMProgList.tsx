@@ -443,34 +443,34 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         onDidDismiss={e => setShowProgCourseFilterPopover({open: false, event: undefined})}
                     >
                         {match.params.discipline === "artSocialSciences" ?
-                            <CourseFilterPopoverContent removeProg={()=>(console.log('Add removeProg function here'))} removeAllProg={()=>(console.log('Add removeAllProg function here'))} viewResults={()=>(console.log('Add viewResults function here'))}
-                            params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences/courseComparator"} />              
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} />              
                             : ''
                         }
 
-                        {/* {match.params.discipline === "business" ?
-                            <CompareProgPopoverContent removeProg={()=>(console.log('Add removeProg function here'))} removeAllProg={()=>(console.log('Add removeAllProg function here'))} viewResults={()=>(console.log('Add viewResults function here'))}
-                            params={match.params.discipline === "business"} href={"/u/study@SIMMain/business/courseComparator"} />              
+                        {match.params.discipline === "business" ?
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "business"} href={"/u/study@SIMMain/business"} />              
                             : ''
                         }
 
                         {match.params.discipline === "itComputerScience" ?
-                            <CompareProgPopoverContent removeProg={()=>(console.log('Add removeProg function here'))} removeAllProg={()=>(console.log('Add removeAllProg function here'))} viewResults={()=>(console.log('Add viewResults function here'))}
-                            params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience/courseComparator"} />              
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} />              
                             : ''
                         }
 
                         {match.params.discipline === "nursing" ?
-                            <CompareProgPopoverContent removeProg={()=>(console.log('Add removeProg function here'))} removeAllProg={()=>(console.log('Add removeAllProg function here'))} viewResults={()=>(console.log('Add viewResults function here'))}
-                            params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing/courseComparator"} />              
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} />             
                             : ''
                         }
 
                         {match.params.discipline === "speciality" ?
-                            <CompareProgPopoverContent removeProg={()=>(console.log('Add removeProg function here'))} removeAllProg={()=>(console.log('Add removeAllProg function here'))} viewResults={()=>(console.log('Add viewResults function here'))}
-                            params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality/courseComparator"} />              
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} />              
                             : ''
-                        } */}
+                        }
                     
                     </IonPopover>
 
