@@ -7,10 +7,12 @@ import '../../css/Global.css';
 import '../../css/GuidedTourContent.css';
 import { db } from '../../firebase';
 import { useAuth } from '../../auth';
+import { toDateObject } from '../../convert';
 
 const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; openhouseDates: any }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
+    const [conflict, setConflict] = useState(false);
 
     const guidedTourDay1 = props.guidedTours
         .filter((tour: any) => {
@@ -26,7 +28,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
 
-            await db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+            await db.collection('PersonalScheduler').doc(userID).get().then(async (snapshot: any) => {
                 const registered = snapshot.data().registeredProgrammes;
                 
                 if (registered != null) {
@@ -34,6 +36,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                         
                         for (let item of registered) {
                             const itemType = item.split("-");
+                            console.log(item)
             
                             switch (itemType[0]) {
                                 case "talk":
@@ -41,24 +44,19 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
 
                                         if (programme.date == doc.data().date) {
 
-                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
-                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
-
-                                            console.log(progStart, itemStart)
-                                            console.log(progEnd, itemEnd)
-
-                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
             
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                                                //setConflict(true);
+                                                //console.log(conflict)
                                             } else {
                                                 db.collection('PersonalScheduler').doc(userID).update({
                                                     registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                                                 });
                                                 setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                                //setConflict(false);
                                             }
 
                                         } else {
@@ -66,6 +64,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                                                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                                             });
                                             setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                            //setConflict(false);
                                         }
                                     });
 
@@ -74,13 +73,8 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
 
                                         if (programme.date == doc.data().date) {
 
-                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
-                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
-
-                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
             
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
@@ -104,13 +98,8 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
 
                                         if (programme.date == doc.data().date) {
 
-                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
-                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
-
-                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
             
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
@@ -131,11 +120,11 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
 
                                 default:
                                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                    //setConflict(false);
                             }
 
-                            if (!alert.registerSuccess) {
-                                break;
-                            }
+                            if (!alert.registerSuccess) break;
+                            //if (conflict) break;
                         }
 
                     } else {
@@ -143,6 +132,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                             registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                         });
                         setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                        //setConflict(false);
                     }
 
                 } else {
@@ -150,6 +140,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                         registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                     });
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                    //setConflict(false);
                 }
             });
 

@@ -41,7 +41,7 @@ const Login: React.FC = () => {
   };
 
   const googleLogin = async () => {
-    try {
+    /* try {
       setStatus({ loading: true, error: false });
 
       await auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
@@ -49,9 +49,7 @@ const Login: React.FC = () => {
       }).then(() => {
         return auth.getRedirectResult();
       }).then(user => {
-        /* if (user.additionalUserInfo?.isNewUser) {
-          setExistingUser(false);
-        } */
+        //if (user.additionalUserInfo?.isNewUser) setExistingUser(false);
         return user.user?.getIdToken();
       }).then((idToken: any) => {
         sessionStorage.setItem('token', idToken);
@@ -61,7 +59,7 @@ const Login: React.FC = () => {
       setStatus({ loading: false, error: false });
     } catch (e) {
       console.log(e);
-    };
+    }; */
   };
 
   if (loggedIn) return <Redirect to="/u/home" />;
