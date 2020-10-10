@@ -61,7 +61,7 @@ const MySchedule: React.FC = () => {
             setTimeout(() => setOpenHouseProgs(scheduleProgs.map(toSchedule)), 500);
         });
     
-        // No problem
+        {// No problem
         /* db.collection('ProgrammeTalks').get().then(snapshot => {
             const items: any = [];
             snapshot.forEach((doc) => items.push(doc.data()));
@@ -85,7 +85,7 @@ const MySchedule: React.FC = () => {
             const items: any = [];
             snapshot.forEach((doc) => items.push(doc.data()));
             return setGamesActivities(items.map(toSchedule));
-        }).catch(err => console.log(err)); */
+        }).catch(err => console.log(err)); */}
 
     }, []);
 

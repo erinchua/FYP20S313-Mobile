@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert, IonLoading } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { sync } from 'ionicons/icons';
@@ -11,6 +11,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../../firebase';
 import { useAuth } from '../../auth';
+import { toDateObject } from '../../convert';
 
 const ProgTalkSchedule: React.FC<{
     day1: any;
@@ -65,13 +66,16 @@ const ProgTalkSchedule: React.FC<{
 
                                         if (programme.date == doc.data().date) {
 
-                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
-                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
 
-                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+                                            //let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
+                                            //let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
+
+                                            //if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            //if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
+                                            //if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
+                                            //if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
             
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
@@ -81,6 +85,7 @@ const ProgTalkSchedule: React.FC<{
                                                 });
                                                 setAlert({ registerSuccess: true, registerFail: false, loading: false });
                                             }
+
                                         } else {
                                             db.collection('PersonalScheduler').doc(userID).update({
                                                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
@@ -94,13 +99,8 @@ const ProgTalkSchedule: React.FC<{
 
                                         if (programme.date == doc.data().date) {
 
-                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
-                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
-
-                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
             
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
@@ -110,6 +110,7 @@ const ProgTalkSchedule: React.FC<{
                                                 });
                                                 setAlert({ registerSuccess: true, registerFail: false, loading: false });
                                             }
+
                                         } else {
                                             db.collection('PersonalScheduler').doc(userID).update({
                                                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
@@ -123,13 +124,8 @@ const ProgTalkSchedule: React.FC<{
 
                                         if (programme.date == doc.data().date) {
 
-                                            let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
-                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
-
-                                            if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
             
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
@@ -139,6 +135,7 @@ const ProgTalkSchedule: React.FC<{
                                                 });
                                                 setAlert({ registerSuccess: true, registerFail: false, loading: false });
                                             }
+
                                         } else {
                                             db.collection('PersonalScheduler').doc(userID).update({
                                                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
@@ -155,7 +152,6 @@ const ProgTalkSchedule: React.FC<{
                                 break;
                             }
                         }
-
 
                         {/* registered.forEach((item: any) => {
                             const itemType = item.split("-");
@@ -219,7 +215,6 @@ const ProgTalkSchedule: React.FC<{
                                     console.log("default")
                             }
                         }); */}
-
 
                     } else {
                         db.collection('PersonalScheduler').doc(userID).update({
