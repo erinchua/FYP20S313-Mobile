@@ -56,165 +56,77 @@ const ProgTalkSchedule: React.FC<{
                 
                 if (registered != null) {
                     if (registered.length > 0) {
-                        
+                        let check = false;
+
                         for (let item of registered) {
                             const itemType = item.split("-");
-            
+
                             switch (itemType[0]) {
                                 case "talk":
-                                    return db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
+                                    db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
 
                                         if (programme.date == doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
 
-                                            //let progStart = Number(programme.startTime.split(":")[0]), progEnd = Number(programme.endTime.split(":")[0]);
-                                            //let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
-
-                                            //if (programme.startTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            //if (programme.endTime.slice(-2, programme.startTime.length) == "PM") progStart += 12;
-                                            //if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            //if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
-            
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
-                                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
-                                            } else {
-                                                db.collection('PersonalScheduler').doc(userID).update({
-                                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                                                });
-                                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                                check = true;
                                             }
-
-                                        } else {
-                                            db.collection('PersonalScheduler').doc(userID).update({
-                                                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                                            });
-                                            setAlert({ registerSuccess: true, registerFail: false, loading: false });
                                         }
                                     });
+
+                                    break;
 
                                 case "tour":
-                                    return db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
+                                    db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
 
                                         if (programme.date == doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
-            
-                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
-                                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
-                                            } else {
-                                                db.collection('PersonalScheduler').doc(userID).update({
-                                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                                                });
-                                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
-                                            }
 
-                                        } else {
-                                            db.collection('PersonalScheduler').doc(userID).update({
-                                                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                                            });
-                                            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
                                         }
                                     });
+                                    
+                                    break;
 
                                 case "performance":
-                                    return db.collection('Performances').doc(item).onSnapshot((doc: any) => {
+                                    db.collection('Performances').doc(item).onSnapshot((doc: any) => {
 
                                         if (programme.date == doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
-            
-                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
-                                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
-                                            } else {
-                                                db.collection('PersonalScheduler').doc(userID).update({
-                                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                                                });
-                                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
-                                            }
 
-                                        } else {
-                                            db.collection('PersonalScheduler').doc(userID).update({
-                                                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                                            });
-                                            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
                                         }
                                     });
+                                    
+                                    break;
 
                                 default:
-                                    setAlert({ registerSuccess: true, registerFail: false, loading: false });
                             }
 
-                            if (!alert.registerSuccess) {
-                                break;
-                            }
                         }
 
-                        {/* registered.forEach((item: any) => {
-                            const itemType = item.split("-");
-                            console.log("-----------------------------------------------------------")
-                            console.log(item)
-                            console.log("-----------------------------------------------------------")
-            
-                            switch (itemType[0]) {
-                                case "talk":
-                                    return db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
-                                        //console.log(doc.data().startTime.slice(-2, doc.data().startTime.length))
-                                        console.log("date", programmeTalk.date, doc.data().date)
-                                        if (programmeTalk.date == doc.data().date) {
-                                            //console.log(true)
-                                            let progStart = Number(programmeTalk.startTime.split(":")[0]), progEnd = Number(programmeTalk.endTime.split(":")[0]);
-                                            let itemStart = Number(doc.data().startTime.split(":")[0]), itemEnd = Number(doc.data().endTime.split(":")[0]);
-                                            //console.log(progStart, itemStart)
-                                            if (programmeTalk.startTime.slice(-2, programmeTalk.startTime.length) == "PM") progStart += 12;
-                                            if (programmeTalk.endTime.slice(-2, programmeTalk.startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().startTime.slice(-2, doc.data().startTime.length) == "PM") progStart += 12;
-                                            if (doc.data().endTime.slice(-2, doc.data().endTime.length) == "PM") progStart += 12;
-            
-                                            //console.log("progStart", progStart)
-                                            //console.log("progEnd", progEnd)
-                                            //console.log("itemStart", itemStart)
-                                            //console.log("itenEnd", itemEnd)
-            
-                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
-                                                console.log("conflict", true)
-                                                console.log("conflict", programmeTalk.id, doc.data().id)
-                                                //isConflict = true;
-                                                int = 1
-                                                //return;
-                                            } else {
-                                                console.log("conflict", false)
-                                                console.log("conflict", programmeTalk.id, doc.data().id)
-                                                //isConflict = false;
-                                                int = 0
-                                                console.log("conflict test 1", int)
+                        setTimeout(async () => {
+                            if (check) {
+                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                            } else {
+                                await db.collection('PersonalScheduler').doc(userID).update({
+                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                });
+                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                            };
 
-                                                db.collection('PersonalScheduler').doc(userID).update({
-                                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
-                                                });
-                                                //return;
-                                            }
-                                        } else {
-                                            //isConflict = false;
-                                            int = 0
-                                            //console.log("asdsdadsd")
-                                            //return;
-                                            db.collection('PersonalScheduler').doc(userID).update({
-                                                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
-                                            });
-                                        }
-                                    });
-                                case "tour":
-                                    //return db.collection('GuidedTours').doc(item).onSnapshot(doc => {});
-                                case "performance":
-                                    //return db.collection('Performances').doc(item).onSnapshot(doc => {});
-                                default:
-                                    console.log("default")
-                            }
-                        }); */}
+                            check = false;
+                        }, 500);
 
                     } else {
                         db.collection('PersonalScheduler').doc(userID).update({

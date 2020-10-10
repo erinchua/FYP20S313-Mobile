@@ -84,16 +84,17 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
         });
 }); */
 
-/* db.collection("Openhouse").orderBy('id', 'desc').limit(1).get().then(snapshot => {
+db.collection("Openhouse").orderBy('id', 'desc').limit(1).get().then(snapshot => {
+    const arr = []
     snapshot.forEach(doc => {
         const data = doc.data().day;
-        data.forEach(day => {
-            console.log(day.date)
-        })
+        //console.log(data)
+        data.forEach(day => arr.push(day))
     })
-}) */
+    console.log(arr[0].date)
+})
 
-const dateObject1 = {
+/* const dateObject1 = {
     date: "21-Nov-2020",
     start: "11:30AM", end: "12:30PM"
 }
@@ -118,7 +119,7 @@ function toDateObject(date, time) {
 };
 const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
 const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
-console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
+console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2)) */
 
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater), toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
