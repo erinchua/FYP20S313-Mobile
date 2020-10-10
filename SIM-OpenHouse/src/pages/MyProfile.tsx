@@ -33,6 +33,9 @@ const MyProfile: React.FC = () => {
     const [showEditProfileBtn, setShowEditProfileBtn] = useState(true);
     const [showChangePassword, setShowChangePassword] = useState(true);
 
+    {/* Alert for successful and failure of updating profile */}
+    const [showErrorAlert, setShowErrorAlert] = useState(false);
+    const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
     {/* Edit Profile */}
     const editProfile = () => {
@@ -46,9 +49,12 @@ const MyProfile: React.FC = () => {
     };
 
     const onSubmitEditProfile = () => {
-        console.log("edited");
+        console.log('Edited');
+        {/* // //Here need to setShowSuccessAlert to true if the contactNo and highestQualifcation is correctly filled up.
+        if (contactNo !== "" && highestQualification !== ""){
+            setShowSuccessAlert(true);
+        } */}
     };
-
 
     {/* Change Password Modal & Alert */}
     const [changePasswordModal, setChangePasswordModal] = useState(false);
@@ -235,11 +241,11 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonInput value={contactNo} type="tel" name="contactNo" readonly={contactNoReadOnly} disabled={contactNoDisabled} className="readOnlyIonInput" id="contactNoField" minlength={8} maxlength={8} ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/ })}>{contactNo}</IonInput>
+                                    <IonInput type="tel" name="contactNo" readonly={contactNoReadOnly} disabled={contactNoDisabled} className="readOnlyIonInput" id="contactNoField" minlength={8} maxlength={8} ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/ })}>{contactNo}</IonInput>
                                     {errors.contactNo && errors.contactNo.type === "required" && <p className="errorMsg">Contact number is required!</p>}
-                                    {/* {errors.contactNo && errors.contactNo.type === "minLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
+                                    {errors.contactNo && errors.contactNo.type === "minLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
                                     {errors.contactNo && errors.contactNo.type === "maxLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
-                                    {errors.contactNo && errors.contactNo.type === "pattern" && <p className="errorMsg">Please enter a valid Contact No.</p>} */}
+                                    {errors.contactNo && errors.contactNo.type === "pattern" && <p className="errorMsg">Please enter a valid Contact No.</p>}
                                 </IonCol>
                             </IonRow>
 
@@ -261,7 +267,7 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonSelect id="highestQualSelect" className="readOnlyIonInput" name="highestQualification" value={highestQualification} disabled={highestQualDisabled} ref={register({ required: true })}>
+                                    <IonSelect id="highestQualSelect" className="readOnlyIonInput" name="highestQualification" disabled={highestQualDisabled} ref={register({ required: true })}>
                                         <IonSelectOption value="aLevel" className="highestQualSelectOption">'A' Level</IonSelectOption>
                                         <IonSelectOption value="oLevel" className="highestQualSelectOption">'O' Level</IonSelectOption>
                                         <IonSelectOption value="degree" className="highestQualSelectOption">Degree</IonSelectOption>
@@ -301,7 +307,9 @@ const MyProfile: React.FC = () => {
                                 : (
                                     <IonRow id="editProfileBtnRow" class="ion-align-items-center">
                                         <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
-                                            <IonButton id="saveEditProfileBtn" onClick={onSubmitEditProfile}>SAVE</IonButton>
+                                            <IonAlert isOpen={showSuccessAlert} onDidDismiss={() => setShowSuccessAlert(false)} cssClass='alertBox' header={'Profile Updated'} message={'Your profile has been successfully updated!'} buttons={['CLOSE']}></IonAlert>
+                                            <IonAlert isOpen={showErrorAlert} onDidDismiss={() => setShowErrorAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
+                                            <IonButton id="saveEditProfileBtn" type="submit" onClick={() => [setShowErrorAlert(true), setShowSuccessAlert(false)]}>SAVE</IonButton>
                                         </IonCol>
                                     </IonRow>
                                 )

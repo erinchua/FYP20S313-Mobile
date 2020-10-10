@@ -2,21 +2,10 @@ import { IonButton, IonCol, IonFooter, IonGrid, IonItem, IonItemOption, IonItemO
 import React, { useRef, useState } from 'react';
 
 import '../../css/Global.css';
-import '../../css/CompareProgPopover.css';
+import '../../css/CompareProgPopoverContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
-import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
-import RMIT from '../../img/study@SIM/RMITUniversity.png';
-import SIMGE from '../../img/study@SIM/SimGE.png';
-import Buffalo from '../../img/study@SIM/UniversityAtBuffalo.png';
-import Birmingham from '../../img/study@SIM/UniversityOfBirmingham.png';
-import London from '../../img/study@SIM/UniversityOfLondon.png';
-import Manchester from '../../img/study@SIM/UniversityOfManchester.png';
-import Stirling from '../../img/study@SIM/UniversityOfStirling.png';
-import Sydney from '../../img/study@SIM/UniversityOfSydney.png';
-import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
-import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 const CompareProgPopoverContent: React.FC<{
     removeProg: any;
