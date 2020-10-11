@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 import AppU from "./AppU";
 import SingleSignIn from "./pages/SingleSignIn";
 
-import { AuthContext, useAuthInit } from "./auth";
+import { AuthContext, useAuthInit } from "./modules/auth";
 import "./css/TopNav.css";
 import "./css/Global.css";
 import "./css/Menu.css";

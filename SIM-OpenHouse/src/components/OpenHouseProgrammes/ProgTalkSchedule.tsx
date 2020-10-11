@@ -1,7 +1,8 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonRouterLink, IonAlert, IonLoading } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
-import firebase from 'firebase';
+import { Link } from 'react-router-dom';
 import { sync } from 'ionicons/icons';
+import firebase from 'firebase';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
@@ -9,9 +10,8 @@ import '../../css/ProgrammeTalks.css'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../../firebase';
-import { useAuth } from '../../auth';
-import {Link} from 'react-router-dom';
-import { conflictCheck } from '../../checker';
+import { useAuth } from '../../modules/auth';
+import { toDateObject } from '../../modules/convert';
 
 const ProgTalkSchedule: React.FC<{
     day1: any;
@@ -20,10 +20,6 @@ const ProgTalkSchedule: React.FC<{
     openhouseDates: any;
 }> = props => {
     const { userID } = useAuth();
-
-    {/* Register Alert */ }
-    //const [registerSuccess, setRegisterSuccess] = useState(false);
-    //const [registerFail, setRegisterFail] = useState(false);
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
 
     const programmeTalkDay1 = props.programmeTalk
@@ -36,33 +32,108 @@ const ProgTalkSchedule: React.FC<{
             return talk.date == props.openhouseDates[1]
         })
 
-    const displayRegisterAlert = () => {
-        {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
-          of the programme the user wants to add*/}
-
-        {/* if (exist) {
-             setRegisterSuccess(true);
-             setRegisterFail(false);
-         } else {
-             setRegisterFail(true);
-            setRegisterSuccess(false);
-        } */}
-
-        {/* set state to disable the + btn in else {} */ }
-    };
-
-    const addToSchedule = async (programmeTalk: any) => {
+    const addToSchedule = async (programme: any) => {
         try {
-            conflictCheck(programmeTalk, userID);
-            // make check for schedule conflict then below
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
-            await db.collection('PersonalScheduler').doc(userID).update({
-                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
+
+            await db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+                const registered = snapshot.data().registeredProgrammes;
+                
+                if (registered != null) {
+                    if (registered.length > 0) {
+                        let check = false;
+
+                        for (let item of registered) {
+                            const itemType = item.split("-");
+
+                            switch (itemType[0]) {
+                                case "talk":
+                                    db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
+                                        }
+                                    });
+
+                                    break;
+
+                                case "tour":
+                                    db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
+                                        }
+                                    });
+                                    
+                                    break;
+
+                                case "performance":
+                                    db.collection('Performances').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
+                                        }
+                                    });
+                                    
+                                    break;
+
+                                default:
+                            }
+
+                        }
+
+                        setTimeout(async () => {
+                            if (check) {
+                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                            } else {
+                                await db.collection('PersonalScheduler').doc(userID).update({
+                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                });
+                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                            };
+
+                            check = false;
+                        }, 500);
+
+                    } else {
+                        db.collection('PersonalScheduler').doc(userID).update({
+                            registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                        });
+                        setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                    }
+                } else {
+                    db.collection('PersonalScheduler').doc(userID).update({
+                        registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                    });
+                    setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                }
             });
-            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+
+            if (alert.registerSuccess) {
+                // disable button
+            }
+
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });
-            console.log(e);
+            return console.log(e);
         }
     };
 

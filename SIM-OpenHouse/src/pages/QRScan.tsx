@@ -6,7 +6,7 @@ import firebase from 'firebase';
 import '../css/Global.css';
 import '../css/OpenHouseActivities.css';
 import { db } from '../firebase';
-import { useAuth } from '../auth';
+import { useAuth } from '../modules/auth';
 import TopNav from '../components/TopNav';
 
 const QRScan: React.FC = () => {

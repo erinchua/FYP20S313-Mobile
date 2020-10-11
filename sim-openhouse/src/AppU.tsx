@@ -33,7 +33,7 @@ import Brochures from './pages/Brochures';
 import QRScan from './pages/QRScan';
 import SocialMedia from './pages/SocialMedia';
 
-import { useAuth } from './auth';
+import { useAuth } from './modules/auth';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';

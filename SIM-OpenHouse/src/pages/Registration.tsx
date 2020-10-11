@@ -3,19 +3,14 @@ import React, { useRef, useState } from "react";
 import { Redirect, useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 
-import { useAuth } from "../auth";
+import { useAuth } from "../modules/auth";
 import { auth, db } from "../firebase";
+import { formatDate } from "../modules/convert";
 
 import "../css/Global.css";
 import "../css/Registration.css";
 
 import TopNav from "../components/TopNav";
-
-function formatDate(isoDate: any) {
-  return new Date(isoDate).toLocaleDateString('en-UK', {
-    day: 'numeric', month: 'short', year: 'numeric'
-  });
-};
 
 const Registration: React.FC = () => {
   const { register, handleSubmit, errors, watch } = useForm();

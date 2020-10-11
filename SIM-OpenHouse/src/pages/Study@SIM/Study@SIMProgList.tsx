@@ -7,21 +7,11 @@ import '../../css/Study@SIMProgList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faFilter } from '@fortawesome/free-solid-svg-icons';
 import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
-import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
-import RMIT from '../../img/study@SIM/RMITUniversity.png';
-import SIMGE from '../../img/study@SIM/SimGE.png';
-import Buffalo from '../../img/study@SIM/UniversityAtBuffalo.png';
-import Birmingham from '../../img/study@SIM/UniversityOfBirmingham.png';
-import London from '../../img/study@SIM/UniversityOfLondon.png';
-import Manchester from '../../img/study@SIM/UniversityOfManchester.png';
-import Stirling from '../../img/study@SIM/UniversityOfStirling.png';
-import Sydney from '../../img/study@SIM/UniversityOfSydney.png';
-import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
-import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 import TopNav from '../../components/TopNav';
 import Menu from '../../components/Menu';
-import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopover';
+import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopoverContent';
+import CourseFilterPopoverContent from '../../components/Study@SIM/CourseFilterPopoverContent';
 
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
@@ -53,7 +43,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
         }
     };
 
-    {/* Display Popover */}
+    {/* Display Compare Prog Popover */}
     const [showCompareProgPopover, setShowCompareProgPopover] = useState<{open: boolean, event: Event | undefined}>({
         open: false,
         event: undefined,
@@ -61,6 +51,13 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
 
     {/* "If no prog is added to compare" Alert */}
     const [showCompareProgAlert, setShowCompareProgAlert] = useState(false);
+
+    {/* Display Filter Menu Popover */}
+    const [showProgCourseFilterPopover, setShowProgCourseFilterPopover] = useState<{open: boolean, event: Event | undefined}>({
+        open: false,
+        event: undefined,
+    });
+    
 
     return (
         <React.Fragment>
@@ -126,7 +123,10 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                 </IonCol>
 
                                 <IonCol size="2" sizeSm="2" class="ion-text-center" className="studySIMProgListCol">
-                                    <IonButton id="filterBtn" fill="clear">
+                                    <IonButton id="filterBtn" fill="clear" onClick={(e) => {
+                                        setShowProgCourseFilterPopover({open: true, event: e.nativeEvent})
+                                    }
+                                    }>
                                         <FontAwesomeIcon className="filterIcon" size="lg" icon={faFilter} />
                                     </IonButton>
                                 </IonCol>
@@ -433,6 +433,47 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         }
                     
                     </IonPopover>
+
+
+                    {/* Filter Programmes Popover */}
+                    <IonPopover id="progCourseFilterPopover" 
+                        cssClass='progCourseFilterPopover' 
+                        isOpen={showProgCourseFilterPopover.open} 
+                        event={showProgCourseFilterPopover.event} 
+                        onDidDismiss={e => setShowProgCourseFilterPopover({open: false, event: undefined})}
+                    >
+                        {match.params.discipline === "artSocialSciences" ?
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} />              
+                            : ''
+                        }
+
+                        {match.params.discipline === "business" ?
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "business"} href={"/u/study@SIMMain/business"} />              
+                            : ''
+                        }
+
+                        {match.params.discipline === "itComputerScience" ?
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} />              
+                            : ''
+                        }
+
+                        {match.params.discipline === "nursing" ?
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} />             
+                            : ''
+                        }
+
+                        {match.params.discipline === "speciality" ?
+                            <CourseFilterPopoverContent filterResults={()=>(console.log('Add filterResults function here'))}
+                            params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} />              
+                            : ''
+                        }
+                    
+                    </IonPopover>
+
                     
                 </IonContent>
                 

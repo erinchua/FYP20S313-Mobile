@@ -1,20 +1,21 @@
-#courseComparatorHeaderGrid {
-    max-width: 30%;
-}
-
 #courseComparatorGrid {
     background: #efefef;
     padding: 0;
     min-height: 100%;
+    min-width: 70%;
+}
+
+.courseComparatorRowScroll {
+    overflow-x: auto;
+    min-height: 100%;
 }
 
 .courseComparatorRow {
-    background: #E4CA9D;
+    flex-wrap: nowrap;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
-.courseComparatorTitleCol {
-    position: relative;
-}
 
 .courseComparatorTitle {
     font-size: 75%;
@@ -26,7 +27,6 @@
 
 .courseComparatorProgCol {
     background: #efefef;
-    border: 1px solid #DDDDDD;
 }
 
 .courseComparatorUniImg {
@@ -40,10 +40,9 @@
     color: #434343;
     text-align: left;
 }
-    
-.horizontalScroll {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    overflow-x: auto;
+
+.courseComparatorAbtProgText {
+    font-size: 70%;
+    color: #434343;
+    text-align: left;
 }

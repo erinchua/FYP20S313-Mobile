@@ -4,7 +4,7 @@ const db = require('./config/adminConfig')
 //db.collection('Test').doc('test').update({testarray: admin.firestore.FieldValue.arrayUnion('hello')});
 
 const userID = "KxJfH2BPsQaEQgwjS8SLEog1nSX2";
-db.collection('PersonalScheduler').doc(userID).get().then(doc => {
+/* db.collection('PersonalScheduler').doc(userID).get().then(doc => {
     const items = [];
     const activities = doc.data().registeredProgrammes;
     activities.forEach(item => {
@@ -34,7 +34,7 @@ db.collection('PersonalScheduler').doc(userID).get().then(doc => {
         })
         console.log(mapped)
     }, 1000);
-});
+}); */
 
 /* const prog = {
     awardingUni: "University of London",
@@ -85,10 +85,42 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
 }); */
 
 /* db.collection("Openhouse").orderBy('id', 'desc').limit(1).get().then(snapshot => {
+    const arr = []
     snapshot.forEach(doc => {
         const data = doc.data().day;
-        data.forEach(day => {
-            console.log(day.date)
-        })
+        //console.log(data)
+        data.forEach(day => arr.push(day))
     })
+    console.log(arr[0].date)
 }) */
+
+const dateObject1 = {
+    date: "21-Nov-2020",
+    start: "11:30AM", end: "12:30PM"
+}
+const dateObject2 = {
+    date: "21-Nov-2020",
+    start: "11:00AM", end: "12:00PM"
+}
+function toDateObject(date, time) {
+    const dateSplit = date.split("-");
+    const timeSplit = time.split(":");
+
+    const monthString = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+    const day = +dateSplit[0], month = +monthString.indexOf(dateSplit[1]) + 1, year = +dateSplit[2];
+    let hours = +timeSplit[0];
+    const minutes = +timeSplit[1].slice(0, 2), meridiem = timeSplit[1].slice(-2, timeSplit[1].length);
+    const seconds = 0, milliseconds = 0;
+
+    if (hours < 12 && meridiem.toUpperCase() == "PM") hours += 12;
+
+    return new Date(year, month, day, hours, minutes, seconds, milliseconds);
+};
+const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
+const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
+//console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
+console.log(end1-start1)
+
+//console.log(toDateObject(dateObject.dateLater, dateObject.timeLater), toDateObject(dateObject.dateEarly, dateObject.timeEarly))
+//console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
