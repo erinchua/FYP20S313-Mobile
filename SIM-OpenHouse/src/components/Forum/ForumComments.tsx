@@ -1,11 +1,10 @@
-import { IonAlert, IonButton, IonCol, IonGrid, IonRow } from '@ionic/react';
+import { IonAlert, IonCol, IonGrid, IonRow } from '@ionic/react';
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCommentDots } from '@fortawesome/free-regular-svg-icons';
 
 import "../../css/Global.css"
 import "../../css/Forum.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots } from '@fortawesome/free-regular-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Forum_EditCommentModal from './Forum_EditCommentModal';
 import Forum_DeleteComment from './Forum_DeleteComment';
 

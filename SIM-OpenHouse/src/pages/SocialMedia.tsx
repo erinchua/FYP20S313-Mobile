@@ -1,5 +1,5 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
-import React, { useState } from 'react';
+import { IonContent, IonGrid, IonHeader, IonPage, IonRow } from '@ionic/react';
+import React from 'react';
 
 import '../css/Global.css';
 import '../css/SocialMedia.css';

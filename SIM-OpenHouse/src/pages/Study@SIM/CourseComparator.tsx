@@ -1,11 +1,11 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonPage, IonRow, IonSlide, IonSlides, IonText, IonTitle } from '@ionic/react';
-import React, { useRef, useState } from 'react';
+import { IonContent, IonHeader, IonPage } from '@ionic/react';
+import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/CourseComparator.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
 import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
 import RMIT from '../../img/study@SIM/RMITUniversity.png';
@@ -20,7 +20,6 @@ import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
 import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 import TopNav from '../../components/TopNav';
-import Menu from '../../components/Menu';
 import CourseComparatorDetails from '../../components/Study@SIM/CourseComparatorDetails';
 
 

@@ -1,14 +1,12 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { sync } from 'ionicons/icons';
 import firebase from 'firebase';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
-
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
@@ -43,7 +41,8 @@ const ProgTalkSchedule: React.FC<{
                     if (registered.length > 0) {
                         let check = false;
 
-                        for (let item of registered) {
+                        registered.forEach((item: any) => {
+                        //for (let item of registered) {
                             const itemType = item.split("-");
 
                             switch (itemType[0]) {
@@ -97,8 +96,7 @@ const ProgTalkSchedule: React.FC<{
 
                                 default:
                             }
-
-                        }
+                        });
 
                         setTimeout(async () => {
                             if (check) {
@@ -119,6 +117,7 @@ const ProgTalkSchedule: React.FC<{
                         });
                         setAlert({ registerSuccess: true, registerFail: false, loading: false });
                     }
+
                 } else {
                     db.collection('PersonalScheduler').doc(userID).update({
                         registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
@@ -126,10 +125,6 @@ const ProgTalkSchedule: React.FC<{
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
                 }
             });
-
-            if (alert.registerSuccess) {
-                // disable button
-            }
 
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });
@@ -194,7 +189,7 @@ const ProgTalkSchedule: React.FC<{
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
-                                    <Link to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}  id="uniLink">{programmeTalk.talkName}</Link>
+                                    <Link id="uniLink" to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
                                 </IonCol>
 
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>

@@ -1,5 +1,5 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonPage, IonRow, IonTitle } from '@ionic/react';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import '../../css/Global.css';
@@ -22,7 +22,6 @@ import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
 import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 import TopNav from '../../components/TopNav';
-import Menu from '../../components/Menu';
 
 interface StudySIMProgInfo_Props extends RouteComponentProps<{
     discipline: string;
@@ -31,85 +30,85 @@ interface StudySIMProgInfo_Props extends RouteComponentProps<{
 
 const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
     
-    {/* Programme Overview Toggle */}
+    /* Programme Overview Toggle */
     const info1 = useRef<HTMLIonRowElement>(null);
     const showIcon1 = useRef<HTMLIonIconElement>(null);
 
     const displayInfoCol1 = () => {
         info1.current!.hidden = !info1.current!.hidden;
-        if (showIcon1.current!.icon == addCircle)
+        if (showIcon1.current!.icon === addCircle)
             showIcon1.current!.icon = removeCircle;
         else
             showIcon1.current!.icon = addCircle;
     };
 
-    {/* Application Period Toggle */}
+    /* Application Period Toggle */
     const info2 = useRef<HTMLIonRowElement>(null);
     const showIcon2 = useRef<HTMLIonIconElement>(null);
 
     const displayInfoCol2 = () => {
         info2.current!.hidden = !info2.current!.hidden;
-        if (showIcon2.current!.icon == addCircle)
+        if (showIcon2.current!.icon === addCircle)
             showIcon2.current!.icon = removeCircle;
         else
             showIcon2.current!.icon = addCircle;
     };
 
-    {/* Programme Structure Toggle */}
+    /* Programme Structure Toggle */
     const info3 = useRef<HTMLIonRowElement>(null);
     const showIcon3 = useRef<HTMLIonIconElement>(null);
 
     const displayInfoCol3 = () => {
         info3.current!.hidden = !info3.current!.hidden;
-        if (showIcon3.current!.icon == addCircle)
+        if (showIcon3.current!.icon === addCircle)
             showIcon3.current!.icon = removeCircle;
         else
             showIcon3.current!.icon = addCircle;
     };
 
-    {/* Overseas Opportunity Toggle */}
+    /* Overseas Opportunity Toggle */
     const info4 = useRef<HTMLIonRowElement>(null);
     const showIcon4 = useRef<HTMLIonIconElement>(null);
 
     const displayInfoCol4 = () => {
         info4.current!.hidden = !info4.current!.hidden;
-        if (showIcon4.current!.icon == addCircle)
+        if (showIcon4.current!.icon === addCircle)
             showIcon4.current!.icon = removeCircle;
         else
             showIcon4.current!.icon = addCircle;
     };
 
-    {/* Intake Months Toggle */}
+    /* Intake Months Toggle */
     const info5 = useRef<HTMLIonRowElement>(null);
     const showIcon5 = useRef<HTMLIonIconElement>(null);
 
     const displayInfoCol5 = () => {
         info5.current!.hidden = !info5.current!.hidden;
-        if (showIcon5.current!.icon == addCircle)
+        if (showIcon5.current!.icon === addCircle)
             showIcon5.current!.icon = removeCircle;
         else
             showIcon5.current!.icon = addCircle;
     };
 
-    {/* Duration Toggle */}
+    /* Duration Toggle */
     const info6 = useRef<HTMLIonRowElement>(null);
     const showIcon6 = useRef<HTMLIonIconElement>(null);
 
     const displayInfoCol6 = () => {
         info6.current!.hidden = !info6.current!.hidden;
-        if (showIcon6.current!.icon == addCircle)
+        if (showIcon6.current!.icon === addCircle)
             showIcon6.current!.icon = removeCircle;
         else
             showIcon6.current!.icon = addCircle;
     };
 
-    {/* Mode of Study Toggle */}
+    /* Mode of Study Toggle */
     const info7 = useRef<HTMLIonRowElement>(null);
     const showIcon7 = useRef<HTMLIonIconElement>(null);
 
     const displayInfoCol7 = () => {
         info7.current!.hidden = !info7.current!.hidden;
-        if (showIcon7.current!.icon == addCircle)
+        if (showIcon7.current!.icon === addCircle)
             showIcon7.current!.icon = removeCircle;
         else
             showIcon7.current!.icon = addCircle;

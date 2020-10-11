@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import firebase from 'firebase';
+
 import '../../css/Global.css';
 import '../../css/GuidedTourContent.css';
+
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-import { register } from '../../serviceWorker';
-import { resolve } from 'dns';
 
 const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; openhouseDates: any }> = props => {
     const { userID } = useAuth();
@@ -36,7 +36,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                     if (registered.length > 0) {
                         let check = false;
 
-                        for (let item of registered) {
+                        registered.forEach((item: any) => {
                             const itemType = item.split("-");
 
                             switch (itemType[0]) {
@@ -90,8 +90,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
 
                                 default:
                             }
-
-                        }
+                        });
 
                         setTimeout(async () => {
                             if (check) {

@@ -120,7 +120,27 @@ function toDateObject(date, time) {
 const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
 const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
 //console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
-console.log(end1-start1)
+//console.log(end1-start1)
 
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater), toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
+
+
+db.collection('Openhouse').get().then(snapshot => {
+    const hours = [];
+
+    snapshot.forEach(doc => {
+        const days = doc.data().day;
+
+        if (Array.isArray(days))
+            days.forEach(day => {
+
+                const duration = Math.floor((+toDateObject(day.date, day.endTime) - +toDateObject(day.date, day.startTime)) / 3600000);
+                console.log(Array.from(Array(duration).keys()))
+                //hours.push(Array.from(Array(duration).keys()));
+            });
+    });
+    console.log(hours.key())
+    
+    //hours.forEach(ticks => console.log(ticks))
+})

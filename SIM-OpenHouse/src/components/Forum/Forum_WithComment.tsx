@@ -1,10 +1,10 @@
-import { IonButton, IonCol, IonGrid, IonItemDivider, IonLabel, IonList, IonModal, IonRow, IonText, IonTextarea } from '@ionic/react';
-import React, { useState } from 'react';
+import { IonCol, IonGrid, IonLabel, IonList, IonRow, IonText } from '@ionic/react';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/Forum.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCommentDots } from '@fortawesome/free-regular-svg-icons';
 import Forum_CommentReply from './Forum_CommentReply';
 import Forum_FlagModal from './Forum_FlagModal';
 import Forum_ReplyModal from './Forum_ReplyModal';

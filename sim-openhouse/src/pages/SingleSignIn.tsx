@@ -1,4 +1,4 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonDatetime, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonSelect, IonSelectOption, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCheckbox, IonCol, IonContent, IonDatetime, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption } from '@ionic/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 

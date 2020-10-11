@@ -1,15 +1,13 @@
-import { IonAlert, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonModal, IonPage, IonRouterLink, IonRow, IonSelect, IonSelectOption, IonTitle } from '@ionic/react';
+import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonModal, IonPage, IonRow, IonSelect, IonSelectOption } from '@ionic/react';
 import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-
-import '../css/Global.css';
-import '../css/MyProfile.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard, faEnvelope, faMobileAlt, faBirthdayCake, faUserGraduate, faGlobe, faLock } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
+import '../css/Global.css';
+import '../css/MyProfile.css';
 import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
 
 
 const MyProfile: React.FC = () => {

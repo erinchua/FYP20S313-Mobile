@@ -1,22 +1,21 @@
-import React, { useContext, useRef, useState } from 'react';
-import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonItemDivider, IonMenuToggle, IonFooter, IonToolbar } from '@ionic/react';
+import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonFooter, IonToolbar } from '@ionic/react';
+import React, { useContext } from 'react';
+import { NavContext } from '@ionic/react';
+import { menuController } from "@ionic/core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faCalendar, faCalendarAlt, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faReadme } from '@fortawesome/free-brands-svg-icons';
 
 import '../css/Menu.css';
 import '../css/Global.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle,
-    faPhotoVideo, faBookOpen, faHands, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { faReadme } from '@fortawesome/free-brands-svg-icons';
-
-import { auth } from '../firebase';
-import { NavContext } from '@ionic/react';
-import QRScan from '../pages/QRScan';
+import { auth } from "../firebase";
 
 const Menu: React.FC = props => {
 
     const { navigate } = useContext(NavContext);
     
     const handleLogout = async () => {
+        menuController.close();
         await auth.signOut();
         sessionStorage.clear();
         // navigate('/main');
