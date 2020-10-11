@@ -7,16 +7,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle,
     faPhotoVideo, faBookOpen, faHands, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
+import { menuController } from "@ionic/core";
 
-import { auth } from '../firebase';
 import { NavContext } from '@ionic/react';
-import QRScan from '../pages/QRScan';
+import { auth } from "../firebase";
 
 const Menu: React.FC = props => {
 
     const { navigate } = useContext(NavContext);
     
     const handleLogout = async () => {
+        menuController.close();
         await auth.signOut();
         sessionStorage.clear();
         // navigate('/main');
