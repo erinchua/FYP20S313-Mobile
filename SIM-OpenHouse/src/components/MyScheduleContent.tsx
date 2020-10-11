@@ -97,10 +97,10 @@ const MyScheduleContent: React.FC<{
                             time -= 12;
                             meridian = "pm";
                         };
-
                         return (
                             <IonRow className="ion-justify-content-center" key={index}>
                                 <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol>
+                                
                                 {openHouseProgsDay1.map((item:any, index: any) => {
                                     if (item.id.split("-")[0] != "activity") {
                                         if (+item.startTime.split(":")[0] === (time + 9)) {
@@ -116,11 +116,11 @@ const MyScheduleContent: React.FC<{
                                                     </IonCol>
                                                 </IonRow>
                                             )
+                                        } else {
+                                            return (
+                                                <IonRow key={index}></IonRow>
+                                            );
                                         }
-                                    } else {
-                                        return (
-                                            <IonRow key={index}></IonRow>
-                                        );
                                     }
                                 })}
                             </IonRow>
@@ -238,10 +238,10 @@ const MyScheduleContent: React.FC<{
                             time -= 12;
                             meridian = "pm";
                         };
-
                         return (
                             <IonRow className="ion-justify-content-center" key={index}>
                                 <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol>
+                                
                                 {openHouseProgsDay2.map((item:any, index: any) => {
                                     if (item.id.split("-")[0] != "activity") {
                                         if (+item.startTime.split(":")[0] === (time + 9)) {
@@ -257,11 +257,11 @@ const MyScheduleContent: React.FC<{
                                                     </IonCol>
                                                 </IonRow>
                                             )
+                                        } else {
+                                            return (
+                                                <IonRow key={index}></IonRow>
+                                            );
                                         }
-                                    } else {
-                                        return (
-                                            <IonRow key={index}></IonRow>
-                                        );
                                     }
                                 })}
                             </IonRow>
@@ -285,7 +285,7 @@ const MyScheduleContent: React.FC<{
 
                 {props.day1 === "day1" ?
                     openHouseProgsDay1.map((item: any) => {
-                        if (item.id.split("-")[0] === "activity")
+                        if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
                                     <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
@@ -304,7 +304,7 @@ const MyScheduleContent: React.FC<{
 
                 {props.day2 === "day2" ? 
                     openHouseProgsDay2.map((item: any) => {
-                        if (item.id.split("-")[0] === "activity")
+                        if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
                                     <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
