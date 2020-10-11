@@ -39,3 +39,21 @@
     padding-right: 2%;
     text-align: left;
 }
+
+/* No Announcements Css*/
+#noAnnouncementGrid {
+    min-height: 100%;
+    padding: 2%;
+    display: flex;
+    background: #ffffff;
+}
+
+#noAnnouncementRow {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#noAnnouncementTitle {
+    font-size: 80%;
+    color: #424242;
+}

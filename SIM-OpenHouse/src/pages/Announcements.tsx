@@ -1,5 +1,5 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonLabel, IonPage, IonRow, IonTitle } from '@ionic/react';
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../css/Global.css';
 import '../css/Announcements.css';
@@ -10,6 +10,8 @@ import Menu from '../components/Menu';
 
 const Announcements: React.FC = () => {
 
+    const [haveAnnouncement, setHaveAnnouncement] = useState(false);
+
     return (
         <IonPage>
             <IonHeader>
@@ -17,25 +19,40 @@ const Announcements: React.FC = () => {
             </IonHeader>
 
             <IonContent fullscreen={true}>
-                <IonGrid id="announcementGrid">
-                    <IonRow className="announcementRow">
-                        <IonCol className="announcementColDetails">
-                            <IonRow>
-                                <IonTitle id="announcementTitle">Announcement Title</IonTitle>
-                            </IonRow>
+                {/* No Announcements */}
+                {haveAnnouncement === false ?
+                    <IonGrid id="noAnnouncementGrid">
+                        <IonRow id="noAnnouncementRow" class="ion-align-items-center">
+                            <IonCol id="noAnnnouncementCol" class="ion-text-center">
+                                <IonTitle id="noAnnouncementTitle">There are currently no announcements</IonTitle>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
+                    :''
+                }  
 
-                            <IonRow>
-                                <IonLabel id="announcementDate">Posted on (21 Novemeber 2020 (Sat)), (time)</IonLabel>
-                            </IonRow>
+                {/* Have Announcement */}
+                {haveAnnouncement === true ?
+                    <IonGrid id="announcementGrid">
+                        <IonRow className="announcementRow">
+                            <IonCol className="announcementColDetails">
+                                <IonRow>
+                                    <IonTitle id="announcementTitle">Announcement Title</IonTitle>
+                                </IonRow>
 
-                            <IonRow>
-                                <IonLabel id="announcementDetails">Feeling abit snacky after the talks? Come on down to Block B to redeem free popcorns and candy floss! While stock lasts!</IonLabel>
-                            </IonRow>
+                                <IonRow>
+                                    <IonLabel id="announcementDate">Posted on (21 Novemeber 2020 (Sat)), (time)</IonLabel>
+                                </IonRow>
 
-                        </IonCol>
-                    </IonRow>
+                                <IonRow>
+                                    <IonLabel id="announcementDetails">Feeling abit snacky after the talks? Come on down to Block B to redeem free popcorns and candy floss! While stock lasts!</IonLabel>
+                                </IonRow>
+                            </IonCol>
+                        </IonRow>
+                    </IonGrid>
+                    : ''
+                }
 
-                </IonGrid>
             </IonContent>
         </IonPage>
     );
