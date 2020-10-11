@@ -2,12 +2,11 @@ import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonButton, IonItem, IonIn
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { withRouter } from 'react-router-dom';
-
-import '../../css/ForgetPassword1.css';
-import '../../css/Global.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 
+import '../../css/ForgetPassword1.css';
+import '../../css/Global.css';
 import TopNav from '../../components/TopNav';
 import { auth } from '../../firebase';
 

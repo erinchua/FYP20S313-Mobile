@@ -1,16 +1,16 @@
 import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
+import { addCircleSharp, personSharp } from "ionicons/icons";
 
 import "../../css/Global.css";
 import "../../css/Forum.css";
 import TopNav from '../../components/TopNav';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
-import { addCircleSharp, personSharp } from "ionicons/icons";
-import {  useHistory } from "react-router-dom";
 import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
+import { useHistory } from "react-router-dom";
 
 const Forum: React.FC = () => {
 

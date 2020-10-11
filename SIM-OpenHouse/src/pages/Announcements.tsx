@@ -3,9 +3,7 @@ import React from 'react';
 
 import '../css/Global.css';
 import '../css/Announcements.css';
-
 import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
 
 
 const Announcements: React.FC = () => {

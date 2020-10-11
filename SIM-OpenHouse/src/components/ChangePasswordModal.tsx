@@ -1,12 +1,9 @@
-import { IonAlert, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonModal, IonPage, IonRouterLink, IonRow, IonSelect, IonSelectOption, IonTitle } from '@ionic/react';
-import React, { useRef, useState } from 'react';
+import { IonButton, IonCol, IonContent, IonGrid, IonInput, IonItem, IonModal, IonRow } from '@ionic/react';
+import React, { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
 import '../css/Global.css';
 import '../css/MyProfile.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressCard, faEnvelope, faMobileAlt, faBirthdayCake, faUserGraduate, faGlobe, faLock } from '@fortawesome/free-solid-svg-icons';
-import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
 
 const ChangePasswordModal: React.FC<{

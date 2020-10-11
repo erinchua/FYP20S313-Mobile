@@ -1,19 +1,16 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
 import React, { useContext } from 'react';
-
-import { auth } from '../firebase';
+import { NavContext } from '@ionic/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faReadme } from '@fortawesome/free-brands-svg-icons';
 
 import '../css/Global.css';
 import '../css/Home.css';
-import gif from '../img/home/SIM Open House 2020 Banner.gif';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle,
-  faPhotoVideo, faBookOpen, faHands, faBell } from '@fortawesome/free-solid-svg-icons';
-import { faReadme } from '@fortawesome/free-brands-svg-icons';
-
 import TopNav from '../components/TopNav'
-import { NavContext } from '@ionic/react';
+import gif from '../img/home/SIM Open House 2020 Banner.gif';
+import { auth } from '../firebase';
+
 
 const Home: React.FC = () => {
 

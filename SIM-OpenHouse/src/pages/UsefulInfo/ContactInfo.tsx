@@ -1,11 +1,9 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonTitle } from '@ionic/react';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import '../../css/Global.css';
 import '../../css/ContactInfo.css';
-
 import TopNav from '../../components/TopNav';
-import Menu from '../../components/Menu';
 import { db } from '../../firebase';
 
 
@@ -13,7 +11,7 @@ const ContactInfo: React.FC = () => {
 
     const [contactInfo, setContactInfo] = useState([])
 
-    const localContacts = contactInfo.filter((contact: any) => { return contact.country == 'local' })
+    const localContacts = contactInfo.filter((contact: any) => { return contact.country === 'local' })
 
     useEffect(() => {
         const contacts: any = []

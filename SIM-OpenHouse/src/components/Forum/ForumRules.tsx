@@ -1,9 +1,9 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonGrid, IonIcon, IonPopover, IonRow, IonText } from '@ionic/react';
 import React, { useState } from 'react';
+import { informationCircleOutline } from 'ionicons/icons';
 
 import "../../css/Global.css"
 import "../../css/Forum.css"
-import { informationCircleOutline } from 'ionicons/icons';
 
 const ForumRules: React.FC = () => {
 

@@ -1,11 +1,10 @@
-import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonIcon, IonItemDivider, IonLabel, IonModal, IonPage, IonPopover, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonGrid, IonRow } from '@ionic/react';
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCommentDots } from '@fortawesome/free-regular-svg-icons';
 
 import "../../css/Global.css"
 import "../../css/Forum.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Forum_EditQuestionModal from './Forum_EditQuestionModal';
 import Forum_DeleteQuestion from './Forum_DeleteQuestion';
 

@@ -1,12 +1,12 @@
 import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItemDivider, IonLabel, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonTextarea, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+import { addCircleSharp, personSharp } from 'ionicons/icons';
 
 import "../../css/Global.css"
 import "../../css/Forum.css"
 import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
-import { addCircleSharp, personSharp } from 'ionicons/icons';
-import { useHistory } from 'react-router';
 import ForumQuestions from '../../components/Forum/ForumQuestions';
 import ForumComments from '../../components/Forum/ForumComments';
 

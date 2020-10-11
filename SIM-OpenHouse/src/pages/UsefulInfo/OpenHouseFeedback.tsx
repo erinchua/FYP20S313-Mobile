@@ -1,12 +1,11 @@
 import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonLabel, IonPage, IonRadio, IonRadioGroup, IonRow, IonSelect, IonSelectOption, IonTextarea, IonTitle } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { db } from '../../firebase'
+
 import '../../css/Global.css';
 import '../../css/OpenHouseFeedback.css';
-
 import TopNav from '../../components/TopNav';
-import Menu from '../../components/Menu';
+import { db } from '../../firebase'
 
 
 const OpenHouseFeedback: React.FC = () => {
