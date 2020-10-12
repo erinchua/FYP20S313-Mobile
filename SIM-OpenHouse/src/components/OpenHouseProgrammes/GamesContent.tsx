@@ -12,6 +12,7 @@ import { useAuth } from '../../modules/auth';
 const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openhouseDates: any }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const gamesActivitiesDay1 = props.gamesActivities.filter((activity: any) => {
         return activity.date == props.openhouseDates[0]
@@ -41,7 +42,7 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                 cssClass='alertBox'
                 mode='md'
                 header={'Successfully Added'}
-                message={'You have successfully added the game & activity to My Schedule.'}
+                message={'You have successfully added the game/ activity to My Schedule.'}
                 buttons={['Close']}
             ></IonAlert>
 
@@ -51,7 +52,7 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                 cssClass='alertBox'
                 mode='md'
                 header={'Error Occurred'}
-                message={'There exists a game & activity in your scheduler at this timing. Please remove the existing activity from your scheduler first!'}
+                message={'There exists a game/ activity in your scheduler at this timing. Please remove the existing activity from your scheduler first!'}
                 buttons={['Close']}
             ></IonAlert>
             
@@ -72,7 +73,7 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.pointsAward}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">
-                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)}>
+                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)} disabled={buttonDisabled}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -90,7 +91,7 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.pointsAward}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">
-                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)}>
+                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)} disabled={buttonDisabled}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
