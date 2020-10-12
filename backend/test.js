@@ -1,5 +1,5 @@
 const db = require('./config/adminConfig')
-//const admin = require('firebase-admin')
+const admin = require('firebase-admin')
 
 //db.collection('Test').doc('test').update({testarray: admin.firestore.FieldValue.arrayUnion('hello')});
 
@@ -94,7 +94,7 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
     console.log(arr[0].date)
 }) */
 
-const dateObject1 = {
+/* const dateObject1 = {
     date: "21-Nov-2020",
     start: "11:30AM", end: "12:30PM"
 }
@@ -118,7 +118,7 @@ function toDateObject(date, time) {
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
 };
 const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
-const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
+const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end); */
 //console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
 //console.log(end1-start1)
 
@@ -126,7 +126,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 
 
-db.collection('Openhouse').get().then(snapshot => {
+/* db.collection('Openhouse').get().then(snapshot => {
     const hours = [];
 
     snapshot.forEach(doc => {
@@ -143,4 +143,15 @@ db.collection('Openhouse').get().then(snapshot => {
     console.log(hours.key())
     
     //hours.forEach(ticks => console.log(ticks))
-})
+}) */
+
+//console.log(new Date().toTimeString())
+//console.log(admin.firestore.FieldValue.serverTimestamp())
+
+db.collection('Forum').get().then(users => {
+    users.forEach(user => {
+        db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(questions => {
+            questions.forEach(doc => console.log(doc.data()))
+        })
+    });
+});

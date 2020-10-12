@@ -21,7 +21,7 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
         'Sports & Fitness'
     ]);
 
-    const [clubCouncils, setClubCouncils] = useState([])
+    const [clubCouncils, setClubCouncils] = useState([]);
 
     const artCulture = clubCouncils.filter((club: any) => {
         return club.categoryType == 'Arts & Culture'
@@ -40,21 +40,20 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
     })
 
     useEffect(() => {
-        fetchData()
-    },
-        [])
-    const fetchData = async () => {
+        fetchData();
+    }, []);
 
+    const fetchData = async () => {
         const clubCouncils: any = []
+
         await db.collection('ClubsAndCouncils').get().then((snapshot) => {
             snapshot.forEach((doc) => {
                 const data = doc.data()
                 clubCouncils.push(data)
             })
             setClubCouncils(clubCouncils)
-        })
-
-    }
+        });
+    };
 
 
     return (
