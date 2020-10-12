@@ -9,20 +9,20 @@ import { db } from '../../firebase';
 
 const ContactInfo: React.FC = () => {
 
-    const [contactInfo, setContactInfo] = useState([])
+    const [contactInfo, setContactInfo] = useState([]);
 
-    const localContacts = contactInfo.filter((contact: any) => { return contact.country === 'local' })
+    const localContacts = contactInfo.filter((contact: any) => { return contact.country === 'local' });
 
     useEffect(() => {
         const contacts: any = []
         db.collection('ContactInfo').get().then((snapshot) => {
             snapshot.forEach((doc) => {
-                const data = doc.data()
-                contacts.push(data)
+                const data = doc.data();
+                contacts.push(data);
             })
-            setContactInfo(contacts)
-        })
-    }, [])
+            setContactInfo(contacts);
+        });
+    }, []);
 
     return (
         <IonPage>
@@ -33,11 +33,11 @@ const ContactInfo: React.FC = () => {
             <IonContent fullscreen={true}>
                 <IonGrid id="contactInfoGrid">
                     {/* General Enquiries */}
-                    {localContacts.map(({ id, contactTitle, operatingHours = [], contactNo, email }) => {
+                    {localContacts.map((contact: any) => {
                         return (
-                            <div key={id}>
+                            <div key={contact.id}>
                                 <IonRow className="contactInfoTitleRow">
-                                    <IonTitle className="contactInfoTitle">{contactTitle}</IonTitle>
+                                    <IonTitle className="contactInfoTitle">{contact.contactTitle}</IonTitle>
                                 </IonRow>
 
                                 <IonRow className="contactInfoDetailRow" style={{ paddingTop: "3%" }}>
@@ -46,10 +46,9 @@ const ContactInfo: React.FC = () => {
                                     </IonCol>
 
                                     <IonCol size="7" sizeSm="7" className="contactInfoDetailCol">
-                                        {operatingHours.map((hours: any) => {
-                                            return (<IonRow className="contactInfoDetailInfo">{hours}</IonRow>)
+                                        {contact.operatingHours.map((hours: any, index: any) => {
+                                            return ( <IonRow className="contactInfoDetailInfo" key={index}>{hours}</IonRow> )
                                         })}
-
                                     </IonCol>
                                 </IonRow>
 
@@ -59,7 +58,7 @@ const ContactInfo: React.FC = () => {
                                     </IonCol>
 
                                     <IonCol size="7" sizeSm="7" className="contactInfoDetailCol">
-                                        <IonRow className="contactInfoDetailInfo">{contactNo}</IonRow>
+                                        <IonRow className="contactInfoDetailInfo">{contact.contactNo}</IonRow>
                                     </IonCol>
                                 </IonRow>
 
@@ -70,17 +69,14 @@ const ContactInfo: React.FC = () => {
 
                                     <IonCol size="7" sizeSm="7" className="contactInfoDetailCol" style={{ paddingBottom: "3%" }}>
                                         <IonRow className="contactInfoDetailInfo">
-                                            <IonRouterLink className="contactInfoDetailUrl" href="receptions@sim.edu.sg">{email}</IonRouterLink>
+                                            <IonRouterLink className="contactInfoDetailUrl" href="receptions@sim.edu.sg">{contact.email}</IonRouterLink>
                                         </IonRow>
                                     </IonCol>
                                 </IonRow>
                             </div>
                         )
                     })}
-
-
-
-
+                    
                 </IonGrid>
             </IonContent>
         </IonPage>

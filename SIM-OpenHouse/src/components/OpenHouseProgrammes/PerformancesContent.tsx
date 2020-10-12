@@ -13,6 +13,7 @@ import { toDateObject } from '../../modules/convert';
 const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; openhouseDates: any }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const performanceDay1 = props.performances.filter((performance: any) => {
         return performance.date == props.openhouseDates[0]
@@ -163,7 +164,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.startTime + " to " + performance.endTime}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.venue}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">
-                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)}>
+                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)} disabled={buttonDisabled}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -180,7 +181,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.startTime + " to " + performance.endTime}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.venue}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">
-                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)}>
+                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)} disabled={buttonDisabled}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
