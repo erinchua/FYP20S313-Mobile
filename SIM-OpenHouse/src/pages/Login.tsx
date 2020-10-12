@@ -2,14 +2,13 @@ import { IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol, IonInput, IonR
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useForm  } from "react-hook-form";
-
-import { useAuth } from '../modules/auth';
-import { auth, googleProvider } from '../firebase';
 import firebase from 'firebase';
+
 import '../css/Login.css';
 import '../css/Global.css';
-
 import TopNav from '../components/TopNav';
+import { useAuth } from '../modules/auth';
+import { auth, googleProvider } from '../firebase';
 
 const Login: React.FC = () => {
   const { loggedIn } = useAuth();

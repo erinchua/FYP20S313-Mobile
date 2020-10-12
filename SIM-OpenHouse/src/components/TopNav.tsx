@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
-import { IonHeader, IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton } from '@ionic/react';
+import { IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton } from '@ionic/react';
+import { NavContext } from '@ionic/react';
+import { arrowBackOutline } from 'ionicons/icons';
 
 import '../css/TopNav.css';
 import '../css/Global.css';
-import { arrowBackOutline } from 'ionicons/icons';
-
 import { useAuth } from '../modules/auth';
 import { auth } from '../firebase';
-import { NavContext } from '@ionic/react';
 
 const TopNav: React.FC<{
     title: String; 

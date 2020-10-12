@@ -1,12 +1,10 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonList, IonPage, IonRow, IonText, IonThumbnail, IonTitle } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonList, IonPage, IonRow, IonText, IonThumbnail } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
+import { RouteComponentProps } from 'react-router';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
 import TopNav from '../../components/TopNav';
-import { RouteComponentProps } from 'react-router';
-import AnimeGaming from '../../img/studentLife@SIM/arts&Culture/AnimeGaming.jpg';
-import DanceArt from '../../img/studentLife@SIM/arts&Culture/DanceArt.png';
 import { db } from '../../firebase';
 
 interface Clubs_Councils_Details_Props extends RouteComponentProps<{
@@ -86,7 +84,7 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
                     <>
                         {artCulture.map((club: any) => {
                             return (
-                                <div>
+                                <div key={club.id}>
                                     <IonList className="clubsCouncils-list">
                                         <IonGrid className="clubsCouncils-details-grid">
                                             <IonRow>
@@ -118,7 +116,7 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
                     <>
                         {internationalStud.map((club: any) => {
                             return (
-                                <div>
+                                <div key={club.id}>
                                     <IonList className="clubsCouncils-list">
                                         <IonGrid className="clubsCouncils-details-grid">
                                             <IonRow>
@@ -149,7 +147,7 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
                     <>
                         {studCouncil.map((club: any) => {
                             return (
-                                <div>
+                                <div key={club.id}>
                                     <IonList className="clubsCouncils-list">
                                         <IonGrid className="clubsCouncils-details-grid">
                                             <IonRow>
@@ -180,7 +178,7 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
                     <>
                         {specialInterest.map((club: any) => {
                             return (
-                                <div>
+                                <div key={club.id}>
                                     <IonList className="clubsCouncils-list">
                                         <IonGrid className="clubsCouncils-details-grid">
                                             <IonRow>
@@ -212,7 +210,7 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
                     <>
                         {sportFitness.map((club: any) => {
                             return (
-                                <div>
+                                <div key={club.id}>
                                     <IonList className="clubsCouncils-list">
                                         <IonGrid className="clubsCouncils-details-grid">
                                             <IonRow>

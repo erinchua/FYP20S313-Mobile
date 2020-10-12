@@ -1,11 +1,11 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookReader, faHandHoldingHeart, faHandsHelping, faSwimmer } from '@fortawesome/free-solid-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
 import TopNav from '../../components/TopNav';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookReader, faHandHoldingHeart, faHandsHelping, faSwimmer } from '@fortawesome/free-solid-svg-icons';
 
 const StudentLifeMain: React.FC = () => {
 

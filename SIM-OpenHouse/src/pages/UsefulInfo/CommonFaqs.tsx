@@ -1,14 +1,11 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonRadio, IonRadioGroup, IonRouterLink, IonRow, IonSegment, IonSegmentButton, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonPage, IonRow, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useRef, useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { db } from '../../firebase'
+import { addCircle, removeCircle } from 'ionicons/icons';
 
 import '../../css/Global.css';
 import '../../css/CommonFaqs.css';
-import { addCircle, removeCircle } from 'ionicons/icons';
-
 import TopNav from '../../components/TopNav';
-import Menu from '../../components/Menu';
+import { db } from '../../firebase'
 
 
 const CommonFaqs: React.FC = () => {

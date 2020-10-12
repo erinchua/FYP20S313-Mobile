@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 
 import '../css/Global.css';
 import '../css/Settings.css';
-
 import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
 
 
 const Settings: React.FC = () => {

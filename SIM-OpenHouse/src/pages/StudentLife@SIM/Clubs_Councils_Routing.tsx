@@ -1,9 +1,9 @@
 import { IonRouterOutlet } from '@ionic/react';
 import React from 'react';
+import { Route, RouteComponentProps } from 'react-router-dom';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
-import { Route, RouteComponentProps } from 'react-router-dom';
 import Clubs_Councils from './Clubs_Councils';
 import Clubs_Councils_Details from './Clubs_Councils_Details';
 

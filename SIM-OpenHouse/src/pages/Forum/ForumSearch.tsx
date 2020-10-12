@@ -1,12 +1,12 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonRouterLink, IonToolbar, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonTitle } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonRouterLink, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonTitle } from '@ionic/react';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/Forum.css';
 import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 
 const ForumSearch: React.FC = () => {

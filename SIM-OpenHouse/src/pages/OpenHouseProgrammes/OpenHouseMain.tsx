@@ -1,13 +1,12 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChalkboardTeacher, faMapPin, faStar } from '@fortawesome/free-solid-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/OpenHouseMain.css';
 import gif from '../../img/openHouseProgrammes/Open House Programmes.gif';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChalkboardTeacher, faMapPin, faStar } from '@fortawesome/free-solid-svg-icons';
 import TopNav from '../../components/TopNav';
-import Menu from '../../components/Menu';
 
 const OpenHouseMain: React.FC = () => {
 

@@ -1,56 +1,157 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonPage, IonContent, IonAlert, IonHeader } from '@ionic/react';
 import React, { useState,useEffect } from 'react';
-import {RouteComponentProps} from 'react-router'
-import '../../css/Global.css';
-import '../../css/ProgrammeTalks.css'
-import { db } from '../../firebase';
+import { RouteComponentProps } from 'react-router';
+import firebase from 'firebase';
 
+import '../../css/Global.css';
+import '../../css/ProgrammeTalks.css';
 import TopNav from '../TopNav';
+import { db } from '../../firebase';
+import { useAuth } from '../../modules/auth';
+import { toDateObject } from '../../modules/convert';
 
 interface RouteParams extends RouteComponentProps<{
     id: string;
 }> { }
 
 const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
+    const { userID } = useAuth();
 
-    {/* Register Alert */}
-    const [registerSuccess, setRegisterSuccess] = useState(false);
-    const [registerFail, setRegisterFail] = useState(false);
+    const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     {/*Programme Talk selected */}
-    const [programmeTalk,setProgrammeTalk] = useState([])
+    const [programmeTalk,setProgrammeTalk] = useState([]);
 
     const fetchData = async () =>{
+        const talkRef = db.collection('ProgrammeTalks').doc(match.params.id);
+        const doc: any =  (await talkRef.get()).data();
+        setProgrammeTalk(doc);
+    };
 
-        const talkRef = db.collection('ProgrammeTalks').doc(match.params.id)
-        const doc :any =  (await talkRef.get()).data()
-        setProgrammeTalk(doc)
-    }
-    useEffect(()=>{
-        fetchData()
-        
-    },[])
+    useEffect(() => {
+        fetchData();
+        db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+            const registered = snapshot.data().registeredProgrammes;
+            
+            if (registered != null) {
+                if (registered.length > 0) {
 
-    const displayRegisterAlert = () => {
-        {/* Logic to check if there is another existing programme in My Schedule that is the same day & timing 
-         of the programme the user wants to add*/}
-        
-        {/* if (exist) {
-             setRegisterSuccess(true);
-             setRegisterFail(false);
-         } else {
-             setRegisterFail(true);
-            setRegisterSuccess(false);
-        } */}
+                    registered.forEach((item: any) => {
+                        if (item === match.params.id)
+                            setButtonDisabled(true);
+                    });
+                }
+            }
+        });
+    }, []);
 
-        {/* set state to disable the + btn in else {} */}
+    const addToSchedule = async (programme: any) => {
+        try {
+            setAlert({ registerSuccess: false, registerFail: false, loading: true });
+
+            await db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+                const registered = snapshot.data().registeredProgrammes;
+                
+                if (registered != null) {
+                    if (registered.length > 0) {
+                        let check = false;
+
+                        registered.forEach((item: any) => {
+                            const itemType = item.split("-");
+
+                            switch (itemType[0]) {
+                                case "talk":
+                                    db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
+                                        }
+                                    });
+
+                                    break;
+
+                                case "tour":
+                                    db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
+                                        }
+                                    });
+                                    
+                                    break;
+
+                                case "performance":
+                                    db.collection('Performances').doc(item).onSnapshot((doc: any) => {
+
+                                        if (programme.date == doc.data().date) {
+
+                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                check = true;
+                                            }
+                                        }
+                                    });
+                                    
+                                    break;
+
+                                default:
+                            }
+                        });
+
+                        setTimeout(async () => {
+                            if (check) {
+                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                            } else {
+                                await db.collection('PersonalScheduler').doc(userID).update({
+                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                                });
+                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                            };
+
+                            check = false;
+                        }, 500);
+
+                    } else {
+                        db.collection('PersonalScheduler').doc(userID).update({
+                            registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                        });
+                        setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                    }
+
+                } else {
+                    db.collection('PersonalScheduler').doc(userID).update({
+                        registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
+                    });
+                    setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                }
+            });
+
+        } catch (e) {
+            setAlert({ registerSuccess: false, registerFail: false, loading: false });
+            return console.log(e);
+        }
     };
 
     return (
         <React.Fragment>
             <IonAlert
-                isOpen={registerSuccess}
-                onDidDismiss={() => setRegisterSuccess(false)}
+                isOpen={alert.registerSuccess}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Successfully Registered'}
@@ -59,8 +160,8 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
              ></IonAlert>
 
             <IonAlert
-                isOpen={registerFail}
-                onDidDismiss={() => setRegisterFail(false)}
+                isOpen={alert.registerFail}
+                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Registration Unsuccessful'}
@@ -131,7 +232,7 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
                         </IonRow>
 
                         <IonRow class="ion-justify-content-center" style={{marginTop:"10%"}}>
-                            <IonButton size="large" id="registerProgTalkBtn" type="submit" onClick={displayRegisterAlert}>REGISTER</IonButton>
+                            <IonButton size="large" id="registerProgTalkBtn" type="submit" onClick={() => addToSchedule(programmeTalk)} disabled={buttonDisabled}>REGISTER</IonButton>
                         </IonRow>
                     </IonGrid>
                     
