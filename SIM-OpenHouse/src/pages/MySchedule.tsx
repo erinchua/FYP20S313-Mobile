@@ -1,15 +1,13 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 
+import '../css/Global.css';
+import '../css/MySchedule.css';
+import TopNav from '../components/TopNav';
+import MyScheduleContent from '../components/MyScheduleContent';
 import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
 import { ScheduleItem, toSchedule } from '../modules/map';
-import '../css/Global.css';
-import '../css/MySchedule.css';
-
-import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
-import MyScheduleContent from '../components/MyScheduleContent';
 import { toDateObject } from '../modules/convert';
 
 const MySchedule: React.FC = () => {
@@ -41,7 +39,7 @@ const MySchedule: React.FC = () => {
 
                         const duration = Math.floor((+toDateObject(day.date, day.endTime) - +toDateObject(day.date, day.startTime)) / 3600000);
                         //console.log(duration)
-                        hours.push(Array.from(Array(duration).keys()));
+                        hours.push(duration);
                     });
             });
             setOpenhouseDates(dates);

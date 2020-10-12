@@ -1,13 +1,13 @@
-import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading, IonItem } from '@ionic/react';
+import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
 import firebase from 'firebase';
 
-import { db } from '../firebase';
-import { useAuth } from '../modules/auth';
 import '../css/Global.css';
 import '../css/GuidedTourContent.css';
+import { db } from '../firebase';
+import { useAuth } from '../modules/auth';
 
 const MyScheduleContent: React.FC<{
     day1: any; 
@@ -23,8 +23,8 @@ const MyScheduleContent: React.FC<{
 
     const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] });
     const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[1] });
-    const openHouseHoursDay1 = props.openHouseHours[0];
-    const openHouseHoursDay2 = props.openHouseHours[1];
+    const openHouseHoursDay1 = Array.from(Array(props.openHouseHours[0]).keys());
+    const openHouseHoursDay2 = Array.from(Array(props.openHouseHours[1]).keys());
 
     const displayRemoveProgAlert = (id: any) => {
         setAlert({ confirmRemove: true, removeSuccess: false, loading: false });
@@ -43,9 +43,6 @@ const MyScheduleContent: React.FC<{
             console.log(e);
         }
     };
-
-    console.log(props.openHouseHours[0])
-    console.log("progs", props.openHouseProgs[0])
     
     return(
         <>
@@ -93,29 +90,45 @@ const MyScheduleContent: React.FC<{
                 </IonRow>
 
                 {props.day1 === "day1" ? 
-                    openHouseProgsDay1.map((item: any) => {
+                    openHouseHoursDay1.map((time: any, index: any) => {
+                        let meridian = "am";
+
+                        if ((time + 9) > 12) {
+                            time -= 12;
+                            meridian = "pm";
+                        };
                         return (
-                            <IonRow className="ion-justify-content-center" key={item.id}>
-                                <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">9am</IonCol>
-                                {openHouseProgsDay1.map((item:any) => {
-                                    return (
-                                        <IonRow key={item.id}>
-                                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">ProgName1</IonCol>
-                                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">9:00AM  to 10:00AM</IonCol>
-                                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">Sample</IonCol>
-                                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                                </IonButton>
-                                            </IonCol>
-                                        </IonRow>
-                                    )
+                            <IonRow className="ion-justify-content-center" key={index}>
+                                <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol>
+                                
+                                {openHouseProgsDay1.map((item:any, index: any) => {
+                                    if (item.id.split("-")[0] != "activity") {
+                                        if (+item.startTime.split(":")[0] === (time + 9)) {
+                                            return (
+                                                <IonRow key={index}>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
+                                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
+                                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
+                                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                                        </IonButton>
+                                                    </IonCol>
+                                                </IonRow>
+                                            )
+                                        } else {
+                                            return (
+                                                <IonRow key={index}></IonRow>
+                                            );
+                                        }
+                                    }
                                 })}
                             </IonRow>
                         )
                     }) : '' 
                 }
                 
+                <>
                 {/* {props.day1 === "day1" ? 
                     <>
                         <IonRow className="ion-justify-content-center">
@@ -215,113 +228,45 @@ const MyScheduleContent: React.FC<{
                         </IonRow>
                     </> : '' 
                 } */}
+                </>
                 
                 {props.day2 === "day2" ? 
-                    <>
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 9am */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">9am</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">ProgName2</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">9:00AM  to 10:00AM</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">Sample</IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
+                    openHouseHoursDay2.map((time: any, index: any) => {
+                        let meridian = "am";
 
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 10am */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">10am</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 11am */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">11am</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 12pm */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">12pm</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 1pm */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">1pm</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 2pm */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">2pm</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 3pm */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">3pm</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
-
-                        {/* My Schedule Table (Programme Talks/Guided Tours) 4pm */}
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">4pm</IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                {/* <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton> */}
-                            </IonCol>
-                        </IonRow>
-                    </> : '' 
+                        if ((time + 9) > 12) {
+                            time -= 12;
+                            meridian = "pm";
+                        };
+                        return (
+                            <IonRow className="ion-justify-content-center" key={index}>
+                                <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol>
+                                
+                                {openHouseProgsDay2.map((item:any, index: any) => {
+                                    if (item.id.split("-")[0] != "activity") {
+                                        if (+item.startTime.split(":")[0] === (time + 9)) {
+                                            return (
+                                                <IonRow key={index}>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
+                                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
+                                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
+                                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                                        </IonButton>
+                                                    </IonCol>
+                                                </IonRow>
+                                            )
+                                        } else {
+                                            return (
+                                                <IonRow key={index}></IonRow>
+                                            );
+                                        }
+                                    }
+                                })}
+                            </IonRow>
+                        )
+                    }) : '' 
                 }
 
                 {/* My Schedule Table (Open House Activities) */}
@@ -340,7 +285,7 @@ const MyScheduleContent: React.FC<{
 
                 {props.day1 === "day1" ?
                     openHouseProgsDay1.map((item: any) => {
-                        if (item.id.split("-")[0] === "activity")
+                        if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
                                     <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
@@ -359,7 +304,7 @@ const MyScheduleContent: React.FC<{
 
                 {props.day2 === "day2" ? 
                     openHouseProgsDay2.map((item: any) => {
-                        if (item.id.split("-")[0] === "activity")
+                        if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
                                     <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>

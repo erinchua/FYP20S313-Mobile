@@ -3,14 +3,11 @@ import React, { useState, useEffect } from 'react';
 
 import '../css/Global.css';
 import '../css/CampusFacilitiesMap.css';
-
 import blkA from '../img/campusFacilities/blkA.png';
 import blkB from '../img/campusFacilities/blkB.png';
 import blkC from '../img/campusFacilities/blkC.png';
 import blkD from '../img/campusFacilities/blkD.png';
-
 import TopNav from '../components/TopNav';
-import Menu from '../components/Menu';
 import { db } from '../firebase';
 
 const CampusFacilitiesMap: React.FC = () => {

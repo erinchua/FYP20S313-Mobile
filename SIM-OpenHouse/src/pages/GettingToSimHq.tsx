@@ -1,11 +1,11 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonText, IonTitle } from '@ionic/react';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBus, faCar, faParking, faTrain } from '@fortawesome/free-solid-svg-icons';
 
 import '../css/GettingToSimHq.css';
 import '../css/Global.css';
 import TopNav from '../components/TopNav';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faCar, faParking, faTrain } from '@fortawesome/free-solid-svg-icons';
 
 const GettingToSimHq: React.FC = () => {
 

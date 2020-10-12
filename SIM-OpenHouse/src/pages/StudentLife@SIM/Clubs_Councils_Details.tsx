@@ -1,12 +1,10 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonList, IonPage, IonRow, IonText, IonThumbnail, IonTitle } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonList, IonPage, IonRow, IonText, IonThumbnail } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
+import { RouteComponentProps } from 'react-router';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
 import TopNav from '../../components/TopNav';
-import { RouteComponentProps } from 'react-router';
-import AnimeGaming from '../../img/studentLife@SIM/arts&Culture/AnimeGaming.jpg';
-import DanceArt from '../../img/studentLife@SIM/arts&Culture/DanceArt.png';
 import { db } from '../../firebase';
 
 interface Clubs_Councils_Details_Props extends RouteComponentProps<{

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import firebase from 'firebase';
 
 import '../../css/Global.css';
-import '../../css/OpenHouseActivities.css'
+import '../../css/OpenHouseActivities.css';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
@@ -32,7 +32,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                     if (registered.length > 0) {
                         let check = false;
 
-                        for (let item of registered) {
+                        registered.forEach((item: any) => {
                             const itemType = item.split("-");
 
                             switch (itemType[0]) {
@@ -86,8 +86,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
 
                                 default:
                             }
-
-                        }
+                        });
 
                         setTimeout(async () => {
                             if (check) {

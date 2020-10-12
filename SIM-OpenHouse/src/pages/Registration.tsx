@@ -1,16 +1,14 @@
 import { IonButton, IonCol, IonContent, IonDatetime, IonGrid, IonInput, IonLabel, IonPage, IonRow, IonSelect, IonSelectOption, IonItem, IonCheckbox, IonAlert, IonItemDivider, IonText, IonLoading, IonHeader } from "@ionic/react";
 import React, { useRef, useState } from "react";
-import { Redirect, useHistory } from "react-router";
+import { Redirect } from "react-router";
 import { useForm } from "react-hook-form";
-
-import { useAuth } from "../modules/auth";
-import { auth, db } from "../firebase";
-import { formatDate } from "../modules/convert";
 
 import "../css/Global.css";
 import "../css/Registration.css";
-
 import TopNav from "../components/TopNav";
+import { useAuth } from "../modules/auth";
+import { auth, db } from "../firebase";
+import { formatDate } from "../modules/convert";
 
 const Registration: React.FC = () => {
   const { register, handleSubmit, errors, watch } = useForm();

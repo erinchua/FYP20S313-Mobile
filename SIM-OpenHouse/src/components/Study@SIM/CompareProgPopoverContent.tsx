@@ -1,5 +1,5 @@
 import { IonButton, IonCol, IonFooter, IonGrid, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 import '../../css/Global.css';
 import '../../css/CompareProgPopoverContent.css';

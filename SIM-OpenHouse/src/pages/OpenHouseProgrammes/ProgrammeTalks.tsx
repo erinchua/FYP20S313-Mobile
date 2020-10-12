@@ -1,19 +1,16 @@
 import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonPopover, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css';
-
 import TopNav from '../../components/TopNav';
 import ProgTalkSchedule from '../../components/OpenHouseProgrammes/ProgTalkSchedule';
 import ProgTalkLiveTalks from '../../components/OpenHouseProgrammes/ProgTalkLiveTalks';
 import ProgTalkPastRec from '../../components/OpenHouseProgrammes/ProgTalkPastRec';
 import FilterPopoverContent from '../../components/FilterPopoverContent';
-
 import { db } from '../../firebase';
 
 

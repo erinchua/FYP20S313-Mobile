@@ -1,6 +1,6 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonPage, IonRouterLink, IonRow, IonSegment, IonSegmentButton, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCol, IonGrid, IonIcon, IonRouterLink, IonRow, IonText, IonTitle } from '@ionic/react';
 import { addCircle, removeCircle } from 'ionicons/icons';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
