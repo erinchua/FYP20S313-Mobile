@@ -28,7 +28,7 @@ const QRScan: React.FC = () => {
         break;
       default:
     }
-    await db.collection('Students').doc(userID).update({
+    await db.collection('Games').doc(userID).update({
       points: increment,
     })
   };
