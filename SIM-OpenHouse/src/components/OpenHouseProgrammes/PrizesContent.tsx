@@ -6,7 +6,8 @@ import '../../css/OpenHouseActivities.css'
 
 const PrizesContent: React.FC<{ prizes: any }> = props => {
 
-    const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
+    const [alert, setAlert] = useState({ redeemSuccess: false, redeemFail: false, loading: false });
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const availablePrizes = props.prizes.filter((prize: any) => {
         return prize.isRedeemed === false;
@@ -19,8 +20,8 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
 
         <>
             <IonAlert
-                isOpen={alert.registerSuccess}
-                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
+                isOpen={alert.redeemSuccess}
+                onDidDismiss={() => setAlert({ redeemSuccess: false, redeemFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Successfully Redeemed'}
@@ -29,8 +30,8 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
             ></IonAlert>
 
             <IonAlert
-                isOpen={alert.registerFail}
-                onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
+                isOpen={alert.redeemFail}
+                onDidDismiss={() => setAlert({ redeemSuccess: false, redeemFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Error Occurred'}
@@ -54,7 +55,7 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
                             <IonCol sizeSm="3" className="prizesContent-Data ion-text-wrap">{index + 1}</IonCol>
                             <IonCol sizeSm="3" className="prizesContent-Data ion-text-wrap">{prize.prizeName}</IonCol>
                             <IonCol sizeSm="2" className="prizesContent-Data ion-text-wrap">{prize.prizePointsCost}</IonCol>
-                            <IonCol sizeSm="4" className="prizesContent-Data ion-text-wrap"><IonButton size="small" id="redeemButton">Redeem</IonButton></IonCol>
+                            <IonCol sizeSm="4" className="prizesContent-Data ion-text-wrap"><IonButton size="small" id="redeemButton" disabled={buttonDisabled}>Redeem</IonButton></IonCol>
                         </IonRow>
                     )
                 })}
