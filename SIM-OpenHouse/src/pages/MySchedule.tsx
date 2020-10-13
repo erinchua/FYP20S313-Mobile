@@ -30,6 +30,7 @@ const MySchedule: React.FC = () => {
         db.collection('Openhouse').get().then(snapshot => {
             const dates: any = [];
             const hours: any = [];
+
             snapshot.forEach(doc => {
                 const data = doc.get('day');
 
@@ -38,20 +39,21 @@ const MySchedule: React.FC = () => {
                         dates.push(day.date);
 
                         const duration = Math.floor((+toDateObject(day.date, day.endTime) - +toDateObject(day.date, day.startTime)) / 3600000);
-                        //console.log(duration)
                         hours.push(duration);
                     });
             });
+
             setOpenhouseDates(dates);
             setOpenHouseHours(hours);
-            //console.log(openHouseHours)
         }).catch((error) => console.log(error));
 
         db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
             const registered = snapshot.data().registeredProgrammes;
             const scheduleProgs: any = [];
+
             registered.forEach((item: any) => {
                 const itemType = item.split("-");
+
                 switch (itemType[0]) {
                     case "talk":
                         return db.collection('ProgrammeTalks').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
@@ -68,34 +70,7 @@ const MySchedule: React.FC = () => {
             
             setTimeout(() => setOpenHouseProgs(scheduleProgs.map(toSchedule)), 500);
         });
-    
-        {// No problem
-        /* db.collection('ProgrammeTalks').get().then(snapshot => {
-            const items: any = [];
-            snapshot.forEach((doc) => items.push(doc.data()));
-            console.log(items) // this one returns a value, length is 6
-            return setProgrammeTalks(items.map(toSchedule));
-        }).catch(err => console.log(err));
-
-        db.collection('GuidedTours').get().then(snapshot => {
-            const items: any = [];
-            snapshot.forEach((doc) => items.push(doc.data()));
-            return setGuidedTours(items.map(toSchedule));
-        }).catch(err => console.log(err));;
-
-        db.collection('Performances').get().then(snapshot => {
-            const items: any = [];
-            snapshot.forEach((doc) => items.push(doc.data()));
-            return setPerformances(items.map(toSchedule));
-        }).catch(err => console.log(err));;
-
-        db.collection('GamesActivities').get().then(snapshot => {
-            const items: any = [];
-            snapshot.forEach((doc) => items.push(doc.data()));
-            return setGamesActivities(items.map(toSchedule));
-        }).catch(err => console.log(err)); */}
-
-    }, []);
+    }, [userID]);
 
     return (
         <IonPage>
