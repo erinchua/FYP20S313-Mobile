@@ -24,22 +24,37 @@ const Registration: React.FC = () => {
   password.current = watch("password", "");
 
   const addNewStudent = async (data: any, uid: any) => {
-    console.log(data);
-    await db.collection("Students").doc(uid).set({
+    const batch = db.batch();
+
+    const students = db.collection('Students').doc(uid);
+    batch.set(students, {
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
-      contactNo: Number(data.contactNo),
+      contactNo: +data.contactNo,
       dob: formatDate(data.dob),
       highestQualification: data.highestQualification,
-      nationality: data.nationality,
-      points: 0,
-      isSuspendedFromForum: false,
-    })
-    await db.collection("PersonalScheduler").doc(uid).set({
-      isConflicted: false,
+      nationality: data.nationality
+    });
+
+    const scheduler = db.collection('PersonalScheduler').doc(uid);
+    batch.set(scheduler, {
       registeredProgrammes: []
-    })
+    });
+
+    const forum = db.collection('Forum').doc(uid);
+    batch.set(forum, {
+      readRules: false,
+      suspended: false
+    });
+
+    const games = db.collection('Games').doc(uid);
+    batch.set(games, {
+      points: 0,
+      redeemed: []
+    });
+
+    await batch.commit();
   };
 
   const handleRegister = async (data: any) => {
@@ -56,12 +71,9 @@ const Registration: React.FC = () => {
     }     
   };
 
-  console.log(loggedIn);
-
   if (loggedIn && showSuccessAlert === false){
     return <Redirect to="/u/home" />;
   };
-
 
   return (
     <IonPage>

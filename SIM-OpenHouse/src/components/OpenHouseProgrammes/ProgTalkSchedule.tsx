@@ -1,5 +1,5 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -38,12 +38,11 @@ const ProgTalkSchedule: React.FC<{
             await db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
                 const registered = snapshot.data().registeredProgrammes;
                 
-                if (registered != null) {
+                if (registered) {
                     if (registered.length > 0) {
                         let check = false;
 
                         registered.forEach((item: any) => {
-                        //for (let item of registered) {
                             const itemType = item.split("-");
 
                             switch (itemType[0]) {

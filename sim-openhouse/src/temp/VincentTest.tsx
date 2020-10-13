@@ -12,10 +12,48 @@ import ViewProgrammeTalk from "./ViewProgrammeTalk";
 
 const VincentTest: React.FC = () => {
 
-  const [programmes, setProgrammes] = useState([])
+  const [programmes, setProgrammes] = useState<any>([])
+  const [checkedFilter, setCheckFilter] = useState<string[]>([])
 
+  const handleToggle = (value: string) => {
+    const currentIndex = checkedFilter.indexOf(value)
+    const newCheckedFilter = [...checkedFilter]
 
+    if (currentIndex === -1) {
+      newCheckedFilter.push(value)
+    } else {
+      newCheckedFilter.splice(currentIndex, 1)
+    }
 
+    setCheckFilter(newCheckedFilter)
+    // console.log('New filters are' + newCheckedFilter)
+    // filterProgrammes(newCheckedFilter)
+
+  }
+
+  const filterProgrammes = (filters: string[]) => {
+    const newProgrammes: any = []
+    filters.map(filter => {
+      let programme = []
+      if (filter == 'partTime') {
+        programme = programmes.filter((programme: { modeOfStudy: { partTime: boolean; }; }) => { return programme.modeOfStudy.partTime == true })
+        console.log('I am partTime' + programme)
+        newProgrammes.push(programme)
+      }
+      else if (filter == 'fullTime') {
+        programme = programmes.filter((programme: { modeOfStudy: { fullTime: boolean; }; }) => { return programme.modeOfStudy.fullTime == true })
+        console.log('I am fullTime' + programme)
+        newProgrammes.push(programme)
+      }
+      else if (filter == 'fullPartTime') {
+        programme = programmes.filter((programme: { modeOfStudy: { fullTime: boolean; partTime: boolean }; }) => { return programme.modeOfStudy.fullTime == true && programme.modeOfStudy.partTime == true })
+        console.log('I am fullPartTime' + programme)
+        newProgrammes.push(programme)
+      }
+    })
+    console.log('newprogrammes are' + newProgrammes)
+    setProgrammes(newProgrammes)
+  }
   useEffect(() => {
     const programmes: any = []
     const fetchData = async () => {
@@ -33,6 +71,11 @@ const VincentTest: React.FC = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    filterProgrammes(checkedFilter)
+
+  }, [checkedFilter]);
+
   /* console.log(
     contacts.map((contact) => {
       contact.data();
@@ -47,6 +90,7 @@ const VincentTest: React.FC = () => {
 
   return (
     <IonPage>
+      {      console.log("programmes are" + JSON.stringify(programmes))}
       <IonHeader>
         <IonToolbar>
           <IonTitle>QRTest</IonTitle>
@@ -93,16 +137,16 @@ const VincentTest: React.FC = () => {
         })
         } */}
         <p>Full time & Part time</p>
-        <IonCheckbox checked={false} ></IonCheckbox>
+        <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='fullPartTime' checked={checkedFilter.indexOf('fullPartTime') === -1 ? false : true}></IonCheckbox>
         <br />
         <p>Full time</p>
-        <IonCheckbox></IonCheckbox>
+        <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='fullTime' checked={checkedFilter.indexOf('fullTime') === -1 ? false : true}></IonCheckbox>
         <br />
         <p>Part time</p>
-        <IonCheckbox></IonCheckbox>
+        <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='partTime' checked={checkedFilter.indexOf('partTime') === -1 ? false : true}></IonCheckbox>
         <br />
 
-        {programmes.map((programme: any) => {
+         if(programmes.length){programmes.map((programme: any) => {
           return (
             <div>
               <li>{programme.programmeTitle}</li>

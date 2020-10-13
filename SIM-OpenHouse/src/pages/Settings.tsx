@@ -66,7 +66,7 @@ const Settings: React.FC = () => {
                         <IonCol>
                             <IonItem className="simWebsiteItem" lines="none">
                                 <IonTitle className="settingsTitle">
-                                    <IonRouterLink id="simWebsiteUrl" href="https://www.simge.edu.sg/open-house-overview/">
+                                    <IonRouterLink id="simWebsiteUrl" href="https://www.simge.edu.sg/open-house-overview/" target="_blank">
                                         SIM Open House Website
                                     </IonRouterLink>
                                 </IonTitle>
