@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
 import { addCircleSharp, personSharp } from "ionicons/icons";
+import firebase from "firebase";
 
 import "../../css/Global.css";
 import "../../css/Forum.css";
@@ -13,6 +14,7 @@ import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
 import { db } from "../../firebase";
 import { useAuth } from "../../modules/auth";
+import { forumPostsDesc } from "../../modules/compare";
 
 const Forum: React.FC = () => {
     const { userID } = useAuth();
@@ -23,31 +25,10 @@ const Forum: React.FC = () => {
     const [agreedTOC, setAgreedTOC] = useState(true);
     const [showPostModal, setShowPostModal] = useState(false);
     const [modalSegmentValue, setModalSegmentValue] = useState('');
-    const [postText, setPostText] = useState("");
-    const [questionPosts, setQuestionPosts] = useState([]);
+    const [entry, setEntry] = useState("");
+    const [questionEntries, setQuestionEntries] = useState([]);
 
     let history = useHistory();
-
-    useEffect(() => {
-        db.collection('Forum').doc(userID).onSnapshot((snapshot: any) => {
-            if (snapshot.data().readRules)
-                setAgreedTOC(true);
-            else
-                setAgreedTOC(false);
-        });
-
-        db.collection('Forum').get().then(uRef => {
-            const questions: any = [];
-            uRef.forEach(user => {
-                db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(qnRef => {
-                    qnRef.forEach(doc => questions.push(doc));
-                });
-            });
-
-            setQuestionPosts(questions);
-            console.log(questionPosts)
-        });
-    }, []);
 
     const onSubmit = async () => {
         setLoading(true);
@@ -60,32 +41,108 @@ const Forum: React.FC = () => {
         try {    
             setLoading(true);
             const time = new Date();
+            let name: string;
 
-            if (postType == "question")
-                await db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString()).set({
-                    text: postText,
+            await db.collection('Students').doc(userID).get().then((doc: any) => {
+                name = doc.data().firstName + " " + doc.data().lastName;
+            });
+
+            if (postType == "question") {
+                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
+                await docRef.set({
+                    id: +docRef.id,
+                    entry: entry,
+                    posterName: name!,
+                    posterID: userID,
                     dateTime: time.toLocaleString().replace(/\//g, "-"),
                     noOfComments: 0,
-                    postedBy: userID,
                     deleted: false,
                     reported: false
                 });
-            else if (postType == "comment")
-                await db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString()).set({
-                    text: postText,
+            } else if (postType == "comment") {
+                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
+                await docRef.set({
+                    id: +docRef.id,
+                    entry: entry,
+                    posterName: name!,
+                    posterID: userID,
                     dateTime: time.toLocaleString().replace(/\//g, "-"),
-                    postedBy: userID,
                     deleted: false,
                     reported: false
                 });
+
+                /* const increment = firebase.firestore.FieldValue.increment(1);
+                await db.collection('Forum').doc("").collection('Questions').doc("").update({
+                    noOfComments: increment,
+                }); */
+            }
         } catch(e) {
             return console.log(e);
         } finally {
             setLoading(false);
             setShowPostModal(false);
-            setPostText("");
+            setEntry("");
         }
     }
+
+    useEffect(() => {
+        db.collection('Forum').doc(userID).onSnapshot((snapshot: any) => {
+            if (snapshot.data().readRules)
+                setAgreedTOC(true);
+            else
+                setAgreedTOC(false);
+        });
+
+        db.collection('Forum').get().then(uRef => {
+            const questions: any = [];
+            
+            uRef.forEach(user => {
+
+                {/* await db.collection('Forum').doc(user.id).collection('Questions').get().then(entries => {
+                    entries.forEach(doc => {
+                        questions.push({
+                            id: doc.id,
+                            entry: doc.data().entry,
+                            dateTime: doc.data().dateTime,
+                            user: doc.data().posterName,
+                            commentCount: doc.data().noOfComments
+                        });
+                    });
+                }); */}
+
+                {/* return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
+                    entries.docChanges().forEach(change => {
+                        questions.push({
+                            id: change.doc.id,
+                            entry: change.doc.data().entry,
+                            dateTime: change.doc.data().dateTime,
+                            user: change.doc.data().posterName,
+                            commentCount: change.doc.data().noOfComments
+                        });
+                    })
+                }); */}
+                
+                return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
+                    entries.docChanges().forEach(change => {
+                        questions.unshift({
+                            id: change.doc.id,
+                            entry: change.doc.data().entry,
+                            dateTime: change.doc.data().dateTime,
+                            user: change.doc.data().posterName,
+                            commentCount: change.doc.data().noOfComments
+                        });
+                    });
+                });
+            });
+
+            setTimeout(() => {
+                questions.sort(forumPostsDesc);
+                setQuestionEntries(questions);
+            }, 500);
+        });
+    }, []);
+
+    console.log(questionEntries)
     
     return (
         <IonPage>
@@ -115,7 +172,39 @@ const Forum: React.FC = () => {
                     </IonGrid>
 
                     {/* Display all Questions */}
-                    <IonList className="forum-container">
+                    {questionEntries.map((question: any, index) => (
+                        <IonList className="forum-container" key={index}>
+                            <IonGrid>
+                                <IonRow>
+                                    <IonLabel>
+                                        <IonRouterLink href="/u/forumViewQuestion"><IonText className="forum-question">{question.entry}</IonText></IonRouterLink>
+                                    </IonLabel>
+                                </IonRow>
+                                <IonRow className="ion-justify-content-end">
+                                    <IonText className="forum-question-details" id="forum-userName">~ {question.user}</IonText>
+                                </IonRow>
+                                <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
+                                    <IonCol size="1" className="forum-col ion-align-self-end">
+                                        <FontAwesomeIcon icon={faClock} size="sm"/>
+                                    </IonCol>
+                                    <IonCol size="6" className="forum-col ion-align-self-end">
+                                        <IonText className="forum-question-details">{question.dateTime}</IonText>
+                                    </IonCol>
+                                    <IonCol size="1" className="forum-col ion-align-self-end">
+                                        <FontAwesomeIcon icon={faCommentAlt} size="sm"/>
+                                    </IonCol>
+                                    <IonCol size="3" className="forum-col ion-align-self-end">
+                                        <IonText className="forum-question-details">{question.commentCount}</IonText>
+                                    </IonCol>
+                                    <IonCol size="1" className="ion-align-self-end forum-col">
+                                        <Forum_FlagModal />
+                                    </IonCol>
+                                </IonRow>
+                            </IonGrid>
+                        </IonList>
+                    ))}
+
+                    {/* <IonList className="forum-container">
                         <IonGrid>
                             <IonRow>
                                 <IonLabel>
@@ -173,7 +262,7 @@ const Forum: React.FC = () => {
                                 </IonCol>
                             </IonRow>
                         </IonGrid>
-                    </IonList>
+                    </IonList> */}
                     {/* End of Display all Questions */}
                     </>
 
@@ -234,7 +323,7 @@ const Forum: React.FC = () => {
                             </IonRow>
                             <IonItemDivider></IonItemDivider>
                             <IonRow id="postQns-modal-inputArea">
-                                <IonTextarea value={postText} onIonChange={(e: any) => setPostText(e.detail.value)} rows={11} placeholder="Type your question here..." required></IonTextarea>
+                                <IonTextarea value={entry} onIonChange={(e: any) => setEntry(e.detail.value)} rows={11} placeholder="Type your question here..." required></IonTextarea>
                             </IonRow>
                             <IonRow className="ion-justify-content-around">
                                 <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
