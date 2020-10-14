@@ -26,8 +26,9 @@ const Registration: React.FC = () => {
   const addNewStudent = async (data: any, uid: any) => {
     const batch = db.batch();
 
-    const students = db.collection('Students').doc(uid);
-    batch.set(students, {
+    const student = db.collection('Students').doc(uid);
+    batch.set(student, {
+      id: student.id,
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
@@ -39,17 +40,20 @@ const Registration: React.FC = () => {
 
     const scheduler = db.collection('PersonalScheduler').doc(uid);
     batch.set(scheduler, {
+      ownerId: student.id, 
       registeredProgrammes: []
     });
 
     const forum = db.collection('Forum').doc(uid);
     batch.set(forum, {
+      userId: student.id,
       readRules: false,
       suspended: false
     });
 
     const games = db.collection('Games').doc(uid);
     batch.set(games, {
+      playerId: student.id,
       points: 0,
       redeemed: []
     });
