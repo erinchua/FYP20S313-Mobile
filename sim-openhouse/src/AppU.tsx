@@ -71,7 +71,7 @@ const App: React.FC = () => {
       <Route path="/u/forum" component={Forum} exact={true} />
       <Route path="/u/forumUser" component={ForumUser} exact={true} />
       <Route path="/u/forumSearch" component={ForumSearch} exact={true} />
-      <Route path="/u/forumViewQuestion" component={ForumViewQuestion} exact={true} />
+      <Route path="/u/forumViewQuestion/:id/:uid" component={ForumViewQuestion} exact={true} />
       <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
       <Route path="/u/usefulInfoMain" component={UsefulInfoMain} exact={true} />
       <Route path="/u/usefulInfoMain/admissionApplication" component={AdmissionApplication} exact={true} />
