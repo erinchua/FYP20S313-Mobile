@@ -1,4 +1,4 @@
-import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonHeader, IonLoading, IonPage, IonRow, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 
 import '../css/Global.css';
@@ -12,6 +12,8 @@ import { toDateObject } from '../modules/convert';
 
 const MySchedule: React.FC = () => {
     const { userID } = useAuth();
+
+    const [loading, setLoading] = useState(true);
     const [dayNum, setDayNum] = useState("day1");
     const [openhouseDates, setOpenhouseDates] = useState([]);
     const [openHouseProgs, setOpenHouseProgs] = useState<ScheduleItem[]>([]);
@@ -47,7 +49,7 @@ const MySchedule: React.FC = () => {
             setOpenHouseHours(hours);
         }).catch((error) => console.log(error));
 
-        db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
+        return db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
             const registered = snapshot.data().registeredProgrammes;
             const scheduleProgs: any = [];
 
@@ -68,7 +70,10 @@ const MySchedule: React.FC = () => {
                 }
             });
             
-            setTimeout(() => setOpenHouseProgs(scheduleProgs.map(toSchedule)), 500);
+            setTimeout(() => {
+                setOpenHouseProgs(scheduleProgs.map(toSchedule));
+                setLoading(false);
+            }, 500);
         });
     }, [userID]);
 
@@ -107,6 +112,7 @@ const MySchedule: React.FC = () => {
                 </IonGrid>
 
                 <MyScheduleContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} openHouseHours={openHouseHours} openHouseProgs={openHouseProgs} />
+                <IonLoading isOpen={loading} />
             </IonContent>
         </IonPage>
     );

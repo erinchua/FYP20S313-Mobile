@@ -1,9 +1,10 @@
 const db = require('./config/adminConfig')
-const admin = require('firebase-admin')
+const admin = require('firebase-admin');
+const { doc } = require('./config/adminConfig');
 
 //db.collection('Test').doc('test').update({testarray: admin.firestore.FieldValue.arrayUnion('hello')});
 
-const userID = "QCBgNFigidTOJ2quZn72Z5RJEbJ3";
+const userID = "CLtDkQ9BfdQ2XF52F4t2y6jbZxh2";
 /* db.collection('PersonalScheduler').doc(userID).get().then(doc => {
     const items = [];
     const activities = doc.data().registeredProgrammes;
@@ -148,7 +149,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
 //console.log(new Date().toTimeString())
 //console.log(admin.firestore.FieldValue.serverTimestamp())
 
-const docId = "1602610175840";
-db.collection('Forum').doc(userID).collection('Questions').doc(docId).get().then(doc => {
-    console.log(Date.parse(doc.data().dateTime))
+const docId = "1602693189449";
+db.collection('Forum').doc(userID).collection('Questions').doc(docId).get().then((entry) => {
+    console.log(entry.data());
 });
