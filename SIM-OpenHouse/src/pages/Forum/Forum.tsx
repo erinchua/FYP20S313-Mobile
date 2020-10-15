@@ -1,6 +1,6 @@
 import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonLoading, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
@@ -22,6 +22,7 @@ const Forum: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [checked, setChecked] = useState(false);
     const [agreedTOC, setAgreedTOC] = useState(true);
+    const [suspended, setSuspended] = useState(false);
     const [showPostModal, setShowPostModal] = useState(false);
     const [modalSegmentValue, setModalSegmentValue] = useState('');
     const [entry, setEntry] = useState("");
@@ -36,7 +37,7 @@ const Forum: React.FC = () => {
         setLoading(false);
     };
 
-    const handlePost = async (postType: any) => {
+    const handleQuestion = async () => {
         try {
             setLoading(true);
             const time = new Date();
@@ -46,35 +47,17 @@ const Forum: React.FC = () => {
                 name = doc.data().firstName + " " + doc.data().lastName;
             });
 
-            if (postType == "question") {
-                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
-                await docRef.set({
-                    id: +docRef.id,
-                    entry: entry,
-                    posterName: name!,
-                    posterId: userID,
-                    dateTime: time.toLocaleString().replace(/\//g, "-"),
-                    noOfComments: 0,
-                    deleted: false,
-                    reported: false
-                });
-            } else if (postType == "comment") {
-                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
-                await docRef.set({
-                    id: +docRef.id,
-                    entry: entry,
-                    posterName: name!,
-                    posterId: userID,
-                    dateTime: time.toLocaleString().replace(/\//g, "-"),
-                    deleted: false,
-                    reported: false
-                });
-
-                /* const increment = firebase.firestore.FieldValue.increment(1);
-                await db.collection('Forum').doc("").collection('Questions').doc("").update({
-                    noOfComments: increment,
-                }); */
-            }
+            const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
+            await docRef.set({
+                id: +docRef.id,
+                entry: entry,
+                posterName: name!,
+                posterId: userID,
+                dateTime: time.toLocaleString().replace(/\//g, "-"),
+                noOfComments: 0,
+                deleted: false,
+                reported: false
+            });
         } catch (e) {
             return console.log(e);
         } finally {
@@ -89,6 +72,8 @@ const Forum: React.FC = () => {
             const questions: any = [];
 
             uRef.forEach(user => {
+                if (user.id === userID && user.data().suspended) 
+                    return history.goBack();
 
                 {/* await db.collection('Forum').doc(user.id).collection('Questions').get().then(entries => {
                     entries.forEach(doc => {
@@ -122,7 +107,8 @@ const Forum: React.FC = () => {
                             dateTime: change.doc.data().dateTime,
                             user: change.doc.data().posterName,
                             uid: change.doc.data().posterId,
-                            commentCount: change.doc.data().noOfComments
+                            commentCount: change.doc.data().noOfComments,
+                            removed: change.doc.data().deleted
                         });
                     });
                 });
@@ -173,98 +159,41 @@ const Forum: React.FC = () => {
                         </IonGrid>
 
                         {/* Display all Questions */}
-                        {questions.map((post: any) => (
-                            <IonList className="forum-container" key={post.id}>
-                                <IonGrid>
-                                    <IonRow>
-                                        <IonLabel>
-                                            <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.uid}`}><IonText className="forum-question">{post.entry}</IonText></IonRouterLink>
-                                        </IonLabel>
-                                    </IonRow>
-                                    <IonRow className="ion-justify-content-end">
-                                        <IonText className="forum-question-details" id="forum-userName">~ {post.user}</IonText>
-                                    </IonRow>
-                                    <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
-                                        <IonCol size="1" className="forum-col ion-align-self-end">
-                                            <FontAwesomeIcon icon={faClock} size="sm" />
-                                        </IonCol>
-                                        <IonCol size="6" className="forum-col ion-align-self-end">
-                                            <IonText className="forum-question-details">{post.dateTime}</IonText>
-                                        </IonCol>
-                                        <IonCol size="1" className="forum-col ion-align-self-end">
-                                            <FontAwesomeIcon icon={faCommentAlt} size="sm" />
-                                        </IonCol>
-                                        <IonCol size="3" className="forum-col ion-align-self-end">
-                                            <IonText className="forum-question-details">{post.commentCount}</IonText>
-                                        </IonCol>
-                                        <IonCol size="1" className="ion-align-self-end forum-col">
-                                            <Forum_FlagModal />
-                                        </IonCol>
-                                    </IonRow>
-                                </IonGrid>
-                            </IonList>
-                        ))}
-
-                        {/* <IonList className="forum-container">
-                        <IonGrid>
-                            <IonRow>
-                                <IonLabel>
-                                    <IonRouterLink href="/u/forumViewQuestion"><IonText className="forum-question">Anyone going to enrol for the Cyber Security (University of Wollongong) course?</IonText></IonRouterLink>
-                                </IonLabel>
-                            </IonRow>
-                            <IonRow className="ion-justify-content-end">
-                                <IonText className="forum-question-details" id="forum-userName">~ Martin John</IonText>
-                            </IonRow>
-                            <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
-                                <IonCol size="1" className="forum-col ion-align-self-end">
-                                    <FontAwesomeIcon icon={faClock} size="sm"/>
-                                </IonCol>
-                                <IonCol size="6" className="forum-col ion-align-self-end">
-                                    <IonText className="forum-question-details">21-11-2020, 5.30pm</IonText>
-                                </IonCol>
-                                <IonCol size="1" className="forum-col ion-align-self-end">
-                                    <FontAwesomeIcon icon={faCommentAlt} size="sm"/>
-                                </IonCol>
-                                <IonCol size="3" className="forum-col ion-align-self-end">
-                                    <IonText className="forum-question-details">0</IonText>
-                                </IonCol>
-                                <IonCol size="1" className="ion-align-self-end forum-col">
-                                    <Forum_FlagModal />
-                                </IonCol>
-                            </IonRow>
-                        </IonGrid>
-                    </IonList>
-
-                    <IonList className="forum-container">
-                        <IonGrid>
-                            <IonRow>
-                                <IonLabel>
-                                <IonRouterLink href="/u/forumViewQuestion"><IonText className="forum-question">Where's the ATM?</IonText></IonRouterLink>
-                                </IonLabel>
-                            </IonRow>
-                            <IonRow className="ion-justify-content-end">
-                                <IonText className="forum-question-details" id="forum-userName">~ John Tan</IonText>
-                            </IonRow>
-                            <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
-                                <IonCol size="1" className="forum-col ion-align-self-end">
-                                    <FontAwesomeIcon icon={faClock} size="sm"/>
-                                </IonCol>
-                                <IonCol size="6" className="forum-col ion-align-self-end">
-                                    <IonText className="forum-question-details">21-11-2020, 10.00am</IonText>
-                                </IonCol>
-                                <IonCol size="1" className="forum-col ion-align-self-end">
-                                    <FontAwesomeIcon icon={faCommentAlt} size="sm"/>
-                                </IonCol>
-                                <IonCol size="3" className="forum-col ion-align-self-end">
-                                    <IonText className="forum-question-details">1</IonText>
-                                </IonCol>
-                                <IonCol size="1" className="ion-align-self-end forum-col">
-                                    <Forum_FlagModal />
-                                </IonCol>
-                            </IonRow>
-                        </IonGrid>
-                    </IonList> */}
-                        {/* End of Display all Questions */}
+                        {questions.map((post: any) => {
+                            if (post.removed === false) {
+                                return (
+                                    <IonList className="forum-container" key={post.id}>
+                                        <IonGrid>
+                                            <IonRow>
+                                                <IonLabel>
+                                                    <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.uid}`}><IonText className="forum-question">{post.entry}</IonText></IonRouterLink>
+                                                </IonLabel>
+                                            </IonRow>
+                                            <IonRow className="ion-justify-content-end">
+                                                <IonText className="forum-question-details" id="forum-userName">~ {post.user}</IonText>
+                                            </IonRow>
+                                            <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
+                                                <IonCol size="1" className="forum-col ion-align-self-end">
+                                                    <FontAwesomeIcon icon={faClock} size="sm" />
+                                                </IonCol>
+                                                <IonCol size="6" className="forum-col ion-align-self-end">
+                                                    <IonText className="forum-question-details">{post.dateTime}</IonText>
+                                                </IonCol>
+                                                <IonCol size="1" className="forum-col ion-align-self-end">
+                                                    <FontAwesomeIcon icon={faCommentAlt} size="sm" />
+                                                </IonCol>
+                                                <IonCol size="3" className="forum-col ion-align-self-end">
+                                                    <IonText className="forum-question-details">{post.commentCount}</IonText>
+                                                </IonCol>
+                                                <IonCol size="1" className="ion-align-self-end forum-col">
+                                                    <Forum_FlagModal disabled={false} postId={post.id} postType={"Question"} offender={post.uid} reportedBy={userID!} />
+                                                </IonCol>
+                                            </IonRow>
+                                        </IonGrid>
+                                    </IonList>
+                                )
+                            }
+                        })}
                     </>
 
                     : <form onSubmit={handleSubmit(onSubmit)}>
@@ -328,7 +257,7 @@ const Forum: React.FC = () => {
                             </IonRow>
                             <IonRow className="ion-justify-content-around">
                                 <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
-                                <IonButton id="postQns-post-button" onClick={() => handlePost("question")}>POST</IonButton>
+                                <IonButton id="postQns-post-button" onClick={handleQuestion}>POST</IonButton>
                             </IonRow>
                         </IonGrid>
                     </IonContent>

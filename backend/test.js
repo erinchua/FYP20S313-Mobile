@@ -149,7 +149,28 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
 //console.log(new Date().toTimeString())
 //console.log(admin.firestore.FieldValue.serverTimestamp())
 
-const docId = "1602693189449";
-db.collection('Forum').doc(userID).collection('Questions').doc(docId).get().then((entry) => {
-    console.log(entry.data());
+db.collection('Forum').get().then(uRef => {
+    const comments = [];
+
+    uRef.forEach(user => {
+        //console.log(user.id)
+        return db.collection('Forum').doc(user.id).collection('Comments').where("questionId", "==", 1602693189449).onSnapshot(entries => {
+            //entries.forEach(doc => console.log(doc.data()))
+            entries.docChanges().forEach(change => {
+                console.log(change.doc.data())
+                comments.unshift({
+                    id: change.doc.id,
+                    entry: change.doc.data().entry,
+                    dateTime: change.doc.data().dateTime,
+                    user: change.doc.data().posterName,
+                    uid: change.doc.data().posterId,
+                    removed: change.doc.data().deleted
+                });
+                //console.log(comments)
+            });
+        });
+    });
+    setTimeout(() => {
+        console.log(comments)
+    }, 500);
 });
