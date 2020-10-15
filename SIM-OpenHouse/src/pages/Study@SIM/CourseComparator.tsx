@@ -29,60 +29,61 @@ interface CourseComparator_Props extends RouteComponentProps<{
 }> { }
 
 const CourseComparator: React.FC<CourseComparator_Props> = ({ match }) => {
+    console.log("Comparator rendered!")
 
     return (
         <IonPage>
             <IonHeader>
                 {match.params.discipline === 'artSocialSciences' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/artSocialSciences' backarrow={ true } hamburger = { true }/>
-                    :''
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/artSocialSciences' backarrow={true} hamburger={true} />
+                    : ''
                 }
 
                 {match.params.discipline === 'business' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/business' backarrow={ true } hamburger = { true }/>
-                    :''
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/business' backarrow={true} hamburger={true} />
+                    : ''
                 }
 
                 {match.params.discipline === 'itComputerScience' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/itComputerScience' backarrow={ true } hamburger = { true }/>
-                    :''
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/itComputerScience' backarrow={true} hamburger={true} />
+                    : ''
                 }
 
                 {match.params.discipline === 'nursing' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/nursing' backarrow={ true } hamburger = { true }/>
-                    :''
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/nursing' backarrow={true} hamburger={true} />
+                    : ''
                 }
 
                 {match.params.discipline === 'speciality' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/speciality' backarrow={ true } hamburger = { true }/>
-                    :''
+                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/speciality' backarrow={true} hamburger={true} />
+                    : ''
                 }
             </IonHeader>
 
             <IonContent fullscreen={true}>
                 {match.params.discipline === 'artSocialSciences' ?
                     <CourseComparatorDetails />
-                    :''
+                    : ''
                 }
 
                 {match.params.discipline === 'business' ?
                     <CourseComparatorDetails />
-                    :''
+                    : ''
                 }
 
                 {match.params.discipline === 'itComputerScience' ?
                     <CourseComparatorDetails />
-                    :''
+                    : ''
                 }
 
                 {match.params.discipline === 'nursing' ?
                     <CourseComparatorDetails />
-                    :''
+                    : ''
                 }
 
                 {match.params.discipline === 'speciality' ?
                     <CourseComparatorDetails />
-                    :''
+                    : ''
                 }
             </IonContent>
         </IonPage>

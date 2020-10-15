@@ -13,7 +13,8 @@ import ViewProgrammeTalk from "./ViewProgrammeTalk";
 const VincentTest: React.FC = () => {
 
   const [programmes, setProgrammes] = useState<any>([])
-  const [checkedFilter, setCheckFilter] = useState<string[]>([])
+  const [checkedFilter, setCheckFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
+  const [filteredProgrammes, setFilteredProgrammes] = useState([])
 
   const handleToggle = (value: string) => {
     const currentIndex = checkedFilter.indexOf(value)
@@ -26,12 +27,13 @@ const VincentTest: React.FC = () => {
     }
 
     setCheckFilter(newCheckedFilter)
-    // console.log('New filters are' + newCheckedFilter)
-    // filterProgrammes(newCheckedFilter)
+    console.log('New filters are' + newCheckedFilter)
+    filterProgrammes(newCheckedFilter)
 
   }
 
   const filterProgrammes = (filters: string[]) => {
+    console.log("I am inside filterProgrammes: " + programmes)
     const newProgrammes: any = []
     filters.map(filter => {
       let programme = []
@@ -52,29 +54,31 @@ const VincentTest: React.FC = () => {
       }
     })
     console.log('newprogrammes are' + newProgrammes)
-    setProgrammes(newProgrammes)
+    setFilteredProgrammes(newProgrammes)
   }
   useEffect(() => {
     const programmes: any = []
     const fetchData = async () => {
-      const data = await db
-        .collection("TestProgrammes")
+      db.collection("TestProgrammes")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             const data = doc.data()
             programmes.push(data)
           });
+          console.log("First Useeffect programmes: " + programmes)
           setProgrammes(programmes)
+          setFilteredProgrammes(programmes)
+
         });
     };
     fetchData();
   }, []);
 
-  useEffect(() => {
-    filterProgrammes(checkedFilter)
+  // useEffect(() => {
+  //   filterProgrammes(checkedFilter)
 
-  }, [checkedFilter]);
+  // }, [checkedFilter]);
 
   /* console.log(
     contacts.map((contact) => {
@@ -90,7 +94,7 @@ const VincentTest: React.FC = () => {
 
   return (
     <IonPage>
-      {      console.log("programmes are" + JSON.stringify(programmes))}
+      {      console.log("After rendering in filtered programmes are" + JSON.stringify(filteredProgrammes))}
       <IonHeader>
         <IonToolbar>
           <IonTitle>QRTest</IonTitle>
@@ -145,14 +149,16 @@ const VincentTest: React.FC = () => {
         <p>Part time</p>
         <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='partTime' checked={checkedFilter.indexOf('partTime') === -1 ? false : true}></IonCheckbox>
         <br />
-
-         if(programmes.length){programmes.map((programme: any) => {
+        {console.log("Before mapping programmes: " + filteredProgrammes)}
+        {Array.isArray(filteredProgrammes) && filteredProgrammes.length && filteredProgrammes.map(programme => {
           return (
-            <div>
+
+            <div key={programme.id}>
+              {console.log("i am ID: " + programme.id)}
               <li>{programme.programmeTitle}</li>
               <li>{programme.awardedBy}</li>
-              <li>{programme.modeOfStudy.fullTime ? 'Full-Time' : ''}</li>
-              <li>{programme.modeOfStudy.partTime ? 'Part-Time' : ''}</li>
+              {/* <li>{programme.modeOfStudy.fullTime ? 'Full-Time' : ''}</li>
+              <li>{programme.modeOfStudy.partTime ? 'Part-Time' : ''}</li> */}
               <br />
             </div>
           )
