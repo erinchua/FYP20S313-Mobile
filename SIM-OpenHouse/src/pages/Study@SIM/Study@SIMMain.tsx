@@ -33,7 +33,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                                 <IonSelect id="studySIMProgSelect" name="studySIMProgSelect" value={studySIMProgSelect} onIonChange={(e) => { setStudySIMProgSelect(e.detail.value); console.log(e.detail.value); }}>
                                     <IonSelectOption value="Diploma" className="studySIMProgSelectOption">Diploma Programmes</IonSelectOption>
                                     <IonSelectOption value="Bachelor" className="studySIMProgSelectOption">Undergraduate Programmes</IonSelectOption>
-                                    <IonSelectOption value="Postgraduate/Masters" className="studySIMProgSelectOption">Postgraduate/ Masters Programmes</IonSelectOption>
+                                    <IonSelectOption value="Masters" className="studySIMProgSelectOption">Postgraduate/ Masters Programmes</IonSelectOption>
                                 </IonSelect>
                             </IonItem>
                         </IonCol>
@@ -44,7 +44,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                         <>
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/business">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/business/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faBriefcase} />
                                         </IonRow>
@@ -56,7 +56,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                                 </IonCol>
 
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/itComputerScience">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/itComputerScience/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faDesktop} />
                                         </IonRow>
@@ -70,7 +70,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
 
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink href={`/u/study@SIMMain/speciality/${studySIMProgSelect}`}>
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/speciality/${studySIMProgSelect}`}>
 
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faStar} />
@@ -93,7 +93,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                         <>
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/artSocialSciences">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/artSocialSciences/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faPaintBrush} />
                                         </IonRow>
@@ -105,7 +105,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                                 </IonCol>
 
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/business">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/business/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faBriefcase} />
                                         </IonRow>
@@ -119,7 +119,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
 
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/itComputerScience">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/itComputerScience/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faDesktop} />
                                         </IonRow>
@@ -131,7 +131,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                                 </IonCol>
 
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/nursing">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/nursing/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faUserNurse} />
                                         </IonRow>
@@ -145,7 +145,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
 
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/speciality">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/speciality/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faStar} />
                                         </IonRow>
@@ -162,11 +162,11 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                     }
 
                     {/* Post Grad/ Masters Programmes */}
-                    {studySIMProgSelect === "Postgraduate/Masters" &&
+                    {studySIMProgSelect === "Masters" &&
                         <>
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/artSocialSciences">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/artSocialSciences/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faPaintBrush} />
                                         </IonRow>
@@ -178,7 +178,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                                 </IonCol>
 
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/business">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/business/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faBriefcase} />
                                         </IonRow>
@@ -192,7 +192,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
 
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <IonRouterLink routerLink="/u/study@SIMMain/itComputerScience">
+                                    <IonRouterLink routerLink={`/u/study@SIMMain/itComputerScience/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faDesktop} />
                                         </IonRow>
