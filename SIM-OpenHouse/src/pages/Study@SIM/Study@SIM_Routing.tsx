@@ -1,6 +1,6 @@
 import { IonRouterOutlet } from '@ionic/react';
 import React from 'react';
-import { Route, RouteComponentProps } from 'react-router-dom';
+import { BrowserRouter as Router, Route, RouteComponentProps, Switch } from 'react-router-dom';
 
 import '../../css/Global.css';
 import StudySIMMain from './Study@SIMMain';
@@ -12,10 +12,14 @@ const StudySIM_Routing: React.FC<RouteComponentProps> = ({ match }) => {
 
     return (
         <IonRouterOutlet>
-            <Route exact path={match.url} component={StudySIMMain} />
-            <Route path={`${match.url}/:discipline`} component={StudySIMProgList} />
-            <Route path={`${match.url}/:discipline/:id`} component={StudySIMProgInfo} />
-            <Route path={`${match.url}/:discipline/:compareCourse`} component={CourseComparator} />
+            <Switch>
+                <Route exact path={match.url} component={StudySIMMain} />
+                {/* <Route path={`${match.url}/:category/:discipline`} render={props => <StudySIMProgList {...props} />} /> */}
+                {/* <Route path={`${match.url}/:discipline`} component={StudySIMProgList} /> */}
+                <Route path={`${match.url}/:discipline/:category`} component={StudySIMProgList} />
+                <Route path={`${match.url}/:discipline/:id`} component={StudySIMProgInfo} />
+                <Route path={`${match.url}/:discipline/:compareCourse`} component={CourseComparator} />
+            </Switch>
         </IonRouterOutlet>
     );
 };

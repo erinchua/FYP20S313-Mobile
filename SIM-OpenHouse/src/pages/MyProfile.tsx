@@ -306,7 +306,7 @@ const MyProfile: React.FC = () => {
                                     <IonRow id="editProfileBtnRow" class="ion-align-items-center">
                                         <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
                                             <IonAlert isOpen={showSuccessAlert} onDidDismiss={() => setShowSuccessAlert(false)} cssClass='alertBox' header={'Profile Updated'} message={'Your profile has been successfully updated!'} buttons={['CLOSE']}></IonAlert>
-                                            <IonAlert isOpen={showErrorAlert} onDidDismiss={() => setShowErrorAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
+                                            <IonAlert isOpen={showErrorAlert} onDidDismiss={() => setShowErrorAlert(false)} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
                                             <IonButton id="saveEditProfileBtn" type="submit" onClick={() => [setShowErrorAlert(true), setShowSuccessAlert(false)]}>SAVE</IonButton>
                                         </IonCol>
                                     </IonRow>
