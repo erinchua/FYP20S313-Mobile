@@ -366,7 +366,7 @@ const Registration: React.FC = () => {
             </IonRow>
             <IonRow class="ion-justify-content-center">
               <IonAlert isOpen={showSuccessAlert} onDidDismiss={() => setShowSuccessAlert(false)} cssClass='alertBox' header={'Registration Success'} message={'Account has been successfully registered.'} buttons={['CLOSE']}></IonAlert>
-              {status.error && <IonAlert isOpen={showErrorAlert} onDidDismiss={() => setShowErrorAlert(false)} cssClass='alertBox' header={'Error Occured!'} message={'Please enter a valid email.'} buttons={['OK']}></IonAlert>}            
+              {status.error && <IonAlert isOpen={showErrorAlert} onDidDismiss={() => setShowErrorAlert(false)} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter valid particulars.'} buttons={['OK']}></IonAlert>}            
               <IonButton id="registration_registrationBtn" type="submit" onClick={() => [setShowErrorAlert(true), setShowSuccessAlert(false)]}>REGISTER</IonButton>
             </IonRow>
           </IonGrid>
