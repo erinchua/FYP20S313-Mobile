@@ -1,5 +1,5 @@
 import { IonGrid, IonRow, IonCol, IonButton, IonPage, IonContent, IonAlert, IonHeader } from '@ionic/react';
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
 import firebase from 'firebase';
 

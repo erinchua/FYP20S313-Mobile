@@ -1,8 +1,9 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonLoading } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonLoading, IonButton, IonItemDivider, IonModal, IonTextarea } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
+import { faClock, faComment, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
+import firebase from 'firebase';
 
 import '../../css/Global.css';
 import '../../css/Forum.css';
@@ -13,6 +14,8 @@ import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 import Forum_AddCommentModal from '../../components/Forum/Forum_AddCommentModal';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
+import { forumPostsDesc } from '../../modules/compare';
+import Forum_ReplyModal from '../../components/Forum/Forum_ReplyModal';
 
 interface RouteParams {
     id: string;
@@ -24,10 +27,13 @@ const ForumViewQuestion: React.FC = () => {
     const { userID } = useAuth();
 
     const [loading, setLoading] = useState(true);
+    const [showAddCommentModal, setShowAddCommentModal] = useState(false);
     const [question, setQuestion] = useState<any>({});
-    const [comment, setComment] = useState();
+    const [entry, setEntry] = useState("");
+    const [comments, setComments] = useState([]);
 
-    const handlePost = async () => {
+
+    const handleComment = async () => {
         try {
             setLoading(true);
             const time = new Date();
@@ -36,12 +42,12 @@ const ForumViewQuestion: React.FC = () => {
             await db.collection('Students').doc(userID).get().then((doc: any) => {
                 name = doc.data().firstName + " " + doc.data().lastName;
             });
-
             
             const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
             await docRef.set({
                 id: +docRef.id,
-                entry: comment,
+                entry: entry,
+                questionId: +id,
                 posterName: name!,
                 posterId: userID,
                 dateTime: time.toLocaleString().replace(/\//g, "-"),
@@ -49,16 +55,16 @@ const ForumViewQuestion: React.FC = () => {
                 reported: false
             });
 
-            /* const increment = firebase.firestore.FieldValue.increment(1);
-            await db.collection('Forum').doc("").collection('Questions').doc("").update({
+            const increment = firebase.firestore.FieldValue.increment(1);
+            await db.collection('Forum').doc(uid).collection('Questions').doc(id).update({
                 noOfComments: increment,
-            }); */
+            });
         } catch (e) {
             return console.log(e);
         } finally {
             setLoading(false);
-            //setShowPostModal(false);
-            //setEntry("");
+            setShowAddCommentModal(false);
+            setEntry("");
         }
     }
 
@@ -66,17 +72,43 @@ const ForumViewQuestion: React.FC = () => {
         db.collection('Forum').doc(uid).collection('Questions').doc(id).get().then((entry: any) => {
             setQuestion({
                 title: entry.data().entry,
-                poster: entry.data().posterName,
+                asker: entry.data().posterName,
+                askerId: entry.data().posterId,
                 dateTime: entry.data().dateTime,
                 commentCount: entry.data().noOfComments,
                 removed: entry.data().deleted
             });
         });
 
+        db.collection('Forum').get().then(uRef => {
+            const comments: any = [];
+
+            uRef.forEach(user => {
+                return db.collection('Forum').doc(user.id).collection('Comments').where("questionId", "==", +id).onSnapshot(entries => {
+                    entries.docChanges().forEach(change => {
+                        comments.unshift({
+                            id: change.doc.id,
+                            entry: change.doc.data().entry,
+                            dateTime: change.doc.data().dateTime,
+                            user: change.doc.data().posterName,
+                            uid: change.doc.data().posterId,
+                            removed: change.doc.data().deleted
+                        });
+                    });
+                });
+            });
+
+            setTimeout(() => {
+                comments.sort(forumPostsDesc);
+                setComments(comments);
+                setLoading(false);
+            }, 500);
+        });
+
         setLoading(false);
     }, []);
     
-    //console.log(question)
+    //console.log(comments)
     
     return (
         <IonPage>
@@ -109,7 +141,7 @@ const ForumViewQuestion: React.FC = () => {
                             ) }
                         </IonRow>
                         <IonRow className="ion-justify-content-end">
-                            <IonText className="forum-question-details" id="forum-userName">~ {question.poster}</IonText>
+                            <IonText className="forum-question-details" id="forum-userName">~ {question.asker}</IonText>
                         </IonRow>
                         <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
                             <IonCol size="1" className="forum-col ion-align-self-end">
@@ -124,9 +156,14 @@ const ForumViewQuestion: React.FC = () => {
                             <IonCol size="3" className="forum-col ion-align-self-end">
                                 <IonText className="forum-question-details">{question.commentCount}</IonText>
                             </IonCol>
+
                             <IonCol size="1" className="ion-align-self-end forum-col">
-                                <Forum_FlagModal />
+                                { question.removed === false ?
+                                    <Forum_FlagModal disabled={false} postId={question.id} postType={"Question"} offender={question.askerId} reportedBy={userID!} /> :
+                                    <Forum_FlagModal disabled={true} postId={question.id} postType={"Question"} offender={question.askerId} reportedBy={userID!} />
+                                }
                             </IonCol>
+
                         </IonRow>
                     </IonGrid>
                 </IonList>
@@ -136,17 +173,81 @@ const ForumViewQuestion: React.FC = () => {
                             <IonText id="addComment-commentText">Comments</IonText>
                         </IonCol>
                         <IonCol className="ion-align-self-center">
-                            <Forum_AddCommentModal />
+                            <IonButton id="forum-addCommentBtn" size="small" onClick={() => setShowAddCommentModal(true)}>
+                                <FontAwesomeIcon icon={faComment} size="sm" />
+                                <IonText style={{marginLeft: '5%', fontSize: '90%'}}>Add Comment</IonText>
+                            </IonButton>
+
+                            {/* <Forum_AddCommentModal /> */}
+                            <IonModal isOpen={showAddCommentModal} cssClass='post-question-modal' onDidDismiss={() => setShowAddCommentModal(false)}>
+                                <IonContent>
+                                    <IonGrid id="postQns-modal-container">
+                                        <IonRow style={{paddingTop: '1%'}}>
+                                            <IonLabel id="postQns-title">Add Comment</IonLabel>
+                                        </IonRow>
+                                        <IonItemDivider />
+                                        <IonRow id="postQns-modal-inputArea">
+                                            <IonTextarea value={entry} onIonChange={(e: any) => setEntry(e.detail.value)} rows={11} contentEditable={true} required></IonTextarea>
+                                        </IonRow>
+                                        <IonRow className="ion-justify-content-around">
+                                            <IonButton id="postQns-close-button" fill="outline" onClick={() => setShowAddCommentModal(false)}>CANCEL</IonButton>
+                                            <IonButton id="postQns-post-button" onClick={handleComment}>COMMENT</IonButton>
+                                        </IonRow>
+                                    </IonGrid>
+                                </IonContent>
+                            </IonModal>
+
                         </IonCol>
                     </IonRow>
                 </IonGrid>
 
-                {/* When there's no comment */}
-                {/* <Forum_NoComment /> */}
-
-                {/* When there's 2 comments, reply to comment and deleted comment*/}
-                <Forum_WithComment />
-
+                <IonGrid id="comment-main-container">
+                    {comments.length > 0 ? 
+                        comments.map((post: any) => (
+                            <IonList id="comment-list" key={post.id}>
+                                <IonGrid className="forum-container">
+                                    <IonRow>
+                                        { post.removed === false ? (
+                                            <IonLabel>
+                                                <IonText id="comment-text">{post.entry}</IonText>
+                                            </IonLabel>
+                                        ) : (
+                                            <IonLabel>
+                                                <IonText id="comment-text">[deleted]</IonText>
+                                            </IonLabel>
+                                        )}
+                                    </IonRow>
+                                    <IonRow className="ion-justify-content-end">
+                                        <IonText id="comment-userName">~ {post.user}</IonText>
+                                    </IonRow>
+                                    <IonRow className="ion-align-items-end ion-justify-content-start" id="comment-detail-container">
+                                        <IonCol size="1" className="forum-col ion-align-self-end">
+                                            <FontAwesomeIcon icon={faClock} size="sm"/>
+                                        </IonCol>
+                                        <IonCol size="6" className="forum-col ion-align-self-end">
+                                            <IonText id="comment-details">{post.dateTime}</IonText>
+                                        </IonCol>
+                                        <IonCol size="4" className="forum-col ion-align-self-end">
+                                            { post.removed === false ? 
+                                                <Forum_ReplyModal disabled={false} commenter={post.user} /> : <Forum_ReplyModal disabled={true} commenter={post.user} />
+                                            }
+                                        </IonCol>
+                                        <IonCol size="1" className="ion-align-self-end forum-col">
+                                            { post.removed === false ?
+                                                <Forum_FlagModal disabled={false} postId={post.id} postType={"Comment"} offender={post.uid} reportedBy={userID!} /> :
+                                                <Forum_FlagModal disabled={true} postId={post.id} postType={"Comment"} offender={post.uid} reportedBy={userID!} />
+                                            }
+                                        </IonCol>
+                                    </IonRow>
+                                </IonGrid>
+                            </IonList>
+                        )
+                    ) : (
+                        <IonRow className="ion-justify-content-center">
+                            <IonText color="medium" id="no-comment-text">There are currently no comments for this part.</IonText>
+                        </IonRow>
+                    )}
+                </IonGrid>
                 <IonLoading isOpen={loading} />
             </IonContent>
         </IonPage>
