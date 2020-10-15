@@ -14,8 +14,8 @@ const StudySIM_Routing: React.FC<RouteComponentProps> = ({ match }) => {
         <IonRouterOutlet>
             <Switch>
                 <Route exact path={match.url} component={StudySIMMain} />
+                <Route path={`${match.url}/Study@SIMProgInfo/:id/:discipline/:category`} component={StudySIMProgInfo} />
                 <Route path={`${match.url}/:discipline/:category`} component={StudySIMProgList} />
-                <Route path={`${match.url}/Study@SIMProgInfo/:id`} component={StudySIMProgInfo} />
                 <Route path={`${match.url}/:discipline/:compareCourse`} component={CourseComparator} />
             </Switch>
         </IonRouterOutlet>

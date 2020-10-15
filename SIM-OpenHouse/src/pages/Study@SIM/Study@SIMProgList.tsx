@@ -23,6 +23,9 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
     console.log("I entered Proglist, i am category: " + match.params.category)
     console.log("I entered Proglist, i am discipline: " + match.params.discipline)
 
+    const discipline = match.params.discipline
+    const category = match.params.category
+
     const [disciplineName, setDisciplineName] = useState([
         'Art & Social Sciences',
         'Business',
@@ -185,7 +188,8 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                                     {/* Programme Title */}
                                                     <IonRow className="progCourseRow">
-                                                        <IonRouterLink id="progCourseTitleLink" href={`/u/study@SIMMain/Study@SIMProgInfo/${programme.id}`}>
+                                                        {/* <IonRouterLink id="progCourseTitleLink" href={`/u/study@SIMMain/Study@SIMProgInfo/${programme.id}`}> */}
+                                                        <IonRouterLink id="progCourseTitleLink" href={`/u/study@SIMMain/Study@SIMProgInfo/${programme.id}/${discipline}/${category}`}>
                                                             <IonTitle className="progCourseTitle">
                                                                 <div className="ion-text-wrap">{programme.programmeTitle}</div>
                                                             </IonTitle>
