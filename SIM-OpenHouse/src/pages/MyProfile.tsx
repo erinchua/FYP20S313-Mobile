@@ -285,6 +285,17 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
                             </IonRow>
 
+                            {/* Total Points */}
+                            <IonRow className="pointsRow" class="ion-align-items-center">
+                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="pointsIconCol">
+                                    <FontAwesomeIcon icon={faGlobe} size="lg" />
+                                </IonCol>
+
+                                <IonCol size="10" sizeSm="10" class="ion-text-left">
+                                    <IonInput value={nationality} name="nationality" readonly={readOnly} className="readOnlyIonInput">Nationality</IonInput>
+                                </IonCol>
+                            </IonRow>
+
                             {/* Password */}
                             {showChangePassword ?
                                 <IonRow className="profileRow" class="ion-align-items-center">
