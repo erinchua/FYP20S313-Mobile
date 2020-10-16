@@ -31,7 +31,7 @@ const Forum_EditCommentModal: React.FC = () => {
             </IonContent>
         </IonModal>
 
-        <IonButton onClick={() => setShowEditCommentModal(true)} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>        
+        <IonButton onClick={() => setShowEditCommentModal(true)} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
         </>
     );
 };

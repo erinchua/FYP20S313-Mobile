@@ -47,7 +47,7 @@ const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: s
                     </IonRow>
                     <IonItemDivider />
                     <IonRow id="postQns-modal-inputArea">
-                        <IonTextarea value={reason} onIonChange={(e: any) => setReason(e.detail.value)} rows={11} contentEditable={true} required placeholder="Type your reason for reporting here..."></IonTextarea>
+                        <IonTextarea value={reason} onIonChange={e => setReason(e.detail.value!)} rows={11} contentEditable={true} required placeholder="Type your reason for reporting here..."></IonTextarea>
                     </IonRow>
                     <IonRow className="ion-justify-content-around">
                         <IonButton id="postQns-close-button" fill="outline" onClick={() => setShowFlagModal(false)}>CANCEL</IonButton>

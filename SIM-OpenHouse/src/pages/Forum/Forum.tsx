@@ -22,7 +22,6 @@ const Forum: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [checked, setChecked] = useState(false);
     const [agreedTOC, setAgreedTOC] = useState(true);
-    const [suspended, setSuspended] = useState(false);
     const [showPostModal, setShowPostModal] = useState(false);
     const [modalSegmentValue, setModalSegmentValue] = useState('');
     const [entry, setEntry] = useState("");
@@ -121,11 +120,14 @@ const Forum: React.FC = () => {
             }, 500);
         });
 
-        return db.collection('Forum').doc(userID).onSnapshot((snapshot: any) => {
-            if (snapshot.data().readRules)
-                setAgreedTOC(true);
-            else
-                setAgreedTOC(false);
+        return db.collection('Forum').doc(userID).onSnapshot(snapshot => {
+            if (snapshot.exists) {
+                if (snapshot.data()?.readRules) {
+                    setAgreedTOC(true);
+                } else {
+                    setAgreedTOC(false);
+                }
+            }
         });
     }, []);
 
@@ -159,19 +161,21 @@ const Forum: React.FC = () => {
                         </IonGrid>
 
                         {/* Display all Questions */}
-                        {questions.map((post: any) => {
-                            if (post.removed === false) {
-                                return (
+                        {questions.length > 0 ?
+                            questions.map((post: any, index) => (
+                                post.removed === false ? (
                                     <IonList className="forum-container" key={post.id}>
                                         <IonGrid>
-                                            <IonRow>
-                                                <IonLabel>
-                                                    <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.uid}`}><IonText className="forum-question">{post.entry}</IonText></IonRouterLink>
-                                                </IonLabel>
-                                            </IonRow>
-                                            <IonRow className="ion-justify-content-end">
-                                                <IonText className="forum-question-details" id="forum-userName">~ {post.user}</IonText>
-                                            </IonRow>
+                                            <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.uid}`}>
+                                                <IonRow>
+                                                    <IonLabel>
+                                                        <IonText className="forum-question">{post.entry}</IonText>
+                                                    </IonLabel>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-end">
+                                                    <IonText className="forum-question-details" id="forum-userName">~ {post.user}</IonText>
+                                                </IonRow>
+                                            </IonRouterLink>
                                             <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
                                                 <IonCol size="1" className="forum-col ion-align-self-end">
                                                     <FontAwesomeIcon icon={faClock} size="sm" />
@@ -191,9 +195,15 @@ const Forum: React.FC = () => {
                                             </IonRow>
                                         </IonGrid>
                                     </IonList>
-                                )
-                            }
-                        })}
+                                ) : <IonGrid key={index}></IonGrid>
+                            )) : (
+                                <IonGrid>
+                                    <IonRow className="ion-justify-content-center">
+                                        <IonText color="medium">Looks like there are no discussion going on right now. Why not start one?</IonText>
+                                    </IonRow>
+                                </IonGrid>
+                            )
+                        }
                     </>
 
                     : <form onSubmit={handleSubmit(onSubmit)}>
@@ -251,9 +261,9 @@ const Forum: React.FC = () => {
                             <IonRow style={{ paddingTop: '1%' }}>
                                 <IonLabel id="postQns-title">Post Question</IonLabel>
                             </IonRow>
-                            <IonItemDivider></IonItemDivider>
+                            <IonItemDivider />
                             <IonRow id="postQns-modal-inputArea">
-                                <IonTextarea value={entry} onIonChange={(e: any) => setEntry(e.detail.value)} rows={11} placeholder="Type your question here..." required></IonTextarea>
+                                <IonTextarea value={entry} onIonChange={e => setEntry(e.detail.value!)} rows={11} placeholder="Type your question here..." required></IonTextarea>
                             </IonRow>
                             <IonRow className="ion-justify-content-around">
                                 <IonButton id="postQns-close-button" fill="outline" onClick={() => [setShowPostModal(false), setModalSegmentValue('')]}>CLOSE</IonButton>
