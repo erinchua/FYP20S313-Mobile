@@ -29,6 +29,67 @@ interface StudySIMProgInfo_Props extends RouteComponentProps<{
     category: string
     id: string;
 }> { }
+interface ModeOfStudy {
+    partTime: boolean,
+    fullTime: boolean
+}
+interface EntryQualification {
+    aLevel: boolean,
+    oLevel: boolean,
+    degree: boolean,
+    diploma: boolean
+}
+interface ApplicationPeriod {
+    intake: string,
+    period: string
+}
+interface ProgrammeStructure {
+    coursework: boolean,
+    examination: boolean
+}
+interface OverseaOpportunity {
+    exchange: boolean,
+    transfer: boolean
+}
+interface IntakeMonths {
+    partTimeIntake: string,
+    fullTimeIntake: string
+}
+interface Duration {
+    partTimeDuration: string,
+    fullTimeDuration: string
+}
+interface Programme {
+    id: string,
+    programmeTitle: string,
+    modeOfStudy: {
+        [key: string]: ModeOfStudy
+    },
+    academicLevel: string,
+    discipline: string[],
+    subDiscipline: string[],
+    entryQualifications: {
+        [key: string]: EntryQualification
+    },
+    awardedBy: string,
+    programOverview: string[],
+    applicationPeriod: {
+        [key: string]: ApplicationPeriod
+    },
+    programmeStructure: {
+        [key: string]: ProgrammeStructure
+    },
+    overseaOpportunity: {
+        [key: string]: OverseaOpportunity
+    },
+    intakeMonths: {
+        [key: string]: IntakeMonths
+    },
+    duration: {
+        [key: string]: Duration
+    },
+    uniLogo: string
+}
 
 const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
     { console.log("ProgInfo has entered!") }
@@ -38,16 +99,51 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
     const category = match.params.category
     const id = match.params.id
     /*Programme Data*/
-    const [programme, setProgrammes] = useState([])
+    const [programme, setProgrammes] = useState<Programme>({
+        id: "",
+        programmeTitle: "",
+        modeOfStudy: {},
+        academicLevel: "",
+        discipline: [
+            ""],
+        subDiscipline: [
+            ""
+        ],
+        entryQualifications: {},
+        awardedBy: "",
+        programOverview: [],
+        applicationPeriod: {},
+        programmeStructure: {},
+        overseaOpportunity: {},
+        intakeMonths: {
+            intakeMonths: {
+                fullTimeIntake: "", partTimeIntake: ""
+            }
+        },
+        duration:
+        {
+            duration: { fullTimeDuration: '', partTimeDuration: '' }
+        },
+        uniLogo: ''
+    }
+
+    )
+    const { programOverview = [], applicationPeriod = [], programmeStructure: { examination = {}, coursework = {} } = {},
+        overseaOpportunity: { exchange = {}, transfer = {} } = {}, intakeMonths: { partTimeIntake = [], fullTimeIntake = [] } = {},
+        duration: { partTimeDuration = [], fullTimeDuration = [] } = {}, modeOfStudy: { partTimeMode = {}, fullTimeMode = {} } = {} } = programme
 
     useEffect(() => {
         const fetchData = async () => {
             const programmeRef = db.collection('TestProgrammes').doc(match.params.id);
             const doc: any = (await programmeRef.get()).data();
             setProgrammes(doc);
+            console.log("i am doc" + JSON.stringify(doc))
         };
         fetchData()
+
     }, [])
+
+
     /* Programme Overview Toggle */
     const info1 = useRef<HTMLIonRowElement>(null);
     const showIcon1 = useRef<HTMLIonIconElement>(null);
@@ -204,7 +300,13 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info1} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                <p>Programme Overview Answer</p>
+                                                {programOverview ? programOverview.map((overview: string) => {
+                                                    return (<div>
+                                                        <li>{overview}</li>
+                                                    </div>)
+                                                })
+                                                    : ''}
+
                                             </div>
                                         </IonCol>
                                     </IonRow>
@@ -233,9 +335,17 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info2} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                <p>Application Period Answer</p>
+
+                                                {Array.isArray(applicationPeriod) ? applicationPeriod.map((overview: any, index: any) => {
+                                                    return (<div>
+                                                        <p>{overview.intake + ': ' + overview.period}</p>
+                                                    </div>)
+                                                })
+
+                                                    : ''}
                                             </div>
                                         </IonCol>
+
                                     </IonRow>
                                 </IonCol>
                             </IonRow>
@@ -262,7 +372,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info3} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                <p>Programme Structure Answer</p>
+                                                {typeof coursework !== 'undefined' ? <p>Coursework: {coursework ? "True" : "False"}</p> : ''}
+                                                {typeof examination !== 'undefined' ? <p>Examination: {examination ? "True" : "False"}</p> : ''}
                                             </div>
                                         </IonCol>
                                     </IonRow>
@@ -291,7 +402,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info4} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                <p>Overseas Opportunity Answer</p>
+                                                {typeof exchange !== 'undefined' ? <p>Exchange: {exchange ? "True" : "False"}</p> : 'missing exchange'}
+                                                {typeof transfer !== 'undefined' ? <p>Transfer: {transfer ? "True" : "False"}</p> : ''}
                                             </div>
                                         </IonCol>
                                     </IonRow>
@@ -320,7 +432,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info5} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                <p>Intake Month(s) Answer</p>
+                                                {partTimeIntake ? <p>Part-Time: {partTimeIntake}</p> : <p>Part Time: NIL</p>}
+                                                {fullTimeIntake ? <p>Full-Time: {fullTimeIntake}</p> : <p>Full Time: NIL</p>}
                                             </div>
                                         </IonCol>
                                     </IonRow>
@@ -349,7 +462,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info6} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                <p>Duration Answer</p>
+                                                {partTimeDuration ? <p>Part-Time: {partTimeDuration}</p> : <p>Part Time: NIL</p>}
+                                                {fullTimeDuration ? <p>Full-Time: {fullTimeDuration}</p> : <p>Full Time: NIL</p>}
                                             </div>
                                         </IonCol>
                                     </IonRow>
@@ -378,7 +492,9 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info7} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                <p>Mode of Study Answer</p>
+                                                {typeof fullTimeMode !== 'undefined' ? <p>Full Time: {fullTimeMode ? 'True' : 'False'}</p> : ''}
+                                                {typeof partTimeMode !== 'undefined' ? <p>Part Time: {partTimeMode ? 'True' : 'False'}</p> : ''}
+
                                             </div>
                                         </IonCol>
                                     </IonRow>
