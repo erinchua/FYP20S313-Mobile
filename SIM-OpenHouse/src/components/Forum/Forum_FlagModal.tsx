@@ -1,14 +1,41 @@
-import { IonButton, IonContent, IonGrid, IonItemDivider, IonLabel, IonModal, IonRow, IonTextarea } from '@ionic/react';
+import { IonButton, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRow, IonTextarea } from '@ionic/react';
 import React, { useState } from 'react';
-
-import "../../css/Global.css"
-import "../../css/Forum.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
 
-const Forum_FlagModal: React.FC = () => {
+import "../../css/Global.css"
+import "../../css/Forum.css"
+import { db } from '../../firebase';
 
+const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: string, offender: string, reportedBy: string }> = props => {
+
+    const [loading, setLoading] = useState(false);
     const [showFlagModal, setShowFlagModal] = useState(false);
+    const [reason, setReason] = useState("");
+
+    const handleReport = async () => {
+        try {
+            setLoading(true);
+            const time = new Date();
+            
+            const docRef = db.collection('Forum').doc(props.reportedBy).collection('Reports').doc((time.getTime()).toString());
+            await docRef.set({
+                id: +docRef.id,
+                entry: reason,
+                postId: +props.postId,
+                postType: props.postType,
+                offender: props.offender,
+                reportedBy: props.reportedBy,
+                dateTime: time.toLocaleString().replace(/\//g, "-")
+            });
+        } catch (e) {
+            return console.log(e);
+        } finally {
+            setLoading(false);
+            setShowFlagModal(false);
+            setReason("");
+        }
+    }
 
     return (
         <>
@@ -18,19 +45,20 @@ const Forum_FlagModal: React.FC = () => {
                     <IonRow style={{paddingTop: '1%'}}>
                         <IonLabel id="postQns-title">Report Post</IonLabel>
                     </IonRow>
-                    <IonItemDivider></IonItemDivider>
+                    <IonItemDivider />
                     <IonRow id="postQns-modal-inputArea">
-                        <IonTextarea rows={11} contentEditable={true} required placeholder="Type your reason for reporting here..."></IonTextarea>
+                        <IonTextarea value={reason} onIonChange={(e: any) => setReason(e.detail.value)} rows={11} contentEditable={true} required placeholder="Type your reason for reporting here..."></IonTextarea>
                     </IonRow>
                     <IonRow className="ion-justify-content-around">
                         <IonButton id="postQns-close-button" fill="outline" onClick={() => setShowFlagModal(false)}>CANCEL</IonButton>
-                        <IonButton id="postQns-post-button">REPORT</IonButton>
+                        <IonButton id="postQns-post-button" onClick={handleReport}>REPORT</IonButton>
                     </IonRow>
                 </IonGrid>
             </IonContent>
         </IonModal>
 
-        <IonButton onClick={() => setShowFlagModal(true)} id="forum-question-flagBtn" size="small"><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+        <IonButton onClick={() => setShowFlagModal(true)} id="forum-question-flagBtn" size="small" disabled={props.disabled}><FontAwesomeIcon icon={faFlag} size="sm"/></IonButton>
+        <IonLoading isOpen={loading} />
         </>
     );
 };
