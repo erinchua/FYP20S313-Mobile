@@ -2,7 +2,7 @@ import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonList, Io
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faComment, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
+import { faClock, faComment, faCommentAlt, faCommentDots } from '@fortawesome/free-regular-svg-icons';
 import firebase from 'firebase';
 
 import '../../css/Global.css';
@@ -12,10 +12,10 @@ import ForumRules from '../../components/Forum/ForumRules';
 import Forum_WithComment from '../../components/Forum/Forum_WithComment';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 import Forum_AddCommentModal from '../../components/Forum/Forum_AddCommentModal';
+import Forum_ReplyModal from '../../components/Forum/Forum_ReplyModal';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { forumPostsDesc } from '../../modules/compare';
-import Forum_ReplyModal from '../../components/Forum/Forum_ReplyModal';
 
 interface RouteParams {
     id: string;
@@ -28,6 +28,7 @@ const ForumViewQuestion: React.FC = () => {
 
     const [loading, setLoading] = useState(true);
     const [showAddCommentModal, setShowAddCommentModal] = useState(false);
+    const [showReplyCommentModal, setShowReplyCommentModal] = useState(false);
     const [question, setQuestion] = useState<any>({});
     const [entry, setEntry] = useState("");
     const [comments, setComments] = useState([]);
@@ -39,8 +40,9 @@ const ForumViewQuestion: React.FC = () => {
             const time = new Date();
             let name: string;
 
-            await db.collection('Students').doc(userID).get().then((doc: any) => {
-                name = doc.data().firstName + " " + doc.data().lastName;
+            await db.collection('Students').doc(userID).get().then(doc => {
+                if (doc.exists)
+                    name = doc.data()?.firstName + " " + doc.data()?.lastName;
             });
             
             const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
@@ -52,7 +54,8 @@ const ForumViewQuestion: React.FC = () => {
                 posterId: userID,
                 dateTime: time.toLocaleString().replace(/\//g, "-"),
                 deleted: false,
-                reported: false
+                reported: false,
+                repliedTo: false
             });
 
             const increment = firebase.firestore.FieldValue.increment(1);
@@ -69,15 +72,17 @@ const ForumViewQuestion: React.FC = () => {
     }
 
     useEffect(() => {
-        db.collection('Forum').doc(uid).collection('Questions').doc(id).get().then((entry: any) => {
-            setQuestion({
-                title: entry.data().entry,
-                asker: entry.data().posterName,
-                askerId: entry.data().posterId,
-                dateTime: entry.data().dateTime,
-                commentCount: entry.data().noOfComments,
-                removed: entry.data().deleted
-            });
+        db.collection('Forum').doc(uid).collection('Questions').doc(id).get().then(entry => {
+            if (entry.exists) {
+                setQuestion({
+                    title: entry.data()?.entry,
+                    asker: entry.data()?.posterName,
+                    askerId: entry.data()?.posterId,
+                    dateTime: entry.data()?.dateTime,
+                    commentCount: entry.data()?.noOfComments,
+                    removed: entry.data()?.deleted
+                });
+            }
         });
 
         db.collection('Forum').get().then(uRef => {
@@ -92,7 +97,8 @@ const ForumViewQuestion: React.FC = () => {
                             dateTime: change.doc.data().dateTime,
                             user: change.doc.data().posterName,
                             uid: change.doc.data().posterId,
-                            removed: change.doc.data().deleted
+                            removed: change.doc.data().deleted,
+                            hasReply: change.doc.data().repliedTo
                         });
                     });
                 });
@@ -107,8 +113,6 @@ const ForumViewQuestion: React.FC = () => {
 
         setLoading(false);
     }, []);
-    
-    //console.log(comments)
     
     return (
         <IonPage>
@@ -130,15 +134,11 @@ const ForumViewQuestion: React.FC = () => {
                 <IonList className="forum-container">
                     <IonGrid>
                         <IonRow>
-                            { question.removed === false ? (
-                                <IonLabel>
-                                    <IonText className="forum-question">{question.title}</IonText>
-                                </IonLabel>
-                            ) : (
-                                <IonLabel>
-                                    <IonText className="forum-question">[deleted]</IonText>
-                                </IonLabel>
-                            ) }
+                            { question.removed === false ?
+                                <IonLabel><IonText className="forum-question">{question.title}</IonText></IonLabel>
+                                :
+                                <IonLabel><IonText className="forum-question">[deleted]</IonText></IonLabel>
+                            }
                         </IonRow>
                         <IonRow className="ion-justify-content-end">
                             <IonText className="forum-question-details" id="forum-userName">~ {question.asker}</IonText>
@@ -159,7 +159,8 @@ const ForumViewQuestion: React.FC = () => {
 
                             <IonCol size="1" className="ion-align-self-end forum-col">
                                 { question.removed === false ?
-                                    <Forum_FlagModal disabled={false} postId={question.id} postType={"Question"} offender={question.askerId} reportedBy={userID!} /> :
+                                    <Forum_FlagModal disabled={false} postId={question.id} postType={"Question"} offender={question.askerId} reportedBy={userID!} />
+                                    :
                                     <Forum_FlagModal disabled={true} postId={question.id} postType={"Question"} offender={question.askerId} reportedBy={userID!} />
                                 }
                             </IonCol>
@@ -167,6 +168,7 @@ const ForumViewQuestion: React.FC = () => {
                         </IonRow>
                     </IonGrid>
                 </IonList>
+
                 <IonGrid id="add-comment-container">
                     <IonRow>
                         <IonCol className="ion-align-self-center">
@@ -177,8 +179,6 @@ const ForumViewQuestion: React.FC = () => {
                                 <FontAwesomeIcon icon={faComment} size="sm" />
                                 <IonText style={{marginLeft: '5%', fontSize: '90%'}}>Add Comment</IonText>
                             </IonButton>
-
-                            {/* <Forum_AddCommentModal /> */}
                             <IonModal isOpen={showAddCommentModal} cssClass='post-question-modal' onDidDismiss={() => setShowAddCommentModal(false)}>
                                 <IonContent>
                                     <IonGrid id="postQns-modal-container">
@@ -187,7 +187,7 @@ const ForumViewQuestion: React.FC = () => {
                                         </IonRow>
                                         <IonItemDivider />
                                         <IonRow id="postQns-modal-inputArea">
-                                            <IonTextarea value={entry} onIonChange={(e: any) => setEntry(e.detail.value)} rows={11} contentEditable={true} required></IonTextarea>
+                                            <IonTextarea value={entry} onIonChange={e => setEntry(e.detail.value!)} rows={11} contentEditable={true} required></IonTextarea>
                                         </IonRow>
                                         <IonRow className="ion-justify-content-around">
                                             <IonButton id="postQns-close-button" fill="outline" onClick={() => setShowAddCommentModal(false)}>CANCEL</IonButton>
@@ -196,26 +196,22 @@ const ForumViewQuestion: React.FC = () => {
                                     </IonGrid>
                                 </IonContent>
                             </IonModal>
-
                         </IonCol>
                     </IonRow>
                 </IonGrid>
 
+                {/* COMMENT */}
                 <IonGrid id="comment-main-container">
                     {comments.length > 0 ? 
                         comments.map((post: any) => (
                             <IonList id="comment-list" key={post.id}>
                                 <IonGrid className="forum-container">
                                     <IonRow>
-                                        { post.removed === false ? (
-                                            <IonLabel>
-                                                <IonText id="comment-text">{post.entry}</IonText>
-                                            </IonLabel>
-                                        ) : (
-                                            <IonLabel>
-                                                <IonText id="comment-text">[deleted]</IonText>
-                                            </IonLabel>
-                                        )}
+                                        { post.removed === false ?
+                                            <IonLabel><IonText id="comment-text">{post.entry}</IonText></IonLabel>
+                                            :
+                                            <IonLabel><IonText id="comment-text">[deleted]</IonText></IonLabel>
+                                        }
                                     </IonRow>
                                     <IonRow className="ion-justify-content-end">
                                         <IonText id="comment-userName">~ {post.user}</IonText>
@@ -228,24 +224,66 @@ const ForumViewQuestion: React.FC = () => {
                                             <IonText id="comment-details">{post.dateTime}</IonText>
                                         </IonCol>
                                         <IonCol size="4" className="forum-col ion-align-self-end">
+                                            {/* { post.removed === false ? 
+                                                <IonButton onClick={() => setShowReplyCommentModal(true)} id="comment-replyBtn" size="small" disabled={false}>
+                                                    <FontAwesomeIcon icon={faCommentDots} size="sm"/>
+                                                    <IonText style={{marginLeft: '5%'}}>Reply</IonText>
+                                                </IonButton>
+                                                :
+                                                <IonButton id="comment-replyBtn" size="small" disabled={true}>
+                                                    <FontAwesomeIcon icon={faCommentDots} size="sm"/>
+                                                    <IonText style={{marginLeft: '5%'}}>Reply</IonText>
+                                                </IonButton>
+                                            } */}
+                                        
                                             { post.removed === false ? 
-                                                <Forum_ReplyModal disabled={false} commenter={post.user} /> : <Forum_ReplyModal disabled={true} commenter={post.user} />
+                                                <Forum_ReplyModal disabled={false} commenter={post.user} /> :
+                                                <Forum_ReplyModal disabled={true} commenter={post.user} />
                                             }
                                         </IonCol>
                                         <IonCol size="1" className="ion-align-self-end forum-col">
                                             { post.removed === false ?
-                                                <Forum_FlagModal disabled={false} postId={post.id} postType={"Comment"} offender={post.uid} reportedBy={userID!} /> :
+                                                <Forum_FlagModal disabled={false} postId={post.id} postType={"Comment"} offender={post.uid} reportedBy={userID!} />
+                                                :
                                                 <Forum_FlagModal disabled={true} postId={post.id} postType={"Comment"} offender={post.uid} reportedBy={userID!} />
                                             }
                                         </IonCol>
                                     </IonRow>
                                 </IonGrid>
+
+                                {/* REPLY */}
+                                { post.hasReply === true ? 
+                                    <IonGrid className="forum-container" id="comment-reply-container">
+                                        <IonRow>
+                                            <IonLabel>
+                                                <IonText id="comment-text">Thank you! :)</IonText>
+                                            </IonLabel>
+                                        </IonRow>
+                                        <IonRow className="ion-justify-content-end">
+                                            <IonText id="comment-userName">~ John Tan</IonText>
+                                        </IonRow>
+                                        <IonRow className="ion-align-items-end ion-justify-content-start" id="comment-detail-container">
+                                            <IonCol size="1" className="forum-col ion-align-self-end">
+                                                <FontAwesomeIcon icon={faClock} size="sm"/>
+                                            </IonCol>
+                                            <IonCol size="10" className="forum-col ion-align-self-end">
+                                                <IonText id="comment-details">22-11-2020, 9.13am</IonText>
+                                            </IonCol>
+                                            <IonCol size="1" className="ion-align-self-end forum-col">
+                                                <Forum_FlagModal disabled={false} postId={post.id} postType={"Reply"} offender={post.uid} reportedBy={userID!} />
+                                            </IonCol>
+                                        </IonRow>
+                                    </IonGrid>
+                                    : <></>
+                                }
                             </IonList>
                         )
                     ) : (
-                        <IonRow className="ion-justify-content-center">
-                            <IonText color="medium" id="no-comment-text">There are currently no comments for this part.</IonText>
-                        </IonRow>
+                        <IonGrid>
+                            <IonRow className="ion-justify-content-center">
+                                <IonText color="medium" id="no-comment-text">There are currently no comments for this part.</IonText>
+                            </IonRow>
+                        </IonGrid>
                     )}
                 </IonGrid>
                 <IonLoading isOpen={loading} />

@@ -149,7 +149,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
 //console.log(new Date().toTimeString())
 //console.log(admin.firestore.FieldValue.serverTimestamp())
 
-db.collection('Forum').get().then(uRef => {
+/* db.collection('Forum').get().then(uRef => {
     const comments = [];
 
     uRef.forEach(user => {
@@ -173,4 +173,20 @@ db.collection('Forum').get().then(uRef => {
     setTimeout(() => {
         console.log(comments)
     }, 500);
+}); */
+
+db.collection('Forum').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
+    const posts = [];
+    
+    snaps.forEach(snap => {
+        //console.log(snap.data().questionId.toString())
+        db.collection('Forum').get().then(users => {
+            users.forEach(user => {
+                db.collection('Forum').doc(user.id).collection('Questions').doc(snap.data().questionId.toString()).get().then(question => {
+                    if(question.exists) console.log(question.data())
+                })
+            })
+        })
+        posts.push(snap.data())
+    });
 });
