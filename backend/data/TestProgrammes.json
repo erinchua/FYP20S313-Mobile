@@ -25,12 +25,12 @@
             "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
             "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
         ],
-        "applicationPeriod": {
-            "intake0": [
-                "Jan 2021 Intake",
-                "15 Jul 2020 to 20 Oct 2020"
-            ]
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -40,10 +40,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -73,9 +75,12 @@
             "Accrediation by Professional Bodies, including AIB, AIQS, CIOB, RICS and SISV",
             "Practical Curricula, designed with industry inputs; integration of theory with practice"
         ],
-        "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -85,10 +90,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -118,9 +125,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -130,10 +140,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -163,9 +175,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -175,10 +190,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
@@ -208,9 +225,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -220,10 +240,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
@@ -253,9 +275,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -265,10 +290,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -298,9 +325,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -310,10 +340,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -343,9 +375,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -355,10 +390,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -388,9 +425,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -400,10 +440,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -433,9 +475,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -445,10 +490,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -478,9 +525,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -490,10 +540,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -523,9 +575,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -535,10 +590,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -568,9 +625,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -580,10 +640,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -613,9 +675,12 @@
             "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
             "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
         ],
-        "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -625,10 +690,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -708,9 +775,12 @@
             "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
             "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
         ],
-        "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -720,10 +790,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -753,9 +825,12 @@
             "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
             "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
         ],
-        "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -765,10 +840,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -798,9 +875,12 @@
             "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
             "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
         ],
-        "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -810,10 +890,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years"
+            "partTime": "2.5 Years",
+            "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     }
