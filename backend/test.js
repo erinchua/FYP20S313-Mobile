@@ -175,7 +175,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
     }, 500);
 }); */
 
-db.collection('Forum').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
+/* db.collection('Forum').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
     const posts = [];
     
     snaps.forEach(snap => {
@@ -189,4 +189,40 @@ db.collection('Forum').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').collection('Comments'
         })
         posts.push(snap.data())
     });
+}); */
+
+const all = [];
+db.collection('Forum').get().then(users => {
+
+    users.forEach(async user => {
+        await db.collection('Forum').doc(user.id).collection('Questions').get().then(docs => {
+            docs.forEach(doc => {
+                all.push({
+                    id: +doc.id,
+                    entry: doc.data().entry
+                });
+            });
+        });
+        
+        await db.collection('Forum').doc(user.id).collection('Comments').get().then(docs => {
+            docs.forEach(doc => {
+                all.push({
+                    id: +doc.id,
+                    entry: doc.data().entry,
+                    questionId: +doc.data().questionId
+                });
+            });
+        });
+    });
 });
+setTimeout(() => {
+    //console.log(all)
+    const keyword = "comment";
+    all.forEach(post => {
+        //console.log(post.entry.indexOf(keyword))
+        console.log(post.hasOwnProperty('questionId'))
+        if (post.entry.toLowerCase().indexOf(keyword) != -1) {
+            console.log(post)
+        }
+    });
+}, 1000);

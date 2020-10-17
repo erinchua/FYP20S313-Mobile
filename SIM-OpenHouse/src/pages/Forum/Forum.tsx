@@ -67,6 +67,8 @@ const Forum: React.FC = () => {
     }
 
     useEffect(() => {
+        setQuestions([]);
+
         db.collection('Forum').get().then(uRef => {
             const questions: any = [];
 
@@ -101,7 +103,7 @@ const Forum: React.FC = () => {
                 return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
                     entries.docChanges().forEach(change => {
                         questions.unshift({
-                            id: change.doc.id,
+                            id: +change.doc.id,
                             entry: change.doc.data().entry,
                             dateTime: change.doc.data().dateTime,
                             user: change.doc.data().posterName,
@@ -130,8 +132,6 @@ const Forum: React.FC = () => {
             }
         });
     }, []);
-
-    //console.log(questions)
 
     return (
         <IonPage>
@@ -195,7 +195,7 @@ const Forum: React.FC = () => {
                                             </IonRow>
                                         </IonGrid>
                                     </IonList>
-                                ) : <IonGrid key={index}></IonGrid>
+                                ) : null
                             )) : (
                                 <IonGrid>
                                     <IonRow className="ion-justify-content-center">
