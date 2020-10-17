@@ -19,8 +19,8 @@ const ForumQuestions: React.FC = () => {
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [comments, setComments] = useState([]);
     const [entry, setEntry] = useState("");
-    const [toBeEdited, setToBeEdited] = useState("");
-    const [toBeDeleted, setToBeDeleted] = useState("");
+    const [toBeEdited, setToBeEdited] = useState(0);
+    const [toBeDeleted, setToBeDeleted] = useState(0);
 
     const handleDelete = async (postId: string) => {
         try {
@@ -62,6 +62,7 @@ const ForumQuestions: React.FC = () => {
                         return db.collection('Forum').doc(user.id).collection('Questions').doc(snap.data().questionId.toString()).onSnapshot(question => {
                             if(question.exists) {
                                 post.question = question.data()?.entry;
+                                post.questionRemoved = question.data()?.deleted;
                             }
                         });
                     });
@@ -86,20 +87,17 @@ const ForumQuestions: React.FC = () => {
                 </IonRow>
                 { comments.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
-                    <IonCol className="forumQnsCom-Data ion-text-wrap">{post.question}</IonCol>
+                    <IonCol className="forumQnsCom-Data ion-text-wrap">{post.questionRemoved === false ? post.question : "[deleted]"}</IonCol>
                     <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
                     <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
-                    { post.repliedTo === true ? 
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">1</IonCol> :
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">-</IonCol>
-                    }
+                    <IonCol className="forumQnsCom-Data ion-text-wrap">{post.repliedTo === true ? "1" : "-"}</IonCol>
                     <IonCol className="forumQnsCom-Data ion-text-wrap">
                         {/* <Forum_EditCommentModal /> */}
-                        <IonButton onClick={() => [setShowEditCommentModal(true), setToBeEdited(post.id.toString())]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
+                        <IonButton onClick={() => [setShowEditCommentModal(true), setToBeEdited(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
                     </IonCol>
                     <IonCol className="forumQnsCom-Data ion-text-wrap">
                         {/* <Forum_DeleteComment /> */}
-                        <IonButton onClick={() => [setDeleteAlert({ alert: true, loading: false }), setToBeDeleted(post.id.toString())]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faTrash} size="lg" /></IonButton>
+                        <IonButton onClick={() => [setDeleteAlert({ alert: true, loading: false }), setToBeDeleted(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faTrash} size="lg" /></IonButton>
                     </IonCol>
                 </IonRow>
                 ))}
@@ -116,7 +114,7 @@ const ForumQuestions: React.FC = () => {
                         </IonRow>
                         <IonRow className="ion-justify-content-around">
                             <IonButton id="postQns-close-button" fill="outline" onClick={() => setShowEditCommentModal(false)}>CANCEL</IonButton>
-                            <IonButton id="postQns-post-button" onClick={() => handleEdit(toBeEdited)}>UPDATE</IonButton>
+                            <IonButton id="postQns-post-button" onClick={() => handleEdit(toBeEdited.toString())}>UPDATE</IonButton>
                         </IonRow>
                     </IonGrid>
                 </IonContent>
@@ -133,7 +131,7 @@ const ForumQuestions: React.FC = () => {
                         handler: () => setDeleteAlert({ alert: false, loading: false })
                     }, {
                         text: 'YES',
-                        handler: () => handleDelete(toBeDeleted)
+                        handler: () => handleDelete(toBeDeleted.toString())
                     }]}
             ></IonAlert>
             <IonLoading isOpen={deleteAlert.loading || loading} />

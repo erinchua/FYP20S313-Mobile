@@ -76,11 +76,11 @@ const ForumQuestions: React.FC = () => {
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.noOfComments}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
                             {/* <Forum_EditQuestionModal /> */}
-                            <IonButton onClick={() => [setShowEditQuestionModal(true), setToBeEdited(post.id.toString())]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
+                            <IonButton onClick={() => [setShowEditQuestionModal(true), setToBeEdited(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
                         </IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
                             {/* <Forum_DeleteQuestion /> */}
-                            <IonButton onClick={() => [setDeleteAlert({ alert: true, loading: false }), setToBeDeleted(post.id.toString())]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faTrash} size="lg" /></IonButton>
+                            <IonButton onClick={() => [setDeleteAlert({ alert: true, loading: false }), setToBeDeleted(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faTrash} size="lg" /></IonButton>
                         </IonCol>
                     </IonRow>
                 ))}
@@ -97,7 +97,7 @@ const ForumQuestions: React.FC = () => {
                         </IonRow>
                         <IonRow className="ion-justify-content-around">
                             <IonButton id="postQns-close-button" fill="outline" onClick={() => setShowEditQuestionModal(false)}>CANCEL</IonButton>
-                            <IonButton id="postQns-post-button" onClick={() => handleEdit(toBeEdited)}>UPDATE</IonButton>
+                            <IonButton id="postQns-post-button" onClick={() => handleEdit(toBeEdited.toString())}>UPDATE</IonButton>
                         </IonRow>
                     </IonGrid>
                 </IonContent>
@@ -112,7 +112,7 @@ const ForumQuestions: React.FC = () => {
                         handler: () => setDeleteAlert({ alert: false, loading: false })
                     }, {
                         text: 'YES',
-                        handler: () => handleDelete(toBeDeleted)
+                        handler: () => handleDelete(toBeDeleted.toString())
                     }]}
             ></IonAlert>
             <IonLoading isOpen={deleteAlert.loading || loading} />       
