@@ -29,7 +29,7 @@ const MySchedule: React.FC = () => {
 
     useEffect(() => {
     
-        db.collection('Openhouse').get().then(snapshot => {
+        db.collection('Openhouse').orderBy("id", "desc").limit(1).get().then(snapshot => {
             const dates: any = [];
             const hours: any = [];
 

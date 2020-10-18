@@ -23,7 +23,7 @@ const GuidedTours: React.FC = () => {
     useEffect(() => {
         const dates: any = [];
 
-        db.collection("Openhouse")
+        db.collection("Openhouse").orderBy("id", "desc").limit(1)
             .get()
             .then((snapshot) => {
                 snapshot.forEach((doc) => {
