@@ -1,16 +1,17 @@
 import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonLoading, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
-import { addCircleSharp, personSharp } from "ionicons/icons";
+import { addCircleSharp, navigate, personSharp, searchCircleOutline } from "ionicons/icons";
 
 import "../../css/Global.css";
 import "../../css/Forum.css";
 import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
+import ForumSearch from './ForumSearch';
 import { db } from "../../firebase";
 import { useAuth } from "../../modules/auth";
 import { forumPostsDesc } from "../../modules/compare";
@@ -26,6 +27,7 @@ const Forum: React.FC = () => {
     const [modalSegmentValue, setModalSegmentValue] = useState('');
     const [entry, setEntry] = useState("");
     const [questions, setQuestions] = useState([]);
+    const [keyword, setKeyword] = useState("")
 
     let history = useHistory();
 
@@ -144,8 +146,18 @@ const Forum: React.FC = () => {
                     <>
                         <IonGrid id="forum-searchbar-container">
                             <IonRow>
-                                <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
+                                <form onSubmit={e => { e.preventDefault(); history.push(`/u/forumSearch/${keyword}`); }}>
+                                    <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} enterkeyhint="search" id="forum-searchbar" animated></IonSearchbar>
+                                </form>
                             </IonRow>
+                            {/* <IonRow className="ion-justify-content-start">
+                                <IonCol size="10" className="forum-col">
+                                    <IonSearchbar inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
+                                </IonCol>
+                                <IonCol size="2" className="ion-align-self-center forum-col">
+                                    <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
+                                </IonCol>
+                            </IonRow> */}
                         </IonGrid>
 
 

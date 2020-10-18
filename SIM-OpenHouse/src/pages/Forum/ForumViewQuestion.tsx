@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonLoading, IonButton, IonItemDivider, IonModal, IonTextarea } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonLoading, IonButton, IonItemDivider, IonModal, IonTextarea, IonIcon } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,6 +16,7 @@ import Forum_ReplyModal from '../../components/Forum/Forum_ReplyModal';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { forumPostsDesc } from '../../modules/compare';
+import { searchCircleOutline } from 'ionicons/icons';
 
 interface RouteParams {
     id: string;
@@ -154,7 +155,7 @@ const ForumViewQuestion: React.FC = () => {
         setLoading(false);
     }, []);
 
-    console.log(comments)
+    //console.log(comments)
     
     return (
         <IonPage>
@@ -165,8 +166,11 @@ const ForumViewQuestion: React.FC = () => {
             <IonContent  fullscreen id="forum-content">
                 <IonGrid id="forum-searchbar-container">
                     <IonRow className="ion-justify-content-start">
-                        <IonCol size="10" className="forum-col">
-                            <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
+                        <IonCol size="8" className="forum-col">
+                            <IonSearchbar inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
+                        </IonCol>
+                        <IonCol size="2" className="ion-align-self-center forum-col">
+                            <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
                         </IonCol>
                         <IonCol size="2" className="forum-col ion-align-self-center">
                             <ForumRules />

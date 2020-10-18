@@ -1,7 +1,7 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonRouterLink, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonTitle } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonHeader, IonTitle, IonButton, IonIcon, IonLoading } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
+import { useParams } from 'react-router';
+import { searchCircleOutline } from 'ionicons/icons';
 
 import '../../css/Global.css';
 import '../../css/Forum.css';
@@ -10,30 +10,53 @@ import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 import { db } from '../../firebase';
 
+interface RouteParams {
+    keyword: string;
+}
+
 const ForumSearch: React.FC = () => {
-    const [keyword, setKeyword] = useState("");
-    const [questions, setQuestions] = useState([]);
-    const [allPosts, setAllPosts] = useState<any>([]);
+    const { keyword } = useParams<RouteParams>();
 
-    const getSearch = () => {
-        const matchedPosts = [];
+    const [loading, setLoading] = useState(true);
+    //const [keyword, setKeyword] = useState("");
+    //const [allQuestions, setAllQuestions] = useState([]);
+    const [allPosts, setAllPosts] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
 
+    const getSearchResults = () => {
+        const matchedPosts: any = [];
+
+        console.log("outside")
         allPosts.forEach((post: any) => {
+            console.log("foreach", post)
             if (post.entry.indexOf(keyword) != -1) {
+                console.log("indexof", post)
+                if (post.hasOwnProperty('questionId')) {
+                    console.log("hasprop", post)
+                    allPosts.forEach((ele: any) => {
+                        console.log("foreach again", post)
+                        if (ele.id === post.questionId) {
+                            console.log("===", post)
+                            post = ele;
+                        }
+                    });
+                }
                 matchedPosts.push(post)
             }
         });
+
+        //console.log(matchedPosts)
+        return setSearchResults(matchedPosts);
     }
 
     useEffect(() => {
         db.collection('Forum').get().then(users => {
-            const questions: any = [];
-            const comments: any = [];
+            const all: any = [];
 
             users.forEach(async user => {
                 await db.collection('Forum').doc(user.id).collection('Questions').get().then(docs => {
                     docs.forEach(doc => {
-                        questions.push({
+                        all.push({
                             id: +doc.id,
                             entry: doc.data().entry
                         });
@@ -42,7 +65,7 @@ const ForumSearch: React.FC = () => {
                 
                 await db.collection('Forum').doc(user.id).collection('Comments').get().then(docs => {
                     docs.forEach(doc => {
-                        comments.push({
+                        all.push({
                             id: +doc.id,
                             entry: doc.data().entry,
                             questionId: +doc.data().questionId
@@ -51,13 +74,17 @@ const ForumSearch: React.FC = () => {
                 });
             });
 
-            setQuestions(questions);
-            setAllPosts([questions, comments].flat());
+            setTimeout(() => {
+                //setAllQuestions(questions);
+                setAllPosts(all);
+                getSearchResults();
+                setLoading(false);
+            }, 500);
         });
     }, []);
 
-    console.log(questions)
-    console.log()
+    //console.log(allPosts)
+    //console.log(searchResults)
     
     return (
         <IonPage>
@@ -67,9 +94,17 @@ const ForumSearch: React.FC = () => {
 
             <IonContent  fullscreen id="forum-content">
                 <IonGrid id="forum-searchbar-container">
-                    <IonRow>
+                    {/* <IonRow>
                         <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} id="forum-searchbar" animated></IonSearchbar>
-                    </IonRow>
+                    </IonRow> */}
+                    {/* <IonRow className="ion-justify-content-start">
+                        <IonCol size="10" className="forum-col">
+                            <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
+                        </IonCol>
+                        <IonCol size="2" className="ion-align-self-center forum-col">
+                            <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
+                        </IonCol>
+                    </IonRow> */}
                 </IonGrid>
 
                 <IonGrid id="forum-heading-container">
@@ -113,6 +148,7 @@ const ForumSearch: React.FC = () => {
                         </IonRow>
                     </IonGrid>
                 </IonList> */}
+                <IonLoading isOpen={loading} />
             </IonContent>
         </IonPage>
     );
