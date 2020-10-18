@@ -9,18 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { addCircle, removeCircle } from 'ionicons/icons';
 
-import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
-import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
-import RMIT from '../../img/study@SIM/RMITUniversity.png';
-import SIMGE from '../../img/study@SIM/SimGE.png';
-import Buffalo from '../../img/study@SIM/UniversityAtBuffalo.png';
-import Birmingham from '../../img/study@SIM/UniversityOfBirmingham.png';
-import London from '../../img/study@SIM/UniversityOfLondon.png';
-import Manchester from '../../img/study@SIM/UniversityOfManchester.png';
-import Stirling from '../../img/study@SIM/UniversityOfStirling.png';
-import Sydney from '../../img/study@SIM/UniversityOfSydney.png';
-import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
-import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 import TopNav from '../../components/TopNav';
 
@@ -52,12 +40,12 @@ interface OverseaOpportunity {
     transfer: boolean
 }
 interface IntakeMonths {
-    partTimeIntake: string,
-    fullTimeIntake: string
+    partTime: string,
+    fullTime: string
 }
 interface Duration {
-    partTimeDuration: string,
-    fullTimeDuration: string
+    partTime: string,
+    fullTime: string
 }
 interface Programme {
     id: string,
@@ -117,20 +105,20 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
         overseaOpportunity: {},
         intakeMonths: {
             intakeMonths: {
-                fullTimeIntake: "", partTimeIntake: ""
+                fullTime: "", partTime: ""
             }
         },
         duration:
         {
-            duration: { fullTimeDuration: '', partTimeDuration: '' }
+            duration: { fullTime: '', partTime: '' }
         },
         uniLogo: ''
     }
 
     )
     const { programOverview = [], applicationPeriod = [], programmeStructure: { examination = {}, coursework = {} } = {},
-        overseaOpportunity: { exchange = {}, transfer = {} } = {}, intakeMonths: { partTimeIntake = [], fullTimeIntake = [] } = {},
-        duration: { partTimeDuration = [], fullTimeDuration = [] } = {}, modeOfStudy: { partTimeMode = {}, fullTimeMode = {} } = {} } = programme
+        overseaOpportunity: { exchange = {}, transfer = {} } = {}, intakeMonths: { partTime: partTimeIntake = '', fullTime: fullTimeIntake = '' } = {},
+        duration: { partTime: partTimeDuration = '', fullTime: fullTimeDuration = '' } = {}, modeOfStudy: { partTime: partTimeMode = {}, fullTime: fullTimeMode = {} } = {} } = programme
 
     useEffect(() => {
         const fetchData = async () => {
@@ -300,8 +288,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info1} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                {programOverview ? programOverview.map((overview: string) => {
-                                                    return (<div>
+                                                {programOverview ? programOverview.map((overview: string, index) => {
+                                                    return (<div key={overview + index}>
                                                         <li>{overview}</li>
                                                     </div>)
                                                 })
@@ -337,7 +325,7 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                             <div className="ion-text-wrap">
 
                                                 {Array.isArray(applicationPeriod) ? applicationPeriod.map((overview: any, index: any) => {
-                                                    return (<div>
+                                                    return (<div key={overview + index}>
                                                         <p>{overview.intake + ': ' + overview.period}</p>
                                                     </div>)
                                                 })
@@ -432,8 +420,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info5} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                {partTimeIntake ? <p>Part-Time: {partTimeIntake}</p> : <p>Part Time: NIL</p>}
-                                                {fullTimeIntake ? <p>Full-Time: {fullTimeIntake}</p> : <p>Full Time: NIL</p>}
+                                                {typeof partTimeIntake !== 'undefined' && partTimeIntake !== '' ? <p>Part-Time: {partTimeIntake}</p> : <p>Part Time: NIL</p>}
+                                                {typeof fullTimeIntake !== 'undefined' && fullTimeIntake !== '' ? <p>Full-Time: {fullTimeIntake}</p> : <p>Full Time: NIL</p>}
                                             </div>
                                         </IonCol>
                                     </IonRow>
@@ -462,8 +450,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
                                     <IonRow>
                                         <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info6} hidden={true}>
                                             <div className="ion-text-wrap">
-                                                {partTimeDuration ? <p>Part-Time: {partTimeDuration}</p> : <p>Part Time: NIL</p>}
-                                                {fullTimeDuration ? <p>Full-Time: {fullTimeDuration}</p> : <p>Full Time: NIL</p>}
+                                                {typeof partTimeDuration !== 'undefined' && partTimeDuration !== '' ? <p>Part-Time: {partTimeDuration}</p> : <p>Part Time: NIL</p>}
+                                                {typeof fullTimeDuration !== 'undefined' && fullTimeDuration !== '' ? <p>Full-Time: {fullTimeDuration}</p> : <p>Full Time: NIL</p>}
                                             </div>
                                         </IonCol>
                                     </IonRow>
