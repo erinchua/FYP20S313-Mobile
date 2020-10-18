@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import { IonRouterOutlet } from '@ionic/react';
 
 import Home from './pages/Home';
@@ -61,37 +61,38 @@ const App: React.FC = () => {
 
   return (
     <IonRouterOutlet>
-      <Route path="/u/home" component={Home} exact={true} />
-      <Route path="/u/openHouseMain" component={OpenHouseMain} exact={true} />
-      <Route path="/u/openHouseMain/guidedTours" component={GuidedTours} exact={true} />
-      <Route path="/u/mySchedule" component={MySchedule} exact={true} />
-      <Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} exact={true} />
-      <Route path="/u/openHouseMain/programmeTalks/progTalkInfo" component={ProgTalkInfo} exact={true} />
-      <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
-      <Route path="/u/forum" component={Forum} exact={true} />
-      <Route path="/u/forumUser" component={ForumUser} exact={true} />
-      <Route path="/u/forumSearch" component={ForumSearch} exact={true} />
-      <Route path="/u/forumViewQuestion/:id/:uid" component={ForumViewQuestion} exact={true} />
-      <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
-      <Route path="/u/usefulInfoMain" component={UsefulInfoMain} exact={true} />
-      <Route path="/u/usefulInfoMain/admissionApplication" component={AdmissionApplication} exact={true} />
-      <Route path="/u/usefulInfoMain/contactInfo" component={ContactInfo} exact={true} />
-      <Route path="/u/usefulInfoMain/openHouseFeedback" component={OpenHouseFeedback} exact={true} />
-      <Route path="/u/usefulInfoMain/commonFAQs" component={CommonFaqs} exact={true} />
-      <Route path="/u/gettingToSIMHQ" component={GettingToSimHq} exact={true} />
-      <Route path="/u/myProfile" component={MyProfile} exact={true} />
-      <Route path="/u/studentLife@SIM" component={StudentLife} exact={true} />
-      <Route path="/u/studentLife@SIM/clubs&councils@SIM" render={props => <Clubs_Councils_Routing {...props} />} />
-      <Route path="/u/studentLife@SIM/studentCare" component={StudentCare} exact={true} />
-      <Route path="/u/studentLife@SIM/scholarships" component={Scholarships} exact={true} />
-      <Route path="/u/studentLife@SIM/bursary" component={Bursary} exact={true} />
-      <Route path="/u/announcements" component={Announcements} exact={true} />
-      <Route path="/u/settings" component={Settings} exact={true} />
-      <Route path="/u/study@SIMMain" render={props => <StudySIM_Routing {...props} />} />
-      <Route path="/u/brochures" component={Brochures} exact={true} />
-      <Route path="/u/QRScan" component={QRScan} exact={true} />
-      <Route path="/u/socialMedia" component={SocialMedia} exact={true} />
-
+      <Switch>
+        <Route path="/u/home" component={Home} exact={true} />
+        <Route path="/u/openHouseMain" component={OpenHouseMain} exact={true} />
+        <Route path="/u/openHouseMain/guidedTours" component={GuidedTours} exact={true} />
+        <Route path="/u/mySchedule" component={MySchedule} exact={true} />
+        <Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} exact={true} />
+        <Route path="/u/openHouseMain/programmeTalks/progTalkInfo" component={ProgTalkInfo} exact={true} />
+        <Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
+        <Route path="/u/forum" component={Forum} exact={true} />
+        <Route path="/u/forumUser" component={ForumUser} exact={true} />
+        <Route path="/u/forumSearch" component={ForumSearch} exact={true} />
+        <Route path="/u/forumViewQuestion/:id/:uid" component={ForumViewQuestion} exact={true} />
+        <Route path="/u/campusFacilitiesMap" component={CampusFacilitiesMap} exact={true} />
+        <Route path="/u/usefulInfoMain" component={UsefulInfoMain} exact={true} />
+        <Route path="/u/usefulInfoMain/admissionApplication" component={AdmissionApplication} exact={true} />
+        <Route path="/u/usefulInfoMain/contactInfo" component={ContactInfo} exact={true} />
+        <Route path="/u/usefulInfoMain/openHouseFeedback" component={OpenHouseFeedback} exact={true} />
+        <Route path="/u/usefulInfoMain/commonFAQs" component={CommonFaqs} exact={true} />
+        <Route path="/u/gettingToSIMHQ" component={GettingToSimHq} exact={true} />
+        <Route path="/u/myProfile" component={MyProfile} exact={true} />
+        <Route path="/u/studentLife@SIM" component={StudentLife} exact={true} />
+        <Route path="/u/studentLife@SIM/clubs&councils@SIM" render={props => <Clubs_Councils_Routing {...props} />} />
+        <Route path="/u/studentLife@SIM/studentCare" component={StudentCare} exact={true} />
+        <Route path="/u/studentLife@SIM/scholarships" component={Scholarships} exact={true} />
+        <Route path="/u/studentLife@SIM/bursary" component={Bursary} exact={true} />
+        <Route path="/u/announcements" component={Announcements} exact={true} />
+        <Route path="/u/settings" component={Settings} exact={true} />
+        <Route path="/u/study@SIMMain" render={props => <StudySIM_Routing {...props} />} />
+        <Route path="/u/brochures" component={Brochures} exact={true} />
+        <Route path="/u/QRScan" component={QRScan} exact={true} />
+        <Route path="/u/socialMedia" component={SocialMedia} exact={true} />
+      </Switch>
     </IonRouterOutlet>
   )
 };

@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage } from '@ionic/react';
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, useLocation, match } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,6 +18,7 @@ import Stirling from '../../img/study@SIM/UniversityOfStirling.png';
 import Sydney from '../../img/study@SIM/UniversityOfSydney.png';
 import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
 import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
+import { Programme } from './Study@SIMProgInfo'
 
 import TopNav from '../../components/TopNav';
 import CourseComparatorDetails from '../../components/Study@SIM/CourseComparatorDetails';
@@ -25,66 +26,24 @@ import CourseComparatorDetails from '../../components/Study@SIM/CourseComparator
 
 interface CourseComparator_Props extends RouteComponentProps<{
     discipline: string;
-    compareCourse: string;
+    category: string;
 }> { }
 
 const CourseComparator: React.FC<CourseComparator_Props> = ({ match }) => {
     console.log("Comparator rendered!")
 
+    const location = useLocation()
+    const programmes = location.state
+    console.log(location)
     return (
         <IonPage>
             <IonHeader>
-                {match.params.discipline === 'artSocialSciences' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/artSocialSciences' backarrow={true} hamburger={true} />
-                    : ''
-                }
-
-                {match.params.discipline === 'business' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/business' backarrow={true} hamburger={true} />
-                    : ''
-                }
-
-                {match.params.discipline === 'itComputerScience' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/itComputerScience' backarrow={true} hamburger={true} />
-                    : ''
-                }
-
-                {match.params.discipline === 'nursing' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/nursing' backarrow={true} hamburger={true} />
-                    : ''
-                }
-
-                {match.params.discipline === 'speciality' ?
-                    <TopNav title="Compare Programmes" route='/u/study@SIMMain/speciality' backarrow={true} hamburger={true} />
-                    : ''
-                }
+                <TopNav title="Compare Programmes" route={`/u/study@SIMMain/${match.params.discipline}/${match.params.category}`} backarrow={true} hamburger={true} />
             </IonHeader>
 
             <IonContent fullscreen={true}>
-                {match.params.discipline === 'artSocialSciences' ?
-                    <CourseComparatorDetails />
-                    : ''
-                }
+                {typeof programmes !== 'undefined' ? <CourseComparatorDetails programmes={programmes} /> : ''}
 
-                {match.params.discipline === 'business' ?
-                    <CourseComparatorDetails />
-                    : ''
-                }
-
-                {match.params.discipline === 'itComputerScience' ?
-                    <CourseComparatorDetails />
-                    : ''
-                }
-
-                {match.params.discipline === 'nursing' ?
-                    <CourseComparatorDetails />
-                    : ''
-                }
-
-                {match.params.discipline === 'speciality' ?
-                    <CourseComparatorDetails />
-                    : ''
-                }
             </IonContent>
         </IonPage>
     );

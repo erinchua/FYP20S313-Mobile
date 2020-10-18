@@ -15,7 +15,7 @@ import { auth } from '../firebase';
 const Home: React.FC = () => {
 
   const { navigate } = useContext(NavContext);
-  
+
   const handleLogout = async () => {
     await auth.signOut();
     sessionStorage.clear();
@@ -24,14 +24,14 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <TopNav title="My Home" route='/u/home' backarrow={ false } hamburger = { true }/>
+        <TopNav title="My Home" route='/u/home' backarrow={false} hamburger={true} />
       </IonHeader>
-      
+
       <IonContent fullscreen>
         <IonGrid id="homeGrid">
           <IonRow>
             <IonCol sizeSm="12" className="gifCol">
-              <IonImg src={ gif }></IonImg>
+              <IonImg src={gif}></IonImg>
             </IonCol>
           </IonRow>
 
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/openHouseMain">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faCalendar} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faCalendar} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -48,11 +48,11 @@ const Home: React.FC = () => {
                 </IonRow>
               </IonRouterLink>
             </IonCol>
-            
+
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/mySchedule">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faCalendarAlt} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faCalendarAlt} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/forum">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faComments} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faComments} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/campusFacilitiesMap">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faMapSigns} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faMapSigns} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -87,11 +87,11 @@ const Home: React.FC = () => {
                 </IonRow>
               </IonRouterLink>
             </IonCol>
-            
+
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/gettingToSIMHQ">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faMapMarkedAlt} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faMapMarkedAlt} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/usefulInfoMain">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faInfoCircle} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faInfoCircle} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/socialMedia">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faPhotoVideo} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faPhotoVideo} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -126,11 +126,11 @@ const Home: React.FC = () => {
                 </IonRow>
               </IonRouterLink>
             </IonCol>
-            
+
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink href="/u/study@SIMMain">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faBookOpen} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faBookOpen} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -142,7 +142,7 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/studentLife@SIM">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faHands} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faHands} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/announcements">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faBell} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faBell} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">
@@ -165,11 +165,11 @@ const Home: React.FC = () => {
                 </IonRow>
               </IonRouterLink>
             </IonCol>
-            
+
             <IonCol sizeSm="4" className="homeMainCol">
               <IonRouterLink routerLink="/u/brochures">
                 <IonRow className="ion-justify-content-center">
-                    <FontAwesomeIcon className="homeIcons" size="2x" icon={faReadme} />
+                  <FontAwesomeIcon className="homeIcons" size="2x" icon={faReadme} />
                 </IonRow>
 
                 <IonRow className="ion-justify-content-center">

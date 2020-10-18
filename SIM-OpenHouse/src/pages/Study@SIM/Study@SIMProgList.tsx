@@ -15,7 +15,6 @@ import { Programme } from './Study@SIMProgInfo'
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
-    compareCourse: string;
     category: string
 }> { }
 
@@ -32,41 +31,52 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
         'Speciality'
     ]);
 
-    const [progCompareNo, setProgCompareNo] = useState(0);
-    const [compareProgCheck, setCompareProgCheck] = useState(false);
 
     const [programmes, setProgrammes] = useState<Programme[]>([])
     const [compareProgList, setCompareProgList] = useState<Programme[]>([])
 
     {/* Adding programme for comparison - Need to be generated dynamically */ }
     const compareProgramme = (programme: Programme) => {
+        const newProgList = [...compareProgList]
+        const newProgID = programme.id
+
         if (compareProgList.length < 3) {
-            const newProgID = programme.id
-            const newProgList = [...compareProgList]
             if (newProgList.includes(programme)) {
-                console.log("i entered included proglist")
-                console.log("Existed, Before filtering :" + JSON.stringify(newProgList))
-                console.log("Programme ID : " + newProgID)
-                newProgList.filter(existingProg => { return existingProg.id != 'programme-015' })
-                console.log("The new proglist if existing" + JSON.stringify(newProgList))
-                setCompareProgList(newProgList)
+                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id != newProgID })
+                setCompareProgList(updatedProgList)
             }
             else {
-                // setProgCompareNo(progCompareNo + 1);
                 newProgList.push(programme)
                 setCompareProgList(newProgList)
-                console.log("ProgList after compared button : " + compareProgList)
-                // setCompareProgCheck(true);
             }
         }
         else {
-            console.log("You can only select up to 3 programmes.")
-            // setProgCompareNo(progCompareNo - 1);
-            // setCompareProgCheck(false);
+
+            if (newProgList.includes(programme)) {
+                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id != newProgID })
+                setCompareProgList(updatedProgList)
+            }
+            else {
+                setShowCompareProgAlert(true);
+            }
+
         }
     };
+    /*To remove selected programmes in comparePopOver */
+    const removeProg = (programme: Programme) => {
+        const newProgList = [...compareProgList]
+        const newProgID = programme.id
+        const updatedProgList = newProgList.filter(programme => { return programme.id != newProgID })
+        setCompareProgList(updatedProgList)
 
+    }
+    /*To remove all selected programmes in comparePopOver */
+    const removeAllProg = (programmes: Programme[]) => {
+        const newProgList = [...compareProgList]
+        const updatedProgList = newProgList.filter(programme => { return programme.id == '' })
+        setCompareProgList(updatedProgList)
 
+    }
 
     {/* Display Compare Prog Popover */ }
     const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
@@ -252,35 +262,8 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         event={showCompareProgPopover.event}
                         onDidDismiss={e => setShowCompareProgPopover({ open: false, event: undefined })}
                     >
-                        {match.params.discipline === "artSocialSciences" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "business" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "business"} href={"/u/study@SIMMain/business/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "itComputerScience" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "nursing" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "speciality" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality/courseComparator"} />
-                            : ''
-                        }
+                        <CompareProgPopoverContent compareProgList={compareProgList} removeProg={removeProg} removeAllProg={removeAllProg} viewResults={() => (console.log('Add viewResults function here'))}
+                            href={`/u/study@SIMMain/${match.params.discipline}/${match.params.category}/courseComparator`} />
 
                     </IonPopover>
 
