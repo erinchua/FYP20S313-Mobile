@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
-import { addCircleSharp, personSharp } from "ionicons/icons";
+import { addCircleSharp, personSharp, searchCircleOutline } from "ionicons/icons";
 
 import "../../css/Global.css";
 import "../../css/Forum.css";
@@ -143,8 +143,13 @@ const Forum: React.FC = () => {
                 {agreedTOC === true ?
                     <>
                         <IonGrid id="forum-searchbar-container">
-                            <IonRow>
-                                <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
+                            <IonRow className="ion-justify-content-start">
+                                <IonCol size="10" className="forum-col">
+                                    <IonSearchbar inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
+                                </IonCol>
+                                <IonCol size="2" className="ion-align-self-center forum-col">
+                                    <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
+                                </IonCol>
                             </IonRow>
                         </IonGrid>
 

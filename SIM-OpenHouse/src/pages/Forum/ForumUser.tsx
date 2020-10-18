@@ -1,7 +1,7 @@
 import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItemDivider, IonLabel, IonLoading, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonTextarea, IonToolbar } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import { addCircleSharp, personSharp } from 'ionicons/icons';
+import { addCircleSharp, personSharp, searchCircleOutline } from 'ionicons/icons';
 
 import "../../css/Global.css"
 import "../../css/Forum.css"
@@ -71,8 +71,11 @@ const ForumUser: React.FC = () => {
             <IonContent fullscreen id="forum-content">
                 <IonGrid id="forum-searchbar-container">
                     <IonRow className="ion-justify-content-start">
-                        <IonCol size="10" className="forum-col">
-                            <IonSearchbar id="forum-searchbar" animated></IonSearchbar>
+                        <IonCol size="8" className="forum-col">
+                            <IonSearchbar inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
+                        </IonCol>
+                        <IonCol size="2" className="ion-align-self-center forum-col">
+                            <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
                         </IonCol>
                         <IonCol size="2" className="forum-col ion-align-self-center">
                             <ForumRules />

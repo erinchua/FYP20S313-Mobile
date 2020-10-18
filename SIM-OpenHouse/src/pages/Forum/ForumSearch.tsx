@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonRouterLink, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonTitle } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonRouterLink, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonTitle, IonButton, IonIcon } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
@@ -9,6 +9,7 @@ import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 import { db } from '../../firebase';
+import { searchCircleOutline } from 'ionicons/icons';
 
 const ForumSearch: React.FC = () => {
     const [keyword, setKeyword] = useState("");
@@ -67,8 +68,13 @@ const ForumSearch: React.FC = () => {
 
             <IonContent  fullscreen id="forum-content">
                 <IonGrid id="forum-searchbar-container">
-                    <IonRow>
-                        <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} id="forum-searchbar" animated></IonSearchbar>
+                    <IonRow className="ion-justify-content-start">
+                        <IonCol size="10" className="forum-col">
+                            <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
+                        </IonCol>
+                        <IonCol size="2" className="ion-align-self-center forum-col">
+                            <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
+                        </IonCol>
                     </IonRow>
                 </IonGrid>
 
