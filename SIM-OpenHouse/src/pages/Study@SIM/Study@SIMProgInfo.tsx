@@ -47,7 +47,7 @@ interface Duration {
     partTime: string,
     fullTime: string
 }
-interface Programme {
+export interface Programme {
     id: string,
     programmeTitle: string,
     modeOfStudy: {

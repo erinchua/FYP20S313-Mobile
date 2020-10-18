@@ -11,7 +11,7 @@ import TopNav from '../../components/TopNav';
 import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopoverContent';
 import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
-
+import { Programme } from './Study@SIMProgInfo'
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
@@ -20,8 +20,6 @@ interface StudySIMProgList_Props extends RouteComponentProps<{
 }> { }
 
 const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
-    console.log("I entered Proglist, i am category: " + match.params.category)
-    console.log("I entered Proglist, i am discipline: " + match.params.discipline)
 
     const discipline = match.params.discipline
     const category = match.params.category
@@ -35,23 +33,39 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
     ]);
 
     const [progCompareNo, setProgCompareNo] = useState(0);
-    const [compareProg, setCompareProg] = useState(false);
+    const [compareProgCheck, setCompareProgCheck] = useState(false);
 
-    const [programmes, setProgrammes] = useState([])
+    const [programmes, setProgrammes] = useState<Programme[]>([])
+    const [compareProgList, setCompareProgList] = useState<Programme[]>([])
 
     {/* Adding programme for comparison - Need to be generated dynamically */ }
-    const compareProgramme = () => {
-        if (compareProg == false) {
-            setProgCompareNo(progCompareNo + 1);
-            setCompareProg(true);
+    const compareProgramme = (programme: Programme) => {
+        if (compareProgList.length < 3) {
+            const newProgID = programme.id
+            const newProgList = [...compareProgList]
+            if (newProgList.includes(programme)) {
+                console.log("i entered included proglist")
+                console.log("Existed, Before filtering :" + JSON.stringify(newProgList))
+                console.log("Programme ID : " + newProgID)
+                newProgList.filter(existingProg => { return existingProg.id != 'programme-015' })
+                console.log("The new proglist if existing" + JSON.stringify(newProgList))
+                setCompareProgList(newProgList)
+            }
+            else {
+                // setProgCompareNo(progCompareNo + 1);
+                newProgList.push(programme)
+                setCompareProgList(newProgList)
+                console.log("ProgList after compared button : " + compareProgList)
+                // setCompareProgCheck(true);
+            }
         }
-        if (compareProg == true) {
-            setProgCompareNo(progCompareNo - 1);
-            setCompareProg(false);
+        else {
+            console.log("You can only select up to 3 programmes.")
+            // setProgCompareNo(progCompareNo - 1);
+            // setCompareProgCheck(false);
         }
     };
 
-    {/*Fetching Programmes Data from firestore*/ }
 
 
     {/* Display Compare Prog Popover */ }
@@ -72,9 +86,8 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
     {/* When page first load */ }
     useEffect(() => {
 
+        {/*Fetching Programmes Data from firestore*/ }
         const fetchData = async (discipline: string, category: string) => {
-            console.log("useeffect fetchdata entered")
-
             const programmes: any = []
             await db.collection('TestProgrammes')
                 .where("discipline", "array-contains", match.params.discipline)
@@ -84,7 +97,6 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                     snapshot.docs.forEach((doc: any) => {
                         const data = doc.data()
                         programmes.push(data)
-                        console.log("data pushed: " + data)
                     })
                     setProgrammes(programmes)
                 }).catch((error) => console.log(error));
@@ -95,7 +107,6 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
     }, [])
     return (
         <React.Fragment>
-            {console.log("programmes are" + programmes)}
             <IonAlert
                 isOpen={showCompareProgAlert}
                 onDidDismiss={() => setShowCompareProgAlert(false)}
@@ -145,7 +156,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
 
                                 <IonCol size="4" sizeSm="4" class="ion-text-right" className="studySIMProgListCol">
                                     <IonButton id="compareBtn" fill="clear" onClick={(e) => {
-                                        if (progCompareNo == 0) {
+                                        if (compareProgList.length < 1 || compareProgList.length > 3) {
                                             setShowCompareProgAlert(true);
                                         } else {
                                             setShowCompareProgPopover({ open: true, event: e.nativeEvent })
@@ -153,7 +164,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     }
                                     }>
                                         <IonLabel className="compareLabel">Compare</IonLabel>
-                                        <IonBadge id="compareBadge">{progCompareNo}</IonBadge>
+                                        <IonBadge id="compareBadge">{compareProgList.length}</IonBadge>
                                     </IonButton>
                                 </IonCol>
 
@@ -176,7 +187,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
 
                         {/* Programme List */}
                         {programmes ?
-                            programmes.map((programme: any) => {
+                            programmes.map((programme: Programme) => {
                                 return (
                                     <div key={programme.id}>
                                         <>
@@ -213,12 +224,12 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
 
                                                     <IonRow className="progCompareBtnRow">
                                                         <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                                            {compareProg ?
-                                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                                            {compareProgList.includes(programme) ?
+                                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={e => compareProgramme(programme)}>Compared
                                                     <FontAwesomeIcon style={{ paddingLeft: "3%" }} icon={faCheck} />
                                                                 </IonButton>
                                                                 :
-                                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
+                                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={e => compareProgramme(programme)}>Compare</IonButton>)
                                                             }
 
                                                         </IonCol>
