@@ -5,7 +5,7 @@ const { doc } = require('./config/adminConfig');
 //db.collection('Test').doc('test').update({testarray: admin.firestore.FieldValue.arrayUnion('hello')});
 
 const userID = "CLtDkQ9BfdQ2XF52F4t2y6jbZxh2";
-/* db.collection('PersonalScheduler').doc(userID).get().then(doc => {
+{/* db.collection('PersonalScheduler').doc(userID).get().then(doc => {
     const items = [];
     const activities = doc.data().registeredProgrammes;
     activities.forEach(item => {
@@ -35,9 +35,9 @@ const userID = "CLtDkQ9BfdQ2XF52F4t2y6jbZxh2";
         })
         console.log(mapped)
     }, 1000);
-}); */
+}); */}
 
-/* const prog = {
+{/* const prog = {
     awardingUni: "University of London",
     capacityLimit: 50,
     date: "21-Nov-2020",
@@ -83,9 +83,9 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
                     return;
             }
         });
-}); */
+}); */}
 
-/* db.collection("Openhouse").orderBy('id', 'desc').limit(1).get().then(snapshot => {
+{/* db.collection("Openhouse").orderBy('id', 'desc').limit(1).get().then(snapshot => {
     const arr = []
     snapshot.forEach(doc => {
         const data = doc.data().day;
@@ -93,9 +93,9 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
         data.forEach(day => arr.push(day))
     })
     console.log(arr[0].date)
-}) */
+}) */}
 
-/* const dateObject1 = {
+{/* const dateObject1 = {
     date: "21-Nov-2020",
     start: "11:30AM", end: "12:30PM"
 }
@@ -119,7 +119,7 @@ function toDateObject(date, time) {
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
 };
 const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
-const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end); */
+const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end); */}
 //console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
 //console.log(end1-start1)
 
@@ -127,7 +127,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 
 
-/* db.collection('Openhouse').get().then(snapshot => {
+{/* db.collection('Openhouse').get().then(snapshot => {
     const hours = [];
 
     snapshot.forEach(doc => {
@@ -144,12 +144,12 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
     console.log(hours.key())
     
     //hours.forEach(ticks => console.log(ticks))
-}) */
+}) */}
 
 //console.log(new Date().toTimeString())
 //console.log(admin.firestore.FieldValue.serverTimestamp())
 
-/* db.collection('Forum').get().then(uRef => {
+{/* db.collection('Forum').get().then(uRef => {
     const comments = [];
 
     uRef.forEach(user => {
@@ -173,9 +173,9 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
     setTimeout(() => {
         console.log(comments)
     }, 500);
-}); */
+}); */}
 
-/* db.collection('Forum').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
+{/* db.collection('Forum').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
     const posts = [];
     
     snaps.forEach(snap => {
@@ -189,7 +189,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
         })
         posts.push(snap.data())
     });
-}); */
+}); */}
 
 const all = [];
 db.collection('Forum').get().then(users => {
@@ -217,11 +217,18 @@ db.collection('Forum').get().then(users => {
 });
 setTimeout(() => {
     //console.log(all)
-    const keyword = "comment";
+    const keyword = "question";
     all.forEach(post => {
         //console.log(post.entry.indexOf(keyword))
-        console.log(post.hasOwnProperty('questionId'))
+        //console.log(post.hasOwnProperty('questionId'))
         if (post.entry.toLowerCase().indexOf(keyword) != -1) {
+            if (post.hasOwnProperty('questionId')) {
+                all.forEach(ele => {
+                    if (ele.id === post.questionId) {
+                        post = ele
+                    }
+                })
+            }
             console.log(post)
         }
     });

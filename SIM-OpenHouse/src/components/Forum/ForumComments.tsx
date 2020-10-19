@@ -14,7 +14,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 const ForumQuestions: React.FC = () => {
     const { userID } = useAuth();
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [showEditCommentModal, setShowEditCommentModal] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [comments, setComments] = useState([]);
@@ -70,7 +70,10 @@ const ForumQuestions: React.FC = () => {
                 posts.push(post)
             });
 
-            setTimeout(() => setComments(posts), 500);
+            setTimeout(() => {
+                setComments(posts);
+                setLoading(false);
+            }, 500);
         });
     }, []);
 

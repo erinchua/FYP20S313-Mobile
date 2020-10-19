@@ -1,13 +1,13 @@
-import {  IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow } from '@ionic/react';
+import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow } from '@ionic/react';
 import React from 'react';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import firebase from 'firebase';
 
 import '../css/Global.css';
 import '../css/OpenHouseActivities.css';
+import TopNav from '../components/TopNav';
 import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
-import TopNav from '../components/TopNav';
 
 const QRScan: React.FC = () => {
   const { userID } = useAuth();
@@ -16,40 +16,31 @@ const QRScan: React.FC = () => {
     const data = await BarcodeScanner.scan();
     console.log(`Barcode data: ${data.text}`);
 
-    let increment = firebase.firestore.FieldValue.increment(0);
+    if (!isNaN(+data.text)) {
+      const increment = firebase.firestore.FieldValue.increment(+data.text);
 
-    switch (data.text) {
-      //change string accordingly before deployment
-      case "plusTen":
-        increment = firebase.firestore.FieldValue.increment(10);
-        break;
-      case "minusTen":
-        increment = firebase.firestore.FieldValue.increment(-10);
-        break;
-      default:
+      await db.collection('Games').doc(userID).update({
+        points: increment,
+      });
     }
-    await db.collection('Games').doc(userID).update({
-      points: increment,
-    })
   };
 
   return (
-        <IonPage>
-          <IonHeader>
-            <TopNav title="QR Scanner" route="/u/home" backarrow={ true } hamburger={ true }/>
-          </IonHeader>
+    <IonPage>
+      <IonHeader>
+        <TopNav title="QR Scanner" route="/u/home" backarrow={ true } hamburger={ true }/>
+      </IonHeader>
 
-          <IonContent fullscreen className="QR-content">
-            <IonGrid>
-              <IonRow className="ion-justify-content-center">
-                <IonCol>
-                  <IonButton color="dark" expand="block" onClick={openScanner}>Scan barcode</IonButton>
-                </IonCol>
-              </IonRow>
-            </IonGrid>
-          </IonContent>
-        </IonPage>
-        
+      <IonContent fullscreen className="QR-content">
+        <IonGrid>
+          <IonRow className="ion-justify-content-center">
+            <IonCol>
+              <IonButton color="dark" expand="block" onClick={openScanner}>Scan barcode</IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonContent>
+    </IonPage>
   );
 };
 

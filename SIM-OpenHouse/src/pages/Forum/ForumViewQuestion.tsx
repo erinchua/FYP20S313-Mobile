@@ -155,7 +155,7 @@ const ForumViewQuestion: React.FC = () => {
         setLoading(false);
     }, []);
 
-    console.log(comments)
+    //console.log(comments)
     
     return (
         <IonPage>
