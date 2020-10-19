@@ -1,17 +1,16 @@
 import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonLoading, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useEffect, useState } from 'react';
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCommentAlt } from "@fortawesome/free-regular-svg-icons";
-import { addCircleSharp, navigate, personSharp, searchCircleOutline } from "ionicons/icons";
+import { addCircleSharp, personSharp } from "ionicons/icons";
 
 import "../../css/Global.css";
 import "../../css/Forum.css";
 import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
-import ForumSearch from './ForumSearch';
 import { db } from "../../firebase";
 import { useAuth } from "../../modules/auth";
 import { forumPostsDesc } from "../../modules/compare";
@@ -20,6 +19,8 @@ const Forum: React.FC = () => {
     const { userID } = useAuth();
     const { register, errors, handleSubmit } = useForm();
 
+    let history = useHistory();
+
     const [loading, setLoading] = useState(true);
     const [checked, setChecked] = useState(false);
     const [agreedTOC, setAgreedTOC] = useState(true);
@@ -27,9 +28,7 @@ const Forum: React.FC = () => {
     const [modalSegmentValue, setModalSegmentValue] = useState('');
     const [entry, setEntry] = useState("");
     const [questions, setQuestions] = useState([]);
-    const [keyword, setKeyword] = useState("")
-
-    let history = useHistory();
+    const [keyword, setKeyword] = useState("");
 
     const onSubmit = async () => {
         setLoading(true);
@@ -104,7 +103,7 @@ const Forum: React.FC = () => {
 
                 return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
                     entries.docChanges().forEach(change => {
-                        questions.unshift({
+                        questions.push({
                             id: +change.doc.id,
                             entry: change.doc.data().entry,
                             dateTime: change.doc.data().dateTime,
@@ -150,14 +149,6 @@ const Forum: React.FC = () => {
                                     <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} enterkeyhint="search" id="forum-searchbar" animated></IonSearchbar>
                                 </form>
                             </IonRow>
-                            {/* <IonRow className="ion-justify-content-start">
-                                <IonCol size="10" className="forum-col">
-                                    <IonSearchbar inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
-                                </IonCol>
-                                <IonCol size="2" className="ion-align-self-center forum-col">
-                                    <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
-                                </IonCol>
-                            </IonRow> */}
                         </IonGrid>
 
 
@@ -174,7 +165,7 @@ const Forum: React.FC = () => {
 
                         {/* Display all Questions */}
                         {questions.length > 0 ?
-                            questions.map((post: any, index) => (
+                            questions.map((post: any) => (
                                 post.removed === false ? (
                                     <IonList className="forum-container" key={post.id}>
                                         <IonGrid>
