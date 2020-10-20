@@ -1,6 +1,6 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonLoading, IonButton, IonItemDivider, IonModal, IonTextarea, IonIcon } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonSearchbar, IonCol, IonList, IonLabel, IonText, IonHeader, IonLoading, IonButton, IonItemDivider, IonModal, IonTextarea } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faComment, faCommentAlt, faCommentDots } from '@fortawesome/free-regular-svg-icons';
 import firebase from 'firebase';
@@ -9,14 +9,10 @@ import '../../css/Global.css';
 import '../../css/Forum.css';
 import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
-import Forum_WithComment from '../../components/Forum/Forum_WithComment';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
-import Forum_AddCommentModal from '../../components/Forum/Forum_AddCommentModal';
-import Forum_ReplyModal from '../../components/Forum/Forum_ReplyModal';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { forumPostsDesc } from '../../modules/compare';
-import { searchCircleOutline } from 'ionicons/icons';
 
 interface RouteParams {
     id: string;
@@ -27,13 +23,16 @@ const ForumViewQuestion: React.FC = () => {
     const { id, uid } = useParams<RouteParams>();
     const { userID } = useAuth();
 
+    let history = useHistory();
+
     const [loading, setLoading] = useState(true);
     const [showAddCommentModal, setShowAddCommentModal] = useState(false);
     const [showReplyCommentModal, setShowReplyCommentModal] = useState(false);
     const [question, setQuestion] = useState<any>({});
     const [entry, setEntry] = useState("");
     const [comments, setComments] = useState([]);
-    const [commentDetails, setCommentDetails] = useState({ commenter: "", commentId: 0, commenterId: 0 })
+    const [commentDetails, setCommentDetails] = useState({ commenter: "", commentId: 0, commenterId: 0 });
+    const [keyword, setKeyword] = useState("");
 
 
     const handleComment = async () => {
@@ -131,7 +130,7 @@ const ForumViewQuestion: React.FC = () => {
             uRef.forEach(user => {
                 return db.collection('Forum').doc(user.id).collection('Comments').where("questionId", "==", +id).onSnapshot(entries => {
                     entries.docChanges().forEach(change => {
-                        comments.unshift({
+                        comments.push({
                             id: +change.doc.id,
                             entry: change.doc.data().entry,
                             dateTime: change.doc.data().dateTime,
@@ -166,11 +165,10 @@ const ForumViewQuestion: React.FC = () => {
             <IonContent  fullscreen id="forum-content">
                 <IonGrid id="forum-searchbar-container">
                     <IonRow className="ion-justify-content-start">
-                        <IonCol size="8" className="forum-col">
-                            <IonSearchbar inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
-                        </IonCol>
-                        <IonCol size="2" className="ion-align-self-center forum-col">
-                            <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
+                        <IonCol size="10" className="forum-col">
+                            <form onSubmit={e => { e.preventDefault(); history.push(`/u/forumSearch/${keyword}`); }}>
+                                <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} enterkeyhint="search" id="forum-searchbar" animated></IonSearchbar>
+                            </form>
                         </IonCol>
                         <IonCol size="2" className="forum-col ion-align-self-center">
                             <ForumRules />
@@ -241,7 +239,7 @@ const ForumViewQuestion: React.FC = () => {
                                                     <IonText id="comment-details">{post.dateTime}</IonText>
                                                 </IonCol>
                                                 <IonCol size="4" className="forum-col ion-align-self-end">
-                                                    { question.askerId === userID! ?
+                                                    { (question.askerId === userID! || post.uid === userID!) ?
                                                         <IonButton onClick={() => [setShowReplyCommentModal(true), setCommentDetails({ commenter: post.user, commentId: post.id, commenterId: post.uid })]} id="comment-replyBtn" size="small" disabled={post.removed === false ? false : true}>
                                                             <FontAwesomeIcon icon={faCommentDots} size="sm"/>
                                                             <IonText style={{marginLeft: '5%'}}>Reply</IonText>

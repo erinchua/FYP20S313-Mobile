@@ -1,10 +1,10 @@
 import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItemDivider, IonLabel, IonLoading, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonTextarea, IonToolbar } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { addCircleSharp, personSharp, searchCircleOutline } from 'ionicons/icons';
+import { addCircleSharp, personSharp } from 'ionicons/icons';
 
-import "../../css/Global.css"
-import "../../css/Forum.css"
+import "../../css/Global.css";
+import "../../css/Forum.css";
 import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
 import ForumQuestions from '../../components/Forum/ForumQuestions';
@@ -15,13 +15,14 @@ import { useAuth } from '../../modules/auth';
 const ForumUser: React.FC = () => {
     const { userID } = useAuth();
 
-    const [showPostModal, setShowPostModal] = useState(false);
     let history = useHistory();
 
     const [loading, setLoading] = useState(false);
     const [qnsCom, setQnsCom] = useState('forum-myQuestions');
     const [modalSegmentValue, setModalSegmentValue] = useState('');
+    const [showPostModal, setShowPostModal] = useState(false);
     const [entry, setEntry] = useState("");
+    const [keyword, setKeyword] = useState("");
 
     const handleQuestions = () => {
         setQnsCom('forum-myQuestions');
@@ -71,11 +72,10 @@ const ForumUser: React.FC = () => {
             <IonContent fullscreen id="forum-content">
                 <IonGrid id="forum-searchbar-container">
                     <IonRow className="ion-justify-content-start">
-                        <IonCol size="8" className="forum-col">
-                            <IonSearchbar inputMode="search" searchIcon="false" id="forum-searchbar" animated></IonSearchbar>
-                        </IonCol>
-                        <IonCol size="2" className="ion-align-self-center forum-col">
-                            <IonButton id="forum-searchBtn"><IonIcon icon={searchCircleOutline} /></IonButton>
+                        <IonCol size="10" className="forum-col">
+                            <form onSubmit={e => { e.preventDefault(); history.push(`/u/forumSearch/${keyword}`); }}>
+                                <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} enterkeyhint="search" id="forum-searchbar" animated></IonSearchbar>
+                            </form>
                         </IonCol>
                         <IonCol size="2" className="forum-col ion-align-self-center">
                             <ForumRules />
