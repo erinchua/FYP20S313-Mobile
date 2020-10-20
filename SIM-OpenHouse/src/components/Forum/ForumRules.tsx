@@ -2,8 +2,8 @@ import { IonButton, IonGrid, IonIcon, IonPopover, IonRow, IonText } from '@ionic
 import React, { useState } from 'react';
 import { informationCircleOutline } from 'ionicons/icons';
 
-import "../../css/Global.css"
-import "../../css/Forum.css"
+import "../../css/Global.css";
+import "../../css/Forum.css";
 
 const ForumRules: React.FC = () => {
 

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
 
-import "../../css/Global.css"
-import "../../css/Forum.css"
+import "../../css/Global.css";
+import "../../css/Forum.css";
 import { db } from '../../firebase';
 
 const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: string, offender: string, reportedBy: string }> = props => {

@@ -55,14 +55,6 @@
 
 #forum-searchbar {
     --border-radius: 5px;
-    text-align: center;
-}
-
-#forum-searchBtn {
-    --background: transparent;
-    --color: black;
-    --box-shadow: transparent;
-    float: right;
 }
 
 #forum-heading-container {

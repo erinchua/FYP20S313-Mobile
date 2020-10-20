@@ -2,14 +2,12 @@ import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLa
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-import "../../css/Global.css"
-import "../../css/Forum.css"
-import Forum_EditQuestionModal from './Forum_EditQuestionModal';
-import Forum_DeleteQuestion from './Forum_DeleteQuestion';
+import "../../css/Global.css";
+import "../../css/Forum.css";
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const ForumQuestions: React.FC = () => {
     const { userID } = useAuth();
