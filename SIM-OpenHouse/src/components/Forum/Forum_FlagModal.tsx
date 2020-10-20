@@ -6,8 +6,10 @@ import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import "../../css/Global.css";
 import "../../css/Forum.css";
 import { db } from '../../firebase';
+import { useAuth } from '../../modules/auth';
 
-const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: string, offender: string, reportedBy: string }> = props => {
+const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: string, postContent: string, offender: string, offenderId: string }> = props => {
+    const { userID } = useAuth();
 
     const [loading, setLoading] = useState(false);
     const [showFlagModal, setShowFlagModal] = useState(false);
@@ -17,15 +19,23 @@ const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: s
         try {
             setLoading(true);
             const time = new Date();
+            let name: string;
+
+            await db.collection('Students').doc(userID).get().then((doc: any) => {
+                name = doc.data().firstName + " " + doc.data().lastName;
+            });
             
-            const docRef = db.collection('Forum').doc(props.reportedBy).collection('Reports').doc((time.getTime()).toString());
+            const docRef = db.collection('Forum').doc(userID).collection('Reports').doc((time.getTime()).toString());
             await docRef.set({
                 id: +docRef.id,
                 entry: reason,
                 postId: +props.postId,
                 postType: props.postType,
+                postContent: props.postContent,
                 offender: props.offender,
-                reportedBy: props.reportedBy,
+                offenderId: props.offenderId,
+                reporter: name!,
+                reporterId: userID,
                 dateTime: time.toLocaleString().replace(/\//g, "-")
             });
         } catch (e) {
