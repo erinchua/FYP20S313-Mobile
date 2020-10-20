@@ -8,10 +8,10 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Specialty"
+            "speciality"
         ],
         "subDiscipline": [
-            "Aviation"
+            "aviation"
         ],
         "entryQualifications": {
             "aLevel": false,
@@ -25,9 +25,12 @@
             "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
             "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
         ],
-        "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -37,11 +40,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years"
-        }
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-002",
@@ -52,7 +58,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Specialty"
+            "speciality"
         ],
         "subDiscipline": [
             "Construction and Management"
@@ -69,9 +75,12 @@
             "Accrediation by Professional Bodies, including AIB, AIQS, CIOB, RICS and SISV",
             "Practical Curricula, designed with industry inputs; integration of theory with practice"
         ],
-        "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -81,11 +90,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
-        }
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-003",
@@ -96,7 +108,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Business"
+            "business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -113,9 +125,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -125,11 +140,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
-        }
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
     {
         "id": "programme-004",
@@ -140,7 +158,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Business"
+            "business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -151,15 +169,18 @@
             "degree": false,
             "diploma": true
         },
-        "awardedBy": "University of Stirling",
+        "awardedBy": "University of Wollongong",
         "programOverview": [
             "Key principles of sustainability on the environment, social impact and commercial success of events",
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -169,11 +190,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
-        }
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-005",
@@ -184,7 +208,57 @@
         },
         "academicLevel": "Diploma",
         "discipline": [
-            "speciality"
+            "business"
+        ],
+        "subDiscipline": [
+            "Tourism, Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Warwick",
+        "programOverview": [
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management skills in events management"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-006",
+        "programmeTitle": "Programme diploma business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -201,9 +275,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -213,15 +290,68 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
-        }
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
     {
-        "id": "programme-006",
-        "programmeTitle": "Programme diploma",
+        "id": "programme-007",
+        "programmeTitle": "Programme diploma business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "business"
+        ],
+        "subDiscipline": [
+            "Tourism, Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management skills in events management"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-008",
+        "programmeTitle": "Programme diploma business 2",
         "modeOfStudy": {
             "partTime": false,
             "fullTime": true
@@ -245,9 +375,12 @@
             "Focus on management of experiential events",
             "Apply analytical techniques, business and management skills in events management"
         ],
-        "applicationPeriod": {
-            "jan2021": "data"
-        },
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
         "programmeStructure": {
             "coursework": true,
             "examination": true
@@ -257,10 +390,563 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
-        }
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-009",
+        "programmeTitle": "Programme diploma IT programme",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "itComputerScience"
+        ],
+        "subDiscipline": [
+            "Tourism, Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management skills in events management"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-010",
+        "programmeTitle": "Programme diploma master 1",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Masters",
+        "discipline": [
+            "artSocialSciences"
+        ],
+        "subDiscipline": [
+            "Tourism, Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management skills in events management"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-011",
+        "programmeTitle": "Programme diploma master 2",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Masters",
+        "discipline": [
+            "artSocialSciences"
+        ],
+        "subDiscipline": [
+            "Tourism, Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management skills in events management"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-012",
+        "programmeTitle": "Programme master 3",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Masters",
+        "discipline": [
+            "business"
+        ],
+        "subDiscipline": [
+            "Tourism, Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management skills in events management"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-013",
+        "programmeTitle": "Programme diploma master 4",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Masters",
+        "discipline": [
+            "itComputerScience"
+        ],
+        "subDiscipline": [
+            "Tourism, Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management skills in events management"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-014",
+        "programmeTitle": "Bachelor of Nursing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "nursing"
+        ],
+        "subDiscipline": [
+            "aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-015",
+        "programmeTitle": "Bachelor of Art Science (Arts)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "artSocialSciences"
+        ],
+        "subDiscipline": [
+            "aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-016",
+        "programmeTitle": "Bachelor of ArtSocial Science 2 (Arts) (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "artSocialSciences"
+        ],
+        "subDiscipline": [
+            "aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-017",
+        "programmeTitle": "Bachelor of Advance nursing (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "nursing"
+        ],
+        "subDiscipline": [
+            "aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-018",
+        "programmeTitle": "Bachelor of IT com science (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "itComputerScience"
+        ],
+        "subDiscipline": [
+            "aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-018",
+        "programmeTitle": "Bachelor of IT com science (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "business"
+        ],
+        "subDiscipline": [
+            "aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     }
 ]

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
 
-import "../../css/Global.css"
-import "../../css/Forum.css"
+import "../../css/Global.css";
+import "../../css/Forum.css";
 import { db } from '../../firebase';
 
 const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: string, offender: string, reportedBy: string }> = props => {
@@ -47,7 +47,7 @@ const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: s
                     </IonRow>
                     <IonItemDivider />
                     <IonRow id="postQns-modal-inputArea">
-                        <IonTextarea value={reason} onIonChange={(e: any) => setReason(e.detail.value)} rows={11} contentEditable={true} required placeholder="Type your reason for reporting here..."></IonTextarea>
+                        <IonTextarea value={reason} onIonChange={e => setReason(e.detail.value!)} rows={11} contentEditable={true} required placeholder="Type your reason for reporting here..."></IonTextarea>
                     </IonRow>
                     <IonRow className="ion-justify-content-around">
                         <IonButton id="postQns-close-button" fill="outline" onClick={() => setShowFlagModal(false)}>CANCEL</IonButton>

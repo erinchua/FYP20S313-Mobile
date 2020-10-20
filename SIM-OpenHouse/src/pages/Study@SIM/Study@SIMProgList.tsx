@@ -11,17 +11,17 @@ import TopNav from '../../components/TopNav';
 import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopoverContent';
 import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
-
+import { Programme } from './Study@SIMProgInfo'
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
-    compareCourse: string;
     category: string
 }> { }
 
 const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
-    console.log("I entered Proglist, i am category: " + match.params.category)
-    console.log("I entered Proglist, i am discipline: " + match.params.discipline)
+
+    const discipline = match.params.discipline
+    const category = match.params.category
 
     const [disciplineName, setDisciplineName] = useState([
         'Art & Social Sciences',
@@ -31,25 +31,52 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
         'Speciality'
     ]);
 
-    const [progCompareNo, setProgCompareNo] = useState(0);
-    const [compareProg, setCompareProg] = useState(false);
 
-    const [programmes, setProgrammes] = useState([])
+    const [programmes, setProgrammes] = useState<Programme[]>([])
+    const [compareProgList, setCompareProgList] = useState<Programme[]>([])
 
     {/* Adding programme for comparison - Need to be generated dynamically */ }
-    const compareProgramme = () => {
-        if (compareProg == false) {
-            setProgCompareNo(progCompareNo + 1);
-            setCompareProg(true);
+    const compareProgramme = (programme: Programme) => {
+        const newProgList = [...compareProgList]
+        const newProgID = programme.id
+
+        if (compareProgList.length < 3) {
+            if (newProgList.includes(programme)) {
+                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id != newProgID })
+                setCompareProgList(updatedProgList)
+            }
+            else {
+                newProgList.push(programme)
+                setCompareProgList(newProgList)
+            }
         }
-        if (compareProg == true) {
-            setProgCompareNo(progCompareNo - 1);
-            setCompareProg(false);
+        else {
+
+            if (newProgList.includes(programme)) {
+                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id != newProgID })
+                setCompareProgList(updatedProgList)
+            }
+            else {
+                setShowCompareProgAlert(true);
+            }
+
         }
     };
+    /*To remove selected programmes in comparePopOver */
+    const removeProg = (programme: Programme) => {
+        const newProgList = [...compareProgList]
+        const newProgID = programme.id
+        const updatedProgList = newProgList.filter(programme => { return programme.id != newProgID })
+        setCompareProgList(updatedProgList)
 
-    {/*Fetching Programmes Data from firestore*/ }
+    }
+    /*To remove all selected programmes in comparePopOver */
+    const removeAllProg = (programmes: Programme[]) => {
+        const newProgList = [...compareProgList]
+        const updatedProgList = newProgList.filter(programme => { return programme.id == '' })
+        setCompareProgList(updatedProgList)
 
+    }
 
     {/* Display Compare Prog Popover */ }
     const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
@@ -69,9 +96,8 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
     {/* When page first load */ }
     useEffect(() => {
 
+        {/*Fetching Programmes Data from firestore*/ }
         const fetchData = async (discipline: string, category: string) => {
-            console.log("useeffect fetchdata entered")
-
             const programmes: any = []
             await db.collection('TestProgrammes')
                 .where("discipline", "array-contains", match.params.discipline)
@@ -81,31 +107,16 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                     snapshot.docs.forEach((doc: any) => {
                         const data = doc.data()
                         programmes.push(data)
-                        console.log("data pushed: " + data)
                     })
                     setProgrammes(programmes)
                 }).catch((error) => console.log(error));
 
         }
 
-        // db.collection("TestProgrammes")
-        //     .get()
-        //     .then((snapshot) => {
-        //         const programmeTalk: any = [];
-        //         snapshot.forEach((doc) => {
-        //             const data = doc.data();
-        //             programmeTalk.push(data);
-        //             console.log("data pushed: " + data)
-        //         });
-        //         setProgrammes(programmeTalk);
-        //     })
-        //     .catch((error) => console.log(error));
-
         fetchData(match.params.discipline, match.params.category)
     }, [])
     return (
         <React.Fragment>
-            {console.log("programmes are" + programmes)}
             <IonAlert
                 isOpen={showCompareProgAlert}
                 onDidDismiss={() => setShowCompareProgAlert(false)}
@@ -155,7 +166,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
 
                                 <IonCol size="4" sizeSm="4" class="ion-text-right" className="studySIMProgListCol">
                                     <IonButton id="compareBtn" fill="clear" onClick={(e) => {
-                                        if (progCompareNo == 0) {
+                                        if (compareProgList.length < 1 || compareProgList.length > 3) {
                                             setShowCompareProgAlert(true);
                                         } else {
                                             setShowCompareProgPopover({ open: true, event: e.nativeEvent })
@@ -163,7 +174,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                                     }
                                     }>
                                         <IonLabel className="compareLabel">Compare</IonLabel>
-                                        <IonBadge id="compareBadge">{progCompareNo}</IonBadge>
+                                        <IonBadge id="compareBadge">{compareProgList.length}</IonBadge>
                                     </IonButton>
                                 </IonCol>
 
@@ -183,258 +194,62 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
 
                 <IonContent fullscreen={true} id="studySIMProgListContent">
                     <IonGrid id="studySIMProgListGrid">
-                        {/* Art & Social Sciences Programme List */}
-                        {match.params.discipline === 'artSocialSciences' ?
-                            <>
-                                <IonRow className="studySIMProgListRow" class="ion-align-items-center">
-                                    <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                        <img src={Grenoble} className="studyProgUniImg"></img>
-                                    </IonCol>
 
-                                    <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
-                                        {/* Programme Title */}
-                                        <IonRow className="progCourseRow">
-                                            <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/artSocialSciences/study@SIMProgInfo">
-                                                <IonTitle className="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
-                                                </IonTitle>
-                                            </IonRouterLink>
-                                        </IonRow>
+                        {/* Programme List */}
+                        {programmes ?
+                            programmes.map((programme: Programme) => {
+                                return (
+                                    <div key={programme.id}>
+                                        <>
+                                            <IonRow className="studySIMProgListRow" class="ion-align-items-center">
+                                                <IonCol size="4" sizeSm="4" class="ion-text-center">
+                                                    <img src={programme.uniLogo} className="studyProgUniImg"></img>
+                                                </IonCol>
 
-                                        {/* Awarding Uni */}
-                                        <IonRow className="progCourseRow">
-                                            <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniLabel">
-                                                    <div className="ion-text-wrap">Awarded by:</div>
-                                                </IonLabel>
-                                            </IonCol>
+                                                <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
+                                                    {/* Programme Title */}
+                                                    <IonRow className="progCourseRow">
+                                                        {/* <IonRouterLink id="progCourseTitleLink" href={`/u/study@SIMMain/Study@SIMProgInfo/${programme.id}`}> */}
+                                                        <IonRouterLink id="progCourseTitleLink" href={`/u/study@SIMMain/Study@SIMProgInfo/${programme.id}/${discipline}/${category}`}>
+                                                            <IonTitle className="progCourseTitle">
+                                                                <div className="ion-text-wrap">{programme.programmeTitle}</div>
+                                                            </IonTitle>
+                                                        </IonRouterLink>
+                                                    </IonRow>
 
-                                            <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniName">
-                                                    <div className="ion-text-wrap">Grenoble Ecole de Management</div>
-                                                </IonLabel>
-                                            </IonCol>
-                                        </IonRow>
+                                                    {/* Awarding Uni */}
+                                                    <IonRow className="progCourseRow">
+                                                        <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
+                                                            <IonLabel className="progCourseAwardingUniLabel">
+                                                                <div className="ion-text-wrap">Awarded by:</div>
+                                                            </IonLabel>
+                                                        </IonCol>
 
-                                        <IonRow className="progCompareBtnRow">
-                                            <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                                {compareProg ?
-                                                    <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
+                                                        <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
+                                                            <IonLabel className="progCourseAwardingUniName">
+                                                                <div className="ion-text-wrap">{programme.awardedBy}</div>
+                                                            </IonLabel>
+                                                        </IonCol>
+                                                    </IonRow>
+
+                                                    <IonRow className="progCompareBtnRow">
+                                                        <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
+                                                            {compareProgList.includes(programme) ?
+                                                                <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={e => compareProgramme(programme)}>Compared
                                                     <FontAwesomeIcon style={{ paddingLeft: "3%" }} icon={faCheck} />
-                                                    </IonButton>
-                                                    :
-                                                    (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
-                                                }
+                                                                </IonButton>
+                                                                :
+                                                                (<IonButton className="progCompareBtn" size="small" type="submit" onClick={e => compareProgramme(programme)}>Compare</IonButton>)
+                                                            }
 
-                                            </IonCol>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                            </>
-                            : ''
-                        }
+                                                        </IonCol>
+                                                    </IonRow>
+                                                </IonCol>
+                                            </IonRow>
+                                        </></div>
+                                )
+                            })
 
-                        {/* Business Programme List */}
-                        {match.params.discipline === 'business' ?
-                            <>
-                                <IonRow className="studySIMProgListRow" class="ion-align-items-center">
-                                    <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                        <img src={Grenoble} className="studyProgUniImg"></img>
-                                    </IonCol>
-
-                                    <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
-                                        {/* Programme Title */}
-                                        <IonRow className="progCourseRow">
-                                            <IonRouterLink className="progCourseTitleLink" href="/u/study@SIMMain/business/study@SIMProgInfo">
-                                                <IonTitle className="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
-                                                </IonTitle>
-                                            </IonRouterLink>
-                                        </IonRow>
-
-                                        {/* Awarding Uni */}
-                                        <IonRow className="progCourseRow">
-                                            <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniLabel">
-                                                    <div className="ion-text-wrap">Awarded by:</div>
-                                                </IonLabel>
-                                            </IonCol>
-
-                                            <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniName">
-                                                    <div className="ion-text-wrap">Grenoble Ecole de Management</div>
-                                                </IonLabel>
-                                            </IonCol>
-                                        </IonRow>
-
-                                        <IonRow className="progCompareBtnRow">
-                                            <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                                {compareProg ?
-                                                    <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
-                                                    <FontAwesomeIcon style={{ paddingLeft: "3%" }} icon={faCheck} />
-                                                    </IonButton>
-                                                    :
-                                                    (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
-                                                }
-
-                                            </IonCol>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                            </>
-                            : ''
-                        }
-
-                        {/* IT & Computer Science Programme List */}
-                        {match.params.discipline === 'itComputerScience' ?
-                            <>
-                                <IonRow className="studySIMProgListRow" class="ion-align-items-center">
-                                    <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                        <img src={Grenoble} className="studyProgUniImg"></img>
-                                    </IonCol>
-
-                                    <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
-                                        {/* Programme Title */}
-                                        <IonRow className="progCourseRow">
-                                            <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/itComputerScience/study@SIMProgInfo">
-                                                <IonTitle className="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
-                                                </IonTitle>
-                                            </IonRouterLink>
-                                        </IonRow>
-
-                                        {/* Awarding Uni */}
-                                        <IonRow className="progCourseRow">
-                                            <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniLabel">
-                                                    <div className="ion-text-wrap">Awarded by:</div>
-                                                </IonLabel>
-                                            </IonCol>
-
-                                            <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniName">
-                                                    <div className="ion-text-wrap">Grenoble Ecole de Management</div>
-                                                </IonLabel>
-                                            </IonCol>
-                                        </IonRow>
-
-                                        <IonRow className="progCompareBtnRow">
-                                            <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                                {compareProg ?
-                                                    <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
-                                                    <FontAwesomeIcon style={{ paddingLeft: "3%" }} icon={faCheck} />
-                                                    </IonButton>
-                                                    :
-                                                    (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
-                                                }
-
-                                            </IonCol>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                            </>
-                            : ''
-                        }
-
-                        {/* Nursing Programme List */}
-                        {match.params.discipline === 'nursing' ?
-                            <>
-                                <IonRow className="studySIMProgListRow" class="ion-align-items-center">
-                                    <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                        <img src={Grenoble} className="studyProgUniImg"></img>
-                                    </IonCol>
-
-                                    <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
-                                        {/* Programme Title */}
-                                        <IonRow className="progCourseRow">
-                                            <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/nursing/study@SIMProgInfo">
-                                                <IonTitle className="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
-                                                </IonTitle>
-                                            </IonRouterLink>
-                                        </IonRow>
-
-                                        {/* Awarding Uni */}
-                                        <IonRow className="progCourseRow">
-                                            <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniLabel">
-                                                    <div className="ion-text-wrap">Awarded by:</div>
-                                                </IonLabel>
-                                            </IonCol>
-
-                                            <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniName">
-                                                    <div className="ion-text-wrap">Grenoble Ecole de Management</div>
-                                                </IonLabel>
-                                            </IonCol>
-                                        </IonRow>
-
-                                        <IonRow className="progCompareBtnRow">
-                                            <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                                {compareProg ?
-                                                    <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
-                                                    <FontAwesomeIcon style={{ paddingLeft: "3%" }} icon={faCheck} />
-                                                    </IonButton>
-                                                    :
-                                                    (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
-                                                }
-
-                                            </IonCol>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                            </>
-                            : ''
-                        }
-
-                        {/* Speciality Programme List */}
-                        {match.params.discipline === 'speciality' ?
-                            <>
-                                <IonRow className="studySIMProgListRow" class="ion-align-items-center">
-                                    <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                        <img src={Grenoble} className="studyProgUniImg"></img>
-                                    </IonCol>
-
-                                    <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
-                                        {/* Programme Title */}
-                                        <IonRow className="progCourseRow">
-                                            <IonRouterLink id="progCourseTitleLink" href="/u/study@SIMMain/speciality/study@SIMProgInfo">
-                                                <IonTitle className="progCourseTitle">
-                                                    <div className="ion-text-wrap">MSc Management in International Business</div>
-                                                </IonTitle>
-                                            </IonRouterLink>
-                                        </IonRow>
-
-                                        {/* Awarding Uni */}
-                                        <IonRow className="progCourseRow">
-                                            <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniLabel">
-                                                    <div className="ion-text-wrap">Awarded by:</div>
-                                                </IonLabel>
-                                            </IonCol>
-
-                                            <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseAwardingUniCol">
-                                                <IonLabel className="progCourseAwardingUniName">
-                                                    <div className="ion-text-wrap">Grenoble Ecole de Management</div>
-                                                </IonLabel>
-                                            </IonCol>
-                                        </IonRow>
-
-                                        <IonRow className="progCompareBtnRow">
-                                            <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                                {compareProg ?
-                                                    <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={compareProgramme}>Compared
-                                                    <FontAwesomeIcon style={{ paddingLeft: "3%" }} icon={faCheck} />
-                                                    </IonButton>
-                                                    :
-                                                    (<IonButton className="progCompareBtn" size="small" type="submit" onClick={compareProgramme}>Compare</IonButton>)
-                                                }
-
-                                            </IonCol>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                            </>
                             : ''
                         }
 
@@ -447,35 +262,8 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         event={showCompareProgPopover.event}
                         onDidDismiss={e => setShowCompareProgPopover({ open: false, event: undefined })}
                     >
-                        {match.params.discipline === "artSocialSciences" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "business" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "business"} href={"/u/study@SIMMain/business/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "itComputerScience" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "nursing" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing/courseComparator"} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "speciality" ?
-                            <CompareProgPopoverContent removeProg={() => (console.log('Add removeProg function here'))} removeAllProg={() => (console.log('Add removeAllProg function here'))} viewResults={() => (console.log('Add viewResults function here'))}
-                                params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality/courseComparator"} />
-                            : ''
-                        }
+                        <CompareProgPopoverContent compareProgList={compareProgList} removeProg={removeProg} removeAllProg={removeAllProg} viewResults={() => (console.log('Add viewResults function here'))}
+                            href={`/u/study@SIMMain/${match.params.discipline}/${match.params.category}/courseComparator`} />
 
                     </IonPopover>
 

@@ -23,29 +23,6 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
     {/*Programme Talk selected */}
     const [programmeTalk,setProgrammeTalk] = useState([]);
 
-    const fetchData = async () =>{
-        const talkRef = db.collection('ProgrammeTalks').doc(match.params.id);
-        const doc: any =  (await talkRef.get()).data();
-        setProgrammeTalk(doc);
-    };
-
-    useEffect(() => {
-        fetchData();
-        db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
-            const registered = snapshot.data().registeredProgrammes;
-            
-            if (registered != null) {
-                if (registered.length > 0) {
-
-                    registered.forEach((item: any) => {
-                        if (item === match.params.id)
-                            setButtonDisabled(true);
-                    });
-                }
-            }
-        });
-    }, []);
-
     const addToSchedule = async (programme: any) => {
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
@@ -146,6 +123,29 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
             return console.log(e);
         }
     };
+
+    const fetchData = async () =>{
+        const talkRef = db.collection('ProgrammeTalks').doc(match.params.id);
+        const doc: any =  (await talkRef.get()).data();
+        setProgrammeTalk(doc);
+    };
+
+    useEffect(() => {
+        fetchData();
+        db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+            const registered = snapshot.data().registeredProgrammes;
+            
+            if (registered != null) {
+                if (registered.length > 0) {
+
+                    registered.forEach((item: any) => {
+                        if (item === match.params.id)
+                            setButtonDisabled(true);
+                    });
+                }
+            }
+        });
+    }, []);
 
     return (
         <React.Fragment>

@@ -117,9 +117,7 @@ const MyScheduleContent: React.FC<{
                                                 </IonRow>
                                             )
                                         } else {
-                                            return (
-                                                <IonRow key={index}></IonRow>
-                                            );
+                                            return null;
                                         }
                                     }
                                 })}
@@ -258,9 +256,7 @@ const MyScheduleContent: React.FC<{
                                                 </IonRow>
                                             )
                                         } else {
-                                            return (
-                                                <IonRow key={index}></IonRow>
-                                            );
+                                            return null
                                         }
                                     }
                                 })}

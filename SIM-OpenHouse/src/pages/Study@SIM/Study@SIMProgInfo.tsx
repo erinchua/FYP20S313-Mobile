@@ -1,6 +1,7 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonPage, IonRow, IonTitle } from '@ionic/react';
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { db } from '../../firebase'
 
 import '../../css/Global.css';
 import '../../css/Study@SIMProgInfo.css';
@@ -8,28 +9,129 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { addCircle, removeCircle } from 'ionicons/icons';
 
-import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
-import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
-import RMIT from '../../img/study@SIM/RMITUniversity.png';
-import SIMGE from '../../img/study@SIM/SimGE.png';
-import Buffalo from '../../img/study@SIM/UniversityAtBuffalo.png';
-import Birmingham from '../../img/study@SIM/UniversityOfBirmingham.png';
-import London from '../../img/study@SIM/UniversityOfLondon.png';
-import Manchester from '../../img/study@SIM/UniversityOfManchester.png';
-import Stirling from '../../img/study@SIM/UniversityOfStirling.png';
-import Sydney from '../../img/study@SIM/UniversityOfSydney.png';
-import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
-import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
 
 import TopNav from '../../components/TopNav';
 
 interface StudySIMProgInfo_Props extends RouteComponentProps<{
     discipline: string;
+    category: string
     id: string;
 }> { }
+interface ModeOfStudy {
+    partTime: boolean,
+    fullTime: boolean
+}
+interface EntryQualification {
+    aLevel: boolean,
+    oLevel: boolean,
+    degree: boolean,
+    diploma: boolean
+}
+interface ApplicationPeriod {
+    intake: string,
+    period: string
+}
+interface ProgrammeStructure {
+    coursework: boolean,
+    examination: boolean
+}
+interface OverseaOpportunity {
+    exchange: boolean,
+    transfer: boolean
+}
+interface IntakeMonths {
+    partTime: string,
+    fullTime: string
+}
+interface Duration {
+    partTime: string,
+    fullTime: string
+}
+export interface Programme {
+    id: string,
+    programmeTitle: string,
+    modeOfStudy: {
+        [key: string]: ModeOfStudy
+    },
+    academicLevel: string,
+    discipline: string[],
+    subDiscipline: string[],
+    entryQualifications: {
+        [key: string]: EntryQualification
+    },
+    awardedBy: string,
+    programOverview: string[],
+    applicationPeriod: {
+        [key: string]: ApplicationPeriod
+    },
+    programmeStructure: {
+        [key: string]: ProgrammeStructure
+    },
+    overseaOpportunity: {
+        [key: string]: OverseaOpportunity
+    },
+    intakeMonths: {
+        [key: string]: IntakeMonths
+    },
+    duration: {
+        [key: string]: Duration
+    },
+    uniLogo: string
+}
 
 const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
-    
+    { console.log("ProgInfo has entered!") }
+    { console.log(match) }
+
+    const discipline = match.params.discipline
+    const category = match.params.category
+    const id = match.params.id
+    /*Programme Data*/
+    const [programme, setProgrammes] = useState<Programme>({
+        id: "",
+        programmeTitle: "",
+        modeOfStudy: {},
+        academicLevel: "",
+        discipline: [
+            ""],
+        subDiscipline: [
+            ""
+        ],
+        entryQualifications: {},
+        awardedBy: "",
+        programOverview: [],
+        applicationPeriod: {},
+        programmeStructure: {},
+        overseaOpportunity: {},
+        intakeMonths: {
+            intakeMonths: {
+                fullTime: "", partTime: ""
+            }
+        },
+        duration:
+        {
+            duration: { fullTime: '', partTime: '' }
+        },
+        uniLogo: ''
+    }
+
+    )
+    const { programOverview = [], applicationPeriod = [], programmeStructure: { examination = {}, coursework = {} } = {},
+        overseaOpportunity: { exchange = {}, transfer = {} } = {}, intakeMonths: { partTime: partTimeIntake = '', fullTime: fullTimeIntake = '' } = {},
+        duration: { partTime: partTimeDuration = '', fullTime: fullTimeDuration = '' } = {}, modeOfStudy: { partTime: partTimeMode = {}, fullTime: fullTimeMode = {} } = {} } = programme
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const programmeRef = db.collection('TestProgrammes').doc(match.params.id);
+            const doc: any = (await programmeRef.get()).data();
+            setProgrammes(doc);
+            console.log("i am doc" + JSON.stringify(doc))
+        };
+        fetchData()
+
+    }, [])
+
+
     /* Programme Overview Toggle */
     const info1 = useRef<HTMLIonRowElement>(null);
     const showIcon1 = useRef<HTMLIonIconElement>(null);
@@ -118,279 +220,281 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
     return (
         <IonPage>
             <IonHeader>
-                {match.params.discipline === 'artSocialSciences' ?
-                    <TopNav title="Programme Info" route='/u/study@SIMMain/artSocialSciences' backarrow={ true } hamburger = { true }/>
-                    :''
-                }
+                <TopNav title="Programme Info" route={`/u/study@SIMMain/${discipline}/${category}`} backarrow={true} hamburger={true} />
 
-                {match.params.discipline === 'business' ?
-                    <TopNav title="Programme Info" route='/u/study@SIMMain/business' backarrow={ true } hamburger = { true }/>
-                    :''
-                }
-
-                {match.params.discipline === 'itComputerScience' ?
-                    <TopNav title="Programme Info" route='/u/study@SIMMain/itComputerScience' backarrow={ true } hamburger = { true }/>
-                    :''
-                }
-
-                {match.params.discipline === 'nursing' ?
-                    <TopNav title="Programme Info" route='/u/study@SIMMain/nursing' backarrow={ true } hamburger = { true }/>
-                    :''
-                }
-
-                {match.params.discipline === 'speciality' ?
-                    <TopNav title="Programme Info" route='/u/study@SIMMain/speciality' backarrow={ true } hamburger = { true }/>                                        
-                    : ''
-                }
             </IonHeader>
 
             <IonContent>
-            {match.params.id === 'study@SIMProgInfo' ?
-                <IonGrid id="studySIMProgInfoGrid">
-                    <IonRow className="studySIMProgInfoRow" class="ion-align-items-center">
-                        <IonCol size="3" sizeSm="3" class="ion-text-center">
-                            <img src={Grenoble} className="studyProgInfoUniImg"></img>
-                        </IonCol>
-
-                        <IonCol size="7" sizeSm="7" className="studySIMProgInfoHeaderCol" class="ion-text-left">
-                            {/* Programme Title */}
-                            <IonRow className="progCourseInfoRow">
-                                <IonTitle className="progCourseInfoTitle">
-                                    <div className="ion-text-wrap">MSc Management in International Business</div>
-                                </IonTitle>
-                            </IonRow>
-
-                            {/* Awarding Uni */}
-                            <IonRow className="progCourseInfoRow">
-                                <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseInfoAwardingUniCol">
-                                    <IonLabel className="progCourseInfoAwardingUniLabel">
-                                        <div className="ion-text-wrap">Awarded by:</div>
-                                    </IonLabel>
+                {programme ?
+                    <div>
+                        <IonGrid id="studySIMProgInfoGrid">
+                            <IonRow className="studySIMProgInfoRow" class="ion-align-items-center">
+                                <IonCol size="3" sizeSm="3" class="ion-text-center">
+                                    <img src={programme.uniLogo} className="studyProgInfoUniImg"></img>
                                 </IonCol>
 
-                                <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseInfoAwardingUniCol">
-                                    <IonLabel className="progCourseInfoAwardingUniName">
-                                        <div className="ion-text-wrap">Grenoble Ecole de Management</div>
-                                    </IonLabel>
-                                </IonCol>
-                            </IonRow>
-                        </IonCol>
+                                <IonCol size="7" sizeSm="7" className="studySIMProgInfoHeaderCol" class="ion-text-left">
+                                    {/* Programme Title */}
+                                    <IonRow className="progCourseInfoRow">
+                                        <IonTitle className="progCourseInfoTitle">
+                                            <div className="ion-text-wrap">{programme.programmeTitle}</div>
+                                        </IonTitle>
+                                    </IonRow>
 
-                        {/* Download Btn */}
-                        <IonCol size="2" sizeSm="2" class="ion-text-center">
-                            <IonButton type="submit" fill="clear" className="dlProgInfoBtn">
-                                <FontAwesomeIcon size="lg" icon={faDownload} />
-                            </IonButton>
-                        </IonCol>
-                    </IonRow>
+                                    {/* Awarding Uni */}
+                                    <IonRow className="progCourseInfoRow">
+                                        <IonCol size="4" sizeSm="4" class="ion-text-left" className="progCourseInfoAwardingUniCol">
+                                            <IonLabel className="progCourseInfoAwardingUniLabel">
+                                                <div className="ion-text-wrap">Awarded by:</div>
+                                            </IonLabel>
+                                        </IonCol>
 
-                    {/* Programme Info Accordion */}
-                    {/* Programme Overview */}
-                    <IonRow className="progCourseInfoHeaderRow">
-                        <IonCol className="progCourseInfoHeaderCol">
-                            <IonRow className="progCourseInfoHeaderInnerRow">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                    <IonTitle className="progCourseInfoHeader">
-                                        <div className="ion-text-wrap">
-                                            Programme Overview
-                                        </div>
-                                    </IonTitle>
+                                        <IonCol size="8" sizeSm="8" class="ion-text-left" className="progCourseInfoAwardingUniCol">
+                                            <IonLabel className="progCourseInfoAwardingUniName">
+                                                <div className="ion-text-wrap">{programme.awardedBy}</div>
+                                            </IonLabel>
+                                        </IonCol>
+                                    </IonRow>
                                 </IonCol>
 
-                                <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
-                                    <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol1} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showIcon1} icon={addCircle} />
+                                {/* Download Btn */}
+                                <IonCol size="2" sizeSm="2" class="ion-text-center">
+                                    <IonButton type="submit" fill="clear" className="dlProgInfoBtn">
+                                        <FontAwesomeIcon size="lg" icon={faDownload} />
                                     </IonButton>
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow>
-                                <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info1} hidden={true}>
-                                    <div className="ion-text-wrap">
-                                        <p>Programme Overview Answer</p>
-                                    </div>
-                                </IonCol>
-                            </IonRow>
-                        </IonCol>
-                    </IonRow>
-
-                    {/* Application Period */}
-                    <IonRow className="progCourseInfoHeaderRow">
-                        <IonCol className="progCourseInfoHeaderCol">
-                            <IonRow className="progCourseInfoHeaderInnerRow">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                    <IonTitle className="progCourseInfoHeader">
-                                        <div className="ion-text-wrap">
-                                            Application Period
+                            {/* Programme Info Accordion */}
+                            {/* Programme Overview */}
+                            <IonRow className="progCourseInfoHeaderRow">
+                                <IonCol className="progCourseInfoHeaderCol">
+                                    <IonRow className="progCourseInfoHeaderInnerRow">
+                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                            <IonTitle className="progCourseInfoHeader">
+                                                <div className="ion-text-wrap">
+                                                    Programme Overview
                                         </div>
-                                    </IonTitle>
-                                </IonCol>
+                                            </IonTitle>
+                                        </IonCol>
 
-                                <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
-                                    <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol2} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showIcon2} icon={addCircle} />
-                                    </IonButton>
+                                        <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
+                                            <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol1} fill="clear" size="default">
+                                                <IonIcon slot="icon-only" ref={showIcon1} icon={addCircle} />
+                                            </IonButton>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    <IonRow>
+                                        <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info1} hidden={true}>
+                                            <div className="ion-text-wrap">
+                                                {programOverview ? programOverview.map((overview: string, index) => {
+                                                    return (<div key={overview + index}>
+                                                        <li>{overview}</li>
+                                                    </div>)
+                                                })
+                                                    : ''}
+
+                                            </div>
+                                        </IonCol>
+                                    </IonRow>
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow>
-                                <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info2} hidden={true}>
-                                    <div className="ion-text-wrap">
-                                        <p>Application Period Answer</p>
-                                    </div>
-                                </IonCol>
-                            </IonRow>
-                        </IonCol>
-                    </IonRow>
-
-                    {/* Programme Structure */}
-                    <IonRow className="progCourseInfoHeaderRow">
-                        <IonCol className="progCourseInfoHeaderCol">
-                            <IonRow className="progCourseInfoHeaderInnerRow">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                    <IonTitle className="progCourseInfoHeader">
-                                        <div className="ion-text-wrap">
-                                            Programme Structure
+                            {/* Application Period */}
+                            <IonRow className="progCourseInfoHeaderRow">
+                                <IonCol className="progCourseInfoHeaderCol">
+                                    <IonRow className="progCourseInfoHeaderInnerRow">
+                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                            <IonTitle className="progCourseInfoHeader">
+                                                <div className="ion-text-wrap">
+                                                    Application Period
                                         </div>
-                                    </IonTitle>
-                                </IonCol>
+                                            </IonTitle>
+                                        </IonCol>
 
-                                <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
-                                    <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol3} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showIcon3} icon={addCircle} />
-                                    </IonButton>
+                                        <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
+                                            <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol2} fill="clear" size="default">
+                                                <IonIcon slot="icon-only" ref={showIcon2} icon={addCircle} />
+                                            </IonButton>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    <IonRow>
+                                        <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info2} hidden={true}>
+                                            <div className="ion-text-wrap">
+
+                                                {Array.isArray(applicationPeriod) ? applicationPeriod.map((overview: any, index: any) => {
+                                                    return (<div key={overview + index}>
+                                                        <p>{overview.intake + ': ' + overview.period}</p>
+                                                    </div>)
+                                                })
+
+                                                    : ''}
+                                            </div>
+                                        </IonCol>
+
+                                    </IonRow>
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow>
-                                <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info3} hidden={true}>
-                                    <div className="ion-text-wrap">
-                                        <p>Programme Structure Answer</p>
-                                    </div>
-                                </IonCol>
-                            </IonRow>
-                        </IonCol>
-                    </IonRow>
-
-                    {/* Overseas Opportunity */}
-                    <IonRow className="progCourseInfoHeaderRow">
-                        <IonCol className="progCourseInfoHeaderCol">
-                            <IonRow className="progCourseInfoHeaderInnerRow">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                    <IonTitle className="progCourseInfoHeader">
-                                        <div className="ion-text-wrap">
-                                            Overseas Opportunity
+                            {/* Programme Structure */}
+                            <IonRow className="progCourseInfoHeaderRow">
+                                <IonCol className="progCourseInfoHeaderCol">
+                                    <IonRow className="progCourseInfoHeaderInnerRow">
+                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                            <IonTitle className="progCourseInfoHeader">
+                                                <div className="ion-text-wrap">
+                                                    Programme Structure
                                         </div>
-                                    </IonTitle>
-                                </IonCol>
+                                            </IonTitle>
+                                        </IonCol>
 
-                                <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
-                                    <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol4} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showIcon4} icon={addCircle} />
-                                    </IonButton>
+                                        <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
+                                            <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol3} fill="clear" size="default">
+                                                <IonIcon slot="icon-only" ref={showIcon3} icon={addCircle} />
+                                            </IonButton>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    <IonRow>
+                                        <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info3} hidden={true}>
+                                            <div className="ion-text-wrap">
+                                                {typeof coursework !== 'undefined' ? <p>Coursework: {coursework ? "True" : "False"}</p> : ''}
+                                                {typeof examination !== 'undefined' ? <p>Examination: {examination ? "True" : "False"}</p> : ''}
+                                            </div>
+                                        </IonCol>
+                                    </IonRow>
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow>
-                                <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info4} hidden={true}>
-                                    <div className="ion-text-wrap">
-                                        <p>Overseas Opportunity Answer</p>
-                                    </div>
-                                </IonCol>
-                            </IonRow>
-                        </IonCol>
-                    </IonRow>
-
-                    {/* Intake Months */}
-                    <IonRow className="progCourseInfoHeaderRow">
-                        <IonCol className="progCourseInfoHeaderCol">
-                            <IonRow className="progCourseInfoHeaderInnerRow">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                    <IonTitle className="progCourseInfoHeader">
-                                        <div className="ion-text-wrap">
-                                            Intake Month(s)
+                            {/* Overseas Opportunity */}
+                            <IonRow className="progCourseInfoHeaderRow">
+                                <IonCol className="progCourseInfoHeaderCol">
+                                    <IonRow className="progCourseInfoHeaderInnerRow">
+                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                            <IonTitle className="progCourseInfoHeader">
+                                                <div className="ion-text-wrap">
+                                                    Overseas Opportunity
                                         </div>
-                                    </IonTitle>
-                                </IonCol>
+                                            </IonTitle>
+                                        </IonCol>
 
-                                <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
-                                    <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol5} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showIcon5} icon={addCircle} />
-                                    </IonButton>
+                                        <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
+                                            <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol4} fill="clear" size="default">
+                                                <IonIcon slot="icon-only" ref={showIcon4} icon={addCircle} />
+                                            </IonButton>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    <IonRow>
+                                        <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info4} hidden={true}>
+                                            <div className="ion-text-wrap">
+                                                {typeof exchange !== 'undefined' ? <p>Exchange: {exchange ? "True" : "False"}</p> : 'missing exchange'}
+                                                {typeof transfer !== 'undefined' ? <p>Transfer: {transfer ? "True" : "False"}</p> : ''}
+                                            </div>
+                                        </IonCol>
+                                    </IonRow>
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow>
-                                <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info5} hidden={true}>
-                                    <div className="ion-text-wrap">
-                                        <p>Intake Month(s) Answer</p>
-                                    </div>
-                                </IonCol>
-                            </IonRow>
-                        </IonCol>
-                    </IonRow>
-
-                    {/* Duration */}
-                    <IonRow className="progCourseInfoHeaderRow">
-                        <IonCol className="progCourseInfoHeaderCol">
-                            <IonRow className="progCourseInfoHeaderInnerRow">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                    <IonTitle className="progCourseInfoHeader">
-                                        <div className="ion-text-wrap">
-                                            Duration
+                            {/* Intake Months */}
+                            <IonRow className="progCourseInfoHeaderRow">
+                                <IonCol className="progCourseInfoHeaderCol">
+                                    <IonRow className="progCourseInfoHeaderInnerRow">
+                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                            <IonTitle className="progCourseInfoHeader">
+                                                <div className="ion-text-wrap">
+                                                    Intake Month(s)
                                         </div>
-                                    </IonTitle>
-                                </IonCol>
+                                            </IonTitle>
+                                        </IonCol>
 
-                                <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
-                                    <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol6} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showIcon6} icon={addCircle} />
-                                    </IonButton>
+                                        <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
+                                            <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol5} fill="clear" size="default">
+                                                <IonIcon slot="icon-only" ref={showIcon5} icon={addCircle} />
+                                            </IonButton>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    <IonRow>
+                                        <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info5} hidden={true}>
+                                            <div className="ion-text-wrap">
+                                                {typeof partTimeIntake !== 'undefined' && partTimeIntake !== '' ? <p>Part-Time: {partTimeIntake}</p> : <p>Part Time: NIL</p>}
+                                                {typeof fullTimeIntake !== 'undefined' && fullTimeIntake !== '' ? <p>Full-Time: {fullTimeIntake}</p> : <p>Full Time: NIL</p>}
+                                            </div>
+                                        </IonCol>
+                                    </IonRow>
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow>
-                                <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info6} hidden={true}>
-                                    <div className="ion-text-wrap">
-                                        <p>Duration Answer</p>
-                                    </div>
-                                </IonCol>
-                            </IonRow>
-                        </IonCol>
-                    </IonRow>
-
-                    {/* Mode of Study */}
-                    <IonRow className="progCourseInfoHeaderRow">
-                        <IonCol className="progCourseInfoHeaderCol">
-                            <IonRow className="progCourseInfoHeaderInnerRow">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                    <IonTitle className="progCourseInfoHeader">
-                                        <div className="ion-text-wrap">
-                                            Mode of Study
+                            {/* Duration */}
+                            <IonRow className="progCourseInfoHeaderRow">
+                                <IonCol className="progCourseInfoHeaderCol">
+                                    <IonRow className="progCourseInfoHeaderInnerRow">
+                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                            <IonTitle className="progCourseInfoHeader">
+                                                <div className="ion-text-wrap">
+                                                    Duration
                                         </div>
-                                    </IonTitle>
-                                </IonCol>
+                                            </IonTitle>
+                                        </IonCol>
 
-                                <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
-                                    <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol7} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showIcon7} icon={addCircle} />
-                                    </IonButton>
+                                        <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
+                                            <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol6} fill="clear" size="default">
+                                                <IonIcon slot="icon-only" ref={showIcon6} icon={addCircle} />
+                                            </IonButton>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    <IonRow>
+                                        <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info6} hidden={true}>
+                                            <div className="ion-text-wrap">
+                                                {typeof partTimeDuration !== 'undefined' && partTimeDuration !== '' ? <p>Part-Time: {partTimeDuration}</p> : <p>Part Time: NIL</p>}
+                                                {typeof fullTimeDuration !== 'undefined' && fullTimeDuration !== '' ? <p>Full-Time: {fullTimeDuration}</p> : <p>Full Time: NIL</p>}
+                                            </div>
+                                        </IonCol>
+                                    </IonRow>
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow>
-                                <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info7} hidden={true}>
-                                    <div className="ion-text-wrap">
-                                        <p>Mode of Study Answer</p>
-                                    </div>
+                            {/* Mode of Study */}
+                            <IonRow className="progCourseInfoHeaderRow">
+                                <IonCol className="progCourseInfoHeaderCol">
+                                    <IonRow className="progCourseInfoHeaderInnerRow">
+                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                            <IonTitle className="progCourseInfoHeader">
+                                                <div className="ion-text-wrap">
+                                                    Mode of Study
+                                        </div>
+                                            </IonTitle>
+                                        </IonCol>
+
+                                        <IonCol size="2" sizeSm="2" className="toggleProgCourseInfoBtnCol">
+                                            <IonButton className="toggleProgCourseInfoBtn" onClick={displayInfoCol7} fill="clear" size="default">
+                                                <IonIcon slot="icon-only" ref={showIcon7} icon={addCircle} />
+                                            </IonButton>
+                                        </IonCol>
+                                    </IonRow>
+
+                                    <IonRow>
+                                        <IonCol sizeSm="12" className="progCourseInfoDetails" ref={info7} hidden={true}>
+                                            <div className="ion-text-wrap">
+                                                {typeof fullTimeMode !== 'undefined' ? <p>Full Time: {fullTimeMode ? 'True' : 'False'}</p> : ''}
+                                                {typeof partTimeMode !== 'undefined' ? <p>Part Time: {partTimeMode ? 'True' : 'False'}</p> : ''}
+
+                                            </div>
+                                        </IonCol>
+                                    </IonRow>
                                 </IonCol>
                             </IonRow>
-                        </IonCol>
-                    </IonRow>
 
-                </IonGrid>
-            : ''
-            }
+                        </IonGrid>
+                    </div>
+
+
+                    : ''
+                }
 
             </IonContent>
         </IonPage>

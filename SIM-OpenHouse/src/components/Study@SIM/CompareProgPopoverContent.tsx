@@ -1,75 +1,84 @@
 import { IonButton, IonCol, IonFooter, IonGrid, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
-
+import React, { SetStateAction } from 'react';
+import { Link } from 'react-router-dom'
 import '../../css/Global.css';
 import '../../css/CompareProgPopoverContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
 
+import { Programme } from '../../pages/Study@SIM/Study@SIMProgInfo'
+
 const CompareProgPopoverContent: React.FC<{
-    removeProg: any;
-    removeAllProg: any;
-    viewResults: any;
-    params: any;
-    href: any;
+    compareProgList: Programme[]
+    removeProg: (programme: Programme) => void
+    removeAllProg: (programmes: Programme[]) => void
+    viewResults: (programmes: Programme[]) => void
+    href: string;
 }> = props => {
 
     return (
         <>
             <IonGrid id="compareProgPopoverGrid">
-                {/* Added Programme In Popover*/}
-                <IonRow className="compareProgPopoverMainRow">
-                    <IonItemSliding>
-                        <IonItem className="compareProgPopoverItem" lines="none">
-                            <IonRow class="ion-align-items-center">
-                                <IonCol size="4" sizeSm="4" class="ion-text-center">
-                                    <img src={Grenoble} className="studyProgUniImg"></img>
-                                </IonCol>
+                {typeof props.compareProgList !== 'undefined' ? props.compareProgList.map((programme) => {
+                    return (<div key={programme.id}>
 
-                                <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
-                                    {/* Programme Title */}
-                                    <IonRow className="progCourseRow">
-                                        <IonTitle className="progCourseTitle">
-                                            <div className="ion-text-wrap">MSc Management in International Business</div>
-                                        </IonTitle>
+                        {/* Added Programme In Popover*/}
+                        <IonRow className="compareProgPopoverMainRow">
+                            <IonItemSliding>
+                                <IonItem className="compareProgPopoverItem" lines="none">
+                                    <IonRow class="ion-align-items-center">
+                                        <IonCol size="4" sizeSm="4" class="ion-text-center">
+                                            <img src={programme.uniLogo} alt={programme.programmeTitle} className="studyProgUniImg"></img>
+                                        </IonCol>
+
+                                        <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
+                                            {/* Programme Title */}
+                                            <IonRow className="progCourseRow">
+                                                <IonTitle className="progCourseTitle">
+                                                    <div className="ion-text-wrap">{programme.programmeTitle}</div>
+                                                </IonTitle>
+                                            </IonRow>
+                                        </IonCol>
                                     </IonRow>
-                                </IonCol>
-                            </IonRow>
-                        </IonItem>
+                                </IonItem>
 
-                        {/* Slider to remove programme */}
-                        <IonItemOptions side="end">
-                            <IonItemOption onClick={props.removeProg} className="compareProgPopoverSlider">
-                                <FontAwesomeIcon icon={faTimes} />
-                            </IonItemOption>
-                        </IonItemOptions>
-                    </IonItemSliding>
-                </IonRow>
+                                {/* Slider to remove programme */}
+                                <IonItemOptions side="end">
+                                    <IonItemOption onClick={e => props.removeProg(programme)} className="compareProgPopoverSlider">
+                                        <FontAwesomeIcon icon={faTimes} />
+                                    </IonItemOption>
+                                </IonItemOptions>
+                            </IonItemSliding>
+                        </IonRow>
+
+                    </div>)
+                }) : ''}
 
                 {/* Compare Programme Popover Btn Row */}
-                <IonRow id="compareProgPopoverBtnRow">              
+                <IonRow id="compareProgPopoverBtnRow">
                     <IonFooter className="ion-no-border">
                         <IonToolbar id="compareProgPopoverBtnToolbar" class="ion-align-items-center">
-                            <IonRow class="ion-align-items-center" style={{width: "100%"}}>
-                                <IonCol size="6" sizeSm="6" class="ion-text-center" style={{padding: "0"}}>
-                                    <IonButton id="removeAllProgBtn" fill="outline" onClick={props.removeAllProg}>CLEAR ALL</IonButton>
+                            <IonRow class="ion-align-items-center" style={{ width: "100%" }}>
+                                <IonCol size="6" sizeSm="6" class="ion-text-center" style={{ padding: "0" }}>
+                                    <IonButton id="removeAllProgBtn" onClick={e => props.removeAllProg(props.compareProgList)} fill="outline" >CLEAR ALL</IonButton>
                                 </IonCol>
 
-                                <IonCol size="6" sizeSm="6" class="ion-text-center" style={{padding: "0"}}>
-                                {props.params ?
-                                    <>
-                                    <IonButton id="viewResultsBtn" onClick={props.viewResults} href={props.href}>VIEW RESULTS</IonButton>
-                                    </>
-                                    :''
-                                }
-                                
+                                <IonCol size="6" sizeSm="6" class="ion-text-center" style={{ padding: "0" }}>
+                                    {props.href ?
+                                        <>
+                                            <Link to={{ pathname: `${props.href}`, state: props.compareProgList }}>
+                                                <IonButton id="viewResultsBtn" >VIEW RESULTS</IonButton>
+                                            </Link>
+                                        </>
+                                        : ''
+                                    }
+
                                 </IonCol>
                             </IonRow>
                         </IonToolbar>
                     </IonFooter>
-                </IonRow>  
-
+                </IonRow>
             </IonGrid>
         </>
     );

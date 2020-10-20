@@ -150,7 +150,7 @@ const VincentTest: React.FC = () => {
         <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='partTime' checked={checkedFilter.indexOf('partTime') === -1 ? false : true}></IonCheckbox>
         <br />
         {console.log("Before mapping programmes: " + filteredProgrammes)}
-        {Array.isArray(filteredProgrammes) && filteredProgrammes.length && filteredProgrammes.map(programme => {
+        {Array.isArray(filteredProgrammes) && filteredProgrammes.length && filteredProgrammes.map((programme: any) => {
           return (
 
             <div key={programme.id}>
