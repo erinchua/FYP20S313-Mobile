@@ -27,7 +27,7 @@ const VincentTest: React.FC = () => {
     }
 
     setCheckFilter(newCheckedFilter)
-    console.log('New filters are' + newCheckedFilter)
+    // console.log('New filters are' + newCheckedFilter)
     filterProgrammes(newCheckedFilter)
 
   }
@@ -58,6 +58,7 @@ const VincentTest: React.FC = () => {
   }
   useEffect(() => {
     const programmes: any = []
+    const dates: any = []
     const fetchData = async () => {
       db.collection("TestProgrammes")
         .get()
@@ -66,13 +67,35 @@ const VincentTest: React.FC = () => {
             const data = doc.data()
             programmes.push(data)
           });
-          console.log("First Useeffect programmes: " + programmes)
+          // console.log("First Useeffect programmes: " + programmes)
           setProgrammes(programmes)
           setFilteredProgrammes(programmes)
 
         });
     };
+
+    const fetchDate = async () => {
+      db.collection("Openhouse")
+        .get()
+        .then((snapshot: any) => {
+          snapshot.forEach((doc: any) => {
+            const data = doc.get("day");
+            if (!Array.isArray(data)) {
+              for (var i = 0; i < Object.keys(data).length; i++) {
+                const date = data[Object.keys(data)[i]].date;
+                console.log("i am date" + date)
+                dates.push(date)
+              }
+            }
+
+
+          })
+        })
+    }
     fetchData();
+    fetchDate();
+
+
   }, []);
 
   // useEffect(() => {
@@ -94,7 +117,7 @@ const VincentTest: React.FC = () => {
 
   return (
     <IonPage>
-      {      console.log("After rendering in filtered programmes are" + JSON.stringify(filteredProgrammes))}
+      {/* {      console.log("After rendering in filtered programmes are" + JSON.stringify(filteredProgrammes))} */}
       <IonHeader>
         <IonToolbar>
           <IonTitle>QRTest</IonTitle>
@@ -149,12 +172,12 @@ const VincentTest: React.FC = () => {
         <p>Part time</p>
         <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='partTime' checked={checkedFilter.indexOf('partTime') === -1 ? false : true}></IonCheckbox>
         <br />
-        {console.log("Before mapping programmes: " + filteredProgrammes)}
+        {/* {console.log("Before mapping programmes: " + filteredProgrammes)} */}
         {Array.isArray(filteredProgrammes) && filteredProgrammes.length && filteredProgrammes.map((programme: any) => {
           return (
 
             <div key={programme.id}>
-              {console.log("i am ID: " + programme.id)}
+              {/* {console.log("i am ID: " + programme.id)} */}
               <li>{programme.programmeTitle}</li>
               <li>{programme.awardedBy}</li>
               {/* <li>{programme.modeOfStudy.fullTime ? 'Full-Time' : ''}</li>
