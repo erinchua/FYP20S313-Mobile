@@ -191,7 +191,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
     });
 }); */}
 
-const all = [];
+/* const all = [];
 db.collection('Forum').get().then(users => {
 
     users.forEach(async user => {
@@ -216,8 +216,9 @@ db.collection('Forum').get().then(users => {
     });
 });
 setTimeout(() => {
+    const matchedPosts = []
     //console.log(all)
-    const keyword = "question";
+    const keyword = "comment";
     all.forEach(post => {
         //console.log(post.entry.indexOf(keyword))
         //console.log(post.hasOwnProperty('questionId'))
@@ -229,7 +230,14 @@ setTimeout(() => {
                     }
                 })
             }
-            console.log(post)
+            console.log(matchedPosts.filter(result => { return post.id === result.id }).length > 0)
+            if (!(matchedPosts.filter(result => { return post.id === result.id }).length > 0))
+                matchedPosts.push(post)
         }
     });
-}, 1000);
+    console.log(matchedPosts)
+}, 1000); */
+
+db.collection('Students').doc(userID).onSnapshot(student => {
+    console.log(student.data())
+})
