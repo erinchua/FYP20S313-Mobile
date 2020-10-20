@@ -103,7 +103,7 @@ const Forum: React.FC = () => {
 
                 return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
                     entries.docChanges().forEach(change => {
-                        questions.push({
+                        questions.unshift({
                             id: +change.doc.id,
                             entry: change.doc.data().entry,
                             dateTime: change.doc.data().dateTime,
@@ -193,7 +193,7 @@ const Forum: React.FC = () => {
                                                     <IonText className="forum-question-details">{post.commentCount}</IonText>
                                                 </IonCol>
                                                 <IonCol size="1" className="ion-align-self-end forum-col">
-                                                    <Forum_FlagModal disabled={false} postId={post.id} postType={"Question"} offender={post.uid} reportedBy={userID!} />
+                                                    <Forum_FlagModal disabled={false} postId={post.id} postType={"Question"} postContent={post.entry} offender={post.user} offenderId={post.uid} />
                                                 </IonCol>
                                             </IonRow>
                                         </IonGrid>

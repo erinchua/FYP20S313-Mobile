@@ -23,13 +23,15 @@ const GuidedTours: React.FC = () => {
     useEffect(() => {
         const dates: any = [];
 
-        db.collection("Openhouse").orderBy("id", "desc").limit(1)
+        db.collection("Openhouse")
             .get()
             .then((snapshot) => {
                 snapshot.forEach((doc) => {
                     const data = doc.get('day')
-                    if (Array.isArray(data))
-                        data.forEach((day: any) => { dates.push(day.date) })
+                    for (var i = 0; i < Object.keys(data).length; i++) {
+                        const date = data[Object.keys(data)[i]].date;
+                        dates.push(date)
+                    }
                 });
                 setOpenhouseDates(dates);
             })
@@ -63,8 +65,8 @@ const GuidedTours: React.FC = () => {
                         <IonCol id="guidedTours-ionRowCol">
                             <IonToolbar>
                                 <IonSegment scrollable value={dayNum} id="guidedTours-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
-                                    <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleDayOne}>Day 1: 21 Nov 2020</IonSegmentButton>
-                                    <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleDayTwo}>Day 2: 22 Nov 2020</IonSegmentButton>
+                                    <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleDayOne}>Day 1: {openhouseDates[0]}</IonSegmentButton>
+                                    <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleDayTwo}>Day 2: {openhouseDates[1]}</IonSegmentButton>
                                 </IonSegment>
                             </IonToolbar>
                         </IonCol>

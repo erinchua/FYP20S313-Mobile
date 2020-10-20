@@ -47,13 +47,15 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     useEffect(() => {
         const dates: any = [];
 
-        db.collection("Openhouse").orderBy("id", "desc").limit(1)
+        db.collection("Openhouse")
             .get()
             .then((snapshot) => {
                 snapshot.forEach((doc) => {
                     const data = doc.get('day')
-                    if (Array.isArray(data))
-                        data.forEach((day: any) => { dates.push(day.date) })
+                    for (var i = 0; i < Object.keys(data).length; i++) {
+                        const date = data[Object.keys(data)[i]].date;
+                        dates.push(date)
+                    }
                 });
                 setOpenhouseDates(dates);
             })
@@ -140,8 +142,8 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                                 <IonCol id="performancesContent-ionRowCol">
                                     <IonToolbar>
                                         <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="performancesContent-heading">Day 1: 21 Nov 2020</IonSegmentButton>
-                                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="performancesContent-heading">Day 2: 22 Nov 2020</IonSegmentButton>
+                                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="performancesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
+                                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="performancesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
                                         </IonSegment>
                                     </IonToolbar>
                                 </IonCol>

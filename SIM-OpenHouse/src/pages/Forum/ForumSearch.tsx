@@ -35,7 +35,8 @@ const ForumSearch: React.FC = () => {
                         }
                     });
                 }
-                matchedPosts.push(post)
+                if (!(matchedPosts.filter((result: any) => { return post.id === result.id }).length > 0))
+                    matchedPosts.push(post);
             }
         });
 
@@ -128,7 +129,7 @@ const ForumSearch: React.FC = () => {
                                             <IonText className="forum-question-details">{result.commentCount}</IonText>
                                         </IonCol>
                                         <IonCol size="1" className="ion-align-self-end forum-col">
-                                            <Forum_FlagModal disabled={false} postId={result.id} postType={"Question"} offender={result.uid} reportedBy={userID!} />
+                                            <Forum_FlagModal disabled={false} postId={result.id} postType={"Question"} postContent={result.entry} offender={result.user} offenderId={result.uid} />
                                         </IonCol>
                                     </IonRow>
                                 </IonGrid>
