@@ -12,7 +12,7 @@ import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
-import { forumPostsDesc } from '../../modules/compare';
+import { forumPostsAsc } from '../../modules/compare';
 
 interface RouteParams {
     id: string;
@@ -56,7 +56,7 @@ const ForumViewQuestion: React.FC = () => {
                 dateTime: time.toLocaleString().replace(/\//g, "-"),
                 deleted: false,
                 reported: false,
-                repliedTo: false
+                noOfReplies: 0
             });
 
             const increment = firebase.firestore.FieldValue.increment(1);
@@ -96,8 +96,9 @@ const ForumViewQuestion: React.FC = () => {
                 questionId: +id
             });
 
+            const increment = firebase.firestore.FieldValue.increment(1);
             await db.collection('Forum').doc(commenterId).collection('Comments').doc(commentId).update({
-                repliedTo: true,
+                noOfReplies: increment,
             });
         } catch (e) {
             return console.log(e);
@@ -130,14 +131,13 @@ const ForumViewQuestion: React.FC = () => {
             uRef.forEach(user => {
                 return db.collection('Forum').doc(user.id).collection('Comments').where("questionId", "==", +id).onSnapshot(entries => {
                     entries.docChanges().forEach(change => {
-                        comments.push({
+                        comments.unshift({
                             id: +change.doc.id,
                             entry: change.doc.data().entry,
                             dateTime: change.doc.data().dateTime,
                             user: change.doc.data().posterName,
                             uid: change.doc.data().posterId,
                             removed: change.doc.data().deleted,
-                            hasReply: change.doc.data().repliedTo || null,
                             commentId: change.doc.data().commentId || null
                         });
                     });
@@ -145,13 +145,11 @@ const ForumViewQuestion: React.FC = () => {
             });
 
             setTimeout(() => {
-                comments.sort(forumPostsDesc);
+                comments.sort(forumPostsAsc);
                 setComments(comments);
                 setLoading(false);
             }, 500);
         });
-
-        setLoading(false);
     }, []);
 
     //console.log(comments)
@@ -197,7 +195,7 @@ const ForumViewQuestion: React.FC = () => {
                                 <IonText className="forum-question-details">{question.commentCount}</IonText>
                             </IonCol>
                             <IonCol size="1" className="ion-align-self-end forum-col">
-                                <Forum_FlagModal disabled={question.removed === false ? false : true} postId={question.id} postType={"Question"} offender={question.askerId} reportedBy={userID!} />
+                                <Forum_FlagModal disabled={question.removed === false ? false : true} postId={question.id} postType={"Question"} postContent={question.title} offender={question.asker} offenderId={question.askerId} />
                             </IonCol>
                         </IonRow>
                     </IonGrid>
@@ -249,7 +247,7 @@ const ForumViewQuestion: React.FC = () => {
                                                     }
                                                 </IonCol>
                                                 <IonCol size="1" className="ion-align-self-end forum-col">
-                                                    <Forum_FlagModal disabled={post.removed === false ? false : true} postId={post.id} postType={"Comment"} offender={post.uid} reportedBy={userID!} />
+                                                    <Forum_FlagModal disabled={post.removed === false ? false : true} postId={post.id} postType={"Comment"} postContent={post.entry} offender={post.user} offenderId={post.uid} />
                                                 </IonCol>
                                             </IonRow>
                                         </IonGrid>
@@ -275,7 +273,7 @@ const ForumViewQuestion: React.FC = () => {
                                                                 <IonText id="comment-details">{reply.dateTime}</IonText>
                                                             </IonCol>
                                                             <IonCol size="1" className="ion-align-self-end forum-col">
-                                                                <Forum_FlagModal disabled={false} postId={reply.id} postType={"Reply"} offender={reply.uid} reportedBy={userID!} />
+                                                                <Forum_FlagModal disabled={false} postId={reply.id} postType={"Reply"} postContent={reply.entry} offender={reply.user} offenderId={reply.uid} />
                                                             </IonCol>
                                                         </IonRow>
                                                     </IonGrid>
