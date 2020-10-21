@@ -1,5 +1,5 @@
-import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonModal, IonPage, IonRow, IonSelect, IonSelectOption } from '@ionic/react';
-import React, { useRef, useState } from 'react';
+import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonLoading, IonModal, IonPage, IonRow, IonSelect, IonSelectOption } from '@ionic/react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard, faEnvelope, faMobileAlt, faBirthdayCake, faUserGraduate, faGlobe, faLock, faGift } from '@fortawesome/free-solid-svg-icons';
@@ -8,59 +8,46 @@ import { faEdit } from '@fortawesome/free-regular-svg-icons';
 import '../css/Global.css';
 import '../css/MyProfile.css';
 import TopNav from '../components/TopNav';
+import { db } from '../firebase';
+import { useAuth } from '../modules/auth';
 
 
 const MyProfile: React.FC = () => {
+    const { userID } = useAuth();
+    const { register, handleSubmit, errors, getValues, reset, watch } = useForm();
 
-    const { register, handleSubmit, errors, getValues, reset, watch, setValue } = useForm();
-
-    const [firstName, setFirstName] = useState<string>('');
-    const [lastName, setLastName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [contactNo, setContactNo] = useState<string>(''); 
-    const [dob, setDob] = useState();
-    const [highestQualification, setHighestQualification] = useState('');
-    const [nationality, setNationality] = useState();
-    const [pointsEarned, setPointsEarned] = useState();
-    const [password, setPassword] = useState();
-    const [readOnly, setReadOnly] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [student, setStudent] = useState<any>({});
+    const [password, setPassword] = useState("password");
     const [contactNoDisabled, setContactNoDisabled] = useState(true);
     const [highestQualDisabled, setHighestQualDisabled] = useState(true);
     const [contactNoReadOnly, setContactNoReadOnly] = useState(true);
 
-    const [profileNav, setProfileNav] = useState(true);
-    const [showEditProfileBtn, setShowEditProfileBtn] = useState(true);
-    const [showChangePassword, setShowChangePassword] = useState(true);
-
-    {/* Alert for successful and failure of updating profile */}
-    const [showErrorAlert, setShowErrorAlert] = useState(false);
-    const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+    const [profileUi, setProfileUi] = useState({ profileNav: true, editProfile: true, changePassword: true });
+    const [alert, setAlert] = useState({ success: false, error: false });
 
     {/* Edit Profile */}
-    const editProfile = () => {
+    const hideProfileUi = () => {
         setContactNoDisabled(false);
         setHighestQualDisabled(false);
         setContactNoReadOnly(false);
         
-        setProfileNav(false);
-        setShowEditProfileBtn(false);
-        setShowChangePassword(false);
+        setProfileUi({ profileNav: false, editProfile: false, changePassword: false });
     };
 
-    const onSubmitEditProfile = () => {
-        console.log('Edited');
-        const contactNo = getValues("contactNo");
-
-        console.log("Contact: " + contactNo);
-        console.log("Highest Qualification: " + highestQualification);
-        
-        if (contactNo != "" && contactNo.length == 8) {
-            setShowSuccessAlert(true);
+    const handleEditProfile = async (data: any) => {
+        try {
+            setLoading(true);
+            await db.collection('Students').doc(userID).update({
+                contactNo: data.contactNo,
+                highestQualification: data.highestQualification,
+            });
+            setAlert({ success: true, error: false });
+        } catch(e) {
+            return console.log(e);
+        } finally {
+            setLoading(false);
         }
-        else {
-            setShowErrorAlert(true);
-        }
-
     };
 
     {/* Change Password Modal & Alert */}
@@ -103,6 +90,36 @@ const MyProfile: React.FC = () => {
             confirmNewPassword: ""
         });
     }
+
+    useEffect(() => {
+        let studentInfo: any = {}
+
+        db.collection('Games').doc(userID).get().then(ref => {
+            if (ref.exists) {
+                studentInfo.points = ref.data()?.points;
+            }
+        });
+
+        return db.collection('Students').doc(userID).onSnapshot(student => {
+            if (student.exists) {
+                studentInfo.id = student.id;
+                studentInfo.firstName = student.data()?.firstName;
+                studentInfo.lastName = student.data()?.lastName;
+                studentInfo.dob = student.data()?.dob;
+                studentInfo.email = student.data()?.email;
+                studentInfo.contact = student.data()?.contactNo;
+                studentInfo.nationality = student.data()?.nationality;
+                studentInfo.highestQual = student.data()?.highestQualification;
+            }
+        
+            setTimeout(() => {
+                setStudent(studentInfo);
+                setLoading(false);
+            }, 500);
+        });
+    }, []);
+
+    //console.log(student)
     
     return(
         <React.Fragment>
@@ -189,21 +206,21 @@ const MyProfile: React.FC = () => {
 
             <IonPage>
                 <IonHeader>
-                    {profileNav ?
-                        <TopNav title="My Profile" route='/u/home' backarrow={ true } hamburger = { true }/>
+                    {profileUi.profileNav ?
+                        <TopNav title="My Profile" route='/u/home' backarrow={ true } hamburger = { true } />
                         : 
-                            <TopNav title="Edit My Profile" route='/u/home' backarrow={ false } hamburger = { true }/>
+                        <TopNav title="Edit My Profile" route='/u/home' backarrow={ false } hamburger = { true } />
                     }
                 </IonHeader>
 
                 <IonContent fullscreen={true}>
                     <IonGrid id="profileGrid">
-                        <form onSubmit={handleSubmit(onSubmitEditProfile)}>
+                        <form onSubmit={handleSubmit(handleEditProfile)}>
                             {/* Edit Profile Button */}
-                            {showEditProfileBtn ?
+                            {profileUi.editProfile ?
                                 <IonRow id="editProfileBtnRow" class="ion-align-items-right">
                                     <IonCol size="12" sizeSm="12" class="ion-text-right" id="editProfileBtnCol">
-                                        <IonButton id="editProfileBtn" onClick={editProfile}>EDIT PROFILE</IonButton>
+                                        <IonButton id="editProfileBtn" onClick={hideProfileUi}>EDIT PROFILE</IonButton>
                                     </IonCol>
                                 </IonRow>
                                 : null
@@ -223,11 +240,11 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="5" sizeSm="5" class="ion-text-left">
-                                    <IonInput value={firstName} name="firstName" readonly={readOnly} className="readOnlyIonInput">First Name</IonInput>
+                                    <IonInput value={student.firstName} name="firstName" readonly={true} disabled={profileUi.editProfile ? false : true} className="readOnlyIonInput"></IonInput>
                                 </IonCol>
 
                                 <IonCol size="5" sizeSm="5" class="ion-text-left">
-                                    <IonInput value={lastName} name="lastName" readonly={readOnly} className="readOnlyIonInput">Last Name</IonInput>
+                                    <IonInput value={student.lastName} name="lastName" readonly={true} disabled={profileUi.editProfile ? false : true} className="readOnlyIonInput"></IonInput>
                                 </IonCol>
                             </IonRow>
 
@@ -238,7 +255,7 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonInput value={email} name="email" readonly={readOnly} className="readOnlyIonInput">Email</IonInput>
+                                    <IonInput value={student.email} name="email" readonly={true} disabled={profileUi.editProfile ? false : true} className="readOnlyIonInput"></IonInput>
                                 </IonCol>
                             </IonRow>
 
@@ -249,7 +266,7 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonInput type="tel" name="contactNo" readonly={contactNoReadOnly} disabled={contactNoDisabled} className="readOnlyIonInput" id="contactNoField" minlength={8} maxlength={8} ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/, min: 8, max: 8 })}>{contactNo}</IonInput>
+                                <IonInput value={student.contact} type="tel" name="contactNo" readonly={profileUi.editProfile ? true : false} className="readOnlyIonInput" id="contactNoField" minlength={8} maxlength={8} ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/, min: 8, max: 8 })}></IonInput>
                                     {errors.contactNo && errors.contactNo.type === "required" && <p className="errorMsg">Contact number is required!</p>}
                                     {errors.contactNo && errors.contactNo.type === "minLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
                                     {errors.contactNo && errors.contactNo.type === "maxLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
@@ -264,7 +281,7 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonInput value={dob} name="dob" readonly={readOnly} className="readOnlyIonInput">DOB</IonInput>
+                                    <IonInput value={student.dob} name="dob" readonly={true} disabled={profileUi.editProfile ? false : true} className="readOnlyIonInput"></IonInput>
                                 </IonCol>
                             </IonRow>
 
@@ -275,12 +292,17 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonSelect value={highestQualification} id="highestQualSelect" className="readOnlyIonInput" name="highestQualification" disabled={highestQualDisabled} ref={register({ required: true })}>
-                                        <IonSelectOption value="aLevel" className="highestQualSelectOption">'A' Level</IonSelectOption>
-                                        <IonSelectOption value="oLevel" className="highestQualSelectOption">'O' Level</IonSelectOption>
-                                        <IonSelectOption value="degree" className="highestQualSelectOption">Degree</IonSelectOption>
-                                        <IonSelectOption value="diploma" className="highestQualSelectOption">Diploma</IonSelectOption>
-                                    </IonSelect>
+                                    {profileUi.editProfile ? (
+                                        <IonInput value={student.highestQual} name="highestQualification" readonly={true} className="readOnlyIonInput"></IonInput>
+                                    ) : (
+                                        <IonSelect placeholder={student.highestQual} id="highestQualSelect" className="readOnlyIonInput" name="highestQualification" ref={register({ required: true })}>
+                                            <IonSelectOption value="'A' Level" className="highestQualSelectOption">'A' Level</IonSelectOption>
+                                            <IonSelectOption value="'O' Level" className="highestQualSelectOption">'O' Level</IonSelectOption>
+                                            <IonSelectOption value="Degree" className="highestQualSelectOption">Degree</IonSelectOption>
+                                            <IonSelectOption value="Diploma" className="highestQualSelectOption">Diploma</IonSelectOption>
+                                        </IonSelect>
+                                    )}
+                                    
                                 </IonCol>
                             </IonRow>
 
@@ -291,31 +313,34 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonInput value={nationality} name="nationality" readonly={readOnly} className="readOnlyIonInput">Nationality</IonInput>
+                                    <IonInput value={student.nationality} name="nationality" readonly={true} disabled={profileUi.editProfile ? false : true} className="readOnlyIonInput"></IonInput>
                                 </IonCol>
                             </IonRow>
 
                             {/* Total Points Earned */}
-                            <IonRow className="profileRow" class="ion-align-items-center">
-                                <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
-                                    <FontAwesomeIcon icon={faGift} size="lg" />
-                                </IonCol>
+                            {profileUi.editProfile ? (
+                                <IonRow className="profileRow" class="ion-align-items-center">
+                                    <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
+                                        <FontAwesomeIcon icon={faGift} size="lg" />
+                                    </IonCol>
 
-                                <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                    <IonInput value={pointsEarned} name="pointsEarned" readonly={readOnly} className="readOnlyIonInput">Points Earned</IonInput>
-                                </IonCol>
-                            </IonRow>
+                                    <IonCol size="10" sizeSm="10" class="ion-text-left">
+                                        <IonInput value={student.points} name="pointsEarned" readonly={true} className="readOnlyIonInput"></IonInput>
+                                    </IonCol>
+                                </IonRow>
+                            ) : null
+                            }
+                            
 
                             {/* Password */}
-                            {showChangePassword ?
-                            <>
+                            {profileUi.changePassword ? (
                                 <IonRow className="profileRow" class="ion-align-items-center">
                                     <IonCol size="2" sizeSm="2" class="ion-text-center" className="profileIconCol">
                                         <FontAwesomeIcon icon={faLock} size="lg" />
                                     </IonCol>
 
                                     <IonCol size="8" sizeSm="8" class="ion-text-left">
-                                        <IonInput type="password" value={password} name="password" readonly={readOnly} className="readOnlyIonInput">Password</IonInput>
+                                        <IonInput type="password" value={password} name="password" readonly={true} className="readOnlyIonInput"></IonInput>
                                     </IonCol>
 
                                     <IonCol size="2" sizeSm="2" class="ion-text-center">
@@ -324,41 +349,37 @@ const MyProfile: React.FC = () => {
                                         </IonButton>
                                     </IonCol>
                                 </IonRow>
-                            </>
-                                : (
-                                    <IonRow id="editProfileBtnRow" class="ion-align-items-center">
-                                        <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
-                                            <IonAlert 
-                                                isOpen={showSuccessAlert}
-                                                onDidDismiss={() => setShowSuccessAlert(false)}
-                                                cssClass='alertBox' 
-                                                header={'Profile Updated'} 
-                                                message={'Your profile has been successfully updated!'} 
-                                                buttons={[
-                                                    {
-                                                        text:'CLOSE',
-                                                        handler: () => {
-                                                            setContactNoDisabled(true);
-                                                            setHighestQualDisabled(true);
-                                                            setContactNoReadOnly(true);
-                                                            
-                                                            setProfileNav(true);
-                                                            setShowEditProfileBtn(true);
-                                                            setShowChangePassword(true);
-                                                        }
+                            ) : (
+                                <IonRow id="editProfileBtnRow" class="ion-align-items-center">
+                                    <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
+                                        <IonAlert 
+                                            isOpen={alert.success}
+                                            onDidDismiss={() => setAlert({ success: true, error: false })}
+                                            cssClass='alertBox' 
+                                            header={'Profile Updated'} 
+                                            message={'Your profile has been successfully updated!'} 
+                                            buttons={[
+                                                {
+                                                    text:'CLOSE',
+                                                    handler: () => {
+                                                        setContactNoDisabled(true);
+                                                        setHighestQualDisabled(true);
+                                                        setContactNoReadOnly(true);
+                                                        setProfileUi({ profileNav: true, editProfile: true, changePassword: true })
                                                     }
-                                                ]}
-                                            />
+                                                }
+                                            ]}
+                                        />
 
-                                            <IonAlert isOpen={showErrorAlert} onDidDismiss={() => setShowErrorAlert(false)} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
-                                            <IonButton id="saveEditProfileBtn" type="submit" onClick={onSubmitEditProfile}>SAVE</IonButton>
-                                        </IonCol>
-                                    </IonRow>
-                                )
-                            }
+                                        <IonAlert isOpen={alert.error} onDidDismiss={() => setAlert({ success: true, error: false })} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
+                                        <IonButton id="saveEditProfileBtn" type="submit">SAVE</IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            )}
                         
                         </form>
                     </IonGrid>
+                    <IonLoading isOpen={loading} />
                 </IonContent>
             </IonPage>
         </React.Fragment>
