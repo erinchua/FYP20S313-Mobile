@@ -56,7 +56,6 @@ const ProgrammeTalks: React.FC = () => {
           if (!Array.isArray(data)) {
             for (var i = 0; i < Object.keys(data).length; i++) {
               const date = data[Object.keys(data)[i]].date;
-              console.log("i am " + date)
               dates.push(date)
             }
           }
