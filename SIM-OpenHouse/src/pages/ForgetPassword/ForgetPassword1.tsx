@@ -15,10 +15,12 @@ const ForgetPassword1: React.FC = () => {
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = (data: any) => {
-        auth.sendPasswordResetEmail(data.emailID).then(() => {
-            //alert for verification email sent
-            console.log("Email sent");
-        }).catch(err => { return console.log(err) });
+        if (typeof data.emailID === 'string') {
+            auth.sendPasswordResetEmail(data.emailID, { url: 'http://localhost:8100/login', handleCodeInApp: true }).then(() => {
+                //alert for verification email sent
+                console.log("Email sent");
+            }).catch(err => { return console.log(err) });
+        }
     };
 
     return (
