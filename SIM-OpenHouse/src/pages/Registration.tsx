@@ -130,8 +130,8 @@ const Registration: React.FC = () => {
                 <IonItem>
                   <IonLabel id="highestQualificationLabel">Highest Qualification</IonLabel>
                   <IonSelect placeholder="Please select" name="highestQualification" ref={register({ required: true })}>
-                    <IonSelectOption value="A-Level">'A' Level</IonSelectOption>
-                    <IonSelectOption value="O-Level">'O' Level</IonSelectOption>
+                    <IonSelectOption value="'A' Level">'A' Level</IonSelectOption>
+                    <IonSelectOption value="'O' Level">'O' Level</IonSelectOption>
                     <IonSelectOption value="Degree">Degree</IonSelectOption>
                     <IonSelectOption value="Diploma">Diploma</IonSelectOption>
                   </IonSelect>
