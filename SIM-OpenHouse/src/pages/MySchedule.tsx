@@ -28,21 +28,20 @@ const MySchedule: React.FC = () => {
     };
 
     useEffect(() => {
-    
-        db.collection('Openhouse').orderBy("id", "desc").limit(1).get().then(snapshot => {
+        db.collection('Openhouse').get().then(snapshot => {
             const dates: any = [];
             const hours: any = [];
 
             snapshot.forEach(doc => {
                 const data = doc.get('day');
 
-                if (Array.isArray(data))
-                    data.forEach((day: any) => {
-                        dates.push(day.date);
+                for (let i = 0; i < Object.keys(data).length; i++) {
+                    const day = data[Object.keys(data)[i]];
+                    dates.push(day.date);
 
-                        const duration = Math.floor((+toDateObject(day.date, day.endTime) - +toDateObject(day.date, day.startTime)) / 3600000);
-                        hours.push(duration);
-                    });
+                    const duration = Math.floor((+toDateObject(day.date, day.endTime) - +toDateObject(day.date, day.startTime)) / 3600000);
+                    hours.push(duration);
+                }
             });
 
             setOpenhouseDates(dates);

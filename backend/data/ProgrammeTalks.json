@@ -10,7 +10,9 @@
     "capacityLimit": 50,
     "noRegistered": 0,
     "isLive": true,
-    "hasRecording": true
+    "hasRecording": true,
+    "liveUrl": "",
+    "recordingUrl": ""
   },
   {
     "id": "talk-002",
@@ -23,7 +25,9 @@
     "capacityLimit": 50,
     "noRegistered": 0,
     "isLive": false,
-    "hasRecording": false
+    "hasRecording": false,
+    "liveUrl": "",
+    "recordingUrl": ""
   },
   {
     "id": "talk-003",
@@ -36,7 +40,9 @@
     "capacityLimit": 50,
     "noRegistered": 0,
     "isLive": false,
-    "hasRecording": false
+    "hasRecording": false,
+    "liveUrl": "",
+    "recordingUrl": ""
   },
   {
     "id": "talk-004",
@@ -49,7 +55,9 @@
     "capacityLimit": 50,
     "noRegistered": 0,
     "isLive": true,
-    "hasRecording": true
+    "hasRecording": true,
+    "liveUrl": "",
+    "recordingUrl": ""
   },
   {
     "id": "talk-005",
@@ -62,7 +70,9 @@
     "capacityLimit": 50,
     "noRegistered": 0,
     "isLive": false,
-    "hasRecording": false
+    "hasRecording": false,
+    "liveUrl": "",
+    "recordingUrl": ""
   },
   {
     "id": "talk-006",
@@ -75,6 +85,8 @@
     "capacityLimit": 50,
     "noRegistered": 0,
     "isLive": true,
-    "hasRecording": true
+    "hasRecording": true,
+    "liveUrl": "",
+    "recordingUrl": ""
   }
 ]

@@ -161,8 +161,8 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                                 <IonCol id="gamesContent-ionRowCol">
                                     <IonToolbar>
                                         <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="gamesContent-heading">Day 1: 21 Nov 2020</IonSegmentButton>
-                                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="gamesContent-heading">Day 2: 22 Nov 2020</IonSegmentButton>
+                                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="gamesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
+                                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="gamesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
                                         </IonSegment>
                                     </IonToolbar>
                                 </IonCol>
