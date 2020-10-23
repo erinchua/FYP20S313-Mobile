@@ -6,22 +6,12 @@ import '../../css/ProgrammeTalks.css'
 
 import { faVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useHistory } from 'react-router';
 
-const ProgTalkLiveTalks: React.FC<{
-    day1: any;
-    day2: any;
-    liveTalk: any
-    openhouseDates: any
-}> = props => {
-
-
-    const liveTalkDay1 = props.liveTalk.filter((talk: any) => {
-        return talk.date == props.openhouseDates[0]
-    })
-
-    const liveTalkDay2 = props.liveTalk.filter((talk: any) => {
-        return talk.date == props.openhouseDates[1]
-    })
+const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhouseDates: any }> = props => {
+    
+    const liveTalkDay1 = props.liveTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] });
+    const liveTalkDay2 = props.liveTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] });
 
     return (
         <>
@@ -46,7 +36,7 @@ const ProgTalkLiveTalks: React.FC<{
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => { e.preventDefault(); window.location.href='https://google.com' }} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -66,7 +56,7 @@ const ProgTalkLiveTalks: React.FC<{
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => { e.preventDefault(); window.open('https://google.com', '_blank') }} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
