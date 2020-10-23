@@ -6,19 +6,6 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/CourseComparator.css';
-import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
-import LaTrobe from '../../img/study@SIM/LaTrobeUniversity.png';
-import RMIT from '../../img/study@SIM/RMITUniversity.png';
-import SIMGE from '../../img/study@SIM/SimGE.png';
-import Buffalo from '../../img/study@SIM/UniversityAtBuffalo.png';
-import Birmingham from '../../img/study@SIM/UniversityOfBirmingham.png';
-import London from '../../img/study@SIM/UniversityOfLondon.png';
-import Manchester from '../../img/study@SIM/UniversityOfManchester.png';
-import Stirling from '../../img/study@SIM/UniversityOfStirling.png';
-import Sydney from '../../img/study@SIM/UniversityOfSydney.png';
-import Warwick from '../../img/study@SIM/UniversityOfWarwick.png';
-import Wollongong from '../../img/study@SIM/UniversityOfWollongong.png';
-import { Programme } from './Study@SIMProgInfo'
 
 import TopNav from '../../components/TopNav';
 import CourseComparatorDetails from '../../components/Study@SIM/CourseComparatorDetails';

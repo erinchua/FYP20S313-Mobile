@@ -8,12 +8,11 @@ import { faStar } from '@fortawesome/free-regular-svg-icons';
 import '../../css/Global.css';
 import '../../css/Study@SIMMain.css';
 import TopNav from '../../components/TopNav';
+import { Programme } from './Study@SIMProgInfo'
 
 
 const StudySIMMain: React.FC<RouteComponentProps> = () => {
     const [studySIMProgSelect, setStudySIMProgSelect] = useState<string>('Bachelor');
-
-
 
     return (
         <IonPage>
@@ -56,7 +55,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                                 </IonCol>
 
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <Link className='studySIMMainLink' to={`/u/study@SIMMain/itComputerScience/${studySIMProgSelect}`}>
+                                    <Link className='studySIMMainLink' to={{ pathname: `/u/study@SIMMain/itComputerScience/${studySIMProgSelect}` }}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faDesktop} />
                                         </IonRow>

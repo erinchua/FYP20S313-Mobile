@@ -8,12 +8,15 @@ import '../css/TopNav.css';
 import '../css/Global.css';
 import { useAuth } from '../modules/auth';
 import { auth } from '../firebase';
+import { Programme } from '../pages/Study@SIM/Study@SIMProgInfo'
+
 
 const TopNav: React.FC<{
     title: String;
     route: string;
     backarrow: Boolean;
     hamburger: Boolean;
+    // compareProgList: Programme[];
 
 }> = props => {
 
@@ -33,7 +36,7 @@ const TopNav: React.FC<{
             <IonToolbar className="topNav">
                 {props.backarrow ?
                     <IonButtons slot="start">
-                        <Link to={props.route}>
+                        <Link to={{ pathname: `${props.route}` }}>
                             <IonButton>
                                 <IonIcon className="back_button" slot="icon-only" icon={arrowBackOutline} />
                             </IonButton>
