@@ -42,8 +42,8 @@ const ProgrammeTalks: React.FC = () => {
   const [openhouseDates, setOpenhouseDates] = useState([]);
   const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
 
-  const liveTalk = programmeTalk.filter(talk => { return talk.isLive == true })
-  const recordedTalk = programmeTalk.filter(talk => { return talk.hasRecording == true })
+  const liveTalk = programmeTalk.filter(talk => { return talk.isLive === true })
+  const recordedTalk = programmeTalk.filter(talk => { return talk.hasRecording === true })
 
   useEffect(() => {
     const dates: any = [];
@@ -79,7 +79,7 @@ const ProgrammeTalks: React.FC = () => {
   }, []);
 
 
-  {/* Display Filter Menu Popover */ }
+  /* Display Filter Menu Popover */ 
   const [showProgTalkFilterPopover, setShowProgTalkFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
     open: false,
     event: undefined,

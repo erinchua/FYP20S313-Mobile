@@ -7,21 +7,10 @@ import '../../css/ProgrammeTalks.css'
 import { faFileVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ProgTalkPastRec: React.FC<{
-    day1: any;
-    day2: any;
-    recordedTalk: any;
-    openhouseDates: any;
-}> = props => {
-    const recordedTalkDay1 = props.recordedTalk
-        .filter((talk: any) => {
-            return talk.date == props.openhouseDates[0]
-        })
-
-    const recordedTalkDay2 = props.recordedTalk
-        .filter((talk: any) => {
-            return talk.date == props.openhouseDates[1]
-        })
+const ProgTalkPastRec: React.FC<{ day1: any, day2: any, recordedTalk: any, openhouseDates: any }> = props => {
+    
+    const recordedTalkDay1 = props.recordedTalk.filter((talk: any) => { return talk.date == props.openhouseDates[0] })
+    const recordedTalkDay2 = props.recordedTalk.filter((talk: any) => { return talk.date == props.openhouseDates[1] })
 
     return (
         <>
@@ -39,7 +28,7 @@ const ProgTalkPastRec: React.FC<{
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">{programmeTalk.talkName}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.link, '_blank') }} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faFileVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -56,7 +45,7 @@ const ProgTalkPastRec: React.FC<{
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">{programmeTalk.talkName}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton onClick={() => {}} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.link, '_blank') }} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faFileVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
