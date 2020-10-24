@@ -35,7 +35,7 @@ const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhou
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.link, '_blank') }} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.link, '_blank') }} disabled={programmeTalk.link === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -55,7 +55,7 @@ const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhou
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.link, '_blank') }} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.link, '_blank') }} disabled={programmeTalk.link === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>

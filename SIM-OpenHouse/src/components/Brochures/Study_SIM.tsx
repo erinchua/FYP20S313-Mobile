@@ -199,7 +199,7 @@ const Study_SIM: React.FC = () => {
                                 <IonRow>
                                     <IonCol size="6">
                                         <IonRow className="ion-justify-content-center">
-                                            <IonButton href="https://developers.google.com/season-of-docs/images/logo/SeasonofDocs_BrandGuidelines.pdf" fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download Prospectus</div></IonButton>
+                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download Prospectus</div></IonButton>
                                         </IonRow>
                                     </IonCol>
                                     <IonCol size="6">
