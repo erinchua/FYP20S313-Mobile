@@ -1,23 +1,51 @@
 import { IonBadge, IonButton, IonCheckbox, IonCol, IonFooter, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useRef, useState } from 'react';
-
+import React, { useEffect, useRef, useState } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import '../css/Global.css';
 import '../css/FilterPopoverContent.css';
-import { chevronDownOutline, chevronUpOutline } from 'ionicons/icons';
+import { chevronDownOutline, chevronUpOutline, filter } from 'ionicons/icons';
 
-const FilterPopoverContent: React.FC<{
-    filterResults: any;
+interface myProps {
+    filterFunction: any;
     params: any;
     href: any;
     filterFor: any;
-}> = props => {
+    discipline: string;
+    category: string;
+}
+export interface FilterCondition {
+    mos: string[],
+    discipline: string[],
+    uni: string[],
+    acadLvl: string[],
+    entry: string[],
+    subDisc: string[]
+}
 
+const FilterPopoverContent: React.FC<myProps> = props => {
+    // console.log("props are" + JSON.stringify(props))
     const mosFilter = ['fullPartTime', 'partTime', 'fullTime']
     const discFilter = ['artSocialSciences', 'nursing', 'itComputerScience', 'business', 'speciality']
     const subDiscFilter = ['aviation', 'computing', 'design', 'businessAdmin', 'economics']
     const uniFilter = ['RMIT University', 'University of Stirling', 'University of Wollongong']
     const acadlvlFilter = ['Diploma', 'Bachelor', 'Masters']
     const entryFilter = ['aLevel', 'oLevel', 'degree', 'diploma']
+
+    const [currentMosFilter, setCurrentMosFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
+    const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>([props.discipline])
+    const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>([])
+    const [currentUniFilter, setCurrentUniFilter] = useState<string[]>([])
+    const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>([props.category])
+    const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>([])
+
+    const [filterCondition, setFilterCondition] = useState<FilterCondition>({
+        mos: [],
+        discipline: [],
+        uni: [],
+        acadLvl: [],
+        entry: [],
+        subDisc: []
+    })
 
     {/* Display Mode of Study Filters */ }
     const MOSInfo = useRef<HTMLIonRowElement>(null);
@@ -96,6 +124,60 @@ const FilterPopoverContent: React.FC<{
     const [checked, setChecked] = useState(false);
     const [courseFilterCount, setCourseFilterCount] = useState(0);
 
+    //Filter handlers
+
+    const handleCheck = (value: string, currentFilter: string[], callback: any) => {
+        const currentIndex = currentFilter.indexOf(value)
+        const newCurrentFilter = [...currentFilter]
+
+        if (currentIndex === -1) {
+            newCurrentFilter.push(value)
+        } else {
+            newCurrentFilter.splice(currentIndex, 1)
+        }
+
+        callback(newCurrentFilter)
+        console.log('New filters are' + newCurrentFilter)
+        //filterProgrammes(newCheckedFilter)
+    }
+
+    //All filter combined 
+
+    const combinedFilter = () => {
+        console.log("Before All filters are :" + JSON.stringify(filterCondition))
+        const Check = () => {
+        }
+        setFilterCondition(prevState => {
+            let filter = { ...prevState };
+            Object.keys(filter).map(key => {
+                if (key == 'mos')
+                    filter[key] = currentMosFilter;
+                if (key == 'discipline')
+                    filter[key] = currentDiscFilter;
+                if (key == 'uni')
+                    filter[key] = currentUniFilter;
+                if (key == 'acadLvl')
+                    filter[key] = currentAcadlvlFilter;
+                if (key == 'entry')
+                    filter[key] = currentEntryFilter;
+                if (key == 'subDisc')
+                    filter[key] = currentSubDiscFilter;
+            })
+            return filter;
+        })
+
+    }
+
+    useEffect(() => {
+        combinedFilter();
+    }, [currentMosFilter, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter])
+
+
+    useEffect(() => {
+        console.log("After All filters are :" + JSON.stringify(filterCondition))
+    }, [filterCondition])
+
+
     return (
         <>
             {/* Filter for Study@SIM */}
@@ -124,11 +206,11 @@ const FilterPopoverContent: React.FC<{
                                     <IonList className="courseFilterList">
                                         {mosFilter.map(filter => {
                                             return (
-                                                <div>
+                                                <div key={filter}>
                                                     <IonItem className="courseFilterItem" lines="none">
-                                                        <IonCheckbox className="courseFilterCheckbox" checked={checked} />
+                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentMosFilter, setCurrentMosFilter)} value={filter} checked={currentMosFilter.indexOf(filter) === -1 ? false : true} />
                                                         <IonLabel className="courseFilterLabel">
-                                                            <div key={filter} className="ion-text-wrap">{filter}</div>
+                                                            <div className="ion-text-wrap">{filter}</div>
                                                         </IonLabel>
                                                         <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
                                                     </IonItem>
@@ -159,9 +241,9 @@ const FilterPopoverContent: React.FC<{
                                     <IonList className="courseFilterList">
                                         {discFilter.map(filter => {
                                             return (
-                                                <div>
+                                                <div key={filter}>
                                                     <IonItem className="courseFilterItem" lines="none">
-                                                        <IonCheckbox className="courseFilterCheckbox" checked={checked} />
+                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentDiscFilter, setCurrentDiscFilter)} value={filter} checked={currentDiscFilter.indexOf(filter) === -1 ? false : true} />
 
                                                         <IonLabel className="courseFilterLabel">
                                                             <div className="ion-text-wrap">{filter}</div>
@@ -196,7 +278,7 @@ const FilterPopoverContent: React.FC<{
                                 <IonCol sizeSm="12" className="courseFiltersCol" ref={uniPartnerInfo} hidden={true} class="ion-text-center">
                                     <IonList className="courseFilterList">
                                         {uniFilter.map(filter => {
-                                            return (<div>
+                                            return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
                                                     <IonCheckbox className="courseFilterCheckbox" checked={checked} />
 
@@ -232,9 +314,9 @@ const FilterPopoverContent: React.FC<{
                                 <IonCol sizeSm="12" className="courseFiltersCol" ref={academicLvlInfo} hidden={true} class="ion-text-center">
                                     <IonList className="courseFilterList">
                                         {acadlvlFilter.map(filter => {
-                                            return (<div>
+                                            return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" checked={checked} />
+                                                    <IonCheckbox className="courseFilterCheckbox" checked={currentAcadlvlFilter.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -268,7 +350,7 @@ const FilterPopoverContent: React.FC<{
                                 <IonCol sizeSm="12" className="courseFiltersCol" ref={entryQualInfo} hidden={true} class="ion-text-center">
                                     <IonList className="courseFilterList">
                                         {entryFilter.map(filter => {
-                                            return (<div>
+                                            return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
                                                     <IonCheckbox className="courseFilterCheckbox" checked={checked} />
 
@@ -304,7 +386,7 @@ const FilterPopoverContent: React.FC<{
                                 <IonCol sizeSm="12" className="courseFiltersCol" ref={subDisciplineInfo} hidden={true} class="ion-text-center">
                                     <IonList className="courseFilterList">
                                         {subDiscFilter.map(filter => {
-                                            return (<div>
+                                            return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
                                                     <IonCheckbox className="courseFilterCheckbox" checked={checked} />
 
@@ -333,7 +415,7 @@ const FilterPopoverContent: React.FC<{
                                     <IonCol size="12" sizeSm="12" class="ion-text-center" style={{ padding: "0" }}>
                                         {props.params ?
                                             <>
-                                                <IonButton id="courseProgFilterBtn" onClick={props.filterResults} href={props.href}>FILTER</IonButton>
+                                                <IonButton id="courseProgFilterBtn" onClick={() => props.filterFunction(filterCondition)}>FILTER</IonButton>
                                             </>
                                             : ''
                                         }
@@ -458,7 +540,7 @@ const FilterPopoverContent: React.FC<{
                             <IonToolbar id="courseFilterPopoverBtnToolbar" class="ion-align-items-center">
                                 <IonRow class="ion-align-items-center" style={{ width: "100%" }}>
                                     <IonCol size="12" sizeSm="12" class="ion-text-center" style={{ padding: "0" }}>
-                                        <IonButton id="courseProgFilterBtn" onClick={props.filterResults} href={props.href}>FILTER</IonButton>
+                                        <IonButton id="courseProgFilterBtn">FILTER</IonButton>
                                     </IonCol>
                                 </IonRow>
                             </IonToolbar>

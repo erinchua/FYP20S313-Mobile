@@ -12,6 +12,7 @@ import TopNav from '../components/TopNav';
 import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
 import { auth } from '../firebase';
+import QRCode from "qrcode.react";
 
 
 const MyProfile: React.FC = () => {
@@ -20,12 +21,12 @@ const MyProfile: React.FC = () => {
 
     const [loading, setLoading] = useState(true);
     const [student, setStudent] = useState<any>({});
-    
+
     const [fieldDisable, setFieldDisable] = useState(true);
     const [profileUi, setProfileUi] = useState({ profileNav: true, editProfile: true, changePassword: true });
     const [alert, setAlert] = useState({ success: false, error: false });
 
-    {/* Edit Profile */}
+    {/* Edit Profile */ }
     const editMode = () => {
         setFieldDisable(false);
         setProfileUi({ profileNav: false, editProfile: false, changePassword: false });
@@ -39,14 +40,14 @@ const MyProfile: React.FC = () => {
                 highestQualification: data.highestQualification,
             });
             setAlert({ success: true, error: false });
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         } finally {
             setLoading(false);
         }
     };
 
-    {/* Change Password Modal & Alert */}
+    {/* Change Password Modal & Alert */ }
     const [changePasswordModal, setChangePasswordModal] = useState(false);
 
     const currentPasswordRef = useRef({});
@@ -68,7 +69,7 @@ const MyProfile: React.FC = () => {
             } else {
                 throw data;
             }
-        } catch(e) {
+        } catch (e) {
             setAlert({ success: false, error: true });
             return console.log(e);
         } finally {
@@ -96,7 +97,7 @@ const MyProfile: React.FC = () => {
                 studentInfo.nationality = student.data()?.nationality;
                 studentInfo.highestQual = student.data()?.highestQualification;
             }
-        
+
             setTimeout(() => {
                 setStudent(studentInfo);
                 setLoading(false);
@@ -105,8 +106,8 @@ const MyProfile: React.FC = () => {
     }, []);
 
     //console.log(student)
-    
-    return(
+
+    return (
         <React.Fragment>
             {/* Change Password Modal */}
             <IonModal isOpen={changePasswordModal} cssClass='editPasswordModal'>
@@ -152,7 +153,7 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
                             </IonRow>
 
-                            <IonRow class="ion-align-items-center" style={{marginTop:"5%"}}>
+                            <IonRow class="ion-align-items-center" style={{ marginTop: "5%" }}>
                                 <IonCol size="4" sizeSm="4" class="ion-text-right">
                                     <IonButton className="editPasswordBtn" onClick={() => setChangePasswordModal(false)}>CANCEL</IonButton>
                                 </IonCol>
@@ -193,9 +194,9 @@ const MyProfile: React.FC = () => {
             <IonPage>
                 <IonHeader>
                     {profileUi.profileNav ?
-                        <TopNav title="My Profile" route='/u/home' backarrow={ true } hamburger = { true } />
-                        : 
-                        <TopNav title="Edit My Profile" route='/u/home' backarrow={ false } hamburger = { true } />
+                        <TopNav title="My Profile" route='/u/home' backarrow={true} hamburger={true} />
+                        :
+                        <TopNav title="Edit My Profile" route='/u/home' backarrow={false} hamburger={true} />
                     }
                 </IonHeader>
 
@@ -215,7 +216,7 @@ const MyProfile: React.FC = () => {
                             {/* Generated QR Code */}
                             <IonRow id="qrCodeRow" class="ion-align-items-center">
                                 <IonCol size="12" sizeSm="12" class="ion-text-center" id="qrCodeCol">
-                                    <span id="qrCode">QR Code here</span>
+                                    <span id="qrCode"><QRCode value={`${student.email},${student.firstName},${student.lastName}`} /></span>
                                 </IonCol>
                             </IonRow>
 
@@ -252,7 +253,7 @@ const MyProfile: React.FC = () => {
                                 </IonCol>
 
                                 <IonCol size="10" sizeSm="10" class="ion-text-left">
-                                <IonInput value={student.contact} type="tel" name="contactNo" readonly={fieldDisable} disabled={fieldDisable} className="readOnlyIonInput" id="contactNoField" minlength={8} maxlength={8} ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/, min: 8, max: 8 })}></IonInput>
+                                    <IonInput value={student.contact} type="tel" name="contactNo" readonly={fieldDisable} disabled={fieldDisable} className="readOnlyIonInput" id="contactNoField" minlength={8} maxlength={8} ref={register({ required: true, minLength: 8, maxLength: 8, pattern: /(6|8|9)\d{7}/, min: 8, max: 8 })}></IonInput>
                                     {errors.contactNo && errors.contactNo.type === "required" && <p className="errorMsg">Contact number is required!</p>}
                                     {errors.contactNo && errors.contactNo.type === "minLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
                                     {errors.contactNo && errors.contactNo.type === "maxLength" && <p className="errorMsg">Contact number consist of only 8 digits</p>}
@@ -311,7 +312,7 @@ const MyProfile: React.FC = () => {
                                 </IonRow>
                             ) : null
                             }
-                            
+
 
                             {/* Password */}
                             {profileUi.changePassword ? (
@@ -331,31 +332,31 @@ const MyProfile: React.FC = () => {
                                     </IonCol>
                                 </IonRow>
                             ) : (
-                                <IonRow id="editProfileBtnRow" class="ion-align-items-center">
-                                    <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
-                                        <IonAlert 
-                                            isOpen={alert.success}
-                                            onDidDismiss={() => setAlert({ success: false, error: false })}
-                                            cssClass='alertBox' 
-                                            header={'Profile Updated'} 
-                                            message={'Your profile has been successfully updated!'} 
-                                            buttons={[
-                                                {
-                                                    text:'CLOSE',
-                                                    handler: () => {
-                                                        setFieldDisable(true);
-                                                        setProfileUi({ profileNav: true, editProfile: true, changePassword: true });
+                                    <IonRow id="editProfileBtnRow" class="ion-align-items-center">
+                                        <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
+                                            <IonAlert
+                                                isOpen={alert.success}
+                                                onDidDismiss={() => setAlert({ success: false, error: false })}
+                                                cssClass='alertBox'
+                                                header={'Profile Updated'}
+                                                message={'Your profile has been successfully updated!'}
+                                                buttons={[
+                                                    {
+                                                        text: 'CLOSE',
+                                                        handler: () => {
+                                                            setFieldDisable(true);
+                                                            setProfileUi({ profileNav: true, editProfile: true, changePassword: true });
+                                                        }
                                                     }
-                                                }
-                                            ]}
-                                        />
+                                                ]}
+                                            />
 
-                                        <IonAlert isOpen={alert.error} onDidDismiss={() => setAlert({ success: false, error: false })} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
-                                        <IonButton id="saveEditProfileBtn" type="submit">SAVE</IonButton>
-                                    </IonCol>
-                                </IonRow>
-                            )}
-                        
+                                            <IonAlert isOpen={alert.error} onDidDismiss={() => setAlert({ success: false, error: false })} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
+                                            <IonButton id="saveEditProfileBtn" type="submit">SAVE</IonButton>
+                                        </IonCol>
+                                    </IonRow>
+                                )}
+
                         </form>
                     </IonGrid>
                     <IonLoading isOpen={loading} />
