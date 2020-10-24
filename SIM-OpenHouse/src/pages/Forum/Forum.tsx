@@ -77,30 +77,6 @@ const Forum: React.FC = () => {
                 if (user.id === userID && user.data().suspended) 
                     return history.goBack();
 
-                {/* await db.collection('Forum').doc(user.id).collection('Questions').get().then(entries => {
-                    entries.forEach(doc => {
-                        questions.push({
-                            id: doc.id,
-                            entry: doc.data().entry,
-                            dateTime: doc.data().dateTime,
-                            user: doc.data().posterName,
-                            commentCount: doc.data().noOfComments
-                        });
-                    });
-                }); */}
-
-                {/* return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
-                    entries.docChanges().forEach(change => {
-                        questions.push({
-                            id: change.doc.id,
-                            entry: change.doc.data().entry,
-                            dateTime: change.doc.data().dateTime,
-                            user: change.doc.data().posterName,
-                            commentCount: change.doc.data().noOfComments
-                        });
-                    })
-                }); */}
-
                 return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
                     entries.docChanges().forEach(change => {
                         questions.unshift({

@@ -5,7 +5,7 @@ import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/Forum.css';
-import Forum_FlagModal from './Forum_FlagModal';
+//import Forum_FlagModal from './Forum_FlagModal';
 
 const Forum_CommentReply: React.FC = () => {
 
@@ -28,7 +28,7 @@ const Forum_CommentReply: React.FC = () => {
                     <IonText id="comment-details">22-11-2020, 9.13am</IonText>
                 </IonCol>
                 <IonCol size="1" className="ion-align-self-end forum-col">
-                    <Forum_FlagModal />
+                    {/* <Forum_FlagModal /> */}
                 </IonCol>
             </IonRow>
         </IonGrid>
