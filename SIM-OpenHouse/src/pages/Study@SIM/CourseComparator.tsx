@@ -27,7 +27,7 @@ const CourseComparator: React.FC<CourseComparator_Props> = ({ match }) => {
             </IonHeader>
 
             <IonContent fullscreen={true}>
-                {/* {typeof programmes !== 'undefined' ? <CourseComparatorDetails programmes={programmes} /> : ''} */}
+                {typeof programmes !== 'undefined' ? <CourseComparatorDetails programmes={programmes} /> : ''}
 
             </IonContent>
         </IonPage>
