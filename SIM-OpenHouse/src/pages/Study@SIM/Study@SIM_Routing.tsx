@@ -1,6 +1,6 @@
 import { IonRouterOutlet } from '@ionic/react';
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, RouteComponentProps } from 'react-router-dom';
+import { Route, Switch, RouteComponentProps } from 'react-router-dom';
 
 
 import '../../css/Global.css';
@@ -10,7 +10,7 @@ import StudySIMProgInfo from './Study@SIMProgInfo';
 import CourseComparator from './CourseComparator';
 
 
-const StudySIM_Routing: React.FC<RouteComponentProps> = ({ match }) => {
+const StudySIM_Routing: React.FC<RouteComponentProps> = () => {
 
 
     return (

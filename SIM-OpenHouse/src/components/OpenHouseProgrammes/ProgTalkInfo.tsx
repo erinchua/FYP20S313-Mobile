@@ -21,7 +21,7 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
     const [buttonDisabled, setButtonDisabled] = useState(false);
 
     {/*Programme Talk selected */}
-    const [programmeTalk,setProgrammeTalk] = useState([]);
+    const [programmeTalk,setProgrammeTalk] = useState<any>([]);
 
     const addToSchedule = async (programme: any) => {
         try {

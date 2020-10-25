@@ -61,7 +61,7 @@ const Study_SIM: React.FC = () => {
 
     const displayProspectus = () => {
         prospectus.current!.hidden = !prospectus.current!.hidden;
-        if(toggleShow1.current!.icon == addCircle) {
+        if(toggleShow1.current!.icon === addCircle) {
             toggleShow1.current!.icon = removeCircle;
         } else {
             toggleShow1.current!.icon = addCircle;
@@ -70,7 +70,7 @@ const Study_SIM: React.FC = () => {
     
     const displaySimGe = () => {
         simGe.current!.hidden = !simGe.current!.hidden;
-        if(toggleShow2.current!.icon == addCircle) {
+        if(toggleShow2.current!.icon === addCircle) {
             toggleShow2.current!.icon = removeCircle;
         } else {
             toggleShow2.current!.icon = addCircle;
@@ -79,7 +79,7 @@ const Study_SIM: React.FC = () => {
 
     const displayUniOfLondon = () => {
         uniOfLondon.current!.hidden = !uniOfLondon.current!.hidden;
-        if(toggleShow3.current!.icon == addCircle) {
+        if(toggleShow3.current!.icon === addCircle) {
             toggleShow3.current!.icon = removeCircle;
         } else {
             toggleShow3.current!.icon = addCircle;
@@ -88,7 +88,7 @@ const Study_SIM: React.FC = () => {
 
     const displayUniOfBirmingham = () => {
         uniOfBirmingham.current!.hidden = !uniOfBirmingham.current!.hidden;
-        if(toggleShow4.current!.icon == addCircle) {
+        if(toggleShow4.current!.icon === addCircle) {
             toggleShow4.current!.icon = removeCircle;
         } else {
             toggleShow4.current!.icon = addCircle;
@@ -97,7 +97,7 @@ const Study_SIM: React.FC = () => {
 
     const displayUniOfStirling = () => {
         uniOfStirling.current!.hidden = !uniOfStirling.current!.hidden;
-        if(toggleShow5.current!.icon == addCircle) {
+        if(toggleShow5.current!.icon === addCircle) {
             toggleShow5.current!.icon = removeCircle;
         } else {
             toggleShow5.current!.icon = addCircle;
@@ -106,7 +106,7 @@ const Study_SIM: React.FC = () => {
 
     const displayUniAtBuffalo = () => {
         uniAtBuffalo.current!.hidden = !uniAtBuffalo.current!.hidden;
-        if(toggleShow6.current!.icon == addCircle) {
+        if(toggleShow6.current!.icon === addCircle) {
             toggleShow6.current!.icon = removeCircle;
         } else {
             toggleShow6.current!.icon = addCircle;
@@ -115,7 +115,7 @@ const Study_SIM: React.FC = () => {
 
     const displayLaTrobeUni = () => {
         laTrobeUni.current!.hidden = !laTrobeUni.current!.hidden;
-        if(toggleShow7.current!.icon == addCircle) {
+        if(toggleShow7.current!.icon === addCircle) {
             toggleShow7.current!.icon = removeCircle;
         } else {
             toggleShow7.current!.icon = addCircle;
@@ -124,7 +124,7 @@ const Study_SIM: React.FC = () => {
 
     const displayRmitUni = () => {
         rmitUni.current!.hidden = !rmitUni.current!.hidden;
-        if(toggleShow8.current!.icon == addCircle) {
+        if(toggleShow8.current!.icon === addCircle) {
             toggleShow8.current!.icon = removeCircle;
         } else {
             toggleShow8.current!.icon = addCircle;
@@ -133,7 +133,7 @@ const Study_SIM: React.FC = () => {
 
     const displayUniOfSydney = () => {
         uniOfSydney.current!.hidden = !uniOfSydney.current!.hidden;
-        if(toggleShow9.current!.icon == addCircle) {
+        if(toggleShow9.current!.icon === addCircle) {
             toggleShow9.current!.icon = removeCircle;
         } else {
             toggleShow9.current!.icon = addCircle;
@@ -142,7 +142,7 @@ const Study_SIM: React.FC = () => {
 
     const displayUniOfWollongong = () => {
         uniOfWollongong.current!.hidden = !uniOfWollongong.current!.hidden;
-        if(toggleShow10.current!.icon == addCircle) {
+        if(toggleShow10.current!.icon === addCircle) {
             toggleShow10.current!.icon = removeCircle;
         } else {
             toggleShow10.current!.icon = addCircle;
@@ -151,7 +151,7 @@ const Study_SIM: React.FC = () => {
 
     const displayGrenobleEcole = () => {
         grenobleEcole.current!.hidden = !grenobleEcole.current!.hidden;
-        if(toggleShow11.current!.icon == addCircle) {
+        if(toggleShow11.current!.icon === addCircle) {
             toggleShow11.current!.icon = removeCircle;
         } else {
             toggleShow11.current!.icon = addCircle;
@@ -160,7 +160,7 @@ const Study_SIM: React.FC = () => {
 
     const displayUniOfWarwick = () => {
         uniOfWarwick.current!.hidden = !uniOfWarwick.current!.hidden;
-        if(toggleShow12.current!.icon == addCircle) {
+        if(toggleShow12.current!.icon === addCircle) {
             toggleShow12.current!.icon = removeCircle;
         } else {
             toggleShow12.current!.icon = addCircle;
