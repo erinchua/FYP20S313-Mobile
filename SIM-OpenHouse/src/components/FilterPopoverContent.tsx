@@ -26,7 +26,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     // console.log("props are" + JSON.stringify(props))
     const mosFilter = ['fullPartTime', 'partTime', 'fullTime']
     const discFilter = ['artSocialSciences', 'nursing', 'itComputerScience', 'business', 'speciality']
-    const subDiscFilter = ['aviation', 'computing', 'design', 'businessAdmin', 'economics']
+    const subDiscFilter = ['aviation', 'computing', 'design', 'businessAdmin', 'economics', 'Construction and Management']
     const uniFilter = ['RMIT University', 'University of Stirling', 'University of Wollongong']
     const acadlvlFilter = ['Diploma', 'Bachelor', 'Masters']
     const entryFilter = ['aLevel', 'oLevel', 'degree', 'diploma']
@@ -280,7 +280,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {uniFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" checked={checked} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentUniFilter, setCurrentUniFilter)} value={filter} checked={currentUniFilter.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -316,7 +316,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {acadlvlFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" checked={currentAcadlvlFilter.indexOf(filter) === -1 ? false : true} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentAcadlvlFilter, setCurrentAcadlvlFilter)} value={filter} checked={currentAcadlvlFilter.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -352,7 +352,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {entryFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" checked={checked} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentEntryFilter, setCurrentEntryFilter)} value={filter} checked={currentEntryFilter.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -388,7 +388,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {subDiscFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" checked={checked} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentSubDiscFilter, setCurrentSubDiscFilter)} value={filter} checked={currentSubDiscFilter.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>

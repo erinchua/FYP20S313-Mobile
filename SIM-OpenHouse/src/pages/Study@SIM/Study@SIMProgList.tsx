@@ -13,6 +13,7 @@ import { db } from '../../firebase';
 import { Programme } from './Study@SIMProgInfo';
 import { FilterCondition } from '../../components/FilterPopoverContent'
 import { filter } from 'ionicons/icons';
+import { ObjectFlags } from 'typescript';
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
@@ -37,7 +38,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         'Business',
         'IT & Computer Science',
         'Nursing',
-        'Speciality'
+        'Specialty'
     ]);
 
 
@@ -87,40 +88,138 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
     const filterProgrammes = async (condition: FilterCondition) => {
 
-        const newList: Programme[] = []
+        const initialList: Programme[] = []
+        let filteredList: Programme[] = []
+        let segmentFilter: Programme[] = []
         console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
         await db.collection('TestProgrammes')
             .get()
             .then(snapshot => {
                 snapshot.docs.forEach((doc: any) => {
                     const data = doc.data()
-                    newList.push(data)
+                    initialList.push(data)
                 })
                 // setProgrammes(newList)
             })
-        console.log(JSON.stringify(newList))
+        console.log(initialList.length + JSON.stringify(initialList))
         Object.entries(condition).map(([key, value]) => {
             if (key == 'mos') {
-                if (value.length < 3) {
+                if (value.length < 3 && value.length > 0) {
                     value.forEach((value: string) => {
-                        if (value == 'fullPartTime')
-                            newList.filter(programme => { return (programme.modeOfStudy.ModeOfStudy.fullTime && programme.modeOfStudy.ModeOfStudy.partTime) === true })
-                        if (value == 'fullTime')
-                            newList.filter(programme => { return (programme.modeOfStudy.ModeOfStudy.fullTime && !programme.modeOfStudy.ModeOfStudy.partTime) === true })
-                        if (value == 'partTime')
-                            newList.filter(programme => { return (!programme.modeOfStudy.ModeOfStudy.fullTime && programme.modeOfStudy.ModeOfStudy.partTime) === true })
+                        if (value == 'fullPartTime') {
+                            segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
+                            console.log("filtering full and part time" + segmentFilter.length)
+                            filteredList = filteredList.concat(segmentFilter)
+                            console.log("Current filtered list" + filteredList.length + JSON.stringify(filteredList))
+
+
+                        }
+                        if (value == 'fullTime') {
+                            segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime)
+                            console.log("filtering full time" + segmentFilter.length)
+                            filteredList = filteredList.concat(segmentFilter)
+
+                        }
+                        if (value == 'partTime') {
+                            segmentFilter = initialList.filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
+                            console.log("filtering part time" + segmentFilter.length)
+                            filteredList = filteredList.concat(segmentFilter)
+
+                        }
                     })
+                }
+                else if (value.length == 0 || value.length == 3) {
+                    filteredList = initialList
+                }
+            }
+            else if (key == 'discipline') {
+                let discFiltered: Programme[] = []
+                if (value.length > 0 && value.length <= 4) {
+                    console.log("Entered discipline filter")
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.discipline.includes(value))
+                        console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        discFiltered = discFiltered.concat(segmentFilter)
+                    })
+                    filteredList = discFiltered
+                }
+
+            }
+
+            else if (key == 'uni') {
+                let uniFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.awardedBy == value)
+                        console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        uniFiltered = uniFiltered.concat(segmentFilter)
+                        // console.log("current list" + JSON.stringify(filteredList))
+                    })
+                    filteredList = uniFiltered
+                }
+            }
+            else if (key == 'acadLvl') {
+                let acadFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.academicLevel == value)
+                        console.log("filtering acadLvl" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        acadFiltered = acadFiltered.concat(segmentFilter)
+                    })
+                    filteredList = acadFiltered
+                }
+            }
+
+            else if (key == 'entry') {
+                let entryFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        if (value == 'aLevel') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.aLevel)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                        else if (value == 'oLevel') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.oLevel)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                        else if (value == 'diploma') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.diploma)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                        else if (value == 'degree') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.degree)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                    })
+                    filteredList = entryFiltered
+                }
+            }
+            else if (key == 'subDisc') {
+                let subDiscFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.subDiscipline.includes(value))
+                        console.log("Filering subDisc" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        subDiscFiltered = subDiscFiltered.concat(segmentFilter)
+                    })
+                    filteredList = subDiscFiltered
+
                 }
             }
         }
             //newList.filter(programme=>{return programme.modeOfStudy})
         )
-        console.log("New List are " + JSON.stringify(newList))
-
+        console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
+        setProgrammes(filteredList)
 
 
 
     }
+
     /*To remove selected programmes in comparePopOver */
     const removeProg = (programme: Programme) => {
         const newProgList = [...compareProgList]
@@ -221,7 +320,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                                             : ''
                                         }
 
-                                        {match.params.discipline === 'speciality' ?
+                                        {match.params.discipline === 'specialty' ?
                                             <div className="ion-text-wrap">{disciplineName[4]}</div>
                                             : ''
                                         }
@@ -347,26 +446,26 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         }
 
                         {match.params.discipline === "business" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
+                            <FilterPopoverContent filterFunction={filterProgrammes}
                                 params={match.params.discipline === "business"} href={"/u/study@SIMMain/business/test"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "itComputerScience" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
+                            <FilterPopoverContent filterFunction={filterProgrammes}
                                 params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "nursing" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
+                            <FilterPopoverContent filterFunction={filterProgrammes}
                                 params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
-                        {match.params.discipline === "speciality" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} filterFor={"study@SIM"} discipline={discipline} category={category} />
+                        {match.params.discipline === "specialty" ?
+                            <FilterPopoverContent filterFunction={filterProgrammes}
+                                params={match.params.discipline === "specialty"} href={"/u/study@SIMMain/specialty"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 

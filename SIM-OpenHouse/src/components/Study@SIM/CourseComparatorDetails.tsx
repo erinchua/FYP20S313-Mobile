@@ -217,8 +217,8 @@ const CourseComparatorDetails: React.FC<{
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
-                                        <div className="ion-text-wrap">{typeof programme.intakeMonths.partTime !== 'undefined' && programme.intakeMonths.partTime.partTime !== '' ? <p>Part-Time: {programme.intakeMonths.partTime}</p> : <p>Part Time: NIL</p>}
-                                            {typeof programme.intakeMonths.fullTime !== 'undefined' && programme.intakeMonths.fullTime.fullTime !== "" ? <p>Full-Time: {programme.intakeMonths.fullTime}</p> : <p>Full Time: NIL</p>}</div>
+                                        <div className="ion-text-wrap">{typeof programme.intakeMonths.partTime !== 'undefined' && programme.intakeMonths.partTime !== '' ? <p>Part-Time: {programme.intakeMonths.partTime}</p> : <p>Part Time: NIL</p>}
+                                            {typeof programme.intakeMonths.fullTime !== 'undefined' && programme.intakeMonths.fullTime !== "" ? <p>Full-Time: {programme.intakeMonths.fullTime}</p> : <p>Full Time: NIL</p>}</div>
                                     </IonText>
                                 </IonCol>
                             </div>)
@@ -243,8 +243,8 @@ const CourseComparatorDetails: React.FC<{
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
                                         <div className="ion-text-wrap">
-                                            {typeof programme.duration.partTime !== 'undefined' && programme.duration.partTime.partTime !== '' ? <p>Part-Time: {programme.duration.partTime}</p> : <p>Part Time: NIL</p>}
-                                            {typeof programme.duration.fullTime !== 'undefined' && programme.duration.fullTime.fullTime !== '' ? <p>Full-Time: {programme.duration.fullTime}</p> : <p>Full Time: NIL</p>}
+                                            {typeof programme.duration.partTime !== 'undefined' && programme.duration.partTime !== '' ? <p>Part-Time: {programme.duration.partTime}</p> : <p>Part Time: NIL</p>}
+                                            {typeof programme.duration.fullTime !== 'undefined' && programme.duration.fullTime !== '' ? <p>Full-Time: {programme.duration.fullTime}</p> : <p>Full Time: NIL</p>}
                                         </div>
                                     </IonText>
                                 </IonCol>
