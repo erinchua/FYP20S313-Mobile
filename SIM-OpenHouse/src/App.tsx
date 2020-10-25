@@ -47,7 +47,7 @@ import ProgTalkInfo from "./components/OpenHouseProgrammes/ProgTalkInfo";
 
 const App: React.FC = () => {
   const { loading, auth } = useAuthInit();
-  const [renderTopBar, setRenderTopBar] = useState<Boolean>(false);
+  /* const [renderTopBar, setRenderTopBar] = useState<Boolean>(false);
   const [backArrow, setBackArrow] = useState<Boolean>(false);
   const [title, setTitle] = useState<String>("");
   const [route, setRoute] = useState<String>("");
@@ -59,7 +59,7 @@ const App: React.FC = () => {
     setTitle(titleData);
     setHamburger(hamburgerData);
     setRoute(routeData);
-  };
+  }; */
 
   if (loading) return <IonLoading isOpen />;
 

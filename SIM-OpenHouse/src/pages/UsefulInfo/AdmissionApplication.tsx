@@ -27,7 +27,7 @@ const AdmissionApplication: React.FC = () => {
 
     const displayInfoCol1 = () => {
         info1.current!.hidden = !info1.current!.hidden;
-        if (showIcon1.current!.icon == addCircle)
+        if (showIcon1.current!.icon === addCircle)
             showIcon1.current!.icon = removeCircle;
         else
             showIcon1.current!.icon = addCircle;
@@ -35,7 +35,7 @@ const AdmissionApplication: React.FC = () => {
 
     const displayInfoCol2 = () => {
         info2.current!.hidden = !info2.current!.hidden;
-        if (showIcon2.current!.icon == addCircle)
+        if (showIcon2.current!.icon === addCircle)
             showIcon2.current!.icon = removeCircle;
         else
             showIcon2.current!.icon = addCircle;
@@ -43,7 +43,7 @@ const AdmissionApplication: React.FC = () => {
 
     const displayInfoCol3 = () => {
         info3.current!.hidden = !info3.current!.hidden;
-        if (showIcon3.current!.icon == addCircle)
+        if (showIcon3.current!.icon === addCircle)
             showIcon3.current!.icon = removeCircle;
         else
             showIcon3.current!.icon = addCircle;
@@ -51,7 +51,7 @@ const AdmissionApplication: React.FC = () => {
 
     const displayInfoCol4 = () => {
         info4.current!.hidden = !info4.current!.hidden;
-        if (showIcon4.current!.icon == addCircle)
+        if (showIcon4.current!.icon === addCircle)
             showIcon4.current!.icon = removeCircle;
         else
             showIcon4.current!.icon = addCircle;
@@ -59,7 +59,7 @@ const AdmissionApplication: React.FC = () => {
 
     const displayInfoCol5 = () => {
         info5.current!.hidden = !info5.current!.hidden;
-        if (showIcon5.current!.icon == addCircle)
+        if (showIcon5.current!.icon === addCircle)
             showIcon5.current!.icon = removeCircle;
         else
             showIcon5.current!.icon = addCircle;

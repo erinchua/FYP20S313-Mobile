@@ -1,8 +1,6 @@
 import { IonContent, IonHeader, IonPage } from '@ionic/react';
 import React from 'react';
-import { RouteComponentProps, useLocation, match } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import '../../css/Global.css';
 import '../../css/CourseComparator.css';

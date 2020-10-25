@@ -69,14 +69,14 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
 
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <Link className='studySIMMainLink' to={`/u/study@SIMMain/speciality/${studySIMProgSelect}`}>
+                                    <Link className='studySIMMainLink' to={`/u/study@SIMMain/specialty/${studySIMProgSelect}`}>
 
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faStar} />
                                         </IonRow>
 
                                         <IonRow className="ion-justify-content-center">
-                                            <IonText className="studySIMMainText">Speciality</IonText>
+                                            <IonText className="studySIMMainText">Specialty</IonText>
                                         </IonRow>
 
                                     </Link>
@@ -144,13 +144,13 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
 
                             <IonRow className="ion-justify-content-around studyMainRow">
                                 <IonCol sizeSm="6" className="studyMainCol">
-                                    <Link className='studySIMMainLink' to={`/u/study@SIMMain/speciality/${studySIMProgSelect}`}>
+                                    <Link className='studySIMMainLink' to={`/u/study@SIMMain/specialty/${studySIMProgSelect}`}>
                                         <IonRow className="ion-justify-content-center">
                                             <FontAwesomeIcon className="studySIMMainIcons" size="2x" icon={faStar} />
                                         </IonRow>
 
                                         <IonRow className="ion-justify-content-center">
-                                            <IonText className="studySIMMainText">Speciality</IonText>
+                                            <IonText className="studySIMMainText">Specialty</IonText>
                                         </IonRow>
                                     </Link>
                                 </IonCol>

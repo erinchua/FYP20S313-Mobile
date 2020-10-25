@@ -27,7 +27,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displayCategories = () => {
         categories.current!.hidden = !categories.current!.hidden;
-        if(toggleShow1.current!.icon == addCircle) {
+        if(toggleShow1.current!.icon === addCircle) {
             toggleShow1.current!.icon = removeCircle;
         } else {
             toggleShow1.current!.icon = addCircle;
@@ -36,7 +36,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displayEligibility = () => {
         eligibility.current!.hidden = !eligibility.current!.hidden;
-        if(toggleShow2.current!.icon == addCircle) {
+        if(toggleShow2.current!.icon === addCircle) {
             toggleShow2.current!.icon = removeCircle;
         } else {
             toggleShow2.current!.icon = addCircle;
@@ -45,7 +45,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displayValueOfScholarship = () => {
         valueOfScholarship.current!.hidden = !valueOfScholarship.current!.hidden;
-        if(toggleShow3.current!.icon == addCircle) {
+        if(toggleShow3.current!.icon === addCircle) {
             toggleShow3.current!.icon = removeCircle;
         } else {
             toggleShow3.current!.icon = addCircle;
@@ -54,7 +54,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displayApplication = () => {
         application.current!.hidden = !application.current!.hidden;
-        if(toggleShow4.current!.icon == addCircle) {
+        if(toggleShow4.current!.icon === addCircle) {
             toggleShow4.current!.icon = removeCircle;
         } else {
             toggleShow4.current!.icon = addCircle;
@@ -63,7 +63,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displayApplicationDocumentsProcedures = () => {
         applicationDocumentsProcedures.current!.hidden = !applicationDocumentsProcedures.current!.hidden;
-        if(toggleShow5.current!.icon == addCircle) {
+        if(toggleShow5.current!.icon === addCircle) {
             toggleShow5.current!.icon = removeCircle;
         } else {
             toggleShow5.current!.icon = addCircle;
@@ -72,7 +72,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displaySelectionProcess = () => {
         selectionProcess.current!.hidden = !selectionProcess.current!.hidden;
-        if(toggleShow6.current!.icon == addCircle) {
+        if(toggleShow6.current!.icon === addCircle) {
             toggleShow6.current!.icon = removeCircle;
         } else {
             toggleShow6.current!.icon = addCircle;
@@ -81,7 +81,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displayTenureOfScholarship = () => {
         tenureOfScholarship.current!.hidden = !tenureOfScholarship.current!.hidden;
-        if(toggleShow7.current!.icon == addCircle) {
+        if(toggleShow7.current!.icon === addCircle) {
             toggleShow7.current!.icon = removeCircle;
         } else {
             toggleShow7.current!.icon = addCircle;
@@ -90,7 +90,7 @@ const SimGeScholarship: React.FC = () => {
 
     const displayTermsAndConditions = () => {
         termsAndConditions.current!.hidden = !termsAndConditions.current!.hidden;
-        if(toggleShow8.current!.icon == addCircle) {
+        if(toggleShow8.current!.icon === addCircle) {
             toggleShow8.current!.icon = removeCircle;
         } else {
             toggleShow8.current!.icon = addCircle;

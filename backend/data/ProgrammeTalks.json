@@ -9,10 +9,9 @@
     "venue": "SIM HQ BLK A LT A.2.08",
     "capacityLimit": 50,
     "noRegistered": 0,
-    "isLive": true,
+    "isLive": false,
     "hasRecording": true,
-    "liveUrl": "",
-    "recordingUrl": ""
+    "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "id": "talk-002",
@@ -24,10 +23,9 @@
     "venue": "SIM HQ BLK B LT B.2.01",
     "capacityLimit": 50,
     "noRegistered": 0,
-    "isLive": false,
+    "isLive": true,
     "hasRecording": false,
-    "liveUrl": "",
-    "recordingUrl": ""
+    "link": "https://www.youtube.com/watch?v=RidN26q3rCc"
   },
   {
     "id": "talk-003",
@@ -41,8 +39,7 @@
     "noRegistered": 0,
     "isLive": false,
     "hasRecording": false,
-    "liveUrl": "",
-    "recordingUrl": ""
+    "link": ""
   },
   {
     "id": "talk-004",
@@ -54,10 +51,9 @@
     "venue": "SIM HQ BLK A LT A.2.13",
     "capacityLimit": 50,
     "noRegistered": 0,
-    "isLive": true,
+    "isLive": false,
     "hasRecording": true,
-    "liveUrl": "",
-    "recordingUrl": ""
+    "link": "https://www.youtube.com/watch?v=PeihcfYft9w"
   },
   {
     "id": "talk-005",
@@ -69,10 +65,9 @@
     "venue": "SIM HQ BLK A LT A.2.12",
     "capacityLimit": 50,
     "noRegistered": 0,
-    "isLive": false,
+    "isLive": true,
     "hasRecording": false,
-    "liveUrl": "",
-    "recordingUrl": ""
+    "link": "https://www.youtube.com/watch?v=GfO-3Oir-qM"
   },
   {
     "id": "talk-006",
@@ -85,8 +80,7 @@
     "capacityLimit": 50,
     "noRegistered": 0,
     "isLive": true,
-    "hasRecording": true,
-    "liveUrl": "",
-    "recordingUrl": ""
+    "hasRecording": false,
+    "link": "https://www.youtube.com/watch?v=KR0g-1hnQPA"
   }
 ]

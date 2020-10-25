@@ -42,8 +42,8 @@ const ProgrammeTalks: React.FC = () => {
   const [openhouseDates, setOpenhouseDates] = useState([]);
   const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
 
-  const liveTalk = programmeTalk.filter(talk => { return talk.isLive == true })
-  const recordedTalk = programmeTalk.filter(talk => { return talk.hasRecording == true })
+  const liveTalk = programmeTalk.filter(talk => { return talk.isLive === true })
+  const recordedTalk = programmeTalk.filter(talk => { return talk.hasRecording === true })
 
   useEffect(() => {
     const dates: any = [];
@@ -79,7 +79,7 @@ const ProgrammeTalks: React.FC = () => {
   }, []);
 
 
-  {/* Display Filter Menu Popover */ }
+  /* Display Filter Menu Popover */
   const [showProgTalkFilterPopover, setShowProgTalkFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
     open: false,
     event: undefined,
@@ -220,13 +220,13 @@ const ProgrammeTalks: React.FC = () => {
           onDidDismiss={e => setShowProgTalkFilterPopover({ open: false, event: undefined })}
         >
           {tab === "schedule" ?
-            <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
+            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
               params={""} href={"/u/openHouseMain/programmeTalks#schedule"} filterFor={"progTalk"} />
             : ''
           }
 
           {tab === "pastRecordings" ?
-            <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
+            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
               params={""} href={"/u/openHouseMain/programmeTalks#pastRecordings"} filterFor={"progTalk"} />
             : ''
           }
