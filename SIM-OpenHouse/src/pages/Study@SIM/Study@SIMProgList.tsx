@@ -1,27 +1,34 @@
 import { IonAlert, IonBadge, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonLabel, IonPage, IonPopover, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 import '../../css/Global.css';
 import '../../css/Study@SIMProgList.css';
-import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
 import TopNav from '../../components/TopNav';
 import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopoverContent';
 import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
-import { Programme } from './Study@SIMProgInfo'
+import { Programme } from './Study@SIMProgInfo';
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
-    category: string
+    category: string;
 }> { }
 
-const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
+interface myProps {
+    compareProgList: Programme[],
+    onCompareProgListChange: (programmes: Programme[]) => void
+}
+const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => {
 
+    console.log(props);
+    const { match } = props;
     const discipline = match.params.discipline
     const category = match.params.category
+
+    // const [progList, setProgList] = useContext(ProgListContext);
 
     const [disciplineName, setDisciplineName] = useState([
         'Art & Social Sciences',
@@ -32,15 +39,31 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
     ]);
 
 
+
+    const [currentMosFilter, setCurrentMosFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
+    const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>([])
+    const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>([])
+    const [currentUniFilter, setCurrentUniFilter] = useState<string[]>([])
+    const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>([])
+    const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>([])
+
+
+
     const [programmes, setProgrammes] = useState<Programme[]>([])
     const [compareProgList, setCompareProgList] = useState<Programme[]>([])
+
+    //For storing the compare list into session
+    useEffect(() => () => {
+        window.sessionStorage.setItem("compareProgList", JSON.stringify(compareProgList))
+    }, [compareProgList])
+
 
     {/* Adding programme for comparison - Need to be generated dynamically */ }
     const compareProgramme = (programme: Programme) => {
         const newProgList = [...compareProgList]
         const newProgID = programme.id
 
-        if (compareProgList.length < 3) {
+        if (newProgList.length < 3) {
             if (newProgList.includes(programme)) {
                 const updatedProgList = newProgList.filter(existingProg => { return existingProg.id != newProgID })
                 setCompareProgList(updatedProgList)
@@ -76,6 +99,22 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
         const updatedProgList = newProgList.filter(programme => { return programme.id == '' })
         setCompareProgList(updatedProgList)
 
+    }
+    //Filter handlers
+
+    const handleMosCheck = (value: string) => {
+        const currentIndex = currentMosFilter.indexOf(value)
+        const newMosFilter = [...currentMosFilter]
+
+        if (currentIndex === -1) {
+            newMosFilter.push(value)
+        } else {
+            newMosFilter.splice(currentIndex, 1)
+        }
+
+        setCurrentMosFilter(newMosFilter)
+        // console.log('New filters are' + newCheckedFilter)
+        //filterProgrammes(newCheckedFilter)
     }
 
     {/* Display Compare Prog Popover */ }
@@ -114,9 +153,13 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
         }
 
         fetchData(match.params.discipline, match.params.category)
+
+        const sessionList: Programme[] = JSON.parse(window.sessionStorage.compareProgList);
+        setCompareProgList(sessionList);
     }, [])
     return (
         <React.Fragment>
+            {console.log("Current proglist are: " + JSON.stringify(compareProgList))}
             <IonAlert
                 isOpen={showCompareProgAlert}
                 onDidDismiss={() => setShowCompareProgAlert(false)}
@@ -263,7 +306,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         onDidDismiss={e => setShowCompareProgPopover({ open: false, event: undefined })}
                     >
                         <CompareProgPopoverContent compareProgList={compareProgList} removeProg={removeProg} removeAllProg={removeAllProg} viewResults={() => (console.log('Add viewResults function here'))}
-                            href={`/u/study@SIMMain/${match.params.discipline}/${match.params.category}/courseComparator`} />
+                            href={`/u/study@SIMMain/${props.match.params.discipline}/${props.match.params.category}/courseComparator`} />
 
                     </IonPopover>
 
@@ -275,7 +318,7 @@ const StudySIMProgList: React.FC<StudySIMProgList_Props> = ({ match }) => {
                         event={showProgCourseFilterPopover.event}
                         onDidDismiss={e => setShowProgCourseFilterPopover({ open: false, event: undefined })}
                     >
-                        {match.params.discipline === "artSocialSciences" ?
+                        {props.match.params.discipline === "artSocialSciences" ?
                             <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
                                 params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} filterFor={"study@SIM"} />
                             : ''
