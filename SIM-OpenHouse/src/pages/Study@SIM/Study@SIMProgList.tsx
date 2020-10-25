@@ -11,6 +11,8 @@ import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPop
 import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
 import { Programme } from './Study@SIMProgInfo';
+import { FilterCondition } from '../../components/FilterPopoverContent'
+import { filter } from 'ionicons/icons';
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
@@ -40,12 +42,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
 
 
-    const [currentMosFilter, setCurrentMosFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
-    const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>([])
-    const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>([])
-    const [currentUniFilter, setCurrentUniFilter] = useState<string[]>([])
-    const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>([])
-    const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>([])
+
 
 
 
@@ -53,8 +50,10 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
     const [compareProgList, setCompareProgList] = useState<Programme[]>([])
 
     //For storing the compare list into session
-    useEffect(() => () => {
-        window.sessionStorage.setItem("compareProgList", JSON.stringify(compareProgList))
+    useEffect(() => {
+        return () => {
+            window.sessionStorage.setItem("compareProgList", JSON.stringify(compareProgList));
+        }
     }, [compareProgList])
 
 
@@ -85,6 +84,43 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
         }
     };
+
+    const filterProgrammes = async (condition: FilterCondition) => {
+
+        const newList: Programme[] = []
+        console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
+        await db.collection('TestProgrammes')
+            .get()
+            .then(snapshot => {
+                snapshot.docs.forEach((doc: any) => {
+                    const data = doc.data()
+                    newList.push(data)
+                })
+                // setProgrammes(newList)
+            })
+        console.log(JSON.stringify(newList))
+        Object.entries(condition).map(([key, value]) => {
+            if (key == 'mos') {
+                if (value.length < 3) {
+                    value.forEach((value: string) => {
+                        if (value == 'fullPartTime')
+                            newList.filter(programme => { return (programme.modeOfStudy.ModeOfStudy.fullTime && programme.modeOfStudy.ModeOfStudy.partTime) === true })
+                        if (value == 'fullTime')
+                            newList.filter(programme => { return (programme.modeOfStudy.ModeOfStudy.fullTime && !programme.modeOfStudy.ModeOfStudy.partTime) === true })
+                        if (value == 'partTime')
+                            newList.filter(programme => { return (!programme.modeOfStudy.ModeOfStudy.fullTime && programme.modeOfStudy.ModeOfStudy.partTime) === true })
+                    })
+                }
+            }
+        }
+            //newList.filter(programme=>{return programme.modeOfStudy})
+        )
+        console.log("New List are " + JSON.stringify(newList))
+
+
+
+
+    }
     /*To remove selected programmes in comparePopOver */
     const removeProg = (programme: Programme) => {
         const newProgList = [...compareProgList]
@@ -100,22 +136,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         setCompareProgList(updatedProgList)
 
     }
-    //Filter handlers
 
-    const handleMosCheck = (value: string) => {
-        const currentIndex = currentMosFilter.indexOf(value)
-        const newMosFilter = [...currentMosFilter]
-
-        if (currentIndex === -1) {
-            newMosFilter.push(value)
-        } else {
-            newMosFilter.splice(currentIndex, 1)
-        }
-
-        setCurrentMosFilter(newMosFilter)
-        // console.log('New filters are' + newCheckedFilter)
-        //filterProgrammes(newCheckedFilter)
-    }
 
     {/* Display Compare Prog Popover */ }
     const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
@@ -154,7 +175,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
         fetchData(match.params.discipline, match.params.category)
 
-        const sessionList: Programme[] = JSON.parse(window.sessionStorage.compareProgList);
+        const sessionList: Programme[] = window.sessionStorage.compareProgList ? JSON.parse(window.sessionStorage.compareProgList) : [];
+        console.log("Session list retrieved! " + sessionList)
         setCompareProgList(sessionList);
     }, [])
     return (
@@ -319,32 +341,32 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         onDidDismiss={e => setShowProgCourseFilterPopover({ open: false, event: undefined })}
                     >
                         {props.match.params.discipline === "artSocialSciences" ?
-                            <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} filterFor={"study@SIM"} />
+                            <FilterPopoverContent filterFunction={filterProgrammes}
+                                params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "business" ?
-                            <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "business"} href={"/u/study@SIMMain/business"} filterFor={"study@SIM"} />
+                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
+                                params={match.params.discipline === "business"} href={"/u/study@SIMMain/business/test"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "itComputerScience" ?
-                            <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} filterFor={"study@SIM"} />
+                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
+                                params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "nursing" ?
-                            <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} filterFor={"study@SIM"} />
+                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
+                                params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "speciality" ?
-                            <FilterPopoverContent filterResults={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} filterFor={"study@SIM"} />
+                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
+                                params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} filterFor={"study@SIM"} discipline={discipline} category={category} />
                             : ''
                         }
 
