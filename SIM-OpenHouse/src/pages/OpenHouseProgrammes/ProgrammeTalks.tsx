@@ -221,13 +221,13 @@ const ProgrammeTalks: React.FC = () => {
         >
           {tab === "schedule" ?
             <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
-              params={""} href={"/u/openHouseMain/programmeTalks#schedule"} filterFor={"progTalk"} />
+              params={""} href={"/u/openHouseMain/programmeTalks#schedule"} filterFor={"progTalk"} discipline="" category="" />
             : ''
           }
 
           {tab === "pastRecordings" ?
             <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
-              params={""} href={"/u/openHouseMain/programmeTalks#pastRecordings"} filterFor={"progTalk"} />
+              params={""} href={"/u/openHouseMain/programmeTalks#pastRecordings"} filterFor={"progTalk"} discipline="" category="" />
             : ''
           }
 
