@@ -10,14 +10,14 @@
         "id": "uobbroc-002",
         "university": "University of Birmingham",
         "description": "UoB-MBA",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FBirmingham%2FUoB-MBA.pdf?alt=media&token=ecef47dc-1b5b-4fb0-b296-ff479c89a25e",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FBirmingham%2FUoB-MBA.pdf?alt=media&token=ecef47dc-1b5b-4fb0-b296-ff479c89a25e",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FBirmingham%2FBirmingham-MasterOfBA.jpg?alt=media&token=11090f40-b55a-4864-b505-fc28984cb2f5"
     },
     {
         "id": "uobbroc-003",
         "university": "University of Birmingham",
         "description": "UoB-MSc",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FBirmingham%2FUoB-MSc.pdf?alt=media&token=a9cfcc65-231d-4310-9be9-416ad0a12fe5",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FBirmingham%2FUoB-MSc.pdf?alt=media&token=a9cfcc65-231d-4310-9be9-416ad0a12fe5",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FBirmingham%2FBirmingham-MasterOfSci.jpg?alt=media&token=cd17ae5a-a226-49ef-82ab-3548baa749ba"
     },
     {
@@ -38,14 +38,14 @@
         "id": "rmitbroc-001",
         "university": "RMIT University",
         "description": "RMIT-Aviation",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-Aviation.pdf?alt=media&token=8973507f-36c1-4e8a-9c84-509bf370caef",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-Aviation.pdf?alt=media&token=8973507f-36c1-4e8a-9c84-509bf370caef",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-BachelorOfAppliedSci.jpg?alt=media&token=b1887182-0244-4eba-a726-8283fd7f040a"
     },
     {
         "id": "rmitbroc-002",
         "university": "RMIT University",
         "description": "RMIT-Business",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-Business.pdf?alt=media&token=64ad1a25-62db-4fa0-bf41-9b9a20952fcb",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-Business.pdf?alt=media&token=64ad1a25-62db-4fa0-bf41-9b9a20952fcb",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-BachelorOfBusiness.jpg?alt=media&token=4e417c96-6d1b-46b5-8917-081dda1b1522"
     },
     {
@@ -66,14 +66,14 @@
         "id": "rmitbroc-005",
         "university": "RMIT University",
         "description": "RMIT-Prof-Comms",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-Prof-Comms.pdf?alt=media&token=6454d728-05f2-4fd1-b38c-27541e8a67dc",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-Prof-Comms.pdf?alt=media&token=6454d728-05f2-4fd1-b38c-27541e8a67dc",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FRMIT%2FRMIT-BachelorOfCommunication.jpg?alt=media&token=7fe821d9-9d14-4f33-b1f6-0c63f8fa4b41"
     },
     {
         "id": "simbroc-001",
         "university": "Singapore Institute of Management",
         "description": "SIM-DIP",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FSIM%2FSIM-Diploma.pdf?alt=media&token=6b1c7e2c-e191-43b9-8290-c76c47dc1f4d",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FSIM%2FSIM-Diploma.pdf?alt=media&token=6b1c7e2c-e191-43b9-8290-c76c47dc1f4d",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FSIM%2FSIMGE-Diploma-Certificate.jpg?alt=media&token=6f9fc740-6b1e-4da2-86e2-12c7048d9365"
     },
     {
@@ -94,14 +94,14 @@
         "id": "usydbroc-001",
         "university": "University of Sydney",
         "description": "USYD-Nursing",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FSydney%2FUSYD-Nursing-Brochure.pdf?alt=media&token=ad8696fa-d75b-407e-8a14-59569310ef2f",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FSydney%2FUSYD-Nursing-Brochure.pdf?alt=media&token=ad8696fa-d75b-407e-8a14-59569310ef2f",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FSydney%2FSydney.jpg?alt=media&token=a482336d-9cbc-4771-9c6c-2a18b9552328"
     },
     {
         "id": "warwickbroc-001",
         "university": "University of Warwick",
         "description": "Warwick-CSM",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWarwick%2FWarwick-CSM.pdf?alt=media&token=2c67fb67-a8be-4356-b9db-6cfc0e82fd55",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWarwick%2FWarwick-CSM.pdf?alt=media&token=2c67fb67-a8be-4356-b9db-6cfc0e82fd55",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWarwick%2FWarwick-Cyber.jpg?alt=media&token=90d6e8bf-2ba8-4b88-8d68-8df85a609896"
     },
     {
@@ -122,15 +122,15 @@
         "id": "uowbroc-001",
         "university": "University of Wollongong",
         "description": "UOW-IT",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWollongong%2FUOW-IT.pdf?alt=media&token=fb1f006b-a250-4280-b06c-566ac36ee3fe",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWollongong%2FUOW-IT.pdf?alt=media&token=fb1f006b-a250-4280-b06c-566ac36ee3fe",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWollongong%2FWollongong-BachelorOfComSci.jpg?alt=media&token=0a750d51-4200-4c95-947e-e0dd49164aa1"
     },
     {
         "id": "uowbroc-002",
         "university": "University of Wollongong",
         "description": "UOW-Psy-Sci",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWollongong%2FUOW-Psy-Sci.pdf?alt=media&token=1f74403c-ed7e-4b1a-8e04-721fad9474da",
-        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWollongong%2FUOW-Psy-Sci.pdf?alt=media&token=1f74403c-ed7e-4b1a-8e04-721fad9474da"
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWollongong%2FUOW-Psy-Sci.pdf?alt=media&token=1f74403c-ed7e-4b1a-8e04-721fad9474da",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FWollongong%2FWollongong-BachelorOfPsySci.jpg?alt=media&token=846751c8-710b-44c5-a723-07673b1282c1"
     },
     {
         "id": "uolbroc-001",
@@ -150,14 +150,14 @@
         "id": "uolbroc-003",
         "university": "University of London",
         "description": "UOL-IFP",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FUOL%2FUOL-IFP.pdf?alt=media&token=c5a24beb-53fe-41af-9dc8-f69f05ca53ff",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FUOL%2FUOL-IFP.pdf?alt=media&token=c5a24beb-53fe-41af-9dc8-f69f05ca53ff",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FUOL%2FLondon-InternationFoundationProg.jpg?alt=media&token=8f71bd45-19ff-4bd3-8bdb-b9c41238930c"
     },
     {
         "id": "uolbroc-004",
         "university": "University of London",
         "description": "UOL-MSc-Data-Sci",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FUOL%2FUOL-MSc-Data-Sci.pdf?alt=media&token=a30e80de-97b7-4be2-ab7d-abcdf65bc493",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FUOL%2FUOL-MSc-Data-Sci.pdf?alt=media&token=a30e80de-97b7-4be2-ab7d-abcdf65bc493",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProgrammes%2FUOL%2FLondon-MasterOfSci.jpg?alt=media&token=a312e71c-22a3-4ba3-be07-0c21a36e4c5a"
     },
     {
@@ -170,7 +170,7 @@
     {
         "id": "prospect-001",
         "description": "Prospectus",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProspectus%2FProspectus.pdf?alt=media&token=e87f8d9c-4eb5-46b1-8288-cbf3f588d8f7",
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProspectus%2FProspectus.pdf?alt=media&token=e87f8d9c-4eb5-46b1-8288-cbf3f588d8f7",
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FProspectus%2Ffull-time-prospectus.jpg?alt=media&token=01ca517a-cb61-4244-8b3d-f5f006549fff"
     },
     {
@@ -182,7 +182,7 @@
     {
         "id": "study-001",
         "description": "Scholarship-FAQ",
-        "url": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FStudy%2FSIM-GE-Scholarship.pdf?alt=media&token=62b3ad7b-185b-48ba-9ec0-c615a0bee1dd"
+        "brochureUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Brochures%2FStudy%2FSIM-GE-Scholarship.pdf?alt=media&token=62b3ad7b-185b-48ba-9ec0-c615a0bee1dd"
     },
     {
         "id": "study-002",

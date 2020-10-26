@@ -19,3 +19,17 @@ export function toSchedule(doc: any): ScheduleItem {
         points: doc.pointsAward || null
     };
 };
+
+export interface Brochure {
+    id: string;
+    description: string;
+    brochureUrl: string;
+    imageUrl: string;
+}
+
+export function toBrochure(doc: any): Brochure {
+    return {
+        id: doc.id,
+        ...doc.data()
+    }
+}
