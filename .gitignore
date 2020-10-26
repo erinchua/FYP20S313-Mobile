@@ -1,2 +1,5 @@
 
 backend/config/sandboxServiceKey.json
+backend/config/firebaseConfig.js
+backend/config/adminConfig.js
+sim-openhouse/src/firebase.ts

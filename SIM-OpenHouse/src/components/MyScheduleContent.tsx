@@ -1,4 +1,4 @@
-import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading } from '@ionic/react';
+import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading, IonModal, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonContent } from '@ionic/react';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
@@ -20,6 +20,7 @@ const MyScheduleContent: React.FC<{
     
     const [alert, setAlert] = useState({ confirmRemove: false, removeSuccess: false, loading: false });
     const [toBeDeleted, setToBeDeleted] = useState("");
+    const [showProgQRCodeModal, setShowProgQRCodeModal] = useState(false);
 
     const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] });
     const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[1] });
@@ -81,12 +82,12 @@ const MyScheduleContent: React.FC<{
             ></IonAlert>
 
             <IonGrid className="myScheduleGrid">
-                <IonRow className="ion-justify-content-center">
-                    <IonCol size-sizeSm="2" className="ion-text-wrap" id="hourHeader">Hour</IonCol>
-                    <IonCol size-sizeSm="3" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
-                    <IonCol size-sizeSm="3" className="myScheduleTableHeader ion-text-wrap">Time</IonCol>
-                    <IonCol size-sizeSm="3" className="myScheduleTableHeader ion-text-wrap">Venue</IonCol>
-                    <IonCol size-sizeSm="1" className="myScheduleTableHeader ion-text-wrap"></IonCol>
+                <IonRow style={{width: "100%"}}>
+                    <IonCol className="myScheduleTableHeader ion-text-wrap">Time</IonCol>
+                    <IonCol className="myScheduleTableHeader_ProgName ion-text-wrap">Programme Name</IonCol>
+                    <IonCol className="myScheduleTableHeader ion-text-wrap">Venue</IonCol>
+                    <IonCol className="myScheduleTableHeader_Btn ion-text-wrap">Check In</IonCol>
+                    <IonCol className="myScheduleTableHeader_Btn ion-text-wrap"></IonCol>
                 </IonRow>
 
                 {props.day1 === "day1" ? 
@@ -98,19 +99,18 @@ const MyScheduleContent: React.FC<{
                             meridian = "pm";
                         };
                         return (
-                            <IonRow className="ion-justify-content-center" key={index}>
-                                <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol>
-                                
+                            <>
                                 {openHouseProgsDay1.map((item:any, index: any) => {
                                     if (item.id.split("-")[0] != "activity") {
                                         if (+item.startTime.split(":")[0] === (time + 9)) {
                                             return (
                                                 <IonRow key={index}>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
-                                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
+                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
+                                                    <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{item.name}</IonCol>
+                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.venue}</IonCol>
+                                                    <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}> View QR Code</IonCol>
+                                                    <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
+                                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                                         </IonButton>
                                                     </IonCol>
@@ -121,112 +121,10 @@ const MyScheduleContent: React.FC<{
                                         }
                                     }
                                 })}
-                            </IonRow>
+                            </>
                         )
                     }) : '' 
                 }
-                
-                <>
-                {/* {props.day1 === "day1" ? 
-                    <>
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">9am</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">ProgName1</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">9:00AM  to 10:00AM</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">Sample</IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">10am</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">11am</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">12pm</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">1pm</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">2pm</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">3pm</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-
-                        <IonRow className="ion-justify-content-center">
-                            <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">4pm</IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap"></IonCol>
-                            <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert("")}>
-                                    <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                </IonButton>
-                            </IonCol>
-                        </IonRow>
-                    </> : '' 
-                } */}
-                </>
                 
                 {props.day2 === "day2" ? 
                     openHouseHoursDay2.map((time: any, index: any) => {
@@ -237,19 +135,18 @@ const MyScheduleContent: React.FC<{
                             meridian = "pm";
                         };
                         return (
-                            <IonRow className="ion-justify-content-center" key={index}>
-                                <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol>
-                                
+                            <>  
                                 {openHouseProgsDay2.map((item:any, index: any) => {
                                     if (item.id.split("-")[0] != "activity") {
                                         if (+item.startTime.split(":")[0] === (time + 9)) {
                                             return (
                                                 <IonRow key={index}>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
-                                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
+                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
+                                                    <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{item.name}</IonCol>
+                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.venue}</IonCol>
+                                                    <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}> View QR Code</IonCol>
+                                                    <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
+                                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                                         </IonButton>
                                                     </IonCol>
@@ -260,7 +157,7 @@ const MyScheduleContent: React.FC<{
                                         }
                                     }
                                 })}
-                            </IonRow>
+                            </>
                         )
                     }) : '' 
                 }
@@ -272,11 +169,11 @@ const MyScheduleContent: React.FC<{
 
                 {/* My Schedule Table (Open House Activities) Table Header*/}
                 <IonRow className="ion-justify-content-center">
-                    <IonCol size-sizeSm="2" className="ion-text-wrap" id="boothNoHeader">Booth No.</IonCol>
-                    <IonCol size-sizeSm="4" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
-                    <IonCol size-sizeSm="3" className="myScheduleActTableHeader ion-text-wrap">Venue</IonCol>
-                    <IonCol size-sizeSm="2" className="myScheduleActTableHeader ion-text-wrap">Points</IonCol>
-                    <IonCol size-sizeSm="1" className="myScheduleActTableHeader ion-text-wrap"></IonCol>
+                    <IonCol className="ion-text-wrap" id="myScheduleActTableHeader_BoothNo">Booth No.</IonCol>
+                    <IonCol className="myScheduleActTableHeader_ProgName ion-text-wrap">Programme Name</IonCol>
+                    <IonCol className="myScheduleActTableHeader_Venue ion-text-wrap">Venue</IonCol>
+                    <IonCol className="myScheduleActTableHeader_Points ion-text-wrap">Points</IonCol>
+                    <IonCol className="myScheduleActTableHeader_Btn ion-text-wrap"></IonCol>
                 </IonRow>
 
                 {props.day1 === "day1" ?
@@ -284,12 +181,12 @@ const MyScheduleContent: React.FC<{
                         if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
-                                    <IonCol size-sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
-                                    <IonCol size-sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.points}</IonCol>
-                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
+                                    <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{item.id.split("-")[1]}</IonCol>
+                                    <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{item.name}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{item.venue}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Points ion-text-wrap">{item.points}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
+                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                         </IonButton>
                                     </IonCol>
@@ -303,12 +200,12 @@ const MyScheduleContent: React.FC<{
                         if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
-                                    <IonCol sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
-                                    <IonCol sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.points}</IonCol>
-                                    <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
+                                   <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{item.id.split("-")[1]}</IonCol>
+                                    <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{item.name}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{item.venue}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Points ion-text-wrap">{item.points}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
+                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                         </IonButton>
                                     </IonCol>
@@ -318,6 +215,24 @@ const MyScheduleContent: React.FC<{
                 }
             </IonGrid>
             <IonLoading isOpen={alert.loading} />
+
+            {/* QR Code Modal */}
+            <IonModal isOpen={showProgQRCodeModal} cssClass="progQRCodeModal">
+                <IonContent className="ion-text-center">
+                    <IonCard className="progQRCodeModalCard">
+                        <IonCardHeader>
+                            <IonCardTitle className="ion-text-center progQRCodeModalCardHeader">Programme QR Code</IonCardTitle>
+                        </IonCardHeader>
+
+                        <IonCardContent className="ion-text-center">
+                            QR Code here
+                        </IonCardContent>
+                    </IonCard>
+
+                    <IonButton id="progQRCodeModalCloseBtn" onClick={() => setShowProgQRCodeModal(false)}>CLOSE</IonButton>
+                </IonContent>
+            </IonModal>
+
         </>
     );
 }

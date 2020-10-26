@@ -499,37 +499,6 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                 </IonCol>
                             </IonRow>
 
-                            {/* Sub Disciplines Filter */}
-                            <IonRow className="filterCourseInnerRow" class="ion-align-items-center">
-                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }} class="ion-text-left">
-                                    <IonTitle className="filterCourseHeader">
-                                        <div className="ion-text-wrap">Sub-Disciplines</div>
-                                    </IonTitle>
-                                </IonCol>
-
-                                <IonCol size="2" sizeSm="2" className="toggleFilterCourseBtnCol" class="ion-text-right">
-                                    <IonButton className="toggleFilterCourseBtn" onClick={displaySubDisciplineInfoCol} fill="clear" size="default">
-                                        <IonIcon slot="icon-only" ref={showSubDisciplineIcon} icon={chevronDownOutline} />
-                                    </IonButton>
-                                </IonCol>
-                            </IonRow>
-
-                            <IonRow class="ion-align-items-center">
-                                <IonCol sizeSm="12" className="courseFiltersCol" ref={subDisciplineInfo} hidden={true} class="ion-text-center">
-                                    <IonList className="courseFilterList">
-                                        <IonItem className="courseFilterItem" lines="none">
-                                            <IonCheckbox className="courseFilterCheckbox" checked={checked} />
-
-                                            <IonLabel className="courseFilterLabel">
-                                                <div className="ion-text-wrap">subDisciplineFilterName</div>
-                                            </IonLabel>
-
-                                            <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
-                                        </IonItem>
-                                    </IonList>
-                                </IonCol>
-                            </IonRow>
-
                         </IonCol>
                     </IonRow>
 
