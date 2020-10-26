@@ -96,7 +96,7 @@ const MySchedule: React.FC = () => {
                     </IonRow>
 
                     <IonRow className="mySchedule-IonRowCol">
-                        <IonToolbar>
+                        <IonCol sizeSm="12" style={{padding:"0", width:"100%"}}>
                             <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                                 <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="mySchedule-DayTab">
                                     Day 1: {openhouseDates[0]}  {/* Date is not hardcoded, only Day 1: is */}
@@ -106,7 +106,7 @@ const MySchedule: React.FC = () => {
                                     Day 2: {openhouseDates[1]}  {/* Date is not hardcoded, only Day 2: is */}
                                 </IonSegmentButton>
                             </IonSegment>
-                        </IonToolbar>
+                        </IonCol>
                     </IonRow>
                 </IonGrid>
 
