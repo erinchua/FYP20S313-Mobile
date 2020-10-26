@@ -8,7 +8,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "specialty"
+            "Specialty"
         ],
         "subDiscipline": [
             "aviation"
@@ -58,7 +58,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "specialty"
+            "Specialty"
         ],
         "subDiscipline": [
             "Construction and Management"
@@ -108,7 +108,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "business"
+            "Business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -158,7 +158,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "business"
+            "Business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -208,7 +208,7 @@
         },
         "academicLevel": "Diploma",
         "discipline": [
-            "business"
+            "Business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -258,7 +258,7 @@
         },
         "academicLevel": "Diploma",
         "discipline": [
-            "business"
+            "Business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -308,7 +308,7 @@
         },
         "academicLevel": "Diploma",
         "discipline": [
-            "business"
+            "Business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -358,7 +358,7 @@
         },
         "academicLevel": "Diploma",
         "discipline": [
-            "specialty"
+            "Specialty"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -408,7 +408,7 @@
         },
         "academicLevel": "Diploma",
         "discipline": [
-            "itComputerScience"
+            "IT & Computer Science"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -458,7 +458,7 @@
         },
         "academicLevel": "Masters",
         "discipline": [
-            "artSocialSciences"
+            "Arts & Social Sciences"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -508,7 +508,7 @@
         },
         "academicLevel": "Masters",
         "discipline": [
-            "artSocialSciences"
+            "Arts & Social Sciences"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -558,7 +558,7 @@
         },
         "academicLevel": "Masters",
         "discipline": [
-            "business"
+            "Business"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -608,7 +608,7 @@
         },
         "academicLevel": "Masters",
         "discipline": [
-            "itComputerScience"
+            "IT & Computer Science"
         ],
         "subDiscipline": [
             "Tourism, Hospitality & Events Management"
@@ -658,7 +658,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "nursing"
+            "Nursing"
         ],
         "subDiscipline": [
             "aviation"
@@ -708,7 +708,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "artSocialSciences"
+            "Arts & Social Sciences"
         ],
         "subDiscipline": [
             "aviation"
@@ -758,7 +758,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "artSocialSciences"
+            "Art & Social Sciences"
         ],
         "subDiscipline": [
             "aviation"
@@ -808,7 +808,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "nursing"
+            "Nursing"
         ],
         "subDiscipline": [
             "aviation"
@@ -858,57 +858,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "itComputerScience"
-        ],
-        "subDiscipline": [
-            "aviation"
-        ],
-        "entryQualifications": {
-            "aLevel": false,
-            "oLevel": false,
-            "degree": false,
-            "diploma": true
-        },
-        "awardedBy": "RMIT University",
-        "programOverview": [
-            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
-            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
-            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
-        ],
-        "applicationPeriod": [
-            {
-                "intake": "Jan 2021",
-                "period": "15 Jul 2020 to 20 Oct 2020"
-            }
-        ],
-        "programmeStructure": {
-            "coursework": true,
-            "examination": true
-        },
-        "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
-        },
-        "intakeMonths": {
-            "partTime": "Jan, Jul",
-            "fullTime": ""
-        },
-        "duration": {
-            "partTime": "2.5 Years",
-            "fullTime": ""
-        },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
-    },
-    {
-        "id": "programme-018",
-        "programmeTitle": "Bachelor of IT com science (Top-up)",
-        "modeOfStudy": {
-            "partTime": true,
-            "fullTime": false
-        },
-        "academicLevel": "Diploma",
-        "discipline": [
-            "business"
+            "IT & Computer Science"
         ],
         "subDiscipline": [
             "aviation"
