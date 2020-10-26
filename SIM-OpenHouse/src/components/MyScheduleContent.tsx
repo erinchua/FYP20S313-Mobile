@@ -8,24 +8,17 @@ import '../css/Global.css';
 import '../css/GuidedTourContent.css';
 import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
+import { sortTimeAsc } from '../modules/compare';
 
-const MyScheduleContent: React.FC<{
-    day1: any; 
-    day2: any;
-    openhouseDates: any;
-    openHouseHours: any;
-    openHouseProgs: any;
-}> = props => {
+const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, openHouseProgs: any }> = props => {
     const { userID } = useAuth();
     
     const [alert, setAlert] = useState({ confirmRemove: false, removeSuccess: false, loading: false });
     const [toBeDeleted, setToBeDeleted] = useState("");
     const [showProgQRCodeModal, setShowProgQRCodeModal] = useState(false);
 
-    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] });
-    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[1] });
-    const openHouseHoursDay1 = Array.from(Array(props.openHouseHours[0]).keys());
-    const openHouseHoursDay2 = Array.from(Array(props.openHouseHours[1]).keys());
+    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] }).sort(sortTimeAsc);
+    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[1] }).sort(sortTimeAsc);
 
     const displayRemoveProgAlert = (id: any) => {
         setAlert({ confirmRemove: true, removeSuccess: false, loading: false });
@@ -41,7 +34,7 @@ const MyScheduleContent: React.FC<{
             setAlert({ confirmRemove: false, removeSuccess: true, loading: false });
         } catch(e) {
             setAlert({ confirmRemove: false, removeSuccess: false, loading: false });
-            console.log(e);
+            return console.log(e);
         }
     };
     
@@ -49,7 +42,6 @@ const MyScheduleContent: React.FC<{
         <>
             <IonAlert
                 isOpen={alert.confirmRemove}
-                //onDidDismiss={() => { return }}
                 cssClass='alertBox'
                 mode='md'
                 header={'Confirm removal of programme from scheduler'}
@@ -91,75 +83,39 @@ const MyScheduleContent: React.FC<{
                 </IonRow>
 
                 {props.day1 === "day1" ? 
-                    openHouseHoursDay1.map((time: any, index: any) => {
-                        let meridian = "am";
-
-                        if ((time + 9) > 12) {
-                            time -= 12;
-                            meridian = "pm";
-                        };
-                        return (
-                            <>
-                                {openHouseProgsDay1.map((item:any, index: any) => {
-                                    if (item.id.split("-")[0] != "activity") {
-                                        if (+item.startTime.split(":")[0] === (time + 9)) {
-                                            return (
-                                                <IonRow key={index}>
-                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
-                                                    <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{item.name}</IonCol>
-                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.venue}</IonCol>
-                                                    <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}> View QR Code</IonCol>
-                                                    <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
-                                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
-                                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                                        </IonButton>
-                                                    </IonCol>
-                                                </IonRow>
-                                            )
-                                        } else {
-                                            return null;
-                                        }
-                                    }
-                                })}
-                            </>
-                        )
-                    }) : '' 
+                    openHouseProgsDay1.map((prog: any) => (
+                        prog.id.split("-")[0].toLowerCase() !== "activity" ? (
+                            <IonRow key={prog.id}>
+                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
+                                <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
+                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}>View QR Code</IonCol>
+                                <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
+                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                    </IonButton>
+                                </IonCol>
+                            </IonRow>
+                        ) : null
+                    )) : null
                 }
                 
                 {props.day2 === "day2" ? 
-                    openHouseHoursDay2.map((time: any, index: any) => {
-                        let meridian = "am";
-
-                        if ((time + 9) > 12) {
-                            time -= 12;
-                            meridian = "pm";
-                        };
-                        return (
-                            <>  
-                                {openHouseProgsDay2.map((item:any, index: any) => {
-                                    if (item.id.split("-")[0] != "activity") {
-                                        if (+item.startTime.split(":")[0] === (time + 9)) {
-                                            return (
-                                                <IonRow key={index}>
-                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
-                                                    <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{item.name}</IonCol>
-                                                    <IonCol className="myScheduleTableData ion-text-wrap">{item.venue}</IonCol>
-                                                    <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}> View QR Code</IonCol>
-                                                    <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
-                                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
-                                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                                        </IonButton>
-                                                    </IonCol>
-                                                </IonRow>
-                                            )
-                                        } else {
-                                            return null
-                                        }
-                                    }
-                                })}
-                            </>
-                        )
-                    }) : '' 
+                     openHouseProgsDay2.map((prog: any) => (
+                        prog.id.split("-")[0].toLowerCase() !== "activity" ? (
+                            <IonRow key={prog.id}>
+                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
+                                <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
+                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}>View QR Code</IonCol>
+                                <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
+                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                    </IonButton>
+                                </IonCol>
+                            </IonRow>
+                        ) : null
+                    )) : null
                 }
 
                 {/* My Schedule Table (Open House Activities) */}
@@ -177,41 +133,39 @@ const MyScheduleContent: React.FC<{
                 </IonRow>
 
                 {props.day1 === "day1" ?
-                    openHouseProgsDay1.map((item: any) => {
-                        if (item.id.split("-")[0] == "activity")
-                            return (
-                                <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{item.id.split("-")[1]}</IonCol>
-                                    <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{item.venue}</IonCol>
-                                    <IonCol className="myScheduleActTableData_Points ion-text-wrap">{item.points}</IonCol>
-                                    <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
-                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
-                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                        </IonButton>
-                                    </IonCol>
-                                </IonRow>
-                            )
-                    }) : '' 
+                    openHouseProgsDay1.map((prog: any) => (
+                        prog.id.split("-")[0] === "activity" ? (
+                            <IonRow className="ion-justify-content-center" key={prog.id}>
+                                <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{prog.boothNo}</IonCol>
+                                <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{prog.venue}</IonCol>
+                                <IonCol className="myScheduleActTableData_Points ion-text-wrap">{prog.points}</IonCol>
+                                <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
+                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                    </IonButton>
+                                </IonCol>
+                            </IonRow>
+                        ) : null
+                    )) : null
                 }
 
                 {props.day2 === "day2" ? 
-                    openHouseProgsDay2.map((item: any) => {
-                        if (item.id.split("-")[0] == "activity")
-                            return (
-                                <IonRow className="ion-justify-content-center" key={item.id}>
-                                   <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{item.id.split("-")[1]}</IonCol>
-                                    <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{item.venue}</IonCol>
-                                    <IonCol className="myScheduleActTableData_Points ion-text-wrap">{item.points}</IonCol>
-                                    <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
-                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
-                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                        </IonButton>
-                                    </IonCol>
-                                </IonRow>
-                            )
-                    }) : '' 
+                    openHouseProgsDay2.map((prog: any) => (
+                        prog.id.split("-")[0] === "activity" ? (
+                            <IonRow className="ion-justify-content-center" key={prog.id}>
+                                <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{prog.boothNo}</IonCol>
+                                <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{prog.venue}</IonCol>
+                                <IonCol className="myScheduleActTableData_Points ion-text-wrap">{prog.points}</IonCol>
+                                <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
+                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                    </IonButton>
+                                </IonCol>
+                            </IonRow>
+                        ) : null
+                    )) : null
                 }
             </IonGrid>
             <IonLoading isOpen={alert.loading} />
