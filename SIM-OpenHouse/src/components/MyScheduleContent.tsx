@@ -82,11 +82,12 @@ const MyScheduleContent: React.FC<{
 
             <IonGrid className="myScheduleGrid">
                 <IonRow className="ion-justify-content-center">
-                    <IonCol size-sizeSm="2" className="ion-text-wrap" id="hourHeader">Hour</IonCol>
-                    <IonCol size-sizeSm="3" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
+                    {/* <IonCol size-sizeSm="2" className="ion-text-wrap" id="hourHeader">Hour</IonCol> */}
                     <IonCol size-sizeSm="3" className="myScheduleTableHeader ion-text-wrap">Time</IonCol>
+                    <IonCol size-sizeSm="3" className="myScheduleTableHeader_ProgName ion-text-wrap">Programme Name</IonCol>
                     <IonCol size-sizeSm="3" className="myScheduleTableHeader ion-text-wrap">Venue</IonCol>
-                    <IonCol size-sizeSm="1" className="myScheduleTableHeader ion-text-wrap"></IonCol>
+                    <IonCol size-sizeSm="2" className="myScheduleTableHeader_Btn ion-text-wrap">QR Code</IonCol>
+                    <IonCol size-sizeSm="1" className="myScheduleTableHeader_Btn ion-text-wrap"></IonCol>
                 </IonRow>
 
                 {props.day1 === "day1" ? 
@@ -99,18 +100,19 @@ const MyScheduleContent: React.FC<{
                         };
                         return (
                             <IonRow className="ion-justify-content-center" key={index}>
-                                <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol>
+                                {/* <IonCol size-sizeSm="2" className="myScheduleTableTimeHeader ion-text-wrap">{time + 9}{meridian}</IonCol> */}
                                 
                                 {openHouseProgsDay1.map((item:any, index: any) => {
                                     if (item.id.split("-")[0] != "activity") {
                                         if (+item.startTime.split(":")[0] === (time + 9)) {
                                             return (
                                                 <IonRow key={index}>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
-                                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
-                                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
-                                                        <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTableData ion-text-wrap">{item.startTime} to {item.endTime}</IonCol>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTableData_ProgName ion-text-wrap">{item.name}</IonCol>
+                                                    <IonCol size-sizeSm="3" className="myScheduleTableData ion-text-wrap">{item.venue}</IonCol>
+                                                    <IonCol size-sizeSm="2" className="myScheduleTableData_QRCode ion-text-wrap"> View QR Code</IonCol>
+                                                    <IonCol size-sizeSm="1" className="myScheduleTableData_BtnCol" id="removeCol">
+                                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                                         </IonButton>
                                                     </IonCol>
@@ -272,11 +274,11 @@ const MyScheduleContent: React.FC<{
 
                 {/* My Schedule Table (Open House Activities) Table Header*/}
                 <IonRow className="ion-justify-content-center">
-                    <IonCol size-sizeSm="2" className="ion-text-wrap" id="boothNoHeader">Booth No.</IonCol>
-                    <IonCol size-sizeSm="4" className="progNameHeader ion-text-wrap">Programme Name</IonCol>
-                    <IonCol size-sizeSm="3" className="myScheduleActTableHeader ion-text-wrap">Venue</IonCol>
-                    <IonCol size-sizeSm="2" className="myScheduleActTableHeader ion-text-wrap">Points</IonCol>
-                    <IonCol size-sizeSm="1" className="myScheduleActTableHeader ion-text-wrap"></IonCol>
+                    <IonCol size-sizeSm="2" className="ion-text-wrap" id="myScheduleActTableHeader_BoothNo">Booth No.</IonCol>
+                    <IonCol size-sizeSm="4" className="myScheduleActTableHeader_ProgName ion-text-wrap">Programme Name</IonCol>
+                    <IonCol size-sizeSm="3" className="myScheduleActTableHeader_Venue ion-text-wrap">Venue</IonCol>
+                    <IonCol size-sizeSm="2" className="myScheduleActTableHeader_Points ion-text-wrap">Points</IonCol>
+                    <IonCol size-sizeSm="1" className="myScheduleActTableHeader_Btn ion-text-wrap"></IonCol>
                 </IonRow>
 
                 {props.day1 === "day1" ?
@@ -284,11 +286,11 @@ const MyScheduleContent: React.FC<{
                         if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol size-sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
-                                    <IonCol size-sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol size-sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
-                                    <IonCol size-sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.points}</IonCol>
-                                    <IonCol size-sizeSm="1" className="myScheduleTable-Data" id="removeCol">
+                                    <IonCol size-sizeSm="2" className="myScheduleActTableData_Booth ion-text-wrap">{item.id.split("-")[1]}</IonCol>
+                                    <IonCol size-sizeSm="4" className="myScheduleActTableData_ProgName ion-text-wrap">{item.name}</IonCol>
+                                    <IonCol size-sizeSm="3" className="myScheduleActTableData_Venue ion-text-wrap">{item.venue}</IonCol>
+                                    <IonCol size-sizeSm="2" className="myScheduleActTableData_Points ion-text-wrap">{item.points}</IonCol>
+                                    <IonCol size-sizeSm="1" className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
                                         <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                         </IonButton>
@@ -303,11 +305,11 @@ const MyScheduleContent: React.FC<{
                         if (item.id.split("-")[0] == "activity")
                             return (
                                 <IonRow className="ion-justify-content-center" key={item.id}>
-                                    <IonCol sizeSm="2" className="myScheduleTable-BoothData ion-text-wrap">{item.id.split("-")[1]}</IonCol>
-                                    <IonCol sizeSm="4" className="myScheduleTable-ProgNameData ion-text-wrap">{item.name}</IonCol>
-                                    <IonCol sizeSm="3" className="myScheduleTable-Data ion-text-wrap">{item.venue}</IonCol>
-                                    <IonCol sizeSm="2" className="myScheduleTable-Data ion-text-wrap">{item.points}</IonCol>
-                                    <IonCol sizeSm="1" className="myScheduleTable-Data" id="removeCol">
+                                     <IonCol size-sizeSm="2" className="myScheduleActTableData_Booth ion-text-wrap">{item.id.split("-")[1]}</IonCol>
+                                    <IonCol size-sizeSm="4" className="myScheduleActTableData_ProgName ion-text-wrap">{item.name}</IonCol>
+                                    <IonCol size-sizeSm="3" className="myScheduleActTableData_Venue ion-text-wrap">{item.venue}</IonCol>
+                                    <IonCol size-sizeSm="2" className="myScheduleActTableData_Points ion-text-wrap">{item.points}</IonCol>
+                                    <IonCol size-sizeSm="1" className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
                                         <IonButton className="myScheduleTable-DataBtn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(item.id)}>
                                             <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
                                         </IonButton>
