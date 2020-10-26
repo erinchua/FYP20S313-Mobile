@@ -238,6 +238,11 @@ setTimeout(() => {
     console.log(matchedPosts)
 }, 1000); */
 
-db.collection('Students').doc(userID).onSnapshot(student => {
-    console.log(student.data())
+function mapTo (doc) {
+    return {
+        ...doc.data()
+    }
+}
+db.collection('Brochures').get().then(({docs}) => {
+    console.log(docs.map(mapTo))
 })

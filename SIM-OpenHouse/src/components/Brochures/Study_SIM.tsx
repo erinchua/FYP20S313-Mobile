@@ -4,34 +4,11 @@ import React, { useRef } from 'react';
 import '../../css/Global.css';
 import '../../css/Brochures.css';
 import { addCircle, removeCircle } from 'ionicons/icons';
-import fullTimeProspectus from '../../img/brochure/full-time-prospectus.jpg';
-import partTimeProspectus from '../../img/brochure/part-time-prospectus.jpg';
-import simGeDipGrad from '../../img/brochure/SIMGE-Diploma-Certificate.jpg';
-import simGeGrad from '../../img/brochure/SIMGE-Graduate.jpg'; 
-import london1 from '../../img/brochure/London-BachelorOfSci.jpg';
-import londonProfAccountancy from '../../img/brochure/London-ProfessionalAccountancy.jpg';
-import london2 from '../../img/brochure/London-BachelorOfSci.jpg';
-import londonInternationalFoundProg from '../../img/brochure/London-InternationFoundationProg.jpg';
-import londonMaster from '../../img/brochure/London-MasterOfSci.jpg';
-import BirminghamBachelor from '../../img/brochure/Birmingham-BachelorOfSci.jpg';
-import BirminghamMasterBA from '../../img/brochure/Birmingham-MasterOfBA.jpg';
-import BirminghamMasterSci from '../../img/brochure/Birmingham-MasterOfSci.jpg';
-import StirlingBachelor from '../../img/brochure/Stirling-BachelorOfArts.jpg';
-import Buffalo from '../../img/brochure/Buffalo.jpg';
-import LaTrobe from '../../img/brochure/LaTrobe.jpg';
-import RmitBachelorOfBusiness from '../../img/brochure/RMIT-BachelorOfBusiness.jpg';
-import RmitBachelorOfCommunication from '../../img/brochure/RMIT-BachelorOfCommunication.jpg';
-import RmitBachelorOfDesign from '../../img/brochure/RMIT-BachelorOfDesign.jpg';
-import RmitBachelorOfAppliedSci from '../../img/brochure/RMIT-BachelorOfAppliedSci.jpg';
-import RmitConstructionManagement from '../../img/brochure/RMIT-ConstructionManagement.jpg';
-import Sydney from '../../img/brochure/Sydney.jpg';
-import WollongongComSci from '../../img/brochure/Wollongong-BachelorOfComSci.jpg';
-import WollongongPsySci from '../../img/brochure/Wollongong-BachelorOfPsySci.jpg';
-import WarwickProject from '../../img/brochure/Warwick-Project.jpg';
-import WarwickCyber from '../../img/brochure/Warwick-Cyber.jpg';
-import WarwickBusiness from '../../img/brochure/Warwick-Business.jpg';
+import { Brochure } from '../../modules/map';
 
-const Study_SIM: React.FC = () => {
+const Study_SIM: React.FC<{ brochures: Brochure[] }> = (props) => {
+
+    const progBrochures = props.brochures.filter(broc => { return broc.id.split("-")[0].toLowerCase() !== "study" });
 
     const prospectus = useRef<HTMLIonRowElement>(null);
     const simGe = useRef<HTMLIonRowElement>(null);
@@ -185,28 +162,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={prospectus} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={fullTimeProspectus}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={partTimeProspectus}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download Prospectus</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download Part-Time Prospectus</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.id.split("-")[0] === "prospect" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download Prospectus</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -232,28 +199,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={simGe} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={simGeDipGrad}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={simGeGrad}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "sim" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -275,72 +232,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={uniOfLondon} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={london1}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={londonProfAccountancy}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={london2}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={londonInternationalFoundProg}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={londonMaster}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "uol" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -362,47 +265,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={uniOfBirmingham} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={BirminghamBachelor}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={BirminghamMasterBA}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={BirminghamMasterSci}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "uob" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -424,22 +298,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={uniOfStirling} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={StirlingBachelor}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "stirling" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -461,22 +331,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={uniAtBuffalo} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={Buffalo}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "ub" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -498,22 +364,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={laTrobeUni} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={LaTrobe}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "ltu" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -535,72 +397,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={rmitUni} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={RmitBachelorOfBusiness}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={RmitBachelorOfCommunication}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={RmitBachelorOfDesign}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={RmitBachelorOfAppliedSci}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={RmitConstructionManagement}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "rmit" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -622,22 +430,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={uniOfSydney} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={Sydney}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "usyd" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -659,28 +463,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={uniOfWollongong} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={WollongongComSci}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={WollongongPsySci}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download Prospectus</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download Part-Time Prospectus</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "uow" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
@@ -724,47 +518,18 @@ const Study_SIM: React.FC = () => {
                         <IonRow className="brochures-toggle-details-container" ref={uniOfWarwick} hidden={true}>
                             <IonCol size="12">
                                 <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={WarwickProject}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={WarwickCyber}/>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                </IonRow>
-                                
-                                <IonRow>
-                                    <IonCol size="6">
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonImg className="brochures-coverImg" src={WarwickBusiness}/>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
-                                </IonRow>
-                                <IonRow>
-                                    <IonCol size="6" >
-                                        <IonRow className="ion-justify-content-center">
-                                            <IonButton fill="outline" className="brochures-prospectus-button"><div className="ion-text-wrap">Download</div></IonButton>
-                                        </IonRow>
-                                    </IonCol>
-                                    <IonCol size="6">
-                                    </IonCol>
+                                    {progBrochures.map(broc => (
+                                        broc.description.split("-")[0].toLowerCase() === "warwick" ? (
+                                            <IonCol size="6" key={broc.id}>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonImg className="brochures-coverImg" src={broc.imageUrl}/>
+                                                </IonRow>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonButton fill="outline" className="brochures-prospectus-button" href={broc.brochureUrl} target="_blank"><div className="ion-text-wrap">Download</div></IonButton>
+                                                </IonRow>
+                                            </IonCol>
+                                        ) : null
+                                    ))}
                                 </IonRow>
                             </IonCol>
                         </IonRow>
