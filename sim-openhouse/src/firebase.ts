@@ -12,6 +12,15 @@ const firebaseConfig = {
   messagingSenderId: "671429853263",
   appId: "1:671429853263:web:71fb4fbeb23a4f74da6a3a",
 };
+/* const firebaseConfig = {
+  apiKey: "AIzaSyBuIdpJIFuUGwGSrh8OcmUPmy7k3f_6tEw",
+  authDomain: "sandbox-4c75c.firebaseapp.com",
+  databaseURL: "https://sandbox-4c75c.firebaseio.com",
+  projectId: "sandbox-4c75c",
+  storageBucket: "sandbox-4c75c.appspot.com",
+  messagingSenderId: "364708425534",
+  appId: "1:364708425534:web:6c5618f357552f4a86066f"
+}; */
 const app = firebase.initializeApp(firebaseConfig);
 
 export const auth = app.auth();
