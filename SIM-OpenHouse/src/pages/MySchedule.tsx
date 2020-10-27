@@ -11,6 +11,7 @@ import { ScheduleItem, toSchedule } from '../modules/map';
 
 const MySchedule: React.FC = () => {
     const { userID } = useAuth();
+    const [studentDetails, setStudentDetails]: any = useState([])
 
     const [loading, setLoading] = useState(true);
     const [dayNum, setDayNum] = useState("day1");
@@ -20,7 +21,7 @@ const MySchedule: React.FC = () => {
     const handleDayOne = () => {
         setDayNum("day1");
     };
-    
+
     const handleDayTwo = () => {
         setDayNum("day2");
     };
@@ -40,6 +41,14 @@ const MySchedule: React.FC = () => {
 
             setOpenhouseDates(dates);
         }).catch((error) => console.log(error));
+        const fetchStudent = async () => {
+            const studRef = db.collection('Students').doc(userID)
+            const doc = await studRef.get()
+            studentDetails.push(doc.data())
+        }
+        fetchStudent()
+
+        db.collection('Students').doc(userID).get().then((snapshot: any) => setStudentDetails(snapshot.data()))
 
         return db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
             const registered = snapshot.data().registeredProgrammes;
@@ -61,40 +70,42 @@ const MySchedule: React.FC = () => {
                         return;
                 }
             });
-            
+
             setTimeout(() => {
                 setOpenHouseProgs(scheduleProgs.map(toSchedule));
                 setLoading(false);
             }, 500);
         });
+
     }, []);
 
     return (
         <IonPage>
+            {console.log("student details are" + JSON.stringify(studentDetails))}
             <IonHeader>
-                <TopNav title="My Schedule" route='/u/home' backarrow={ true } hamburger = { true }/>
+                <TopNav title="My Schedule" route='/u/home' backarrow={true} hamburger={true} />
             </IonHeader>
-            
+
             <IonContent fullscreen={true} className="myScheduleIonContent">
                 <IonGrid className="myScheduleGrid">
                     <IonRow className="ion-justify-content-center openHouseDateRow">
                         <IonCol sizeSm="6" className="openHouseDateCol">
-                            <span className="openHouseDateTitleText">From: </span> 
+                            <span className="openHouseDateTitleText">From: </span>
                             <span className="openHouseDateText">{openhouseDates[0]}</span>
                         </IonCol>
                         <IonCol sizeSm="6" className="openHouseDateCol">
-                            <span className="openHouseDateTitleText">To: </span> 
+                            <span className="openHouseDateTitleText">To: </span>
                             <span className="openHouseDateText">{openhouseDates[1]}</span>
                         </IonCol>
                     </IonRow>
 
                     <IonRow className="mySchedule-IonRowCol">
-                        <IonCol sizeSm="12" style={{padding:"0", width:"100%"}}>
+                        <IonCol sizeSm="12" style={{ padding: "0", width: "100%" }}>
                             <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                                 <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="mySchedule-DayTab">
                                     Day 1: {openhouseDates[0]}
                                 </IonSegmentButton>
-                                
+
                                 <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="mySchedule-DayTab">
                                     Day 2: {openhouseDates[1]}
                                 </IonSegmentButton>
@@ -103,7 +114,7 @@ const MySchedule: React.FC = () => {
                     </IonRow>
                 </IonGrid>
 
-                <MyScheduleContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} openHouseProgs={openHouseProgs} />
+                <MyScheduleContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} openHouseProgs={openHouseProgs} studentDetails={studentDetails} />
                 <IonLoading isOpen={loading} />
             </IonContent>
         </IonPage>
