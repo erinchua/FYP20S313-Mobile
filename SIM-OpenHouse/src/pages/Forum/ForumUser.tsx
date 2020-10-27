@@ -1,5 +1,5 @@
 import { IonButton, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItemDivider, IonLabel, IonLoading, IonModal, IonPage, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonTextarea, IonToolbar } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { addCircleSharp, personSharp } from 'ionicons/icons';
 
@@ -21,6 +21,8 @@ const ForumUser: React.FC = () => {
     const [qnsCom, setQnsCom] = useState('forum-myQuestions');
     const [modalSegmentValue, setModalSegmentValue] = useState('');
     const [showPostModal, setShowPostModal] = useState(false);
+    const [questions, setQuestions] = useState([]);
+    const [comments, setComments] = useState([]);
     const [entry, setEntry] = useState("");
     const [keyword, setKeyword] = useState("");
 
@@ -62,6 +64,44 @@ const ForumUser: React.FC = () => {
             setEntry("");
         }
     }
+
+    useEffect(() => {
+        const questions: any = [];
+        const comments: any = [];
+
+        const questionsListener = db.collection('Forum').doc(userID).collection('Questions').where("deleted", "==", false).onSnapshot(snaps => {
+            snaps.forEach(snap => questions.push(snap.data()));
+        });
+
+        const commentsListener = db.collection('Forum').doc(userID).collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
+            setComments(comments);
+            
+            snaps.forEach(async (snap) => {
+                let post: any = { ...snap.data() }
+
+                await db.collection('Forum').get().then(users => {
+                    users.forEach(user => {
+                        return db.collection('Forum').doc(user.id).collection('Questions').doc(snap.data().questionId.toString()).onSnapshot(question => {
+                            if(question.exists) {
+                                post.question = question.data()?.entry;
+                                post.questionRemoved = question.data()?.deleted;
+                            }
+                        });
+                    });
+                });
+                comments.push(post)
+            });
+        });
+
+        setTimeout(() => {
+            setQuestions(questions);
+            setComments(comments);
+
+            questionsListener();
+            commentsListener();
+            setLoading(false);
+        }, 500);
+    }, []);
    
     return (
         <IonPage>
@@ -96,7 +136,7 @@ const ForumUser: React.FC = () => {
                     </IonRow>
                 </IonGrid>
                 {qnsCom === 'forum-myQuestions' ? 
-                    <ForumQuestions /> : <ForumComments />
+                    <ForumQuestions questions={questions} /> : <ForumComments comments={comments} />
                 }
                 
                 {/* Post Question Modal */}
