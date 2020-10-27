@@ -4,14 +4,18 @@ import { RouteComponentProps } from 'react-router-dom';
 import '../css/Global.css';
 import '../css/FilterPopoverContent.css';
 import { chevronDownOutline, chevronUpOutline, filter } from 'ionicons/icons';
+import { db } from '../firebase';
+import { Programme } from '../pages/Study@SIM/Study@SIMProgInfo'
 
 interface myProps {
     filterFunction: any;
-    params: any;
-    href: any;
     filterFor: any;
     discipline: string;
     category: string;
+    filterCondition: FilterCondition
+    onUpdateFilter: any
+    programmes: Programme[]
+    // onUpdateFilter: (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => FilterCondition
 }
 export interface FilterCondition {
     mos: string[],
@@ -23,29 +27,63 @@ export interface FilterCondition {
 }
 
 const FilterPopoverContent: React.FC<myProps> = props => {
-    // console.log("props are" + JSON.stringify(props))
-    const mosFilter = ['fullPartTime', 'partTime', 'fullTime']
-    const discFilter = ['artSocialSciences', 'nursing', 'itComputerScience', 'business', 'speciality']
-    const subDiscFilter = ['aviation', 'computing', 'design', 'businessAdmin', 'economics', 'Construction and Management']
-    const uniFilter = ['RMIT University', 'University of Stirling', 'University of Wollongong']
-    const acadlvlFilter = ['Diploma', 'Bachelor', 'Masters']
-    const entryFilter = ['aLevel', 'oLevel', 'degree', 'diploma']
 
-    const [currentMosFilter, setCurrentMosFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
-    const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>([props.discipline])
-    const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>([])
-    const [currentUniFilter, setCurrentUniFilter] = useState<string[]>([])
-    const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>([props.category])
-    const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>([])
+    //Full list of filter options
+    const mosFilter: string[] = ['fullPartTime', 'partTime', 'fullTime']
+    const [discFilter, setDiscFilter] = useState<string[]>([])
+    const [subDiscFilter, setSubDiscFilter] = useState<string[]>([])
+    const [uniFilter, setUniFilter] = useState<string[]>([])
+    const acadlvlFilter: string[] = ['Diploma', 'Bachelor', 'Masters']
+    const entryFilter: string[] = ['aLevel', 'oLevel', 'degree', 'diploma']
 
-    const [filterCondition, setFilterCondition] = useState<FilterCondition>({
-        mos: [],
-        discipline: [],
-        uni: [],
-        acadLvl: [],
-        entry: [],
-        subDisc: []
-    })
+    //Current selected filters
+    const [currentMosFilter, setCurrentMosFilter] = useState<string[]>(props.filterCondition.mos)
+    const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>(props.filterCondition.discipline)
+    const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>(props.filterCondition.subDisc)
+    const [currentUniFilter, setCurrentUniFilter] = useState<string[]>(props.filterCondition.uni)
+    const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>(props.filterCondition.acadLvl)
+    const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>(props.filterCondition.entry)
+
+    //When filter first render
+    useEffect(() => {
+
+        const fetchData = async () => {
+            let retrievedList: string[] = []
+            await db.collection('Disciplines')
+                .get()
+                .then(snapshot => {
+                    snapshot.docs.forEach(doc => {
+                        const data = doc.get('name')
+                        retrievedList.push(data)
+                    })
+                    setDiscFilter(retrievedList)
+                })
+            retrievedList = []
+            await db.collection('SubDisciplines')
+                .get()
+                .then(snapshot => {
+                    snapshot.docs.forEach(doc => {
+                        const data = doc.get('name')
+                        retrievedList.push(data)
+                    })
+                    setSubDiscFilter(retrievedList)
+                })
+            retrievedList = []
+
+            await db.collection('Universities')
+                .get()
+                .then(snapshot => {
+                    snapshot.docs.forEach(doc => {
+                        const data = doc.get('universityName')
+                        retrievedList.push(data)
+                    })
+                    setUniFilter(retrievedList)
+                })
+        }
+
+        fetchData();
+
+    }, [])
 
     {/* Display Mode of Study Filters */ }
     const MOSInfo = useRef<HTMLIonRowElement>(null);
@@ -142,41 +180,14 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     }
 
     //All filter combined 
-
     const combinedFilter = () => {
-        console.log("Before All filters are :" + JSON.stringify(filterCondition))
-        const Check = () => {
-        }
-        setFilterCondition(prevState => {
-            let filter = { ...prevState };
-            Object.keys(filter).map(key => {
-                if (key == 'mos')
-                    filter[key] = currentMosFilter;
-                if (key == 'discipline')
-                    filter[key] = currentDiscFilter;
-                if (key == 'uni')
-                    filter[key] = currentUniFilter;
-                if (key == 'acadLvl')
-                    filter[key] = currentAcadlvlFilter;
-                if (key == 'entry')
-                    filter[key] = currentEntryFilter;
-                if (key == 'subDisc')
-                    filter[key] = currentSubDiscFilter;
-            })
-            return filter;
-        })
-
+        console.log("Before All filters are :" + JSON.stringify(props.filterCondition))
+        props.onUpdateFilter(currentMosFilter, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter);
     }
 
     useEffect(() => {
         combinedFilter();
     }, [currentMosFilter, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter])
-
-
-    useEffect(() => {
-        console.log("After All filters are :" + JSON.stringify(filterCondition))
-    }, [filterCondition])
-
 
     return (
         <>
@@ -212,7 +223,17 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <IonLabel className="courseFilterLabel">
                                                             <div className="ion-text-wrap">{filter}</div>
                                                         </IonLabel>
-                                                        <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                        <IonBadge slot="end" className="courseFilterCountBadge">
+                                                            {
+                                                                <div>
+                                                                    {filter == 'fullPartTime' ? <div>{props.programmes.filter((programme: any) => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter == 'partTime' ? <div>{props.programmes.filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter == 'fullTime' ? <div>{props.programmes.filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime).length}</div> : ''}
+
+                                                                </div>
+                                                            }
+
+                                                        </IonBadge>
                                                     </IonItem>
                                                 </div>
                                             )
@@ -249,7 +270,9 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                             <div className="ion-text-wrap">{filter}</div>
                                                         </IonLabel>
 
-                                                        <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                        <IonBadge slot="end" className="courseFilterCountBadge">
+                                                            {props.programmes.filter(programme => programme.discipline.includes(filter)).length}
+                                                        </IonBadge>
                                                     </IonItem>
                                                 </div>
                                             )
@@ -286,7 +309,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => programme.awardedBy == filter).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -322,7 +345,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => programme.academicLevel == filter).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -358,7 +381,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => (programme.entryQualifications as any)[filter]).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -394,7 +417,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => programme.subDiscipline.includes(filter)).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -413,13 +436,9 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                             <IonToolbar id="courseFilterPopoverBtnToolbar" class="ion-align-items-center">
                                 <IonRow class="ion-align-items-center" style={{ width: "100%" }}>
                                     <IonCol size="12" sizeSm="12" class="ion-text-center" style={{ padding: "0" }}>
-                                        {props.params ?
-                                            <>
-                                                <IonButton id="courseProgFilterBtn" onClick={() => props.filterFunction(filterCondition)}>FILTER</IonButton>
-                                            </>
-                                            : ''
-                                        }
-
+                                        <>
+                                            <IonButton id="courseProgFilterBtn" onClick={() => props.filterFunction(props.filterCondition)}>FILTER</IonButton>
+                                        </>
                                     </IonCol>
                                 </IonRow>
                             </IonToolbar>
