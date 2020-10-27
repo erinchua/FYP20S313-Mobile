@@ -30,8 +30,8 @@
         "logo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
-        "id": "UoBuffalo",
-        "universityName": "University of Buffalo",
+        "id": "UBuffalo",
+        "universityName": "University at Buffalo",
         "url": "https://www.buffalo.edu/",
         "logo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },

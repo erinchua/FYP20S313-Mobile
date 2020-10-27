@@ -247,7 +247,7 @@ db.collection('Brochures').get().then(({docs}) => {
     console.log(docs.map(mapTo))
 }) */
 
-function sortTime (a, b) {
+/* function sortTime (a, b) {
     let aHour = +a.split(":")[0], bHour = +b.split(":")[0];
     const aMins = +a.split(":")[1].slice(0, 2), bMins = +b.split(":")[1].slice(0, 2);
     const aMeridiem = a.split(":")[1].slice(-2, a.split(":")[1].length), bMeridiem = b.split(":")[1].slice(-2, b.split(":")[1].length);
@@ -258,4 +258,37 @@ function sortTime (a, b) {
     console.log(aHour, aMins, aMeridiem)
     console.log(bHour, bMins, bMeridiem)
 }
-sortTime("10:00AM", "1:30PM")
+sortTime("10:00AM", "1:30PM") */
+
+/* const a = [{num: 1}, {num: 2}, {num: 3}, {num: 1}, {num: 4}]
+uniqueArray = a.filter(function(item, pos, self) {
+    return self.indexOf(item) === pos;
+})
+console.log(uniqueArray) */
+
+/* let registeredInfo = {};
+db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student => {
+    if (student.exists) {
+        registeredInfo.studentName = student.data().firstName;
+        registeredInfo.lastName = student.data().lastName;
+        registeredInfo.email = student.data().email;
+    }
+    console.log(registeredInfo)
+}) */
+
+function sortFunction(a, b) {
+    //split the numbers and alpha here
+
+    //compare numbers
+    //if numbers are same, compare alpha
+}
+function toGamesActivities(doc) {
+    return { ...doc.data() }
+}
+db.collection('GamesActivities').get().then(({docs}) => {
+    const data = docs.map(toGamesActivities)
+    const sorted = data.sort(sortFunction)
+
+    console.log(docs)
+    //setState sorted
+})
