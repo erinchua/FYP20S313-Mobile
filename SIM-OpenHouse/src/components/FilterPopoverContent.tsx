@@ -9,13 +9,12 @@ import { Programme } from '../pages/Study@SIM/Study@SIMProgInfo'
 
 interface myProps {
     filterFunction: any;
-    params: any;
-    href: any;
     filterFor: any;
     discipline: string;
     category: string;
     filterCondition: FilterCondition
     onUpdateFilter: any
+    programmes: Programme[]
     // onUpdateFilter: (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => FilterCondition
 }
 export interface FilterCondition {
@@ -28,9 +27,6 @@ export interface FilterCondition {
 }
 
 const FilterPopoverContent: React.FC<myProps> = props => {
-
-    //Retriving the session filtered list of programmes
-    const [sessionList, setSessionList] = useState<Programme[]>([])
 
     //Full list of filter options
     const mosFilter: string[] = ['fullPartTime', 'partTime', 'fullTime']
@@ -47,15 +43,6 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     const [currentUniFilter, setCurrentUniFilter] = useState<string[]>(props.filterCondition.uni)
     const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>(props.filterCondition.acadLvl)
     const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>(props.filterCondition.entry)
-
-    // const [filterCondition, setFilterCondition] = useState<FilterCondition>({
-    //     mos: [],
-    //     discipline: [],
-    //     uni: [],
-    //     acadLvl: [],
-    //     entry: [],
-    //     subDisc: []
-    // })
 
     //When filter first render
     useEffect(() => {
@@ -95,9 +82,6 @@ const FilterPopoverContent: React.FC<myProps> = props => {
         }
 
         fetchData();
-        //Storing programmes to retrieve the latest list to display the numbers of programme
-        setSessionList(window.sessionStorage.programmes ? JSON.parse(window.sessionStorage.programmes) : []);
-
 
     }, [])
 
@@ -196,37 +180,17 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     }
 
     //All filter combined 
-
     const combinedFilter = () => {
         console.log("Before All filters are :" + JSON.stringify(props.filterCondition))
-
         props.onUpdateFilter(currentMosFilter, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter);
-
-
     }
 
     useEffect(() => {
         combinedFilter();
     }, [currentMosFilter, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter])
 
-
-    useEffect(() => {
-        console.log("After All filters are :" + JSON.stringify(props.filterCondition))
-        setSessionList(window.sessionStorage.programmes ? JSON.parse(window.sessionStorage.programmes) : []);
-
-    }, [props.filterCondition])
-
-    useEffect(() => {
-        console.log("latest session list " + JSON.stringify(sessionList))
-        setSessionList(window.sessionStorage.programmes ? JSON.parse(window.sessionStorage.programmes) : []);
-    }, [window.sessionStorage.programmes])
-
     return (
         <>
-            {console.log("current disc are" + currentDiscFilter)}
-            {console.log("current session list retrieved are:" + sessionList)}
-
-
             {/* Filter for Study@SIM */}
             {props.filterFor === "study@SIM" ?
                 <IonGrid id="courseFilterPopoverGrid">
@@ -262,9 +226,9 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <IonBadge slot="end" className="courseFilterCountBadge">
                                                             {
                                                                 <div>
-                                                                    {filter == 'fullPartTime' ? <div>{sessionList.filter(programme => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
-                                                                    {filter == 'partTime' ? <div>{sessionList.filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
-                                                                    {filter == 'fullTime' ? <div>{sessionList.filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter == 'fullPartTime' ? <div>{props.programmes.filter((programme: any) => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter == 'partTime' ? <div>{props.programmes.filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter == 'fullTime' ? <div>{props.programmes.filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime).length}</div> : ''}
 
                                                                 </div>
                                                             }
@@ -307,12 +271,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         </IonLabel>
 
                                                         <IonBadge slot="end" className="courseFilterCountBadge">
-                                                            {
-                                                                <div>
-                                                                    {(sessionList.filter(programme => { programme.discipline.includes(filter) })).length}
-                                                                </div>
-
-                                                            }
+                                                            {props.programmes.filter(programme => programme.discipline.includes(filter)).length}
                                                         </IonBadge>
                                                     </IonItem>
                                                 </div>
@@ -350,7 +309,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => programme.awardedBy == filter).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -386,7 +345,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => programme.academicLevel == filter).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -422,7 +381,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => (programme.entryQualifications as any)[filter]).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -458,7 +417,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{courseFilterCount}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{props.programmes.filter(programme => programme.subDiscipline.includes(filter)).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -477,13 +436,9 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                             <IonToolbar id="courseFilterPopoverBtnToolbar" class="ion-align-items-center">
                                 <IonRow class="ion-align-items-center" style={{ width: "100%" }}>
                                     <IonCol size="12" sizeSm="12" class="ion-text-center" style={{ padding: "0" }}>
-                                        {props.params ?
-                                            <>
-                                                <IonButton id="courseProgFilterBtn" onClick={() => props.filterFunction(props.filterCondition)}>FILTER</IonButton>
-                                            </>
-                                            : ''
-                                        }
-
+                                        <>
+                                            <IonButton id="courseProgFilterBtn" onClick={() => props.filterFunction(props.filterCondition)}>FILTER</IonButton>
+                                        </>
                                     </IonCol>
                                 </IonRow>
                             </IonToolbar>

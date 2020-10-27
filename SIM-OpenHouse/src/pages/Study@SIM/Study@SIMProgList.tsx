@@ -31,8 +31,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
     const discipline = match.params.discipline
     const category = match.params.category
 
-    // const [progList, setProgList] = useContext(ProgListContext);
-
     const [disciplineName, setDisciplineName] = useState([
         'Arts & Social Sciences',
         'Business',
@@ -43,9 +41,9 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
     const [filterCondition, setFilterCondition] = useState<FilterCondition>({
         mos: ['fullPartTime', 'partTime', 'fullTime'],
-        discipline: [],
+        discipline: [discipline],
         uni: [],
-        acadLvl: [],
+        acadLvl: [category],
         entry: [],
         subDisc: []
     })
@@ -71,10 +69,15 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         })
     }
 
-
-
+    //programmes to be rendered and the comparepopover list
     const [programmes, setProgrammes] = useState<Programme[]>([])
     const [compareProgList, setCompareProgList] = useState<Programme[]>([])
+
+    //To get the unique disciplines for rendering at the header
+    const allDisc = programmes.map(programme => programme.discipline)
+    const disc: string[] = []
+    allDisc.map(data => data.map(data => disc.push(data)))
+    let uniqueDisc: string[] = [...new Set(disc)]
 
     //For storing the compare list into session
     useEffect(() => {
@@ -82,13 +85,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
             window.sessionStorage.setItem("compareProgList", JSON.stringify(compareProgList));
         }
     }, [compareProgList])
-
-    //Storing Displaying list to session
-    useEffect(() => {
-
-        window.sessionStorage.setItem("programmes", JSON.stringify(programmes));
-
-    }, [programmes])
 
     {/* Adding programme for comparison - Need to be generated dynamically */ }
     const compareProgramme = (programme: Programme) => {
@@ -131,7 +127,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                     const data = doc.data()
                     initialList.push(data)
                 })
-                // setProgrammes(newList)
             })
         console.log(initialList.length + JSON.stringify(initialList))
         Object.entries(condition).map(([key, value]) => {
@@ -248,8 +243,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
         setProgrammes(filteredList)
 
-
-
     }
 
     /*To remove selected programmes in comparePopOver */
@@ -311,9 +304,11 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         console.log("Session list retrieved! " + sessionList)
         setCompareProgList(sessionList);
     }, [])
+
     return (
         <React.Fragment>
-            {console.log("Current proglist are: " + JSON.stringify(compareProgList))}
+            {console.log("disc are" + disc + disc.length)}
+            {console.log("uniqueDisc are" + uniqueDisc)}
             <IonAlert
                 isOpen={showCompareProgAlert}
                 onDidDismiss={() => setShowCompareProgAlert(false)}
@@ -333,30 +328,10 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                             <IonRow id="studySIMProgListHeaderRow" class="ion-align-items-center">
                                 <IonCol size="6" sizeSm="6" class="ion-text-left" className="studySIMProgListCol" style={{ paddingLeft: "3%" }}>
                                     <IonTitle className="studyProgListTitle">
-                                        {match.params.discipline === 'Arts & Social Sciences' ?
-                                            <div className="ion-text-wrap">{disciplineName[0]}</div>
-                                            : ''
-                                        }
+                                        {uniqueDisc.length == 1 ? uniqueDisc.map(disc => {
+                                            return (<div key={disc} className="ion-text-wrap">{disc}</div>)
+                                        }) : ''}
 
-                                        {match.params.discipline === 'Business' ?
-                                            <div className="ion-text-wrap">{disciplineName[1]}</div>
-                                            : ''
-                                        }
-
-                                        {match.params.discipline === 'IT & Computer Science' ?
-                                            <div className="ion-text-wrap">{disciplineName[2]}</div>
-                                            : ''
-                                        }
-
-                                        {match.params.discipline === 'Nursing' ?
-                                            <div className="ion-text-wrap">{disciplineName[3]}</div>
-                                            : ''
-                                        }
-
-                                        {match.params.discipline === 'Specialty' ?
-                                            <div className="ion-text-wrap">{disciplineName[4]}</div>
-                                            : ''
-                                        }
 
                                     </IonTitle>
                                 </IonCol>
@@ -472,35 +447,34 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         event={showProgCourseFilterPopover.event}
                         onDidDismiss={e => setShowProgCourseFilterPopover({ open: false, event: undefined })}
                     >
-                        {props.match.params.discipline === "Arts & Social Sciences" ?
-                            <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "Arts & Social Sciences"} href={"/u/study@SIMMain/Art & Social Sciences"} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
-                            : ''
-                        }
 
-                        {match.params.discipline === "Business" ?
+                        <FilterPopoverContent filterFunction={filterProgrammes} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
+
+
+
+                        {/* {match.params.discipline === "Business" ?
                             <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "Business"} href={"/u/study@SIMMain/Business/test"} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
+                                params={match.params.discipline === "Business"} href={"/u/study@SIMMain/Business/test"} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "IT & Computer Science" ?
                             <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "IT & Computer Science"} href={"/u/study@SIMMain/IT & Computer Science"} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
+                                params={match.params.discipline === "IT & Computer Science"} href={"/u/study@SIMMain/IT & Computer Science"} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "Nursing" ?
                             <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "Nursing"} href={"/u/study@SIMMain/Nursing"} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
+                                params={match.params.discipline === "Nursing"} href={"/u/study@SIMMain/Nursing"} filterFor={"study@SIM"} programmes={programmes} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
                         }
 
                         {match.params.discipline === "Specialty" ?
                             <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "Specialty"} href={"/u/study@SIMMain/Specialty"} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
+                                params={match.params.discipline === "Specialty"} href={"/u/study@SIMMain/Specialty"} filterFor={"study@SIM"} programmes={programmes} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
-                        }
+                        } */}
 
                     </IonPopover>
 
