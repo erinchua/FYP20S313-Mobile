@@ -9,13 +9,15 @@ import "../../css/Forum.css";
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 
-const ForumQuestions: React.FC = () => {
+const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
     const { userID } = useAuth();
 
-    const [loading, setLoading] = useState(true);
+    //const comments = props.comments.filter((ele, pos, self) => { return self.indexOf(ele) === pos });
+
+    const [loading, setLoading] = useState(false);
     const [showEditCommentModal, setShowEditCommentModal] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
-    const [comments, setComments] = useState([]);
+    //const [comments, setComments] = useState([]);
     const [entry, setEntry] = useState("");
     const [toBeEdited, setToBeEdited] = useState(0);
     const [toBeDeleted, setToBeDeleted] = useState(0);
@@ -48,7 +50,9 @@ const ForumQuestions: React.FC = () => {
         }
     }
 
-    useEffect(() => {
+    console.log(props.comments)
+
+    /* useEffect(() => {
         return db.collection('Forum').doc(userID).collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
             const posts: any = [];
             
@@ -73,7 +77,7 @@ const ForumQuestions: React.FC = () => {
                 setLoading(false);
             }, 500);
         });
-    }, []);
+    }, []); */
 
     return (
         <>
@@ -86,7 +90,7 @@ const ForumQuestions: React.FC = () => {
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Edit Comment</IonCol>
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Delete Comment</IonCol>
                 </IonRow>
-                { comments.map((post: any) => (
+                { props.comments.map((post: any) => (
                     post.hasOwnProperty('commentId') === false ? (
                         <IonRow className="ion-justify-content-center" key={post.id}>
                             <IonCol className="forumQnsCom-Data ion-text-wrap">{post.questionRemoved === false ? post.question : "[deleted]"}</IonCol>
