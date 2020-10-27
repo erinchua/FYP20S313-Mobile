@@ -275,20 +275,3 @@ db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student
     }
     console.log(registeredInfo)
 }) */
-
-function sortFunction(a, b) {
-    //split the numbers and alpha here
-
-    //compare numbers
-    //if numbers are same, compare alpha
-}
-function toGamesActivities(doc) {
-    return { ...doc.data() }
-}
-db.collection('GamesActivities').get().then(({docs}) => {
-    const data = docs.map(toGamesActivities)
-    const sorted = data.sort(sortFunction)
-
-    console.log(docs)
-    //setState sorted
-})
