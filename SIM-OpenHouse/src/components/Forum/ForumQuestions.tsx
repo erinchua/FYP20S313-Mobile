@@ -9,13 +9,13 @@ import "../../css/Forum.css";
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 
-const ForumQuestions: React.FC = () => {
+const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
     const { userID } = useAuth();
 
     const [loading, setLoading] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [showEditQuestionModal, setShowEditQuestionModal] = useState(false);
-    const [questions, setQuestions] = useState([]);
+    //const [questions, setQuestions] = useState([]);
     const [entry, setEntry] = useState("");
     const [toBeEdited, setToBeEdited] = useState("");
     const [toBeDeleted, setToBeDeleted] = useState("");
@@ -48,14 +48,14 @@ const ForumQuestions: React.FC = () => {
         }
     }
 
-    useEffect(() => {
+    /* useEffect(() => {
         return db.collection('Forum').doc(userID).collection('Questions').where("deleted", "==", false).onSnapshot(snaps => {
             const posts: any = [];
             
             snaps.forEach(snap => posts.push(snap.data()));
             setQuestions(posts);
         });
-    }, []);
+    }, []); */
 
     return (
         <>
@@ -67,7 +67,7 @@ const ForumQuestions: React.FC = () => {
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Edit Question</IonCol>
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Delete Question</IonCol>
                 </IonRow>
-                { questions.map((post: any) => (
+                { props.questions.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
@@ -113,7 +113,7 @@ const ForumQuestions: React.FC = () => {
                         handler: () => handleDelete(toBeDeleted.toString())
                     }]}
             ></IonAlert>
-            <IonLoading isOpen={deleteAlert.loading || loading} />       
+            <IonLoading isOpen={deleteAlert.loading || loading} />
         </>
     );
 };

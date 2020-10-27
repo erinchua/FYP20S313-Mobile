@@ -41,28 +41,30 @@ const ForumViewQuestion: React.FC = () => {
             const time = new Date();
             let name: string;
 
-            await db.collection('Students').doc(userID).get().then(doc => {
-                if (doc.exists)
-                    name = doc.data()?.firstName + " " + doc.data()?.lastName;
-            });
-            
-            const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
-            await docRef.set({
-                id: +docRef.id,
-                entry: entry,
-                questionId: +id,
-                posterName: name!,
-                posterId: userID,
-                dateTime: time.toLocaleString().replace(/\//g, "-"),
-                deleted: false,
-                reported: false,
-                noOfReplies: 0
-            });
+            if (entry !== "") {
+                await db.collection('Students').doc(userID).get().then(doc => {
+                    if (doc.exists)
+                        name = doc.data()?.firstName + " " + doc.data()?.lastName;
+                });
 
-            const increment = firebase.firestore.FieldValue.increment(1);
-            await db.collection('Forum').doc(uid).collection('Questions').doc(id).update({
-                noOfComments: increment,
-            });
+                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
+                await docRef.set({
+                    id: +docRef.id,
+                    entry: entry,
+                    questionId: +id,
+                    posterName: name!,
+                    posterId: userID,
+                    dateTime: time.toLocaleString().replace(/\//g, "-"),
+                    deleted: false,
+                    reported: false,
+                    noOfReplies: 0
+                });
+
+                const increment = firebase.firestore.FieldValue.increment(1);
+                await db.collection('Forum').doc(uid).collection('Questions').doc(id).update({
+                    noOfComments: increment,
+                });
+            }
         } catch (e) {
             return console.log(e);
         } finally {
@@ -110,8 +112,6 @@ const ForumViewQuestion: React.FC = () => {
     }
 
     useEffect(() => {
-        setComments([]);
-
         db.collection('Forum').doc(uid).collection('Questions').doc(id).get().then(entry => {
             if (entry.exists) {
                 setQuestion({
@@ -127,6 +127,7 @@ const ForumViewQuestion: React.FC = () => {
 
         db.collection('Forum').get().then(uRef => {
             const comments: any = [];
+            setComments(comments)
 
             uRef.forEach(user => {
                 return db.collection('Forum').doc(user.id).collection('Comments').where("questionId", "==", +id).onSnapshot(entries => {
@@ -144,9 +145,9 @@ const ForumViewQuestion: React.FC = () => {
                 });
             });
 
+            console.log(comments)
             setTimeout(() => {
-                comments.sort(forumPostsAsc);
-                setComments(comments);
+                setComments(comments.sort(forumPostsAsc));
                 setLoading(false);
             }, 500);
         });

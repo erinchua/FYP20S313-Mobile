@@ -332,7 +332,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                                             return (<div key={disc} className="ion-text-wrap">{disc}</div>)
                                         }) : ''}
 
-
                                     </IonTitle>
                                 </IonCol>
 

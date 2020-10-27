@@ -9,12 +9,16 @@ import '../css/GuidedTourContent.css';
 import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
 import { sortTimeAsc } from '../modules/compare';
+import QRCode from "qrcode.react";
 
-const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, openHouseProgs: any }> = props => {
+
+const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, openHouseProgs: any, studentDetails: any }> = props => {
     const { userID } = useAuth();
-    
+    const { firstName, lastName, email } = props.studentDetails;
+
     const [alert, setAlert] = useState({ confirmRemove: false, removeSuccess: false, loading: false });
     const [toBeDeleted, setToBeDeleted] = useState("");
+    const [progInfo, setProgInfo] = useState({ talkName: "", talkDate: "", talkBy: "" });
     const [showProgQRCodeModal, setShowProgQRCodeModal] = useState(false);
 
     const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] }).sort(sortTimeAsc);
@@ -32,14 +36,16 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                 registeredProgrammes: firebase.firestore.FieldValue.arrayRemove(item)
             });
             setAlert({ confirmRemove: false, removeSuccess: true, loading: false });
-        } catch(e) {
+        } catch (e) {
             setAlert({ confirmRemove: false, removeSuccess: false, loading: false });
             return console.log(e);
         }
     };
-    
-    return(
+
+    return (
         <>
+            {/* {console.log("auth has" + JSON.stringify(useAuth()))} */}
+            {console.log(firstName)}
             <IonAlert
                 isOpen={alert.confirmRemove}
                 cssClass='alertBox'
@@ -47,7 +53,7 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                 header={'Confirm removal of programme from scheduler'}
                 message={'Are you sure you want to remove the programme from your schedule?'}
                 buttons={[
-                    { 
+                    {
                         text: 'No',
                         role: 'cancel',
                         cssClass: 'secondary',
@@ -74,7 +80,7 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
             ></IonAlert>
 
             <IonGrid className="myScheduleGrid">
-                <IonRow style={{width: "100%"}}>
+                <IonRow style={{ width: "100%" }}>
                     <IonCol className="myScheduleTableHeader ion-text-wrap">Time</IonCol>
                     <IonCol className="myScheduleTableHeader_ProgName ion-text-wrap">Programme Name</IonCol>
                     <IonCol className="myScheduleTableHeader ion-text-wrap">Venue</IonCol>
@@ -82,14 +88,14 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                     <IonCol className="myScheduleTableHeader_Btn ion-text-wrap"></IonCol>
                 </IonRow>
 
-                {props.day1 === "day1" ? 
+                {props.day1 === "day1" ?
                     openHouseProgsDay1.map((prog: any) => (
                         prog.id.split("-")[0].toLowerCase() !== "activity" ? (
                             <IonRow key={prog.id}>
                                 <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
                                 <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
                                 <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
-                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}>View QR Code</IonCol>
+                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => [setShowProgQRCodeModal(true), setProgInfo({ talkName: prog.name, talkDate: prog.date, talkBy: prog.uni })]}>{prog.id.split("-")[0].toLowerCase() === "talk" ? "View QR Code" : null}</IonCol>
                                 <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
                                     <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
                                         <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
@@ -99,15 +105,15 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                         ) : null
                     )) : null
                 }
-                
-                {props.day2 === "day2" ? 
-                     openHouseProgsDay2.map((prog: any) => (
+
+                {props.day2 === "day2" ?
+                    openHouseProgsDay2.map((prog: any) => (
                         prog.id.split("-")[0].toLowerCase() !== "activity" ? (
                             <IonRow key={prog.id}>
                                 <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
                                 <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
                                 <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
-                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => setShowProgQRCodeModal(true)}>View QR Code</IonCol>
+                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => [setShowProgQRCodeModal(true), setProgInfo({ talkName: prog.name, talkDate: prog.date, talkBy: prog.uni })]}>{prog.id.split("-")[0].toLowerCase() === "talk" ? "View QR Code" : null}</IonCol>
                                 <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
                                     <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
                                         <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
@@ -150,7 +156,7 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                     )) : null
                 }
 
-                {props.day2 === "day2" ? 
+                {props.day2 === "day2" ?
                     openHouseProgsDay2.map((prog: any) => (
                         prog.id.split("-")[0] === "activity" ? (
                             <IonRow className="ion-justify-content-center" key={prog.id}>
@@ -179,7 +185,7 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                         </IonCardHeader>
 
                         <IonCardContent className="ion-text-center">
-                            QR Code here
+                            <QRCode value={`${firstName},${lastName},${email},${progInfo.talkName},${progInfo.talkDate},${progInfo.talkBy}`} />{" "}
                         </IonCardContent>
                     </IonCard>
 
