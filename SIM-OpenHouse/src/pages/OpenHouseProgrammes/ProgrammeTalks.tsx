@@ -391,7 +391,7 @@ const ProgrammeTalks: React.FC = () => {
 
         {/* Filter Programmes Popover */}
         <IonPopover id="progCourseFilterPopover"
-          cssClass='progCourseFilterPopover'
+          cssClass='progTalkFilterPopover'
           isOpen={showProgTalkFilterPopover.open}
           event={showProgTalkFilterPopover.event}
           onDidDismiss={e => setShowProgTalkFilterPopover({ open: false, event: undefined })}
