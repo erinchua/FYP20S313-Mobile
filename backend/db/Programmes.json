@@ -7,26 +7,27 @@
             "fullTime": false
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty"
-        ],
-        "subDiscipline": [
-            "Aviation"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Aviation"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": [
-            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
-            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
-            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
-        ],
+        "programOverview": {
+            "aboutProgramme1": "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "aboutProgramme2": "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "aboutProgramme3": "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        },
         "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
+            "period1": "15 Jul 2020 to 20 Oct 2020"
         },
         "programmeStructure": {
             "coursework": true,
@@ -51,26 +52,27 @@
             "fullTime": false
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty"
-        ],
-        "subDiscipline": [
-            "Construction and Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Construction and Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": [
-            "Ranked 22nd in the world & 3rd highest in Australia for Architectural & Built Environment (QS 2019)",
-            "Accrediation by Professional Bodies, including AIB, AIQS, CIOB, RICS and SISV",
-            "Practical Curricula, designed with industry inputs; integration of theory with practice"
-        ],
+        "programOverview": {
+            "aboutProgramme1": "Ranked 22nd in the world & 3rd highest in Australia for Architectural & Built Environment (QS 2019)",
+            "aboutProgramme2": "Accrediation by Professional Bodies, including AIB, AIQS, CIOB, RICS and SISV",
+            "aboutProgramme3": "Practical Curricula, designed with industry inputs; integration of theory with practice"
+        },
         "applicationPeriod": {
-            "jan2021": "15 Jul 2020 to 20 Oct 2020"
+            "period1": "15 Jul 2020 to 20 Oct 2020"
         },
         "programmeStructure": {
             "coursework": true,
@@ -95,25 +97,42 @@
             "fullTime": false
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Information Technology"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Information Technology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-004",
@@ -123,25 +142,42 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-005",
@@ -151,26 +187,43 @@
             "fullTime": false
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Nursing",
-            "Specialty"
-        ],
-        "subDiscipline": [
-            "Nursing"
-        ],
+        "discipline": {
+            "disciplineName1": "Nursing",
+            "disciplineName2": "Specialty"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Nursing"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Sydney",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-006",
@@ -180,26 +233,43 @@
             "fullTime": false
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Nursing",
-            "Specialty"
-        ],
-        "subDiscipline": [
-            "Nursing"
-        ],
+        "discipline": {
+            "disciplineName1": "Nursing",
+            "disciplineName2": "Specialty"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Nursing"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Sydney",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-007",
@@ -209,25 +279,42 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Cyber Security and Management"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Cyber Security and Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-008",
@@ -237,25 +324,42 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Engineering and Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Engineering and Business"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-009",
@@ -265,25 +369,42 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Project Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Project Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-010",
@@ -293,26 +414,43 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Logistics and Supply Chain Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Logistics and Supply Chain Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-011",
@@ -322,28 +460,45 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Financial Technology (FinTech)"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Big Data",
+            "subDisciplineName3": "Data Science",
+            "subDisciplineName4": "Financial Technology (FinTech)"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-012",
@@ -353,28 +508,45 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Financial Technology (FinTech)"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Big Data",
+            "subDisciplineName3": "Data Science",
+            "subDisciplineName4": "Financial Technology (FinTech)"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-013",
@@ -384,28 +556,45 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Financial Technology (FinTech)"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Big Data",
+            "subDisciplineName3": "Data Science",
+            "subDisciplineName4": "Financial Technology (FinTech)"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-014",
@@ -415,28 +604,45 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Financial Technology (FinTech)"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Big Data",
+            "subDisciplineName3": "Data Science",
+            "subDisciplineName4": "Financial Technology (FinTech)"
+        },
         "entryQualifications": {
-            "aLevel": false,
+            "aLevel": true,
             "oLevel": false,
-            "degree": true,
+            "degree": false,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-015",
@@ -446,28 +652,45 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Financial Technology (FinTech)"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Big Data",
+            "subDisciplineName3": "Data Science",
+            "subDisciplineName4": "Financial Technology (FinTech)"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-016",
@@ -477,28 +700,45 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Financial Technology (FinTech)"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Big Data",
+            "subDisciplineName3": "Data Science",
+            "subDisciplineName4": "Financial Technology (FinTech)"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-017",
@@ -508,28 +748,45 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Financial Technology (FinTech)"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Big Data",
+            "subDisciplineName3": "Data Science",
+            "subDisciplineName4": "Financial Technology (FinTech)"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-018",
@@ -539,27 +796,44 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business",
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Business Analytics",
-            "Information Technology"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business Analytics",
+            "subDisciplineName2": "Information Technology"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-019",
@@ -569,27 +843,44 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business",
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Business Analytics",
-            "Information Technology"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business Analytics",
+            "subDisciplineName2": "Information Technology"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-020",
@@ -599,25 +890,42 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Marketing"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Marketing"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-021",
@@ -627,25 +935,42 @@
             "fullTime": false
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Human Resource Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Human Resource Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-022",
@@ -655,25 +980,42 @@
             "fullTime": false
         },
         "academicLevel": "Diploma",
-        "discipline": [
-            "Specialty"
-        ],
-        "subDiscipline": [
-            "Aviation"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Aviation"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-023",
@@ -683,26 +1025,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-024",
@@ -712,25 +1071,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Big Data"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Big Data"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-025",
@@ -740,25 +1116,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Digital Systems Security"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Digital Systems Security"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-026",
@@ -768,25 +1161,42 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "IT & Computer Science "
-        ],
-        "subDiscipline": [
-            "Cyber Security and Management"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Cyber Security and Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-027",
@@ -796,25 +1206,42 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Engineering and Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Engineering and Business"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-028",
@@ -824,25 +1251,42 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Project Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Project Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-029",
@@ -852,26 +1296,43 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Logistics and Supply Chain Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Logistics and Supply Chain Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-030",
@@ -881,25 +1342,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Tourism, Hospitality & Events Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Tourism, Hospitality & Events Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-031",
@@ -909,25 +1387,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Marketing"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Marketing"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-032",
@@ -937,25 +1432,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Retail Marketing"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Retail Marketing"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-033",
@@ -965,25 +1477,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Sports Studies and Marketing"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Sports Studies and Marketing"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-034",
@@ -993,25 +1522,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Accounting and Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Accounting and Finance"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-035",
@@ -1021,25 +1567,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Banking and Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Banking and Finance"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-036",
@@ -1049,26 +1612,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-037",
@@ -1078,25 +1658,42 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Accounting and Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Accounting and Finance"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-038",
@@ -1106,26 +1703,43 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Banking",
-            "Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Banking",
+            "subDisciplineName2": "Finance"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-039",
@@ -1135,26 +1749,43 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-040",
@@ -1164,26 +1795,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Accounting"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Accounting"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-041",
@@ -1193,26 +1841,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Economics and Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Economics and Finance"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-042",
@@ -1222,26 +1887,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Logistics and Supply Chain Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Logistics and Supply Chain Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-043",
@@ -1251,26 +1933,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-044",
@@ -1280,26 +1979,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Marketing"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Marketing"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-045",
@@ -1309,25 +2025,42 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "International Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "International Business"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "Grenoble Ecole de Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-046",
@@ -1337,25 +2070,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Tourism, Hospitality & Events Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Tourism, Hospitality & Events Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "La Trobe University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-047",
@@ -1365,25 +2115,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Tourism, Hospitality & Events Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Tourism, Hospitality & Events Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "La Trobe University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-048",
@@ -1393,26 +2160,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "International Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "International Business"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-049",
@@ -1422,25 +2206,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Communication"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Communication"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-050",
@@ -1450,25 +2251,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Design"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Design"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-051",
@@ -1478,26 +2296,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Information Technology"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Information Technology"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-052",
@@ -1507,25 +2342,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Cyber Security"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Cyber Security"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-053",
@@ -1535,25 +2387,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Game and Mobile Development"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Game and Mobile Development"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-054",
@@ -1563,25 +2432,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Psychology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Psychology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-055",
@@ -1591,25 +2477,42 @@
             "fullTime": true
         },
         "academicLevel": "Diploma",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Information Technology"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Information Technology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-056",
@@ -1619,25 +2522,42 @@
             "fullTime": true
         },
         "academicLevel": "Certificate",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Information Technology"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Information Technology"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": true,
             "degree": false,
             "diploma": false
         },
+        "category": "Foundation Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-057",
@@ -1647,26 +2567,43 @@
             "fullTime": true
         },
         "academicLevel": "Certificate",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": true,
             "degree": false,
             "diploma": false
         },
+        "category": "Foundation Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-058",
@@ -1676,25 +2613,42 @@
             "fullTime": true
         },
         "academicLevel": "Diploma",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Accounting"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Accounting"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-059",
@@ -1704,26 +2658,43 @@
             "fullTime": true
         },
         "academicLevel": "Diploma",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Banking and Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Banking and Finance"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-060",
@@ -1733,26 +2704,43 @@
             "fullTime": true
         },
         "academicLevel": "Diploma",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "International Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "International Business"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-061",
@@ -1762,25 +2750,42 @@
             "fullTime": true
         },
         "academicLevel": "Diploma",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-062",
@@ -1790,28 +2795,45 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business",
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Business Analytics",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Business Analytics",
+            "subDisciplineName3": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-063",
@@ -1821,28 +2843,45 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Data Science",
-            "Machine Learning",
-            "Web and Mobile Development"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Data Science",
+            "subDisciplineName3": "Machine Learning",
+            "subDisciplineName4": "Web and Mobile Development"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-064",
@@ -1852,28 +2891,45 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Data Science",
-            "Machine Learning",
-            "Web and Mobile Development"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Data Science",
+            "subDisciplineName3": "Machine Learning",
+            "subDisciplineName4": "Web and Mobile Development"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-065",
@@ -1883,28 +2939,45 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Artificial Intelligence",
-            "Data Science",
-            "Machine Learning",
-            "Web and Mobile Development"
-        ],
+        "discipline": {
+            "disciplineName1": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Artificial Intelligence",
+            "subDisciplineName2": "Data Science",
+            "subDisciplineName3": "Machine Learning",
+            "subDisciplineName4": "Web and Mobile Development"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-066",
@@ -1914,28 +2987,45 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business",
-            "IT & Computer Science"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Business Analytics",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "IT & Computer Science"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Business Analytics",
+            "subDisciplineName3": "Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-067",
@@ -1945,26 +3035,43 @@
             "fullTime": true
         },
         "academicLevel": "Certificate",
-        "discipline": [
-            "Arts & Social Sciences",
-            "Business"
-        ],
-        "subDiscipline": [
-            "Social Sciences"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Social Sciences"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": true,
             "degree": false,
             "diploma": false
         },
+        "category": "Foundation Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-068",
@@ -1974,25 +3081,42 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-069",
@@ -2002,25 +3126,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-070",
@@ -2030,26 +3171,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics",
-            "Politics"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "Politics"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-071",
@@ -2059,26 +3217,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "International Relations",
-            "Politics"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "International Relations",
+            "subDisciplineName2": "Politics"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-072",
@@ -2088,27 +3263,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Economics",
-            "Finance",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "Finance",
+            "subDisciplineName3": "Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-073",
@@ -2118,26 +3310,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Economics",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-074",
@@ -2147,26 +3356,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-075",
@@ -2176,29 +3402,46 @@
             "fullTime": true
         },
         "academicLevel": "Certificate",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Accounting",
-            "Banking",
-            "Economics",
-            "Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Accounting",
+            "subDisciplineName3": "Banking",
+            "subDisciplineName4": "Economics",
+            "subDisciplineName5": "Finance"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-076",
@@ -2208,27 +3451,44 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management",
-            "Mathematics"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "Mathematics"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-077",
@@ -2238,25 +3498,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Accounting and Finance"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Accounting and Finance"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-078",
@@ -2266,27 +3543,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management",
-            "Communication"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "Communication"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-079",
@@ -2296,27 +3590,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management",
-            "Communication"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "Communication"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-080",
@@ -2326,26 +3637,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-081",
@@ -2355,26 +3683,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "International Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "International Business"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-082",
@@ -2384,26 +3729,43 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business",
-            "International Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "International Business"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-083",
@@ -2413,25 +3775,42 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-084",
@@ -2441,26 +3820,43 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Entrepreneurship and Innovation",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Entrepreneurship and Innovation",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-085",
@@ -2470,26 +3866,43 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Organisational Leadership and Change",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Organisational Leadership and Change",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-086",
@@ -2499,26 +3912,43 @@
             "fullTime": true
         },
         "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Strategy",
-            "Management"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Strategy",
+            "subDisciplineName2": "Management"
+        },
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
             "degree": true,
             "diploma": false
         },
+        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-087",
@@ -2528,27 +3958,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty",
-            "Business"
-        ],
-        "subDiscipline": [
-            "Geographic Information Science",
-            "Business Administration"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty",
+            "disciplineName2": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Geographic Information Science",
+            "subDisciplineName2": "Business Administration"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-088",
@@ -2558,27 +4005,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Geographic Information Science",
-            "Communication"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Geographic Information Science",
+            "subDisciplineName2": "Communication"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-089",
@@ -2588,27 +4052,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Geographic Information Science",
-            "Economics"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Geographic Information Science",
+            "subDisciplineName2": "Economics"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-090",
@@ -2618,27 +4099,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Geographic Information Science",
-            "International Trade"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Geographic Information Science",
+            "subDisciplineName2": "International Trade"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-091",
@@ -2648,27 +4146,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Geographic Information Science",
-            "Psychology"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Geographic Information Science",
+            "subDisciplineName2": "Psychology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-092",
@@ -2678,27 +4193,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Geographic Information Science",
-            "Sociology"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Geographic Information Science",
+            "subDisciplineName2": "Sociology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-093",
@@ -2708,25 +4240,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Specialty"
-        ],
-        "subDiscipline": [
-            "Geographic Information Science"
-        ],
+        "discipline": {
+            "disciplineName1": "Specialty"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Geographic Information Science"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-094",
@@ -2736,27 +4285,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Business Administration",
-            "Communication"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business Administration",
+            "subDisciplineName2": "Communication"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-095",
@@ -2766,27 +4332,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Business Administration",
-            "Economics"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business Administration",
+            "subDisciplineName2": "Economics"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-096",
@@ -2796,27 +4379,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Business Administration",
-            "International Trade"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business Administration",
+            "subDisciplineName2": "International Trade"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-097",
@@ -2826,27 +4426,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Business Administration",
-            "Psychology"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business Administration",
+            "subDisciplineName2": "Psychology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-098",
@@ -2856,27 +4473,44 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business",
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Business Administration",
-            "Sociology"
-        ],
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business Administration",
+            "subDisciplineName2": "Sociology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-099",
@@ -2886,25 +4520,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business"
-        ],
+        "discipline": {
+            "disciplineName1": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-100",
@@ -2914,26 +4565,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Communication",
-            "Economics"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Communication",
+            "subDisciplineName2": "Economics"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-101",
@@ -2943,26 +4611,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Communication",
-            "International Trade"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Communication",
+            "subDisciplineName2": "International Trade"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-102",
@@ -2972,26 +4657,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Communication",
-            "Psychology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Communication",
+            "subDisciplineName2": "Psychology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-103",
@@ -3001,26 +4703,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Communication",
-            "Sociology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Communication",
+            "subDisciplineName2": "Sociology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-104",
@@ -3030,25 +4749,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Communication"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Communication"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-105",
@@ -3058,26 +4794,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics",
-            "International Trade"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "International Trade"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-106",
@@ -3087,26 +4840,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics",
-            "Psychology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "Psychology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-107",
@@ -3116,26 +4886,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics",
-            "Sociology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "Sociology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-108",
@@ -3145,25 +4932,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Economics"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-109",
@@ -3173,26 +4977,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "International Trade",
-            "Psychology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "International Trade",
+            "subDisciplineName2": "Psychology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-110",
@@ -3202,26 +5023,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "International Trade",
-            "Sociology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "International Trade",
+            "subDisciplineName2": "Sociology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-111",
@@ -3231,25 +5069,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "International Trade"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "International Trade"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-112",
@@ -3259,26 +5114,43 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Psychology",
-            "Sociology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Psychology",
+            "subDisciplineName2": "Sociology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-113",
@@ -3288,25 +5160,42 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Psychology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Psychology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     },
     {
         "id": "programme-114",
@@ -3316,24 +5205,41 @@
             "fullTime": true
         },
         "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Sociology"
-        ],
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Sociology"
+        },
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
             "degree": true,
             "diploma": true
         },
+        "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": "",
-        "applicationPeriod": "",
-        "programmeStructure": "",
-        "overseaOpportunity": "",
-        "intakeMonths": "",
-        "duration": ""
+        "programOverview": {
+            "aboutProgramme1": "",
+            "aboutProgramme2": "",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": ""
+        },
+        "duration": {
+            "partTime": ""
+        }
     }
 ]
