@@ -14,6 +14,7 @@ import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
 import { db } from "../../firebase";
 import { useAuth } from "../../modules/auth";
 import { forumPostsDesc } from "../../modules/compare";
+import { read } from "fs";
 
 const Forum: React.FC = () => {
     const { userID } = useAuth();
@@ -21,7 +22,7 @@ const Forum: React.FC = () => {
 
     let history = useHistory();
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [forumDisabled, setForumDisabled] = useState(false);
     const [checked, setChecked] = useState(false);
     const [agreedTOC, setAgreedTOC] = useState(true);
@@ -84,7 +85,7 @@ const Forum: React.FC = () => {
             setForumDisabled(disabled);
 
             if (!disabled) {
-                db.collection('Forum').get().then(uRef => {
+                /* db.collection('Forum').get().then(uRef => {
                     const questions: any = [];
     
                     uRef.forEach(user => {
@@ -111,21 +112,48 @@ const Forum: React.FC = () => {
                         setQuestions(questions);
                         setLoading(false);
                     }, 500);
-                });
-    
+                }); */
+
+                let readRules = false;
                 return db.collection('Forum').doc(userID).onSnapshot(snapshot => {
                     if (snapshot.exists) {
-                        if (snapshot.data()?.readRules) {
-                            setAgreedTOC(true);
-                        } else {
-                            setAgreedTOC(false);
-                        }
+                        if (snapshot.data()?.suspended)
+                            return history.goBack();
+
+                        if (snapshot.data()?.readRules) 
+                            readRules = true;
+                            //setAgreedTOC(true);
+                    }
+                    setAgreedTOC(readRules);
+
+                    if (readRules) {
+                        setLoading(true);
+                        return db.collectionGroup('Questions').onSnapshot(entries => {
+                            const questions: any = [];
+                            entries.forEach(question => {
+                                questions.unshift({
+                                    id: +question.id,
+                                    entry: question.data().entry,
+                                    dateTime: question.data().dateTime,
+                                    user: question.data().posterName,
+                                    uid: question.data().posterId,
+                                    commentCount: question.data().noOfComments,
+                                    removed: question.data().deleted
+                                });
+                            });
+
+                            setTimeout(() => {
+                                questions.sort(forumPostsDesc);
+                                setQuestions(questions);
+                                //questionListener();
+                                //forumListener();
+                                setLoading(false);
+                            }, 500);
+                        });
                     }
                 });
             }
         }).catch((error) => console.log(error));
-
-        
     }, []);
 
     return (

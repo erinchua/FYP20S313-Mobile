@@ -125,7 +125,7 @@ const ForumViewQuestion: React.FC = () => {
             }
         });
 
-        db.collection('Forum').get().then(uRef => {
+        /* db.collection('Forum').get().then(uRef => {
             const comments: any = [];
             setComments(comments)
 
@@ -142,6 +142,29 @@ const ForumViewQuestion: React.FC = () => {
                             commentId: change.doc.data().commentId || null
                         });
                     });
+                });
+            });
+
+            console.log(comments)
+            setTimeout(() => {
+                setComments(comments.sort(forumPostsAsc));
+                setLoading(false);
+            }, 500);
+        }); */
+
+        return db.collectionGroup('Comments').where("questionId", "==", +id).onSnapshot(entries => {
+            const comments: any = [];
+            setComments(comments)
+
+            entries.forEach(comment => {
+                comments.unshift({
+                    id: +comment.id,
+                    entry: comment.data().entry,
+                    dateTime: comment.data().dateTime,
+                    user: comment.data().posterName,
+                    uid: comment.data().posterId,
+                    removed: comment.data().deleted,
+                    commentId: comment.data().commentId || null
                 });
             });
 
