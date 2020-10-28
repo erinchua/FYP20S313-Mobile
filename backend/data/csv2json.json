@@ -1,68 +1,68 @@
 [
-  {
-    "awardedBy": "RMIT University",
-    "modeOfStudy": {
-      "fullTime": false,
-      "partTime": true
-    },
-    "entryQualifications": {
-      "diploma": true,
-      "degree": false,
-      "oLevel": false,
-      "aLevel": false
-    },
-    "subDiscipline": [
-      "Aviation"
-    ],
-    "programmeTitle": "Bachelor of Applied Science (Aviation) (Top-up)",
-    "academicLevel": "Bachelor",
-    "discipline": [
-      "Specialty"
-    ],
-    "id": "programme-001"
-  },
-  {
-    "awardedBy": "RMIT University",
-    "modeOfStudy": {
-      "fullTime": false,
-      "partTime": true
-    },
-    "entryQualifications": {
-      "diploma": true,
-      "degree": false,
-      "oLevel": false,
-      "aLevel": false
-    },
-    "subDiscipline": [
-      "Construction and Management"
-    ],
-    "programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up)",
-    "academicLevel": "Bachelor",
-    "discipline": [
-      "Specialty"
-    ],
-    "id": "programme-002"
-  },
-  {
-    "awardedBy": "University of Wollongong",
-    "modeOfStudy": {
-      "fullTime": false,
-      "partTime": true
-    },
-    "entryQualifications": {
-      "diploma": false,
-      "degree": false,
-      "oLevel": false,
-      "aLevel": true
-    },
-    "subDiscipline": [
-      "Information Technology"
-    ],
-    "programmeTitle": "Bachelor of Information Technology",
-    "academicLevel": "Bachelor",
-    "discipline": [
-      "IT & Computer Science"
-    ],
-    "id": "programme-003"
-  }
+	{
+		"awardedBy": "RMIT University",
+		"modeOfStudy": {
+			"fullTime": false,
+			"partTime": true
+		},
+		"entryQualifications": {
+			"diploma": true,
+			"degree": false,
+			"oLevel": false,
+			"aLevel": false
+		},
+		"subDiscipline": [
+			"Aviation"
+		],
+		"programmeTitle": "Bachelor of Applied Science (Aviation) (Top-up)",
+		"academicLevel": "Bachelor",
+		"discipline": [
+			"Specialty"
+		],
+		"id": "programme-001"
+	},
+	{
+		"awardedBy": "RMIT University",
+		"modeOfStudy": {
+			"fullTime": false,
+			"partTime": true
+		},
+		"entryQualifications": {
+			"diploma": true,
+			"degree": false,
+			"oLevel": false,
+			"aLevel": false
+		},
+		"subDiscipline": [
+			"Construction and Management"
+		],
+		"programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up)",
+		"academicLevel": "Bachelor",
+		"discipline": [
+			"Specialty"
+		],
+		"id": "programme-002"
+	},
+	{
+		"awardedBy": "University of Wollongong",
+		"modeOfStudy": {
+			"fullTime": false,
+			"partTime": true
+		},
+		"entryQualifications": {
+			"diploma": false,
+			"degree": false,
+			"oLevel": false,
+			"aLevel": true
+		},
+		"subDiscipline": [
+			"Information Technology"
+		],
+		"programmeTitle": "Bachelor of Information Technology",
+		"academicLevel": "Bachelor",
+		"discipline": [
+			"IT & Computer Science"
+		],
+		"id": "programme-003"
+	}
 ]

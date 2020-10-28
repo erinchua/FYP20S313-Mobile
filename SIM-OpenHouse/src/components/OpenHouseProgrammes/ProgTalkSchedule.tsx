@@ -35,19 +35,23 @@ const ProgTalkSchedule: React.FC<{
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
 
-            await db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
+            await db.collection('PersonalScheduler').doc(userID).get().then(async (snapshot: any) => {
                 const registered = snapshot.data().registeredProgrammes;
+                const scheduler = db.collection('PersonalScheduler').doc(userID);
+                const progTalk = db.collection('ProgrammeTalks').doc(programme.id);
+                const increment = firebase.firestore.FieldValue.increment(1);
+                const batch = db.batch();
                 
                 if (registered) {
                     if (registered.length > 0) {
                         let check = false;
 
-                        registered.forEach((item: any) => {
+                        registered.forEach(async (item: any) => {
                             const itemType = item.split("-");
 
                             switch (itemType[0]) {
                                 case "talk":
-                                    db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
+                                    await db.collection('ProgrammeTalks').doc(item).get().then((doc: any) => {
 
                                         if (programme.date == doc.data().date) {
 
@@ -63,7 +67,7 @@ const ProgTalkSchedule: React.FC<{
                                     break;
 
                                 case "tour":
-                                    db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
+                                    await db.collection('GuidedTours').doc(item).get().then((doc: any) => {
 
                                         if (programme.date == doc.data().date) {
 
@@ -79,7 +83,7 @@ const ProgTalkSchedule: React.FC<{
                                     break;
 
                                 case "performance":
-                                    db.collection('Performances').doc(item).onSnapshot((doc: any) => {
+                                    await db.collection('Performances').doc(item).get().then((doc: any) => {
 
                                         if (programme.date == doc.data().date) {
 
@@ -102,9 +106,10 @@ const ProgTalkSchedule: React.FC<{
                             if (check) {
                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
                             } else {
-                                await db.collection('PersonalScheduler').doc(userID).update({
-                                    registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                                });
+                                batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
+                                batch.update(progTalk, { noRegistered: increment });
+
+                                await batch.commit();
                                 setAlert({ registerSuccess: true, registerFail: false, loading: false });
                             };
 
@@ -112,16 +117,18 @@ const ProgTalkSchedule: React.FC<{
                         }, 500);
 
                     } else {
-                        db.collection('PersonalScheduler').doc(userID).update({
-                            registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                        });
+                        batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
+                        batch.update(progTalk, { noRegistered: increment });
+
+                        await batch.commit();
                         setAlert({ registerSuccess: true, registerFail: false, loading: false });
                     }
 
                 } else {
-                    db.collection('PersonalScheduler').doc(userID).update({
-                        registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
-                    });
+                    batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
+                    batch.update(progTalk, { noRegistered: increment });
+
+                    await batch.commit();
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
                 }
             });
