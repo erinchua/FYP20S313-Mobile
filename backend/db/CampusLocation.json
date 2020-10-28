@@ -1,0 +1,30 @@
+[
+    {
+        "id": "car",
+        "carDescription": "The campus is easily accessible via Pan-Island Expressway (PIE), go via Exit 26A and turn into Clementi Road.",
+        "carParkingDescription": "(With effect from 1 February 2017) Applicable to all white lots within SIM HQ car park Charges: Cars – $1.28 (inclusive of GST), based on 30-minute block charging Operating Hours: 6.00am to 11.59pm (Daily including weekends. Closed on Public Holidays) Grace Period: 15 minutes"
+    },
+    {
+        "id": "bus",
+        "busNo": [
+            "52",
+            "61",
+            "74",
+            "151",
+            "154",
+            "184"
+        ]
+    },
+    {
+        "id": "mrt",
+        "nearestMRT": [
+            "Clementi",
+            "Dover",
+            "King Albert Park"
+        ]
+    },
+    {
+        "id": "map",
+        "url": ""
+    }
+]

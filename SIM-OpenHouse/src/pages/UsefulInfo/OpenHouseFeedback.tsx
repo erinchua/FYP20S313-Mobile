@@ -12,40 +12,40 @@ const OpenHouseFeedback: React.FC = () => {
 
     const { register, handleSubmit, errors, getValues, reset } = useForm();
     const [submitFeedbackSuccess, setSubmitFeedbackSuccess] = useState(false);
-    const [openhouseDates, setOpenhouseDates] = useState([])
+    const [openhouseDates, setOpenhouseDates] = useState([]);
 
     useEffect(() => {
-        const dates: any = [];
+        db.collection('Openhouse').get().then(snapshot => {
+            const dates: any = [];
 
-        db.collection("Openhouse")
-            .get()
-            .then((snapshot) => {
-                snapshot.forEach((doc) => {
-                    const data = doc.get('day')
-                    if (Array.isArray(data))
-                        data.forEach((day: any) => { dates.push(day.date) })
-                });
-                setOpenhouseDates(dates);
-            })
-            .catch((error) => console.log(error));
-    }, [])
+            snapshot.forEach(doc => {
+                const data = doc.get('day');
+
+                for (let i = 0; i < Object.keys(data).length; i++) {
+                    const day = data[Object.keys(data)[i]];
+                    dates.push(day.date);
+                }
+            });
+
+            setOpenhouseDates(dates);
+        }).catch((error) => console.log(error));
+    }, []);
+
     const submitNewFeedback = async (date: string, feedbackNature: string, feedbackDesc: string) => {
-        let dbSize = 0
-        await db.collection('Feedback').get().then(snapshot => {
-            dbSize = snapshot.size
-        })
-        db.collection('Feedback').doc('feedback-' + (dbSize + 1)).set({
+        const msTime = new Date().getTime();
+
+        await db.collection('Feedback').doc(msTime.toString()).set({
+            id: msTime,
             attendedDate: date,
             natureOfFeedback: feedbackNature,
             feedbackDescription: feedbackDesc
-        })
+        });
 
         console.log(date)
         console.log(feedbackNature)
         console.log(feedbackDesc)
-
-
     }
+
     const onSubmit = (data: any) => {
         const attendedDate = getValues("attendedDate");
         const feedbackNature = getValues("feedbackNature");
@@ -60,7 +60,6 @@ const OpenHouseFeedback: React.FC = () => {
             setSubmitFeedbackSuccess(true);
         }
     };
-
 
     return (
         <React.Fragment>
@@ -160,7 +159,7 @@ const OpenHouseFeedback: React.FC = () => {
                             {errors.feedbackTextarea && errors.feedbackTextarea.type === "required" && <p className="errorMsg">Your feedback/ comment is required!</p>}
 
                             <IonRow class="ion-justify-content-center" style={{ marginTop: "5%", marginBottom: "3%" }}>
-                                <IonButton size="large" id="feedbackBtn" type="submit" onClick={onSubmit}>SUBMIT</IonButton>
+                                <IonButton size="large" id="feedbackBtn" type="submit">SUBMIT</IonButton>
                             </IonRow>
                         </form>
                     </IonGrid>
