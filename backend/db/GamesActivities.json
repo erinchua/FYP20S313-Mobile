@@ -1,0 +1,42 @@
+[
+    {
+        "id": "activity-001",
+        "gameBoothName": "Amazing Race - Campus Xplore",
+        "venue": "SIM HQ BLK A Atrium",
+        "date": "21-Nov-2020",
+        "startTime": "10:00AM",
+        "pointsAward": 4
+    },
+    {
+        "id": "activity-002",
+        "gameBoothName": "Guess the place - An SIM Edition",
+        "venue": "SIM HQ BLK B Lvl 1",
+        "date": "21-Nov-2020",
+        "startTime": "10:00AM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-003",
+        "gameBoothName": "DIY Temporary Tattoos",
+        "venue": "SIM HQ BLK A Atrium",
+        "date": "21-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 2
+    },
+    {
+        "id": "activity-004",
+        "gameBoothName": "CSI: SIM Edition",
+        "venue": "SIM HQ BLK B MPH A1",
+        "date": "22-Nov-2020",
+        "startTime": "11:00AM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-005",
+        "gameBoothName": "Concentration - Match Match: SIM Edition ",
+        "venue": "SIM HQ BLK A Atrium",
+        "date": "22-Nov-2020",
+        "startTime": "10:00AM",
+        "pointsAward": 3
+    }
+]

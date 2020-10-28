@@ -83,3 +83,37 @@
     font-size: 80%;
     --background: #808080;
 }
+
+
+/******************************************************/
+.progTalkFilterPopover .popover-content  {
+    min-height: 55%;
+    max-height: 60%;
+    background: #424242;
+    width: 80%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.progTalkFilterPopover .courseFilterCheckbox {
+    --border-radius: 3px;
+}
+
+.progTalkFilterPopover .courseFilterLabel {
+    padding-left: 2%;
+    font-size: 80%;
+    color: #efefef;
+    text-align: left;
+}
+
+.progTalkFilterPopover .courseFilterCountBadge {
+    --background: #ffffff;
+    --padding-top: 1%;
+    --padding-bottom: 1%;
+    --padding-start: 1%;
+    --padding-end: 1%;
+    font-size: 80%;
+    --color: #37474F;
+    border-radius: 12px;
+    text-align: center;
+}
