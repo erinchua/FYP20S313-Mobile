@@ -153,7 +153,6 @@
 .prizesContent-Header {
     border: 1px solid #C8C8C8;
     text-align: center;
-    min-width: 20%;
     font-size: 75%;
     padding: 2% 0%;
 }
@@ -161,7 +160,6 @@
 .prizesContent-Data {
     border: 1px solid #C8C8C8;
     text-align: center;
-    min-width: 20%;
     font-size: 70%;
 }
 
