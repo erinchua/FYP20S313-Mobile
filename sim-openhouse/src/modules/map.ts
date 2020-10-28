@@ -5,6 +5,7 @@ export interface ScheduleItem {
     startTime: string;
     endTime: string;
     venue: string;
+    uni: string;
     boothNo: string;
     points: number;
 };
@@ -17,6 +18,7 @@ export function toSchedule(doc: any): ScheduleItem {
         startTime: doc.startTime || null,
         endTime: doc.endTime || null,
         venue: doc.venue || null,
+        uni: doc.awardingUni || null,
         boothNo: doc.boothNumber || null,
         points: doc.pointsAward || null
     };

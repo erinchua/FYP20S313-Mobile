@@ -11,7 +11,7 @@ import { ScheduleItem, toSchedule } from '../modules/map';
 
 const MySchedule: React.FC = () => {
     const { userID } = useAuth();
-    const [studentDetails, setStudentDetails]: any = useState([])
+    const [studentDetails, setStudentDetails]: any = useState([]);
 
     const [loading, setLoading] = useState(true);
     const [dayNum, setDayNum] = useState("day1");
@@ -41,47 +41,53 @@ const MySchedule: React.FC = () => {
 
             setOpenhouseDates(dates);
         }).catch((error) => console.log(error));
+
         const fetchStudent = async () => {
             const studRef = db.collection('Students').doc(userID)
             const doc = await studRef.get()
             studentDetails.push(doc.data())
         }
-        fetchStudent()
 
-        db.collection('Students').doc(userID).get().then((snapshot: any) => setStudentDetails(snapshot.data()))
+        fetchStudent();
 
-        return db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
+        db.collection('Students').doc(userID).get().then(snapshot => setStudentDetails(snapshot.data()));
+
+        const scheduleProgs: any = [];
+        db.collection('PersonalScheduler').doc(userID).get().then((snapshot: any) => {
             const registered = snapshot.data().registeredProgrammes;
-            const scheduleProgs: any = [];
 
-            registered.forEach((item: any) => {
-                const itemType = item.split("-");
+            if (registered) {
+                registered.forEach(async (item: any) => {
+                    const itemType = item.split("-");
 
-                switch (itemType[0]) {
-                    case "talk":
-                        return db.collection('ProgrammeTalks').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
-                    case "tour":
-                        return db.collection('GuidedTours').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
-                    case "performance":
-                        return db.collection('Performances').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
-                    case "activity":
-                        return db.collection('GamesActivities').doc(item).onSnapshot(doc => scheduleProgs.push(doc.data()));
-                    default:
-                        return;
-                }
-            });
-
-            setTimeout(() => {
-                setOpenHouseProgs(scheduleProgs.map(toSchedule));
-                setLoading(false);
-            }, 500);
+                    switch (itemType[0]) {
+                        case "talk":
+                            await db.collection('ProgrammeTalks').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
+                            break;
+                        case "tour":
+                            await db.collection('GuidedTours').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
+                            break;
+                        case "performance":
+                            await db.collection('Performances').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
+                            break;
+                        case "activity":
+                            await db.collection('GamesActivities').doc(item).get().then(doc => scheduleProgs.push(doc.data()));
+                            break;
+                        default:
+                    }
+                });
+            }
         });
-
+            
+        setTimeout(() => {
+            setOpenHouseProgs(scheduleProgs.map(toSchedule));
+            setLoading(false);
+        }, 800);
     }, []);
 
     return (
         <IonPage>
-            {console.log("student details are" + JSON.stringify(studentDetails))}
+            {/* {console.log("student details are" + JSON.stringify(studentDetails))} */}
             <IonHeader>
                 <TopNav title="My Schedule" route='/u/home' backarrow={true} hamburger={true} />
             </IonHeader>
