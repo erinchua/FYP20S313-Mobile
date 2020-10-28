@@ -14,7 +14,6 @@ import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
 import { db } from "../../firebase";
 import { useAuth } from "../../modules/auth";
 import { forumPostsDesc } from "../../modules/compare";
-import { read } from "fs";
 
 const Forum: React.FC = () => {
     const { userID } = useAuth();
@@ -122,7 +121,6 @@ const Forum: React.FC = () => {
 
                         if (snapshot.data()?.readRules) 
                             readRules = true;
-                            //setAgreedTOC(true);
                     }
                     setAgreedTOC(readRules);
 
@@ -145,8 +143,6 @@ const Forum: React.FC = () => {
                             setTimeout(() => {
                                 questions.sort(forumPostsDesc);
                                 setQuestions(questions);
-                                //questionListener();
-                                //forumListener();
                                 setLoading(false);
                             }, 500);
                         });

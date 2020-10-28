@@ -9,12 +9,8 @@ const PrizesContent: React.FC<{ prizes: any }> = props => {
     const [alert, setAlert] = useState({ redeemSuccess: false, redeemFail: false, loading: false });
     const [buttonDisabled, setButtonDisabled] = useState(false);
 
-    const availablePrizes = props.prizes.filter((prize: any) => {
-        return prize.isRedeemed === false;
-    });
-    const redeemedPrizes = props.prizes.filter((prize: any) => {
-        return prize.isRedeemed === true;
-    });
+    const availablePrizes = props.prizes.filter((prize: any) => { return prize.stock > 0 });
+    const redeemedPrizes = props.prizes.filter((prize: any) => { return prize.stock <= 0 });
 
     return (
 
