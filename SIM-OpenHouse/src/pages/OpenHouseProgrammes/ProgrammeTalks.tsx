@@ -29,7 +29,7 @@ export interface ProgrammeTalk {
 	noRegistered: number,
 	isLive: boolean,
 	hasRecording: boolean,
-	link: string
+	url: string
 }
 const ProgrammeTalks: React.FC = () => {
 	const [tab, setTab] = useState("schedule");
