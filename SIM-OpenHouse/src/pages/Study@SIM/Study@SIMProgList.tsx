@@ -447,7 +447,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         onDidDismiss={e => setShowProgCourseFilterPopover({ open: false, event: undefined })}
                     >
 
-                        <FilterPopoverContent filterFunction={filterProgrammes} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
+                        <FilterPopoverContent filterFunction={filterProgrammes} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} setState="" />
 
 
 
