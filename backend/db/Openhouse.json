@@ -1,0 +1,20 @@
+[
+    {
+        "id": "openhouse",
+        "openhouseTitle": "SIM Openhouse 2020",
+        "day": {
+            "1": {
+                "date": "21-Nov-2020",
+                "startTime": "9:00AM",
+                "endTime": "5:00PM"
+            },
+            "2": {
+                "date": "22-Nov-2020",
+                "startTime": "9:00AM",
+                "endTime": "5:00PM"
+            }
+        },
+        "disableForum": false,
+        "checked": false
+    }
+]

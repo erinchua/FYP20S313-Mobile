@@ -16,404 +16,404 @@ import { TalkFilter } from '../../components/FilterPopoverContent'
 import { Programme } from '../Study@SIM/Study@SIMProgInfo'
 
 export interface ProgrammeTalk {
-  id: string,
-  talkName: string,
-  awardingUni: string,
-  details: string,
-  discipline: string,
-  date: string,
-  startTime: string,
-  endTime: string,
-  venue: string,
-  capacityLimit: number,
-  noRegistered: number,
-  isLive: boolean,
-  hasRecording: boolean,
-  link: string
+	id: string,
+	talkName: string,
+	awardingUni: string,
+	details: string,
+	discipline: string,
+	date: string,
+	startTime: string,
+	endTime: string,
+	venue: string,
+	capacityLimit: number,
+	noRegistered: number,
+	isLive: boolean,
+	hasRecording: boolean,
+	link: string
 }
 const ProgrammeTalks: React.FC = () => {
-  const [tab, setTab] = useState("schedule");
-  const [dayNum, setDayNum] = useState("day1");
+	const [tab, setTab] = useState("schedule");
+	const [dayNum, setDayNum] = useState("day1");
 
 
-  const handleDayOne = () => {
-    setDayNum("day1");
-  };
+	const handleDayOne = () => {
+		setDayNum("day1");
+	};
 
-  const handleDayTwo = () => {
-    setDayNum("day2");
-  };
+	const handleDayTwo = () => {
+		setDayNum("day2");
+	};
 
-  const handleSchedule = () => {
-    setTab("schedule");
-  };
+	const handleSchedule = () => {
+		setTab("schedule");
+	};
 
-  const handleLiveTalks = () => {
-    setTab("liveTalks");
-  };
+	const handleLiveTalks = () => {
+		setTab("liveTalks");
+	};
 
-  const handlePastRec = () => {
-    setTab("pastRecordings");
-  };
+	const handlePastRec = () => {
+		setTab("pastRecordings");
+	};
 
-  const [openhouseDates, setOpenhouseDates] = useState([]);
-  const [initialProgtalk, setIntialProgTalk] = useState<any[]>([]);
-  const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
-  const [recordedTalk, setRecordedTalk] = useState<ProgrammeTalk[]>([]);
-  const [liveTalk, setLiveTalk] = useState<ProgrammeTalk[]>([]);
-
-
-  useEffect(() => {
-    const dates: any = [];
-
-    db.collection("Openhouse")
-      .get()
-      .then((snapshot) => {
-        snapshot.forEach((doc) => {
-          const data = doc.get('day')
-          if (!Array.isArray(data)) {
-            for (var i = 0; i < Object.keys(data).length; i++) {
-              const date = data[Object.keys(data)[i]].date;
-              dates.push(date)
-            }
-          }
-        });
-        setOpenhouseDates(dates);
-      })
-      .catch((error) => console.log(error));
-
-    db.collection("ProgrammeTalks")
-      .get()
-      .then((snapshot) => {
-        const programmeTalk: any = [];
-        snapshot.forEach((doc) => {
-          const data = doc.data();
-          programmeTalk.push(data);
-        });
-        setIntialProgTalk(programmeTalk)
-        setProgrammeTalk(programmeTalk);
-      })
-      .catch((error) => console.log(error));
+	const [openhouseDates, setOpenhouseDates] = useState([]);
+	const [initialProgtalk, setIntialProgTalk] = useState<any[]>([]);
+	const [programmeTalk, setProgrammeTalk] = useState<any[]>([]);
+	const [recordedTalk, setRecordedTalk] = useState<ProgrammeTalk[]>([]);
+	const [liveTalk, setLiveTalk] = useState<ProgrammeTalk[]>([]);
 
 
-  }, []);
+	useEffect(() => {
+		const dates: any = [];
 
-  useEffect(() => {
-    const liveTalk = initialProgtalk.filter(talk => { return talk.isLive === true })
-    const recordedTalk = initialProgtalk.filter(talk => { return talk.hasRecording === true })
-    setRecordedTalk(recordedTalk)
-    setLiveTalk(liveTalk)
+		db.collection("Openhouse")
+			.get()
+			.then((snapshot) => {
+				snapshot.forEach((doc) => {
+					const data = doc.get('day')
+					if (!Array.isArray(data)) {
+						for (var i = 0; i < Object.keys(data).length; i++) {
+							const date = data[Object.keys(data)[i]].date;
+							dates.push(date)
+						}
+					}
+				});
+				setOpenhouseDates(dates);
+			})
+			.catch((error) => console.log(error));
 
-  }, [initialProgtalk])
-
-  /* Display Filter Menu Popover */
-  const [showProgTalkFilterPopover, setShowProgTalkFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
-    open: false,
-    event: undefined,
-  });
-
-  //For Filters
-
-  const [filterCondition, setFilterCondition] = useState<FilterCondition>({
-    mos: [],
-    discipline: ['Arts & Social Sciences', 'Business', 'IT & Computer Science', 'Nursing', 'Specialty'],
-    uni: [],
-    acadLvl: [],
-    entry: [],
-    subDisc: []
-  })
-
-  const updateScheduleTalks = (data: ProgrammeTalk[]) => {
-    setProgrammeTalk(data)
-  }
-
-  const updateRecTalks = (data: ProgrammeTalk[]) => {
-    setRecordedTalk(data)
-  }
+		db.collection("ProgrammeTalks")
+			.get()
+			.then((snapshot) => {
+				const programmeTalk: any = [];
+				snapshot.forEach((doc) => {
+					const data = doc.data();
+					programmeTalk.push(data);
+				});
+				setIntialProgTalk(programmeTalk)
+				setProgrammeTalk(programmeTalk);
+			})
+			.catch((error) => console.log(error));
 
 
-  const filterTalks = async (condition: TalkFilter, callback: any) => {
+	}, []);
 
-    const initialList: ProgrammeTalk[] = []
-    let filteredList: ProgrammeTalk[] = []
-    let segmentFilter: ProgrammeTalk[] = []
-    console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
-    await db.collection('ProgrammeTalks')
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach((doc: any) => {
-          const data = doc.data()
-          console.log(JSON.stringify(data))
-          initialList.push(data)
-        })
-      })
-    console.log(initialList.length + JSON.stringify(initialList))
-    Object.entries(condition).map(([key, value]) => {
-      if (key == 'discipline') {
-        let discFiltered: ProgrammeTalk[] = []
-        if (value.length > 0 && value.length <= 4) {
-          console.log("Entered discipline filter")
-          value.forEach((value: string) => {
-            segmentFilter = initialList.filter(programme => programme.discipline == value)
-            console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
-            discFiltered = discFiltered.concat(segmentFilter)
-          })
-          filteredList = discFiltered
-        }
-        else {
-          filteredList = initialList
-        }
+	useEffect(() => {
+		const liveTalk = initialProgtalk.filter(talk => { return talk.isLive === true })
+		const recordedTalk = initialProgtalk.filter(talk => { return talk.hasRecording === true })
+		setRecordedTalk(recordedTalk)
+		setLiveTalk(liveTalk)
 
-      }
+	}, [initialProgtalk])
 
-      else if (key == 'uni') {
-        let uniFiltered: ProgrammeTalk[] = []
-        if (value.length > 0) {
-          value.forEach((value: string) => {
-            segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
-            console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
-            uniFiltered = uniFiltered.concat(segmentFilter)
-          })
-          filteredList = uniFiltered
-        }
-      }
+	/* Display Filter Menu Popover */
+	const [showProgTalkFilterPopover, setShowProgTalkFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
+		open: false,
+		event: undefined,
+	});
 
-    }
-    )
-    // console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
-    callback(filteredList)
+	//For Filters
 
-  }
+	const [filterCondition, setFilterCondition] = useState<FilterCondition>({
+		mos: [],
+		discipline: ['Arts & Social Sciences', 'Business', 'IT & Computer Science', 'Nursing', 'Specialty'],
+		uni: [],
+		acadLvl: [],
+		entry: [],
+		subDisc: []
+	})
 
-  const filterRecTalks = async (condition: TalkFilter, callback: any) => {
+	const updateScheduleTalks = (data: ProgrammeTalk[]) => {
+		setProgrammeTalk(data)
+	}
 
-    const initialList: ProgrammeTalk[] = []
-    let filteredList: ProgrammeTalk[] = []
-    let segmentFilter: ProgrammeTalk[] = []
-    console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
-    await db.collection('ProgrammeTalks')
-      .where("hasRecording", '==', true)
-      .get()
-      .then(snapshot => {
-        snapshot.docs.forEach((doc: any) => {
-          const data = doc.data()
-          console.log(JSON.stringify(data))
-          initialList.push(data)
-        })
-      })
-    console.log(initialList.length + JSON.stringify(initialList))
-    Object.entries(condition).map(([key, value]) => {
-      if (key == 'discipline') {
-        let discFiltered: ProgrammeTalk[] = []
-        if (value.length > 0 && value.length <= 4) {
-          console.log("Entered discipline filter")
-          value.forEach((value: string) => {
-            segmentFilter = initialList.filter(programme => programme.discipline == value)
-            console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
-            discFiltered = discFiltered.concat(segmentFilter)
-          })
-          filteredList = discFiltered
-        }
-        else {
-          filteredList = initialList
-        }
+	const updateRecTalks = (data: ProgrammeTalk[]) => {
+		setRecordedTalk(data)
+	}
 
-      }
 
-      else if (key == 'uni') {
-        let uniFiltered: ProgrammeTalk[] = []
-        if (value.length > 0) {
-          value.forEach((value: string) => {
-            segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
-            console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
-            uniFiltered = uniFiltered.concat(segmentFilter)
-            // console.log("current list" + JSON.stringify(filteredList))
-          })
-          filteredList = uniFiltered
-        }
-      }
+	const filterTalks = async (condition: TalkFilter, callback: any) => {
 
-    }
-    )
-    // console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
-    callback(filteredList)
+		const initialList: ProgrammeTalk[] = []
+		let filteredList: ProgrammeTalk[] = []
+		let segmentFilter: ProgrammeTalk[] = []
+		console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
+		await db.collection('ProgrammeTalks')
+			.get()
+			.then(snapshot => {
+				snapshot.docs.forEach((doc: any) => {
+					const data = doc.data()
+					console.log(JSON.stringify(data))
+					initialList.push(data)
+				})
+			})
+		console.log(initialList.length + JSON.stringify(initialList))
+		Object.entries(condition).map(([key, value]) => {
+			if (key == 'discipline') {
+				let discFiltered: ProgrammeTalk[] = []
+				if (value.length > 0 && value.length <= 4) {
+					console.log("Entered discipline filter")
+					value.forEach((value: string) => {
+						segmentFilter = initialList.filter(programme => programme.discipline == value)
+						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+						discFiltered = discFiltered.concat(segmentFilter)
+					})
+					filteredList = discFiltered
+				}
+				else {
+					filteredList = initialList
+				}
 
-  }
+			}
 
-  const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
+			else if (key == 'uni') {
+				let uniFiltered: ProgrammeTalk[] = []
+				if (value.length > 0) {
+					value.forEach((value: string) => {
+						segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
+						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+						uniFiltered = uniFiltered.concat(segmentFilter)
+					})
+					filteredList = uniFiltered
+				}
+			}
 
-    setFilterCondition(prevState => {
-      let filter = { ...prevState };
-      Object.keys(filter).map(key => {
-        if (key == 'mos')
-          filter[key] = mosFilter;
-        if (key == 'discipline')
-          filter[key] = discFilter;
-        if (key == 'uni')
-          filter[key] = uniFilter;
-        if (key == 'acadLvl')
-          filter[key] = acadLvlFilter;
-        if (key == 'entry')
-          filter[key] = entryFilter;
-        if (key == 'subDisc')
-          filter[key] = subDiscFilter;
-      })
-      return filter;
-    })
-  }
+		}
+		)
+		// console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
+		callback(filteredList)
 
-  return (
-    <IonPage>
-      <IonHeader>
-        <TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
+	}
 
-        <IonToolbar className="segmentHeader">
-          <IonSegment scrollable value={tab} className="segmentHeader">
-            <IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>
-              Schedule
+	const filterRecTalks = async (condition: TalkFilter, callback: any) => {
+
+		const initialList: ProgrammeTalk[] = []
+		let filteredList: ProgrammeTalk[] = []
+		let segmentFilter: ProgrammeTalk[] = []
+		console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
+		await db.collection('ProgrammeTalks')
+			.where("hasRecording", '==', true)
+			.get()
+			.then(snapshot => {
+				snapshot.docs.forEach((doc: any) => {
+					const data = doc.data()
+					console.log(JSON.stringify(data))
+					initialList.push(data)
+				})
+			})
+		console.log(initialList.length + JSON.stringify(initialList))
+		Object.entries(condition).map(([key, value]) => {
+			if (key == 'discipline') {
+				let discFiltered: ProgrammeTalk[] = []
+				if (value.length > 0 && value.length <= 4) {
+					console.log("Entered discipline filter")
+					value.forEach((value: string) => {
+						segmentFilter = initialList.filter(programme => programme.discipline == value)
+						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+						discFiltered = discFiltered.concat(segmentFilter)
+					})
+					filteredList = discFiltered
+				}
+				else {
+					filteredList = initialList
+				}
+
+			}
+
+			else if (key == 'uni') {
+				let uniFiltered: ProgrammeTalk[] = []
+				if (value.length > 0) {
+					value.forEach((value: string) => {
+						segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
+						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+						uniFiltered = uniFiltered.concat(segmentFilter)
+						// console.log("current list" + JSON.stringify(filteredList))
+					})
+					filteredList = uniFiltered
+				}
+			}
+
+		}
+		)
+		// console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
+		callback(filteredList)
+
+	}
+
+	const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
+
+		setFilterCondition(prevState => {
+			let filter = { ...prevState };
+			Object.keys(filter).map(key => {
+				if (key == 'mos')
+					filter[key] = mosFilter;
+				if (key == 'discipline')
+					filter[key] = discFilter;
+				if (key == 'uni')
+					filter[key] = uniFilter;
+				if (key == 'acadLvl')
+					filter[key] = acadLvlFilter;
+				if (key == 'entry')
+					filter[key] = entryFilter;
+				if (key == 'subDisc')
+					filter[key] = subDiscFilter;
+			})
+			return filter;
+		})
+	}
+
+	return (
+		<IonPage>
+			<IonHeader>
+				<TopNav title="Programme Talks" route="/u/openHouseMain" backarrow={true} hamburger={true} />
+
+				<IonToolbar className="segmentHeader">
+					<IonSegment scrollable value={tab} className="segmentHeader">
+						<IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>
+							Schedule
             </IonSegmentButton>
-            <IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>
-              Live Talks
+						<IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>
+							Live Talks
             </IonSegmentButton>
-            <IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>
-              Past Recordings
+						<IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>
+							Past Recordings
             </IonSegmentButton>
-          </IonSegment>
-        </IonToolbar>
+					</IonSegment>
+				</IonToolbar>
 
-      </IonHeader>
+			</IonHeader>
 
-      <IonContent fullscreen className="progTalkIonContent">
+			<IonContent fullscreen className="progTalkIonContent">
 
-        {/* Programme Talks Schedule */}
-        {tab === "schedule" ? (
-          <>
-            <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-              <IonRow className="progTalk-IonRowCol">
-                <IonToolbar>
-                  <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                    <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                      Day 1: {openhouseDates[0]}
-                    </IonSegmentButton>
-                    <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                      Day 2: {openhouseDates[1]}
-                    </IonSegmentButton>
-                  </IonSegment>
-                </IonToolbar>
-              </IonRow>
+				{/* Programme Talks Schedule */}
+				{tab === "schedule" ? (
+					<>
+						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
+							<IonRow className="progTalk-IonRowCol">
+								<IonToolbar>
+									<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+										<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+											Day 1: {openhouseDates[0]}
+										</IonSegmentButton>
+										<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+											Day 2: {openhouseDates[1]}
+										</IonSegmentButton>
+									</IonSegment>
+								</IonToolbar>
+							</IonRow>
 
-              {/* Filter Button */}
-              <IonRow>
-                <IonHeader className="filterHeader">
-                  <IonToolbar className="filterHeaderToolBar">
-                    <IonButtons slot="end" id="filterIcon">
-                      <IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
-                        <FontAwesomeIcon size="lg" icon={faFilter} />
-                      </IonButton>
-                    </IonButtons>
-                  </IonToolbar>
-                </IonHeader>
-              </IonRow>
+							{/* Filter Button */}
+							<IonRow>
+								<IonHeader className="filterHeader">
+									<IonToolbar className="filterHeaderToolBar">
+										<IonButtons slot="end" id="filterIcon">
+											<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
+												<FontAwesomeIcon size="lg" icon={faFilter} />
+											</IonButton>
+										</IonButtons>
+									</IonToolbar>
+								</IonHeader>
+							</IonRow>
 
-            </IonGrid>
+						</IonGrid>
 
-            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} />
-          </>
-        ) : (
-            ""
-          )
-        }
+						<ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} />
+					</>
+				) : (
+						""
+					)
+				}
 
-        {/* Live Talks */}
-        {tab === "liveTalks" ? (
-          <>
-            <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-              <IonRow className="progTalk-IonRowCol">
-                <IonCol className="progTalk-IonRowCol">
-                  <IonToolbar>
-                    <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                      <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                        Day 1: {openhouseDates[0]}
-                      </IonSegmentButton>
-                      <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                        Day 2: {openhouseDates[1]}
-                      </IonSegmentButton>
-                    </IonSegment>
-                  </IonToolbar>
-                </IonCol>
-              </IonRow>
-            </IonGrid>
+				{/* Live Talks */}
+				{tab === "liveTalks" ? (
+					<>
+						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
+							<IonRow className="progTalk-IonRowCol">
+								<IonCol className="progTalk-IonRowCol">
+									<IonToolbar>
+										<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+												Day 1: {openhouseDates[0]}
+											</IonSegmentButton>
+											<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+												Day 2: {openhouseDates[1]}
+											</IonSegmentButton>
+										</IonSegment>
+									</IonToolbar>
+								</IonCol>
+							</IonRow>
+						</IonGrid>
 
-            <ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
-          </>
-        ) : ("")
-        }
+						<ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
+					</>
+				) : ("")
+				}
 
-        {/* Past Recordings */}
-        {tab === "pastRecordings" ? (
-          <>
-            <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-              <IonRow className="progTalk-IonRowCol">
-                <IonCol className="progTalk-IonRowCol">
-                  <IonToolbar>
-                    <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                      <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                        Day 1: {openhouseDates[0]}
-                      </IonSegmentButton>
-                      <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                        Day 2: {openhouseDates[1]}
-                      </IonSegmentButton>
-                    </IonSegment>
-                  </IonToolbar>
-                </IonCol>
-              </IonRow>
-
-
-              {/* Filter Button */}
-              <IonRow>
-                <IonHeader className="filterHeader">
-                  <IonToolbar className="filterHeaderToolBar">
-                    <IonButtons slot="end" id="filterIcon">
-                      <IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
-                        <FontAwesomeIcon size="lg" icon={faFilter} />
-                      </IonButton>
-                    </IonButtons>
-                  </IonToolbar>
-                </IonHeader>
-              </IonRow>
-            </IonGrid>
-
-            <ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
-          </>
-        ) : ("")
-        }
+				{/* Past Recordings */}
+				{tab === "pastRecordings" ? (
+					<>
+						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
+							<IonRow className="progTalk-IonRowCol">
+								<IonCol className="progTalk-IonRowCol">
+									<IonToolbar>
+										<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+												Day 1: {openhouseDates[0]}
+											</IonSegmentButton>
+											<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+												Day 2: {openhouseDates[1]}
+											</IonSegmentButton>
+										</IonSegment>
+									</IonToolbar>
+								</IonCol>
+							</IonRow>
 
 
-        {/* Filter Programmes Popover */}
-        <IonPopover id="progCourseFilterPopover"
-          cssClass='progCourseFilterPopover'
-          isOpen={showProgTalkFilterPopover.open}
-          event={showProgTalkFilterPopover.event}
-          onDidDismiss={e => setShowProgTalkFilterPopover({ open: false, event: undefined })}
-        >
-          {tab === "schedule" ?
-            <FilterPopoverContent filterFunction={filterTalks} programmes={programmeTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateScheduleTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
+							{/* Filter Button */}
+							<IonRow>
+								<IonHeader className="filterHeader">
+									<IonToolbar className="filterHeaderToolBar">
+										<IonButtons slot="end" id="filterIcon">
+											<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
+												<FontAwesomeIcon size="lg" icon={faFilter} />
+											</IonButton>
+										</IonButtons>
+									</IonToolbar>
+								</IonHeader>
+							</IonRow>
+						</IonGrid>
 
-            : ''
-          }
-
-          {tab === "pastRecordings" ?
-            <FilterPopoverContent filterFunction={filterRecTalks} programmes={recordedTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateRecTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
-
-            : ''
-          }
-
-        </IonPopover>
+						<ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
+					</>
+				) : ("")
+				}
 
 
-      </IonContent>
-    </IonPage>
-  );
+				{/* Filter Programmes Popover */}
+				<IonPopover id="progCourseFilterPopover"
+					cssClass='progCourseFilterPopover'
+					isOpen={showProgTalkFilterPopover.open}
+					event={showProgTalkFilterPopover.event}
+					onDidDismiss={e => setShowProgTalkFilterPopover({ open: false, event: undefined })}
+				>
+					{tab === "schedule" ?
+						<FilterPopoverContent filterFunction={filterTalks} programmes={programmeTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateScheduleTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
+
+						: ''
+					}
+
+					{tab === "pastRecordings" ?
+						<FilterPopoverContent filterFunction={filterRecTalks} programmes={recordedTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateRecTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
+
+						: ''
+					}
+
+				</IonPopover>
+
+
+			</IonContent>
+		</IonPage>
+	);
 };
 
 export default withRouter(ProgrammeTalks);
