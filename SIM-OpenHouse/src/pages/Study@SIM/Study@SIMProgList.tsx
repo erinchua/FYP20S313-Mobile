@@ -13,6 +13,7 @@ import { db } from '../../firebase';
 import { Programme } from './Study@SIMProgInfo';
 import { FilterCondition } from '../../components/FilterPopoverContent'
 import { filter } from 'ionicons/icons';
+import { ObjectFlags } from 'typescript';
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
@@ -30,24 +31,53 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
     const discipline = match.params.discipline
     const category = match.params.category
 
-    // const [progList, setProgList] = useContext(ProgListContext);
-
     const [disciplineName, setDisciplineName] = useState([
-        'Art & Social Sciences',
+        'Arts & Social Sciences',
         'Business',
         'IT & Computer Science',
         'Nursing',
-        'Speciality'
+        'Specialty'
     ]);
 
+    const [filterCondition, setFilterCondition] = useState<FilterCondition>({
+        mos: ['fullPartTime', 'partTime', 'fullTime'],
+        discipline: [discipline],
+        uni: [],
+        acadLvl: [category],
+        entry: [],
+        subDisc: []
+    })
 
+    const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
+        setFilterCondition(prevState => {
+            let filter = { ...prevState };
+            Object.keys(filter).map(key => {
+                if (key == 'mos')
+                    filter[key] = mosFilter;
+                if (key == 'discipline')
+                    filter[key] = discFilter;
+                if (key == 'uni')
+                    filter[key] = uniFilter;
+                if (key == 'acadLvl')
+                    filter[key] = acadLvlFilter;
+                if (key == 'entry')
+                    filter[key] = entryFilter;
+                if (key == 'subDisc')
+                    filter[key] = subDiscFilter;
+            })
+            return filter;
+        })
+    }
 
-
-
-
-
+    //programmes to be rendered and the comparepopover list
     const [programmes, setProgrammes] = useState<Programme[]>([])
     const [compareProgList, setCompareProgList] = useState<Programme[]>([])
+
+    //To get the unique disciplines for rendering at the header
+    const allDisc = programmes.map(programme => programme.discipline)
+    const disc: string[] = []
+    allDisc.map(data => data.map(data => disc.push(data)))
+    let uniqueDisc: string[] = [...new Set(disc)]
 
     //For storing the compare list into session
     useEffect(() => {
@@ -55,7 +85,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
             window.sessionStorage.setItem("compareProgList", JSON.stringify(compareProgList));
         }
     }, [compareProgList])
-
 
     {/* Adding programme for comparison - Need to be generated dynamically */ }
     const compareProgramme = (programme: Programme) => {
@@ -87,40 +116,135 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
     const filterProgrammes = async (condition: FilterCondition) => {
 
-        const newList: Programme[] = []
+        const initialList: Programme[] = []
+        let filteredList: Programme[] = []
+        let segmentFilter: Programme[] = []
         console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
         await db.collection('TestProgrammes')
             .get()
             .then(snapshot => {
                 snapshot.docs.forEach((doc: any) => {
                     const data = doc.data()
-                    newList.push(data)
+                    initialList.push(data)
                 })
-                // setProgrammes(newList)
             })
-        console.log(JSON.stringify(newList))
+        console.log(initialList.length + JSON.stringify(initialList))
         Object.entries(condition).map(([key, value]) => {
             if (key == 'mos') {
-                if (value.length < 3) {
+                if (value.length < 3 && value.length > 0) {
                     value.forEach((value: string) => {
-                        if (value == 'fullPartTime')
-                            newList.filter(programme => { return (programme.modeOfStudy.ModeOfStudy.fullTime && programme.modeOfStudy.ModeOfStudy.partTime) === true })
-                        if (value == 'fullTime')
-                            newList.filter(programme => { return (programme.modeOfStudy.ModeOfStudy.fullTime && !programme.modeOfStudy.ModeOfStudy.partTime) === true })
-                        if (value == 'partTime')
-                            newList.filter(programme => { return (!programme.modeOfStudy.ModeOfStudy.fullTime && programme.modeOfStudy.ModeOfStudy.partTime) === true })
+                        if (value == 'fullPartTime') {
+                            segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
+                            console.log("filtering full and part time" + segmentFilter.length)
+                            filteredList = filteredList.concat(segmentFilter)
+                            console.log("Current filtered list" + filteredList.length + JSON.stringify(filteredList))
+
+
+                        }
+                        if (value == 'fullTime') {
+                            segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime)
+                            console.log("filtering full time" + segmentFilter.length)
+                            filteredList = filteredList.concat(segmentFilter)
+
+                        }
+                        if (value == 'partTime') {
+                            segmentFilter = initialList.filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
+                            console.log("filtering part time" + segmentFilter.length)
+                            filteredList = filteredList.concat(segmentFilter)
+
+                        }
                     })
+                }
+                else if (value.length == 0 || value.length == 3) {
+                    filteredList = initialList
+                }
+            }
+            else if (key == 'discipline') {
+                let discFiltered: Programme[] = []
+                if (value.length > 0 && value.length <= 4) {
+                    console.log("Entered discipline filter")
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.discipline.includes(value))
+                        console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        discFiltered = discFiltered.concat(segmentFilter)
+                    })
+                    filteredList = discFiltered
+                }
+
+            }
+
+            else if (key == 'uni') {
+                let uniFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.awardedBy == value)
+                        console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        uniFiltered = uniFiltered.concat(segmentFilter)
+                        // console.log("current list" + JSON.stringify(filteredList))
+                    })
+                    filteredList = uniFiltered
+                }
+            }
+            else if (key == 'acadLvl') {
+                let acadFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.academicLevel == value)
+                        console.log("filtering acadLvl" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        acadFiltered = acadFiltered.concat(segmentFilter)
+                    })
+                    filteredList = acadFiltered
+                }
+            }
+
+            else if (key == 'entry') {
+                let entryFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        if (value == 'aLevel') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.aLevel)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                        else if (value == 'oLevel') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.oLevel)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                        else if (value == 'diploma') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.diploma)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                        else if (value == 'degree') {
+                            segmentFilter = filteredList.filter(programme => programme.entryQualifications.degree)
+                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                            entryFiltered = entryFiltered.concat(segmentFilter)
+                        }
+                    })
+                    filteredList = entryFiltered
+                }
+            }
+            else if (key == 'subDisc') {
+                let subDiscFiltered: Programme[] = []
+                if (value.length > 0) {
+                    value.forEach((value: string) => {
+                        segmentFilter = filteredList.filter(programme => programme.subDiscipline.includes(value))
+                        console.log("Filering subDisc" + value + segmentFilter.length + JSON.stringify(segmentFilter))
+                        subDiscFiltered = subDiscFiltered.concat(segmentFilter)
+                    })
+                    filteredList = subDiscFiltered
+
                 }
             }
         }
             //newList.filter(programme=>{return programme.modeOfStudy})
         )
-        console.log("New List are " + JSON.stringify(newList))
-
-
-
+        console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
+        setProgrammes(filteredList)
 
     }
+
     /*To remove selected programmes in comparePopOver */
     const removeProg = (programme: Programme) => {
         const newProgList = [...compareProgList]
@@ -155,7 +279,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
     {/* When page first load */ }
     useEffect(() => {
-
+        console.log("proglist rendered")
         {/*Fetching Programmes Data from firestore*/ }
         const fetchData = async (discipline: string, category: string) => {
             const programmes: any = []
@@ -167,6 +291,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                     snapshot.docs.forEach((doc: any) => {
                         const data = doc.data()
                         programmes.push(data)
+                        console.log("programme retrieved " + data)
                     })
                     setProgrammes(programmes)
                 }).catch((error) => console.log(error));
@@ -179,9 +304,11 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         console.log("Session list retrieved! " + sessionList)
         setCompareProgList(sessionList);
     }, [])
+
     return (
         <React.Fragment>
-            {console.log("Current proglist are: " + JSON.stringify(compareProgList))}
+            {console.log("disc are" + disc + disc.length)}
+            {console.log("uniqueDisc are" + uniqueDisc)}
             <IonAlert
                 isOpen={showCompareProgAlert}
                 onDidDismiss={() => setShowCompareProgAlert(false)}
@@ -201,30 +328,9 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                             <IonRow id="studySIMProgListHeaderRow" class="ion-align-items-center">
                                 <IonCol size="6" sizeSm="6" class="ion-text-left" className="studySIMProgListCol" style={{ paddingLeft: "3%" }}>
                                     <IonTitle className="studyProgListTitle">
-                                        {match.params.discipline === 'artSocialSciences' ?
-                                            <div className="ion-text-wrap">{disciplineName[0]}</div>
-                                            : ''
-                                        }
-
-                                        {match.params.discipline === 'business' ?
-                                            <div className="ion-text-wrap">{disciplineName[1]}</div>
-                                            : ''
-                                        }
-
-                                        {match.params.discipline === 'itComputerScience' ?
-                                            <div className="ion-text-wrap">{disciplineName[2]}</div>
-                                            : ''
-                                        }
-
-                                        {match.params.discipline === 'nursing' ?
-                                            <div className="ion-text-wrap">{disciplineName[3]}</div>
-                                            : ''
-                                        }
-
-                                        {match.params.discipline === 'speciality' ?
-                                            <div className="ion-text-wrap">{disciplineName[4]}</div>
-                                            : ''
-                                        }
+                                        {uniqueDisc.length == 1 ? uniqueDisc.map(disc => {
+                                            return (<div key={disc} className="ion-text-wrap">{disc}</div>)
+                                        }) : ''}
 
                                     </IonTitle>
                                 </IonCol>
@@ -340,35 +446,34 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         event={showProgCourseFilterPopover.event}
                         onDidDismiss={e => setShowProgCourseFilterPopover({ open: false, event: undefined })}
                     >
-                        {props.match.params.discipline === "artSocialSciences" ?
+
+                        <FilterPopoverContent filterFunction={filterProgrammes} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
+
+
+
+                        {/* {match.params.discipline === "Business" ?
                             <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "artSocialSciences"} href={"/u/study@SIMMain/artSocialSciences"} filterFor={"study@SIM"} discipline={discipline} category={category} />
+                                params={match.params.discipline === "Business"} href={"/u/study@SIMMain/Business/test"} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
                         }
 
-                        {match.params.discipline === "business" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "business"} href={"/u/study@SIMMain/business/test"} filterFor={"study@SIM"} discipline={discipline} category={category} />
+                        {match.params.discipline === "IT & Computer Science" ?
+                            <FilterPopoverContent filterFunction={filterProgrammes}
+                                params={match.params.discipline === "IT & Computer Science"} href={"/u/study@SIMMain/IT & Computer Science"} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
                         }
 
-                        {match.params.discipline === "itComputerScience" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "itComputerScience"} href={"/u/study@SIMMain/itComputerScience"} filterFor={"study@SIM"} discipline={discipline} category={category} />
+                        {match.params.discipline === "Nursing" ?
+                            <FilterPopoverContent filterFunction={filterProgrammes}
+                                params={match.params.discipline === "Nursing"} href={"/u/study@SIMMain/Nursing"} filterFor={"study@SIM"} programmes={programmes} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
                         }
 
-                        {match.params.discipline === "nursing" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "nursing"} href={"/u/study@SIMMain/nursing"} filterFor={"study@SIM"} discipline={discipline} category={category} />
+                        {match.params.discipline === "Specialty" ?
+                            <FilterPopoverContent filterFunction={filterProgrammes}
+                                params={match.params.discipline === "Specialty"} href={"/u/study@SIMMain/Specialty"} filterFor={"study@SIM"} programmes={programmes} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
                             : ''
-                        }
-
-                        {match.params.discipline === "speciality" ?
-                            <FilterPopoverContent filterFunction={() => (console.log('Add filterResults function here'))}
-                                params={match.params.discipline === "speciality"} href={"/u/study@SIMMain/speciality"} filterFor={"study@SIM"} discipline={discipline} category={category} />
-                            : ''
-                        }
+                        } */}
 
                     </IonPopover>
 

@@ -5,6 +5,7 @@ export interface ScheduleItem {
     startTime: string;
     endTime: string;
     venue: string;
+    boothNo: string;
     points: number;
 };
 
@@ -16,6 +17,21 @@ export function toSchedule(doc: any): ScheduleItem {
         startTime: doc.startTime || null,
         endTime: doc.endTime || null,
         venue: doc.venue || null,
+        boothNo: doc.boothNumber || null,
         points: doc.pointsAward || null
     };
 };
+
+export interface Brochure {
+    id: string;
+    description: string;
+    brochureUrl: string;
+    imageUrl: string;
+}
+
+export function toBrochure(doc: any): Brochure {
+    return {
+        id: doc.id,
+        ...doc.data()
+    }
+}

@@ -16,11 +16,6 @@ const Home: React.FC = () => {
 
   const { navigate } = useContext(NavContext);
 
-  const handleLogout = async () => {
-    await auth.signOut();
-    sessionStorage.clear();
-  };
-
   return (
     <IonPage>
       <IonHeader>
@@ -180,9 +175,6 @@ const Home: React.FC = () => {
 
             <IonCol sizeSm="4" className="homeMainCol"></IonCol>
           </IonRow>
-          {/* <IonRow class="ion-justify-content-center">
-            <IonButton type="submit" onClick={ handleLogout }>LOGOUT</IonButton>
-          </IonRow> */}
         </IonGrid>
       </IonContent>
     </IonPage>

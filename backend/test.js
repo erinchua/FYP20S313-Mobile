@@ -238,6 +238,24 @@ setTimeout(() => {
     console.log(matchedPosts)
 }, 1000); */
 
-db.collection('Students').doc(userID).onSnapshot(student => {
-    console.log(student.data())
-})
+/* function mapTo (doc) {
+    return {
+        ...doc.data()
+    }
+}
+db.collection('Brochures').get().then(({docs}) => {
+    console.log(docs.map(mapTo))
+}) */
+
+function sortTime (a, b) {
+    let aHour = +a.split(":")[0], bHour = +b.split(":")[0];
+    const aMins = +a.split(":")[1].slice(0, 2), bMins = +b.split(":")[1].slice(0, 2);
+    const aMeridiem = a.split(":")[1].slice(-2, a.split(":")[1].length), bMeridiem = b.split(":")[1].slice(-2, b.split(":")[1].length);
+
+    if ((aHour > 0 && aHour < 12) && aMeridiem === "PM") aHour += 12;
+    if ((bHour > 0 && bHour < 12) && bMeridiem === "PM") bHour += 12;
+
+    console.log(aHour, aMins, aMeridiem)
+    console.log(bHour, bMins, bMeridiem)
+}
+sortTime("10:00AM", "1:30PM")

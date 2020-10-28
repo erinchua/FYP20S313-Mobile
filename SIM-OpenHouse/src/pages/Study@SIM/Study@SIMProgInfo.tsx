@@ -50,32 +50,18 @@ interface Duration {
 export interface Programme {
     id: string,
     programmeTitle: string,
-    modeOfStudy: {
-        [key: string]: ModeOfStudy
-    },
+    modeOfStudy: ModeOfStudy,
     academicLevel: string,
     discipline: string[],
     subDiscipline: string[],
-    entryQualifications: {
-        [key: string]: EntryQualification
-    },
+    entryQualifications: EntryQualification,
     awardedBy: string,
     programOverview: string[],
-    applicationPeriod: {
-        [key: string]: ApplicationPeriod
-    },
-    programmeStructure: {
-        [key: string]: ProgrammeStructure
-    },
-    overseaOpportunity: {
-        [key: string]: OverseaOpportunity
-    },
-    intakeMonths: {
-        [key: string]: IntakeMonths
-    },
-    duration: {
-        [key: string]: Duration
-    },
+    applicationPeriod: ApplicationPeriod,
+    programmeStructure: ProgrammeStructure,
+    overseaOpportunity: OverseaOpportunity,
+    intakeMonths: IntakeMonths,
+    duration: Duration,
     uniLogo: string
 }
 
@@ -90,27 +76,44 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
     const [programme, setProgrammes] = useState<Programme>({
         id: "",
         programmeTitle: "",
-        modeOfStudy: {},
+        modeOfStudy: {
+            partTime: false,
+            fullTime: false,
+        },
         academicLevel: "",
         discipline: [
             ""],
         subDiscipline: [
             ""
         ],
-        entryQualifications: {},
+        entryQualifications: {
+            aLevel: false,
+            oLevel: false,
+            degree: false,
+            diploma: false
+        },
         awardedBy: "",
         programOverview: [],
-        applicationPeriod: {},
-        programmeStructure: {},
-        overseaOpportunity: {},
-        intakeMonths: {
-            intakeMonths: {
-                fullTime: "", partTime: ""
-            }
+        applicationPeriod: {
+            intake: "",
+            period: ""
         },
-        duration:
-        {
-            duration: { fullTime: '', partTime: '' }
+        programmeStructure: {
+            coursework: false,
+            examination: false
+        },
+        overseaOpportunity: {
+            exchange: false,
+            transfer: false
+        },
+        intakeMonths: {
+            fullTime: "",
+            partTime: ""
+
+        },
+        duration: {
+            fullTime: '',
+            partTime: ''
         },
         uniLogo: ''
     }

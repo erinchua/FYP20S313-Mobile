@@ -1,4 +1,4 @@
-import { IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonLoading, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
+import { IonAlert, IonButton, IonCheckbox, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonItem, IonItemDivider, IonLabel, IonList, IonLoading, IonModal, IonPage, IonRouterLink, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonText, IonTextarea, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -22,6 +22,7 @@ const Forum: React.FC = () => {
     let history = useHistory();
 
     const [loading, setLoading] = useState(true);
+    const [forumDisabled, setForumDisabled] = useState(false);
     const [checked, setChecked] = useState(false);
     const [agreedTOC, setAgreedTOC] = useState(true);
     const [showPostModal, setShowPostModal] = useState(false);
@@ -70,44 +71,59 @@ const Forum: React.FC = () => {
     useEffect(() => {
         setQuestions([]);
 
-        db.collection('Forum').get().then(uRef => {
-            const questions: any = [];
+        db.collection('Openhouse').get().then(snapshot => {
+            let disabled = false;
+            snapshot.forEach(doc => {
+                if (doc.data().disableForum) {
+                    disabled = true;
+                    setLoading(false);
+                }
+            });
+            setForumDisabled(disabled);
 
-            uRef.forEach(user => {
-                if (user.id === userID && user.data().suspended) 
-                    return history.goBack();
-
-                return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
-                    entries.docChanges().forEach(change => {
-                        questions.unshift({
-                            id: +change.doc.id,
-                            entry: change.doc.data().entry,
-                            dateTime: change.doc.data().dateTime,
-                            user: change.doc.data().posterName,
-                            uid: change.doc.data().posterId,
-                            commentCount: change.doc.data().noOfComments,
-                            removed: change.doc.data().deleted
+            if (!disabled) {
+                db.collection('Forum').get().then(uRef => {
+                    const questions: any = [];
+    
+                    uRef.forEach(user => {
+                        if (user.id === userID && user.data().suspended) 
+                            return history.goBack();
+    
+                        return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
+                            entries.docChanges().forEach(change => {
+                                questions.unshift({
+                                    id: +change.doc.id,
+                                    entry: change.doc.data().entry,
+                                    dateTime: change.doc.data().dateTime,
+                                    user: change.doc.data().posterName,
+                                    uid: change.doc.data().posterId,
+                                    commentCount: change.doc.data().noOfComments,
+                                    removed: change.doc.data().deleted
+                                });
+                            });
                         });
                     });
+    
+                    setTimeout(() => {
+                        questions.sort(forumPostsDesc);
+                        setQuestions(questions);
+                        setLoading(false);
+                    }, 500);
                 });
-            });
-
-            setTimeout(() => {
-                questions.sort(forumPostsDesc);
-                setQuestions(questions);
-                setLoading(false);
-            }, 500);
-        });
-
-        return db.collection('Forum').doc(userID).onSnapshot(snapshot => {
-            if (snapshot.exists) {
-                if (snapshot.data()?.readRules) {
-                    setAgreedTOC(true);
-                } else {
-                    setAgreedTOC(false);
-                }
+    
+                return db.collection('Forum').doc(userID).onSnapshot(snapshot => {
+                    if (snapshot.exists) {
+                        if (snapshot.data()?.readRules) {
+                            setAgreedTOC(true);
+                        } else {
+                            setAgreedTOC(false);
+                        }
+                    }
+                });
             }
-        });
+        }).catch((error) => console.log(error));
+
+        
     }, []);
 
     return (
@@ -117,6 +133,16 @@ const Forum: React.FC = () => {
             </IonHeader>
 
             <IonContent fullscreen id="forum-content">
+                <IonAlert
+                    isOpen={forumDisabled}
+                    onDidDismiss={() => { history.goBack() }}
+                    cssClass='alertBox'
+                    mode='md'
+                    header={'Forum Unvailable'}
+                    message={'The forum is currently not available at this time. The forum will reopen again in the next Open House.'}
+                    buttons={['Ok']}
+                ></IonAlert>
+
                 {agreedTOC === true ?
                     <>
                         <IonGrid id="forum-searchbar-container">
