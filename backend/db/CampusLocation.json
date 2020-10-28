@@ -6,22 +6,22 @@
     },
     {
         "id": "bus",
-        "busNo": [
-            "52",
-            "61",
-            "74",
-            "151",
-            "154",
-            "184"
-        ]
+        "busNo": {
+            "bus1": "52",
+            "bus2": "61",
+            "bus3": "74",
+            "bus4": "151",
+            "bus5": "154",
+            "bus6": "184"
+        }
     },
     {
         "id": "mrt",
-        "nearestMRT": [
-            "Clementi",
-            "Dover",
-            "King Albert Park"
-        ]
+        "nearestStation": {
+            "nearestStation1": "Clementi",
+            "nearestStation2": "Dover",
+            "nearestStation3": "King Albert Park"
+        }
     },
     {
         "id": "map",

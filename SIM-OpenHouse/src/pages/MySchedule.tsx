@@ -52,7 +52,6 @@ const MySchedule: React.FC = () => {
 
         db.collection('Students').doc(userID).get().then(snapshot => setStudentDetails(snapshot.data()));
 
-        const scheduleProgs: any = [];
         return db.collection('PersonalScheduler').doc(userID).onSnapshot((snapshot: any) => {
             const registered = snapshot.data().registeredProgrammes;
             const scheduleProgs: any = [];
