@@ -6,21 +6,40 @@
     },
     {
         "id": "bus",
-        "busNo": {
+        "simHq": {
             "bus1": "52",
             "bus2": "61",
             "bus3": "74",
-            "bus4": "151",
-            "bus5": "154",
-            "bus6": "184"
+            "bus4": "75",
+            "bus5": "151",
+            "bus6": "154",
+            "bus7": "184",
+            "bus8": "74E",
+            "bus9": "151E",
+            "bus10": "154B"
+        },
+        "oppSimHq": {
+            "bus1": "52",
+            "bus2": "61",
+            "bus3": "74",
+            "bus4": "75",
+            "bus5": "151",
+            "bus6": "154",
+            "bus7": "184",
+            "bus8": "74E",
+            "bus9": "151E"
         }
     },
     {
         "id": "mrt",
-        "nearestStation": {
-            "nearestStation1": "Clementi",
-            "nearestStation2": "Dover",
-            "nearestStation3": "King Albert Park"
+        "downtownLine": {
+            "station1": "Beauty World",
+            "station2": "Sixth Avenue",
+            "station3": "King Albert Park"
+        },
+        "eastwestLine": {
+            "station1": "Clementi",
+            "station2": "Dover"
         }
     },
     {
