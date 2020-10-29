@@ -19,6 +19,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     const [performances, setPerformances] = useState<any[]>([]);
     const [gamesActivities, setGamesActivities] = useState<any[]>([]);
     const [prizes, setPrizes] = useState<any[]>([]);
+    const [venue, setVenue] = useState([]);
 
 
     const handleDayOne = () => {
@@ -45,11 +46,10 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     }
 
     useEffect(() => {
-        const dates: any = [];
-
         db.collection("Openhouse")
             .get()
             .then((snapshot) => {
+                const dates: any = [];
                 snapshot.forEach((doc) => {
                     const data = doc.get('day')
                     for (var i = 0; i < Object.keys(data).length; i++) {
@@ -89,14 +89,25 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
             .get()
             .then((snapshot) => {
                 const prizes: any = [];
+                const venue: any = [];
+
                 snapshot.forEach((doc) => {
                     const data = doc.data();
-                    prizes.push(data);
+
+                    if (doc.id.includes("prize")) {
+                        prizes.push(data);
+                    } else if (doc.id.includes("venue")) {
+                        for (let i = 0; i < Object.keys(data.day).length; i++) {
+                            const day = data.day[Object.keys(data.day)[i]];
+                            venue.push(day);
+                        }
+                    }
                 });
+
                 setPrizes(prizes);
+                setVenue(venue);
             })
             .catch((error) => console.log(error));
-
     }, []);
 
     return (
@@ -175,7 +186,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                 {/* Prizes */}
                 {headingTitle === 'Prizes' ?
                     <>
-                        <PrizesContent prizes={prizes} />
+                        <PrizesContent prizes={prizes} venue={venue} />
                     </> : ''
                 }
 

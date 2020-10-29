@@ -275,3 +275,25 @@ db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student
     }
     console.log(registeredInfo)
 }) */
+
+/* db.collection('Games').doc('2S7lngNuQkabNnZip7HZ5RoVAc63').get().then(doc => {
+    console.log(doc.data().redeemed.includes("prize-002"))
+}); */
+db.collection("Prizes").get().then((snapshot) => {
+    const prizes = [];
+    const venue = [];
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+
+        if (doc.id.includes("prize")) {
+            prizes.push(data);
+        } else if (doc.id.includes("venue")) {
+            for (let i = 0; i < Object.keys(data.day).length; i++) {
+                const day = data.day[Object.keys(data.day)[i]];
+                venue.push(day);
+            }
+        }
+    });
+    console.log(prizes);
+    console.log(venue);
+})

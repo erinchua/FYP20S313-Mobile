@@ -21,7 +21,7 @@ const Forum: React.FC = () => {
 
     let history = useHistory();
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [forumDisabled, setForumDisabled] = useState(false);
     const [checked, setChecked] = useState(false);
     const [agreedTOC, setAgreedTOC] = useState(true);
@@ -44,21 +44,23 @@ const Forum: React.FC = () => {
             const time = new Date();
             let name: string;
 
-            await db.collection('Students').doc(userID).get().then((doc: any) => {
-                name = doc.data().firstName + " " + doc.data().lastName;
-            });
+            if (entry !== "") {
+                await db.collection('Students').doc(userID).get().then((doc: any) => {
+                    name = doc.data().firstName + " " + doc.data().lastName;
+                });
 
-            const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
-            await docRef.set({
-                id: +docRef.id,
-                entry: entry,
-                posterName: name!,
-                posterId: userID,
-                dateTime: time.toLocaleString().replace(/\//g, "-"),
-                noOfComments: 0,
-                deleted: false,
-                reported: false
-            });
+                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
+                await docRef.set({
+                    id: +docRef.id,
+                    entry: entry,
+                    posterName: name!,
+                    posterId: userID,
+                    dateTime: time.toLocaleString().replace(/\//g, "-"),
+                    noOfComments: 0,
+                    deleted: false,
+                    reported: false
+                });
+            }
         } catch (e) {
             return console.log(e);
         } finally {
@@ -82,7 +84,7 @@ const Forum: React.FC = () => {
             setForumDisabled(disabled);
 
             if (!disabled) {
-                db.collection('Forum').get().then(uRef => {
+                /* db.collection('Forum').get().then(uRef => {
                     const questions: any = [];
     
                     uRef.forEach(user => {
@@ -109,21 +111,45 @@ const Forum: React.FC = () => {
                         setQuestions(questions);
                         setLoading(false);
                     }, 500);
-                });
-    
+                }); */
+
+                let readRules = false;
                 return db.collection('Forum').doc(userID).onSnapshot(snapshot => {
                     if (snapshot.exists) {
-                        if (snapshot.data()?.readRules) {
-                            setAgreedTOC(true);
-                        } else {
-                            setAgreedTOC(false);
-                        }
+                        if (snapshot.data()?.suspended)
+                            return history.goBack();
+
+                        if (snapshot.data()?.readRules) 
+                            readRules = true;
+                    }
+                    setAgreedTOC(readRules);
+
+                    if (readRules) {
+                        setLoading(true);
+                        return db.collectionGroup('Questions').onSnapshot(entries => {
+                            const questions: any = [];
+                            entries.forEach(question => {
+                                questions.unshift({
+                                    id: +question.id,
+                                    entry: question.data().entry,
+                                    dateTime: question.data().dateTime,
+                                    user: question.data().posterName,
+                                    uid: question.data().posterId,
+                                    commentCount: question.data().noOfComments,
+                                    removed: question.data().deleted
+                                });
+                            });
+
+                            setTimeout(() => {
+                                questions.sort(forumPostsDesc);
+                                setQuestions(questions);
+                                setLoading(false);
+                            }, 500);
+                        });
                     }
                 });
             }
         }).catch((error) => console.log(error));
-
-        
     }, []);
 
     return (

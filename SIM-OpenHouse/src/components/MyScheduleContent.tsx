@@ -32,9 +32,22 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
     const handleDelete = async (item: any) => {
         try {
             setAlert({ confirmRemove: false, removeSuccess: false, loading: true });
-            await db.collection('PersonalScheduler').doc(userID).update({
+            const batch = db.batch();
+            const decrement = firebase.firestore.FieldValue.increment(-1);
+
+            const scheduler =  db.collection('PersonalScheduler').doc(userID);
+            batch.update(scheduler, {
                 registeredProgrammes: firebase.firestore.FieldValue.arrayRemove(item)
             });
+            
+            if (item.split("-")[0] === "talk") {
+                const progTalk = db.collection('ProgrammeTalks').doc(item);
+                batch.update(progTalk, {
+                    noRegistered: decrement
+                });
+            }
+
+            await batch.commit();
             setAlert({ confirmRemove: false, removeSuccess: true, loading: false });
         } catch (e) {
             setAlert({ confirmRemove: false, removeSuccess: false, loading: false });
@@ -44,8 +57,6 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
 
     return (
         <>
-            {/* {console.log("auth has" + JSON.stringify(useAuth()))} */}
-            {console.log(firstName)}
             <IonAlert
                 isOpen={alert.confirmRemove}
                 cssClass='alertBox'
@@ -88,39 +99,47 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                     <IonCol className="myScheduleTableHeader_Btn ion-text-wrap"></IonCol>
                 </IonRow>
 
-                {props.day1 === "day1" ?
-                    openHouseProgsDay1.map((prog: any) => (
-                        prog.id.split("-")[0].toLowerCase() !== "activity" ? (
-                            <IonRow key={prog.id}>
-                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
-                                <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
-                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
-                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => [setShowProgQRCodeModal(true), setProgInfo({ talkName: prog.name, talkDate: prog.date, talkBy: prog.uni })]}>{prog.id.split("-")[0].toLowerCase() === "talk" ? "View QR Code" : null}</IonCol>
-                                <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
-                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
-                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                    </IonButton>
-                                </IonCol>
-                            </IonRow>
-                        ) : null
+                {props.day1 === "day1" ? (
+                    openHouseProgsDay1.length > 0 ? (
+                        openHouseProgsDay1.map((prog: any) => (
+                            prog.id.split("-")[0].toLowerCase() !== "activity" ? (
+                                <IonRow key={prog.id}>
+                                    <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
+                                    <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                    <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
+                                    <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => [setShowProgQRCodeModal(true), setProgInfo({ talkName: prog.name, talkDate: prog.date, talkBy: prog.uni })]}>{prog.id.split("-")[0].toLowerCase() === "talk" ? "View QR Code" : null}</IonCol>
+                                    <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
+                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            ) : null
+                        ))
+                    ) : (
+                        <IonRow className="ion-justify-content-center">You have not registered any programmes to your schedule.</IonRow>
                     )) : null
                 }
 
-                {props.day2 === "day2" ?
-                    openHouseProgsDay2.map((prog: any) => (
-                        prog.id.split("-")[0].toLowerCase() !== "activity" ? (
-                            <IonRow key={prog.id}>
-                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
-                                <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
-                                <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
-                                <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => [setShowProgQRCodeModal(true), setProgInfo({ talkName: prog.name, talkDate: prog.date, talkBy: prog.uni })]}>{prog.id.split("-")[0].toLowerCase() === "talk" ? "View QR Code" : null}</IonCol>
-                                <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
-                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
-                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                    </IonButton>
-                                </IonCol>
-                            </IonRow>
-                        ) : null
+                {props.day2 === "day2" ?(
+                    openHouseProgsDay2.length > 0 ? (
+                        openHouseProgsDay2.map((prog: any) => (
+                            prog.id.split("-")[0].toLowerCase() !== "activity" ? (
+                                <IonRow key={prog.id}>
+                                    <IonCol className="myScheduleTableData ion-text-wrap">{prog.startTime} to {prog.endTime}</IonCol>
+                                    <IonCol className="myScheduleTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                    <IonCol className="myScheduleTableData ion-text-wrap">{prog.venue}</IonCol>
+                                    <IonCol className="myScheduleTableData_QRCode ion-text-wrap" onClick={() => [setShowProgQRCodeModal(true), setProgInfo({ talkName: prog.name, talkDate: prog.date, talkBy: prog.uni })]}>{prog.id.split("-")[0].toLowerCase() === "talk" ? "View QR Code" : null}</IonCol>
+                                    <IonCol className="myScheduleTableData_BtnCol" id="removeCol">
+                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            ) : null
+                        ))
+                    ) : (
+                        <IonRow className="ion-justify-content-center">You have not registered any programmes to your schedule.</IonRow>
                     )) : null
                 }
 
@@ -138,39 +157,47 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                     <IonCol className="myScheduleActTableHeader_Btn ion-text-wrap"></IonCol>
                 </IonRow>
 
-                {props.day1 === "day1" ?
-                    openHouseProgsDay1.map((prog: any) => (
-                        prog.id.split("-")[0] === "activity" ? (
-                            <IonRow className="ion-justify-content-center" key={prog.id}>
-                                <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{prog.boothNo}</IonCol>
-                                <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
-                                <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{prog.venue}</IonCol>
-                                <IonCol className="myScheduleActTableData_Points ion-text-wrap">{prog.points}</IonCol>
-                                <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
-                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
-                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                    </IonButton>
-                                </IonCol>
-                            </IonRow>
-                        ) : null
+                {props.day1 === "day1" ? (
+                    openHouseProgsDay1.length > 0 ? (
+                        openHouseProgsDay1.map((prog: any) => (
+                            prog.id.split("-")[0] === "activity" ? (
+                                <IonRow className="ion-justify-content-center" key={prog.id}>
+                                    <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{prog.boothNo}</IonCol>
+                                    <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{prog.venue}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Points ion-text-wrap">{prog.points}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
+                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            ) : null
+                        ))
+                    ) : (
+                        <IonRow className="ion-justify-content-center">You have not registered any activities to your schedule.</IonRow>
                     )) : null
                 }
 
-                {props.day2 === "day2" ?
-                    openHouseProgsDay2.map((prog: any) => (
-                        prog.id.split("-")[0] === "activity" ? (
-                            <IonRow className="ion-justify-content-center" key={prog.id}>
-                                <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{prog.boothNo}</IonCol>
-                                <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
-                                <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{prog.venue}</IonCol>
-                                <IonCol className="myScheduleActTableData_Points ion-text-wrap">{prog.points}</IonCol>
-                                <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
-                                    <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
-                                        <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
-                                    </IonButton>
-                                </IonCol>
-                            </IonRow>
-                        ) : null
+                {props.day2 === "day2" ? (
+                    openHouseProgsDay2.length > 0 ? (
+                        openHouseProgsDay2.map((prog: any) => (
+                            prog.id.split("-")[0] === "activity" ? (
+                                <IonRow className="ion-justify-content-center" key={prog.id}>
+                                    <IonCol className="myScheduleActTableData_Booth ion-text-wrap">{prog.boothNo}</IonCol>
+                                    <IonCol className="myScheduleActTableData_ProgName ion-text-wrap">{prog.name}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Venue ion-text-wrap">{prog.venue}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Points ion-text-wrap">{prog.points}</IonCol>
+                                    <IonCol className="myScheduleActTableData_Btn ion-text-center" id="removeCol">
+                                        <IonButton className="myScheduleTableData_Btn" id="removeBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => displayRemoveProgAlert(prog.id)}>
+                                            <FontAwesomeIcon icon={faCalendarTimes} size="lg" />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            ) : null
+                        ))
+                    ) : (
+                        <IonRow className="ion-justify-content-center">You have not registered any activities to your schedule.</IonRow>
                     )) : null
                 }
             </IonGrid>
