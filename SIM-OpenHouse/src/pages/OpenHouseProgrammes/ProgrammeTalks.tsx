@@ -21,7 +21,7 @@ export interface ProgrammeTalk {
 	talkName: string,
 	awardingUni: string,
 	details: string,
-	discipline: string,
+	discipline: string[],
 	date: string,
 	startTime: string,
 	endTime: string,
@@ -160,7 +160,7 @@ const ProgrammeTalks: React.FC = () => {
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
 					value.forEach((value: string) => {
-						segmentFilter = initialList.filter(programme => programme.discipline == value)
+						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
 						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
@@ -214,7 +214,7 @@ const ProgrammeTalks: React.FC = () => {
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
 					value.forEach((value: string) => {
-						segmentFilter = initialList.filter(programme => programme.discipline == value)
+						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
 						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
