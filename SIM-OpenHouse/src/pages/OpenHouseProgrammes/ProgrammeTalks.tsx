@@ -14,13 +14,14 @@ import FilterPopoverContent, { FilterCondition } from '../../components/FilterPo
 import { db } from '../../firebase';
 import { TalkFilter } from '../../components/FilterPopoverContent'
 import { Programme } from '../Study@SIM/Study@SIMProgInfo'
+import { useAuth } from '../../modules/auth';
 
 export interface ProgrammeTalk {
 	id: string,
 	talkName: string,
 	awardingUni: string,
 	details: string,
-	discipline: string,
+	discipline: string[],
 	date: string,
 	startTime: string,
 	endTime: string,
@@ -29,12 +30,14 @@ export interface ProgrammeTalk {
 	noRegistered: number,
 	isLive: boolean,
 	hasRecording: boolean,
-	link: string
+	url: string
 }
 const ProgrammeTalks: React.FC = () => {
+	const { userID } = useAuth();
+	
 	const [tab, setTab] = useState("schedule");
 	const [dayNum, setDayNum] = useState("day1");
-
+    const [scheduleItems, setScheduleItems] = useState([]);
 
 	const handleDayOne = () => {
 		setDayNum("day1");
@@ -95,6 +98,9 @@ const ProgrammeTalks: React.FC = () => {
 			})
 			.catch((error) => console.log(error));
 
+		return db.collection('PersonalScheduler').doc(userID).onSnapshot(snap => {
+			setScheduleItems(snap.data()?.registeredProgrammes);
+		});
 
 	}, []);
 
@@ -154,7 +160,7 @@ const ProgrammeTalks: React.FC = () => {
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
 					value.forEach((value: string) => {
-						segmentFilter = initialList.filter(programme => programme.discipline == value)
+						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
 						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
@@ -208,7 +214,7 @@ const ProgrammeTalks: React.FC = () => {
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
 					value.forEach((value: string) => {
-						segmentFilter = initialList.filter(programme => programme.discipline == value)
+						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
 						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
@@ -317,7 +323,7 @@ const ProgrammeTalks: React.FC = () => {
 
             </IonGrid>
 
-            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} />
+            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
           </>
         ) : (
             ""

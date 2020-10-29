@@ -104,6 +104,8 @@ const dateObject2 = {
     start: "11:00AM", end: "12:00PM"
 }
 function toDateObject(date, time) {
+    if (time == "") time = "00:00AM";
+
     const dateSplit = date.split("-");
     const timeSplit = time.split(":");
 
@@ -117,11 +119,12 @@ function toDateObject(date, time) {
     if (hours < 12 && meridiem.toUpperCase() == "PM") hours += 12;
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
-};
-const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
-const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end); */}
+}; */}
+//const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
+//const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
 //console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
 //console.log(end1-start1)
+//console.log(toDateObject("21-Nov-2020", ""))
 
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater), toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
@@ -191,7 +194,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
     });
 }); */}
 
-/* const all = [];
+{/* const all = [];
 db.collection('Forum').get().then(users => {
 
     users.forEach(async user => {
@@ -236,9 +239,9 @@ setTimeout(() => {
         }
     });
     console.log(matchedPosts)
-}, 1000); */
+}, 1000); */}
 
-/* function mapTo (doc) {
+{/* function mapTo (doc) {
     return {
         ...doc.data()
     }
@@ -246,7 +249,6 @@ setTimeout(() => {
 db.collection('Brochures').get().then(({docs}) => {
     console.log(docs.map(mapTo))
 }) */
-
 /* function sortTime (a, b) {
     let aHour = +a.split(":")[0], bHour = +b.split(":")[0];
     const aMins = +a.split(":")[1].slice(0, 2), bMins = +b.split(":")[1].slice(0, 2);
@@ -258,15 +260,15 @@ db.collection('Brochures').get().then(({docs}) => {
     console.log(aHour, aMins, aMeridiem)
     console.log(bHour, bMins, bMeridiem)
 }
-sortTime("10:00AM", "1:30PM") */
+sortTime("10:00AM", "1:30PM") */}
 
-/* const a = [{num: 1}, {num: 2}, {num: 3}, {num: 1}, {num: 4}]
+{/* const a = [{num: 1}, {num: 2}, {num: 3}, {num: 1}, {num: 4}]
 uniqueArray = a.filter(function(item, pos, self) {
     return self.indexOf(item) === pos;
 })
-console.log(uniqueArray) */
+console.log(uniqueArray) */}
 
-/* let registeredInfo = {};
+{/* let registeredInfo = {};
 db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student => {
     if (student.exists) {
         registeredInfo.studentName = student.data().firstName;
@@ -274,4 +276,44 @@ db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student
         registeredInfo.email = student.data().email;
     }
     console.log(registeredInfo)
-}) */
+}) */}
+
+/* db.collection('Games').doc('2S7lngNuQkabNnZip7HZ5RoVAc63').get().then(doc => {
+    console.log(doc.data().redeemed.includes("prize-002"))
+}); */
+
+{/* db.collection("Prizes").get().then((snapshot) => {
+    const prizes = [];
+    const venue = [];
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+
+        if (doc.id.includes("prize")) {
+            prizes.push(data);
+        } else if (doc.id.includes("venue")) {
+            for (let i = 0; i < Object.keys(data.day).length; i++) {
+                const day = data.day[Object.keys(data.day)[i]];
+                venue.push(day);
+            }
+        }
+    });
+    console.log(prizes);
+    console.log(venue);
+}) */}
+
+//console.log(new Date().getTime())
+
+db.collection('CampusLocation').get().then(snaps => {
+    snaps.forEach(doc => {
+        if (doc.id === "bus") {
+            const buses = doc.data().busNo;
+            const busNos = [];
+
+            for (let i = 0; i < Object.keys(buses).length; i++) {
+                busNos.push(buses[Object.keys(buses)[i]]);
+            }
+
+            console.log(busNos.join(", "));
+        }
+    });
+});

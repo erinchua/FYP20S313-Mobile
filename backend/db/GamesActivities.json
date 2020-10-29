@@ -2,6 +2,7 @@
     {
         "id": "activity-001",
         "gameBoothName": "Amazing Race - Campus Xplore",
+        "boothNumber": "1",
         "venue": "SIM HQ BLK A Atrium",
         "date": "21-Nov-2020",
         "startTime": "10:00AM",
@@ -10,6 +11,7 @@
     {
         "id": "activity-002",
         "gameBoothName": "Guess the place - An SIM Edition",
+        "boothNumber": "2",
         "venue": "SIM HQ BLK B Lvl 1",
         "date": "21-Nov-2020",
         "startTime": "10:00AM",
@@ -18,6 +20,7 @@
     {
         "id": "activity-003",
         "gameBoothName": "DIY Temporary Tattoos",
+        "boothNumber": "1A",
         "venue": "SIM HQ BLK A Atrium",
         "date": "21-Nov-2020",
         "startTime": "12:00PM",
@@ -26,6 +29,7 @@
     {
         "id": "activity-004",
         "gameBoothName": "CSI: SIM Edition",
+        "boothNumber": "10",
         "venue": "SIM HQ BLK B MPH A1",
         "date": "22-Nov-2020",
         "startTime": "11:00AM",
@@ -34,6 +38,7 @@
     {
         "id": "activity-005",
         "gameBoothName": "Concentration - Match Match: SIM Edition ",
+        "boothNumber": "4",
         "venue": "SIM HQ BLK A Atrium",
         "date": "22-Nov-2020",
         "startTime": "10:00AM",
