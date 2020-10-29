@@ -14,6 +14,7 @@ import FilterPopoverContent, { FilterCondition } from '../../components/FilterPo
 import { db } from '../../firebase';
 import { TalkFilter } from '../../components/FilterPopoverContent'
 import { Programme } from '../Study@SIM/Study@SIMProgInfo'
+import { useAuth } from '../../modules/auth';
 
 export interface ProgrammeTalk {
 	id: string,
@@ -32,9 +33,11 @@ export interface ProgrammeTalk {
 	url: string
 }
 const ProgrammeTalks: React.FC = () => {
+	const { userID } = useAuth();
+	
 	const [tab, setTab] = useState("schedule");
 	const [dayNum, setDayNum] = useState("day1");
-
+    const [scheduleItems, setScheduleItems] = useState([]);
 
 	const handleDayOne = () => {
 		setDayNum("day1");
@@ -95,6 +98,9 @@ const ProgrammeTalks: React.FC = () => {
 			})
 			.catch((error) => console.log(error));
 
+		return db.collection('PersonalScheduler').doc(userID).onSnapshot(snap => {
+			setScheduleItems(snap.data()?.registeredProgrammes);
+		});
 
 	}, []);
 
@@ -317,7 +323,7 @@ const ProgrammeTalks: React.FC = () => {
 
             </IonGrid>
 
-            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} />
+            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
           </>
         ) : (
             ""

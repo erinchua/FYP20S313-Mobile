@@ -9,8 +9,9 @@ import '../../css/OpenHouseActivities.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 
-const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openhouseDates: any }> = props => {
+const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
+
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
     const [buttonDisabled, setButtonDisabled] = useState(false);
 
@@ -65,15 +66,15 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                     <IonCol className="gamesContent-Header ion-text-wrap">Add to My Schedule</IonCol>
                 </IonRow>
                 {props.day1 === 'day1' ?
-                    gamesActivitiesDay1.map((activity: any, index: any) => {
+                    gamesActivitiesDay1.map((activity: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" key={activity.id}>
-                                <IonCol className="gamesContent-Data ion-text-wrap">{index + 1}</IonCol>
+                                <IonCol className="gamesContent-Data ion-text-wrap">{activity.boothNumber}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.gameBoothName}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.pointsAward}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">
-                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)} disabled={buttonDisabled}>
+                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)} disabled={props.scheduleItems.includes(activity.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -83,15 +84,15 @@ const GamesContent: React.FC<{ day1: any; day2: any; gamesActivities: any; openh
                     : ''
                 }
                 {props.day2 === 'day2' ?
-                    gamesActivitiesDay2.map((activity: any, index: any) => {
+                    gamesActivitiesDay2.map((activity: any) => {
                         return (
                             <IonRow className="ion-justify-content-center" key={activity.id}>
-                                <IonCol className="gamesContent-Data ion-text-wrap">{index + 1}</IonCol>
+                                <IonCol className="gamesContent-Data ion-text-wrap">{activity.boothNumber}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.gameBoothName}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.venue}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">{activity.pointsAward}</IonCol>
                                 <IonCol className="gamesContent-Data ion-text-wrap">
-                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)} disabled={buttonDisabled}>
+                                    <IonButton className="gamesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(activity)} disabled={props.scheduleItems.includes(activity.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>

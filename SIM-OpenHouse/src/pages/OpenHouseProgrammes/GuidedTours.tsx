@@ -6,12 +6,15 @@ import '../../css/GuidedTours.css';
 import TopNav from '../../components/TopNav';
 import GuidedTourContent from '../../components/OpenHouseProgrammes/GuidedTourContent';
 import { db } from "../../firebase";
+import { useAuth } from '../../modules/auth';
 
 const GuidedTours: React.FC = () => {
+	const { userID } = useAuth();
 
     const [dayNum, setDayNum] = useState('day1');
     const [openhouseDates, setOpenhouseDates] = useState([])
     const [guidedTours, setGuidedTours] = useState<any[]>([]);
+    const [scheduleItems, setScheduleItems] = useState([]);
 
     const handleDayOne = () => {
         setDayNum('day1');
@@ -49,7 +52,11 @@ const GuidedTours: React.FC = () => {
             })
             .catch((error) => console.log(error));
 
-    }, [])
+            return db.collection('PersonalScheduler').doc(userID).onSnapshot(snap => {
+                setScheduleItems(snap.data()?.registeredProgrammes);
+            });
+    }, []);
+    
     return (
         <IonPage>
             <IonHeader>
@@ -71,7 +78,7 @@ const GuidedTours: React.FC = () => {
                             </IonToolbar>
                         </IonCol>
                     </IonRow>
-                    <GuidedTourContent day1={dayNum} day2={dayNum} guidedTours={guidedTours} openhouseDates={openhouseDates} />
+                    <GuidedTourContent day1={dayNum} day2={dayNum} guidedTours={guidedTours} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
                 </IonGrid>
             </IonContent>
         </IonPage>

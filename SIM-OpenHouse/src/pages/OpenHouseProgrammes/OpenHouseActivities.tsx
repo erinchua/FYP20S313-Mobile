@@ -10,8 +10,10 @@ import GamesContent from '../../components/OpenHouseProgrammes/GamesContent';
 import PrizesContent from '../../components/OpenHouseProgrammes/PrizesContent';
 import TopNav from '../../components/TopNav';
 import { db } from '../../firebase'
+import { useAuth } from '../../modules/auth';
 
 const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
+	const { userID } = useAuth();
 
     const [dayNum, setDayNum] = useState('day1');
     const [headingTitle, setHeadingTitle] = useState('Performances');
@@ -20,6 +22,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     const [gamesActivities, setGamesActivities] = useState<any[]>([]);
     const [prizes, setPrizes] = useState<any[]>([]);
     const [venue, setVenue] = useState([]);
+    const [scheduleItems, setScheduleItems] = useState([]);
 
 
     const handleDayOne = () => {
@@ -108,6 +111,10 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                 setVenue(venue);
             })
             .catch((error) => console.log(error));
+
+            return db.collection('PersonalScheduler').doc(userID).onSnapshot(snap => {
+                setScheduleItems(snap.data()?.registeredProgrammes);
+            });
     }, []);
 
     return (
@@ -160,7 +167,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                                 </IonCol>
                             </IonRow>
                         </IonGrid>
-                        <PerformancesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} performances={performances} />
+                        <PerformancesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} performances={performances} scheduleItems={scheduleItems} />
                     </> : ''
                 }
 
@@ -179,7 +186,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                                 </IonCol>
                             </IonRow>
                         </IonGrid>
-                        <GamesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} gamesActivities={gamesActivities} />
+                        <GamesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} gamesActivities={gamesActivities} scheduleItems={scheduleItems} />
                     </> : ''
                 }
 
