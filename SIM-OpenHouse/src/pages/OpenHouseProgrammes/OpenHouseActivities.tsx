@@ -13,7 +13,7 @@ import { db } from '../../firebase'
 import { useAuth } from '../../modules/auth';
 
 const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
-	const { userID } = useAuth();
+    const { userID } = useAuth();
 
     const [dayNum, setDayNum] = useState('day1');
     const [headingTitle, setHeadingTitle] = useState('Performances');
@@ -49,72 +49,60 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     }
 
     useEffect(() => {
-        db.collection("Openhouse")
-            .get()
-            .then((snapshot) => {
-                const dates: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.get('day')
-                    for (var i = 0; i < Object.keys(data).length; i++) {
-                        const date = data[Object.keys(data)[i]].date;
-                        dates.push(date)
-                    }
-                });
-                setOpenhouseDates(dates);
-            })
-            .catch((error) => console.log(error));
-
-        db.collection("Performances")
-            .get()
-            .then((snapshot) => {
-                const performances: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    performances.push(data);
-                });
-                setPerformances(performances);
-            })
-            .catch((error) => console.log(error));
-
-        db.collection("GamesActivities")
-            .get()
-            .then((snapshot) => {
-                const activities: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    activities.push(data);
-                });
-                setGamesActivities(activities);
-            })
-            .catch((error) => console.log(error));
-
-        db.collection("Prizes")
-            .get()
-            .then((snapshot) => {
-                const prizes: any = [];
-                const venue: any = [];
-
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-
-                    if (doc.id.includes("prize")) {
-                        prizes.push(data);
-                    } else if (doc.id.includes("venue")) {
-                        for (let i = 0; i < Object.keys(data.day).length; i++) {
-                            const day = data.day[Object.keys(data.day)[i]];
-                            venue.push(day);
-                        }
-                    }
-                });
-
-                setPrizes(prizes);
-                setVenue(venue);
-            })
-            .catch((error) => console.log(error));
-
-            return db.collection('PersonalScheduler').doc(userID).onSnapshot(snap => {
-                setScheduleItems(snap.data()?.registeredProgrammes);
+        db.collection("Openhouse").get().then((snapshot) => {
+            const dates: any = [];
+            snapshot.forEach((doc) => {
+                const data = doc.get('day')
+                for (var i = 0; i < Object.keys(data).length; i++) {
+                    const date = data[Object.keys(data)[i]].date;
+                    dates.push(date)
+                }
             });
+            setOpenhouseDates(dates);
+        }).catch((error) => console.log(error));
+
+        db.collection("Performances").get().then((snapshot) => {
+            const performances: any = [];
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                performances.push(data);
+            });
+            setPerformances(performances);
+        }).catch((error) => console.log(error));
+
+        db.collection("GamesActivities").get().then((snapshot) => {
+            const activities: any = [];
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                activities.push(data);
+            });
+            setGamesActivities(activities);
+        }).catch((error) => console.log(error));
+
+        db.collection("Prizes").get().then((snapshot) => {
+            const prizes: any = [];
+            const venue: any = [];
+
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+
+                if (doc.id.includes("prize")) {
+                    prizes.push(data);
+                } else if (doc.id.includes("venue")) {
+                    for (let i = 0; i < Object.keys(data.day).length; i++) {
+                        const day = data.day[Object.keys(data.day)[i]];
+                        venue.push(day);
+                    }
+                }
+            });
+
+            setPrizes(prizes);
+            setVenue(venue);
+        }).catch((error) => console.log(error));
+
+        return db.collection('PersonalScheduler').doc(userID).onSnapshot(snap => {
+            setScheduleItems(snap.data()?.registeredProgrammes);
+        });
     }, []);
 
     return (
