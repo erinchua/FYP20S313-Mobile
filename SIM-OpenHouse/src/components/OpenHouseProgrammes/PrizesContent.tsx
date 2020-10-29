@@ -6,6 +6,7 @@ import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
+import { toDateObject } from '../../modules/convert';
 
 const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
     const { userID } = useAuth();
@@ -13,10 +14,7 @@ const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
     const [alert, setAlert] = useState({ redeemSuccess: false, redeemFail: false, loading: false });
     const [errorMessage, setErrorMessage] = useState("");
     const [gameProfile, setGameProfile] = useState<any>({ points: 0, redeemed: [] });
-
-    //const prizes = props.prizes.filter((prize: any) => { return prize.id !== "venue" });
-    //const venue = props.prizes.filter((prize: any) => { return prize.id === "venue" });
-    console.log(props.venue)
+    const [venue, setVenue] = useState("");
 
     const handleRedeem = async (prize: any) => {
         try {
@@ -56,6 +54,13 @@ const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
     }
 
     useEffect(() => {
+        const today = new Date().getTime();
+
+        props.venue.forEach((day: any) => {
+            if (today > toDateObject(day.date, "00:00AM").getTime())
+                setVenue(day.venue)
+        });
+
         return db.collection('Games').doc(userID).onSnapshot(doc => {
             setGameProfile({
                 points: doc.data()?.points,
@@ -88,7 +93,7 @@ const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
 
             <IonText><div style={{ marginTop: "2%", marginBottom: "-7%", marginLeft: "3%", fontWeight: "bold", fontSize: "95%", color: "#424242" }}>Prizes</div></IonText>
             <IonItemDivider color="#EFEFEF"></IonItemDivider>
-            <IonText color="medium"><div style={{ margin: "2%", fontSize: "80%" }}>* Redemption booth is located at Blk A Atrium (Near the lift lobby)</div></IonText>
+            <IonText color="medium"><div style={{ margin: "2%", fontSize: "80%" }}>{venue !== "" ? `* Redemption booth is located at ${venue}` : null}</div></IonText>
             <IonGrid id="prizesContent-tableGrid">
                 <IonRow id="prizesContent-tableHeader" className="ion-justify-content-center">
                     <IonCol sizeSm="2" size="2" className="prizesContent-Header ion-text-wrap">Prizes No.</IonCol>

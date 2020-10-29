@@ -1,14 +1,10 @@
-import React, { useContext } from 'react';
 import { IonToolbar, IonButtons, IonButton, IonTitle, IonIcon, IonMenuButton } from '@ionic/react';
-import { NavContext } from '@ionic/react';
-import { arrowBackOutline } from 'ionicons/icons';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { arrowBackOutline } from 'ionicons/icons';
 
 import '../css/TopNav.css';
 import '../css/Global.css';
-import { useAuth } from '../modules/auth';
-import { auth } from '../firebase';
-import { Programme } from '../pages/Study@SIM/Study@SIMProgInfo'
 
 
 const TopNav: React.FC<{
@@ -16,20 +12,7 @@ const TopNav: React.FC<{
     route: string;
     backarrow: Boolean;
     hamburger: Boolean;
-    // compareProgList: Programme[];
-
 }> = props => {
-
-    const { loggedIn } = useAuth();
-    const { navigate } = useContext(NavContext);
-    // const backarrow = true;
-
-    const handleLogout = async () => {
-        await auth.signOut();
-        sessionStorage.clear();
-        // navigate('/main');
-
-    };
 
     return (
         <>

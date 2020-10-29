@@ -10,8 +10,10 @@ import GamesContent from '../../components/OpenHouseProgrammes/GamesContent';
 import PrizesContent from '../../components/OpenHouseProgrammes/PrizesContent';
 import TopNav from '../../components/TopNav';
 import { db } from '../../firebase'
+import { useAuth } from '../../modules/auth';
 
 const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
+    const { userID } = useAuth();
 
     const [dayNum, setDayNum] = useState('day1');
     const [headingTitle, setHeadingTitle] = useState('Performances');
@@ -20,6 +22,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     const [gamesActivities, setGamesActivities] = useState<any[]>([]);
     const [prizes, setPrizes] = useState<any[]>([]);
     const [venue, setVenue] = useState([]);
+    const [scheduleItems, setScheduleItems] = useState([]);
 
 
     const handleDayOne = () => {
@@ -46,68 +49,60 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     }
 
     useEffect(() => {
-        db.collection("Openhouse")
-            .get()
-            .then((snapshot) => {
-                const dates: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.get('day')
-                    for (var i = 0; i < Object.keys(data).length; i++) {
-                        const date = data[Object.keys(data)[i]].date;
-                        dates.push(date)
+        db.collection("Openhouse").get().then((snapshot) => {
+            const dates: any = [];
+            snapshot.forEach((doc) => {
+                const data = doc.get('day')
+                for (var i = 0; i < Object.keys(data).length; i++) {
+                    const date = data[Object.keys(data)[i]].date;
+                    dates.push(date)
+                }
+            });
+            setOpenhouseDates(dates);
+        }).catch((error) => console.log(error));
+
+        db.collection("Performances").get().then((snapshot) => {
+            const performances: any = [];
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                performances.push(data);
+            });
+            setPerformances(performances);
+        }).catch((error) => console.log(error));
+
+        db.collection("GamesActivities").get().then((snapshot) => {
+            const activities: any = [];
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                activities.push(data);
+            });
+            setGamesActivities(activities);
+        }).catch((error) => console.log(error));
+
+        db.collection("Prizes").get().then((snapshot) => {
+            const prizes: any = [];
+            const venue: any = [];
+
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+
+                if (doc.id.includes("prize")) {
+                    prizes.push(data);
+                } else if (doc.id.includes("venue")) {
+                    for (let i = 0; i < Object.keys(data.day).length; i++) {
+                        const day = data.day[Object.keys(data.day)[i]];
+                        venue.push(day);
                     }
-                });
-                setOpenhouseDates(dates);
-            })
-            .catch((error) => console.log(error));
+                }
+            });
 
-        db.collection("Performances")
-            .get()
-            .then((snapshot) => {
-                const performances: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    performances.push(data);
-                });
-                setPerformances(performances);
-            })
-            .catch((error) => console.log(error));
+            setPrizes(prizes);
+            setVenue(venue);
+        }).catch((error) => console.log(error));
 
-        db.collection("GamesActivities")
-            .get()
-            .then((snapshot) => {
-                const activities: any = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    activities.push(data);
-                });
-                setGamesActivities(activities);
-            })
-            .catch((error) => console.log(error));
-
-        db.collection("Prizes")
-            .get()
-            .then((snapshot) => {
-                const prizes: any = [];
-                const venue: any = [];
-
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-
-                    if (doc.id.includes("prize")) {
-                        prizes.push(data);
-                    } else if (doc.id.includes("venue")) {
-                        for (let i = 0; i < Object.keys(data.day).length; i++) {
-                            const day = data.day[Object.keys(data.day)[i]];
-                            venue.push(day);
-                        }
-                    }
-                });
-
-                setPrizes(prizes);
-                setVenue(venue);
-            })
-            .catch((error) => console.log(error));
+        return db.collection('PersonalScheduler').doc(userID).onSnapshot(snap => {
+            setScheduleItems(snap.data()?.registeredProgrammes);
+        });
     }, []);
 
     return (
@@ -160,7 +155,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                                 </IonCol>
                             </IonRow>
                         </IonGrid>
-                        <PerformancesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} performances={performances} />
+                        <PerformancesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} performances={performances} scheduleItems={scheduleItems} />
                     </> : ''
                 }
 
@@ -179,7 +174,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                                 </IonCol>
                             </IonRow>
                         </IonGrid>
-                        <GamesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} gamesActivities={gamesActivities} />
+                        <GamesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} gamesActivities={gamesActivities} scheduleItems={scheduleItems} />
                     </> : ''
                 }
 
