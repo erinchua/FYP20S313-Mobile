@@ -10,8 +10,9 @@ import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
 
-const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; openhouseDates: any }> = props => {
+const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
+
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
     const [buttonDisabled, setButtonDisabled] = useState(false);
 
@@ -164,7 +165,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.startTime + " to " + performance.endTime}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.venue}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">
-                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)} disabled={buttonDisabled}>
+                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)} disabled={props.scheduleItems.includes(performance.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -181,7 +182,7 @@ const PerformancesContent: React.FC<{ day1: any; day2: any; performances: any; o
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.startTime + " to " + performance.endTime}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">{performance.venue}</IonCol>
                                 <IonCol className="performancesContent-Data ion-text-wrap">
-                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)} disabled={buttonDisabled}>
+                                    <IonButton className="performancesContent-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(performance)} disabled={props.scheduleItems.includes(performance.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>

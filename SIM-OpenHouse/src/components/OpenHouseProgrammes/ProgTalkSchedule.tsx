@@ -11,25 +11,13 @@ import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
 
-const ProgTalkSchedule: React.FC<{
-    day1: any;
-    day2: any;
-    programmeTalk: any;
-    openhouseDates: any;
-}> = props => {
+const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
+
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [buttonDisabled, setButtonDisabled] = useState(false);
 
-    const programmeTalkDay1 = props.programmeTalk
-        .filter((talk: any) => {
-            return talk.date == props.openhouseDates[0]
-        })
-
-    const programmeTalkDay2 = props.programmeTalk
-        .filter((talk: any) => {
-            return talk.date == props.openhouseDates[1]
-        })
+    const programmeTalkDay1 = props.programmeTalk.filter((talk: any) => { return talk.date == props.openhouseDates[0] });
+    const programmeTalkDay2 = props.programmeTalk.filter((talk: any) => { return talk.date == props.openhouseDates[1] });
 
     const addToSchedule = async (programme: any) => {
         try {
@@ -182,7 +170,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)} disabled={buttonDisabled}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)} disabled={props.scheduleItems.includes(programmeTalk.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -203,7 +191,7 @@ const ProgTalkSchedule: React.FC<{
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)} disabled={buttonDisabled}>
+                                    <IonButton className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(programmeTalk)} disabled={props.scheduleItems.includes(programmeTalk.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>

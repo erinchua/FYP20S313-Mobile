@@ -95,7 +95,7 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
     console.log(arr[0].date)
 }) */}
 
-{/* const dateObject1 = {
+const dateObject1 = {
     date: "21-Nov-2020",
     start: "11:30AM", end: "12:30PM"
 }
@@ -104,6 +104,8 @@ const dateObject2 = {
     start: "11:00AM", end: "12:00PM"
 }
 function toDateObject(date, time) {
+    if (time == "") time = "00:00AM";
+
     const dateSplit = date.split("-");
     const timeSplit = time.split(":");
 
@@ -118,10 +120,11 @@ function toDateObject(date, time) {
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
 };
-const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
-const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end); */}
+//const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
+//const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
 //console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
 //console.log(end1-start1)
+console.log(toDateObject("21-Nov-2020", ""))
 
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater), toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
@@ -275,3 +278,27 @@ db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student
     }
     console.log(registeredInfo)
 }) */
+
+/* db.collection('Games').doc('2S7lngNuQkabNnZip7HZ5RoVAc63').get().then(doc => {
+    console.log(doc.data().redeemed.includes("prize-002"))
+}); */
+/* db.collection("Prizes").get().then((snapshot) => {
+    const prizes = [];
+    const venue = [];
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+
+        if (doc.id.includes("prize")) {
+            prizes.push(data);
+        } else if (doc.id.includes("venue")) {
+            for (let i = 0; i < Object.keys(data.day).length; i++) {
+                const day = data.day[Object.keys(data.day)[i]];
+                venue.push(day);
+            }
+        }
+    });
+    console.log(prizes);
+    console.log(venue);
+}) */
+
+//console.log(new Date().getTime())

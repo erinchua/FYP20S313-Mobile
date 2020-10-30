@@ -5,6 +5,8 @@ export function formatDate(isoDate: any) {
 };
 
 export function toDateObject(date: string, time: string) {
+    if (time === "") time = "00:00AM";
+
     const dateSplit = date.split("-");
     const timeSplit = time.split(":");
     
@@ -13,7 +15,7 @@ export function toDateObject(date: string, time: string) {
 
     const monthsArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-    const day = +dateSplit[0], month = +monthsArray.indexOf(dateSplit[1]) + 1, year = +dateSplit[2];
+    const day = +dateSplit[0], month = +monthsArray.indexOf(dateSplit[1]), year = +dateSplit[2];
     let hours = +timeSplit[0];
     const minutes = +timeSplit[1].slice(0, 2), meridiem = timeSplit[1].slice(-2, timeSplit[1].length);
     const seconds = 0, milliseconds = 0;

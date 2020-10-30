@@ -11,7 +11,7 @@ import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
 
-const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; openhouseDates: any }> = props => {
+const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
     const [buttonDisabled, setButtonDisabled] = useState(false);    
@@ -171,7 +171,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.startTime}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.venue}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">
-                                    <IonButton className="guidedTours-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(guidedTour)} disabled={buttonDisabled}>
+                                    <IonButton className="guidedTours-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(guidedTour)} disabled={props.scheduleItems.includes(guidedTour.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -189,7 +189,7 @@ const GuidedTourContent: React.FC<{ day1: any; day2: any; guidedTours: any; open
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.startTime}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">{guidedTour.venue}</IonCol>
                                 <IonCol className="guidedTours-Data ion-text-wrap">
-                                    <IonButton className="guidedTours-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(guidedTour)} disabled={buttonDisabled}>
+                                    <IonButton className="guidedTours-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }} onClick={() => addToSchedule(guidedTour)} disabled={props.scheduleItems.includes(guidedTour.id) ? true : false}>
                                         <FontAwesomeIcon icon={faPlus} size="lg" />
                                     </IonButton>
                                 </IonCol>
