@@ -11,40 +11,55 @@ import { db } from '../firebase';
 const GettingToSimHq: React.FC = () => {
 
     const [car, setCar] = useState({ byCar: "", carparkInfo: "" });
-    const [bus, setBus] = useState({ simHq: "", oppSimHq: "" });
-    const [mrt, setMrt] = useState({ downtown: "", eastwest: "" });
+    const [bus, setBus] = useState([]);
+    const [mrt, setMrt] = useState([]);
 
     useEffect(() => {
         db.collection('CampusLocation').get().then(snaps => {
             snaps.forEach(doc => {
+                const data = doc.data();
+
                 if (doc.id === "car") {
-                    setCar({ byCar: doc.data().carDescription, carparkInfo: doc.data().carParkingDescription });
+                    setCar({ byCar: data.carDescription, carparkInfo: data.carParkingDescription });
                 }
+
                 if (doc.id === "bus") {
-                    const simHq = doc.data().simHq, oppSimHq = doc.data().oppSimHq;
-                    const simHqBuses = [], oppSimHqBuses = [];
+                    const busInfo: any = [];
 
-                    for (let i = 0; i < Object.keys(simHq).length; i++) {
-                        simHqBuses.push(simHq[Object.keys(simHq)[i]]);
-                    }
-                    for (let i = 0; i < Object.keys(oppSimHq).length; i++) {
-                        oppSimHqBuses.push(oppSimHq[Object.keys(oppSimHq)[i]]);
+                    for (let i = 0; i < Object.keys(data).length; i++) {
+                        if (Object.keys(data)[i] !== "id") {
+                            const busArr = [];
+                            const buses = data[Object.keys(data)[i]].buses;
+                            const description = data[Object.keys(data)[i]].description;
+
+                            for (let i = 0; i < Object.keys(buses).length; i++) {
+                                busArr.push(buses[Object.keys(buses)[i]]);
+                            }
+
+                            busInfo.push({ description: description, buses: busArr.join(", ") });
+                        }
                     }
 
-                    setBus({ simHq: simHqBuses.join(", "), oppSimHq: oppSimHqBuses.join(", ") });
+                    setBus(busInfo);
                 }
                 if (doc.id === "mrt") {
-                    const downtown = doc.data().downtownLine, eastwest = doc.data().eastwestLine;
-                    const downtownMrt = [], eastwestMrt = [];
+                    const mrtInfo: any = [];
 
-                    for (let i = 0; i < Object.keys(downtown).length; i++) {
-                        downtownMrt.push(downtown[Object.keys(downtown)[i]]);
-                    }
-                    for (let i = 0; i < Object.keys(eastwest).length; i++) {
-                        eastwestMrt.push(eastwest[Object.keys(eastwest)[i]]);
+                    for (let i = 0; i < Object.keys(data).length; i++) {
+                        if (Object.keys(data)[i] !== "id") {
+                            const mrtArr = [];
+                            const stations = data[Object.keys(data)[i]].stations;
+                            const description = data[Object.keys(data)[i]].description;
+
+                            for (let i = 0; i < Object.keys(stations).length; i++) {
+                                mrtArr.push(stations[Object.keys(stations)[i]]);
+                            }
+
+                            mrtInfo.push({ description: description, stations: mrtArr.join(", ") });
+                        }
                     }
 
-                    setMrt({ downtown: downtownMrt.join(", "), eastwest: eastwestMrt.join(", ") });
+                    setMrt(mrtInfo);
                 }
             });
         });
@@ -76,14 +91,14 @@ const GettingToSimHq: React.FC = () => {
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Location</IonCol>
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Bus Number</IonCol>
                             </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">SIMHQ <br />12091 <br />Clementi Rd</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{bus.simHq}</IonCol>
-                            </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">Opp SIM HQ <br />12099 <br />Clementi Rd</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{bus.oppSimHq}</IonCol>
-                            </IonRow>
+                            {bus.map((info: any, index) => {
+                                return (
+                                    <IonRow className="gettingToSimHq-tableRow" key={index}>
+                                        <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">{info.description}</IonCol>
+                                        <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{info.buses}</IonCol>
+                                    </IonRow>
+                                )
+                            })}
                         </IonGrid>
                     </IonRow>
                     <IonRow className="gettingToSimHq-heading-row">
@@ -95,14 +110,14 @@ const GettingToSimHq: React.FC = () => {
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">MRT Line</IonCol>
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Nearest MRT</IonCol>
                             </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">Downtown Line</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{mrt.downtown}</IonCol>
-                            </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">East West Line</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{mrt.eastwest}</IonCol>
-                            </IonRow>
+                            {mrt.map((info: any, index) => {
+                                return (
+                                    <IonRow className="gettingToSimHq-tableRow" key={index}>
+                                        <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">{info.description}</IonCol>
+                                        <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{info.stations}</IonCol>
+                                    </IonRow>
+                                )
+                            })}
                         </IonGrid>
                     </IonRow>
                     <IonRow className="gettingToSimHq-heading-row">
