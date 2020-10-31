@@ -9,18 +9,41 @@ import { db } from '../../firebase';
 
 const ContactInfo: React.FC = () => {
 
-    const [contactInfo, setContactInfo] = useState([]);
-
-    const localContacts = contactInfo.filter((contact: any) => { return contact.country === 'local' });
+    const [contactInfo, setContactInfo] = useState<any>({ local: [], overseas: []});
 
     useEffect(() => {
-        const contacts: any = []
-        db.collection('ContactInfo').get().then((snapshot) => {
+        db.collection('ContactInfo').get().then(snapshot => {
+            const local: any = [];
+            const overseas: any = [];
+
             snapshot.forEach((doc) => {
                 const data = doc.data();
-                contacts.push(data);
-            })
-            setContactInfo(contacts);
+
+                if (data.country === "local") {
+                    const opHours = data.operatingHours;
+                    const opArr = [];
+
+                    for (let i = 0; i < Object.keys(opHours).length; i++) {
+                        const op = opHours[Object.keys(opHours)[i]];
+
+                        if (op !== "") {
+                            opArr.push(op);
+                        }
+                    }
+                    
+                    const contact = {
+                        id: data.id,
+                        title: data.contactTitle,
+                        phone: data.contactNo,
+                        email: data.email,
+                        opHours: opArr
+                    }
+                    local.push(contact);
+                } else {
+                    overseas.push(data);
+                }
+            });
+            setContactInfo({ local: local, overseas: overseas});
         });
     }, []);
 
@@ -33,11 +56,11 @@ const ContactInfo: React.FC = () => {
             <IonContent fullscreen={true}>
                 <IonGrid id="contactInfoGrid">
                     {/* General Enquiries */}
-                    {localContacts.map((contact: any) => {
+                    {contactInfo.local.map((contact: any) => {
                         return (
                             <div key={contact.id}>
                                 <IonRow className="contactInfoTitleRow">
-                                    <IonTitle className="contactInfoTitle">{contact.contactTitle}</IonTitle>
+                                    <IonTitle className="contactInfoTitle">{contact.title}</IonTitle>
                                 </IonRow>
 
                                 <IonRow className="contactInfoDetailRow" style={{ paddingTop: "3%" }}>
@@ -46,7 +69,7 @@ const ContactInfo: React.FC = () => {
                                     </IonCol>
 
                                     <IonCol size="7" sizeSm="7" className="contactInfoDetailCol">
-                                        {contact.operatingHours.map((hours: any, index: any) => {
+                                        {contact.opHours.map((hours: any, index: any) => {
                                             return ( <IonRow className="contactInfoDetailInfo" key={index}>{hours}</IonRow> )
                                         })}
                                     </IonCol>
@@ -58,7 +81,7 @@ const ContactInfo: React.FC = () => {
                                     </IonCol>
 
                                     <IonCol size="7" sizeSm="7" className="contactInfoDetailCol">
-                                        <IonRow className="contactInfoDetailInfo">{contact.contactNo}</IonRow>
+                                        <IonRow className="contactInfoDetailInfo">{contact.phone}</IonRow>
                                     </IonCol>
                                 </IonRow>
 

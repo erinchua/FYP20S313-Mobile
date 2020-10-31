@@ -303,10 +303,10 @@ db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student
 
 //console.log(new Date().getTime())
 
-db.collection('CampusLocation').get().then(snaps => {
+{/* db.collection('CampusLocation').get().then(snaps => {
     snaps.forEach(doc => {
         const data = doc.data();
-        /* if (doc.id === "bus") {
+        if (doc.id === "bus") {
             const busInfo = [];
 
             for (let i = 0; i < Object.keys(data).length; i++) {
@@ -327,15 +327,15 @@ db.collection('CampusLocation').get().then(snaps => {
 
             //console.log(simHqBusArr.join(", "));
             //console.log(oppSimHqBusArr.join(", "));
-        } */
+        }
         if (doc.id === "car") {
             const carparkInfo = data.carParkingDescription;
             //console.log({ byCar: data.carDescription, carparkInfo: carparkInfo });
             console.log(carparkInfo)
         }
     });
-});
-/* const sim = ['154B', '61', '151', '154', '74E', '75', '74', '151E', '184', '52']
+}); */}
+{/* const sim = ['154B', '61', '151', '154', '74E', '75', '74', '151E', '184', '52']
 const oppSim = ['74E', '74', '154', '52', '75', '61', '151', '184', '151E']
 function sortFunction(a, b) {
     const aSplit = a.match(/[a-zA-Z]+|\d+/ig)
@@ -389,5 +389,38 @@ console.log(oppSim.sort(sortFunction).join(", ")) */
     //console.log("busSimArray", simHq.sort(sortFunction).join(", "))
     console.log("sim", simHq)
     console.log("simjoin", oppSimHq)
-}); */
+}); */}
 //console.log('A' > 'Z')
+
+/* db.collection('ContactInfo').get().then(snapshot => {
+    const local = [];
+    const overseas = [];
+
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+
+        if (data.country === "local") {
+            const opHours = data.operatingHours;
+            const opArr = [];
+
+            for (let i = 0; i < Object.keys(opHours).length; i++) {
+                const op = opHours[Object.keys(opHours)[i]];
+
+                if (op !== "") {
+                    opArr.push(op);
+                }
+            }
+            const contact = {
+                ...data,
+                operatingHours: opArr
+            }
+            console.log(contact)
+        }
+    });
+}); */
+
+db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ', 'Bursary-FAQ']).get().then(docs => {
+    docs.forEach(doc => {
+        console.log(doc.data())
+    })
+})
