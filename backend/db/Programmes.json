@@ -8,10 +8,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Specialty"
+            "disciplineName1": "Specialty",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Aviation"
+            "subDisciplineName1": "Aviation",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -21,13 +26,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
             "aboutProgramme2": "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
             "aboutProgramme3": "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
         },
         "applicationPeriod": {
-            "period1": "15 Jul 2020 to 20 Oct 2020"
+            "period1": "15 Jul 2020 to 20 Oct 2020",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -38,11 +44,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years"
-        }
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-002",
@@ -53,10 +62,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Specialty"
+            "disciplineName1": "Specialty",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Construction and Management"
+            "subDisciplineName1": "Construction and Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -66,13 +80,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "Ranked 22nd in the world & 3rd highest in Australia for Architectural & Built Environment (QS 2019)",
             "aboutProgramme2": "Accrediation by Professional Bodies, including AIB, AIQS, CIOB, RICS and SISV",
             "aboutProgramme3": "Practical Curricula, designed with industry inputs; integration of theory with practice"
         },
         "applicationPeriod": {
-            "period1": "15 Jul 2020 to 20 Oct 2020"
+            "period1": "15 Jul 2020 to 20 Oct 2020",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -83,11 +98,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul"
+            "partTime": "Jan, Jul",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": "3 Years"
-        }
+            "partTime": "3 Years",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-003",
@@ -98,10 +116,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Information Technology"
+            "subDisciplineName1": "Information Technology",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -111,13 +134,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -128,11 +152,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-004",
@@ -143,10 +170,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Business"
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -156,13 +188,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -173,11 +206,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-005",
@@ -192,7 +228,11 @@
             "disciplineName2": "Specialty"
         },
         "subDiscipline": {
-            "subDisciplineName1": "Nursing"
+            "subDisciplineName1": "Nursing",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -202,13 +242,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Sydney",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -219,11 +260,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fthe-university-of-sydney-logo.png?alt=media&token=6068fcaf-27ec-48c4-8405-15c15018ed35"
     },
     {
         "id": "programme-006",
@@ -238,7 +282,11 @@
             "disciplineName2": "Specialty"
         },
         "subDiscipline": {
-            "subDisciplineName1": "Nursing"
+            "subDisciplineName1": "Nursing",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -248,13 +296,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Sydney",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -265,11 +314,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fthe-university-of-sydney-logo.png?alt=media&token=6068fcaf-27ec-48c4-8405-15c15018ed35"
     },
     {
         "id": "programme-007",
@@ -280,10 +332,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Cyber Security and Management"
+            "subDisciplineName1": "Cyber Security and Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -293,13 +350,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -310,11 +368,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-008",
@@ -325,10 +386,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Engineering and Business"
+            "subDisciplineName1": "Engineering and Business",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -338,13 +404,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -355,11 +422,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-009",
@@ -370,10 +440,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Project Management"
+            "subDisciplineName1": "Project Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -383,13 +458,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -400,11 +476,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-010",
@@ -415,11 +494,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Logistics and Supply Chain Management"
+            "subDisciplineName2": "Logistics and Supply Chain Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -429,13 +512,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -446,11 +530,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-011",
@@ -461,13 +548,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Big Data",
             "subDisciplineName3": "Data Science",
-            "subDisciplineName4": "Financial Technology (FinTech)"
+            "subDisciplineName4": "Financial Technology (FinTech)",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -477,13 +566,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -494,11 +584,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-012",
@@ -509,13 +602,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Big Data",
             "subDisciplineName3": "Data Science",
-            "subDisciplineName4": "Financial Technology (FinTech)"
+            "subDisciplineName4": "Financial Technology (FinTech)",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -525,13 +620,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -542,11 +638,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-013",
@@ -557,13 +656,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Big Data",
             "subDisciplineName3": "Data Science",
-            "subDisciplineName4": "Financial Technology (FinTech)"
+            "subDisciplineName4": "Financial Technology (FinTech)",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -573,13 +674,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -590,11 +692,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-014",
@@ -605,13 +710,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Big Data",
             "subDisciplineName3": "Data Science",
-            "subDisciplineName4": "Financial Technology (FinTech)"
+            "subDisciplineName4": "Financial Technology (FinTech)",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -621,13 +728,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -638,11 +746,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-015",
@@ -653,13 +764,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Big Data",
             "subDisciplineName3": "Data Science",
-            "subDisciplineName4": "Financial Technology (FinTech)"
+            "subDisciplineName4": "Financial Technology (FinTech)",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -669,13 +782,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -686,11 +800,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-016",
@@ -701,13 +818,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Big Data",
             "subDisciplineName3": "Data Science",
-            "subDisciplineName4": "Financial Technology (FinTech)"
+            "subDisciplineName4": "Financial Technology (FinTech)",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -717,13 +836,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -734,11 +854,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-017",
@@ -749,13 +872,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Big Data",
             "subDisciplineName3": "Data Science",
-            "subDisciplineName4": "Financial Technology (FinTech)"
+            "subDisciplineName4": "Financial Technology (FinTech)",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -765,13 +890,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -782,11 +908,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-018",
@@ -802,7 +931,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Business Analytics",
-            "subDisciplineName2": "Information Technology"
+            "subDisciplineName2": "Information Technology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -812,13 +944,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -829,11 +962,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-019",
@@ -849,7 +985,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Business Analytics",
-            "subDisciplineName2": "Information Technology"
+            "subDisciplineName2": "Information Technology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -859,13 +998,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -876,11 +1016,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-020",
@@ -891,10 +1034,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Marketing"
+            "subDisciplineName1": "Marketing",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -904,13 +1052,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -921,11 +1070,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-021",
@@ -936,10 +1088,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Human Resource Management"
+            "subDisciplineName1": "Human Resource Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -949,13 +1106,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -966,11 +1124,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-022",
@@ -981,10 +1142,15 @@
         },
         "academicLevel": "Diploma",
         "discipline": {
-            "disciplineName1": "Specialty"
+            "disciplineName1": "Specialty",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Aviation"
+            "subDisciplineName1": "Aviation",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -994,13 +1160,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1011,11 +1178,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-023",
@@ -1026,11 +1196,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -1040,13 +1214,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1057,11 +1232,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-024",
@@ -1072,10 +1250,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Big Data"
+            "subDisciplineName1": "Big Data",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1085,13 +1268,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1102,11 +1286,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-025",
@@ -1117,10 +1304,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Digital Systems Security"
+            "subDisciplineName1": "Digital Systems Security",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1130,13 +1322,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1147,11 +1340,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-026",
@@ -1162,10 +1358,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Cyber Security and Management"
+            "subDisciplineName1": "Cyber Security and Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -1175,13 +1376,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1192,11 +1394,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-027",
@@ -1207,10 +1412,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Engineering and Business"
+            "subDisciplineName1": "Engineering and Business",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -1220,13 +1430,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1237,11 +1448,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-028",
@@ -1252,10 +1466,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Project Management"
+            "subDisciplineName1": "Project Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -1265,13 +1484,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1282,11 +1502,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-029",
@@ -1297,11 +1520,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Logistics and Supply Chain Management"
+            "subDisciplineName2": "Logistics and Supply Chain Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -1311,13 +1538,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1328,11 +1556,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
     {
         "id": "programme-030",
@@ -1343,10 +1574,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Tourism, Hospitality & Events Management"
+            "subDisciplineName1": "Tourism, Hospitality & Events Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1356,13 +1592,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1373,11 +1610,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
     {
         "id": "programme-031",
@@ -1388,10 +1628,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Marketing"
+            "subDisciplineName1": "Marketing",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1401,13 +1646,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1418,11 +1664,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
     {
         "id": "programme-032",
@@ -1433,10 +1682,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Retail Marketing"
+            "subDisciplineName1": "Retail Marketing",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1446,13 +1700,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1463,11 +1718,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
     {
         "id": "programme-033",
@@ -1478,10 +1736,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Sports Studies and Marketing"
+            "subDisciplineName1": "Sports Studies and Marketing",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1491,13 +1754,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1508,11 +1772,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
     {
         "id": "programme-034",
@@ -1523,10 +1790,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Accounting and Finance"
+            "subDisciplineName1": "Accounting and Finance",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1536,13 +1808,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1553,11 +1826,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-035",
@@ -1568,10 +1844,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Banking and Finance"
+            "subDisciplineName1": "Banking and Finance",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1581,13 +1862,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1598,11 +1880,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-036",
@@ -1613,11 +1898,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1627,13 +1916,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1644,11 +1934,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-037",
@@ -1659,10 +1952,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Accounting and Finance"
+            "subDisciplineName1": "Accounting and Finance",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1672,13 +1970,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1689,11 +1988,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-038",
@@ -1704,11 +2006,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Banking",
-            "subDisciplineName2": "Finance"
+            "subDisciplineName2": "Finance",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -1718,13 +2024,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1735,11 +2042,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-039",
@@ -1750,11 +2060,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -1764,13 +2078,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1781,11 +2096,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-040",
@@ -1796,11 +2114,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Accounting"
+            "subDisciplineName2": "Accounting",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1810,13 +2132,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1827,11 +2150,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-041",
@@ -1842,11 +2168,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Economics and Finance"
+            "subDisciplineName2": "Economics and Finance",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1856,13 +2186,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1873,11 +2204,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-042",
@@ -1888,11 +2222,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Logistics and Supply Chain Management"
+            "subDisciplineName2": "Logistics and Supply Chain Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1902,13 +2240,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1919,11 +2258,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-043",
@@ -1934,11 +2276,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1948,13 +2294,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -1965,11 +2312,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-044",
@@ -1980,11 +2330,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Marketing"
+            "subDisciplineName2": "Marketing",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -1994,13 +2348,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2011,11 +2366,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-045",
@@ -2026,10 +2384,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "International Business"
+            "subDisciplineName1": "International Business",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2039,13 +2402,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "Grenoble Ecole de Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2056,11 +2420,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLogo_Grenoble_Ecole_de_Management.png?alt=media&token=c47ff5ac-4d62-4f6f-86c0-d3f7ca45b0ac"
     },
     {
         "id": "programme-046",
@@ -2071,10 +2438,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Tourism, Hospitality & Events Management"
+            "subDisciplineName1": "Tourism, Hospitality & Events Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2084,13 +2456,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "La Trobe University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2101,11 +2474,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLTU_Int_H_RGB_V3-200x76px.png?alt=media&token=2098d10d-5cbe-4430-9499-011de6e1d49b"
     },
     {
         "id": "programme-047",
@@ -2116,10 +2492,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Tourism, Hospitality & Events Management"
+            "subDisciplineName1": "Tourism, Hospitality & Events Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2129,13 +2510,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "La Trobe University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2146,11 +2528,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLTU_Int_H_RGB_V3-200x76px.png?alt=media&token=2098d10d-5cbe-4430-9499-011de6e1d49b"
     },
     {
         "id": "programme-048",
@@ -2161,11 +2546,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "International Business"
+            "subDisciplineName2": "International Business",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2175,13 +2564,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2192,11 +2582,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-049",
@@ -2207,10 +2600,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Communication"
+            "subDisciplineName1": "Communication",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2220,13 +2618,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2237,11 +2636,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-050",
@@ -2252,10 +2654,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Design"
+            "subDisciplineName1": "Design",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2265,13 +2672,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2282,11 +2690,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
     {
         "id": "programme-051",
@@ -2297,11 +2708,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Information Technology"
+            "subDisciplineName2": "Information Technology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2311,13 +2726,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2328,11 +2744,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-052",
@@ -2343,10 +2762,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Cyber Security"
+            "subDisciplineName1": "Cyber Security",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2356,13 +2780,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2373,11 +2798,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-053",
@@ -2388,10 +2816,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Game and Mobile Development"
+            "subDisciplineName1": "Game and Mobile Development",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2401,13 +2834,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2418,11 +2852,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-054",
@@ -2433,10 +2870,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Psychology"
+            "subDisciplineName1": "Psychology",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2446,13 +2888,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2463,11 +2906,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
     {
         "id": "programme-055",
@@ -2478,10 +2924,15 @@
         },
         "academicLevel": "Diploma",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Information Technology"
+            "subDisciplineName1": "Information Technology",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2491,13 +2942,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2508,11 +2960,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-056",
@@ -2523,10 +2978,15 @@
         },
         "academicLevel": "Certificate",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Information Technology"
+            "subDisciplineName1": "Information Technology",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2536,13 +2996,14 @@
         },
         "category": "Foundation Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2553,11 +3014,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-057",
@@ -2568,11 +3032,15 @@
         },
         "academicLevel": "Certificate",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2582,13 +3050,14 @@
         },
         "category": "Foundation Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2599,11 +3068,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-058",
@@ -2614,10 +3086,15 @@
         },
         "academicLevel": "Diploma",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Accounting"
+            "subDisciplineName1": "Accounting",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2627,13 +3104,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2644,11 +3122,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-059",
@@ -2659,11 +3140,15 @@
         },
         "academicLevel": "Diploma",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Banking and Finance"
+            "subDisciplineName2": "Banking and Finance",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2673,13 +3158,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2690,11 +3176,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-060",
@@ -2705,11 +3194,15 @@
         },
         "academicLevel": "Diploma",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "International Business"
+            "subDisciplineName2": "International Business",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2719,13 +3212,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2736,11 +3230,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-061",
@@ -2751,10 +3248,15 @@
         },
         "academicLevel": "Diploma",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Management"
+            "subDisciplineName1": "Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2764,13 +3266,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2781,11 +3284,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
     {
         "id": "programme-062",
@@ -2802,7 +3308,9 @@
         "subDiscipline": {
             "subDisciplineName1": "Business",
             "subDisciplineName2": "Business Analytics",
-            "subDisciplineName3": "Management"
+            "subDisciplineName3": "Management",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -2812,13 +3320,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2829,11 +3338,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-063",
@@ -2844,13 +3356,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Data Science",
             "subDisciplineName3": "Machine Learning",
-            "subDisciplineName4": "Web and Mobile Development"
+            "subDisciplineName4": "Web and Mobile Development",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2860,13 +3374,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2877,11 +3392,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-064",
@@ -2892,13 +3410,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Data Science",
             "subDisciplineName3": "Machine Learning",
-            "subDisciplineName4": "Web and Mobile Development"
+            "subDisciplineName4": "Web and Mobile Development",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2908,13 +3428,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2925,11 +3446,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-065",
@@ -2940,13 +3464,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "IT & Computer Science"
+            "disciplineName1": "IT & Computer Science",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Artificial Intelligence",
             "subDisciplineName2": "Data Science",
             "subDisciplineName3": "Machine Learning",
-            "subDisciplineName4": "Web and Mobile Development"
+            "subDisciplineName4": "Web and Mobile Development",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -2956,13 +3482,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -2973,11 +3500,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-066",
@@ -2994,7 +3524,9 @@
         "subDiscipline": {
             "subDisciplineName1": "Business",
             "subDisciplineName2": "Business Analytics",
-            "subDisciplineName3": "Management"
+            "subDisciplineName3": "Management",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3004,13 +3536,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3021,11 +3554,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-067",
@@ -3040,7 +3576,11 @@
             "disciplineName2": "Business"
         },
         "subDiscipline": {
-            "subDisciplineName1": "Social Sciences"
+            "subDisciplineName1": "Social Sciences",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3050,13 +3590,14 @@
         },
         "category": "Foundation Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3067,11 +3608,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-068",
@@ -3082,10 +3626,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Economics"
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3095,13 +3644,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3112,11 +3662,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-069",
@@ -3127,10 +3680,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Economics"
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3140,13 +3698,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3157,11 +3716,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-070",
@@ -3172,11 +3734,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Economics",
-            "subDisciplineName2": "Politics"
+            "subDisciplineName2": "Politics",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3186,13 +3752,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3203,11 +3770,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-071",
@@ -3218,11 +3788,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "International Relations",
-            "subDisciplineName2": "Politics"
+            "subDisciplineName2": "Politics",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3232,13 +3806,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3249,11 +3824,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-072",
@@ -3264,12 +3842,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Economics",
             "subDisciplineName2": "Finance",
-            "subDisciplineName3": "Management"
+            "subDisciplineName3": "Management",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3279,13 +3860,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3296,11 +3878,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-073",
@@ -3311,11 +3896,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Economics",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3325,13 +3914,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3342,11 +3932,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-074",
@@ -3357,11 +3950,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3371,13 +3968,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3388,11 +3986,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-075",
@@ -3403,7 +4004,8 @@
         },
         "academicLevel": "Certificate",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
@@ -3420,13 +4022,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3437,11 +4040,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-076",
@@ -3452,12 +4058,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
             "subDisciplineName2": "Management",
-            "subDisciplineName3": "Mathematics"
+            "subDisciplineName3": "Mathematics",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3467,13 +4076,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of London",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3484,11 +4094,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
         "id": "programme-077",
@@ -3499,10 +4112,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Accounting and Finance"
+            "subDisciplineName1": "Accounting and Finance",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3512,13 +4130,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3529,11 +4148,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-078",
@@ -3544,12 +4166,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
             "subDisciplineName2": "Management",
-            "subDisciplineName3": "Communication"
+            "subDisciplineName3": "Communication",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3559,13 +4184,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3576,11 +4202,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-079",
@@ -3591,12 +4220,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
             "subDisciplineName2": "Management",
-            "subDisciplineName3": "Communication"
+            "subDisciplineName3": "Communication",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3606,13 +4238,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3623,11 +4256,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-080",
@@ -3638,11 +4274,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3652,13 +4292,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3669,11 +4310,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-081",
@@ -3684,11 +4328,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "International Business"
+            "subDisciplineName2": "International Business",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3698,13 +4346,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3715,11 +4364,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-082",
@@ -3730,11 +4382,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Business",
-            "subDisciplineName2": "International Business"
+            "subDisciplineName2": "International Business",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3744,13 +4400,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3761,11 +4418,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-083",
@@ -3776,10 +4436,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Management"
+            "subDisciplineName1": "Management",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3789,13 +4454,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3806,11 +4472,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-084",
@@ -3821,11 +4490,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Entrepreneurship and Innovation",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3835,13 +4508,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3852,11 +4526,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-085",
@@ -3867,11 +4544,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Organisational Leadership and Change",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3881,13 +4562,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3898,11 +4580,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-086",
@@ -3913,11 +4598,15 @@
         },
         "academicLevel": "Postgraduate/Masters",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Strategy",
-            "subDisciplineName2": "Management"
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": false,
@@ -3927,13 +4616,14 @@
         },
         "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3944,11 +4634,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
         "id": "programme-087",
@@ -3964,7 +4657,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Geographic Information Science",
-            "subDisciplineName2": "Business Administration"
+            "subDisciplineName2": "Business Administration",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -3974,13 +4670,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -3991,11 +4688,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-088",
@@ -4011,7 +4711,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Geographic Information Science",
-            "subDisciplineName2": "Communication"
+            "subDisciplineName2": "Communication",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4021,13 +4724,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4038,11 +4742,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-089",
@@ -4058,7 +4765,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Geographic Information Science",
-            "subDisciplineName2": "Economics"
+            "subDisciplineName2": "Economics",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4068,13 +4778,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4085,11 +4796,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-090",
@@ -4105,7 +4819,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Geographic Information Science",
-            "subDisciplineName2": "International Trade"
+            "subDisciplineName2": "International Trade",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4115,13 +4832,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4132,11 +4850,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-091",
@@ -4152,7 +4873,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Geographic Information Science",
-            "subDisciplineName2": "Psychology"
+            "subDisciplineName2": "Psychology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4162,13 +4886,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4179,11 +4904,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-092",
@@ -4199,7 +4927,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Geographic Information Science",
-            "subDisciplineName2": "Sociology"
+            "subDisciplineName2": "Sociology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4209,13 +4940,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4226,11 +4958,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-093",
@@ -4241,10 +4976,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Specialty"
+            "disciplineName1": "Specialty",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Geographic Information Science"
+            "subDisciplineName1": "Geographic Information Science",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4254,13 +4994,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4271,11 +5012,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-094",
@@ -4291,7 +5035,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Business Administration",
-            "subDisciplineName2": "Communication"
+            "subDisciplineName2": "Communication",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4301,13 +5048,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4318,11 +5066,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-095",
@@ -4338,7 +5089,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Business Administration",
-            "subDisciplineName2": "Economics"
+            "subDisciplineName2": "Economics",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4348,13 +5102,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4365,11 +5120,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-096",
@@ -4385,7 +5143,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Business Administration",
-            "subDisciplineName2": "International Trade"
+            "subDisciplineName2": "International Trade",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4395,13 +5156,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4412,11 +5174,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-097",
@@ -4432,7 +5197,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Business Administration",
-            "subDisciplineName2": "Psychology"
+            "subDisciplineName2": "Psychology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4442,13 +5210,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4459,11 +5228,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-098",
@@ -4479,7 +5251,10 @@
         },
         "subDiscipline": {
             "subDisciplineName1": "Business Administration",
-            "subDisciplineName2": "Sociology"
+            "subDisciplineName2": "Sociology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4489,13 +5264,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4506,11 +5282,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-099",
@@ -4521,10 +5300,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Business"
+            "disciplineName1": "Business",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Business"
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4534,13 +5318,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4551,11 +5336,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-100",
@@ -4566,11 +5354,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Communication",
-            "subDisciplineName2": "Economics"
+            "subDisciplineName2": "Economics",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4580,13 +5372,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4597,11 +5390,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-101",
@@ -4612,11 +5408,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Communication",
-            "subDisciplineName2": "International Trade"
+            "subDisciplineName2": "International Trade",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4626,13 +5426,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4643,11 +5444,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-102",
@@ -4658,11 +5462,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Communication",
-            "subDisciplineName2": "Psychology"
+            "subDisciplineName2": "Psychology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4672,13 +5480,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4689,11 +5498,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-103",
@@ -4704,11 +5516,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Communication",
-            "subDisciplineName2": "Sociology"
+            "subDisciplineName2": "Sociology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4718,13 +5534,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4735,11 +5552,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-104",
@@ -4750,10 +5570,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Communication"
+            "subDisciplineName1": "Communication",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4763,13 +5588,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4780,11 +5606,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-105",
@@ -4795,11 +5624,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Economics",
-            "subDisciplineName2": "International Trade"
+            "subDisciplineName2": "International Trade",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4809,13 +5642,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4826,11 +5660,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-106",
@@ -4841,11 +5678,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Economics",
-            "subDisciplineName2": "Psychology"
+            "subDisciplineName2": "Psychology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4855,13 +5696,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4872,11 +5714,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-107",
@@ -4887,11 +5732,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Economics",
-            "subDisciplineName2": "Sociology"
+            "subDisciplineName2": "Sociology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4901,13 +5750,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4918,11 +5768,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-108",
@@ -4933,10 +5786,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Economics"
+            "subDisciplineName1": "Economics",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4946,13 +5804,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -4963,11 +5822,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-109",
@@ -4978,11 +5840,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "International Trade",
-            "subDisciplineName2": "Psychology"
+            "subDisciplineName2": "Psychology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -4992,13 +5858,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -5009,11 +5876,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-110",
@@ -5024,11 +5894,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "International Trade",
-            "subDisciplineName2": "Sociology"
+            "subDisciplineName2": "Sociology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -5038,13 +5912,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -5055,11 +5930,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-111",
@@ -5070,10 +5948,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "International Trade"
+            "subDisciplineName1": "International Trade",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -5083,13 +5966,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -5100,11 +5984,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-112",
@@ -5115,11 +6002,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
             "subDisciplineName1": "Psychology",
-            "subDisciplineName2": "Sociology"
+            "subDisciplineName2": "Sociology",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -5129,13 +6020,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -5146,11 +6038,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-113",
@@ -5161,10 +6056,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Psychology"
+            "subDisciplineName1": "Psychology",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -5174,13 +6074,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -5191,11 +6092,14 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
     {
         "id": "programme-114",
@@ -5206,10 +6110,15 @@
         },
         "academicLevel": "Bachelor",
         "discipline": {
-            "disciplineName1": "Arts & Social Sciences"
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": ""
         },
         "subDiscipline": {
-            "subDisciplineName1": "Sociology"
+            "subDisciplineName1": "Sociology",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
         },
         "entryQualifications": {
             "aLevel": true,
@@ -5219,13 +6128,14 @@
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
-        "programOverview": {
+        "programmeOverview": {
             "aboutProgramme1": "",
             "aboutProgramme2": "",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": ""
+            "period1": "",
+            "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
@@ -5236,10 +6146,13 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": ""
+            "partTime": "",
+            "fullTime": ""
         },
         "duration": {
-            "partTime": ""
-        }
+            "partTime": "",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     }
 ]

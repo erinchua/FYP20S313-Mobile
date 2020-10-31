@@ -24,7 +24,8 @@ const MyProfile: React.FC = () => {
 
     const [fieldDisable, setFieldDisable] = useState(true);
     const [profileUi, setProfileUi] = useState({ profileNav: true, editProfile: true, changePassword: true });
-    const [alert, setAlert] = useState({ success: false, error: false });
+    const [profileAlert, setProfileAlert] = useState({ success: false, error: false });
+    const [passwordAlert, setPasswordAlert] = useState({ success: false, error: false });
 
     {/* Edit Profile */ }
     const editMode = () => {
@@ -39,7 +40,7 @@ const MyProfile: React.FC = () => {
                 contactNo: data.contactNo,
                 highestQualification: data.highestQualification,
             });
-            setAlert({ success: true, error: false });
+            setProfileAlert({ success: true, error: false });
         } catch (e) {
             return console.log(e);
         } finally {
@@ -65,12 +66,12 @@ const MyProfile: React.FC = () => {
                     console.log("reauthenticated", uCred)
                     await user!.updatePassword(data.newPassword).then(() => console.log("password updated"));
                 });
-                setAlert({ success: true, error: false });
+                setPasswordAlert({ success: true, error: false });
             } else {
                 throw data;
             }
         } catch (e) {
-            setAlert({ success: false, error: true });
+            setPasswordAlert({ success: false, error: true });
             return console.log(e);
         } finally {
             setLoading(false);
@@ -170,8 +171,8 @@ const MyProfile: React.FC = () => {
             </IonModal>
 
             <IonAlert
-                isOpen={alert.success}
-                onDidDismiss={() => setAlert({ success: false, error: false })}
+                isOpen={passwordAlert.success}
+                onDidDismiss={() => setPasswordAlert({ success: false, error: false })}
                 cssClass='alertBox'
                 mode='md'
                 header={'Successfully Changed Password'}
@@ -335,8 +336,8 @@ const MyProfile: React.FC = () => {
                                     <IonRow id="editProfileBtnRow" class="ion-align-items-center">
                                         <IonCol size="12" sizeSm="12" class="ion-text-center" id="saveEditProfileBtnCol">
                                             <IonAlert
-                                                isOpen={alert.success}
-                                                onDidDismiss={() => setAlert({ success: false, error: false })}
+                                                isOpen={profileAlert.success}
+                                                onDidDismiss={() => setProfileAlert({ success: false, error: false })}
                                                 cssClass='alertBox'
                                                 header={'Profile Updated'}
                                                 message={'Your profile has been successfully updated!'}
@@ -351,7 +352,7 @@ const MyProfile: React.FC = () => {
                                                 ]}
                                             />
 
-                                            <IonAlert isOpen={alert.error} onDidDismiss={() => setAlert({ success: false, error: false })} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
+                                            <IonAlert isOpen={profileAlert.error} onDidDismiss={() => setProfileAlert({ success: false, error: false })} cssClass='alertBox' header={'Error Occurred!'} message={'Please enter the correct information for the fields.'} buttons={['OK']}></IonAlert>
                                             <IonButton id="saveEditProfileBtn" type="submit">SAVE</IonButton>
                                         </IonCol>
                                     </IonRow>

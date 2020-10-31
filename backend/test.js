@@ -104,6 +104,8 @@ const dateObject2 = {
     start: "11:00AM", end: "12:00PM"
 }
 function toDateObject(date, time) {
+    if (time == "") time = "00:00AM";
+
     const dateSplit = date.split("-");
     const timeSplit = time.split(":");
 
@@ -117,11 +119,12 @@ function toDateObject(date, time) {
     if (hours < 12 && meridiem.toUpperCase() == "PM") hours += 12;
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
-};
-const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
-const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end); */}
+}; */}
+//const start1 = toDateObject(dateObject1.date, dateObject1.start), end1 = toDateObject(dateObject1.date, dateObject1.end);
+//const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
 //console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
 //console.log(end1-start1)
+//console.log(toDateObject("21-Nov-2020", ""))
 
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater), toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
@@ -191,7 +194,7 @@ const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateO
     });
 }); */}
 
-/* const all = [];
+{/* const all = [];
 db.collection('Forum').get().then(users => {
 
     users.forEach(async user => {
@@ -236,9 +239,9 @@ setTimeout(() => {
         }
     });
     console.log(matchedPosts)
-}, 1000); */
+}, 1000); */}
 
-/* function mapTo (doc) {
+{/* function mapTo (doc) {
     return {
         ...doc.data()
     }
@@ -246,7 +249,6 @@ setTimeout(() => {
 db.collection('Brochures').get().then(({docs}) => {
     console.log(docs.map(mapTo))
 }) */
-
 /* function sortTime (a, b) {
     let aHour = +a.split(":")[0], bHour = +b.split(":")[0];
     const aMins = +a.split(":")[1].slice(0, 2), bMins = +b.split(":")[1].slice(0, 2);
@@ -258,15 +260,15 @@ db.collection('Brochures').get().then(({docs}) => {
     console.log(aHour, aMins, aMeridiem)
     console.log(bHour, bMins, bMeridiem)
 }
-sortTime("10:00AM", "1:30PM") */
+sortTime("10:00AM", "1:30PM") */}
 
-/* const a = [{num: 1}, {num: 2}, {num: 3}, {num: 1}, {num: 4}]
+{/* const a = [{num: 1}, {num: 2}, {num: 3}, {num: 1}, {num: 4}]
 uniqueArray = a.filter(function(item, pos, self) {
     return self.indexOf(item) === pos;
 })
-console.log(uniqueArray) */
+console.log(uniqueArray) */}
 
-/* let registeredInfo = {};
+{/* let registeredInfo = {};
 db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student => {
     if (student.exists) {
         registeredInfo.studentName = student.data().firstName;
@@ -274,12 +276,13 @@ db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student
         registeredInfo.email = student.data().email;
     }
     console.log(registeredInfo)
-}) */
+}) */}
 
 /* db.collection('Games').doc('2S7lngNuQkabNnZip7HZ5RoVAc63').get().then(doc => {
     console.log(doc.data().redeemed.includes("prize-002"))
 }); */
-db.collection("Prizes").get().then((snapshot) => {
+
+{/* db.collection("Prizes").get().then((snapshot) => {
     const prizes = [];
     const venue = [];
     snapshot.forEach((doc) => {
@@ -296,4 +299,128 @@ db.collection("Prizes").get().then((snapshot) => {
     });
     console.log(prizes);
     console.log(venue);
+}) */}
+
+//console.log(new Date().getTime())
+
+{/* db.collection('CampusLocation').get().then(snaps => {
+    snaps.forEach(doc => {
+        const data = doc.data();
+        if (doc.id === "bus") {
+            const busInfo = [];
+
+            for (let i = 0; i < Object.keys(data).length; i++) {
+                if (Object.keys(data)[i] !== "id") {
+                    const busArr = [];
+                    const buses = data[Object.keys(data)[i]].buses;
+                    const description = data[Object.keys(data)[i]].description;
+
+                    for (let i = 0; i < Object.keys(buses).length; i++) {
+                        busArr.push(buses[Object.keys(buses)[i]]);
+                    }
+
+                    busInfo.push({ description: description, buses: busArr.join(", ") });
+                }
+            }
+
+            console.log(busInfo);
+
+            //console.log(simHqBusArr.join(", "));
+            //console.log(oppSimHqBusArr.join(", "));
+        }
+        if (doc.id === "car") {
+            const carparkInfo = data.carParkingDescription;
+            //console.log({ byCar: data.carDescription, carparkInfo: carparkInfo });
+            console.log(carparkInfo)
+        }
+    });
+}); */}
+{/* const sim = ['154B', '61', '151', '154', '74E', '75', '74', '151E', '184', '52']
+const oppSim = ['74E', '74', '154', '52', '75', '61', '151', '184', '151E']
+function sortFunction(a, b) {
+    const aSplit = a.match(/[a-zA-Z]+|\d+/ig)
+    const bSplit = b.match(/[a-zA-Z]+|\d+/ig)
+
+    if (+aSplit[0] > +bSplit[0]) {
+        return 1;
+    }
+
+    if (+aSplit[0] < +bSplit[0]) {
+        return -1;
+    }
+
+    if (+aSplit[0] == +bSplit[0]) {
+        //console.log("a " + aSplit)
+        //console.log("b " + bSplit)
+        if (aSplit[1] == '' && bSplit[1] != '') {
+            return 1;
+        }
+        if (aSplit[1] != '' && bSplit[1] == '') {
+            return -1;
+        }
+        if (aSplit[1] != '' && bSplit[1] != '') {
+            if (aSplit[1] < bSplit[1]) {
+                return -1;
+            }
+            if (aSplit[1] > bSplit[1]) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+console.log(sim.sort(sortFunction).join(", "))
+console.log(oppSim.sort(sortFunction).join(", ")) */
+/* db.collection("CampusLocation").doc("bus").get().then((snapshot) => {
+    const oppSimHq = [];
+    const simHq = [];
+
+    const oppSim = snapshot.data().oppSimHq.buses;
+    for (var i = 0; i < Object.keys(oppSim).length; i++) {
+        oppSimHq.push(oppSim[Object.keys(oppSim)[i]]);
+    }
+
+    const sim = snapshot.data().simHq.buses;
+    for (var i = 0; i < Object.keys(sim).length; i++) {
+        simHq.push(sim[Object.keys(sim)[i]]);
+    }
+
+    //console.log("busOppSimArray", oppSimHq.sort(sortFunction).join(", "))
+    //console.log("busSimArray", simHq.sort(sortFunction).join(", "))
+    console.log("sim", simHq)
+    console.log("simjoin", oppSimHq)
+}); */}
+//console.log('A' > 'Z')
+
+/* db.collection('ContactInfo').get().then(snapshot => {
+    const local = [];
+    const overseas = [];
+
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+
+        if (data.country === "local") {
+            const opHours = data.operatingHours;
+            const opArr = [];
+
+            for (let i = 0; i < Object.keys(opHours).length; i++) {
+                const op = opHours[Object.keys(opHours)[i]];
+
+                if (op !== "") {
+                    opArr.push(op);
+                }
+            }
+            const contact = {
+                ...data,
+                operatingHours: opArr
+            }
+            console.log(contact)
+        }
+    });
+}); */
+
+db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ', 'Bursary-FAQ']).get().then(docs => {
+    docs.forEach(doc => {
+        console.log(doc.data())
+    })
 })

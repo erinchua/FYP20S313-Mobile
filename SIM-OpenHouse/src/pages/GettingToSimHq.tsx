@@ -10,15 +10,59 @@ import { db } from '../firebase';
 
 const GettingToSimHq: React.FC = () => {
 
-    const [buses, setBuses] = useState<number[]>([])
-    const [mrt, setMrt] = useState<string[]>([])
-    const [car, setCar] = useState<any>([])
+    const [car, setCar] = useState({ byCar: "", carparkInfo: "" });
+    const [bus, setBus] = useState([]);
+    const [mrt, setMrt] = useState([]);
 
     useEffect(() => {
-        const data = []
+        db.collection('CampusLocation').get().then(snaps => {
+            snaps.forEach(doc => {
+                const data = doc.data();
 
-        db.collection('CampusLocation')
+                if (doc.id === "car") {
+                    setCar({ byCar: data.carDescription, carparkInfo: data.carParkingDescription });
+                }
 
+                if (doc.id === "bus") {
+                    const busInfo: any = [];
+
+                    for (let i = 0; i < Object.keys(data).length; i++) {
+                        if (Object.keys(data)[i] !== "id") {
+                            const busArr = [];
+                            const buses = data[Object.keys(data)[i]].buses;
+                            const description = data[Object.keys(data)[i]].description;
+
+                            for (let i = 0; i < Object.keys(buses).length; i++) {
+                                busArr.push(buses[Object.keys(buses)[i]]);
+                            }
+
+                            busInfo.push({ description: description, buses: busArr.join(", ") });
+                        }
+                    }
+
+                    setBus(busInfo);
+                }
+                if (doc.id === "mrt") {
+                    const mrtInfo: any = [];
+
+                    for (let i = 0; i < Object.keys(data).length; i++) {
+                        if (Object.keys(data)[i] !== "id") {
+                            const mrtArr = [];
+                            const stations = data[Object.keys(data)[i]].stations;
+                            const description = data[Object.keys(data)[i]].description;
+
+                            for (let i = 0; i < Object.keys(stations).length; i++) {
+                                mrtArr.push(stations[Object.keys(stations)[i]]);
+                            }
+
+                            mrtInfo.push({ description: description, stations: mrtArr.join(", ") });
+                        }
+                    }
+
+                    setMrt(mrtInfo);
+                }
+            });
+        });
     }, [])
     return (
         <IonPage>
@@ -36,9 +80,7 @@ const GettingToSimHq: React.FC = () => {
                         <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faCar} size="lg" />By Car</IonTitle>
                     </IonRow>
                     <IonRow>
-                        <IonText className="gettingToSimHq-description">
-                            The campus is easily accessible via Pan-Expressway (PIE), go via Exit 26A and turn into Clementi Road.
-                        </IonText>
+                        <IonText className="gettingToSimHq-description">{car.byCar}</IonText>
                     </IonRow>
                     <IonRow className="gettingToSimHq-heading-row">
                         <IonTitle className="gettingToSimHq-title"><FontAwesomeIcon className="gettingToSimHq-titleIcon" icon={faBus} size="lg" />By Bus</IonTitle>
@@ -49,14 +91,14 @@ const GettingToSimHq: React.FC = () => {
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Location</IonCol>
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Bus Number</IonCol>
                             </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">SIMHQ <br />12091 <br />Clementi Rd</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">52, 61, 74, 75, 151, 154, 184, 74E, 151E, 154B</IonCol>
-                            </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">Opp SIM HQ <br />12099 <br />Clementi Rd</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">52, 61, 74, 75, 151, 154, 184, 74E, 151E</IonCol>
-                            </IonRow>
+                            {bus.map((info: any, index) => {
+                                return (
+                                    <IonRow className="gettingToSimHq-tableRow" key={index}>
+                                        <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">{info.description}</IonCol>
+                                        <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{info.buses}</IonCol>
+                                    </IonRow>
+                                )
+                            })}
                         </IonGrid>
                     </IonRow>
                     <IonRow className="gettingToSimHq-heading-row">
@@ -68,14 +110,14 @@ const GettingToSimHq: React.FC = () => {
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">MRT Line</IonCol>
                                 <IonCol className="gettingToSimHq-tableHeading ion-text-wrap">Nearest MRT</IonCol>
                             </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">Downtown Line</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">King Albert Park MRT <br />Beauty World MRT <br />Sixth Avenue</IonCol>
-                            </IonRow>
-                            <IonRow className="gettingToSimHq-tableRow">
-                                <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">East West Line</IonCol>
-                                <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">Clementi MRT <br />Dover MRT</IonCol>
-                            </IonRow>
+                            {mrt.map((info: any, index) => {
+                                return (
+                                    <IonRow className="gettingToSimHq-tableRow" key={index}>
+                                        <IonCol className="gettingToSimHq-table-LeftData ion-text-wrap">{info.description}</IonCol>
+                                        <IonCol className="gettingToSimHq-table-RightData ion-text-wrap">{info.stations}</IonCol>
+                                    </IonRow>
+                                )
+                            })}
                         </IonGrid>
                     </IonRow>
                     <IonRow className="gettingToSimHq-heading-row">
@@ -83,12 +125,13 @@ const GettingToSimHq: React.FC = () => {
                     </IonRow>
                     <IonRow>
                         <IonText className="gettingToSimHq-description">
-                            (With effect from 1 February 2017) <br />
+                            {/* (With effect from 1 February 2017) <br />
                             Applicable to all white lots within SIM HQ car park <br />
                             Charges: Cars - $1.28 (inclusive of GST), based on 30-minute block charging <br />
                             Operating Hours: 6.00am to 11.59pm (Daily including weekends. Closed on Public Holidays) <br />
                             Grace Period: 15 minutes <br />
-                            <br />
+                            <br /> */}
+                            {car.carparkInfo}<br/><br/>
                             <IonRouterLink id="gettingToSimHq-link" href="https://www.google.com/maps/dir//SIM+Global+Education+Singapore/@1.3730975,103.8407254,12z/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x31da1080893304bd:0xc889e76f4e447e42!3e0">Get here now</IonRouterLink>
                         </IonText>
                     </IonRow>
