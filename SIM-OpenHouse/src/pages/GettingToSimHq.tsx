@@ -131,7 +131,7 @@ const GettingToSimHq: React.FC = () => {
                             Operating Hours: 6.00am to 11.59pm (Daily including weekends. Closed on Public Holidays) <br />
                             Grace Period: 15 minutes <br />
                             <br /> */}
-                            {car.carparkInfo}<br/><br/>
+                            {car.carparkInfo.split('\n').map(line => <span key={line}>{line}<br /></span>)}<br />
                             <IonRouterLink id="gettingToSimHq-link" href="https://www.google.com/maps/dir//SIM+Global+Education+Singapore/@1.3730975,103.8407254,12z/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x31da1080893304bd:0xc889e76f4e447e42!3e0">Get here now</IonRouterLink>
                         </IonText>
                     </IonRow>
