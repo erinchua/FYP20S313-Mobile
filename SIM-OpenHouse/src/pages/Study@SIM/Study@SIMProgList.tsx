@@ -10,7 +10,7 @@ import TopNav from '../../components/TopNav';
 import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopoverContent';
 import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
-import { Programme } from './Study@SIMProgInfo';
+import { Programme } from '../../modules/map';
 import { FilterCondition } from '../../components/FilterPopoverContent'
 import { filter } from 'ionicons/icons';
 import { ObjectFlags } from 'typescript';
@@ -446,38 +446,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         event={showProgCourseFilterPopover.event}
                         onDidDismiss={e => setShowProgCourseFilterPopover({ open: false, event: undefined })}
                     >
-
                         <FilterPopoverContent filterFunction={filterProgrammes} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} setState="" />
-
-
-
-                        {/* {match.params.discipline === "Business" ?
-                            <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "Business"} href={"/u/study@SIMMain/Business/test"} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "IT & Computer Science" ?
-                            <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "IT & Computer Science"} href={"/u/study@SIMMain/IT & Computer Science"} programmes={programmes} filterFor={"study@SIM"} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "Nursing" ?
-                            <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "Nursing"} href={"/u/study@SIMMain/Nursing"} filterFor={"study@SIM"} programmes={programmes} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
-                            : ''
-                        }
-
-                        {match.params.discipline === "Specialty" ?
-                            <FilterPopoverContent filterFunction={filterProgrammes}
-                                params={match.params.discipline === "Specialty"} href={"/u/study@SIMMain/Specialty"} filterFor={"study@SIM"} programmes={programmes} filterCondition={filterCondition} onUpdateFilter={onUpdateFilter} discipline={discipline} category={category} />
-                            : ''
-                        } */}
-
                     </IonPopover>
-
-
                 </IonContent>
 
             </IonPage>

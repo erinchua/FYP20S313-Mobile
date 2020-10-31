@@ -5,8 +5,7 @@ import '../css/Global.css';
 import '../css/FilterPopoverContent.css';
 import { chevronDownOutline, chevronUpOutline, filter } from 'ionicons/icons';
 import { db } from '../firebase';
-import { Programme } from '../pages/Study@SIM/Study@SIMProgInfo'
-import { ProgrammeTalk } from '../pages/OpenHouseProgrammes/ProgrammeTalks';
+import { Programme, ProgrammeTalk } from '../modules/map';
 
 interface myProps {
     filterFunction: any;
@@ -17,7 +16,6 @@ interface myProps {
     onUpdateFilter: any;
     setState: any;
     programmes: Programme[] | ProgrammeTalk[];
-    // onUpdateFilter: (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => FilterCondition
 }
 export interface FilterCondition {
     mos: string[],
@@ -492,7 +490,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                     </IonLabel>
 
                                                     <IonBadge slot="end" className="courseFilterCountBadge">{
-                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.discipline == filter).length
+                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.discipline.includes(filter)).length
 
                                                     }</IonBadge>
                                                 </IonItem>
@@ -531,7 +529,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                     </IonLabel>
 
                                                     <IonBadge slot="end" className="courseFilterCountBadge">{
-                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.awardingUni == filter).length
+                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.awardingUni.toLowerCase() == filter.toLowerCase()).length
                                                     }</IonBadge>
                                                 </IonItem>
                                             </div>)
