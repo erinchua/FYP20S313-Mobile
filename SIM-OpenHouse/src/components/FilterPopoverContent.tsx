@@ -492,7 +492,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                     </IonLabel>
 
                                                     <IonBadge slot="end" className="courseFilterCountBadge">{
-                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.discipline == filter).length
+                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.discipline.includes(filter)).length
 
                                                     }</IonBadge>
                                                 </IonItem>
