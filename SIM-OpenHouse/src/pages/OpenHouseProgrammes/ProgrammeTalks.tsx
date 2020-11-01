@@ -13,25 +13,10 @@ import ProgTalkPastRec from '../../components/OpenHouseProgrammes/ProgTalkPastRe
 import FilterPopoverContent, { FilterCondition } from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
 import { TalkFilter } from '../../components/FilterPopoverContent'
-import { Programme } from '../Study@SIM/Study@SIMProgInfo'
 import { useAuth } from '../../modules/auth';
+import { Programme, ProgrammeTalk } from '../../modules/map'
 
-export interface ProgrammeTalk {
-	id: string,
-	talkName: string,
-	awardingUni: string,
-	details: string,
-	discipline: string[],
-	date: string,
-	startTime: string,
-	endTime: string,
-	venue: string,
-	capacityLimit: number,
-	noRegistered: number,
-	isLive: boolean,
-	hasRecording: boolean,
-	url: string
-}
+
 const ProgrammeTalks: React.FC = () => {
 	const { userID } = useAuth();
 	

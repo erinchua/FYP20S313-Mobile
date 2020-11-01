@@ -30,7 +30,7 @@ const CourseComparatorDetails: React.FC<{
 
                         {/* Prog Columns for progTitle in row1 for each programme*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme) => {
-                            return (<div>
+                            return (<div key={programme.id + "row1"}>
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* Uni Img */}
                                     <IonRow class="ion-align-items-center">
@@ -67,13 +67,13 @@ const CourseComparatorDetails: React.FC<{
                         </IonCol>
                         {/* Prog Column for overview in row2 for each programme*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme) => {
-                            return (<div>
+                            return (<div key={programme.id + "row2"}>
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
                                         <div className="ion-text-wrap">
-                                            {programme.programOverview ? programme.programOverview.map((overview) => {
-                                                return (<p>{overview}</p>
+                                            {programme.programOverview ? programme.programOverview.map((overview, index) => {
+                                                return (<p key={overview + index}>{overview}</p>
                                                 )
                                             }) : ''}
                                         </div>
@@ -96,7 +96,7 @@ const CourseComparatorDetails: React.FC<{
 
                         {/* Prog column for Application Period in Row 3 for each programme*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme) => {
-                            return (<div>
+                            return (<div key={programme.id + "row3"}>
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
@@ -128,7 +128,7 @@ const CourseComparatorDetails: React.FC<{
 
                         {/* Prog Columns for progStructure in row 4 for each programme*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme) => {
-                            return (<div>
+                            return (<div key={programme.id + "row4"}>
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* About Prog Text - Coursework */}
                                     <IonRow class="ion-align-items-center">
@@ -171,7 +171,7 @@ const CourseComparatorDetails: React.FC<{
 
                         {/* Prog Col 1*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme) => {
-                            return (<div><IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
+                            return (<div key={programme.id + "row5"}><IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                 {/* About Prog Text - Exchange */}
                                 <IonRow class="ion-align-items-center">
                                     <IonCol size="12" sizeSm="12" class="ion-text-center" style={{ padding: "0" }}>
@@ -213,7 +213,7 @@ const CourseComparatorDetails: React.FC<{
 
                         {/* Prog Col 1*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme: Programme) => {
-                            return (<div>
+                            return (<div key={programme.id + "row6"}>
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
@@ -238,7 +238,7 @@ const CourseComparatorDetails: React.FC<{
                         </IonCol>
                         {/* Prog Col 1*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme) => {
-                            return (<div>
+                            return (<div key={programme.id + "row7"}>
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
@@ -267,7 +267,7 @@ const CourseComparatorDetails: React.FC<{
 
                         {/* Prog Col 1*/}
                         {typeof programmes !== 'undefined' ? programmes.map((programme) => {
-                            return (<div>
+                            return (<div key={programme.id + "row8"}>
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol">
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">

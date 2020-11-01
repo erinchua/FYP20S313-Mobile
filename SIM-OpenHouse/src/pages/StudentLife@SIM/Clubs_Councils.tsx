@@ -16,7 +16,7 @@ const Clubs_Councils: React.FC<RouteComponentProps> = () => {
 
     const [clubCouncils, setClubCouncils] = useState([])
 
-    useEffect(() => {
+    /* useEffect(() => {
         const clubCouncils: any = []
         db.collection('ClubsAndCouncils').get().then((snapshot) => {
             snapshot.forEach((doc) => {
@@ -25,7 +25,7 @@ const Clubs_Councils: React.FC<RouteComponentProps> = () => {
             })
             setClubCouncils(clubCouncils)
         })
-    }, [])
+    }, []) */
 
     return (
         <IonPage>

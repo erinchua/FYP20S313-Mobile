@@ -4,8 +4,9 @@ import React, { useRef } from 'react';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
+import { Brochure } from '../../modules/map';
 
-const SimGeBursary: React.FC = () => {
+const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const valueAndTenureOfBursary = useRef<HTMLIonRowElement>(null);
     const eligibility = useRef<HTMLIonRowElement>(null);
@@ -94,7 +95,7 @@ const SimGeBursary: React.FC = () => {
                     <IonText className="bursary-mainHeading">SIM GE Bursary</IonText>
                 </IonCol>
                 <IonCol className="ion-align-self-center">
-                    <IonButton id="bursary-FAQ-button" size="small">FAQ Download <IonIcon slot="end" icon={cloudDownloadOutline} size="sm"/></IonButton>
+                    <IonButton id="bursary-FAQ-button" size="small" href={props.brochure.brochureUrl} target="_blank">FAQ Download <IonIcon slot="end" icon={cloudDownloadOutline} size="sm"/></IonButton>
                 </IonCol>
             </IonRow>
             <IonRow className="ion-justify-content-start bursary-mainRow">
