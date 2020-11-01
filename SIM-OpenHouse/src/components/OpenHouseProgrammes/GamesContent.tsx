@@ -13,14 +13,9 @@ const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openh
     const { userID } = useAuth();
 
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [buttonDisabled, setButtonDisabled] = useState(false);
 
-    const gamesActivitiesDay1 = props.gamesActivities.filter((activity: any) => {
-        return activity.date == props.openhouseDates[0]
-    })
-    const gamesActivitiesDay2 = props.gamesActivities.filter((activity: any) => {
-        return activity.date == props.openhouseDates[1]
-    })
+    const gamesActivitiesDay1 = props.gamesActivities.filter((activity: any) => { return activity.date === props.openhouseDates[0] });
+    const gamesActivitiesDay2 = props.gamesActivities.filter((activity: any) => { return activity.date === props.openhouseDates[1] });
 
     const addToSchedule = async (programmeTalk: any) => {
         try {

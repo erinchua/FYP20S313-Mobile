@@ -84,35 +84,6 @@ const Forum: React.FC = () => {
             setForumDisabled(disabled);
 
             if (!disabled) {
-                /* db.collection('Forum').get().then(uRef => {
-                    const questions: any = [];
-    
-                    uRef.forEach(user => {
-                        if (user.id === userID && user.data().suspended) 
-                            return history.goBack();
-    
-                        return db.collection('Forum').doc(user.id).collection('Questions').onSnapshot(entries => {
-                            entries.docChanges().forEach(change => {
-                                questions.unshift({
-                                    id: +change.doc.id,
-                                    entry: change.doc.data().entry,
-                                    dateTime: change.doc.data().dateTime,
-                                    user: change.doc.data().posterName,
-                                    uid: change.doc.data().posterId,
-                                    commentCount: change.doc.data().noOfComments,
-                                    removed: change.doc.data().deleted
-                                });
-                            });
-                        });
-                    });
-    
-                    setTimeout(() => {
-                        questions.sort(forumPostsDesc);
-                        setQuestions(questions);
-                        setLoading(false);
-                    }, 500);
-                }); */
-
                 let readRules = false;
                 return db.collection('Forum').doc(userID).onSnapshot(snapshot => {
                     if (snapshot.exists) {

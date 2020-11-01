@@ -38,6 +38,21 @@ export function toBrochure(doc: any): Brochure {
     }
 }
 
+export interface Announcement {
+    id: string;
+    title: string;
+    date: string;
+    time: string;
+    details: string;
+}
+
+export function toAnnouncement(doc: any): Announcement {
+    return {
+        id: doc.id,
+        ...doc.data()
+    }
+}
+
 //For Programmes and programmesTalks
 
 interface ModeOfStudy {

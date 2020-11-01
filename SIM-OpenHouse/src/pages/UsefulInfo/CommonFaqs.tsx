@@ -26,7 +26,7 @@ const CommonFaqs: React.FC = () => {
 
     const displayInfoCol = () => {
         info.current!.hidden = !info.current!.hidden;
-        if (showIcon.current!.icon == addCircle)
+        if (showIcon.current!.icon === addCircle)
             showIcon.current!.icon = removeCircle;
         else
             showIcon.current!.icon = addCircle;
@@ -51,8 +51,6 @@ const CommonFaqs: React.FC = () => {
 
     //const openhouseFaq = faq.filter((faq: any) => { return faq.faqType == 'openhouse' })
     //const generalFaq = faq.filter((faq: any) => { return faq.faqType == 'general' })
-
-    console.log(faqs)
 
     return (
         <IonPage>

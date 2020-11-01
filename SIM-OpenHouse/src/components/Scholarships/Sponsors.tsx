@@ -12,7 +12,7 @@ const Sponsors: React.FC = () => {
 
     const displaySafra = () => {
         safra.current!.hidden = !safra.current!.hidden;
-        if(toggleShow1.current!.icon == addCircle) {
+        if(toggleShow1.current!.icon === addCircle) {
             toggleShow1.current!.icon = removeCircle;
         } else {
             toggleShow1.current!.icon = addCircle;

@@ -1,24 +1,19 @@
-import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonIcon, IonButton, IonItem, IonInput, IonList,
-    IonAlert, IonHeader } from '@ionic/react';
+import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonIcon, IonButton, IonItem, IonInput, IonList, IonAlert, IonHeader } from '@ionic/react';
 import React, {useRef, useState} from 'react';
 import { useForm } from "react-hook-form";
 import {useHistory} from 'react-router-dom';
+import { shieldCheckmarkOutline } from 'ionicons/icons';
 
 import '../../css/ForgetPassword3.css';
 import '../../css/Global.css';
-import { shieldCheckmarkOutline } from 'ionicons/icons';
-
-import { auth } from '../../firebase';
-
 import TopNav from '../../components/TopNav';
+import { auth } from '../../firebase';
 
 
 const ForgetPassword3: React.FC = () => {
-    const { register, handleSubmit, errors, watch, reset, getValues } = useForm();
+    const { register, handleSubmit, errors, watch, getValues } = useForm();
 
     const onSubmit = (data: any) => {
-        //console.log("Submitted");
-        //console.log(data);
         const code: any = new URLSearchParams(window.location.search).get('oobCode');
         auth.confirmPasswordReset(code, data.newPassword).catch(err => { return console.log(err) });
     };
@@ -28,7 +23,6 @@ const ForgetPassword3: React.FC = () => {
 
     const history = useHistory();
 
-    {/*For alert */}
     const [resetPasswordSuccess, setResetPasswordSuccess] = useState(false);
     const [resetPasswordFail, setResetPasswordFail] = useState(false);
 

@@ -65,7 +65,6 @@ const AdmissionApplication: React.FC = () => {
             showIcon5.current!.icon = addCircle;
     };
 
-
     return (
         <IonPage>
             <IonHeader>

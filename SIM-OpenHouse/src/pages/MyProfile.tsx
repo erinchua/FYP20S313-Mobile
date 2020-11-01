@@ -106,8 +106,6 @@ const MyProfile: React.FC = () => {
         });
     }, []);
 
-    //console.log(student)
-
     return (
         <React.Fragment>
             {/* Change Password Modal */}
@@ -181,11 +179,6 @@ const MyProfile: React.FC = () => {
                     {
                         text: 'Close',
                         handler: () => {
-                            /* reset({
-                                currentPassword: "",
-                                newPassword: "",
-                                confirmNewPassword: ""
-                            }); */
                             setChangePasswordModal(false);
                         }
                     }

@@ -65,7 +65,7 @@ const ForumUser: React.FC = () => {
         }
     }
 
-    useEffect(() => {
+    /* useEffect(() => {
         const questions: any = [];
         const comments: any = [];
 
@@ -75,9 +75,18 @@ const ForumUser: React.FC = () => {
 
         const commentsListener = db.collection('Forum').doc(userID).collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
             setComments(comments);
-            
+
             snaps.forEach(async (snap) => {
                 let post: any = { ...snap.data() }
+
+                const questionRef = db.collectionGroup('Questions').where("id", "==", snap.data().questionId).onSnapshot(questions => {
+                    questions.forEach(question => {
+                        if (question.exists) {
+                            post.question = question.data()?.entry;
+                            post.questionRemoved = question.data()?.deleted;
+                        }
+                    });
+                }); 
 
                 await db.collection('Forum').get().then(users => {
                     users.forEach(user => {
@@ -90,6 +99,7 @@ const ForumUser: React.FC = () => {
                     });
                 });
                 comments.push(post)
+                //questionRef();
             });
         });
 
@@ -101,12 +111,12 @@ const ForumUser: React.FC = () => {
             commentsListener();
             setLoading(false);
         }, 500);
-    }, []);
-   
+    }, []); */
+
     return (
         <IonPage>
             <IonHeader>
-                <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true } />
+                <TopNav title="Forum" route="/u/forum" backarrow={true} hamburger={true} />
             </IonHeader>
 
             <IonContent fullscreen id="forum-content">
@@ -122,7 +132,7 @@ const ForumUser: React.FC = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-                
+
                 <IonGrid id="forumUser-ionRowCol">
                     <IonRow id="forumUser-ionRowCol">
                         <IonCol id="forumUser-ionRowCol">
@@ -135,15 +145,15 @@ const ForumUser: React.FC = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-                {qnsCom === 'forum-myQuestions' ? 
+                {qnsCom === 'forum-myQuestions' ?
                     <ForumQuestions questions={questions} /> : <ForumComments comments={comments} />
                 }
-                
+
                 {/* Post Question Modal */}
                 <IonModal isOpen={showPostModal} cssClass='post-question-modal' onDidDismiss={() => setShowPostModal(false)}>
                     <IonContent>
                         <IonGrid id="postQns-modal-container">
-                            <IonRow style={{paddingTop: '1%'}}>
+                            <IonRow style={{ paddingTop: '1%' }}>
                                 <IonLabel id="postQns-title">Post Question</IonLabel>
                             </IonRow>
                             <IonItemDivider />
@@ -164,7 +174,7 @@ const ForumUser: React.FC = () => {
                 <IonToolbar>
                     <IonSegment scrollable value={modalSegmentValue} onIonChange={(e) => console.log(`${e.detail.value}`)}>
                         <IonSegmentButton className="forum-segmentBtn" value="postQuestionBtn" onClick={() => [setShowPostModal(true), setModalSegmentValue('postQuestionBtn')]}><IonIcon icon={addCircleSharp} /></IonSegmentButton>
-                        <IonSegmentButton className="forum-segmentBtn" value="forumUserBtn" onClick={(e) => {e.preventDefault(); history.push('/u/forumUser');}}><IonIcon icon={personSharp} /></IonSegmentButton>
+                        <IonSegmentButton className="forum-segmentBtn" value="forumUserBtn" onClick={(e) => { e.preventDefault(); history.push('/u/forumUser'); }}><IonIcon icon={personSharp} /></IonSegmentButton>
                     </IonSegment>
                 </IonToolbar>
             </IonFooter>

@@ -1,16 +1,14 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonPage, IonRow, IonTitle } from '@ionic/react';
 import React, { useRef, useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { db } from '../../firebase'
-
-import '../../css/Global.css';
-import '../../css/Study@SIMProgInfo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { addCircle, removeCircle } from 'ionicons/icons';
 
-
+import '../../css/Global.css';
+import '../../css/Study@SIMProgInfo.css';
 import TopNav from '../../components/TopNav';
+import { db } from '../../firebase'
 
 interface StudySIMProgInfo_Props extends RouteComponentProps<{
     discipline: string;
@@ -66,12 +64,12 @@ export interface Programme {
 }
 
 const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
-    { console.log("ProgInfo has entered!") }
-    { console.log(match) }
+    //console.log("ProgInfo has entered!")
+    //console.log(match)
 
     const discipline = match.params.discipline
     const category = match.params.category
-    const id = match.params.id
+    //const id = match.params.id
     /*Programme Data*/
     const [programme, setProgrammes] = useState<Programme>({
         id: "",

@@ -1,9 +1,8 @@
 import { IonBadge, IonButton, IonCheckbox, IonCol, IonFooter, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useEffect, useRef, useState } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 import '../css/Global.css';
 import '../css/FilterPopoverContent.css';
-import { chevronDownOutline, chevronUpOutline, filter } from 'ionicons/icons';
+import { chevronDownOutline, chevronUpOutline } from 'ionicons/icons';
 import { db } from '../firebase';
 import { Programme, ProgrammeTalk } from '../modules/map';
 
@@ -90,49 +89,49 @@ const FilterPopoverContent: React.FC<myProps> = props => {
 
     }, [])
 
-    {/* Display Mode of Study Filters */ }
+    /* Display Mode of Study Filters */
     const MOSInfo = useRef<HTMLIonRowElement>(null);
     const showMOSIcon = useRef<HTMLIonIconElement>(null);
 
     const displayMOSInfoCol = () => {
         MOSInfo.current!.hidden = !MOSInfo.current!.hidden;
-        if (showMOSIcon.current!.icon == chevronDownOutline)
+        if (showMOSIcon.current!.icon === chevronDownOutline)
             showMOSIcon.current!.icon = chevronUpOutline;
         else
             showMOSIcon.current!.icon = chevronDownOutline;
     };
 
-    {/* Display Discipline Filters */ }
+    /* Display Discipline Filters */ 
     const disciplineInfo = useRef<HTMLIonRowElement>(null);
     const showDisciplineIcon = useRef<HTMLIonIconElement>(null);
 
     const displayDisciplineInfoCol = () => {
         disciplineInfo.current!.hidden = !disciplineInfo.current!.hidden;
-        if (showDisciplineIcon.current!.icon == chevronDownOutline)
+        if (showDisciplineIcon.current!.icon === chevronDownOutline)
             showDisciplineIcon.current!.icon = chevronUpOutline;
         else
             showDisciplineIcon.current!.icon = chevronDownOutline;
     };
 
-    {/* Display Uni Partners Filters */ }
+    /* Display Uni Partners Filters */
     const uniPartnerInfo = useRef<HTMLIonRowElement>(null);
     const showUniPartnerIcon = useRef<HTMLIonIconElement>(null);
 
     const displayUniPartnerInfoCol = () => {
         uniPartnerInfo.current!.hidden = !uniPartnerInfo.current!.hidden;
-        if (showUniPartnerIcon.current!.icon == chevronDownOutline)
+        if (showUniPartnerIcon.current!.icon === chevronDownOutline)
             showUniPartnerIcon.current!.icon = chevronUpOutline;
         else
             showUniPartnerIcon.current!.icon = chevronDownOutline;
     };
 
-    {/* Display Academic Level Filters */ }
+    /* Display Academic Level Filters */
     const academicLvlInfo = useRef<HTMLIonRowElement>(null);
     const showAcademicLvlIcon = useRef<HTMLIonIconElement>(null);
 
     const displayAcademicLvlInfoCol = () => {
         academicLvlInfo.current!.hidden = !academicLvlInfo.current!.hidden;
-        if (showAcademicLvlIcon.current!.icon == chevronDownOutline)
+        if (showAcademicLvlIcon.current!.icon === chevronDownOutline)
             showAcademicLvlIcon.current!.icon = chevronUpOutline;
         else
             showAcademicLvlIcon.current!.icon = chevronDownOutline;
@@ -144,28 +143,28 @@ const FilterPopoverContent: React.FC<myProps> = props => {
 
     const displayEntryQualInfoCol = () => {
         entryQualInfo.current!.hidden = !entryQualInfo.current!.hidden;
-        if (showEntryQualIcon.current!.icon == chevronDownOutline)
+        if (showEntryQualIcon.current!.icon === chevronDownOutline)
             showEntryQualIcon.current!.icon = chevronUpOutline;
         else
             showEntryQualIcon.current!.icon = chevronDownOutline;
     };
 
-    {/* Display Sub Disciplines Filters */ }
+    /* Display Sub Disciplines Filters */
     const subDisciplineInfo = useRef<HTMLIonRowElement>(null);
     const showSubDisciplineIcon = useRef<HTMLIonIconElement>(null);
 
     const displaySubDisciplineInfoCol = () => {
         subDisciplineInfo.current!.hidden = !subDisciplineInfo.current!.hidden;
-        if (showSubDisciplineIcon.current!.icon == chevronDownOutline)
+        if (showSubDisciplineIcon.current!.icon === chevronDownOutline)
             showSubDisciplineIcon.current!.icon = chevronUpOutline;
         else
             showSubDisciplineIcon.current!.icon = chevronDownOutline;
     };
 
 
-    {/* Check if filter is checked */ }
-    const [checked, setChecked] = useState(false);
-    const [courseFilterCount, setCourseFilterCount] = useState(0);
+    /* Check if filter is checked */
+    //const [checked, setChecked] = useState(false);
+    //const [courseFilterCount, setCourseFilterCount] = useState(0);
 
     //Filter handlers
 
@@ -232,9 +231,9 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <IonBadge slot="end" className="courseFilterCountBadge">
                                                             {
                                                                 <div>
-                                                                    {filter == 'fullPartTime' ? <div>{(props.programmes as Programme[]).filter((programme: any) => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
-                                                                    {filter == 'partTime' ? <div>{(props.programmes as Programme[]).filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
-                                                                    {filter == 'fullTime' ? <div>{(props.programmes as Programme[]).filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter === 'fullPartTime' ? <div>{(props.programmes as Programme[]).filter((programme: any) => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter === 'partTime' ? <div>{(props.programmes as Programme[]).filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime).length}</div> : ''}
+                                                                    {filter === 'fullTime' ? <div>{(props.programmes as Programme[]).filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime).length}</div> : ''}
 
                                                                 </div>
                                                             }
@@ -315,7 +314,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{(props.programmes as Programme[]).filter(programme => programme.awardedBy == filter).length}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{(props.programmes as Programme[]).filter(programme => programme.awardedBy === filter).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -351,7 +350,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                         <div className="ion-text-wrap">{filter}</div>
                                                     </IonLabel>
 
-                                                    <IonBadge slot="end" className="courseFilterCountBadge">{(props.programmes as Programme[]).filter(programme => programme.academicLevel == filter).length}</IonBadge>
+                                                    <IonBadge slot="end" className="courseFilterCountBadge">{(props.programmes as Programme[]).filter(programme => programme.academicLevel === filter).length}</IonBadge>
                                                 </IonItem>
                                             </div>)
                                         })}
@@ -529,7 +528,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                     </IonLabel>
 
                                                     <IonBadge slot="end" className="courseFilterCountBadge">{
-                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.awardingUni.toLowerCase() == filter.toLowerCase()).length
+                                                        (props.programmes as ProgrammeTalk[]).filter((talk: ProgrammeTalk) => talk.awardingUni.toLowerCase() === filter.toLowerCase()).length
                                                     }</IonBadge>
                                                 </IonItem>
                                             </div>)

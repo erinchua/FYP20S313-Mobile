@@ -24,19 +24,19 @@ const Clubs_Councils_Details: React.FC<Clubs_Councils_Details_Props> = ({ match 
     const [clubCouncils, setClubCouncils] = useState([]);
 
     const artCulture = clubCouncils.filter((club: any) => {
-        return club.categoryType == 'Arts & Culture'
+        return club.categoryType === 'Arts & Culture'
     })
     const internationalStud = clubCouncils.filter((club: any) => {
-        return club.categoryType == 'InternationalStudent'
+        return club.categoryType === 'InternationalStudent'
     })
     const studCouncil = clubCouncils.filter((club: any) => {
-        return club.categoryType == 'StudentCouncil'
+        return club.categoryType === 'StudentCouncil'
     })
     const specialInterest = clubCouncils.filter((club: any) => {
-        return club.categoryType == 'SpecialInterest'
+        return club.categoryType === 'SpecialInterest'
     })
     const sportFitness = clubCouncils.filter((club: any) => {
-        return club.categoryType == 'SportsFitness'
+        return club.categoryType === 'SportsFitness'
     })
 
     useEffect(() => {

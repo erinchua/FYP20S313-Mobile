@@ -1,6 +1,5 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
-import React, { useContext } from 'react';
-import { NavContext } from '@ionic/react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faCalendarAlt, faComments, faMapSigns, faMapMarkedAlt, faInfoCircle, faPhotoVideo, faBookOpen, faHands, faBell } from '@fortawesome/free-solid-svg-icons';
 import { faReadme } from '@fortawesome/free-brands-svg-icons';
@@ -9,12 +8,8 @@ import '../css/Global.css';
 import '../css/Home.css';
 import TopNav from '../components/TopNav'
 import gif from '../img/home/SIM Open House 2020 Banner.gif';
-import { auth } from '../firebase';
-
 
 const Home: React.FC = () => {
-
-  const { navigate } = useContext(NavContext);
 
   return (
     <IonPage>

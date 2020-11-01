@@ -26,7 +26,7 @@ const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const displayValueAndTenureOfBursary = () => {
         valueAndTenureOfBursary.current!.hidden = !valueAndTenureOfBursary.current!.hidden;
-        if(toggleShow1.current!.icon == addCircle) {
+        if(toggleShow1.current!.icon === addCircle) {
             toggleShow1.current!.icon = removeCircle;
         } else {
             toggleShow1.current!.icon = addCircle;
@@ -35,7 +35,7 @@ const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const displayEligibility = () => {
         eligibility.current!.hidden = !eligibility.current!.hidden;
-        if(toggleShow2.current!.icon == addCircle) {
+        if(toggleShow2.current!.icon === addCircle) {
             toggleShow2.current!.icon = removeCircle;
         } else {
             toggleShow2.current!.icon = addCircle;
@@ -44,7 +44,7 @@ const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const displayRepayment = () => {
         repayment.current!.hidden = !repayment.current!.hidden;
-        if(toggleShow3.current!.icon == addCircle) {
+        if(toggleShow3.current!.icon === addCircle) {
             toggleShow3.current!.icon = removeCircle;
         } else {
             toggleShow3.current!.icon = addCircle;
@@ -53,7 +53,7 @@ const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const displayHowToApply = () => {
         howToApply.current!.hidden = !howToApply.current!.hidden;
-        if(toggleShow4.current!.icon == addCircle) {
+        if(toggleShow4.current!.icon === addCircle) {
             toggleShow4.current!.icon = removeCircle;
         } else {
             toggleShow4.current!.icon = addCircle;
@@ -62,7 +62,7 @@ const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const displayRequiredSupportingDocuments = () => {
         requiredSupportingDocuments.current!.hidden = !requiredSupportingDocuments.current!.hidden;
-        if(toggleShow5.current!.icon == addCircle) {
+        if(toggleShow5.current!.icon === addCircle) {
             toggleShow5.current!.icon = removeCircle;
         } else {
             toggleShow5.current!.icon = addCircle;
@@ -71,7 +71,7 @@ const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const displayThingsToNote = () => {
         thingsToNote.current!.hidden = !thingsToNote.current!.hidden;
-        if(toggleShow6.current!.icon == addCircle) {
+        if(toggleShow6.current!.icon === addCircle) {
             toggleShow6.current!.icon = removeCircle;
         } else {
             toggleShow6.current!.icon = addCircle;
@@ -80,7 +80,7 @@ const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const displayContactInformation = () => {
         contactInformation.current!.hidden = !contactInformation.current!.hidden;
-        if(toggleShow7.current!.icon == addCircle) {
+        if(toggleShow7.current!.icon === addCircle) {
             toggleShow7.current!.icon = removeCircle;
         } else {
             toggleShow7.current!.icon = addCircle;

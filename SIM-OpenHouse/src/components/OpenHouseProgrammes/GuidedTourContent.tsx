@@ -6,7 +6,6 @@ import firebase from 'firebase';
 
 import '../../css/Global.css';
 import '../../css/GuidedTourContent.css';
-
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
@@ -14,17 +13,9 @@ import { toDateObject } from '../../modules/convert';
 const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [buttonDisabled, setButtonDisabled] = useState(false);    
 
-    const guidedTourDay1 = props.guidedTours
-        .filter((tour: any) => {
-            return tour.date == props.openhouseDates[0]
-        })
-
-    const guidedTourDay2 = props.guidedTours
-        .filter((tour: any) => {
-            return tour.date == props.openhouseDates[1]
-        })
+    const guidedTourDay1 = props.guidedTours.filter((tour: any) => { return tour.date === props.openhouseDates[0] });
+    const guidedTourDay2 = props.guidedTours.filter((tour: any) => { return tour.date === props.openhouseDates[1] });
 
     const addToSchedule = async (programme: any) => {
         try {
@@ -44,7 +35,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                 case "talk":
                                     db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -60,7 +51,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                 case "tour":
                                     db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -76,7 +67,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                 case "performance":
                                     db.collection('Performances').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -120,10 +111,6 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
                 }
             });
-
-            if (alert.registerSuccess) {
-                // disable button
-            }
 
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });

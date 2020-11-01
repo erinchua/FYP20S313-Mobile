@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading, IonPopover } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
@@ -15,94 +15,105 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
     const { userID } = useAuth();
 
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
+    const [errorMessage, setErrorMessage] = useState("");
 
-    const programmeTalkDay1 = props.programmeTalk.filter((talk: any) => { return talk.date == props.openhouseDates[0] });
-    const programmeTalkDay2 = props.programmeTalk.filter((talk: any) => { return talk.date == props.openhouseDates[1] });
+    const programmeTalkDay1 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] });
+    const programmeTalkDay2 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] });
 
     const addToSchedule = async (programme: any) => {
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
 
-            await db.collection('PersonalScheduler').doc(userID).get().then(async (snapshot: any) => {
-                const registered = snapshot.data().registeredProgrammes;
-                const scheduler = db.collection('PersonalScheduler').doc(userID);
-                const progTalk = db.collection('ProgrammeTalks').doc(programme.id);
-                const increment = firebase.firestore.FieldValue.increment(1);
-                const batch = db.batch();
-                
-                if (registered) {
-                    if (registered.length > 0) {
-                        let check = false;
+            if (programme.noRegistered < programme.capacityLimit) {
+                await db.collection('PersonalScheduler').doc(userID).get().then(async (snapshot: any) => {
+                    const registered = snapshot.data().registeredProgrammes;
+                    const scheduler = db.collection('PersonalScheduler').doc(userID);
+                    const progTalk = db.collection('ProgrammeTalks').doc(programme.id);
+                    const increment = firebase.firestore.FieldValue.increment(1);
+                    const batch = db.batch();
 
-                        registered.forEach(async (item: any) => {
-                            const itemType = item.split("-");
+                    if (registered) {
+                        if (registered.length > 0) {
+                            let check = false;
 
-                            switch (itemType[0]) {
-                                case "talk":
-                                    await db.collection('ProgrammeTalks').doc(item).get().then((doc: any) => {
+                            registered.forEach(async (item: any) => {
+                                const itemType = item.split("-");
 
-                                        if (programme.date == doc.data().date) {
+                                switch (itemType[0]) {
+                                    case "talk":
+                                        await db.collection('ProgrammeTalks').doc(item).get().then((doc: any) => {
 
-                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
-                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+                                            if (programme.date === doc.data().date) {
 
-                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
-                                                check = true;
+                                                const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                                const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                                if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                    check = true;
+                                                }
                                             }
-                                        }
-                                    });
+                                        });
 
-                                    break;
+                                        break;
 
-                                case "tour":
-                                    await db.collection('GuidedTours').doc(item).get().then((doc: any) => {
+                                    case "tour":
+                                        await db.collection('GuidedTours').doc(item).get().then((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                            if (programme.date === doc.data().date) {
 
-                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
-                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+                                                const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                                const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
 
-                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
-                                                check = true;
+                                                if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                    check = true;
+                                                }
                                             }
-                                        }
-                                    });
-                                    
-                                    break;
+                                        });
 
-                                case "performance":
-                                    await db.collection('Performances').doc(item).get().then((doc: any) => {
+                                        break;
 
-                                        if (programme.date == doc.data().date) {
+                                    case "performance":
+                                        await db.collection('Performances').doc(item).get().then((doc: any) => {
 
-                                            const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
-                                            const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+                                            if (programme.date === doc.data().date) {
 
-                                            if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
-                                                check = true;
+                                                const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
+                                                const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
+
+                                                if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
+                                                    check = true;
+                                                }
                                             }
-                                        }
-                                    });
-                                    
-                                    break;
+                                        });
 
-                                default:
-                            }
-                        });
+                                        break;
 
-                        setTimeout(async () => {
-                            if (check) {
-                                setAlert({ registerSuccess: false, registerFail: true, loading: false });
-                            } else {
-                                batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
-                                batch.update(progTalk, { noRegistered: increment });
+                                    default:
+                                }
+                            });
 
-                                await batch.commit();
-                                setAlert({ registerSuccess: true, registerFail: false, loading: false });
-                            };
+                            setTimeout(async () => {
+                                if (check) {
+                                    setErrorMessage("There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!")
+                                    setAlert({ registerSuccess: false, registerFail: true, loading: false });
+                                } else {
+                                    batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
+                                    batch.update(progTalk, { noRegistered: increment });
 
-                            check = false;
-                        }, 500);
+                                    await batch.commit();
+                                    setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                                };
+
+                                check = false;
+                            }, 500);
+
+                        } else {
+                            batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
+                            batch.update(progTalk, { noRegistered: increment });
+
+                            await batch.commit();
+                            setAlert({ registerSuccess: true, registerFail: false, loading: false });
+                        }
 
                     } else {
                         batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
@@ -111,18 +122,16 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                         await batch.commit();
                         setAlert({ registerSuccess: true, registerFail: false, loading: false });
                     }
+                });
 
-                } else {
-                    batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
-                    batch.update(progTalk, { noRegistered: increment });
-
-                    await batch.commit();
-                    setAlert({ registerSuccess: true, registerFail: false, loading: false });
-                }
-            });
+            } else {
+                setErrorMessage("Sorry. We have reach the capacity limit for this talk.");
+                setAlert({ registerSuccess: false, registerFail: true, loading: false });
+            }
 
         } catch (e) {
-            setAlert({ registerSuccess: false, registerFail: false, loading: false });
+            setErrorMessage("Something went wrong with the registration. Please try again.");
+            setAlert({ registerSuccess: false, registerFail: true, loading: false });
             return console.log(e);
         }
     };
@@ -145,7 +154,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                 cssClass='alertBox'
                 mode='md'
                 header={'Registration Unsuccessful'}
-                message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
+                message={errorMessage}
                 buttons={['Close']}
             ></IonAlert>
 
@@ -163,7 +172,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
-                                    <Link id="uniLink" to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
+                                    <Link id="uniLink" to={`/u/openHouseMain/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
                                 </IonCol>
 
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni} </IonCol>
@@ -184,7 +193,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
-                                    <Link id="uniLink" to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
+                                    <Link id="uniLink" to={`/u/openHouseMain/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
                                 </IonCol>
 
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
