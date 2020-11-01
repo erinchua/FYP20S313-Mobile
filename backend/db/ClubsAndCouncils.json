@@ -312,14 +312,14 @@
 		"clubsAndCouncilTitle": "Student Toastmasters",
 		"clubsAndCouncilDescription": "Rise up and give a toast, let fellow speakers and professionals rate you as you practise and improve your public speaking skills.",
 		"clubsAndCouncilsLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/ClubsAndCouncil%2FSpecialInterest%2FStudentToastMaster.png?alt=media&token=ba957cd3-3ec2-4964-a7b5-217853f567bf",
-		"categoryType": "SportsFitness"
+		"categoryType": "SpecialInterest"
 	},
 	{
 		"id": "club-046",
 		"clubsAndCouncilTitle": "Young Entrepreneurs Network",
 		"clubsAndCouncilDescription": "Meet other like-minded entrepreneurs as we network and support each other through our entrepreneurial journey.",
 		"clubsAndCouncilsLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/ClubsAndCouncil%2FSpecialInterest%2FYoungEntrepreneurs.png?alt=media&token=ab1948ad-b853-49af-97af-3faa4bdf8985",
-		"categoryType": "SportsFitness"
+		"categoryType": "SpecialInterest"
 	},
 	{
 		"id": "club-047",

@@ -428,4 +428,4 @@ console.log(oppSim.sort(sortFunction).join(", ")) */
 //const str = "https://www.facebook.com/permalink.php?story_fbid=133281431880725&id=109981057544096";
 //console.log(str.match(/\d+/ig))
 
-console.log(new Date())
+console.log(new Date().toDateString())

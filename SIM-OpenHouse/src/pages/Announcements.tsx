@@ -32,7 +32,7 @@ const Announcements: React.FC = () => {
             <IonContent fullscreen={true}>
                 {current.length > 0 ? (
                     current.map((news, index) => {
-                        const day = toDateObject(news.date, news.time).toString().split(" ")[0];
+                        const day = toDateObject(news.date, news.time).toDateString().split(" ")[0];
 
                         return (
                             <IonGrid id="announcementGrid" key={index}>
