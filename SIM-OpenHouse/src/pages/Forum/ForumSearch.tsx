@@ -80,8 +80,6 @@ const ForumSearch: React.FC = () => {
         });
     }, []);
 
-    //console.log(searchResults)
-    
     return (
         <IonPage>
             <IonHeader>

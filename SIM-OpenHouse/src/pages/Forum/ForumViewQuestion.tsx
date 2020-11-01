@@ -125,33 +125,6 @@ const ForumViewQuestion: React.FC = () => {
             }
         });
 
-        /* db.collection('Forum').get().then(uRef => {
-            const comments: any = [];
-            setComments(comments)
-
-            uRef.forEach(user => {
-                return db.collection('Forum').doc(user.id).collection('Comments').where("questionId", "==", +id).onSnapshot(entries => {
-                    entries.docChanges().forEach(change => {
-                        comments.unshift({
-                            id: +change.doc.id,
-                            entry: change.doc.data().entry,
-                            dateTime: change.doc.data().dateTime,
-                            user: change.doc.data().posterName,
-                            uid: change.doc.data().posterId,
-                            removed: change.doc.data().deleted,
-                            commentId: change.doc.data().commentId || null
-                        });
-                    });
-                });
-            });
-
-            console.log(comments)
-            setTimeout(() => {
-                setComments(comments.sort(forumPostsAsc));
-                setLoading(false);
-            }, 500);
-        }); */
-
         return db.collectionGroup('Comments').where("questionId", "==", +id).onSnapshot(entries => {
             const comments: any = [];
             setComments(comments)
@@ -176,8 +149,6 @@ const ForumViewQuestion: React.FC = () => {
         });
     }, []);
 
-    //console.log(comments)
-    
     return (
         <IonPage>
             <IonHeader>

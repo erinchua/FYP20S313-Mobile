@@ -1,5 +1,5 @@
 import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRow, IonTextarea } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -12,12 +12,9 @@ import { useAuth } from '../../modules/auth';
 const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
     const { userID } = useAuth();
 
-    //const comments = props.comments.filter((ele, pos, self) => { return self.indexOf(ele) === pos });
-
     const [loading, setLoading] = useState(false);
     const [showEditCommentModal, setShowEditCommentModal] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
-    //const [comments, setComments] = useState([]);
     const [entry, setEntry] = useState("");
     const [toBeEdited, setToBeEdited] = useState(0);
     const [toBeDeleted, setToBeDeleted] = useState(0);
@@ -28,7 +25,7 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
             await db.collection('Forum').doc(userID).collection('Comments').doc(postId).update({
                 deleted: true
             });
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         } finally {
             setDeleteAlert({ alert: false, loading: false });
@@ -41,7 +38,7 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
             await db.collection('Forum').doc(userID).collection('Comments').doc(postId).update({
                 entry: entry
             });
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         } finally {
             setShowEditCommentModal(false);
@@ -49,35 +46,6 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
             setEntry("");
         }
     }
-
-    console.log(props.comments)
-
-    /* useEffect(() => {
-        return db.collection('Forum').doc(userID).collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
-            const posts: any = [];
-            
-            snaps.forEach(async (snap) => {
-                let post: any = { ...snap.data() }
-
-                await db.collection('Forum').get().then(users => {
-                    users.forEach(user => {
-                        return db.collection('Forum').doc(user.id).collection('Questions').doc(snap.data().questionId.toString()).onSnapshot(question => {
-                            if(question.exists) {
-                                post.question = question.data()?.entry;
-                                post.questionRemoved = question.data()?.deleted;
-                            }
-                        });
-                    });
-                });
-                posts.push(post)
-            });
-
-            setTimeout(() => {
-                setComments(posts);
-                setLoading(false);
-            }, 500);
-        });
-    }, []); */
 
     return (
         <>
@@ -90,29 +58,27 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Edit Comment</IonCol>
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Delete Comment</IonCol>
                 </IonRow>
-                { props.comments.map((post: any) => (
-                    post.hasOwnProperty('commentId') === false ? (
-                        <IonRow className="ion-justify-content-center" key={post.id}>
-                            <IonCol className="forumQnsCom-Data ion-text-wrap">{post.questionRemoved === false ? post.question : "[deleted]"}</IonCol>
-                            <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
-                            <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
-                            <IonCol className="forumQnsCom-Data ion-text-wrap">{post.noOfReplies}</IonCol>
-                            <IonCol className="forumQnsCom-Data ion-text-wrap">
-                                {/* <Forum_EditCommentModal /> */}
-                                <IonButton onClick={() => [setShowEditCommentModal(true), setToBeEdited(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
-                            </IonCol>
-                            <IonCol className="forumQnsCom-Data ion-text-wrap">
-                                {/* <Forum_DeleteComment /> */}
-                                <IonButton onClick={() => [setDeleteAlert({ alert: true, loading: false }), setToBeDeleted(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faTrash} size="lg" /></IonButton>
-                            </IonCol>
-                        </IonRow>
-                    ) : null
+                {props.comments.map((post: any) => (
+                    <IonRow className="ion-justify-content-center" key={post.id}>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.questionRemoved === false ? post.question : "[deleted]"}</IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.hasOwnProperty('commentId') === false ? post.noOfReplies : "-"}</IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">
+                            {/* <Forum_EditCommentModal /> */}
+                            <IonButton onClick={() => [setShowEditCommentModal(true), setToBeEdited(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
+                        </IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">
+                            {/* <Forum_DeleteComment /> */}
+                            <IonButton onClick={() => [setDeleteAlert({ alert: true, loading: false }), setToBeDeleted(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faTrash} size="lg" /></IonButton>
+                        </IonCol>
+                    </IonRow>
                 ))}
             </IonGrid>
             <IonModal isOpen={showEditCommentModal} cssClass='post-question-modal' onDidDismiss={() => setShowEditCommentModal(false)}>
                 <IonContent>
                     <IonGrid id="postQns-modal-container">
-                        <IonRow style={{paddingTop: '1%'}}>
+                        <IonRow style={{ paddingTop: '1%' }}>
                             <IonLabel id="postQns-title">Edit Comment</IonLabel>
                         </IonRow>
                         <IonItemDivider />

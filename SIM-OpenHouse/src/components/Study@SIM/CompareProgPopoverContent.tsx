@@ -1,11 +1,10 @@
 import { IonButton, IonCol, IonFooter, IonGrid, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React, { SetStateAction } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import '../../css/Global.css';
 import '../../css/CompareProgPopoverContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import Grenoble from '../../img/study@SIM/GrenobleEcoleDeManagement.png';
 
 import { Programme } from '../../pages/Study@SIM/Study@SIMProgInfo'
 

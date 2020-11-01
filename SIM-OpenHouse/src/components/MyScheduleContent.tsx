@@ -1,4 +1,4 @@
-import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading, IonModal, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonContent } from '@ionic/react';
+import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading, IonModal, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonContent } from '@ionic/react';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';

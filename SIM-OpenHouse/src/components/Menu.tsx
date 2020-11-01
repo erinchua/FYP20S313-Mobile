@@ -1,6 +1,5 @@
 import { IonMenu, IonContent, IonItem, IonList, IonLabel, IonFooter, IonToolbar } from '@ionic/react';
-import React, { useContext } from 'react';
-import { NavContext } from '@ionic/react';
+import React from 'react';
 import { menuController } from "@ionic/core";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faCalendar, faCalendarAlt, faBell, faUserCircle, faCog, faQrcode, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -10,15 +9,12 @@ import '../css/Menu.css';
 import '../css/Global.css';
 import { auth } from "../firebase";
 
-const Menu: React.FC = props => {
+const Menu: React.FC = () => {
 
-    const { navigate } = useContext(NavContext);
-    
     const handleLogout = async () => {
         menuController.close();
         await auth.signOut();
         sessionStorage.clear();
-        // navigate('/main');
     };
 
     return(

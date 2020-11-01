@@ -1,5 +1,5 @@
 import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRow, IonTextarea } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,6 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
     const [loading, setLoading] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [showEditQuestionModal, setShowEditQuestionModal] = useState(false);
-    //const [questions, setQuestions] = useState([]);
     const [entry, setEntry] = useState("");
     const [toBeEdited, setToBeEdited] = useState("");
     const [toBeDeleted, setToBeDeleted] = useState("");
@@ -47,15 +46,6 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
             setEntry("");
         }
     }
-
-    /* useEffect(() => {
-        return db.collection('Forum').doc(userID).collection('Questions').where("deleted", "==", false).onSnapshot(snaps => {
-            const posts: any = [];
-            
-            snaps.forEach(snap => posts.push(snap.data()));
-            setQuestions(posts);
-        });
-    }, []); */
 
     return (
         <>

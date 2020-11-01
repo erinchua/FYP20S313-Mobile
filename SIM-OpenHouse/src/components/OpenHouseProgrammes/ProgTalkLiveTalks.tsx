@@ -1,5 +1,6 @@
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import React from 'react';
+import { useHistory } from 'react-router';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
@@ -11,6 +12,15 @@ const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhou
     
     const liveTalkDay1 = props.liveTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] });
     const liveTalkDay2 = props.liveTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] });
+
+    const history = useHistory();
+
+    const openVideo = (e: React.MouseEvent<HTMLIonButtonElement, MouseEvent>, url: string) => {
+        const videoId = url.match(/\d+/ig)?.join("/");
+
+        e.preventDefault();
+        history.push(`/u/openHouseMain/programmeTalks/live/${videoId}`);
+    }
 
     return (
         <>
@@ -35,7 +45,7 @@ const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhou
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.url, '_blank') }} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => openVideo(e, programmeTalk.url)} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -55,14 +65,13 @@ const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhou
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkTime">{programmeTalk.startTime + " to " + programmeTalk.endTime}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="talkVenue">{programmeTalk.venue}</IonCol>
                                 <IonCol size="2" sizeSm="2" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.url, '_blank') }} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => openVideo(e, programmeTalk.url)} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
                             </IonRow>
                         )
-                    })
-                    : ''
+                    }) : ''
                 }
             </IonGrid>
         </>
