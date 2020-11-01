@@ -111,7 +111,7 @@ const ForumViewQuestion: React.FC = () => {
         }
     }
 
-    /* useEffect(() => {
+    useEffect(() => {
         db.collection('Forum').doc(uid).collection('Questions').doc(id).get().then(entry => {
             if (entry.exists) {
                 setQuestion({
@@ -146,7 +146,7 @@ const ForumViewQuestion: React.FC = () => {
                 setLoading(false);
             }, 500);
         });
-    }, []); */
+    }, []);
 
     return (
         <IonPage>

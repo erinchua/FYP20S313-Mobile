@@ -65,7 +65,7 @@ const ForumUser: React.FC = () => {
         }
     }
 
-    useEffect(() => {
+    /* useEffect(() => {
         const questions: any = [];
         const comments: any = [];
 
@@ -79,14 +79,14 @@ const ForumUser: React.FC = () => {
             snaps.forEach(async (snap) => {
                 let post: any = { ...snap.data() }
 
-                /* const questionRef = db.collectionGroup('Questions').where("id", "==", snap.data().questionId).onSnapshot(questions => {
+                const questionRef = db.collectionGroup('Questions').where("id", "==", snap.data().questionId).onSnapshot(questions => {
                     questions.forEach(question => {
                         if (question.exists) {
                             post.question = question.data()?.entry;
                             post.questionRemoved = question.data()?.deleted;
                         }
                     });
-                }); */
+                }); 
 
                 await db.collection('Forum').get().then(users => {
                     users.forEach(user => {
@@ -111,7 +111,7 @@ const ForumUser: React.FC = () => {
             commentsListener();
             setLoading(false);
         }, 500);
-    }, []);
+    }, []); */
 
     return (
         <IonPage>
