@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { IonRouterOutlet } from '@ionic/react';
 
 import Home from './pages/Home';
@@ -69,7 +69,7 @@ const App: React.FC = () => {
 				<Route path="/u/mySchedule" component={MySchedule} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks/live/:fbid/:id" component={ProgTalkLive} exact={true} />
-				<Route path="/u/openHouseMain/programmeTalks/progTalkInfo" component={ProgTalkInfo} exact={true} />
+				<Route path="/u/openHouseMain/programmeTalks/progTalkInfo/:id" component={ProgTalkInfo} exact={true} />
 				<Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
 				<Route path="/u/forum" component={Forum} exact={true} />
 				<Route path="/u/forumUser" component={ForumUser} exact={true} />

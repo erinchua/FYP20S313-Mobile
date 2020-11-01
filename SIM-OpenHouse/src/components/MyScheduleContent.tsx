@@ -21,8 +21,8 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
     const [progInfo, setProgInfo] = useState({ talkName: "", talkDate: "", talkBy: "" });
     const [showProgQRCodeModal, setShowProgQRCodeModal] = useState(false);
 
-    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] }).sort(sortTimeAsc);
-    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[1] }).sort(sortTimeAsc);
+    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date === props.openhouseDates[0] }).sort(sortTimeAsc);
+    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date === props.openhouseDates[1] }).sort(sortTimeAsc);
 
     const displayRemoveProgAlert = (id: any) => {
         setAlert({ confirmRemove: true, removeSuccess: false, loading: false });

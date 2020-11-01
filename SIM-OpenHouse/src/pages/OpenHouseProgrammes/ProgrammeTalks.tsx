@@ -140,7 +140,7 @@ const ProgrammeTalks: React.FC = () => {
 			})
 		console.log(initialList.length + JSON.stringify(initialList))
 		Object.entries(condition).map(([key, value]) => {
-			if (key == 'discipline') {
+			if (key === 'discipline') {
 				let discFiltered: ProgrammeTalk[] = []
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
@@ -157,11 +157,11 @@ const ProgrammeTalks: React.FC = () => {
 
 			}
 
-			else if (key == 'uni') {
+			else if (key === 'uni') {
 				let uniFiltered: ProgrammeTalk[] = []
 				if (value.length > 0) {
 					value.forEach((value: string) => {
-						segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
+						segmentFilter = filteredList.filter(programme => programme.awardingUni === value)
 						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						uniFiltered = uniFiltered.concat(segmentFilter)
 					})
@@ -194,7 +194,7 @@ const ProgrammeTalks: React.FC = () => {
 			})
 		console.log(initialList.length + JSON.stringify(initialList))
 		Object.entries(condition).map(([key, value]) => {
-			if (key == 'discipline') {
+			if (key === 'discipline') {
 				let discFiltered: ProgrammeTalk[] = []
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
@@ -211,11 +211,11 @@ const ProgrammeTalks: React.FC = () => {
 
 			}
 
-			else if (key == 'uni') {
+			else if (key === 'uni') {
 				let uniFiltered: ProgrammeTalk[] = []
 				if (value.length > 0) {
 					value.forEach((value: string) => {
-						segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
+						segmentFilter = filteredList.filter(programme => programme.awardingUni === value)
 						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						uniFiltered = uniFiltered.concat(segmentFilter)
 						// console.log("current list" + JSON.stringify(filteredList))
@@ -236,17 +236,17 @@ const ProgrammeTalks: React.FC = () => {
 		setFilterCondition(prevState => {
 			let filter = { ...prevState };
 			Object.keys(filter).map(key => {
-				if (key == 'mos')
+				if (key === 'mos')
 					filter[key] = mosFilter;
-				if (key == 'discipline')
+				if (key === 'discipline')
 					filter[key] = discFilter;
-				if (key == 'uni')
+				if (key === 'uni')
 					filter[key] = uniFilter;
-				if (key == 'acadLvl')
+				if (key === 'acadLvl')
 					filter[key] = acadLvlFilter;
-				if (key == 'entry')
+				if (key === 'entry')
 					filter[key] = entryFilter;
-				if (key == 'subDisc')
+				if (key === 'subDisc')
 					filter[key] = subDiscFilter;
 			})
 			return filter;

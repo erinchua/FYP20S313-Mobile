@@ -8,8 +8,8 @@ import '../../css/ProgrammeTalks.css'
 
 const ProgTalkPastRec: React.FC<{ day1: any, day2: any, recordedTalk: any, openhouseDates: any }> = props => {
 
-    const recordedTalkDay1 = props.recordedTalk.filter((talk: any) => { return talk.date == props.openhouseDates[0] })
-    const recordedTalkDay2 = props.recordedTalk.filter((talk: any) => { return talk.date == props.openhouseDates[1] })
+    const recordedTalkDay1 = props.recordedTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] })
+    const recordedTalkDay2 = props.recordedTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] })
 
     return (
         <>

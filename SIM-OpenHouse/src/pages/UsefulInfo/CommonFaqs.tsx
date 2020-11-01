@@ -26,7 +26,7 @@ const CommonFaqs: React.FC = () => {
 
     const displayInfoCol = () => {
         info.current!.hidden = !info.current!.hidden;
-        if (showIcon.current!.icon == addCircle)
+        if (showIcon.current!.icon === addCircle)
             showIcon.current!.icon = removeCircle;
         else
             showIcon.current!.icon = addCircle;

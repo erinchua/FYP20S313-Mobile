@@ -64,12 +64,12 @@ export interface Programme {
 }
 
 const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
-    { console.log("ProgInfo has entered!") }
-    { console.log(match) }
+    //console.log("ProgInfo has entered!")
+    //console.log(match)
 
     const discipline = match.params.discipline
     const category = match.params.category
-    const id = match.params.id
+    //const id = match.params.id
     /*Programme Data*/
     const [programme, setProgrammes] = useState<Programme>({
         id: "",

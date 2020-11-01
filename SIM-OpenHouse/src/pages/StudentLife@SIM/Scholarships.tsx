@@ -26,7 +26,7 @@ const Scholarships: React.FC = () => {
         db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ']).get().then(({ docs }) => {
             const brocs = docs.map(toBrochure);
 
-            if (brocs.length == 1)
+            if (brocs.length === 1)
                 setBrochure(brocs[0]);
         });
     }, []);
