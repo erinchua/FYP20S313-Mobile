@@ -1,16 +1,14 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonPage, IonRow, IonTitle } from '@ionic/react';
 import React, { useRef, useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { db } from '../../firebase'
-
-import '../../css/Global.css';
-import '../../css/Study@SIMProgInfo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { addCircle, removeCircle } from 'ionicons/icons';
 
-
+import '../../css/Global.css';
+import '../../css/Study@SIMProgInfo.css';
 import TopNav from '../../components/TopNav';
+import { db } from '../../firebase'
 
 interface StudySIMProgInfo_Props extends RouteComponentProps<{
     discipline: string;

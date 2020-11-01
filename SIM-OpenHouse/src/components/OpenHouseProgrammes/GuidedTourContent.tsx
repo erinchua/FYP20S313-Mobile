@@ -14,7 +14,6 @@ import { toDateObject } from '../../modules/convert';
 const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [buttonDisabled, setButtonDisabled] = useState(false);    
 
     const guidedTourDay1 = props.guidedTours
         .filter((tour: any) => {
@@ -120,10 +119,6 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
                 }
             });
-
-            if (alert.registerSuccess) {
-                // disable button
-            }
 
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });

@@ -392,7 +392,7 @@ console.log(oppSim.sort(sortFunction).join(", ")) */
 }); */}
 //console.log('A' > 'Z')
 
-/* db.collection('ContactInfo').get().then(snapshot => {
+{/* db.collection('ContactInfo').get().then(snapshot => {
     const local = [];
     const overseas = [];
 
@@ -417,10 +417,15 @@ console.log(oppSim.sort(sortFunction).join(", ")) */
             console.log(contact)
         }
     });
-}); */
+}); */}
 
-db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ', 'Bursary-FAQ']).get().then(docs => {
+/* db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ', 'Bursary-FAQ']).get().then(docs => {
     docs.forEach(doc => {
         console.log(doc.data())
     })
-})
+}) */
+
+//const str = "https://www.facebook.com/permalink.php?story_fbid=133281431880725&id=109981057544096";
+//console.log(str.match(/\d+/ig))
+
+console.log(new Date().toDateString())

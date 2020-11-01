@@ -14,7 +14,6 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
     const { userID } = useAuth();
 
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const performanceDay1 = props.performances.filter((performance: any) => {
         return performance.date == props.openhouseDates[0]
@@ -117,10 +116,6 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
                 }
             });
-
-            if (alert.registerSuccess) {
-                // disable button
-            }
 
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });

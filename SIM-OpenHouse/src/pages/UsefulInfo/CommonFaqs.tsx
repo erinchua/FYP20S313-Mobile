@@ -52,8 +52,6 @@ const CommonFaqs: React.FC = () => {
     //const openhouseFaq = faq.filter((faq: any) => { return faq.faqType == 'openhouse' })
     //const generalFaq = faq.filter((faq: any) => { return faq.faqType == 'general' })
 
-    console.log(faqs)
-
     return (
         <IonPage>
             <IonHeader>

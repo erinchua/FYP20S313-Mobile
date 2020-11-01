@@ -3,13 +3,10 @@ import React from 'react';
 
 import '../../css/Global.css';
 import '../../css/CourseComparator.css';
-import Buffalo from '../../img/study@SIM/UniversityAtBuffalo.png';
 import { Programme, } from '../../pages/Study@SIM/Study@SIMProgInfo'
-import ProgrammeTalks from '../../pages/OpenHouseProgrammes/ProgrammeTalks';
 
 
 const CourseComparatorDetails: React.FC<{
-
     programmes: Programme[]
 }> = (props) => {
 

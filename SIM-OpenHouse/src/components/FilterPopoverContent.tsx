@@ -1,9 +1,8 @@
 import { IonBadge, IonButton, IonCheckbox, IonCol, IonFooter, IonGrid, IonIcon, IonItem, IonLabel, IonList, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useEffect, useRef, useState } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 import '../css/Global.css';
 import '../css/FilterPopoverContent.css';
-import { chevronDownOutline, chevronUpOutline, filter } from 'ionicons/icons';
+import { chevronDownOutline, chevronUpOutline } from 'ionicons/icons';
 import { db } from '../firebase';
 import { Programme, ProgrammeTalk } from '../modules/map';
 
@@ -163,9 +162,9 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     };
 
 
-    {/* Check if filter is checked */ }
-    const [checked, setChecked] = useState(false);
-    const [courseFilterCount, setCourseFilterCount] = useState(0);
+    /* Check if filter is checked */
+    //const [checked, setChecked] = useState(false);
+    //const [courseFilterCount, setCourseFilterCount] = useState(0);
 
     //Filter handlers
 

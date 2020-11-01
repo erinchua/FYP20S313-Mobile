@@ -8,8 +8,6 @@ import { faStar } from '@fortawesome/free-regular-svg-icons';
 import '../../css/Global.css';
 import '../../css/Study@SIMMain.css';
 import TopNav from '../../components/TopNav';
-import { Programme } from './Study@SIMProgInfo'
-
 
 const StudySIMMain: React.FC<RouteComponentProps> = () => {
     const [studySIMProgSelect, setStudySIMProgSelect] = useState<string>('Bachelor');

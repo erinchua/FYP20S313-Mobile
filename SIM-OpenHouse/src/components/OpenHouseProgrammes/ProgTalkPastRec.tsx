@@ -1,12 +1,11 @@
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import React from 'react';
+import { faFileVideo } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
 
-import { faFileVideo } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ProgrammeTalk } from '../../pages/OpenHouseProgrammes/ProgrammeTalks'
 const ProgTalkPastRec: React.FC<{ day1: any, day2: any, recordedTalk: any, openhouseDates: any }> = props => {
 
     const recordedTalkDay1 = props.recordedTalk.filter((talk: any) => { return talk.date == props.openhouseDates[0] })

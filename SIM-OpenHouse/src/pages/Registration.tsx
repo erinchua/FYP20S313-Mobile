@@ -17,9 +17,6 @@ const Registration: React.FC = () => {
 
 	const [status, setStatus] = useState({ loading: false, error: false, success: false });
 	const [checked, setChecked] = useState(false);
-	//const [hold, setHold] = useState(false);
-	//const [showErrorAlert, setShowErrorAlert] = useState(false);
-	//const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
 	const password = useRef({});
 	password.current = watch("password", "");
@@ -68,10 +65,9 @@ const Registration: React.FC = () => {
 			setStatus({ loading: true, error: false, success: false });
 			await auth.createUserWithEmailAndPassword(data.email, data.password).then((user) => {
 				addNewStudent(data, user.user?.uid);
-				setStatus({ loading: true, error: false, success: true });
+			}).then(() => {
+				setStatus({ loading: false, error: false, success: true });
 			});
-			setStatus({ loading: false, error: false, success: true });
-			//setShowSuccessAlert(true);
 		} catch (e) {
 			setStatus({ loading: false, error: true, success: false });
 			console.log(e);

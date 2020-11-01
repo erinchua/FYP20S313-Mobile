@@ -12,8 +12,6 @@ import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
 import { Programme } from '../../modules/map';
 import { FilterCondition } from '../../components/FilterPopoverContent'
-import { filter } from 'ionicons/icons';
-import { ObjectFlags } from 'typescript';
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
