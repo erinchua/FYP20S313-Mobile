@@ -1,5 +1,5 @@
 import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRow, IonTextarea } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -15,6 +15,7 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
     const [loading, setLoading] = useState(false);
     const [showEditCommentModal, setShowEditCommentModal] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
+    const [comments, setComments] = useState([]);
     const [entry, setEntry] = useState("");
     const [toBeEdited, setToBeEdited] = useState(0);
     const [toBeDeleted, setToBeDeleted] = useState(0);
@@ -47,6 +48,33 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
         }
     }
 
+    useEffect(() => {
+        return db.collection('Forum').doc(userID).collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
+            const posts: any = [];
+            
+            snaps.forEach(async (snap) => {
+                let post: any = { ...snap.data() }
+
+                await db.collection('Forum').get().then(users => {
+                    users.forEach(user => {
+                        return db.collection('Forum').doc(user.id).collection('Questions').doc(snap.data().questionId.toString()).onSnapshot(question => {
+                            if(question.exists) {
+                                post.question = question.data()?.entry;
+                                post.questionRemoved = question.data()?.deleted;
+                            }
+                        });
+                    });
+                });
+                posts.push(post)
+            });
+
+            setTimeout(() => {
+                setComments(posts);
+                setLoading(false);
+            }, 500);
+        });
+    }, []);
+
     return (
         <>
             <IonGrid id="forumQnsCom-tableGrid">
@@ -58,7 +86,7 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Edit Comment</IonCol>
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Delete Comment</IonCol>
                 </IonRow>
-                {props.comments.map((post: any) => (
+                {comments.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.questionRemoved === false ? post.question : "[deleted]"}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>

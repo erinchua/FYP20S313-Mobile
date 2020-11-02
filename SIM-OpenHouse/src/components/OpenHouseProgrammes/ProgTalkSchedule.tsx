@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading, IonPopover } from '@ionic/react';
+import { IonGrid, IonRow, IonCol, IonButton, IonAlert, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
@@ -17,8 +17,8 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
     const [errorMessage, setErrorMessage] = useState("");
 
-    const programmeTalkDay1 = props.programmeTalk.filter((talk: any) => { return talk.date == props.openhouseDates[0] });
-    const programmeTalkDay2 = props.programmeTalk.filter((talk: any) => { return talk.date == props.openhouseDates[1] });
+    const programmeTalkDay1 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] });
+    const programmeTalkDay2 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] });
 
     const addToSchedule = async (programme: any) => {
         try {
@@ -43,7 +43,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                                     case "talk":
                                         await db.collection('ProgrammeTalks').doc(item).get().then((doc: any) => {
 
-                                            if (programme.date == doc.data().date) {
+                                            if (programme.date === doc.data().date) {
 
                                                 const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                                 const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -59,7 +59,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                                     case "tour":
                                         await db.collection('GuidedTours').doc(item).get().then((doc: any) => {
 
-                                            if (programme.date == doc.data().date) {
+                                            if (programme.date === doc.data().date) {
 
                                                 const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                                 const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -75,7 +75,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                                     case "performance":
                                         await db.collection('Performances').doc(item).get().then((doc: any) => {
 
-                                            if (programme.date == doc.data().date) {
+                                            if (programme.date === doc.data().date) {
 
                                                 const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                                 const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -172,7 +172,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
-                                    <Link id="uniLink" to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
+                                    <Link id="uniLink" to={`/u/openHouseMain/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
                                 </IonCol>
 
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni} </IonCol>
@@ -193,7 +193,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                         return (
                             <IonRow className="ion-justify-content-center" id="progTalk-DataRow" key={programmeTalk.id}>
                                 <IonCol sizeSm="3" className="progTalk-DataInfo ion-text-wrap progName">
-                                    <Link id="uniLink" to={`/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
+                                    <Link id="uniLink" to={`/u/openHouseMain/programmeTalks/progTalkInfo/${programmeTalk.id}`}>{programmeTalk.talkName}</Link>
                                 </IonCol>
 
                                 <IonCol size="3" sizeSm="3" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>

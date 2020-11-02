@@ -1,5 +1,5 @@
 import { IonAlert, IonBadge, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonLabel, IonPage, IonPopover, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faFilter } from '@fortawesome/free-solid-svg-icons';
@@ -50,17 +50,17 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         setFilterCondition(prevState => {
             let filter = { ...prevState };
             Object.keys(filter).map(key => {
-                if (key == 'mos')
+                if (key === 'mos')
                     filter[key] = mosFilter;
-                if (key == 'discipline')
+                if (key === 'discipline')
                     filter[key] = discFilter;
-                if (key == 'uni')
+                if (key === 'uni')
                     filter[key] = uniFilter;
-                if (key == 'acadLvl')
+                if (key === 'acadLvl')
                     filter[key] = acadLvlFilter;
-                if (key == 'entry')
+                if (key === 'entry')
                     filter[key] = entryFilter;
-                if (key == 'subDisc')
+                if (key === 'subDisc')
                     filter[key] = subDiscFilter;
             })
             return filter;
@@ -84,14 +84,14 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         }
     }, [compareProgList])
 
-    {/* Adding programme for comparison - Need to be generated dynamically */ }
+    /* Adding programme for comparison - Need to be generated dynamically */
     const compareProgramme = (programme: Programme) => {
         const newProgList = [...compareProgList]
         const newProgID = programme.id
 
         if (newProgList.length < 3) {
             if (newProgList.includes(programme)) {
-                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id != newProgID })
+                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id !== newProgID })
                 setCompareProgList(updatedProgList)
             }
             else {
@@ -128,10 +128,10 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
             })
         console.log(initialList.length + JSON.stringify(initialList))
         Object.entries(condition).map(([key, value]) => {
-            if (key == 'mos') {
+            if (key === 'mos') {
                 if (value.length < 3 && value.length > 0) {
                     value.forEach((value: string) => {
-                        if (value == 'fullPartTime') {
+                        if (value === 'fullPartTime') {
                             segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
                             console.log("filtering full and part time" + segmentFilter.length)
                             filteredList = filteredList.concat(segmentFilter)
@@ -139,13 +139,13 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
 
                         }
-                        if (value == 'fullTime') {
+                        if (value === 'fullTime') {
                             segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime)
                             console.log("filtering full time" + segmentFilter.length)
                             filteredList = filteredList.concat(segmentFilter)
 
                         }
-                        if (value == 'partTime') {
+                        if (value === 'partTime') {
                             segmentFilter = initialList.filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
                             console.log("filtering part time" + segmentFilter.length)
                             filteredList = filteredList.concat(segmentFilter)
@@ -153,11 +153,11 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         }
                     })
                 }
-                else if (value.length == 0 || value.length == 3) {
+                else if (value.length === 0 || value.length === 3) {
                     filteredList = initialList
                 }
             }
-            else if (key == 'discipline') {
+            else if (key === 'discipline') {
                 let discFiltered: Programme[] = []
                 if (value.length > 0 && value.length <= 4) {
                     console.log("Entered discipline filter")
@@ -171,7 +171,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
             }
 
-            else if (key == 'uni') {
+            else if (key === 'uni') {
                 let uniFiltered: Programme[] = []
                 if (value.length > 0) {
                     value.forEach((value: string) => {
@@ -183,11 +183,11 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                     filteredList = uniFiltered
                 }
             }
-            else if (key == 'acadLvl') {
+            else if (key === 'acadLvl') {
                 let acadFiltered: Programme[] = []
                 if (value.length > 0) {
                     value.forEach((value: string) => {
-                        segmentFilter = filteredList.filter(programme => programme.academicLevel == value)
+                        segmentFilter = filteredList.filter(programme => programme.academicLevel === value)
                         console.log("filtering acadLvl" + value + segmentFilter.length + JSON.stringify(segmentFilter))
                         acadFiltered = acadFiltered.concat(segmentFilter)
                     })
@@ -195,26 +195,26 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                 }
             }
 
-            else if (key == 'entry') {
+            else if (key === 'entry') {
                 let entryFiltered: Programme[] = []
                 if (value.length > 0) {
                     value.forEach((value: string) => {
-                        if (value == 'aLevel') {
+                        if (value === 'aLevel') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.aLevel)
                             console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
                         }
-                        else if (value == 'oLevel') {
+                        else if (value === 'oLevel') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.oLevel)
                             console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
                         }
-                        else if (value == 'diploma') {
+                        else if (value === 'diploma') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.diploma)
                             console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
                         }
-                        else if (value == 'degree') {
+                        else if (value === 'degree') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.degree)
                             console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
@@ -223,7 +223,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                     filteredList = entryFiltered
                 }
             }
-            else if (key == 'subDisc') {
+            else if (key === 'subDisc') {
                 let subDiscFiltered: Programme[] = []
                 if (value.length > 0) {
                     value.forEach((value: string) => {
@@ -247,38 +247,39 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
     const removeProg = (programme: Programme) => {
         const newProgList = [...compareProgList]
         const newProgID = programme.id
-        const updatedProgList = newProgList.filter(programme => { return programme.id != newProgID })
+        const updatedProgList = newProgList.filter(programme => { return programme.id !== newProgID })
         setCompareProgList(updatedProgList)
 
     }
     /*To remove all selected programmes in comparePopOver */
     const removeAllProg = (programmes: Programme[]) => {
         const newProgList = [...compareProgList]
-        const updatedProgList = newProgList.filter(programme => { return programme.id == '' })
+        const updatedProgList = newProgList.filter(programme => { return programme.id === '' })
         setCompareProgList(updatedProgList)
 
     }
 
 
-    {/* Display Compare Prog Popover */ }
+    /* Display Compare Prog Popover */
     const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
         open: false,
         event: undefined,
     });
 
-    {/* "If no prog is added to compare" Alert */ }
+    /* "If no prog is added to compare" Alert */
     const [showCompareProgAlert, setShowCompareProgAlert] = useState(false);
 
-    {/* Display Filter Menu Popover */ }
+    /* Display Filter Menu Popover */
     const [showProgCourseFilterPopover, setShowProgCourseFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
         open: false,
         event: undefined,
     });
 
-    {/* When page first load */ }
+    /* When page first load */
     useEffect(() => {
-        console.log("proglist rendered")
-        {/*Fetching Programmes Data from firestore*/ }
+        //console.log("proglist rendered")
+
+        /*Fetching Programmes Data from firestore*/
         const fetchData = async (discipline: string, category: string) => {
             const programmes: any = []
             await db.collection('TestProgrammes')
@@ -326,7 +327,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                             <IonRow id="studySIMProgListHeaderRow" class="ion-align-items-center">
                                 <IonCol size="6" sizeSm="6" class="ion-text-left" className="studySIMProgListCol" style={{ paddingLeft: "3%" }}>
                                     <IonTitle className="studyProgListTitle">
-                                        {uniqueDisc.length == 1 ? uniqueDisc.map(disc => {
+                                        {uniqueDisc.length === 1 ? uniqueDisc.map(disc => {
                                             return (<div key={disc} className="ion-text-wrap">{disc}</div>)
                                         }) : ''}
 

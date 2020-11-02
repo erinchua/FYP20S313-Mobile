@@ -1,5 +1,5 @@
 import { IonGrid, IonRow, IonCol, IonPage, IonHeader, IonContent } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'

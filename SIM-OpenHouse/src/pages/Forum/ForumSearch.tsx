@@ -1,6 +1,8 @@
 import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonHeader, IonTitle, IonLoading, IonList, IonLabel, IonRouterLink, IonText } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../css/Global.css';
 import '../../css/Forum.css';
@@ -8,9 +10,6 @@ import TopNav from '../../components/TopNav';
 import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 import { db } from '../../firebase';
-import { faClock, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useAuth } from '../../modules/auth';
 
 interface RouteParams {
     keyword: string;
@@ -18,7 +17,6 @@ interface RouteParams {
 
 const ForumSearch: React.FC = () => {
     const { keyword } = useParams<RouteParams>();
-    const { userID } = useAuth();
 
     const [loading, setLoading] = useState(true);
     const [searchResults, setSearchResults] = useState([]);
@@ -27,7 +25,7 @@ const ForumSearch: React.FC = () => {
         const matchedPosts: any = [];
 
         allPosts.forEach((post: any) => {
-            if (post.entry.toLowerCase().indexOf(keyword) != -1) {
+            if (post.entry.toLowerCase().indexOf(keyword) !== -1) {
                 if (post.hasOwnProperty('questionId')) {
                     allPosts.forEach((ele: any) => {
                         if (ele.id === post.questionId) {

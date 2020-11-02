@@ -18,7 +18,7 @@ const OtherFinancialAssistance: React.FC = () => {
 
     const displayAmpEducationBursary = () => {
         ampEducationBursary.current!.hidden = !ampEducationBursary.current!.hidden;
-        if(toggleShow1.current!.icon == addCircle) {
+        if(toggleShow1.current!.icon === addCircle) {
             toggleShow1.current!.icon = removeCircle;
         } else {
             toggleShow1.current!.icon = addCircle;
@@ -27,7 +27,7 @@ const OtherFinancialAssistance: React.FC = () => {
 
     const displayMtfaBursary = () => {
         mtfaBursary.current!.hidden = !mtfaBursary.current!.hidden;
-        if(toggleShow2.current!.icon == addCircle) {
+        if(toggleShow2.current!.icon === addCircle) {
             toggleShow2.current!.icon = removeCircle;
         } else {
             toggleShow2.current!.icon = addCircle;
@@ -36,7 +36,7 @@ const OtherFinancialAssistance: React.FC = () => {
 
     const displayLembagaBiasiswaKenangaMaulud = () => {
         lembagaBiasiswaKenangaMaulud.current!.hidden = !lembagaBiasiswaKenangaMaulud.current!.hidden;
-        if(toggleShow3.current!.icon == addCircle) {
+        if(toggleShow3.current!.icon === addCircle) {
             toggleShow3.current!.icon = removeCircle;
         } else {
             toggleShow3.current!.icon = addCircle;
@@ -45,7 +45,7 @@ const OtherFinancialAssistance: React.FC = () => {
 
     const displaySivadasHebEducationFund = () => {
         sivadasHebEducationFund.current!.hidden = !sivadasHebEducationFund.current!.hidden;
-        if(toggleShow4.current!.icon == addCircle) {
+        if(toggleShow4.current!.icon === addCircle) {
             toggleShow4.current!.icon = removeCircle;
         } else {
             toggleShow4.current!.icon = addCircle;

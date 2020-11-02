@@ -19,7 +19,6 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
 
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
     const [buttonDisabled, setButtonDisabled] = useState(false);
-
     const [programmeTalk,setProgrammeTalk] = useState<any>([]);
 
     const addToSchedule = async (programme: any) => {
@@ -40,7 +39,7 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
                                 case "talk":
                                     db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -56,7 +55,7 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
                                 case "tour":
                                     db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -72,7 +71,7 @@ const ProgTalkInfo: React.FC<RouteParams> = ({match}) => {
                                 case "performance":
                                     db.collection('Performances').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);

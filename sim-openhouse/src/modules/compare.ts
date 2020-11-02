@@ -26,7 +26,7 @@ export function sortTimeAsc(a: any, b: any) {
     if (aHour < bHour) return -1;
     if (aHour > bHour) return 1;
 
-    if (aHour == bHour) {
+    if (aHour === bHour) {
         if (aMins < bMins) return -1;
         if (aMins > bMins) return 1;
     }

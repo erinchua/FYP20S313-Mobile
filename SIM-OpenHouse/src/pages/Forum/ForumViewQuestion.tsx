@@ -141,7 +141,6 @@ const ForumViewQuestion: React.FC = () => {
                 });
             });
 
-            console.log(comments)
             setTimeout(() => {
                 setComments(comments.sort(forumPostsAsc));
                 setLoading(false);
@@ -254,7 +253,7 @@ const ForumViewQuestion: React.FC = () => {
                                                     <IonGrid className="forum-container" id="comment-reply-container" key={reply.id}>
                                                         <IonRow>
                                                             <IonLabel>
-                                                                <IonText id="comment-text">{reply.entry}</IonText>
+                                                                <IonText id="comment-text">{reply.removed === false ? reply.entry : "[deleted]"}</IonText>
                                                             </IonLabel>
                                                         </IonRow>
                                                         <IonRow className="ion-justify-content-end">
