@@ -54,6 +54,7 @@ const App: React.FC = () => {
         <IonReactRouter>
           <IonRouterOutlet>
             <Switch>
+              {/* <Route path="/main" component={VincentTest} exact={true} /> */}
               <Route path="/main" component={Main} exact={true} />
               <Route path="/registration" component={Registration} exact={true} />
               <Route path="/login" component={Login} exact={true} />
