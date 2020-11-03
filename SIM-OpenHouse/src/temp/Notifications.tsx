@@ -1,8 +1,11 @@
 import { Plugins, LocalNotification } from '@capacitor/core';
+import { toDateObject } from '../modules/convert'
+import moment from 'moment'
 const { LocalNotifications } = Plugins;
 
+
 class Notifications {
-    public async schedule(minute: number) {
+    public async schedule(date: string, time: string, progName: string) {
         try {
             // Request/ check permissions
             if (!(await LocalNotifications.requestPermission()).granted) return;
@@ -12,16 +15,34 @@ class Notifications {
             if (pending.notifications.length > 0)
                 await LocalNotifications.cancel(pending);
 
-            await LocalNotifications.schedule({
-                notifications: [{
-                    title: 'SIM Openhouse scheduled event',
-                    body: 'Your scheduled event will commence in 5min',
-                    id: 1,
-                    schedule: {
-                        at: new Date(Date.now() + 100000 * minute),
-                    }
-                }]
-            });
+            const progTime = toDateObject(date, time)
+            const sysTime = moment().toDate()
+            const scheduled = moment(progTime).subtract(60 * 4.7, 's').toDate()
+            if (scheduled > sysTime) {
+                await LocalNotifications.schedule({
+                    notifications: [{
+                        title: 'SIM Openhouse scheduled event is commencing soon',
+                        body: progName,
+                        id: 1,
+                        schedule: {
+                            at: scheduled
+                        }
+                    }]
+                });
+            }
+            else {
+                await LocalNotifications.schedule({
+                    notifications: [{
+                        title: 'SIM Openhouse scheduled event is has commenced',
+                        body: progName,
+                        id: 1,
+                        schedule: {
+                            at: new Date(Date.now() + 1000 * 5)
+                        }
+                    }]
+                });
+            }
+
         } catch (error) {
             console.error(error);
         }
