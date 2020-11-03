@@ -29,13 +29,32 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
     const discipline = match.params.discipline
     const category = match.params.category
 
-    const [disciplineName, setDisciplineName] = useState([
-        'Arts & Social Sciences',
-        'Business',
-        'IT & Computer Science',
-        'Nursing',
-        'Specialty'
-    ]);
+    /* When page first load */
+    useEffect(() => {
+        /*Fetching Programmes Data from firestore*/
+        const fetchData = async (discipline: string, category: string) => {
+            const programmes: any = []
+            await db.collection('TestProgrammes')
+                .where("discipline", "array-contains", match.params.discipline)
+                .where("academicLevel", '==', match.params.category)
+                .get()
+                .then((snapshot: any) => {
+                    snapshot.docs.forEach((doc: any) => {
+                        const data = doc.data()
+                        programmes.push(data)
+                        console.log("programme retrieved " + data)
+                    })
+                    setProgrammes(programmes)
+                }).catch((error) => console.log(error));
+
+        }
+
+        fetchData(match.params.discipline, match.params.category)
+
+        const sessionList: Programme[] = window.sessionStorage.compareProgList ? JSON.parse(window.sessionStorage.compareProgList) : [];
+        setCompareProgList(sessionList);
+    }, [])
+
 
     const [filterCondition, setFilterCondition] = useState<FilterCondition>({
         mos: ['fullPartTime', 'partTime', 'fullTime'],
@@ -275,34 +294,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         event: undefined,
     });
 
-    /* When page first load */
-    useEffect(() => {
-        //console.log("proglist rendered")
 
-        /*Fetching Programmes Data from firestore*/
-        const fetchData = async (discipline: string, category: string) => {
-            const programmes: any = []
-            await db.collection('TestProgrammes')
-                .where("discipline", "array-contains", match.params.discipline)
-                .where("academicLevel", '==', match.params.category)
-                .get()
-                .then((snapshot: any) => {
-                    snapshot.docs.forEach((doc: any) => {
-                        const data = doc.data()
-                        programmes.push(data)
-                        console.log("programme retrieved " + data)
-                    })
-                    setProgrammes(programmes)
-                }).catch((error) => console.log(error));
-
-        }
-
-        fetchData(match.params.discipline, match.params.category)
-
-        const sessionList: Programme[] = window.sessionStorage.compareProgList ? JSON.parse(window.sessionStorage.compareProgList) : [];
-        console.log("Session list retrieved! " + sessionList)
-        setCompareProgList(sessionList);
-    }, [])
 
     return (
         <React.Fragment>

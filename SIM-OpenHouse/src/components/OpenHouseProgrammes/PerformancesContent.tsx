@@ -9,7 +9,7 @@ import '../../css/OpenHouseActivities.css';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-import notifications from '../../temp/Notifications';
+import notification from '../../temp/Notifications';
 
 
 const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, openhouseDates: any, scheduleItems: any[] }> = props => {
@@ -91,7 +91,7 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                             if (check) {
                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
                             } else {
-                                notifications.schedule(programme.date, programme.startTime, programme.performanceName)
+                                notification(programme.date, programme.startTime, programme.performanceName)
                                 await db.collection('PersonalScheduler').doc(userID).update({
                                     registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                                 });
@@ -102,7 +102,7 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                         }, 500);
 
                     } else {
-                        notifications.schedule(programme.date, programme.startTime, programme.performanceName)
+                        notification(programme.date, programme.startTime, programme.performanceName)
                         db.collection('PersonalScheduler').doc(userID).update({
                             registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                         });
@@ -110,7 +110,7 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                     }
 
                 } else {
-                    notifications.schedule(programme.date, programme.startTime, programme.performanceName)
+                    notification(programme.date, programme.startTime, programme.performanceName)
                     db.collection('PersonalScheduler').doc(userID).update({
                         registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                     });
