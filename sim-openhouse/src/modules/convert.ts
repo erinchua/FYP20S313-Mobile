@@ -24,3 +24,7 @@ export function toDateObject(date: string, time: string) {
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
 };
+
+export function camalize(str: string) {
+    return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m: string, chr: string) => chr.toUpperCase());
+}
