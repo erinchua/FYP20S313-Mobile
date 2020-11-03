@@ -4,10 +4,17 @@ import QRCode from "qrcode.react";
 import notifications from './Notifications'
 import "../css/Home.css";
 import { auth, db } from "../firebase";
+import { toDateObject } from '../modules/convert'
+import moment from 'moment'
 
 
 const VincentTest: React.FC = () => {
 
+  const progTime = toDateObject("3-Nov-2020", "9:14PM")
+  const progTimeMili = progTime.getTime()
+  console.log(progTime)
+  console.log("Moment: " + moment(progTime).subtract(60 * 5, 's').toDate())
+  console.log((progTimeMili - new Date().getTime()) / (1000 * 60))
   const [programmes, setProgrammes] = useState<any>([])
   const [checkedFilter, setCheckFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
   const [filteredProgrammes, setFilteredProgrammes] = useState([])
@@ -149,13 +156,13 @@ const VincentTest: React.FC = () => {
         })
         } */}
 
-        <IonButton color="tertiary" onClick={() => { notifications.schedule(1) }}>
+        <IonButton color="tertiary" onClick={() => { notifications.schedule("21-Nov-2020", "10:00AM", "UOW talk on ComScience") }}>
           Schedule Notification
         </IonButton>
 
-        <IonButton color="tertiary" onClick={() => { notifications.requestPermission() }}>
+        {/* <IonButton color="tertiary" onClick={() => { notifications.requestPermission() }}>
           Request Permission
-        </IonButton>
+        </IonButton> */}
 
         <p>Full time & Part time</p>
         <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='fullPartTime' checked={checkedFilter.indexOf('fullPartTime') === -1 ? false : true}></IonCheckbox>
