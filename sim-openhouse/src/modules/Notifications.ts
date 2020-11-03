@@ -1,5 +1,5 @@
 import { Plugins, LocalNotification } from '@capacitor/core';
-import { toDateObject } from '../modules/convert'
+import { toDateObject } from './convert'
 import moment from 'moment'
 
 

@@ -1,9 +1,9 @@
 import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonPage, IonTitle, IonToolbar, IonSegmentButton, IonSegment, IonCheckbox } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
-import notification from './Notifications'
+import notification from '../modules/Notifications'
 import "../css/Home.css";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
 
 
 const VincentTest: React.FC = () => {
@@ -12,9 +12,7 @@ const VincentTest: React.FC = () => {
   const [checkedFilter, setCheckFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
   const [filteredProgrammes, setFilteredProgrammes] = useState([])
 
-  const MySchedule = async () => {
 
-  }
   const handleToggle = (value: string) => {
     const currentIndex = checkedFilter.indexOf(value)
     const newCheckedFilter = [...checkedFilter]

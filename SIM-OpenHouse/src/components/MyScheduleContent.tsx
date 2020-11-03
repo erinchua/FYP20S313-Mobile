@@ -10,8 +10,6 @@ import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
 import { sortTimeAsc } from '../modules/compare';
 import QRCode from "qrcode.react";
-import notifications from '../temp/Notifications'
-
 
 const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, openHouseProgs: any, studentDetails: any }> = props => {
     const { userID } = useAuth();
