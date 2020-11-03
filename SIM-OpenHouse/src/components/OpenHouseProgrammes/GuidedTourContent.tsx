@@ -9,7 +9,7 @@ import '../../css/GuidedTourContent.css';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-import notification from '../../temp/Notifications';
+import notification from '../../modules/Notifications';
 
 
 const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, openhouseDates: any, scheduleItems: any[] }> = props => {

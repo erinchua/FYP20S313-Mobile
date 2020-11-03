@@ -8,7 +8,7 @@ import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
-import notification from '../../temp/Notifications';
+import notification from '../../modules/Notifications';
 
 const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
