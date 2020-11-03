@@ -8,24 +8,26 @@ import { useParams } from 'react-router';
 import TopNav from '../TopNav';
 
 interface RouteParams {
-    fbid: string;
-    id: string;
+    fileName: string;
+    token: string;
 }
 
-const ProgTalkLive: React.FC = () => {
-    const { fbid, id } = useParams<RouteParams>();
+const ProgTalkRec: React.FC = () => {
+    const { fileName, token } = useParams<RouteParams>();
+
+    //https://firebasestorage.googleapis.com/v0/b/sandbox-4c75c.appspot.com/o/Recordings%2FsampleVideo.mp4?alt=media&token=b9021fe5-f104-4071-8153-a74b9b33f053
 
     return (
         <IonPage>
             <IonHeader>
-                <TopNav title="Live Talk" route="/u/openHouseMain/programmeTalks" backarrow={true} hamburger={true} />
+                <TopNav title="Recording" route="/u/openHouseMain/programmeTalks" backarrow={true} hamburger={true} />
             </IonHeader>
 
             <IonContent fullscreen className="progTalkIonContent">
                 <IonGrid className="progTalk-TableGrid">
                     <IonRow className="ion-justify-content-center progTalk-TableHeader">
                         <IonCol size="12" sizeSm="12" className="progTalk-DataHeader ion-text-wrap">
-                            <iframe src={`https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D${fbid}%26id%3D${id}&width=100%`} width="100%" height="720" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                            <iframe src={`https://firebasestorage.googleapis.com/v0/b/sandbox-4c75c.appspot.com/o/Recordings%2F${fileName}.mp4?alt=media&token=${token}`} width="100%" height="720" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
@@ -34,4 +36,4 @@ const ProgTalkLive: React.FC = () => {
     );
 };
 
-export default ProgTalkLive;
+export default ProgTalkRec;
