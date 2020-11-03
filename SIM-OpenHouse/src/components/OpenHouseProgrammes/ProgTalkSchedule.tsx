@@ -10,7 +10,8 @@ import '../../css/ProgrammeTalks.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-
+import notifications from '../../temp/Notifications';
+import moment from 'moment'
 const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
 
@@ -23,7 +24,12 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
     const addToSchedule = async (programme: any) => {
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
-
+            const time: any = moment(programme.startTime, ['h:m a']).fromNow()
+            const showTime = moment(time).format()
+            console.log("Time are:" + programme.startTime)
+            // console.log("Date now " + new Date(Date.now() - time))
+            console.log("Time are:" + time)
+            // notifications.schedule(Date.parse(programme.startTime))
             if (programme.noRegistered < programme.capacityLimit) {
                 await db.collection('PersonalScheduler').doc(userID).get().then(async (snapshot: any) => {
                     const registered = snapshot.data().registeredProgrammes;

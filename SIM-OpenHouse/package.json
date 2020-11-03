@@ -26,6 +26,7 @@
     "emailjs-com": "^2.6.3",
     "firebase": "^7.22.0",
     "ionicons": "^5.0.0",
+    "moment": "^2.29.1",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "qrcode.react": "^1.0.0",
     "react": "^16.13.0",
