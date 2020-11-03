@@ -38,6 +38,13 @@ export function toBrochure(doc: any): Brochure {
     }
 }
 
+export function toScholarshipBursary(doc: any) {
+    return {
+        id: doc.id,
+        ...doc.data()
+    }
+}
+
 export interface Announcement {
     id: string;
     title: string;

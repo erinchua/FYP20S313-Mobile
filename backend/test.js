@@ -428,4 +428,16 @@ console.log(oppSim.sort(sortFunction).join(", ")) */
 //const str = "https://www.facebook.com/permalink.php?story_fbid=133281431880725&id=109981057544096";
 //console.log(str.match(/\d+/ig))
 
-console.log(new Date().toDateString())
+//console.log(new Date().toDateString())
+
+function camalize(str) {
+    return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+}
+function toScholarshipBursary(doc) {
+    return { id: doc.id, ...doc.data() }
+}
+db.collection('Bursary').get().then(({ docs }) => {
+    const arr = docs.map(toScholarshipBursary).filter(a => { return a.segment === "Other Financial Assistance" }).reduce((accu, curr) => (accu[camalize(curr.header)] = curr, accu), {})
+    //console.log(arr.requiredSupportingDocuments)
+    console.log(arr)
+})
