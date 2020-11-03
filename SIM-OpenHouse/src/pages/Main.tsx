@@ -17,21 +17,21 @@ const Main: React.FC = () => {
     <IonPage>
       <IonContent fullscreen>
         <IonGrid className="TopHalf">
-            <IonRow>
-              <IonImg src={ logo }></IonImg>
-            </IonRow>
-            <IonRow>
-              <p id="heading">SIM Open House</p>
-            </IonRow>
-            <IonRow>
-              <p id="information">Date: 21 - 22 November 2020, Saturday - Sunday</p>
-            </IonRow>
-            <IonRow>
-              <p id="information">Time: 9am - 5pm</p>
-            </IonRow>
-            <IonRow>
-              <p id="information">Venue: SIM HQ</p>
-            </IonRow>
+          <IonRow>
+            <IonImg src={logo}></IonImg>
+          </IonRow>
+          <IonRow>
+            <p id="heading">SIM Open House</p>
+          </IonRow>
+          <IonRow>
+            <p id="information">Date: 21 - 22 November 2020, Saturday - Sunday</p>
+          </IonRow>
+          <IonRow>
+            <p id="information">Time: 9am - 5pm</p>
+          </IonRow>
+          <IonRow>
+            <p id="information">Venue: SIM HQ</p>
+          </IonRow>
         </IonGrid>
 
         <IonGrid className="BottomHalf">

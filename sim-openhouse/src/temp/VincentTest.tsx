@@ -1,21 +1,27 @@
 import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonPage, IonTitle, IonToolbar, IonSegmentButton, IonSegment, IonCheckbox } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
+import notifications from './Notifications'
 import "../css/Home.css";
 import { auth, db } from "../firebase";
-// import CreateClubAndCouncil from "./CreateClubAndCouncil";
-import ViewClubAndCouncil from "./ViewClubAndCouncil";
-import ViewContactInfo from "./ViewContactInfo";
-import ViewProgrammeTalk from "./ViewProgrammeTalk";
+import { toDateObject } from '../modules/convert'
+import moment from 'moment'
 
-//<script src="../Resource/qrcode.min.js"></script>;
 
 const VincentTest: React.FC = () => {
 
+  const progTime = toDateObject("3-Nov-2020", "9:14PM")
+  const progTimeMili = progTime.getTime()
+  console.log(progTime)
+  console.log("Moment: " + moment(progTime).subtract(60 * 5, 's').toDate())
+  console.log((progTimeMili - new Date().getTime()) / (1000 * 60))
   const [programmes, setProgrammes] = useState<any>([])
   const [checkedFilter, setCheckFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
   const [filteredProgrammes, setFilteredProgrammes] = useState([])
 
+  const MySchedule = async () => {
+
+  }
   const handleToggle = (value: string) => {
     const currentIndex = checkedFilter.indexOf(value)
     const newCheckedFilter = [...checkedFilter]
@@ -93,23 +99,9 @@ const VincentTest: React.FC = () => {
         })
     }
     fetchData();
-    fetchDate();
-
 
   }, []);
 
-  // useEffect(() => {
-  //   filterProgrammes(checkedFilter)
-
-  // }, [checkedFilter]);
-
-  /* console.log(
-    contacts.map((contact) => {
-      contact.data();
-    })
-  ); */
-
-  /*  const qrcode = new QRCode(document.getElementById("qrcode")); */
 
   const generateQR = () => {
     //qrcode.makeCode(qrdata);
@@ -163,6 +155,15 @@ const VincentTest: React.FC = () => {
 
         })
         } */}
+
+        <IonButton color="tertiary" onClick={() => { notifications.schedule("21-Nov-2020", "10:00AM", "UOW talk on ComScience") }}>
+          Schedule Notification
+        </IonButton>
+
+        {/* <IonButton color="tertiary" onClick={() => { notifications.requestPermission() }}>
+          Request Permission
+        </IonButton> */}
+
         <p>Full time & Part time</p>
         <IonCheckbox onIonChange={e => handleToggle(e.detail.value)} value='fullPartTime' checked={checkedFilter.indexOf('fullPartTime') === -1 ? false : true}></IonCheckbox>
         <br />

@@ -303,17 +303,129 @@ db.collection('Students').doc('0XluLpH5BHZLeCBwYVMytlRO3Ri1').get().then(student
 
 //console.log(new Date().getTime())
 
-db.collection('CampusLocation').get().then(snaps => {
+{/* db.collection('CampusLocation').get().then(snaps => {
     snaps.forEach(doc => {
+        const data = doc.data();
         if (doc.id === "bus") {
-            const buses = doc.data().busNo;
-            const busNos = [];
+            const busInfo = [];
 
-            for (let i = 0; i < Object.keys(buses).length; i++) {
-                busNos.push(buses[Object.keys(buses)[i]]);
+            for (let i = 0; i < Object.keys(data).length; i++) {
+                if (Object.keys(data)[i] !== "id") {
+                    const busArr = [];
+                    const buses = data[Object.keys(data)[i]].buses;
+                    const description = data[Object.keys(data)[i]].description;
+
+                    for (let i = 0; i < Object.keys(buses).length; i++) {
+                        busArr.push(buses[Object.keys(buses)[i]]);
+                    }
+
+                    busInfo.push({ description: description, buses: busArr.join(", ") });
+                }
             }
 
-            console.log(busNos.join(", "));
+            console.log(busInfo);
+
+            //console.log(simHqBusArr.join(", "));
+            //console.log(oppSimHqBusArr.join(", "));
+        }
+        if (doc.id === "car") {
+            const carparkInfo = data.carParkingDescription;
+            //console.log({ byCar: data.carDescription, carparkInfo: carparkInfo });
+            console.log(carparkInfo)
         }
     });
-});
+}); */}
+{/* const sim = ['154B', '61', '151', '154', '74E', '75', '74', '151E', '184', '52']
+const oppSim = ['74E', '74', '154', '52', '75', '61', '151', '184', '151E']
+function sortFunction(a, b) {
+    const aSplit = a.match(/[a-zA-Z]+|\d+/ig)
+    const bSplit = b.match(/[a-zA-Z]+|\d+/ig)
+
+    if (+aSplit[0] > +bSplit[0]) {
+        return 1;
+    }
+
+    if (+aSplit[0] < +bSplit[0]) {
+        return -1;
+    }
+
+    if (+aSplit[0] == +bSplit[0]) {
+        //console.log("a " + aSplit)
+        //console.log("b " + bSplit)
+        if (aSplit[1] == '' && bSplit[1] != '') {
+            return 1;
+        }
+        if (aSplit[1] != '' && bSplit[1] == '') {
+            return -1;
+        }
+        if (aSplit[1] != '' && bSplit[1] != '') {
+            if (aSplit[1] < bSplit[1]) {
+                return -1;
+            }
+            if (aSplit[1] > bSplit[1]) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+console.log(sim.sort(sortFunction).join(", "))
+console.log(oppSim.sort(sortFunction).join(", ")) */
+/* db.collection("CampusLocation").doc("bus").get().then((snapshot) => {
+    const oppSimHq = [];
+    const simHq = [];
+
+    const oppSim = snapshot.data().oppSimHq.buses;
+    for (var i = 0; i < Object.keys(oppSim).length; i++) {
+        oppSimHq.push(oppSim[Object.keys(oppSim)[i]]);
+    }
+
+    const sim = snapshot.data().simHq.buses;
+    for (var i = 0; i < Object.keys(sim).length; i++) {
+        simHq.push(sim[Object.keys(sim)[i]]);
+    }
+
+    //console.log("busOppSimArray", oppSimHq.sort(sortFunction).join(", "))
+    //console.log("busSimArray", simHq.sort(sortFunction).join(", "))
+    console.log("sim", simHq)
+    console.log("simjoin", oppSimHq)
+}); */}
+//console.log('A' > 'Z')
+
+{/* db.collection('ContactInfo').get().then(snapshot => {
+    const local = [];
+    const overseas = [];
+
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+
+        if (data.country === "local") {
+            const opHours = data.operatingHours;
+            const opArr = [];
+
+            for (let i = 0; i < Object.keys(opHours).length; i++) {
+                const op = opHours[Object.keys(opHours)[i]];
+
+                if (op !== "") {
+                    opArr.push(op);
+                }
+            }
+            const contact = {
+                ...data,
+                operatingHours: opArr
+            }
+            console.log(contact)
+        }
+    });
+}); */}
+
+/* db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ', 'Bursary-FAQ']).get().then(docs => {
+    docs.forEach(doc => {
+        console.log(doc.data())
+    })
+}) */
+
+//const str = "https://www.facebook.com/permalink.php?story_fbid=133281431880725&id=109981057544096";
+//console.log(str.match(/\d+/ig))
+
+console.log(new Date().toDateString())

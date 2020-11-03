@@ -4,8 +4,9 @@ import React, { useRef } from 'react';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
+import { Brochure } from '../../modules/map';
 
-const SimGeBursary: React.FC = () => {
+const SimGeBursary: React.FC<{ brochure: Brochure }> = (props) => {
 
     const valueAndTenureOfBursary = useRef<HTMLIonRowElement>(null);
     const eligibility = useRef<HTMLIonRowElement>(null);
@@ -25,7 +26,7 @@ const SimGeBursary: React.FC = () => {
 
     const displayValueAndTenureOfBursary = () => {
         valueAndTenureOfBursary.current!.hidden = !valueAndTenureOfBursary.current!.hidden;
-        if(toggleShow1.current!.icon == addCircle) {
+        if(toggleShow1.current!.icon === addCircle) {
             toggleShow1.current!.icon = removeCircle;
         } else {
             toggleShow1.current!.icon = addCircle;
@@ -34,7 +35,7 @@ const SimGeBursary: React.FC = () => {
 
     const displayEligibility = () => {
         eligibility.current!.hidden = !eligibility.current!.hidden;
-        if(toggleShow2.current!.icon == addCircle) {
+        if(toggleShow2.current!.icon === addCircle) {
             toggleShow2.current!.icon = removeCircle;
         } else {
             toggleShow2.current!.icon = addCircle;
@@ -43,7 +44,7 @@ const SimGeBursary: React.FC = () => {
 
     const displayRepayment = () => {
         repayment.current!.hidden = !repayment.current!.hidden;
-        if(toggleShow3.current!.icon == addCircle) {
+        if(toggleShow3.current!.icon === addCircle) {
             toggleShow3.current!.icon = removeCircle;
         } else {
             toggleShow3.current!.icon = addCircle;
@@ -52,7 +53,7 @@ const SimGeBursary: React.FC = () => {
 
     const displayHowToApply = () => {
         howToApply.current!.hidden = !howToApply.current!.hidden;
-        if(toggleShow4.current!.icon == addCircle) {
+        if(toggleShow4.current!.icon === addCircle) {
             toggleShow4.current!.icon = removeCircle;
         } else {
             toggleShow4.current!.icon = addCircle;
@@ -61,7 +62,7 @@ const SimGeBursary: React.FC = () => {
 
     const displayRequiredSupportingDocuments = () => {
         requiredSupportingDocuments.current!.hidden = !requiredSupportingDocuments.current!.hidden;
-        if(toggleShow5.current!.icon == addCircle) {
+        if(toggleShow5.current!.icon === addCircle) {
             toggleShow5.current!.icon = removeCircle;
         } else {
             toggleShow5.current!.icon = addCircle;
@@ -70,7 +71,7 @@ const SimGeBursary: React.FC = () => {
 
     const displayThingsToNote = () => {
         thingsToNote.current!.hidden = !thingsToNote.current!.hidden;
-        if(toggleShow6.current!.icon == addCircle) {
+        if(toggleShow6.current!.icon === addCircle) {
             toggleShow6.current!.icon = removeCircle;
         } else {
             toggleShow6.current!.icon = addCircle;
@@ -79,7 +80,7 @@ const SimGeBursary: React.FC = () => {
 
     const displayContactInformation = () => {
         contactInformation.current!.hidden = !contactInformation.current!.hidden;
-        if(toggleShow7.current!.icon == addCircle) {
+        if(toggleShow7.current!.icon === addCircle) {
             toggleShow7.current!.icon = removeCircle;
         } else {
             toggleShow7.current!.icon = addCircle;
@@ -94,7 +95,7 @@ const SimGeBursary: React.FC = () => {
                     <IonText className="bursary-mainHeading">SIM GE Bursary</IonText>
                 </IonCol>
                 <IonCol className="ion-align-self-center">
-                    <IonButton id="bursary-FAQ-button" size="small">FAQ Download <IonIcon slot="end" icon={cloudDownloadOutline} size="sm"/></IonButton>
+                    <IonButton id="bursary-FAQ-button" size="small" href={props.brochure.brochureUrl} target="_blank">FAQ Download <IonIcon slot="end" icon={cloudDownloadOutline} size="sm"/></IonButton>
                 </IonCol>
             </IonRow>
             <IonRow className="ion-justify-content-start bursary-mainRow">

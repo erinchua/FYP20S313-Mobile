@@ -8,25 +8,22 @@ import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
+import notifications from '../../temp/Notifications';
 
 const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
 
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [buttonDisabled, setButtonDisabled] = useState(false);
 
-    const gamesActivitiesDay1 = props.gamesActivities.filter((activity: any) => {
-        return activity.date == props.openhouseDates[0]
-    })
-    const gamesActivitiesDay2 = props.gamesActivities.filter((activity: any) => {
-        return activity.date == props.openhouseDates[1]
-    })
+    const gamesActivitiesDay1 = props.gamesActivities.filter((activity: any) => { return activity.date === props.openhouseDates[0] });
+    const gamesActivitiesDay2 = props.gamesActivities.filter((activity: any) => { return activity.date === props.openhouseDates[1] });
 
-    const addToSchedule = async (programmeTalk: any) => {
+    const addToSchedule = async (programme: any) => {
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
+            notifications.schedule(programme.date, programme.startTime, programme.gameBoothName)
             await db.collection('PersonalScheduler').doc(userID).update({
-                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programmeTalk.id)
+                registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
             });
             setAlert({ registerSuccess: true, registerFail: false, loading: false });
         } catch (e) {
@@ -56,7 +53,7 @@ const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openh
                 message={'There exists a game/ activity in your scheduler at this timing. Please remove the existing activity from your scheduler first!'}
                 buttons={['Close']}
             ></IonAlert>
-            
+
             <IonGrid id="gamesContent-tableGrid">
                 <IonRow id="gamesContent-tableHeader" className="ion-justify-content-center">
                     <IonCol className="gamesContent-Header ion-text-wrap">Booth No.</IonCol>

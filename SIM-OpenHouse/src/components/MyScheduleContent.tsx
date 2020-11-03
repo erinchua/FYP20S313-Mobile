@@ -1,4 +1,4 @@
-import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading, IonModal, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonContent } from '@ionic/react';
+import { IonCol, IonGrid, IonRow, IonButton, IonAlert, IonLoading, IonModal, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonContent } from '@ionic/react';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarTimes } from '@fortawesome/free-regular-svg-icons';
@@ -10,6 +10,7 @@ import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
 import { sortTimeAsc } from '../modules/compare';
 import QRCode from "qrcode.react";
+import notifications from '../temp/Notifications'
 
 
 const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, openHouseProgs: any, studentDetails: any }> = props => {
@@ -21,8 +22,8 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
     const [progInfo, setProgInfo] = useState({ talkName: "", talkDate: "", talkBy: "" });
     const [showProgQRCodeModal, setShowProgQRCodeModal] = useState(false);
 
-    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[0] }).sort(sortTimeAsc);
-    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date == props.openhouseDates[1] }).sort(sortTimeAsc);
+    const openHouseProgsDay1 = props.openHouseProgs.filter((item: any) => { return item.date === props.openhouseDates[0] }).sort(sortTimeAsc);
+    const openHouseProgsDay2 = props.openHouseProgs.filter((item: any) => { return item.date === props.openhouseDates[1] }).sort(sortTimeAsc);
 
     const displayRemoveProgAlert = (id: any) => {
         setAlert({ confirmRemove: true, removeSuccess: false, loading: false });
@@ -35,11 +36,11 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
             const batch = db.batch();
             const decrement = firebase.firestore.FieldValue.increment(-1);
 
-            const scheduler =  db.collection('PersonalScheduler').doc(userID);
+            const scheduler = db.collection('PersonalScheduler').doc(userID);
             batch.update(scheduler, {
                 registeredProgrammes: firebase.firestore.FieldValue.arrayRemove(item)
             });
-            
+
             if (item.split("-")[0] === "talk") {
                 const progTalk = db.collection('ProgrammeTalks').doc(item);
                 batch.update(progTalk, {
@@ -117,11 +118,11 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                             ) : null
                         ))
                     ) : (
-                        <IonRow className="ion-justify-content-center">You have not registered any programmes to your schedule.</IonRow>
-                    )) : null
+                            <IonRow className="ion-justify-content-center">You have not registered any programmes to your schedule.</IonRow>
+                        )) : null
                 }
 
-                {props.day2 === "day2" ?(
+                {props.day2 === "day2" ? (
                     openHouseProgsDay2.length > 0 ? (
                         openHouseProgsDay2.map((prog: any) => (
                             prog.id.split("-")[0].toLowerCase() !== "activity" ? (
@@ -139,8 +140,8 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                             ) : null
                         ))
                     ) : (
-                        <IonRow className="ion-justify-content-center">You have not registered any programmes to your schedule.</IonRow>
-                    )) : null
+                            <IonRow className="ion-justify-content-center">You have not registered any programmes to your schedule.</IonRow>
+                        )) : null
                 }
 
                 {/* My Schedule Table (Open House Activities) */}
@@ -175,8 +176,8 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                             ) : null
                         ))
                     ) : (
-                        <IonRow className="ion-justify-content-center">You have not registered any activities to your schedule.</IonRow>
-                    )) : null
+                            <IonRow className="ion-justify-content-center">You have not registered any activities to your schedule.</IonRow>
+                        )) : null
                 }
 
                 {props.day2 === "day2" ? (
@@ -197,8 +198,8 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                             ) : null
                         ))
                     ) : (
-                        <IonRow className="ion-justify-content-center">You have not registered any activities to your schedule.</IonRow>
-                    )) : null
+                            <IonRow className="ion-justify-content-center">You have not registered any activities to your schedule.</IonRow>
+                        )) : null
                 }
             </IonGrid>
             <IonLoading isOpen={alert.loading} />

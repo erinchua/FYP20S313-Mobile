@@ -15,7 +15,7 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
     const [loading, setLoading] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [showEditQuestionModal, setShowEditQuestionModal] = useState(false);
-    //const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState([]);
     const [entry, setEntry] = useState("");
     const [toBeEdited, setToBeEdited] = useState("");
     const [toBeDeleted, setToBeDeleted] = useState("");
@@ -48,14 +48,14 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
         }
     }
 
-    /* useEffect(() => {
+    useEffect(() => {
         return db.collection('Forum').doc(userID).collection('Questions').where("deleted", "==", false).onSnapshot(snaps => {
             const posts: any = [];
             
             snaps.forEach(snap => posts.push(snap.data()));
             setQuestions(posts);
         });
-    }, []); */
+    }, []);
 
     return (
         <>
@@ -67,7 +67,7 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Edit Question</IonCol>
                     <IonCol className="forumQnsCom-Header ion-text-wrap">Delete Question</IonCol>
                 </IonRow>
-                { props.questions.map((post: any) => (
+                {questions.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>

@@ -1,15 +1,18 @@
 import { IonContent, IonGrid, IonHeader, IonPage, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../../css/Global.css';
 import '../../css/StudentLife.css';
 import TopNav from '../../components/TopNav';
 import SimGeScholarship from '../../components/Scholarships/SimGeScholarship';
 import Sponsors from '../../components/Scholarships/Sponsors';
+import { db } from '../../firebase';
+import { toBrochure } from '../../modules/map';
 
 const Scholarships: React.FC = () => {
 
     const [heading, setHeading] = useState('simGeScholarship');
+    const [brochure, setBrochure] = useState<any>({});
 
     const handleHeading = () => {
         setHeading('simGeScholarship');
@@ -18,6 +21,15 @@ const Scholarships: React.FC = () => {
     const handleHeading2 = () => {
         setHeading('sponsors');
     }
+
+    useEffect(() => {
+        db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ']).get().then(({ docs }) => {
+            const brocs = docs.map(toBrochure);
+
+            if (brocs.length === 1)
+                setBrochure(brocs[0]);
+        });
+    }, []);
 
     return (
         <IonPage>
@@ -36,7 +48,7 @@ const Scholarships: React.FC = () => {
                 <IonGrid id="scholarships-ionRowCol">
 
                     {heading === 'simGeScholarship' ? 
-                        <SimGeScholarship /> : ''
+                        <SimGeScholarship brochure={brochure} /> : ''
                     }
 
                     {heading === 'sponsors' ? 

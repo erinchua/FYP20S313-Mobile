@@ -6,25 +6,18 @@ import firebase from 'firebase';
 
 import '../../css/Global.css';
 import '../../css/GuidedTourContent.css';
-
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
+import notifications from '../../temp/Notifications';
+
 
 const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
-    const [buttonDisabled, setButtonDisabled] = useState(false);    
 
-    const guidedTourDay1 = props.guidedTours
-        .filter((tour: any) => {
-            return tour.date == props.openhouseDates[0]
-        })
-
-    const guidedTourDay2 = props.guidedTours
-        .filter((tour: any) => {
-            return tour.date == props.openhouseDates[1]
-        })
+    const guidedTourDay1 = props.guidedTours.filter((tour: any) => { return tour.date === props.openhouseDates[0] });
+    const guidedTourDay2 = props.guidedTours.filter((tour: any) => { return tour.date === props.openhouseDates[1] });
 
     const addToSchedule = async (programme: any) => {
         try {
@@ -32,7 +25,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
 
             await db.collection('PersonalScheduler').doc(userID).get().then(async (snapshot: any) => {
                 const registered = snapshot.data().registeredProgrammes;
-                
+
                 if (registered != null) {
                     if (registered.length > 0) {
                         let check = false;
@@ -44,7 +37,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                 case "talk":
                                     db.collection('ProgrammeTalks').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -60,7 +53,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                 case "tour":
                                     db.collection('GuidedTours').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -70,13 +63,13 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                             }
                                         }
                                     });
-                                    
+
                                     break;
 
                                 case "performance":
                                     db.collection('Performances').doc(item).onSnapshot((doc: any) => {
 
-                                        if (programme.date == doc.data().date) {
+                                        if (programme.date === doc.data().date) {
 
                                             const progStart = toDateObject(programme.date, programme.startTime), progEnd = toDateObject(programme.date, programme.endTime);
                                             const itemStart = toDateObject(doc.data().date, doc.data().startTime), itemEnd = toDateObject(doc.data().date, doc.data().endTime);
@@ -86,7 +79,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                             }
                                         }
                                     });
-                                    
+
                                     break;
 
                                 default:
@@ -97,6 +90,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                             if (check) {
                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
                             } else {
+                                notifications.schedule(programme.date, programme.startTime, programme.tourName)
                                 await db.collection('PersonalScheduler').doc(userID).update({
                                     registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                                 });
@@ -107,6 +101,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                         }, 500);
 
                     } else {
+                        notifications.schedule(programme.date, programme.startTime, programme.tourName)
                         db.collection('PersonalScheduler').doc(userID).update({
                             registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                         });
@@ -114,16 +109,13 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                     }
 
                 } else {
+                    notifications.schedule(programme.date, programme.startTime, programme.tourName)
                     db.collection('PersonalScheduler').doc(userID).update({
                         registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                     });
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });
                 }
             });
-
-            if (alert.registerSuccess) {
-                // disable button
-            }
 
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });

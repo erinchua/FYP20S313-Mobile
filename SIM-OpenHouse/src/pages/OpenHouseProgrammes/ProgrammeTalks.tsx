@@ -13,31 +13,16 @@ import ProgTalkPastRec from '../../components/OpenHouseProgrammes/ProgTalkPastRe
 import FilterPopoverContent, { FilterCondition } from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
 import { TalkFilter } from '../../components/FilterPopoverContent'
-import { Programme } from '../Study@SIM/Study@SIMProgInfo'
 import { useAuth } from '../../modules/auth';
+import { ProgrammeTalk } from '../../modules/map'
 
-export interface ProgrammeTalk {
-	id: string,
-	talkName: string,
-	awardingUni: string,
-	details: string,
-	discipline: string[],
-	date: string,
-	startTime: string,
-	endTime: string,
-	venue: string,
-	capacityLimit: number,
-	noRegistered: number,
-	isLive: boolean,
-	hasRecording: boolean,
-	url: string
-}
+
 const ProgrammeTalks: React.FC = () => {
 	const { userID } = useAuth();
-	
+
 	const [tab, setTab] = useState("schedule");
 	const [dayNum, setDayNum] = useState("day1");
-    const [scheduleItems, setScheduleItems] = useState([]);
+	const [scheduleItems, setScheduleItems] = useState([]);
 
 	const handleDayOne = () => {
 		setDayNum("day1");
@@ -155,7 +140,7 @@ const ProgrammeTalks: React.FC = () => {
 			})
 		console.log(initialList.length + JSON.stringify(initialList))
 		Object.entries(condition).map(([key, value]) => {
-			if (key == 'discipline') {
+			if (key === 'discipline') {
 				let discFiltered: ProgrammeTalk[] = []
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
@@ -172,11 +157,11 @@ const ProgrammeTalks: React.FC = () => {
 
 			}
 
-			else if (key == 'uni') {
+			else if (key === 'uni') {
 				let uniFiltered: ProgrammeTalk[] = []
 				if (value.length > 0) {
 					value.forEach((value: string) => {
-						segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
+						segmentFilter = filteredList.filter(programme => programme.awardingUni === value)
 						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						uniFiltered = uniFiltered.concat(segmentFilter)
 					})
@@ -209,7 +194,7 @@ const ProgrammeTalks: React.FC = () => {
 			})
 		console.log(initialList.length + JSON.stringify(initialList))
 		Object.entries(condition).map(([key, value]) => {
-			if (key == 'discipline') {
+			if (key === 'discipline') {
 				let discFiltered: ProgrammeTalk[] = []
 				if (value.length > 0 && value.length <= 4) {
 					console.log("Entered discipline filter")
@@ -226,11 +211,11 @@ const ProgrammeTalks: React.FC = () => {
 
 			}
 
-			else if (key == 'uni') {
+			else if (key === 'uni') {
 				let uniFiltered: ProgrammeTalk[] = []
 				if (value.length > 0) {
 					value.forEach((value: string) => {
-						segmentFilter = filteredList.filter(programme => programme.awardingUni == value)
+						segmentFilter = filteredList.filter(programme => programme.awardingUni === value)
 						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						uniFiltered = uniFiltered.concat(segmentFilter)
 						// console.log("current list" + JSON.stringify(filteredList))
@@ -251,17 +236,17 @@ const ProgrammeTalks: React.FC = () => {
 		setFilterCondition(prevState => {
 			let filter = { ...prevState };
 			Object.keys(filter).map(key => {
-				if (key == 'mos')
+				if (key === 'mos')
 					filter[key] = mosFilter;
-				if (key == 'discipline')
+				if (key === 'discipline')
 					filter[key] = discFilter;
-				if (key == 'uni')
+				if (key === 'uni')
 					filter[key] = uniFilter;
-				if (key == 'acadLvl')
+				if (key === 'acadLvl')
 					filter[key] = acadLvlFilter;
-				if (key == 'entry')
+				if (key === 'entry')
 					filter[key] = entryFilter;
-				if (key == 'subDisc')
+				if (key === 'subDisc')
 					filter[key] = subDiscFilter;
 			})
 			return filter;
@@ -284,142 +269,142 @@ const ProgrammeTalks: React.FC = () => {
 						<IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>
 							Past Recordings
             </IonSegmentButton>
-          </IonSegment>
-        </IonToolbar>
+					</IonSegment>
+				</IonToolbar>
 
-      </IonHeader>
+			</IonHeader>
 
-      <IonContent fullscreen className="progTalkIonContent">
+			<IonContent fullscreen className="progTalkIonContent">
 
-        {/* Programme Talks Schedule */}
-        {tab === "schedule" ? (
-          <>
-            <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-              <IonRow className="progTalk-IonRowCol">
-                <IonToolbar>
-                  <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                    <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                      Day 1: {openhouseDates[0]}
-                    </IonSegmentButton>
-                    <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                      Day 2: {openhouseDates[1]}
-                    </IonSegmentButton>
-                  </IonSegment>
-                </IonToolbar>
-              </IonRow>
+				{/* Programme Talks Schedule */}
+				{tab === "schedule" ? (
+					<>
+						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
+							<IonRow className="progTalk-IonRowCol">
+								<IonToolbar>
+									<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+										<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+											Day 1: {openhouseDates[0]}
+										</IonSegmentButton>
+										<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+											Day 2: {openhouseDates[1]}
+										</IonSegmentButton>
+									</IonSegment>
+								</IonToolbar>
+							</IonRow>
 
-              {/* Filter Button */}
-              <IonRow>
-                <IonHeader className="filterHeader">
-                  <IonToolbar className="filterHeaderToolBar">
-                    <IonButtons slot="end" id="filterIcon">
-                      <IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
-                        <FontAwesomeIcon size="lg" icon={faFilter} />
-                      </IonButton>
-                    </IonButtons>
-                  </IonToolbar>
-                </IonHeader>
-              </IonRow>
+							{/* Filter Button */}
+							<IonRow>
+								<IonHeader className="filterHeader">
+									<IonToolbar className="filterHeaderToolBar">
+										<IonButtons slot="end" id="filterIcon">
+											<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
+												<FontAwesomeIcon size="lg" icon={faFilter} />
+											</IonButton>
+										</IonButtons>
+									</IonToolbar>
+								</IonHeader>
+							</IonRow>
 
-            </IonGrid>
+						</IonGrid>
 
-            <ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
-          </>
-        ) : (
-            ""
-          )
-        }
+						<ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
+					</>
+				) : (
+						""
+					)
+				}
 
-        {/* Live Talks */}
-        {tab === "liveTalks" ? (
-          <>
-            <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-              <IonRow className="progTalk-IonRowCol">
-                <IonCol className="progTalk-IonRowCol">
-                  <IonToolbar>
-                    <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                      <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                        Day 1: {openhouseDates[0]}
-                      </IonSegmentButton>
-                      <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                        Day 2: {openhouseDates[1]}
-                      </IonSegmentButton>
-                    </IonSegment>
-                  </IonToolbar>
-                </IonCol>
-              </IonRow>
-            </IonGrid>
+				{/* Live Talks */}
+				{tab === "liveTalks" ? (
+					<>
+						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
+							<IonRow className="progTalk-IonRowCol">
+								<IonCol className="progTalk-IonRowCol">
+									<IonToolbar>
+										<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+												Day 1: {openhouseDates[0]}
+											</IonSegmentButton>
+											<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+												Day 2: {openhouseDates[1]}
+											</IonSegmentButton>
+										</IonSegment>
+									</IonToolbar>
+								</IonCol>
+							</IonRow>
+						</IonGrid>
 
-            <ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
-          </>
-        ) : ("")
-        }
+						<ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
+					</>
+				) : ("")
+				}
 
-        {/* Past Recordings */}
-        {tab === "pastRecordings" ? (
-          <>
-            <IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-              <IonRow className="progTalk-IonRowCol">
-                <IonCol className="progTalk-IonRowCol">
-                  <IonToolbar>
-                    <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
-                      <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-                        Day 1: {openhouseDates[0]}
-                      </IonSegmentButton>
-                      <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-                        Day 2: {openhouseDates[1]}
-                      </IonSegmentButton>
-                    </IonSegment>
-                  </IonToolbar>
-                </IonCol>
-              </IonRow>
-
-
-              {/* Filter Button */}
-              <IonRow>
-                <IonHeader className="filterHeader">
-                  <IonToolbar className="filterHeaderToolBar">
-                    <IonButtons slot="end" id="filterIcon">
-                      <IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
-                        <FontAwesomeIcon size="lg" icon={faFilter} />
-                      </IonButton>
-                    </IonButtons>
-                  </IonToolbar>
-                </IonHeader>
-              </IonRow>
-            </IonGrid>
-
-            <ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
-          </>
-        ) : ("")
-        }
+				{/* Past Recordings */}
+				{tab === "pastRecordings" ? (
+					<>
+						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
+							<IonRow className="progTalk-IonRowCol">
+								<IonCol className="progTalk-IonRowCol">
+									<IonToolbar>
+										<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+												Day 1: {openhouseDates[0]}
+											</IonSegmentButton>
+											<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+												Day 2: {openhouseDates[1]}
+											</IonSegmentButton>
+										</IonSegment>
+									</IonToolbar>
+								</IonCol>
+							</IonRow>
 
 
-        {/* Filter Programmes Popover */}
-        <IonPopover id="progCourseFilterPopover"
-          cssClass='progTalkFilterPopover'
-          isOpen={showProgTalkFilterPopover.open}
-          event={showProgTalkFilterPopover.event}
-          onDidDismiss={e => setShowProgTalkFilterPopover({ open: false, event: undefined })}
-        >
-          {tab === "schedule" ?
-            <FilterPopoverContent filterFunction={filterTalks} programmes={programmeTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateScheduleTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
+							{/* Filter Button */}
+							<IonRow>
+								<IonHeader className="filterHeader">
+									<IonToolbar className="filterHeaderToolBar">
+										<IonButtons slot="end" id="filterIcon">
+											<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
+												<FontAwesomeIcon size="lg" icon={faFilter} />
+											</IonButton>
+										</IonButtons>
+									</IonToolbar>
+								</IonHeader>
+							</IonRow>
+						</IonGrid>
 
-            : ''
-          }
-
-          {tab === "pastRecordings" ?
-            <FilterPopoverContent filterFunction={filterRecTalks} programmes={recordedTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateRecTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
-
-            : ''
-          }
-
-        </IonPopover>
+						<ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
+					</>
+				) : ("")
+				}
 
 
-      </IonContent>
-    </IonPage>
-  );
+				{/* Filter Programmes Popover */}
+				<IonPopover id="progCourseFilterPopover"
+					cssClass='progTalkFilterPopover'
+					isOpen={showProgTalkFilterPopover.open}
+					event={showProgTalkFilterPopover.event}
+					onDidDismiss={e => setShowProgTalkFilterPopover({ open: false, event: undefined })}
+				>
+					{tab === "schedule" ?
+						<FilterPopoverContent filterFunction={filterTalks} programmes={programmeTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateScheduleTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
+
+						: ''
+					}
+
+					{tab === "pastRecordings" ?
+						<FilterPopoverContent filterFunction={filterRecTalks} programmes={recordedTalk} filterFor={"progTalk@SIM"} filterCondition={filterCondition} setState={updateRecTalks} onUpdateFilter={onUpdateFilter} discipline="" category="" />
+
+						: ''
+					}
+
+				</IonPopover>
+
+
+			</IonContent>
+		</IonPage>
+	);
 };
 
 export default withRouter(ProgrammeTalks);

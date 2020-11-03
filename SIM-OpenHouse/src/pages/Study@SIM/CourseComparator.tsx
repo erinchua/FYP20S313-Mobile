@@ -7,6 +7,7 @@ import '../../css/CourseComparator.css';
 
 import TopNav from '../../components/TopNav';
 import CourseComparatorDetails from '../../components/Study@SIM/CourseComparatorDetails';
+import { LocationState } from '../../modules/map'
 
 
 interface CourseComparator_Props extends RouteComponentProps<{
@@ -15,11 +16,9 @@ interface CourseComparator_Props extends RouteComponentProps<{
 }> { }
 
 const CourseComparator: React.FC<CourseComparator_Props> = ({ match }) => {
-    console.log("Comparator rendered!")
 
-    const location = useLocation()
-    const programmes = location.state
-    console.log(location)
+    const location = useLocation<LocationState>()
+    const programmes: any = location.state
     return (
         <IonPage>
             <IonHeader>

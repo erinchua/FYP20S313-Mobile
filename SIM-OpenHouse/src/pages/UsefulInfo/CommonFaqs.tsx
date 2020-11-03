@@ -10,7 +10,7 @@ import { db } from '../../firebase'
 
 const CommonFaqs: React.FC = () => {
     const [tab, setTab] = useState("openHouseFAQs");
-    const [faq, setFaq] = useState([])
+    const [faqs, setFaqs] = useState({ openhouse: [], general: [] });
 
     const handleOpenHouseFAQs = () => {
         setTab("openHouseFAQs");
@@ -26,35 +26,37 @@ const CommonFaqs: React.FC = () => {
 
     const displayInfoCol = () => {
         info.current!.hidden = !info.current!.hidden;
-        if (showIcon.current!.icon == addCircle)
+        if (showIcon.current!.icon === addCircle)
             showIcon.current!.icon = removeCircle;
         else
             showIcon.current!.icon = addCircle;
     };
 
     useEffect(() => {
-        const faqs: any = []
         db.collection('CommonFAQ').get().then((snapshot) => {
-            snapshot.forEach((doc) => {
-                const data = doc.data()
-                faqs.push(data)
-            })
-            setFaq(faqs)
-        })
-    }, [])
-    const openhouseFaq = faq.filter((faq: any) => {
-        return faq.faqType == 'openhouse'
-    })
+            const openhouse: any = [];
+            const general: any = [];
 
-    const generalFaq = faq.filter((faq: any) => {
-        return faq.faqType == 'general'
-    })
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+
+                if (data.faqType === "openhouse")
+                    openhouse.push(data);
+                else
+                    general.push(data);
+            })
+            setFaqs({ openhouse: openhouse, general: general });
+        });
+    }, []);
+
+    //const openhouseFaq = faq.filter((faq: any) => { return faq.faqType == 'openhouse' })
+    //const generalFaq = faq.filter((faq: any) => { return faq.faqType == 'general' })
 
     return (
         <IonPage>
             <IonHeader>
                 <TopNav title="Common FAQs" route='/u/usefulInfoMain' backarrow={true} hamburger={true} />
-            
+
                 <IonToolbar className="faqSegmentHeader">
                     <IonSegment scrollable value={tab} className="faqSegmentHeader">
                         <IonSegmentButton value="openHouseFAQs" className="faqSegmentBtn ion-text-wrap" id="openHouseFAQs" onClick={handleOpenHouseFAQs}>
@@ -70,87 +72,78 @@ const CommonFaqs: React.FC = () => {
             <IonContent fullscreen={true}>
                 <IonGrid id="faqGrid">
                     {/* Open House FAQs */}
-                    {tab === "openHouseFAQs" ?
-                        <>
-                            {/* Open House FAQ Accordion */}
-                            {openhouseFaq.map(({ id, faqQuestion, faqAnswer }) => {
-                                return (
-                                    <div key={id}>
-                                        <IonRow className="faqHeaderRow">
-                                            <IonCol className="faqHeaderCol">
-                                                <IonRow className="faqHeaderInnerRow">
-                                                    <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                                        <IonTitle className="faqInfoHeader">
-                                                            <div className="ion-text-wrap">
-                                                                {faqQuestion}
-                                                            </div>
-                                                        </IonTitle>
-                                                    </IonCol>
+                    {tab === "openHouseFAQs" ? (
+                        /* Open House FAQ Accordion */
+                        <IonRow className="faqHeaderRow">
+                            <IonCol className="faqHeaderCol">
+                                {faqs.openhouse.map((faq: any) => {
+                                    return (
+                                        <div key={faq.id}>
+                                            <IonRow className="faqHeaderInnerRow">
+                                                <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                                    <IonTitle className="faqInfoHeader">
+                                                        <div className="ion-text-wrap">{faq.faqQuestion}</div>
+                                                    </IonTitle>
+                                                </IonCol>
 
-                                                    <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
-                                                        <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
-                                                            <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
-                                                        </IonButton>
-                                                    </IonCol>
-                                                </IonRow>
+                                                <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
+                                                    <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
+                                                        <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
+                                                    </IonButton>
+                                                </IonCol>
+                                            </IonRow>
 
-                                                <IonRow>
-                                                    <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={true}>
-                                                        <div className="ion-text-wrap">
-                                                            <p>{faqAnswer}</p>
-                                                        </div>
-                                                    </IonCol>
-                                                </IonRow>
-                                            </IonCol>
-                                        </IonRow>
-                                    </div>
-                                )
-                            })}
-
-                        </>
-                        : null
+                                            <IonRow>
+                                                <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={true}>
+                                                    <div className="ion-text-wrap">
+                                                        <p>{faq.faqAnswer}</p>
+                                                    </div>
+                                                </IonCol>
+                                            </IonRow>
+                                        </div>
+                                    )
+                                })}
+                            </IonCol>
+                        </IonRow>
+                    ) : null
                     }
 
 
                     {/* General FAQs */}
-                    {tab === "generalFAQs" ?
-                        <>
-                            {/* General FAQ Accordion */}
-                            <IonRow className="faqHeaderRow">
-                                <IonCol className="faqHeaderCol">
-                                    <IonRow className="faqHeaderInnerRow">
-                                        <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                            <IonTitle className="faqInfoHeader">
-                                                <div className="ion-text-wrap">
-                                                    General Question
-                                            </div>
-                                            </IonTitle>
-                                        </IonCol>
+                    {tab === "generalFAQs" ? (
+                        /* General FAQ Accordion */
+                        < IonRow className="faqHeaderRow">
+                            <IonCol className="faqHeaderCol">
+                                <IonRow className="faqHeaderInnerRow">
+                                    <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                        <IonTitle className="faqInfoHeader">
+                                            <div className="ion-text-wrap">General Question</div>
+                                        </IonTitle>
+                                    </IonCol>
 
-                                        <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
-                                            <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
-                                                <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
-                                            </IonButton>
-                                        </IonCol>
-                                    </IonRow>
+                                    <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
+                                        <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
+                                            <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
+                                        </IonButton>
+                                    </IonCol>
+                                </IonRow>
 
-                                    <IonRow>
-                                        <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={true}>
-                                            <div className="ion-text-wrap">
-                                                <p>General Answer</p>
-                                            </div>
-                                        </IonCol>
-                                    </IonRow>
-                                </IonCol>
-                            </IonRow>
-                        </>
-                        : null
+                                <IonRow>
+                                    <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={true}>
+                                        <div className="ion-text-wrap">
+                                            <p>General Answer</p>
+                                        </div>
+                                    </IonCol>
+                                </IonRow>
+                            </IonCol>
+                        </IonRow>
+                    ) : null
                     }
 
                 </IonGrid>
             </IonContent>
 
-        </IonPage>
+        </IonPage >
     );
 
 };

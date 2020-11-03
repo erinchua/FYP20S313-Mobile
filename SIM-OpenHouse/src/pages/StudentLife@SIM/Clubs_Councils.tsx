@@ -1,5 +1,5 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import '../../css/Global.css';
@@ -10,22 +10,8 @@ import international_students_clubs from '../../img/studentLife@SIM/internationa
 import special_interest_clubs from '../../img/studentLife@SIM/specialInterestClubs.png';
 import studentCouncils from '../../img/studentLife@SIM/studentCouncils.png';
 import sports_fitness from '../../img/studentLife@SIM/sports&fitness.png';
-import { db } from '../../firebase';
 
 const Clubs_Councils: React.FC<RouteComponentProps> = () => {
-
-    const [clubCouncils, setClubCouncils] = useState([])
-
-    useEffect(() => {
-        const clubCouncils: any = []
-        db.collection('ClubsAndCouncils').get().then((snapshot) => {
-            snapshot.forEach((doc) => {
-                const data = doc.data()
-                clubCouncils.push(data)
-            })
-            setClubCouncils(clubCouncils)
-        })
-    }, [])
 
     return (
         <IonPage>
