@@ -8,14 +8,12 @@ import { useParams } from 'react-router';
 import TopNav from '../TopNav';
 
 interface RouteParams {
-    fileName: string;
-    token: string;
+    fbid: string;
+    id: string;
 }
 
 const ProgTalkRec: React.FC = () => {
-    const { fileName, token } = useParams<RouteParams>();
-
-    //https://firebasestorage.googleapis.com/v0/b/sandbox-4c75c.appspot.com/o/Recordings%2FsampleVideo.mp4?alt=media&token=b9021fe5-f104-4071-8153-a74b9b33f053
+    const { fbid, id } = useParams<RouteParams>();
 
     return (
         <IonPage>
@@ -27,7 +25,7 @@ const ProgTalkRec: React.FC = () => {
                 <IonGrid className="progTalk-TableGrid">
                     <IonRow className="ion-justify-content-center progTalk-TableHeader">
                         <IonCol size="12" sizeSm="12" className="progTalk-DataHeader ion-text-wrap">
-                            <iframe src={`https://firebasestorage.googleapis.com/v0/b/sandbox-4c75c.appspot.com/o/Recordings%2F${fileName}.mp4?alt=media&token=${token}`} width="100%" height="720" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                            <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&show_text=0&width=100%`} width="100%" height="720" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
