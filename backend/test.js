@@ -430,7 +430,7 @@ console.log(oppSim.sort(sortFunction).join(", ")) */
 
 //console.log(new Date().toDateString())
 
-function camalize(str) {
+/* function camalize(str) {
     return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
 }
 function toScholarshipBursary(doc) {
@@ -440,4 +440,8 @@ db.collection('Bursary').get().then(({ docs }) => {
     const arr = docs.map(toScholarshipBursary).filter(a => { return a.segment === "Other Financial Assistance" }).reduce((accu, curr) => (accu[camalize(curr.header)] = curr, accu), {})
     //console.log(arr.requiredSupportingDocuments)
     console.log(arr)
-})
+}) */
+
+return db.collection('MobileSettings').doc('zpStH3eJroZYWGTssWD3lesi3fO2').onSnapshot(doc => {
+    console.log(doc.data())
+});

@@ -1,5 +1,5 @@
 import { IonCol, IonContent, IonGrid, IonHeader, IonImg, IonPage, IonRouterLink, IonRow, IonText } from '@ionic/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faMapPin, faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,34 +8,31 @@ import '../../css/OpenHouseMain.css';
 import gif from '../../img/openHouseProgrammes/Open House Programmes.gif';
 import TopNav from '../../components/TopNav';
 import { useAuth } from '../../modules/auth';
-import { useEffect, useState } from 'react'
 import { db } from '../../firebase';
 
 const OpenHouseMain: React.FC = () => {
     const { userID } = useAuth();
+
     const [allowAnnouncementNotify, setAllowAnnouncementNotify] = useState(false);
     const [allowOpenhouseNotify, setAllowOpenhouseNotify] = useState(false);
 
     useEffect(() => {
-
         const fetchData = async () => {
-            await db.collection('Students').doc(userID).get().then(doc => {
-                setAllowOpenhouseNotify(doc.data()?.allowOpenhouseNotify)
-                setAllowAnnouncementNotify(doc.data()?.allowAnnoucementNotify)
+            await db.collection('MobileSettings').doc(userID).get().then(doc => {
+                setAllowOpenhouseNotify(doc.data()?.openhouseNotif)
+                setAllowAnnouncementNotify(doc.data()?.announcementNotif)
             })
         }
 
         fetchData()
-    }, [])
+    }, []);
 
     useEffect(() => {
         return () => {
             window.sessionStorage.setItem("allowAnnoucementNotif", JSON.stringify(allowAnnouncementNotify));
             window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowOpenhouseNotify));
         }
-    }, [
-        allowAnnouncementNotify, allowOpenhouseNotify
-    ])
+    }, [allowAnnouncementNotify, allowOpenhouseNotify]);
 
     return (
         <IonPage>
