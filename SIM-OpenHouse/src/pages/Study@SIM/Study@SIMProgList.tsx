@@ -10,8 +10,7 @@ import TopNav from '../../components/TopNav';
 import CompareProgPopoverContent from '../../components/Study@SIM/CompareProgPopoverContent';
 import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
-import { Programme } from '../../modules/map';
-import { FilterCondition } from '../../components/FilterPopoverContent'
+import { Programme, ProgrammeFilter } from '../../modules/map';
 
 interface StudySIMProgList_Props extends RouteComponentProps<{
     discipline: string;
@@ -26,8 +25,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
     console.log(props);
     const { match } = props;
-    const discipline = match.params.discipline
-    const category = match.params.category
+    const {params : {discipline, category}} = match
+    
 
     /* When page first load */
     useEffect(() => {
@@ -35,8 +34,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         const fetchData = async (discipline: string, category: string) => {
             const programmes: any = []
             await db.collection('TestProgrammes')
-                .where("discipline", "array-contains", match.params.discipline)
-                .where("academicLevel", '==', match.params.category)
+                .where("discipline", "array-contains", discipline)
+                .where("academicLevel", '==', category)
                 .get()
                 .then((snapshot: any) => {
                     snapshot.docs.forEach((doc: any) => {
@@ -49,14 +48,14 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
         }
 
-        fetchData(match.params.discipline, match.params.category)
+        fetchData(discipline, category)
 
         const sessionList: Programme[] = window.sessionStorage.compareProgList ? JSON.parse(window.sessionStorage.compareProgList) : [];
         setCompareProgList(sessionList);
     }, [])
 
 
-    const [filterCondition, setFilterCondition] = useState<FilterCondition>({
+    const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
         mos: ['fullPartTime', 'partTime', 'fullTime'],
         discipline: [discipline],
         uni: [],
@@ -66,6 +65,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
     })
 
     const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
+        console.log("onUpdateFilter is fired")
+        console.log("Mos filter is "+ mosFilter)
         setFilterCondition(prevState => {
             let filter = { ...prevState };
             Object.keys(filter).map(key => {
@@ -131,8 +132,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         }
     };
 
-    const filterProgrammes = async (condition: FilterCondition) => {
-
+    const filterProgrammes = async (condition: ProgrammeFilter) => {
+        console.log("in filterprogrammes "+ condition)
         const initialList: Programme[] = []
         let filteredList: Programme[] = []
         let segmentFilter: Programme[] = []
@@ -294,7 +295,9 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         event: undefined,
     });
 
-
+    useEffect(()=>{
+        filterProgrammes(filterCondition)
+    },[filterCondition])
 
     return (
         <React.Fragment>

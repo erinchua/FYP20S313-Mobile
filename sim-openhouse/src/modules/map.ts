@@ -135,7 +135,7 @@ export interface LocationState {
 
 //Filters
 
-export interface FilterCondition {
+export interface ProgrammeFilter {
     mos: string[],
     discipline: string[],
     uni: string[],
