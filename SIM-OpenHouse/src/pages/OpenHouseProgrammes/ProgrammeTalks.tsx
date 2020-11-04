@@ -10,11 +10,10 @@ import TopNav from '../../components/TopNav';
 import ProgTalkSchedule from '../../components/OpenHouseProgrammes/ProgTalkSchedule';
 import ProgTalkLiveTalks from '../../components/OpenHouseProgrammes/ProgTalkLiveTalks';
 import ProgTalkPastRec from '../../components/OpenHouseProgrammes/ProgTalkPastRec';
-import FilterPopoverContent, { FilterCondition } from '../../components/FilterPopoverContent';
+import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
-import { TalkFilter } from '../../components/FilterPopoverContent'
 import { useAuth } from '../../modules/auth';
-import { ProgrammeTalk } from '../../modules/map'
+import { ProgrammeTalk,TalkFilter, ProgrammeFilter } from '../../modules/map'
 
 
 const ProgrammeTalks: React.FC = () => {
@@ -105,7 +104,7 @@ const ProgrammeTalks: React.FC = () => {
 
 	//For Filters
 
-	const [filterCondition, setFilterCondition] = useState<FilterCondition>({
+	const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
 		mos: [],
 		discipline: ['Arts & Social Sciences', 'Business', 'IT & Computer Science', 'Nursing', 'Specialty'],
 		uni: [],

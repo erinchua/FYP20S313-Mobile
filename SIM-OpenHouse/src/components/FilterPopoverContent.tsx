@@ -4,31 +4,20 @@ import '../css/Global.css';
 import '../css/FilterPopoverContent.css';
 import { chevronDownOutline, chevronUpOutline } from 'ionicons/icons';
 import { db } from '../firebase';
-import { Programme, ProgrammeTalk } from '../modules/map';
+import { Programme, ProgrammeTalk, ProgrammeFilter, TalkFilter } from '../modules/map';
 
 interface myProps {
     filterFunction: any;
     filterFor: any;
     discipline: string;
     category: string;
-    filterCondition: FilterCondition | TalkFilter;
+    filterCondition: ProgrammeFilter | TalkFilter;
     onUpdateFilter: any;
     setState: any;
     programmes: Programme[] | ProgrammeTalk[];
 }
-export interface FilterCondition {
-    mos: string[],
-    discipline: string[],
-    uni: string[],
-    acadLvl: string[],
-    entry: string[],
-    subDisc: string[]
-}
 
-export interface TalkFilter {
-    discipline: string[]
-    uni: string[]
-}
+
 
 const FilterPopoverContent: React.FC<myProps> = props => {
 
@@ -41,12 +30,31 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     const entryFilter: string[] = ['aLevel', 'oLevel', 'degree', 'diploma']
 
     //Current selected filters
-    const [currentMosFilter, setCurrentMosFilter] = useState<string[]>((props.filterCondition as FilterCondition).mos)
-    const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>(props.filterCondition.discipline)
-    const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>((props.filterCondition as FilterCondition).subDisc)
-    const [currentUniFilter, setCurrentUniFilter] = useState<string[]>(props.filterCondition.uni)
-    const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>((props.filterCondition as FilterCondition).acadLvl)
-    const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>((props.filterCondition as FilterCondition).entry)
+    // const [currentMosFilter, setCurrentMosFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).mos)
+    // const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>(props.filterCondition.discipline)
+    // const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).subDisc)
+    // const [currentUniFilter, setCurrentUniFilter] = useState<string[]>(props.filterCondition.uni)
+    // const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).acadLvl)
+    // const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).entry)
+
+    //Current selected filters
+    const currentMosFilter = useRef<string[]>([])
+    currentMosFilter.current= (props.filterCondition as ProgrammeFilter).mos
+
+    const currentDiscFilter = useRef<string[]>([])
+    currentDiscFilter.current = props.filterCondition.discipline
+
+    const currentSubDiscFilter = useRef<string[]>([])
+    currentSubDiscFilter.current= (props.filterCondition as ProgrammeFilter).subDisc
+
+    const currentUniFilter = useRef<string[]>([])
+    currentUniFilter.current = props.filterCondition.uni
+
+    const currentAcadlvlFilter = useRef<string[]>([])
+    currentAcadlvlFilter.current= (props.filterCondition as ProgrammeFilter).acadLvl
+
+    const currentEntryFilter = useRef<string[]>([])
+    currentEntryFilter.current= (props.filterCondition as ProgrammeFilter).entry
 
     //When filter first render
     useEffect(() => {
@@ -168,35 +176,76 @@ const FilterPopoverContent: React.FC<myProps> = props => {
 
     //Filter handlers
 
-    const handleCheck = (value: string, currentFilter: string[], callback: any) => {
+    const handleCheck = (value: string, currentFilter: string[], category: string) => {
         const currentIndex = currentFilter.indexOf(value)
-        const newCurrentFilter = [...currentFilter]
+        // const newCurrentFilter = [...currentFilter]
 
-        if (currentIndex === -1) {
-            newCurrentFilter.push(value)
-        } else {
-            newCurrentFilter.splice(currentIndex, 1)
+        if(category == 'mos'){
+            if (currentIndex === -1) {
+                currentMosFilter.current.push(value)
+            } else {
+                currentMosFilter.current.splice(currentIndex, 1)
+            }
+        }
+        else if(category == 'disc'){
+            if (currentIndex === -1) {
+                currentDiscFilter.current.push(value)
+            } else {
+                currentDiscFilter.current.splice(currentIndex, 1)
+            }
+        }
+        else if(category == 'subdisc'){
+            if (currentIndex === -1) {
+                currentSubDiscFilter.current.push(value)
+            } else {
+                currentSubDiscFilter.current.splice(currentIndex, 1)
+            }
+        }
+        else if(category == 'uni'){
+            if (currentIndex === -1) {
+                currentUniFilter.current.push(value)
+            } else {
+                currentUniFilter.current.splice(currentIndex, 1)
+            }
+        }
+        else if(category == 'acad'){
+            if (currentIndex === -1) {
+                currentAcadlvlFilter.current.push(value)
+            } else {
+                currentAcadlvlFilter.current.splice(currentIndex, 1)
+            }
+        }
+        else if(category == 'entry'){
+            if (currentIndex === -1) {
+                currentEntryFilter.current.push(value)
+            } else {
+                currentEntryFilter.current.splice(currentIndex, 1)
+            }
         }
 
-        callback(newCurrentFilter)
-        console.log('New filters are' + newCurrentFilter)
-        //filterProgrammes(newCheckedFilter)
+        // const valueIndex = mosRef.current.indexOf(value)
+        // if(valueIndex === -1)
+        // mosRef.current.push(value)
+        // else
+        // mosRef.current.splice(valueIndex, 1)
+        // callback(newCurrentFilter)
+        // console.log('New filters are' + newCurrentFilter)
+        // console.log("MosRef are: " + mosRef.current)
+        // console.log("currentDisc ref are: " + currentDisc.current)
+
     }
 
     //All filter combined 
-    const combinedFilter = () => {
-        // console.log("Before All filters are :" + JSON.stringify(props.filterCondition))
-        props.onUpdateFilter(currentMosFilter, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter);
-    }
 
-    useEffect(() => {
-        combinedFilter();
-        // console.log("AFter All filters are :" + JSON.stringify(props.filterCondition))
-    }, [currentMosFilter, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter])
+    // useEffect(() => {
+    //     props.onUpdateFilter(mosRef.current, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter);
+    // }, [mosRef, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter])
 
+    
     return (
         <>
             {/* Filter for Study@SIM */}
+            {console.count('counter')}
             {props.filterFor === "study@SIM" ?
                 <IonGrid id="courseFilterPopoverGrid">
                     <IonRow className="filterCourseHeaderRow">
@@ -224,7 +273,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                             return (
                                                 <div key={filter}>
                                                     <IonItem className="courseFilterItem" lines="none">
-                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentMosFilter, setCurrentMosFilter)} value={filter} checked={currentMosFilter.indexOf(filter) === -1 ? false : true} />
+                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => {handleCheck(e.detail.value, currentMosFilter.current, 'mos')}} value={filter} checked={currentMosFilter.current.indexOf(filter) === -1 ? false : true} />
                                                         <IonLabel className="courseFilterLabel">
                                                             <div className="ion-text-wrap">{filter}</div>
                                                         </IonLabel>
@@ -269,7 +318,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                             return (
                                                 <div key={filter}>
                                                     <IonItem className="courseFilterItem" lines="none">
-                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentDiscFilter, setCurrentDiscFilter)} value={filter} checked={currentDiscFilter.indexOf(filter) === -1 ? false : true} />
+                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentDiscFilter.current, 'disc')} value={filter} checked={currentDiscFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                         <IonLabel className="courseFilterLabel">
                                                             <div className="ion-text-wrap">{filter}</div>
@@ -308,7 +357,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {uniFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentUniFilter, setCurrentUniFilter)} value={filter} checked={currentUniFilter.indexOf(filter) === -1 ? false : true} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentUniFilter.current, 'uni')} value={filter} checked={currentUniFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -344,7 +393,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {acadlvlFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentAcadlvlFilter, setCurrentAcadlvlFilter)} value={filter} checked={currentAcadlvlFilter.indexOf(filter) === -1 ? false : true} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentAcadlvlFilter.current, 'acad')} value={filter} checked={currentAcadlvlFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -380,7 +429,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {entryFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentEntryFilter, setCurrentEntryFilter)} value={filter} checked={currentEntryFilter.indexOf(filter) === -1 ? false : true} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentEntryFilter.current, 'entry')} value={filter} checked={currentEntryFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -416,7 +465,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {subDiscFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentSubDiscFilter, setCurrentSubDiscFilter)} value={filter} checked={currentSubDiscFilter.indexOf(filter) === -1 ? false : true} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentSubDiscFilter.current, 'subdisc')} value={filter} checked={currentSubDiscFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -435,14 +484,14 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                     </IonRow>
 
 
-                    {/* Compare Programme Popover Btn Row */}
+                    {/* Filter Programme Popover Btn Row */}
                     <IonRow id="courseFilterPopoverBtnRow">
                         <IonFooter className="ion-no-border">
                             <IonToolbar id="courseFilterPopoverBtnToolbar" class="ion-align-items-center">
                                 <IonRow class="ion-align-items-center" style={{ width: "100%" }}>
                                     <IonCol size="12" sizeSm="12" class="ion-text-center" style={{ padding: "0" }}>
                                         <>
-                                            <IonButton id="courseProgFilterBtn" onClick={() => props.filterFunction(props.filterCondition)}>FILTER</IonButton>
+                                            <IonButton id="courseProgFilterBtn" onClick={() => props.onUpdateFilter(currentMosFilter.current, currentDiscFilter.current, currentUniFilter.current, currentAcadlvlFilter.current, currentEntryFilter.current, currentSubDiscFilter.current)}>FILTER</IonButton>
                                         </>
                                     </IonCol>
                                 </IonRow>
@@ -477,12 +526,12 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                             </IonRow>
 
                             <IonRow class="ion-align-items-center">
-                                <IonCol sizeSm="12" className="courseFiltersCol" ref={disciplineInfo} hidden={false} class="ion-text-center">
+                                <IonCol sizeSm="12" className="courseFiltersCol" ref={disciplineInfo} hidden={true} class="ion-text-center">
                                     <IonList className="courseFilterList">
                                         {discFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentDiscFilter, setCurrentDiscFilter)} value={filter} checked={currentDiscFilter.indexOf(filter) === -1 ? false : true} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentDiscFilter.current, 'disc')} value={filter} checked={currentDiscFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -521,7 +570,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                         {uniFilter.map(filter => {
                                             return (<div key={filter}>
                                                 <IonItem className="courseFilterItem" lines="none">
-                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentUniFilter, setCurrentUniFilter)} value={filter} checked={currentUniFilter.indexOf(filter) === -1 ? false : true} />
+                                                    <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentUniFilter.current, 'uni')} value={filter} checked={currentUniFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
                                                         <div className="ion-text-wrap">{filter}</div>
@@ -542,7 +591,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                     </IonRow>
 
 
-                    {/* Compare Programme Popover Btn Row */}
+                    {/* Filter Programme Popover Btn Row */}
                     <IonRow id="courseFilterPopoverBtnRow">
                         <IonFooter className="ion-no-border">
                             <IonToolbar id="courseFilterPopoverBtnToolbar" class="ion-align-items-center">

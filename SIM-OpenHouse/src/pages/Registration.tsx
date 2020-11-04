@@ -57,6 +57,12 @@ const Registration: React.FC = () => {
 			redeemed: []
 		});
 
+		const settings = db.collection('MobileSettings').doc(uid);
+		batch.set(settings, {
+			announcementNotif: true,
+			openhouseNotif: true
+		});
+
 		await batch.commit();
 	};
 
@@ -70,7 +76,7 @@ const Registration: React.FC = () => {
 			});
 		} catch (e) {
 			setStatus({ loading: false, error: true, success: false });
-			console.log(e);
+			return console.log(e);
 		}
 	};
 

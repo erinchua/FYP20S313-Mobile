@@ -8,7 +8,7 @@ import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
-import notifications from '../../temp/Notifications';
+import notification from '../../modules/Notifications';
 
 const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
@@ -21,7 +21,8 @@ const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openh
     const addToSchedule = async (programme: any) => {
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
-            notifications.schedule(programme.date, programme.startTime, programme.gameBoothName)
+            notification(programme.date, programme.startTime, programme.gameBoothName, "programme");
+            
             await db.collection('PersonalScheduler').doc(userID).update({
                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
             });

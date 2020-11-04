@@ -9,7 +9,7 @@ import '../../css/GuidedTourContent.css';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-import notifications from '../../temp/Notifications';
+import notification from '../../modules/Notifications';
 
 
 const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, openhouseDates: any, scheduleItems: any[] }> = props => {
@@ -90,7 +90,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                             if (check) {
                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
                             } else {
-                                notifications.schedule(programme.date, programme.startTime, programme.tourName)
+                                notification(programme.date, programme.startTime, programme.tourName, "programme")
                                 await db.collection('PersonalScheduler').doc(userID).update({
                                     registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                                 });
@@ -101,16 +101,16 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                         }, 500);
 
                     } else {
-                        notifications.schedule(programme.date, programme.startTime, programme.tourName)
-                        db.collection('PersonalScheduler').doc(userID).update({
+                        notification(programme.date, programme.startTime, programme.tourName, "programme")
+                        await db.collection('PersonalScheduler').doc(userID).update({
                             registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                         });
                         setAlert({ registerSuccess: true, registerFail: false, loading: false });
                     }
 
                 } else {
-                    notifications.schedule(programme.date, programme.startTime, programme.tourName)
-                    db.collection('PersonalScheduler').doc(userID).update({
+                    notification(programme.date, programme.startTime, programme.tourName, "programme")
+                    await db.collection('PersonalScheduler').doc(userID).update({
                         registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                     });
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });

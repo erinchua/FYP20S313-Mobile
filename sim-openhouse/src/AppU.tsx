@@ -70,7 +70,7 @@ const App: React.FC = () => {
 				<Route path="/u/mySchedule" component={MySchedule} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks/live/:fbid/:id" component={ProgTalkLive} exact={true} />
-				<Route path="/u/openHouseMain/programmeTalks/recording/:fileName/:token" component={ProgTalkRec} exact={true} />
+				<Route path="/u/openHouseMain/programmeTalks/recording/:fbid/:id" component={ProgTalkRec} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks/progTalkInfo/:id" component={ProgTalkInfo} exact={true} />
 				<Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
 				<Route path="/u/forum" component={Forum} exact={true} />
