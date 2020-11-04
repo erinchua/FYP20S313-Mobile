@@ -34,7 +34,10 @@ const Registration: React.FC = () => {
 			dob: formatDate(data.dob),
 			highestQualification: data.highestQualification,
 			nationality: data.nationality,
-			dateRegistered: new Date().toLocaleDateString().replace(/\//g, "-")
+			dateRegistered: new Date().toLocaleDateString().replace(/\//g, "-"),
+			allowAnnoucementNotifiy: true,
+			allowOpenhouseNotifiy: true
+
 		});
 
 		const scheduler = db.collection('PersonalScheduler').doc(uid);

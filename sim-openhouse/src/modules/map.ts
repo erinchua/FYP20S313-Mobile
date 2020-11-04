@@ -148,3 +148,10 @@ export interface TalkFilter {
     discipline: string[]
     uni: string[]
 }
+
+export interface Faq {
+    id: string,
+    faqType: string,
+    faqQuestion: string,
+    faqAnswer: string
+}

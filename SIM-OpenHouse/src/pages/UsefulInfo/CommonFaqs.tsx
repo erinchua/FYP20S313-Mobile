@@ -6,7 +6,7 @@ import '../../css/Global.css';
 import '../../css/CommonFaqs.css';
 import TopNav from '../../components/TopNav';
 import { db } from '../../firebase'
-
+import { Faq } from '../../modules/map'
 
 const CommonFaqs: React.FC = () => {
     const [tab, setTab] = useState("openHouseFAQs");
@@ -114,27 +114,32 @@ const CommonFaqs: React.FC = () => {
                         /* General FAQ Accordion */
                         < IonRow className="faqHeaderRow">
                             <IonCol className="faqHeaderCol">
-                                <IonRow className="faqHeaderInnerRow">
-                                    <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
-                                        <IonTitle className="faqInfoHeader">
-                                            <div className="ion-text-wrap">General Question</div>
-                                        </IonTitle>
-                                    </IonCol>
+                                {faqs.general.map((faq: Faq) => {
+                                    return (<div key={faq.id}>
+                                        <IonRow className="faqHeaderInnerRow">
+                                            <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
+                                                <IonTitle className="faqInfoHeader">
+                                                    <div className="ion-text-wrap">{faq.faqQuestion}</div>
+                                                </IonTitle>
+                                            </IonCol>
 
-                                    <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
-                                        <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
-                                            <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
-                                        </IonButton>
-                                    </IonCol>
-                                </IonRow>
+                                            <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
+                                                <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
+                                                    <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
+                                                </IonButton>
+                                            </IonCol>
+                                        </IonRow>
 
-                                <IonRow>
-                                    <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={true}>
-                                        <div className="ion-text-wrap">
-                                            <p>General Answer</p>
-                                        </div>
-                                    </IonCol>
-                                </IonRow>
+                                        <IonRow>
+                                            <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={false}>
+                                                <div className="ion-text-wrap">
+                                                    <p>{faq.faqAnswer}</p>
+                                                </div>
+                                            </IonCol>
+                                        </IonRow>
+                                    </div>)
+                                })}
+
                             </IonCol>
                         </IonRow>
                     ) : null
