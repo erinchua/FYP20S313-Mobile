@@ -21,16 +21,24 @@ const CommonFaqs: React.FC = () => {
     };
 
 
-    const info = useRef<HTMLIonRowElement>(null);
+    const info = useRef<HTMLIonIconElement[]>([]);
     const showIcon = useRef<HTMLIonIconElement>(null);
+    info.current =[]
 
-    const displayInfoCol = () => {
-        info.current!.hidden = !info.current!.hidden;
+    const displayInfoCol = (index:number) => {
+        info.current[index]!.hidden = !info.current[index]!.hidden;
         if (showIcon.current!.icon === addCircle)
             showIcon.current!.icon = removeCircle;
         else
             showIcon.current!.icon = addCircle;
     };
+
+    //Adding each answer into their own ref.
+    const addtoRef = (el:HTMLIonIconElement)=>{
+        if(el && !info.current.includes(el))
+        info.current.push(el)
+        console.log(info.current)
+    }
 
     useEffect(() => {
         db.collection('CommonFAQ').get().then((snapshot) => {
@@ -40,7 +48,7 @@ const CommonFaqs: React.FC = () => {
             snapshot.forEach((doc) => {
                 const data = doc.data();
 
-                if (data.faqType === "openhouse")
+                if (data.faqType === "Openhouse")
                     openhouse.push(data);
                 else
                     general.push(data);
@@ -49,8 +57,7 @@ const CommonFaqs: React.FC = () => {
         });
     }, []);
 
-    //const openhouseFaq = faq.filter((faq: any) => { return faq.faqType == 'openhouse' })
-    //const generalFaq = faq.filter((faq: any) => { return faq.faqType == 'general' })
+    
 
     return (
         <IonPage>
@@ -76,7 +83,7 @@ const CommonFaqs: React.FC = () => {
                         /* Open House FAQ Accordion */
                         <IonRow className="faqHeaderRow">
                             <IonCol className="faqHeaderCol">
-                                {faqs.openhouse.map((faq: any) => {
+                                {faqs.openhouse.map((faq: Faq,index ) => {
                                     return (
                                         <div key={faq.id}>
                                             <IonRow className="faqHeaderInnerRow">
@@ -87,14 +94,14 @@ const CommonFaqs: React.FC = () => {
                                                 </IonCol>
 
                                                 <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
-                                                    <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
+                                                    <IonButton className="toggleFaqInfoBtn" onClick={e=>{displayInfoCol(index)}} fill="clear" size="default">
                                                         <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
                                                     </IonButton>
                                                 </IonCol>
                                             </IonRow>
 
                                             <IonRow>
-                                                <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={true}>
+                                                <IonCol sizeSm="12" className="faqInfo" ref={addtoRef} hidden={true}>
                                                     <div className="ion-text-wrap">
                                                         <p>{faq.faqAnswer}</p>
                                                     </div>
@@ -114,7 +121,7 @@ const CommonFaqs: React.FC = () => {
                         /* General FAQ Accordion */
                         < IonRow className="faqHeaderRow">
                             <IonCol className="faqHeaderCol">
-                                {faqs.general.map((faq: Faq) => {
+                                {faqs.general.map((faq: Faq,index) => {
                                     return (<div key={faq.id}>
                                         <IonRow className="faqHeaderInnerRow">
                                             <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
@@ -124,14 +131,14 @@ const CommonFaqs: React.FC = () => {
                                             </IonCol>
 
                                             <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
-                                                <IonButton className="toggleFaqInfoBtn" onClick={displayInfoCol} fill="clear" size="default">
+                                                <IonButton className="toggleFaqInfoBtn" onClick={e=>{displayInfoCol(index)}} fill="clear" size="default">
                                                     <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
                                                 </IonButton>
                                             </IonCol>
                                         </IonRow>
 
                                         <IonRow>
-                                            <IonCol sizeSm="12" className="faqInfo" ref={info} hidden={false}>
+                                            <IonCol sizeSm="12" className="faqInfo" ref={addtoRef} hidden={true}>
                                                 <div className="ion-text-wrap">
                                                     <p>{faq.faqAnswer}</p>
                                                 </div>
