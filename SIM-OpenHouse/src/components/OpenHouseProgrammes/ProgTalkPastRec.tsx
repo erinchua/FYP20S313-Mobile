@@ -5,11 +5,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
+import { useHistory } from 'react-router';
 
 const ProgTalkPastRec: React.FC<{ day1: any, day2: any, recordedTalk: any, openhouseDates: any }> = props => {
 
     const recordedTalkDay1 = props.recordedTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] })
     const recordedTalkDay2 = props.recordedTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] })
+    
+    const history = useHistory();
+
+    const openVideo = (e: React.MouseEvent<HTMLIonButtonElement, MouseEvent>, url: string) => {
+        const videoId = url.match(/\d+/ig)?.join("/");
+
+        e.preventDefault();
+        if (url.includes("https://www.facebook.com"))
+            history.push(`/u/openHouseMain/programmeTalks/recording/${videoId}`);
+        else
+            window.open(url);
+    }
 
     return (
         <>
@@ -27,7 +40,7 @@ const ProgTalkPastRec: React.FC<{ day1: any, day2: any, recordedTalk: any, openh
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">{programmeTalk.talkName}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.url, '_blank') }} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => openVideo(e, programmeTalk.url)} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faFileVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>
@@ -44,7 +57,7 @@ const ProgTalkPastRec: React.FC<{ day1: any, day2: any, recordedTalk: any, openh
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap progName">{programmeTalk.talkName}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="awardingUni">{programmeTalk.awardingUni}</IonCol>
                                 <IonCol size="4" sizeSm="4" className="progTalk-DataInfo ion-text-wrap" id="addCol">
-                                    <IonButton onClick={e => { e.preventDefault(); window.open(programmeTalk.url, '_blank') }} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
+                                    <IonButton onClick={e => openVideo(e, programmeTalk.url)} disabled={programmeTalk.url === "" ? true : false} className="progTalk-DataBtn" id="addBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}>
                                         <FontAwesomeIcon icon={faFileVideo} size="lg" />
                                     </IonButton>
                                 </IonCol>

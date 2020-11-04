@@ -1,12 +1,11 @@
 import { IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonItem, IonLabel, IonPage, IonRouterLink, IonRow, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../modules/auth';
 
 import '../css/Global.css';
 import '../css/Settings.css';
 import TopNav from '../components/TopNav';
+import { useAuth } from '../modules/auth';
 import { db } from '../firebase';
-
 
 const Settings: React.FC = () => {
     const { userID } = useAuth();
@@ -15,30 +14,32 @@ const Settings: React.FC = () => {
     const [openHouseRemindersChecked, setOpenHouseRemindersChecked] = useState(false);
 
     useEffect(() => {
-
         const fetchData = async () => {
-            await db.collection('Students').doc(userID).get().then(doc => {
-                setOpenHouseRemindersChecked(doc.data()?.allowOpenhouseNotify)
-                setAnnouncementAlertChecked(doc.data()?.allowAnnoucementNotify)
-            })
+            await db.collection('MobileSettings').doc(userID).get().then(doc => {
+                setOpenHouseRemindersChecked(doc.data()?.openhouseNotif)
+                setAnnouncementAlertChecked(doc.data()?.announcementNotif)
+            });
         }
-
-        fetchData()
-    }, [])
-
+        fetchData();
+    }, []);
 
     const onToggle = async (setValue: boolean, type: string) => {
+        try {
+            //console.log(setValue)
+            if (type == 'openhouse') {
+                setOpenHouseRemindersChecked(setValue);
+                await db.collection('MobileSettings').doc(userID).update({ openhouseNotif: setValue });
+            }
 
-        if (type == 'openhouse') {
-            setOpenHouseRemindersChecked(setValue)
-            await db.collection('Students').doc(userID).update({ allowOpenhouseNotify: setValue })
+            if (type == 'announcement') {
+                setAnnouncementAlertChecked(setValue);
+                await db.collection('MobileSettings').doc(userID).update({ announcementNotif: setValue });
+            }
+        } catch (e) {
+            return console.log(e);
         }
-        if (type == 'annoucement') {
-            setAnnouncementAlertChecked(setValue)
-            await db.collection('Students').doc(userID).update({ allowAnnoucementNotify: setValue })
-        }
-
     }
+        
     return (
         <IonPage>
             <IonHeader>
@@ -53,17 +54,12 @@ const Settings: React.FC = () => {
                             <IonRow>
                                 <IonItem className="settingsItem" lines="none">
                                     <IonTitle className="settingsTitle">Announcement Alerts</IonTitle>
-                                    <IonToggle className="settingsToggleBtn" slot="end" name="announcementAlerts" checked={announcementAlertChecked} onIonChange={e => onToggle(e.detail.checked, 'annoucement')}></IonToggle>
+                                    <IonToggle className="settingsToggleBtn" slot="end" name="announcementAlerts" checked={announcementAlertChecked} onIonChange={e => onToggle(e.detail.checked, 'announcement')} />
                                 </IonItem>
                             </IonRow>
 
                             <IonRow>
-                                {announcementAlertChecked ?
-                                    <IonLabel className="settingsDetails">Toggle to disable alerts for important announcements during the Open House</IonLabel>
-                                    : (
-                                        <IonLabel className="settingsDetails">Toggle to enable alerts for important announcements during the Open House</IonLabel>
-                                    )
-                                }
+                                <IonLabel className="settingsDetails">Toggle to {announcementAlertChecked ? "disable" : "enable"} alerts for important announcements during the Open House.</IonLabel>
                             </IonRow>
                         </IonCol>
                     </IonRow>
@@ -74,17 +70,12 @@ const Settings: React.FC = () => {
                             <IonRow>
                                 <IonItem className="settingsItem" lines="none">
                                     <IonTitle className="settingsTitle">Open House Programmes Reminders</IonTitle>
-                                    <IonToggle className="settingsToggleBtn" slot="end" name="openHouseReminders" checked={openHouseRemindersChecked} onIonChange={e => onToggle(e.detail.checked, 'openhouse')}></IonToggle>
+                                    <IonToggle className="settingsToggleBtn" slot="end" name="openHouseReminders" checked={openHouseRemindersChecked} onIonChange={e => onToggle(e.detail.checked, 'openhouse')} />
                                 </IonItem>
                             </IonRow>
 
                             <IonRow>
-                                {openHouseRemindersChecked ?
-                                    <IonLabel className="settingsDetails">Toggle to disable reminders for open house programmes you have added to your personal scheduler</IonLabel>
-                                    : (
-                                        <IonLabel className="settingsDetails">Toggle to enable reminders for open house programmes you have added to your personal scheduler</IonLabel>
-                                    )
-                                }
+                                <IonLabel className="settingsDetails">Toggle to {openHouseRemindersChecked ? "disable" : "enable"} reminders for open house programmes you have added to your personal scheduler.</IonLabel>
                             </IonRow>
                         </IonCol>
                     </IonRow>
