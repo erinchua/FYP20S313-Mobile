@@ -91,7 +91,7 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                             if (check) {
                                 setAlert({ registerSuccess: false, registerFail: true, loading: false });
                             } else {
-                                notification(programme.date, programme.startTime, programme.performanceName)
+                                notification(programme.date, programme.startTime, programme.performanceName, "programme")
                                 await db.collection('PersonalScheduler').doc(userID).update({
                                     registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                                 });
@@ -102,16 +102,16 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                         }, 500);
 
                     } else {
-                        notification(programme.date, programme.startTime, programme.performanceName)
-                        db.collection('PersonalScheduler').doc(userID).update({
+                        notification(programme.date, programme.startTime, programme.performanceName, "programme")
+                        await db.collection('PersonalScheduler').doc(userID).update({
                             registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                         });
                         setAlert({ registerSuccess: true, registerFail: false, loading: false });
                     }
 
                 } else {
-                    notification(programme.date, programme.startTime, programme.performanceName)
-                    db.collection('PersonalScheduler').doc(userID).update({
+                    notification(programme.date, programme.startTime, programme.performanceName, "programme")
+                    await db.collection('PersonalScheduler').doc(userID).update({
                         registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
                     });
                     setAlert({ registerSuccess: true, registerFail: false, loading: false });

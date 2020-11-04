@@ -12,8 +12,5 @@
       "smallIcon": "ic_stat_notification"
     }
   },
-  "cordova": {},
-  "server": {
-    "cleartext": true
-  }
+  "cordova": {}
 }

@@ -13,7 +13,7 @@ import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
 import { db } from "../../firebase";
 import { useAuth } from "../../modules/auth";
-import { forumPostsDesc } from "../../modules/compare";
+import { forumPostsDsc } from "../../modules/compare";
 
 const Forum: React.FC = () => {
     const { userID } = useAuth();
@@ -112,7 +112,7 @@ const Forum: React.FC = () => {
                             });
 
                             setTimeout(() => {
-                                questions.sort(forumPostsDesc);
+                                questions.sort(forumPostsDsc);
                                 setQuestions(questions);
                                 setLoading(false);
                             }, 500);

@@ -154,7 +154,7 @@ const VincentTest: React.FC = () => {
         })
         } */}
 
-        <IonButton color="tertiary" onClick={() => { notification("21-Nov-2020", "10:00AM", "UOW talk on ComScience") }}>
+        <IonButton color="tertiary" onClick={() => { notification("21-Nov-2020", "10:00AM", "UOW talk on ComScience", "programme") }}>
           Schedule Notification
         </IonButton>
 

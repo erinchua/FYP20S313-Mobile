@@ -21,7 +21,8 @@ const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openh
     const addToSchedule = async (programme: any) => {
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
-            notification(programme.date, programme.startTime, programme.gameBoothName)
+            notification(programme.date, programme.startTime, programme.gameBoothName, "programme");
+            
             await db.collection('PersonalScheduler').doc(userID).update({
                 registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id)
             });
