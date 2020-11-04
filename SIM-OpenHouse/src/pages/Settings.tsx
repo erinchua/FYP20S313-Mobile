@@ -26,13 +26,6 @@ const Settings: React.FC = () => {
         fetchData()
     }, [])
 
-    useEffect(() => {
-        console.log("Openhouse Changed to: " + openHouseRemindersChecked)
-    }, [openHouseRemindersChecked])
-
-    useEffect(() => {
-        console.log("Annoucement Changed to: " + announcementAlertChecked)
-    }, [announcementAlertChecked])
 
     const onToggle = async (setValue: boolean, type: string) => {
 
@@ -46,7 +39,6 @@ const Settings: React.FC = () => {
         }
 
     }
-    // console.log("From DB notification is allow: " + openhouseNotify)
     return (
         <IonPage>
             <IonHeader>
