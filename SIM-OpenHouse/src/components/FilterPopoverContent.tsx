@@ -30,14 +30,6 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     const entryFilter: string[] = ['aLevel', 'oLevel', 'degree', 'diploma']
 
     //Current selected filters
-    // const [currentMosFilter, setCurrentMosFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).mos)
-    // const [currentDiscFilter, setCurrentDiscFilter] = useState<string[]>(props.filterCondition.discipline)
-    // const [currentSubDiscFilter, setCurrentSubDiscFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).subDisc)
-    // const [currentUniFilter, setCurrentUniFilter] = useState<string[]>(props.filterCondition.uni)
-    // const [currentAcadlvlFilter, setCurrentAcadlvlFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).acadLvl)
-    // const [currentEntryFilter, setCurrentEntryFilter] = useState<string[]>((props.filterCondition as ProgrammeFilter).entry)
-
-    //Current selected filters
     const currentMosFilter = useRef<string[]>([])
     currentMosFilter.current= (props.filterCondition as ProgrammeFilter).mos
 
@@ -59,6 +51,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     //When filter first render
     useEffect(() => {
 
+        //fetch initial list of options (disciplines,subDisciplines,universities)
         const fetchData = async () => {
             let retrievedList: string[] = []
             await db.collection('Disciplines')
@@ -170,15 +163,10 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     };
 
 
-    /* Check if filter is checked */
-    //const [checked, setChecked] = useState(false);
-    //const [courseFilterCount, setCourseFilterCount] = useState(0);
-
-    //Filter handlers
+    //Filter checkbox function
 
     const handleCheck = (value: string, currentFilter: string[], category: string) => {
         const currentIndex = currentFilter.indexOf(value)
-        // const newCurrentFilter = [...currentFilter]
 
         if(category == 'mos'){
             if (currentIndex === -1) {
@@ -223,29 +211,11 @@ const FilterPopoverContent: React.FC<myProps> = props => {
             }
         }
 
-        // const valueIndex = mosRef.current.indexOf(value)
-        // if(valueIndex === -1)
-        // mosRef.current.push(value)
-        // else
-        // mosRef.current.splice(valueIndex, 1)
-        // callback(newCurrentFilter)
-        // console.log('New filters are' + newCurrentFilter)
-        // console.log("MosRef are: " + mosRef.current)
-        // console.log("currentDisc ref are: " + currentDisc.current)
-
     }
-
-    //All filter combined 
-
-    // useEffect(() => {
-    //     props.onUpdateFilter(mosRef.current, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter);
-    // }, [mosRef, currentDiscFilter, currentUniFilter, currentAcadlvlFilter, currentEntryFilter, currentSubDiscFilter])
-
-    
+   
     return (
         <>
             {/* Filter for Study@SIM */}
-            {console.count('counter')}
             {props.filterFor === "study@SIM" ?
                 <IonGrid id="courseFilterPopoverGrid">
                     <IonRow className="filterCourseHeaderRow">

@@ -170,7 +170,6 @@ const ProgrammeTalks: React.FC = () => {
 
 		}
 		)
-		// console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
 		callback(filteredList)
 
 	}

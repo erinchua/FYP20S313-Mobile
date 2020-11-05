@@ -23,12 +23,45 @@ interface myProps {
 }
 const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => {
 
-    console.log(props);
     const { match } = props;
     const {params : {discipline, category}} = match
     
+//Frontend
+ /*To remove selected programmes in comparePopOver */
+ const removeProg = (programme: Programme) => {
+    const newProgList = [...compareProgList]
+    const newProgID = programme.id
+    const updatedProgList = newProgList.filter(programme => { return programme.id !== newProgID })
+    setCompareProgList(updatedProgList)
 
-    /* When page first load */
+}
+/*To remove all selected programmes in comparePopOver */
+const removeAllProg = (programmes: Programme[]) => {
+    const newProgList = [...compareProgList]
+    const updatedProgList = newProgList.filter(programme => { return programme.id === '' })
+    setCompareProgList(updatedProgList)
+
+}
+
+/* Display Compare Prog Popover */
+const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
+    open: false,
+    event: undefined,
+});
+
+/* "If no prog is added to compare" Alert */
+const [showCompareProgAlert, setShowCompareProgAlert] = useState(false);
+
+/* Display Filter Menu Popover */
+const [showProgCourseFilterPopover, setShowProgCourseFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
+    open: false,
+    event: undefined,
+});
+
+//Programme List
+const [programmes, setProgrammes] = useState<Programme[]>([])
+
+/* When page first load, data retrieval*/
     useEffect(() => {
         /*Fetching Programmes Data from firestore*/
         const fetchData = async (discipline: string, category: string) => {
@@ -54,41 +87,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         setCompareProgList(sessionList);
     }, [])
 
-
-    const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
-        mos: ['fullPartTime', 'partTime', 'fullTime'],
-        discipline: [discipline],
-        uni: [],
-        acadLvl: [category],
-        entry: [],
-        subDisc: []
-    })
-
-    const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
-        console.log("onUpdateFilter is fired")
-        console.log("Mos filter is "+ mosFilter)
-        setFilterCondition(prevState => {
-            let filter = { ...prevState };
-            Object.keys(filter).map(key => {
-                if (key === 'mos')
-                    filter[key] = mosFilter;
-                if (key === 'discipline')
-                    filter[key] = discFilter;
-                if (key === 'uni')
-                    filter[key] = uniFilter;
-                if (key === 'acadLvl')
-                    filter[key] = acadLvlFilter;
-                if (key === 'entry')
-                    filter[key] = entryFilter;
-                if (key === 'subDisc')
-                    filter[key] = subDiscFilter;
-            })
-            return filter;
-        })
-    }
-
+//Compare function
     //programmes to be rendered and the comparepopover list
-    const [programmes, setProgrammes] = useState<Programme[]>([])
     const [compareProgList, setCompareProgList] = useState<Programme[]>([])
 
     //To get the unique disciplines for rendering at the header
@@ -131,6 +131,42 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
         }
     };
+
+   
+
+    //Filter function
+    const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
+        mos: ['fullPartTime', 'partTime', 'fullTime'],
+        discipline: [discipline],
+        uni: [],
+        acadLvl: [category],
+        entry: [],
+        subDisc: []
+    })
+
+    //update the filter condition from FilterPopoverContent 
+    const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
+        console.log("onUpdateFilter is fired")
+        console.log("Mos filter is "+ mosFilter)
+        setFilterCondition(prevState => {
+            let filter = { ...prevState };
+            Object.keys(filter).map(key => {
+                if (key === 'mos')
+                    filter[key] = mosFilter;
+                if (key === 'discipline')
+                    filter[key] = discFilter;
+                if (key === 'uni')
+                    filter[key] = uniFilter;
+                if (key === 'acadLvl')
+                    filter[key] = acadLvlFilter;
+                if (key === 'entry')
+                    filter[key] = entryFilter;
+                if (key === 'subDisc')
+                    filter[key] = subDiscFilter;
+            })
+            return filter;
+        })
+    }
 
     const filterProgrammes = async (condition: ProgrammeFilter) => {
         console.log("in filterprogrammes "+ condition)
@@ -256,53 +292,19 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                 }
             }
         }
-            //newList.filter(programme=>{return programme.modeOfStudy})
         )
-        console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
         setProgrammes(filteredList)
 
     }
 
-    /*To remove selected programmes in comparePopOver */
-    const removeProg = (programme: Programme) => {
-        const newProgList = [...compareProgList]
-        const newProgID = programme.id
-        const updatedProgList = newProgList.filter(programme => { return programme.id !== newProgID })
-        setCompareProgList(updatedProgList)
-
-    }
-    /*To remove all selected programmes in comparePopOver */
-    const removeAllProg = (programmes: Programme[]) => {
-        const newProgList = [...compareProgList]
-        const updatedProgList = newProgList.filter(programme => { return programme.id === '' })
-        setCompareProgList(updatedProgList)
-
-    }
-
-
-    /* Display Compare Prog Popover */
-    const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
-        open: false,
-        event: undefined,
-    });
-
-    /* "If no prog is added to compare" Alert */
-    const [showCompareProgAlert, setShowCompareProgAlert] = useState(false);
-
-    /* Display Filter Menu Popover */
-    const [showProgCourseFilterPopover, setShowProgCourseFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
-        open: false,
-        event: undefined,
-    });
-
+    //When filter condition updated, runs the filter programme
     useEffect(()=>{
         filterProgrammes(filterCondition)
     },[filterCondition])
 
     return (
         <React.Fragment>
-            {console.log("disc are" + disc + disc.length)}
-            {console.log("uniqueDisc are" + uniqueDisc)}
+            
             <IonAlert
                 isOpen={showCompareProgAlert}
                 onDidDismiss={() => setShowCompareProgAlert(false)}
