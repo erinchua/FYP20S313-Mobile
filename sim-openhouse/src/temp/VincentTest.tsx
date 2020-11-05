@@ -1,9 +1,9 @@
 import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonPage, IonTitle, IonToolbar, IonSegmentButton, IonSegment, IonCheckbox } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
-import notifications from './Notifications'
+import notification from '../modules/Notifications'
 import "../css/Home.css";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
 
 
 const VincentTest: React.FC = () => {
@@ -12,9 +12,7 @@ const VincentTest: React.FC = () => {
   const [checkedFilter, setCheckFilter] = useState<string[]>(['fullTime', 'partTime', 'fullPartTime'])
   const [filteredProgrammes, setFilteredProgrammes] = useState([])
 
-  const MySchedule = async () => {
 
-  }
   const handleToggle = (value: string) => {
     const currentIndex = checkedFilter.indexOf(value)
     const newCheckedFilter = [...checkedFilter]
@@ -55,6 +53,8 @@ const VincentTest: React.FC = () => {
     console.log('newprogrammes are' + newProgrammes)
     setFilteredProgrammes(newProgrammes)
   }
+  let allowOpenhouseNotif: boolean = false;
+
   useEffect(() => {
     const programmes: any = []
     const dates: any = []
@@ -93,13 +93,18 @@ const VincentTest: React.FC = () => {
     }
     fetchData();
 
+    window.sessionStorage.setItem("allowOpenhouseNotif", 'true');
+    const allowOpenhouseNotif = window.sessionStorage.getItem("allowOpenhouseNotif");
+    const isTrue = (allowOpenhouseNotif == 'true')
+    console.log("Boolean is " + isTrue)
+
   }, []);
 
 
   const generateQR = () => {
     //qrcode.makeCode(qrdata);
   };
-
+  // console.log("Boolean is " + allowOpenhouseNotif)
   return (
     <IonPage>
       {/* {      console.log("After rendering in filtered programmes are" + JSON.stringify(filteredProgrammes))} */}
@@ -149,11 +154,13 @@ const VincentTest: React.FC = () => {
         })
         } */}
 
-        <IonButton color="tertiary" onClick={() => { notifications.schedule(1) }}>
+        <IonButton color="tertiary" onClick={() => { notification("21-Nov-2020", "10:00AM", "UOW talk on ComScience", "programme") }}>
           Schedule Notification
         </IonButton>
 
-        <IonButton color="tertiary" onClick={() => { notifications.requestPermission() }}>
+        <IonButton color="tertiary" onClick={() => {
+          window.sessionStorage.setItem("allowOpenhouseNotif", 'false');
+        }}>
           Request Permission
         </IonButton>
 

@@ -1,12 +1,12 @@
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import React from 'react';
 import { useHistory } from 'react-router';
+import { faVideo } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import '../../css/Global.css';
 import '../../css/ProgrammeTalks.css'
 
-import { faVideo } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhouseDates: any }> = props => {
     
@@ -19,7 +19,10 @@ const ProgTalkLiveTalks: React.FC<{ day1: any, day2: any, liveTalk: any, openhou
         const videoId = url.match(/\d+/ig)?.join("/");
 
         e.preventDefault();
-        history.push(`/u/openHouseMain/programmeTalks/live/${videoId}`);
+        if (url.includes("https://www.facebook.com"))
+            history.push(`/u/openHouseMain/programmeTalks/live/${videoId}`);
+        else
+            window.open(url);
     }
 
     return (

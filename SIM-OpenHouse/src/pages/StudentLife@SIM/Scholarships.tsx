@@ -7,12 +7,13 @@ import TopNav from '../../components/TopNav';
 import SimGeScholarship from '../../components/Scholarships/SimGeScholarship';
 import Sponsors from '../../components/Scholarships/Sponsors';
 import { db } from '../../firebase';
-import { toBrochure } from '../../modules/map';
+import { toBrochure, toScholarshipBursary } from '../../modules/map';
 
 const Scholarships: React.FC = () => {
 
     const [heading, setHeading] = useState('simGeScholarship');
     const [brochure, setBrochure] = useState<any>({});
+    const [scholarships, setScholarships] = useState<any>([]);
 
     const handleHeading = () => {
         setHeading('simGeScholarship');
@@ -23,18 +24,25 @@ const Scholarships: React.FC = () => {
     }
 
     useEffect(() => {
-        db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ']).get().then(({ docs }) => {
-            const brocs = docs.map(toBrochure);
+        const fetchData = async () => {
+            await db.collection('Scholarship').get().then(({ docs }) => {
+                setScholarships(docs.map(toScholarshipBursary));
+            });
+            
+            await db.collection('Brochures').where('description', 'in', ['Scholarship-FAQ']).get().then(({ docs }) => {
+                const brocs = docs.map(toBrochure);
 
-            if (brocs.length === 1)
-                setBrochure(brocs[0]);
-        });
+                if (brocs.length === 1)
+                    setBrochure(brocs[0]);
+            });
+        }
+        fetchData();
     }, []);
 
     return (
         <IonPage>
             <IonHeader>
-                <TopNav title="Scholarships" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
+                <TopNav title="Scholarships" route="/u/studentLife@SIM" backarrow={true} hamburger={true} />
 
                 <IonToolbar>
                     <IonSegment scrollable value={heading} id="scholarships-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
@@ -43,16 +51,16 @@ const Scholarships: React.FC = () => {
                     </IonSegment>
                 </IonToolbar>
             </IonHeader>
-            
+
             <IonContent fullscreen className="studentLife-content">
                 <IonGrid id="scholarships-ionRowCol">
 
-                    {heading === 'simGeScholarship' ? 
-                        <SimGeScholarship brochure={brochure} /> : ''
+                    {heading === 'simGeScholarship' ?
+                        <SimGeScholarship brochure={brochure} scholarships={scholarships} /> : null
                     }
 
-                    {heading === 'sponsors' ? 
-                        <Sponsors /> : ''
+                    {heading === 'sponsors' ?
+                        <Sponsors scholarships={scholarships} /> : null
                     }
 
                 </IonGrid>

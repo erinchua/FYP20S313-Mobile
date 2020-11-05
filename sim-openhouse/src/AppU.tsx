@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import OpenHouseMain from './pages/OpenHouseProgrammes/OpenHouseMain';
 import ProgrammeTalks from './pages/OpenHouseProgrammes/ProgrammeTalks';
 import ProgTalkLive from './components/OpenHouseProgrammes/ProgTalkLive';
+import ProgTalkRec from './components/OpenHouseProgrammes/ProgTalkRec';
 import ProgTalkInfo from './components/OpenHouseProgrammes/ProgTalkInfo';
 import GuidedTours from './pages/OpenHouseProgrammes/GuidedTours';
 import OpenHouseActivities from './pages/OpenHouseProgrammes/OpenHouseActivities';
@@ -69,6 +70,7 @@ const App: React.FC = () => {
 				<Route path="/u/mySchedule" component={MySchedule} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks" component={ProgrammeTalks} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks/live/:fbid/:id" component={ProgTalkLive} exact={true} />
+				<Route path="/u/openHouseMain/programmeTalks/recording/:fbid/:id" component={ProgTalkRec} exact={true} />
 				<Route path="/u/openHouseMain/programmeTalks/progTalkInfo/:id" component={ProgTalkInfo} exact={true} />
 				<Route path="/u/openHouseMain/openHouseActivities" component={OpenHouseActivities} exact={true} />
 				<Route path="/u/forum" component={Forum} exact={true} />

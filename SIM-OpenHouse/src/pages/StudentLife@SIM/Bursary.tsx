@@ -7,12 +7,13 @@ import TopNav from '../../components/TopNav';
 import SimGeBursary from '../../components/Bursary/SimGeBursary';
 import OtherFinancialAssistance from '../../components/Bursary/OtherFinancialAssistance';
 import { db } from '../../firebase';
-import { toBrochure } from '../../modules/map';
+import { toBrochure, toScholarshipBursary } from '../../modules/map';
 
 const Bursary: React.FC = () => {
 
     const [heading, setHeading] = useState('simGeBursary');
     const [brochure, setBrochure] = useState<any>({});
+    const [bursaries, setBursaries] = useState<any>([]);
 
     const handleHeading = () => {
         setHeading('simGeBursary');
@@ -23,12 +24,19 @@ const Bursary: React.FC = () => {
     }
 
     useEffect(() => {
-        db.collection('Brochures').where('description', 'in', ['Bursary-FAQ']).get().then(({ docs }) => {
-            const brocs = docs.map(toBrochure);
-
-            if (brocs.length == 1)
-                setBrochure(brocs[0]);
-        });
+        const fetchData = async () => {
+            await db.collection('Bursary').get().then(({ docs }) => {
+                setBursaries(docs.map(toScholarshipBursary));
+            });
+            
+            await db.collection('Brochures').where('description', 'in', ['Bursary-FAQ']).get().then(({ docs }) => {
+                const brocs = docs.map(toBrochure);
+    
+                if (brocs.length == 1)
+                    setBrochure(brocs[0]);
+            });
+        }
+        fetchData();
     }, []);
 
     return (
@@ -48,11 +56,11 @@ const Bursary: React.FC = () => {
                 <IonGrid id="bursary-ionRowCol">
 
                     {heading === 'simGeBursary' ? 
-                        <SimGeBursary brochure={brochure} /> : ''
+                        <SimGeBursary brochure={brochure} bursaries={bursaries} /> : ''
                     }
 
                     {heading === 'otherFinancialAssistance' ? 
-                        <OtherFinancialAssistance /> : ''
+                        <OtherFinancialAssistance bursaries={bursaries} /> : ''
                     }
 
                 </IonGrid>

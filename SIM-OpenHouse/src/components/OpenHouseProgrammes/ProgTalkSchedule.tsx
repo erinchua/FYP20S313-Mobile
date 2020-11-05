@@ -10,8 +10,8 @@ import '../../css/ProgrammeTalks.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-import notifications from '../../temp/Notifications';
-import moment from 'moment'
+import notification from '../../modules/Notifications';
+
 const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
 
@@ -24,12 +24,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
     const addToSchedule = async (programme: any) => {
         try {
             setAlert({ registerSuccess: false, registerFail: false, loading: true });
-            const time: any = moment(programme.startTime, ['h:m a']).fromNow()
-            const showTime = moment(time).format()
-            console.log("Time are:" + programme.startTime)
-            // console.log("Date now " + new Date(Date.now() - time))
-            console.log("Time are:" + time)
-            // notifications.schedule(Date.parse(programme.startTime))
+
             if (programme.noRegistered < programme.capacityLimit) {
                 await db.collection('PersonalScheduler').doc(userID).get().then(async (snapshot: any) => {
                     const registered = snapshot.data().registeredProgrammes;
@@ -103,6 +98,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                                     setErrorMessage("There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!")
                                     setAlert({ registerSuccess: false, registerFail: true, loading: false });
                                 } else {
+                                    notification(programme.date, programme.startTime, programme.talkName, "programme")
                                     batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
                                     batch.update(progTalk, { noRegistered: increment });
 
@@ -114,6 +110,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                             }, 500);
 
                         } else {
+                            notification(programme.date, programme.startTime, programme.talkName, "programme")
                             batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
                             batch.update(progTalk, { noRegistered: increment });
 
@@ -122,6 +119,7 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                         }
 
                     } else {
+                        notification(programme.date, programme.startTime, programme.talkName, "programme")
                         batch.update(scheduler, { registeredProgrammes: firebase.firestore.FieldValue.arrayUnion(programme.id) });
                         batch.update(progTalk, { noRegistered: increment });
 

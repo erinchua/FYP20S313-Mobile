@@ -2,7 +2,7 @@ export function formatDate(isoDate: any) {
     return new Date(isoDate).toLocaleDateString('en-UK', {
         day: 'numeric', month: 'short', year: 'numeric'
     });
-};
+}
 
 export function toDateObject(date: string, time: string) {
     if (time === "") time = "00:00AM";
@@ -20,7 +20,13 @@ export function toDateObject(date: string, time: string) {
     const minutes = +timeSplit[1].slice(0, 2), meridiem = timeSplit[1].slice(-2, timeSplit[1].length);
     const seconds = 0, milliseconds = 0;
 
+    
+    if (hours == 12 && meridiem.toUpperCase() == "AM") hours = 0;
     if ((hours > 0 && hours < 12) && meridiem.toUpperCase() === "PM") hours += 12;
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
-};
+}
+
+export function camalize(str: string) {
+    return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m: string, chr: string) => chr.toUpperCase());
+}

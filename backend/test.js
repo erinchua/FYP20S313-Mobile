@@ -95,15 +95,15 @@ db.collection('PersonalScheduler').doc(userID).onSnapshot(snapshot => {
     console.log(arr[0].date)
 }) */}
 
-{/* const dateObject1 = {
+/* const dateObject1 = {
     date: "21-Nov-2020",
     start: "11:30AM", end: "12:30PM"
 }
 const dateObject2 = {
     date: "21-Nov-2020",
     start: "11:00AM", end: "12:00PM"
-}
-function toDateObject(date, time) {
+} */
+{/* function toDateObject(date, time) {
     if (time == "") time = "00:00AM";
 
     const dateSplit = date.split("-");
@@ -116,6 +116,7 @@ function toDateObject(date, time) {
     const minutes = +timeSplit[1].slice(0, 2), meridiem = timeSplit[1].slice(-2, timeSplit[1].length);
     const seconds = 0, milliseconds = 0;
 
+    if (hours == 12 && meridiem.toUpperCase() == "AM") hours = 0;
     if (hours < 12 && meridiem.toUpperCase() == "PM") hours += 12;
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
@@ -124,7 +125,7 @@ function toDateObject(date, time) {
 //const start2 = toDateObject(dateObject2.date, dateObject2.start), end2 = toDateObject(dateObject2.date, dateObject2.end);
 //console.log((start1 >= start2 && start1 < end2) || (end1 > start2 && end1 <= end2))
 //console.log(end1-start1)
-//console.log(toDateObject("21-Nov-2020", ""))
+//console.log(toDateObject("21-Nov-2020", "12:12AM").toLocaleString())
 
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater), toDateObject(dateObject.dateEarly, dateObject.timeEarly))
 //console.log(toDateObject(dateObject.dateLater, dateObject.timeLater) > toDateObject(dateObject.dateEarly, dateObject.timeEarly))
@@ -428,4 +429,29 @@ console.log(oppSim.sort(sortFunction).join(", ")) */
 //const str = "https://www.facebook.com/permalink.php?story_fbid=133281431880725&id=109981057544096";
 //console.log(str.match(/\d+/ig))
 
-console.log(new Date().toDateString())
+//console.log(new Date().toDateString())
+
+/* function camalize(str) {
+    return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+}
+function toScholarshipBursary(doc) {
+    return { id: doc.id, ...doc.data() }
+}
+db.collection('Bursary').get().then(({ docs }) => {
+    const arr = docs.map(toScholarshipBursary).filter(a => { return a.segment === "Other Financial Assistance" }).reduce((accu, curr) => (accu[camalize(curr.header)] = curr, accu), {})
+    //console.log(arr.requiredSupportingDocuments)
+    console.log(arr)
+}) */
+
+/* const anno = db.collection('Announcements').doc(new Date().getTime().toString());
+anno.set({
+    id: +anno.id,
+    title: "hello there",
+    details: "general kenobi",
+    date: "5-Nov-2020",
+    time: "3:10AM"
+}) */
+
+console.log(new Date(Date.now() + 1000 * 5).toLocaleString())
+console.log(new Date(Date.now()).toLocaleString())
+console.log(typeof Date.now())
