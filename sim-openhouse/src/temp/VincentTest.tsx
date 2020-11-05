@@ -94,8 +94,13 @@ const VincentTest: React.FC = () => {
     fetchData();
 
     window.sessionStorage.setItem("allowOpenhouseNotif", 'true');
+    window.sessionStorage.setItem("allowAnnoucementNotif", 'true');
     const allowOpenhouseNotif = window.sessionStorage.getItem("allowOpenhouseNotif");
+    const allowAnnoucementNotif = window.sessionStorage.getItem("allowOpenhouseNotif");
+
     const isTrue = (allowOpenhouseNotif == 'true')
+    const isTrue2 = (allowAnnoucementNotif == 'true')
+
     console.log("Boolean is " + isTrue)
 
   }, []);
@@ -159,7 +164,7 @@ const VincentTest: React.FC = () => {
         </IonButton>
 
         <IonButton color="tertiary" onClick={() => {
-          window.sessionStorage.setItem("allowOpenhouseNotif", 'false');
+          window.sessionStorage.setItem("allowOpenhouseNotif", 'true');
         }}>
           Request Permission
         </IonButton>
