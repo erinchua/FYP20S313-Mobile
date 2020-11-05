@@ -32,7 +32,7 @@ const Bursary: React.FC = () => {
             await db.collection('Brochures').where('description', 'in', ['Bursary-FAQ']).get().then(({ docs }) => {
                 const brocs = docs.map(toBrochure);
     
-                if (brocs.length == 1)
+                if (brocs.length === 1)
                     setBrochure(brocs[0]);
             });
         }

@@ -1,4 +1,4 @@
-import { Plugins, PushNotification, PushNotificationActionPerformed, PushNotificationToken } from '@capacitor/core';
+import { Plugins, PushNotificationActionPerformed, PushNotificationToken } from '@capacitor/core';
 import { toDateObject } from './convert';
 import moment from 'moment';
 import { useHistory } from 'react-router';
@@ -9,8 +9,8 @@ export async function notification(date: string, time: string, description: stri
 
     const allowAnnoucement = window.sessionStorage.getItem('allowAnnoucementNotif');
     const allowOpenhouse = window.sessionStorage.getItem('allowOpenhouseNotif');
-    const isAllowOpenhouse: boolean = (allowOpenhouse == 'true');
-    const isAllowAnnouncement: boolean = (allowAnnoucement == 'true');
+    const isAllowOpenhouse: boolean = (allowOpenhouse === 'true');
+    const isAllowAnnouncement: boolean = (allowAnnoucement === 'true');
 
     try {
         // Request/ check permissions
