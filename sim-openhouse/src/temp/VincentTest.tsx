@@ -1,7 +1,7 @@
 import { IonContent, IonInput, IonButton, IonItem, IonLabel, IonHeader, IonPage, IonTitle, IonToolbar, IonSegmentButton, IonSegment, IonCheckbox } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import QRCode from "qrcode.react";
-import notification from '../modules/Notifications'
+import { notification } from '../modules/notifications'
 import "../css/Home.css";
 import { db } from "../firebase";
 

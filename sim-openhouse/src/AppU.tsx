@@ -57,36 +57,38 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { registerPush } from './modules/notifications';
 
 const App: React.FC = () => {
-	const { loggedIn } = useAuth();
+	const { loggedIn, userID } = useAuth();
+	registerPush();
 
-	const { userID } = useAuth()
-	const [allowAnnouncementNotify, setAllowAnnouncementNotify] = useState(false);
-	const [allowOpenhouseNotify, setAllowOpenhouseNotify] = useState(false);
+	const [allowNotif, setAllowNotif] = useState({ openhouse: false, announcement: false});
 
 	useEffect(() => {
-		const fetchData = async () => {
+		/* const fetchData = async () => {
 			await db.collection('MobileSettings').doc(userID).get().then(doc => {
-				setAllowOpenhouseNotify(doc.data()?.openhouseNotif)
-				setAllowAnnouncementNotify(doc.data()?.announcementNotif)
-			})
+				setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
+			});
 		}
 
-		fetchData()
+		fetchData(); */
+
+		return db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
+			setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
+		});
 	}, []);
 
 	useEffect(() => {
 		return () => {
-			window.sessionStorage.setItem("allowAnnoucementNotif", JSON.stringify(allowAnnouncementNotify));
-			window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowOpenhouseNotify));
+			window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowNotif.openhouse));
+			window.sessionStorage.setItem("allowAnnoucementNotif", JSON.stringify(allowNotif.announcement));
+			console.log("triggered")
 		}
-	}, [allowAnnouncementNotify, allowOpenhouseNotify]);
-
+	}, [allowNotif.openhouse, allowNotif.announcement]);
+	
 
 	if (!loggedIn) return <Redirect to="/main" />;
-
-
 
 	return (
 		<IonRouterOutlet>

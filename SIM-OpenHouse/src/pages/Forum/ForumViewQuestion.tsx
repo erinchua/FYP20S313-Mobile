@@ -12,7 +12,7 @@ import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from '../../components/Forum/Forum_FlagModal';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
-import { forumPostsAsc } from '../../modules/compare';
+import { sortAsc } from '../../modules/compare';
 
 interface RouteParams {
     id: string;
@@ -142,7 +142,7 @@ const ForumViewQuestion: React.FC = () => {
             });
 
             setTimeout(() => {
-                setComments(comments.sort(forumPostsAsc));
+                setComments(comments.sort((a: any, b: any) => sortAsc(a.id, b.id)));
                 setLoading(false);
             }, 500);
         });
