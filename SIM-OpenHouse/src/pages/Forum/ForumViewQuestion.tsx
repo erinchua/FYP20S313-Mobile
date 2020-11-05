@@ -38,7 +38,7 @@ const ForumViewQuestion: React.FC = () => {
     const handleComment = async () => {
         try {
             setLoading(true);
-            const time = new Date();
+            const time = Date.now();
             let name: string;
 
             if (entry !== "") {
@@ -47,14 +47,14 @@ const ForumViewQuestion: React.FC = () => {
                         name = doc.data()?.firstName + " " + doc.data()?.lastName;
                 });
 
-                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
+                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
                 await docRef.set({
                     id: +docRef.id,
                     entry: entry,
                     questionId: +id,
                     posterName: name!,
                     posterId: userID,
-                    dateTime: time.toLocaleString().replace(/\//g, "-"),
+                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
                     deleted: false,
                     reported: false,
                     noOfReplies: 0
@@ -77,7 +77,7 @@ const ForumViewQuestion: React.FC = () => {
     const handleReply = async (commentId: string, commenterId: string) => {
         try {
             setLoading(true);
-            const time = new Date();
+            const time = Date.now();
             let name: string;
 
             await db.collection('Students').doc(userID).get().then(doc => {
@@ -85,13 +85,13 @@ const ForumViewQuestion: React.FC = () => {
                     name = doc.data()?.firstName + " " + doc.data()?.lastName;
             });
             
-            const docRef = db.collection('Forum').doc(userID).collection('Comments').doc((time.getTime()).toString());
+            const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
             await docRef.set({
                 id: +docRef.id,
                 entry: entry,
                 posterName: name!,
                 posterId: userID,
-                dateTime: time.toLocaleString().replace(/\//g, "-"),
+                dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
                 deleted: false,
                 reported: false,
                 commentId: +commentId,

@@ -41,7 +41,7 @@ const Forum: React.FC = () => {
     const handleQuestion = async () => {
         try {
             setLoading(true);
-            const time = new Date();
+            const time = Date.now();
             let name: string;
 
             if (entry !== "") {
@@ -49,13 +49,13 @@ const Forum: React.FC = () => {
                     name = doc.data().firstName + " " + doc.data().lastName;
                 });
 
-                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
+                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc(time.toString());
                 await docRef.set({
                     id: +docRef.id,
                     entry: entry,
                     posterName: name!,
                     posterId: userID,
-                    dateTime: time.toLocaleString().replace(/\//g, "-"),
+                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
                     noOfComments: 0,
                     deleted: false,
                     reported: false

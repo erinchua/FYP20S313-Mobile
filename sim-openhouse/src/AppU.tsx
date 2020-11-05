@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { IonRouterOutlet } from '@ionic/react';
 
@@ -36,6 +36,8 @@ import QRScan from './pages/QRScan';
 import SocialMedia from './pages/SocialMedia';
 
 import { useAuth } from './modules/auth';
+import { db } from './firebase';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -59,7 +61,32 @@ import './theme/variables.css';
 const App: React.FC = () => {
 	const { loggedIn } = useAuth();
 
+	const { userID } = useAuth()
+	const [allowAnnouncementNotify, setAllowAnnouncementNotify] = useState(false);
+	const [allowOpenhouseNotify, setAllowOpenhouseNotify] = useState(false);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			await db.collection('MobileSettings').doc(userID).get().then(doc => {
+				setAllowOpenhouseNotify(doc.data()?.openhouseNotif)
+				setAllowAnnouncementNotify(doc.data()?.announcementNotif)
+			})
+		}
+
+		fetchData()
+	}, []);
+
+	useEffect(() => {
+		return () => {
+			window.sessionStorage.setItem("allowAnnoucementNotif", JSON.stringify(allowAnnouncementNotify));
+			window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowOpenhouseNotify));
+		}
+	}, [allowAnnouncementNotify, allowOpenhouseNotify]);
+
+
 	if (!loggedIn) return <Redirect to="/main" />;
+
+
 
 	return (
 		<IonRouterOutlet>
