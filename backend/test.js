@@ -452,6 +452,7 @@ anno.set({
     time: "3:10AM"
 }) */
 
-console.log(new Date(Date.now() + 1000 * 5).toLocaleString())
-console.log(new Date(Date.now()).toLocaleString())
-console.log(typeof Date.now())
+//console.log(new Date(Date.now() + 1000 * 5).toLocaleString())
+//console.log(new Date(Date.now()).toLocaleString())
+console.log(Date.now())
+console.log(new Date().toLocaleString())

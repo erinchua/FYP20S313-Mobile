@@ -18,14 +18,14 @@ const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: s
     const handleReport = async () => {
         try {
             setLoading(true);
-            const time = new Date();
+            const time = Date.now();
             let name: string;
 
             await db.collection('Students').doc(userID).get().then((doc: any) => {
                 name = doc.data().firstName + " " + doc.data().lastName;
             });
             
-            const docRef = db.collection('Forum').doc(userID).collection('Reports').doc((time.getTime()).toString());
+            const docRef = db.collection('Forum').doc(userID).collection('Reports').doc(time.toString());
             await docRef.set({
                 id: +docRef.id,
                 entry: reason,
@@ -36,7 +36,7 @@ const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: s
                 offenderId: props.offenderId,
                 reporter: name!,
                 reporterId: userID,
-                dateTime: time.toLocaleString().replace(/\//g, "-")
+                dateTime: new Date(time).toLocaleString().replace(/\//g, "-")
             });
         } catch (e) {
             return console.log(e);
