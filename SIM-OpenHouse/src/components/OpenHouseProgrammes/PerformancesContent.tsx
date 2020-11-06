@@ -9,7 +9,7 @@ import '../../css/OpenHouseActivities.css';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-import notification from '../../modules/Notifications';
+import { notification } from '../../modules/notifications';
 
 
 const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, openhouseDates: any, scheduleItems: any[] }> = props => {

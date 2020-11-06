@@ -1,23 +1,26 @@
-import { Plugins } from '@capacitor/core';
+import { Plugins, PushNotificationActionPerformed, PushNotificationToken } from '@capacitor/core';
 import { toDateObject } from './convert';
 import moment from 'moment';
+import { useHistory } from 'react-router';
 
-const { LocalNotifications } = Plugins;
+const { LocalNotifications, PushNotifications } = Plugins;
 
-const notification = async (date: string, time: string, description: string, type: string) => {
+export async function notification(date: string, time: string, description: string, type: string) {
 
     const allowAnnoucement = window.sessionStorage.getItem('allowAnnoucementNotif');
     const allowOpenhouse = window.sessionStorage.getItem('allowOpenhouseNotif');
-    const isAllowOpenhouse: boolean = (allowOpenhouse == 'true');
-    const isAllowAnnouncement: boolean = (allowAnnoucement == 'true');
+    const isAllowOpenhouse: boolean = (allowOpenhouse === 'true');
+    const isAllowAnnouncement: boolean = (allowAnnoucement === 'true');
 
     try {
         // Request/ check permissions
-        if (type === 'programme')
+        if (type === 'programme') {
             if (!(await LocalNotifications.requestPermission()).granted || !isAllowOpenhouse) return;
+        }
 
-            else
-                if (!(await LocalNotifications.requestPermission()).granted || !isAllowAnnouncement) return;
+        if (type === 'announcement') {
+            if (!(await LocalNotifications.requestPermission()).granted || !isAllowAnnouncement) return;
+        }
 
         // Clear old notifications in prep for refresh (OPTIONAL)
         // const pending = await LocalNotifications.getPending();
@@ -76,4 +79,26 @@ const notification = async (date: string, time: string, description: string, typ
     }
 }
 
-export default notification;
+/* export async function registerPush() {
+    try {
+        await PushNotifications.requestPermission().then(permission => {
+            if (permission.granted) PushNotifications.register();
+        });
+
+        PushNotifications.addListener('registration', (token: PushNotificationToken) => {
+            console.log(`Token: ${JSON.stringify(token)}`)
+        });
+
+        PushNotifications.addListener('pushNotificationActionPerformed', async (notification: PushNotificationActionPerformed) => {
+            const data = notification.notification.data;
+            console.log(`Action performed: ${JSON.stringify(notification.notification)}`);
+
+            if (data.detailsId) {
+                const history = useHistory();
+                history.push('/u/announcements');
+            }
+        });
+    } catch (e) {
+        return console.log(e);
+    }
+} */

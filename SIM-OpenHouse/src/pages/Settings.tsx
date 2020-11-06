@@ -26,12 +26,12 @@ const Settings: React.FC = () => {
     const onToggle = async (setValue: boolean, type: string) => {
         try {
             //console.log(setValue)
-            if (type == 'openhouse') {
+            if (type === 'openhouse') {
                 setOpenHouseRemindersChecked(setValue);
                 await db.collection('MobileSettings').doc(userID).update({ openhouseNotif: setValue });
             }
 
-            if (type == 'announcement') {
+            if (type === 'announcement') {
                 setAnnouncementAlertChecked(setValue);
                 await db.collection('MobileSettings').doc(userID).update({ announcementNotif: setValue });
             }
