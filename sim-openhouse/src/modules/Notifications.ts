@@ -79,7 +79,7 @@ export async function notification(date: string, time: string, description: stri
     }
 }
 
-export async function registerPush() {
+/* export async function registerPush() {
     try {
         await PushNotifications.requestPermission().then(permission => {
             if (permission.granted) PushNotifications.register();
@@ -101,4 +101,4 @@ export async function registerPush() {
     } catch (e) {
         return console.log(e);
     }
-}
+} */

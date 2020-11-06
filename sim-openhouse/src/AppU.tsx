@@ -37,6 +37,7 @@ import SocialMedia from './pages/SocialMedia';
 
 import { useAuth } from './modules/auth';
 import { db } from './firebase';
+//import { registerPush } from './modules/notifications';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -57,11 +58,10 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { registerPush } from './modules/notifications';
 
 const App: React.FC = () => {
 	const { loggedIn, userID } = useAuth();
-	registerPush();
+	//registerPush();
 
 	const [allowNotif, setAllowNotif] = useState({ openhouse: false, announcement: false});
 
