@@ -3,3 +3,4 @@ backend/config/firebaseConfig.js
 backend/config/fypServiceKey.json
 backend/config/sandboxServiceKey.json
 sim-openhouse/src/firebase.ts
+backend/import.js
