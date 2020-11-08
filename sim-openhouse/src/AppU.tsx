@@ -65,23 +65,26 @@ const App: React.FC = () => {
 	const { loggedIn, userID } = useAuth();
 
 	const [allowNotif, setAllowNotif] = useState({ openhouse: false, announcement: false });
-	const [announcements, setAnnouncements] = useState<Announcement[]>([]);
 
 	useEffect(() => {
 		if (userID) {
-			const settingRef = db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
+			return db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
 				setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
 			});
-
-			const annoRef = db.collection('Announcements').onSnapshot(({ docs }) => {
-				const upcoming = docs.map(toAnnouncement).filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
-				setAnnouncements(upcoming);
-			});
-
-			settingRef();
-			annoRef();
 		}
 	}, [userID]);
+
+	useEffect(() => {
+		if (userID) {
+			return db.collection('Announcements').onSnapshot(({ docs }) => {
+				const upcoming = docs.map(toAnnouncement).filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
+
+				if (upcoming.length > 0) {
+					upcoming.map(alert => notification(alert.date, alert.time, alert.title, "announcement"));
+				}
+			});
+		}
+	}, []);
 
 	useEffect(() => {
 		return () => {
@@ -89,12 +92,6 @@ const App: React.FC = () => {
 			window.sessionStorage.setItem("allowAnnoucementNotif", JSON.stringify(allowNotif.announcement));
 		}
 	}, [allowNotif.openhouse, allowNotif.announcement]);
-
-	useEffect(() => {
-		if (announcements.length > 0) {
-			announcements.map(alert => notification(alert.date, alert.time, alert.title, "announcement"));
-		}
-	}, [announcements])
 
 
 	if (!loggedIn) return <Redirect to="/main" />;
