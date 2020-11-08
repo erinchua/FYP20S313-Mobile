@@ -101,7 +101,7 @@ const MySchedule: React.FC = () => {
 
                     <IonRow className="mySchedule-IonRowCol">
                         <IonCol sizeSm="12" style={{ padding: "0", width: "100%" }}>
-                            <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                            <IonSegment scrollable value={dayNum}>
                                 <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="mySchedule-DayTab">
                                     Day 1: {openhouseDates[0]}
                                 </IonSegmentButton>

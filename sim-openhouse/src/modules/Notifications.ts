@@ -1,9 +1,8 @@
-import { Plugins, PushNotificationActionPerformed, PushNotificationToken } from '@capacitor/core';
+import { Plugins } from '@capacitor/core';
 import { toDateObject } from './convert';
 import moment from 'moment';
-import { useHistory } from 'react-router';
 
-const { LocalNotifications, PushNotifications } = Plugins;
+const { LocalNotifications } = Plugins;
 
 export async function notification(date: string, time: string, description: string, type: string) {
 
@@ -21,11 +20,6 @@ export async function notification(date: string, time: string, description: stri
         if (type === 'announcement') {
             if (!(await LocalNotifications.requestPermission()).granted || !isAllowAnnouncement) return;
         }
-
-        // Clear old notifications in prep for refresh (OPTIONAL)
-        // const pending = await LocalNotifications.getPending();
-        // if (pending.notifications.length > 0)
-        //     await LocalNotifications.cancel(pending);
 
         const subTime = toDateObject(date, time);
         const sysTime = moment().toDate();
@@ -78,27 +72,3 @@ export async function notification(date: string, time: string, description: stri
         return console.error(error);
     }
 }
-
-/* export async function registerPush() {
-    try {
-        await PushNotifications.requestPermission().then(permission => {
-            if (permission.granted) PushNotifications.register();
-        });
-
-        PushNotifications.addListener('registration', (token: PushNotificationToken) => {
-            console.log(`Token: ${JSON.stringify(token)}`)
-        });
-
-        PushNotifications.addListener('pushNotificationActionPerformed', async (notification: PushNotificationActionPerformed) => {
-            const data = notification.notification.data;
-            console.log(`Action performed: ${JSON.stringify(notification.notification)}`);
-
-            if (data.detailsId) {
-                const history = useHistory();
-                history.push('/u/announcements');
-            }
-        });
-    } catch (e) {
-        return console.log(e);
-    }
-} */

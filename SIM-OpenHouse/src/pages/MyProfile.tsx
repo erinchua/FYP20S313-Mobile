@@ -48,7 +48,6 @@ const MyProfile: React.FC = () => {
         }
     };
 
-    {/* Change Password Modal & Alert */ }
     const [changePasswordModal, setChangePasswordModal] = useState(false);
 
     const currentPasswordRef = useRef({});
@@ -62,9 +61,9 @@ const MyProfile: React.FC = () => {
             if (data.currentPassword && data.newPassword) {
                 const user = auth.currentUser;
                 const cred = firebase.auth.EmailAuthProvider.credential(user?.email!, data.currentPassword);
-                await user?.reauthenticateWithCredential(cred).then(async (uCred) => {
-                    console.log("reauthenticated", uCred)
-                    await user!.updatePassword(data.newPassword).then(() => console.log("password updated"));
+
+                await user?.reauthenticateWithCredential(cred).then(async () => {
+                    await user!.updatePassword(data.newPassword);
                 });
                 setPasswordAlert({ success: true, error: false });
             } else {

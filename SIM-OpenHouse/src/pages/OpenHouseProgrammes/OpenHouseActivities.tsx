@@ -116,7 +116,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                 <IonGrid className="openHouseActivities-grid">
                     <IonRow className="openHouseActivities-grid">
                         <IonToolbar>
-                            <IonSegment scrollable value={headingTitle} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                            <IonSegment scrollable value={headingTitle}>
                                 <IonCol className="openHouseActivities-grid" sizeSm="4">
                                     <IonSegmentButton value="Performances" onClick={handlePerformance} className="openHouseActivities-heading ion-text-wrap">Performances</IonSegmentButton>
                                 </IonCol>
@@ -147,7 +147,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                             <IonRow id="performancesContent-ionRowCol">
                                 <IonCol id="performancesContent-ionRowCol">
                                     <IonToolbar>
-                                        <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                                        <IonSegment scrollable value={dayNum}>
                                             <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="performancesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
                                             <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="performancesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
                                         </IonSegment>
@@ -166,7 +166,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                             <IonRow id="gamesContent-ionRowCol">
                                 <IonCol id="gamesContent-ionRowCol">
                                     <IonToolbar>
-                                        <IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                                        <IonSegment scrollable value={dayNum}>
                                             <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="gamesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
                                             <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="gamesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
                                         </IonSegment>

@@ -13,7 +13,7 @@ import ProgTalkPastRec from '../../components/OpenHouseProgrammes/ProgTalkPastRe
 import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
-import { ProgrammeTalk,TalkFilter, ProgrammeFilter } from '../../modules/map'
+import { ProgrammeTalk, TalkFilter, ProgrammeFilter } from '../../modules/map'
 
 
 const ProgrammeTalks: React.FC = () => {
@@ -127,25 +127,22 @@ const ProgrammeTalks: React.FC = () => {
 		const initialList: ProgrammeTalk[] = []
 		let filteredList: ProgrammeTalk[] = []
 		let segmentFilter: ProgrammeTalk[] = []
-		console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
+
 		await db.collection('ProgrammeTalks')
 			.get()
 			.then(snapshot => {
 				snapshot.docs.forEach((doc: any) => {
 					const data = doc.data()
-					console.log(JSON.stringify(data))
 					initialList.push(data)
 				})
 			})
-		console.log(initialList.length + JSON.stringify(initialList))
+
 		Object.entries(condition).map(([key, value]) => {
 			if (key === 'discipline') {
 				let discFiltered: ProgrammeTalk[] = []
 				if (value.length > 0 && value.length <= 4) {
-					console.log("Entered discipline filter")
 					value.forEach((value: string) => {
 						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
-						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
 					filteredList = discFiltered
@@ -161,7 +158,6 @@ const ProgrammeTalks: React.FC = () => {
 				if (value.length > 0) {
 					value.forEach((value: string) => {
 						segmentFilter = filteredList.filter(programme => programme.awardingUni === value)
-						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						uniFiltered = uniFiltered.concat(segmentFilter)
 					})
 					filteredList = uniFiltered
@@ -179,26 +175,23 @@ const ProgrammeTalks: React.FC = () => {
 		const initialList: ProgrammeTalk[] = []
 		let filteredList: ProgrammeTalk[] = []
 		let segmentFilter: ProgrammeTalk[] = []
-		console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
+
 		await db.collection('ProgrammeTalks')
 			.where("hasRecording", '==', true)
 			.get()
 			.then(snapshot => {
 				snapshot.docs.forEach((doc: any) => {
 					const data = doc.data()
-					console.log(JSON.stringify(data))
 					initialList.push(data)
 				})
 			})
-		console.log(initialList.length + JSON.stringify(initialList))
+
 		Object.entries(condition).map(([key, value]) => {
 			if (key === 'discipline') {
 				let discFiltered: ProgrammeTalk[] = []
 				if (value.length > 0 && value.length <= 4) {
-					console.log("Entered discipline filter")
 					value.forEach((value: string) => {
 						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
-						console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
 					filteredList = discFiltered
@@ -214,9 +207,7 @@ const ProgrammeTalks: React.FC = () => {
 				if (value.length > 0) {
 					value.forEach((value: string) => {
 						segmentFilter = filteredList.filter(programme => programme.awardingUni === value)
-						console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
 						uniFiltered = uniFiltered.concat(segmentFilter)
-						// console.log("current list" + JSON.stringify(filteredList))
 					})
 					filteredList = uniFiltered
 				}
@@ -224,9 +215,7 @@ const ProgrammeTalks: React.FC = () => {
 
 		}
 		)
-		// console.log("New List are " + filteredList.length + JSON.stringify(filteredList))
 		callback(filteredList)
-
 	}
 
 	const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
@@ -280,7 +269,7 @@ const ProgrammeTalks: React.FC = () => {
 						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
 							<IonRow className="progTalk-IonRowCol">
 								<IonToolbar>
-									<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+									<IonSegment scrollable value={dayNum}>
 										<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
 											Day 1: {openhouseDates[0]}
 										</IonSegmentButton>
@@ -320,7 +309,7 @@ const ProgrammeTalks: React.FC = () => {
 							<IonRow className="progTalk-IonRowCol">
 								<IonCol className="progTalk-IonRowCol">
 									<IonToolbar>
-										<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+										<IonSegment scrollable value={dayNum}>
 											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
 												Day 1: {openhouseDates[0]}
 											</IonSegmentButton>
@@ -345,7 +334,7 @@ const ProgrammeTalks: React.FC = () => {
 							<IonRow className="progTalk-IonRowCol">
 								<IonCol className="progTalk-IonRowCol">
 									<IonToolbar>
-										<IonSegment scrollable value={dayNum} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+										<IonSegment scrollable value={dayNum}>
 											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
 												Day 1: {openhouseDates[0]}
 											</IonSegmentButton>

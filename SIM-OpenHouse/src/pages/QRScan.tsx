@@ -14,7 +14,6 @@ const QRScan: React.FC = () => {
 
   const openScanner = async () => {
     const data = await BarcodeScanner.scan();
-    console.log(`Barcode data: ${data.text}`);
 
     if (!isNaN(+data.text)) {
       const increment = firebase.firestore.FieldValue.increment(+data.text);

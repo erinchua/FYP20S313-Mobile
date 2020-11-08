@@ -365,7 +365,7 @@ const Registration: React.FC = () => {
 								<IonCheckbox name="privacyCheckbox" checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} slot="start" ref={register({ validate: (value) => checked === true })}></IonCheckbox>
 								<IonLabel style={{ fontSize: "80%", marginLeft: "10%" }} className="ion-text-wrap" color="dark">
 									I agree with SIM's Terms of Use and Privacy Policy and thereby give my consent to receive marketing communications from SIM.
-                </IonLabel>
+                				</IonLabel>
 							</IonItem>
 							{errors.privacyCheckbox && errors.privacyCheckbox.type === "validate" && <div className="errorMessage" style={{ marginBottom: '5%' }}>*Terms of Use and Privacy Policy checkbox not checked</div>}
 						</IonRow>
@@ -376,16 +376,6 @@ const Registration: React.FC = () => {
 						</IonRow>
 					</IonGrid>
 				</form>
-				<IonGrid>
-					<IonItemDivider></IonItemDivider>
-					<IonText color="medium"><div className="ion-text-center" style={{ marginTop: "5%", fontWeight: "bold" }}>OR</div></IonText>
-					<IonRow class="ion-justify-content-center">
-						<IonButton id="registration_googleBtn" type="submit" /* onClick={() => setShowErrorAlert(true)} */>REGISTER WITH GOOGLE</IonButton>
-					</IonRow>
-					<IonRow class="ion-justify-content-center">
-						<IonButton id="registration_facebookBtn" type="submit" /* onClick={() => setShowErrorAlert(true)} */>REGISTER WITH FACEBOOK</IonButton>
-					</IonRow>
-				</IonGrid>
 				<IonLoading isOpen={status.loading} />
 			</IonContent>
 		</IonPage>

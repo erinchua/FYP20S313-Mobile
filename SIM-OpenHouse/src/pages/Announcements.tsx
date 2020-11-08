@@ -16,11 +16,11 @@ const Announcements: React.FC = () => {
     const [announcements, setAnnouncements] = useState<Announcement[]>([]);
 
     const current = announcements.filter(news => { return new Date().getTime() > toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortDsc(a.ms, b.ms));
-    const future = announcements.filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
+    //const future = announcements.filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
     
-    if (future.length > 0) {
+    /* if (future.length > 0) {
         future.map(alert => notification(alert.date, alert.time, alert.title, "announcement"));
-    }
+    } */
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,8 +30,6 @@ const Announcements: React.FC = () => {
         }
         fetchData();
     }, []);
-
-    //console.log(current)
 
     return (
         <IonPage>

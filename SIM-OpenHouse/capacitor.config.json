@@ -16,8 +16,5 @@
       ]
     }
   },
-  "cordova": {},
-  "server": {
-    "cleartext": true
-  }
+  "cordova": {}
 }

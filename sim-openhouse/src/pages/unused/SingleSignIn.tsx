@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 
 import "../css/Global.css";
 import "../css/SingleSignOn.css";
-import TopNav from '../components/TopNav';
+import TopNav from '../../components/TopNav';
 
 const SingleSignOn: React.FC = () => {
 
