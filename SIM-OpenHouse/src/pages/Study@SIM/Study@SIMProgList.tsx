@@ -24,44 +24,44 @@ interface myProps {
 const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => {
 
     const { match } = props;
-    const {params : {discipline, category}} = match
-    
-//Frontend
- /*To remove selected programmes in comparePopOver */
- const removeProg = (programme: Programme) => {
-    const newProgList = [...compareProgList]
-    const newProgID = programme.id
-    const updatedProgList = newProgList.filter(programme => { return programme.id !== newProgID })
-    setCompareProgList(updatedProgList)
+    const { params: { discipline, category } } = match
 
-}
-/*To remove all selected programmes in comparePopOver */
-const removeAllProg = (programmes: Programme[]) => {
-    const newProgList = [...compareProgList]
-    const updatedProgList = newProgList.filter(programme => { return programme.id === '' })
-    setCompareProgList(updatedProgList)
+    //Frontend
+    /*To remove selected programmes in comparePopOver */
+    const removeProg = (programme: Programme) => {
+        const newProgList = [...compareProgList]
+        const newProgID = programme.id
+        const updatedProgList = newProgList.filter(programme => { return programme.id !== newProgID })
+        setCompareProgList(updatedProgList)
 
-}
+    }
+    /*To remove all selected programmes in comparePopOver */
+    const removeAllProg = (programmes: Programme[]) => {
+        const newProgList = [...compareProgList]
+        const updatedProgList = newProgList.filter(programme => { return programme.id === '' })
+        setCompareProgList(updatedProgList)
 
-/* Display Compare Prog Popover */
-const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
-    open: false,
-    event: undefined,
-});
+    }
 
-/* "If no prog is added to compare" Alert */
-const [showCompareProgAlert, setShowCompareProgAlert] = useState(false);
+    /* Display Compare Prog Popover */
+    const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
+        open: false,
+        event: undefined,
+    });
 
-/* Display Filter Menu Popover */
-const [showProgCourseFilterPopover, setShowProgCourseFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
-    open: false,
-    event: undefined,
-});
+    /* "If no prog is added to compare" Alert */
+    const [showCompareProgAlert, setShowCompareProgAlert] = useState(false);
 
-//Programme List
-const [programmes, setProgrammes] = useState<Programme[]>([])
+    /* Display Filter Menu Popover */
+    const [showProgCourseFilterPopover, setShowProgCourseFilterPopover] = useState<{ open: boolean, event: Event | undefined }>({
+        open: false,
+        event: undefined,
+    });
 
-/* When page first load, data retrieval*/
+    //Programme List
+    const [programmes, setProgrammes] = useState<Programme[]>([])
+
+    /* When page first load, data retrieval*/
     useEffect(() => {
         /*Fetching Programmes Data from firestore*/
         const fetchData = async (discipline: string, category: string) => {
@@ -74,7 +74,6 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
                     snapshot.docs.forEach((doc: any) => {
                         const data = doc.data()
                         programmes.push(data)
-                        console.log("programme retrieved " + data)
                     })
                     setProgrammes(programmes)
                 }).catch((error) => console.log(error));
@@ -87,7 +86,7 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
         setCompareProgList(sessionList);
     }, [])
 
-//Compare function
+    //Compare function
     //programmes to be rendered and the comparepopover list
     const [compareProgList, setCompareProgList] = useState<Programme[]>([])
 
@@ -132,7 +131,7 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
         }
     };
 
-   
+
 
     //Filter function
     const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
@@ -146,8 +145,6 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
 
     //update the filter condition from FilterPopoverContent 
     const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
-        console.log("onUpdateFilter is fired")
-        console.log("Mos filter is "+ mosFilter)
         setFilterCondition(prevState => {
             let filter = { ...prevState };
             Object.keys(filter).map(key => {
@@ -169,11 +166,10 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
     }
 
     const filterProgrammes = async (condition: ProgrammeFilter) => {
-        console.log("in filterprogrammes "+ condition)
         const initialList: Programme[] = []
         let filteredList: Programme[] = []
         let segmentFilter: Programme[] = []
-        console.log("In filterProgrammes, inputs:" + JSON.stringify(condition))
+
         await db.collection('TestProgrammes')
             .get()
             .then(snapshot => {
@@ -182,28 +178,24 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
                     initialList.push(data)
                 })
             })
-        console.log(initialList.length + JSON.stringify(initialList))
+
         Object.entries(condition).map(([key, value]) => {
             if (key === 'mos') {
                 if (value.length < 3 && value.length > 0) {
                     value.forEach((value: string) => {
                         if (value === 'fullPartTime') {
                             segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
-                            console.log("filtering full and part time" + segmentFilter.length)
                             filteredList = filteredList.concat(segmentFilter)
-                            console.log("Current filtered list" + filteredList.length + JSON.stringify(filteredList))
 
 
                         }
                         if (value === 'fullTime') {
                             segmentFilter = initialList.filter(programme => programme.modeOfStudy.fullTime && !programme.modeOfStudy.partTime)
-                            console.log("filtering full time" + segmentFilter.length)
                             filteredList = filteredList.concat(segmentFilter)
 
                         }
                         if (value === 'partTime') {
                             segmentFilter = initialList.filter(programme => !programme.modeOfStudy.fullTime && programme.modeOfStudy.partTime)
-                            console.log("filtering part time" + segmentFilter.length)
                             filteredList = filteredList.concat(segmentFilter)
 
                         }
@@ -216,10 +208,8 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
             else if (key === 'discipline') {
                 let discFiltered: Programme[] = []
                 if (value.length > 0 && value.length <= 4) {
-                    console.log("Entered discipline filter")
                     value.forEach((value: string) => {
                         segmentFilter = filteredList.filter(programme => programme.discipline.includes(value))
-                        console.log("filtering discipline" + value + segmentFilter.length + JSON.stringify(segmentFilter))
                         discFiltered = discFiltered.concat(segmentFilter)
                     })
                     filteredList = discFiltered
@@ -232,9 +222,7 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
                 if (value.length > 0) {
                     value.forEach((value: string) => {
                         segmentFilter = filteredList.filter(programme => programme.awardedBy == value)
-                        console.log("filtering uni" + value + segmentFilter.length + JSON.stringify(segmentFilter))
                         uniFiltered = uniFiltered.concat(segmentFilter)
-                        // console.log("current list" + JSON.stringify(filteredList))
                     })
                     filteredList = uniFiltered
                 }
@@ -244,7 +232,6 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
                 if (value.length > 0) {
                     value.forEach((value: string) => {
                         segmentFilter = filteredList.filter(programme => programme.academicLevel === value)
-                        console.log("filtering acadLvl" + value + segmentFilter.length + JSON.stringify(segmentFilter))
                         acadFiltered = acadFiltered.concat(segmentFilter)
                     })
                     filteredList = acadFiltered
@@ -257,22 +244,18 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
                     value.forEach((value: string) => {
                         if (value === 'aLevel') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.aLevel)
-                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
                         }
                         else if (value === 'oLevel') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.oLevel)
-                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
                         }
                         else if (value === 'diploma') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.diploma)
-                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
                         }
                         else if (value === 'degree') {
                             segmentFilter = filteredList.filter(programme => programme.entryQualifications.degree)
-                            console.log("Filering " + value + segmentFilter.length + JSON.stringify(segmentFilter))
                             entryFiltered = entryFiltered.concat(segmentFilter)
                         }
                     })
@@ -281,10 +264,10 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
             }
             else if (key === 'subDisc') {
                 let subDiscFiltered: Programme[] = []
+
                 if (value.length > 0) {
                     value.forEach((value: string) => {
                         segmentFilter = filteredList.filter(programme => programme.subDiscipline.includes(value))
-                        console.log("Filering subDisc" + value + segmentFilter.length + JSON.stringify(segmentFilter))
                         subDiscFiltered = subDiscFiltered.concat(segmentFilter)
                     })
                     filteredList = subDiscFiltered
@@ -298,13 +281,13 @@ const [programmes, setProgrammes] = useState<Programme[]>([])
     }
 
     //When filter condition updated, runs the filter programme
-    useEffect(()=>{
+    useEffect(() => {
         filterProgrammes(filterCondition)
-    },[filterCondition])
+    }, [filterCondition])
 
     return (
         <React.Fragment>
-            
+
             <IonAlert
                 isOpen={showCompareProgAlert}
                 onDidDismiss={() => setShowCompareProgAlert(false)}

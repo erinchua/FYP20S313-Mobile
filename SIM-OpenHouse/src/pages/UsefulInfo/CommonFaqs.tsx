@@ -37,7 +37,6 @@ const CommonFaqs: React.FC = () => {
     const addtoRef = (el:HTMLIonIconElement)=>{
         if(el && !info.current.includes(el))
         info.current.push(el)
-        console.log(info.current)
     }
 
     useEffect(() => {

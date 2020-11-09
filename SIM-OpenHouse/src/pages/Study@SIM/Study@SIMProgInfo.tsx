@@ -64,13 +64,10 @@ export interface Programme {
 }
 
 const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
-    //console.log("ProgInfo has entered!")
-    //console.log(match)
 
     const discipline = match.params.discipline
     const category = match.params.category
-    //const id = match.params.id
-    /*Programme Data*/
+    
     const [programme, setProgrammes] = useState<Programme>({
         id: "",
         programmeTitle: "",
@@ -114,9 +111,8 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
             partTime: ''
         },
         uniLogo: ''
-    }
+    })
 
-    )
     const { programOverview = [], applicationPeriod = [], programmeStructure: { examination = {}, coursework = {} } = {},
         overseaOpportunity: { exchange = {}, transfer = {} } = {}, intakeMonths: { partTime: partTimeIntake = '', fullTime: fullTimeIntake = '' } = {},
         duration: { partTime: partTimeDuration = '', fullTime: fullTimeDuration = '' } = {}, modeOfStudy: { partTime: partTimeMode = {}, fullTime: fullTimeMode = {} } = {} } = programme
@@ -126,7 +122,6 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
             const programmeRef = db.collection('TestProgrammes').doc(match.params.id);
             const doc: any = (await programmeRef.get()).data();
             setProgrammes(doc);
-            console.log("i am doc" + JSON.stringify(doc))
         };
         fetchData()
 

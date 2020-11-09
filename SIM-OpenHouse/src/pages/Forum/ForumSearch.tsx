@@ -25,7 +25,7 @@ const ForumSearch: React.FC = () => {
         const matchedPosts: any = [];
 
         allPosts.forEach((post: any) => {
-            if (post.entry.toLowerCase().indexOf(keyword) !== -1) {
+            if (post.entry.toLowerCase().indexOf(keyword.toLowerCase()) !== -1) {
                 if (post.hasOwnProperty('questionId')) {
                     allPosts.forEach((ele: any) => {
                         if (ele.id === post.questionId) {

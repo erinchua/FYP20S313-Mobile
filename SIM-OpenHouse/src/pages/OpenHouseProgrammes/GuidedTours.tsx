@@ -71,7 +71,7 @@ const GuidedTours: React.FC = () => {
                     <IonRow id="guidedTours-ionRowCol">
                         <IonCol id="guidedTours-ionRowCol">
                             <IonToolbar>
-                                <IonSegment scrollable value={dayNum} id="guidedTours-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+                                <IonSegment scrollable value={dayNum} id="guidedTours-mainHeader">
                                     <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleDayOne}>Day 1: {openhouseDates[0]}</IonSegmentButton>
                                     <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleDayTwo}>Day 2: {openhouseDates[1]}</IonSegmentButton>
                                 </IonSegment>

@@ -37,8 +37,10 @@ import SocialMedia from './pages/SocialMedia';
 
 import { useAuth } from './modules/auth';
 import { db } from './firebase';
-//import { registerPush } from './modules/notifications';
-
+import { Announcement, toAnnouncement } from './modules/map';
+import { toDateObject } from './modules/convert';
+import { sortAsc } from './modules/compare';
+import { notification } from './modules/notifications';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -61,32 +63,36 @@ import './theme/variables.css';
 
 const App: React.FC = () => {
 	const { loggedIn, userID } = useAuth();
-	//registerPush();
 
-	const [allowNotif, setAllowNotif] = useState({ openhouse: false, announcement: false});
+	const [allowNotif, setAllowNotif] = useState({ openhouse: false, announcement: false });
 
 	useEffect(() => {
-		/* const fetchData = async () => {
-			await db.collection('MobileSettings').doc(userID).get().then(doc => {
+		if (userID) {
+			return db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
 				setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
 			});
 		}
+	}, [userID]);
 
-		fetchData(); */
+	useEffect(() => {
+		if (userID) {
+			return db.collection('Announcements').onSnapshot(({ docs }) => {
+				const upcoming = docs.map(toAnnouncement).filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
 
-		return db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
-			setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
-		});
+				if (upcoming.length > 0) {
+					upcoming.map(alert => notification(alert.date, alert.time, alert.title, "announcement"));
+				}
+			});
+		}
 	}, []);
 
 	useEffect(() => {
 		return () => {
 			window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowNotif.openhouse));
 			window.sessionStorage.setItem("allowAnnoucementNotif", JSON.stringify(allowNotif.announcement));
-			console.log("triggered")
 		}
 	}, [allowNotif.openhouse, allowNotif.announcement]);
-	
+
 
 	if (!loggedIn) return <Redirect to="/main" />;
 

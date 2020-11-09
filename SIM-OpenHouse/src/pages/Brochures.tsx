@@ -34,7 +34,7 @@ const Brochures: React.FC = () => {
                 <TopNav title="Brochures" route="/u/home" backarrow={ true } hamburger={ true }/>
 
                 <IonToolbar>
-                    <IonSegment scrollable value={heading} id="brochures-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+                    <IonSegment scrollable value={heading} id="brochures-mainHeader">
                         <IonSegmentButton value="study@SIM" className="brochures-heading" onClick={() => handleHeading()}><div>Study@SIM</div></IonSegmentButton>
                         <IonSegmentButton value="studentLife@SIM" className="brochures-heading" onClick={() => handleHeading2()}>Student Life@SIM</IonSegmentButton>
                     </IonSegment>

@@ -17,10 +17,7 @@ const ForgetPassword1: React.FC = () => {
     const onSubmit = (data: any) => {
         try {
             if (data.emailID) {
-                auth.sendPasswordResetEmail(data.emailID, { url: 'http://localhost:8100/login', handleCodeInApp: true }).then(() => {
-                    //alert for verification email sent
-                    console.log("Email sent");
-                });
+                auth.sendPasswordResetEmail(data.emailID, { url: 'http://localhost:8100/login', handleCodeInApp: true });
             } else {
                 throw data;
             }
@@ -72,7 +69,7 @@ const ForgetPassword1: React.FC = () => {
                     </IonRow>
 
                     <IonRow class="ion-justify-content-center" style={{marginTop:"10%"}}>
-                        <IonButton size="large" className="otpBtn" type="submit" onClick={onSubmit}>SEND CODE</IonButton>
+                        <IonButton size="large" className="otpBtn" type="submit">SEND CODE</IonButton>
                     </IonRow>
                 </form>
             </IonGrid>

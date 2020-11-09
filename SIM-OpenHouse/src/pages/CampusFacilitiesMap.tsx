@@ -24,7 +24,6 @@ const CampusFacilitiesMap: React.FC = () => {
     const facilitiesBlkC = campusFacilities.filter((facility: any) => { return facility.blockName === 'C' });
     const facilitiesBlkD = campusFacilities.filter((facility: any) => { return facility.blockName === 'D' });
 
-
     useEffect(() => {
         db.collection('CampusFacilities')
             .get()
@@ -36,7 +35,6 @@ const CampusFacilitiesMap: React.FC = () => {
                 })
                 setCampusFacilities(facilities)
             })
-
     }, [])
 
     return (
