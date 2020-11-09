@@ -11,6 +11,7 @@ import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
 import { notification } from '../../modules/notifications';
+import { sortTimeAsc } from '../../modules/compare';
 
 const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
@@ -18,8 +19,8 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
     const [alert, setAlert] = useState({ registerSuccess: false, registerFail: false, loading: false });
     const [errorMessage, setErrorMessage] = useState("");
 
-    const programmeTalkDay1 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] });
-    const programmeTalkDay2 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] });
+    const programmeTalkDay1 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[0] }).sort((a: any, b: any) => sortTimeAsc(a.startTime, b.startTime));
+    const programmeTalkDay2 = props.programmeTalk.filter((talk: any) => { return talk.date === props.openhouseDates[1] }).sort((a: any, b: any) => sortTimeAsc(a.startTime, b.startTime));
 
     const addToSchedule = async (programme: any) => {
         try {

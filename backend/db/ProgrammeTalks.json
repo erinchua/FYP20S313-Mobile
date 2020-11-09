@@ -1,53 +1,54 @@
 [
 	{
 		"id": "talk-001",
-		"talkName": "University of Wollongong - Computer Science Undergraduate",
-		"awardingUni": "University of Wollongong",
-		"details": "This talk is about computer science at UOW",
+		"talkName": "The University of Warwick - Postgraduate Programme",
+		"awardingUni": "University of Warwick",
+		"details": "Postgraduate Programme Seminar",
 		"discipline": [
-			"IT & Computer Science"
+			"Business",
+            "IT & Computer Science "
 		],
 		"date": "21-Nov-2020",
-		"startTime": "10:00AM",
-		"endTime": "11:00AM",
-		"venue": "SIM HQ BLK A LT A.2.08",
-		"capacityLimit": 50,
+		"startTime": "2:30PM",
+		"endTime": "4:00PM",
+		"venue": "SIM HQ BLK A LT A.2.17A",
+		"capacityLimit": 80,
 		"noRegistered": 0,
 		"isLive": false,
-		"hasRecording": true,
-		"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+		"hasRecording": false,
+		"url": ""
 	},
 	{
 		"id": "talk-002",
-		"talkName": "University of London - Computer Science Undergraduate",
+		"talkName": "University of London – Master of Science in Professional Accountancy Programme",
 		"awardingUni": "University of London",
-		"details": "This talk is about computer science at UOL",
-		"discipline": [
-			"IT & Computer Science"
-		],
-		"date": "21-Nov-2020",
-		"startTime": "10:00AM",
-		"endTime": "11:00AM",
-		"venue": "SIM HQ BLK B LT B.2.01",
-		"capacityLimit": 50,
-		"noRegistered": 0,
-		"isLive": true,
-		"hasRecording": false,
-		"url": "https://www.youtube.com/watch?v=RidN26q3rCc"
-	},
-	{
-		"id": "talk-003",
-		"talkName": "La Trobe - Business Undergraduate",
-		"awardingUni": "La Trobe University",
-		"details": "This talk is about business at La Trobe university",
+		"details": "Master of Science in Professional Accountancy Programme Seminar",
 		"discipline": [
 			"Business"
 		],
-		"date": "21-Nov-2020",
-		"startTime": "11:00AM",
-		"endTime": "12:00PM",
-		"venue": "SIM HQ BLK A LT A.2.12",
-		"capacityLimit": 50,
+		"date": "22-Nov-2020",
+		"startTime": "12:00PM",
+		"endTime": "1:00PM",
+		"venue": "SIM HQ BLK A LT A.3.09B",
+		"capacityLimit": 80,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-003",
+		"talkName": "University of London – MSc / Postgraduate Diploma in Data Science / Data Science and Artificial Intelligence / Data Science and Financial Technology, Postgraduate Certificate in Data Science Programme",
+		"awardingUni": "University of London",
+		"details": "MSc / Postgraduate Diploma in Data Science / Data Science and Artificial Intelligence / Data Science and Financial Technology, Postgraduate Certificate in Data Science Programme Seminar",
+		"discipline": [
+            "IT & Computer Science"
+		],
+		"date": "22-Nov-2020",
+		"startTime": "12:00PM",
+		"endTime": "1:00PM",
+		"venue": "SIM HQ BLK B LT B.2.06",
+		"capacityLimit": 200,
 		"noRegistered": 0,
 		"isLive": false,
 		"hasRecording": false,
@@ -55,56 +56,366 @@
 	},
 	{
 		"id": "talk-004",
-		"talkName": "RMIT - Business Undergraduate",
-		"awardingUni": "RMIT University",
-		"details": "This talk is about business at RMIT",
+		"talkName": "University of Birmingham - Master of Science",
+		"awardingUni": "University of Birmingham",
+		"details": "Master of Science Seminar",
 		"discipline": [
 			"Business"
 		],
 		"date": "22-Nov-2020",
-		"startTime": "11:00AM",
-		"endTime": "12:00PM",
-		"venue": "SIM HQ BLK A LT A.2.13",
-		"capacityLimit": 50,
+		"startTime": "2:00PM",
+		"endTime": "3:30PM",
+		"venue": "SIM HQ BLK B LT B.2.01",
+		"capacityLimit": 150,
 		"noRegistered": 0,
 		"isLive": false,
-		"hasRecording": true,
-		"url": "https://www.youtube.com/watch?v=PeihcfYft9w"
+		"hasRecording": false,
+		"url": ""
 	},
 	{
 		"id": "talk-005",
-		"talkName": "University at Buffalo - Arts & Social Sciences Undergraduate",
-		"awardingUni": "University at Buffalo",
-		"details": "This talk is about arts and social science at Buffalo university",
+		"talkName": "University of Birmingham - Master of Business Administration Programme",
+		"awardingUni": "University of Birmingham",
+		"details": "Master of Business Administration Programme Seminar",
 		"discipline": [
-			"Arts & Social Sciences"
+            "Business"
 		],
 		"date": "22-Nov-2020",
 		"startTime": "1:00PM",
-		"endTime": "2:00PM",
-		"venue": "SIM HQ BLK A LT A.2.12",
-		"capacityLimit": 50,
+		"endTime": "2:30PM",
+		"venue": "SIM HQ BLK B LT B.2.04",
+		"capacityLimit": 150,
 		"noRegistered": 0,
-		"isLive": true,
+		"isLive": false,
 		"hasRecording": false,
-		"url": "https://www.youtube.com/watch?v=GfO-3Oir-qM"
+		"url": ""
 	},
 	{
 		"id": "talk-006",
+		"talkName": "University of Birmingham – Undergraduate Programme",
+		"awardingUni": "University of Birmingham",
+		"details": "Undergraduate Programme Seminar",
+		"discipline": [
+            "Business"
+		],
+		"date": "22-Nov-2020",
+		"startTime": "11:30AM",
+		"endTime": "1:00PM",
+		"venue": "SIM HQ BLK B LT B.2.05",
+		"capacityLimit": 150,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-007",
+		"talkName": "University of London – Economics, Management, Finance and Social Sciences Programme",
+		"awardingUni": "University of London",
+		"details": "Economics, Management, Finance and Social Sciences Programme Seminar",
+		"discipline": [
+			"Business",
+			"Arts & Social Sciences"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "10:00AM",
+		"endTime": "11:00AM",
+		"venue": "SIM HQ BLK B LT B.3.03",
+		"capacityLimit": 200,
+		"noRegistered": 0,
+		"isLive": true,
+		"hasRecording": false,
+		"url": "https://www.facebook.com/permalink.php?story_fbid=128990558973984&id=112728337266873"
+	},
+	{
+		"id": "talk-008",
+		"talkName": "University of London – Computer Science Undergraduate Programme",
+		"awardingUni": "University of London",
+		"details": "Computer Science Undergraduate Programme Seminar",
+		"discipline": [
+            "IT & Computer Science"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "11:30AM",
+		"endTime": "12:30PM",
+		"venue": "SIM HQ BLK B LT B.3.06",
+		"capacityLimit": 200,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-009",
+		"talkName": "University of Birmingham – Undergraduate Programme",
+		"awardingUni": "University of Birmingham",
+		"details": "Undergraduate Programme Seminar",
+		"discipline": [
+			"Business"
+		],
+		"date": "22-Nov-2020",
+		"startTime": "2:30PM",
+		"endTime": "4:00PM",
+		"venue": "SIM HQ BLK B LT B.2.05",
+		"capacityLimit": 150,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-010",
+		"talkName": "University of Birmingham – Master of Science",
+		"awardingUni": "University of Birmingham Seminar",
+		"details": "Master of Science",
+		"discipline": [
+			"Business"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "4:00PM",
+		"endTime": "5:30PM",
+		"venue": "SIM HQ BLK B LT B.2.01",
+		"capacityLimit": 150,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-011",
+		"talkName": "The University of Warwick - Postgraduate Programme",
+		"awardingUni": "University of Warwick",
+		"details": "Postgraduate Programme Seminar",
+		"discipline": [
+			"Business",
+            "IT & Computer Science "
+		],
+		"date": "21-Nov-2020",
+		"startTime": "2:30PM",
+		"endTime": "4:00PM",
+		"venue": "SIM HQ BLK A LT A.2.17A",
+		"capacityLimit": 80,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-012",
+		"talkName": "University of Birmingham - Master of Business Administration Programme",
+		"awardingUni": "University of Birmingham",
+		"details": "Master of Business Administration Programme Seminar",
+		"discipline": [
+			"Business"
+		],
+		"date": "22-Nov-2020",
+		"startTime": "1:00PM",
+		"endTime": "2:30PM",
+		"venue": "SIM HQ BLK B LT B.2.04",
+		"capacityLimit": 150,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-013",
+		"talkName": "University of London – International Foundation Programme Briefing",
+		"awardingUni": "University of London",
+		"details": "International Foundation Programme Briefing",
+		"discipline": [
+			"Business",
+			"Arts & Social Sciences"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "12:30PM",
+		"endTime": "1:30PM",
+		"venue": "SIM HQ BLK B LT B.3.01",
+		"capacityLimit": 50,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-014",
+		"talkName": "University of Wollongong - Computer Science Undergraduate",
+		"awardingUni": "University of Wollongong",
+		"details": "Computer Science Undergraduate Seminar",
+		"discipline": [
+			"IT & Computer Science"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "2:00PM",
+		"endTime": "3:30PM",
+		"venue": "SIM HQ BLK B LT B.3.04",
+		"capacityLimit": 150,
+		"noRegistered": 0,
+		"isLive": true,
+		"hasRecording": false,
+		"url": "https://www.facebook.com/permalink.php?story_fbid=135399435002258&id=109981057544096"
+	},
+	{
+		"id": "talk-015",
+		"talkName": "RMIT - Business Undergraduate",
+		"awardingUni": "RMIT University",
+		"details": "Business Undergraduate Seminar",
+		"discipline": [
+			"Business"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "10:00AM",
+		"endTime": "11:30AM",
+		"venue": "SIM HQ BLK A LT A.3.20",
+		"capacityLimit": 192,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": true,
+		"url": "https://www.facebook.com/112728337266873/videos/2689211381389483/"
+	},
+	{
+		"id": "talk-016",
 		"talkName": "University of Stirling - Arts & Social Sciences Undergraduate",
 		"awardingUni": "University of Stirling",
-		"details": "This talk is about arts and social sciences at university of Stirling",
+		"details": "Arts & Social Sciences Undergraduate Seminar",
 		"discipline": [
 			"Arts & Social Sciences"
 		],
 		"date": "22-Nov-2020",
-		"startTime": "1:00PM",
-		"endTime": "2:00PM",
-		"venue": "SIM HQ BLK A LT A.2.14",
-		"capacityLimit": 50,
+		"startTime": "10:00AM",
+		"endTime": "11:30AM",
+		"venue": "SIM HQ BLK A LT A.3.16",
+		"capacityLimit": 112,
 		"noRegistered": 0,
-		"isLive": true,
+		"isLive": false,
+		"hasRecording": true,
+		"url": "https://www.facebook.com/109981057544096/videos/355877758816433/"
+	},
+	{
+		"id": "talk-017",
+		"talkName": "La Trobe - Business Undergraduate Programme",
+		"awardingUni": "La Trobe University",
+		"details": "Business Undergraduate Programme Seminar",
+		"discipline": [
+			"Business"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "3:00PM",
+		"endTime": "4:30PM",
+		"venue": "SIM HQ BLK A LT A.2.16",
+		"capacityLimit": 112,
+		"noRegistered": 0,
+		"isLive": false,
 		"hasRecording": false,
-		"url": "https://www.youtube.com/watch?v=KR0g-1hnQPA"
+		"url": ""
+	},
+	{
+		"id": "talk-018",
+		"talkName": "La Trobe - Business Undergraduate Programme",
+		"awardingUni": "La Trobe University",
+		"details": "Business Undergraduate Programme Seminar",
+		"discipline": [
+			"Business"
+		],
+		"date": "22-Nov-2020",
+		"startTime": "3:00PM",
+		"endTime": "4:30PM",
+		"venue": "SIM HQ BLK A LT A.2.16",
+		"capacityLimit": 112,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-019",
+		"talkName": "The University of Sydney - Nursing Undergraduate Programme",
+		"awardingUni": "University of Sydney",
+		"details": "Nursing Undergraduate Programme Seminar",
+		"discipline": [
+			"Nursing",
+			"Specialty"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "3:30PM",
+		"endTime": "5:00PM",
+		"venue": "SIM HQ BLK B LT B.4.01",
+		"capacityLimit": 150,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-020",
+		"talkName": "SIM Global Education - Business Graduate Programme",
+		"awardingUni": "Singapore Institute of Management",
+		"details": "Business Graduate Programme Briefing",
+		"discipline": [
+			"Business"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "4:00PM",
+		"endTime": "5:00PM",
+		"venue": "SIM HQ BLK A LT A.1.08",
+		"capacityLimit": 112,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-021",
+		"talkName": "SIM Global Education - IT Graduate Diploma Programme",
+		"awardingUni": "Singapore Institute of Management",
+		"details": "IT Graduate Diploma Programme Briefing",
+		"discipline": [
+			"Business"
+		],
+		"date": "21-Nov-2020",
+		"startTime": "4:00PM",
+		"endTime": "5:00PM",
+		"venue": "SIM HQ BLK A LT A.1.20",
+		"capacityLimit": 112,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-022",
+		"talkName": "SIM Global Education - Business Graduate Programme",
+		"awardingUni": "Singapore Institute of Management",
+		"details": "Business Graduate Programme Briefing",
+		"discipline": [
+			"Business"
+		],
+		"date": "22-Nov-2020",
+		"startTime": "4:30PM",
+		"endTime": "5:30PM",
+		"venue": "SIM HQ BLK A LT A.1.20",
+		"capacityLimit": 112,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
+	},
+	{
+		"id": "talk-023",
+		"talkName": "SIM Global Education - IT Graduate Diploma Programme",
+		"awardingUni": "Singapore Institute of Management",
+		"details": "IT Graduate Diploma Programme Briefing",
+		"discipline": [
+			"Business"
+		],
+		"date": "22-Nov-2020",
+		"startTime": "4:00PM",
+		"endTime": "5:00PM",
+		"venue": "SIM HQ BLK A LT A.1.08",
+		"capacityLimit": 112,
+		"noRegistered": 0,
+		"isLive": false,
+		"hasRecording": false,
+		"url": ""
 	}
 ]
