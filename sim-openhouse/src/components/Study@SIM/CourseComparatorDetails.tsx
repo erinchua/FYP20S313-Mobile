@@ -48,7 +48,8 @@ const CourseComparatorDetails: React.FC<{
 
                                     </IonRow>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
 
@@ -78,7 +79,8 @@ const CourseComparatorDetails: React.FC<{
                                         </div>
                                     </IonText>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
 
@@ -113,7 +115,8 @@ const CourseComparatorDetails: React.FC<{
                                             : ''}</div>
                                     </IonText>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
                     </IonRow>
@@ -156,7 +159,8 @@ const CourseComparatorDetails: React.FC<{
                                         </IonCol>
                                     </IonRow>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
 
@@ -182,7 +186,7 @@ const CourseComparatorDetails: React.FC<{
                                             <IonText className="courseComparatorAbtProgText">
                                                 {/* text in span to be retrieved from db*/}
                                                 <div className="ion-text-wrap">
-                                                    <b>Exchange: </b><span>Yes</span>
+                                                    <b>Exchange: </b><span>{programme.overseaOpportunity.exchange ? 'Yes' : 'No'}</span>
                                                 </div>
                                             </IonText>
                                         </IonCol>
@@ -194,13 +198,14 @@ const CourseComparatorDetails: React.FC<{
                                             <IonText className="courseComparatorAbtProgText">
                                                 {/* text in span to be retrieved from db*/}
                                                 <div className="ion-text-wrap">
-                                                    <b>Transfer: </b><span>Yes</span>
+                                                    <b>Transfer: </b><span>{programme.overseaOpportunity.transfer ? 'Yes' : 'No'}</span>
                                                 </div>
                                             </IonText>
                                         </IonCol>
                                     </IonRow>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
 
@@ -223,19 +228,20 @@ const CourseComparatorDetails: React.FC<{
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
                                         <div className="ion-text-wrap">
-                                            {typeof programme.intakeMonths.partTime !== 'undefined' && programme.intakeMonths.partTime !== '' ? 
-                                                <p><b>Part-Time:</b> <br/>{programme.intakeMonths.partTime}</p> 
+                                            {typeof programme.intakeMonths.partTime !== 'undefined' && programme.intakeMonths.partTime !== '' ?
+                                                <p><b>Part-Time:</b> <br />{programme.intakeMonths.partTime}</p>
                                                 : <p><b>Part Time:</b> NIL</p>
                                             }
-                                            
-                                            {typeof programme.intakeMonths.fullTime !== 'undefined' && programme.intakeMonths.fullTime !== "" ? 
-                                                <p><b>Full-Time:</b> <br/>{programme.intakeMonths.fullTime}</p> 
+
+                                            {typeof programme.intakeMonths.fullTime !== 'undefined' && programme.intakeMonths.fullTime !== "" ?
+                                                <p><b>Full-Time:</b> <br />{programme.intakeMonths.fullTime}</p>
                                                 : <p><b>Full Time:</b> NIL</p>
                                             }
                                         </div>
                                     </IonText>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
 
@@ -258,19 +264,20 @@ const CourseComparatorDetails: React.FC<{
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
                                         <div className="ion-text-wrap">
-                                            {typeof programme.duration.partTime !== 'undefined' && programme.duration.partTime !== '' ? 
-                                                <p><b>Part-Time:</b> {programme.duration.partTime}</p> 
+                                            {typeof programme.duration.partTime !== 'undefined' && programme.duration.partTime !== '' ?
+                                                <p><b>Part-Time:</b> {programme.duration.partTime}</p>
                                                 : <p><b>Part Time:</b> NIL</p>
                                             }
 
                                             {typeof programme.duration.fullTime !== 'undefined' && programme.duration.fullTime !== '' ?
-                                                <p><b>Full-Time:</b> {programme.duration.fullTime}</p> 
+                                                <p><b>Full-Time:</b> {programme.duration.fullTime}</p>
                                                 : <p><b>Full Time:</b> NIL</p>
                                             }
                                         </div>
                                     </IonText>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
 
@@ -293,20 +300,21 @@ const CourseComparatorDetails: React.FC<{
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
                                         <div className="ion-text-wrap">
-                                            {typeof programme.modeOfStudy.partTime !== 'undefined' ? 
-                                                <p><b>Part Time:</b> {programme.modeOfStudy.partTime ? 'Yes' : 'No'}</p> 
+                                            {typeof programme.modeOfStudy.partTime !== 'undefined' ?
+                                                <p><b>Part Time:</b> {programme.modeOfStudy.partTime ? 'Yes' : 'No'}</p>
                                                 : ''
                                             }
 
-                                            {typeof programme.modeOfStudy.fullTime !== 'undefined' ? 
-                                                <p><b>Full Time:</b> {programme.modeOfStudy.fullTime ? 'Yes' : 'No'}</p> 
+                                            {typeof programme.modeOfStudy.fullTime !== 'undefined' ?
+                                                <p><b>Full Time:</b> {programme.modeOfStudy.fullTime ? 'Yes' : 'No'}</p>
                                                 : ''
                                             }
 
                                         </div>
                                     </IonText>
                                 </IonCol>
-                            )}) 
+                            )
+                        })
                             : ''
                         }
 

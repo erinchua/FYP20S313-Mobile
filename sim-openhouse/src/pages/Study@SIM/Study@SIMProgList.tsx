@@ -82,13 +82,12 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
         fetchData(discipline, category)
 
-        const sessionList: Programme[] = window.sessionStorage.compareProgList ? JSON.parse(window.sessionStorage.compareProgList) : [];
-        setCompareProgList(sessionList);
     }, [])
 
-    //Compare function
+    //Compare functions
     //programmes to be rendered and the comparepopover list
-    const [compareProgList, setCompareProgList] = useState<Programme[]>([])
+    const sessionStored = window.sessionStorage.getItem('compareProgList')
+    const [compareProgList, setCompareProgList] = useState<Programme[]>(typeof sessionStored === 'string' ? JSON.parse(sessionStored) : [])
 
     //To get the unique disciplines for rendering at the header
     const allDisc = programmes.map(programme => programme.discipline)
@@ -98,9 +97,8 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
     //For storing the compare list into session
     useEffect(() => {
-        return () => {
-            window.sessionStorage.setItem("compareProgList", JSON.stringify(compareProgList));
-        }
+        window.sessionStorage.setItem("compareProgList", JSON.stringify(compareProgList));
+
     }, [compareProgList])
 
     /* Adding programme for comparison - Need to be generated dynamically */
@@ -108,9 +106,12 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         const newProgList = [...compareProgList]
         const newProgID = programme.id
 
+        //Max compare list is 3, if length == 3, bydefault it will prevent adding
         if (newProgList.length < 3) {
-            if (newProgList.includes(programme)) {
-                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id !== newProgID })
+            if (newProgList.some(existingProg => existingProg.id == programme.id)) {
+                const updatedProgList = newProgList.filter(existingProg => {
+                    return existingProg.id !== newProgID
+                })
                 setCompareProgList(updatedProgList)
             }
             else {
@@ -120,20 +121,22 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         }
         else {
 
-            if (newProgList.includes(programme)) {
-                const updatedProgList = newProgList.filter(existingProg => { return existingProg.id != newProgID })
+            if (newProgList.some(existingProg => existingProg.id == programme.id)) {
+                const updatedProgList = newProgList.filter(existingProg => {
+                    return existingProg.id !== newProgID
+                })
                 setCompareProgList(updatedProgList)
             }
             else {
                 setShowCompareProgAlert(true);
             }
-
         }
     };
 
 
 
     //Filter functions
+    //Default value of filters
     const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
         mos: ['fullPartTime', 'partTime', 'fullTime'],
         discipline: [discipline],
@@ -383,7 +386,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
                                                     <IonRow className="progCompareBtnRow">
                                                         <IonCol size="12" sizeSm="12" class="ion-text-right" className="progCompareBtnCol">
-                                                            {compareProgList.includes(programme) ?
+                                                            {compareProgList.some(existingProg => existingProg.id == programme.id) ?
                                                                 <IonButton className="progCompareBtnSelected" size="small" type="submit" onClick={e => compareProgramme(programme)}>Compared
                                                     <FontAwesomeIcon style={{ paddingLeft: "3%" }} icon={faCheck} />
                                                                 </IonButton>
