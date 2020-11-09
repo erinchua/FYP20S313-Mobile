@@ -876,7 +876,7 @@
             "Business"
         ],
         "subDiscipline": [
-            "Aviation"
+            "Tourism , Hospitality & Events Management"
         ],
         "entryQualifications": {
             "aLevel": true,
@@ -886,14 +886,18 @@
         },
         "awardedBy": "University of Stirling",
         "programOverview": [
-            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
-            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
-            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+            "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "Focus on management of experiential events",
+            "Apply analytical techniques, business and management sills in events management"
         ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
-                "period": "15 Jul 2020 to 20 Oct 2020"
+                "intake": "Full-time Aug 2020 Intake",
+                "period": "Singaporean & PRs:\nNow till 20 July 2020\nInternational Applicants:\nNow till 15 Jun 2020\n*Part-time programme is not open for application for Aug 2020 intake."
+            },
+            {
+                "intake": "Preparatory Course",
+                "period": "Singaporean & PRs:\nNow till 30 Apr 2020\nInternational Applicants:\nNow till 23 Mar 2020"
             }
         ],
         "programmeStructure": {
@@ -901,16 +905,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul",
-            "fullTime": ""
+            "partTime": "Aug",
+            "fullTime": "Aug"
         },
         "duration": {
-            "partTime": "2.5 Years",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -925,7 +929,9 @@
         "discipline": [
             "Business"
         ],
-        "subDiscipline": [],
+        "subDiscipline": [
+            "Marketing"
+        ],
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
@@ -933,11 +939,15 @@
             "diploma": true
         },
         "awardedBy": "University of Stirling",
-        "programOverview": [],
+        "programOverview": [
+            "Marketing with digital focus in today's digital age and competitive marketing landscape",
+            "Apply digital communication and information technologies in business and marketing",
+            "Creative thinking with strategic analysis in digital marketing"
+        ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
-                "period": "15 Jul 2020 to 20 Oct 2020"
+                "intake": "Full-time Aug 2020 Intake",
+                "period": "Singaporean & PRs:\nNow till 20 July 2020\nInternational Applicants:\nNow till 15 Jun 2020\n*Part-time programme is not open for application for Aug 2020 intake."
             }
         ],
         "programmeStructure": {
@@ -945,16 +955,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul",
-            "fullTime": ""
+            "partTime": "Aug",
+            "fullTime": "Aug"
         },
         "duration": {
-            "partTime": "2.5 Years",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -969,7 +979,9 @@
         "discipline": [
             "Business"
         ],
-        "subDiscipline": [],
+        "subDiscipline": [
+            "Retail Marketing"
+        ],
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
@@ -977,11 +989,19 @@
             "diploma": true
         },
         "awardedBy": "University of Stirling",
-        "programOverview": [],
+        "programOverview": [
+            "Fundamental principles of retailing as an important service sector that is customer-focused",
+            "Practical curriculum reflecting current retail landscape, including omni-channel retail marketing",
+            "Specialised retail or general management careers with a Retail Marketing degree from Stirling"
+        ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
-                "period": "15 Jul 2020 to 20 Oct 2020"
+                "intake": "Full-time Aug 2020 Intake",
+                "period": "Singaporean & PRs:\nNow till 20 July 2020\nInternational Applicants:\nNow till 15 Jun 2020\n*Part-time programme is not open for application for Aug 2020 intake."
+            },
+            {
+                "intake": "Preparatory Course",
+                "period": "Singaporean & PRs:\nNow till 30 Apr 2020\nInternational Applicants:\nNow till 23 Mar 2020"
             }
         ],
         "programmeStructure": {
@@ -989,16 +1009,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul",
-            "fullTime": ""
+            "partTime": "Aug",
+            "fullTime": "Aug"
         },
         "duration": {
-            "partTime": "2.5 Years",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -1013,7 +1033,9 @@
         "discipline": [
             "Business"
         ],
-        "subDiscipline": [],
+        "subDiscipline": [
+            "Sports Studies and Marketing"
+        ],
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
@@ -1028,8 +1050,64 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
-                "period": "15 Jul 2020 to 20 Oct 2020"
+                "intake": "Full-time Aug 2020 Intake",
+                "period": "Singaporean & PRs:\nNow till 20 July 2020\nInternational Applicants:\nNow till 15 Jun 2020\n*Part-time programme is not open for application for Aug 2020 intake."
+            },
+            {
+                "intake": "Preparatory Course",
+                "period": "Singaporean & PRs:\nNow till 30 Apr 2020\nInternational Applicants:\nNow till 23 Mar 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Aug",
+            "fullTime": "Aug"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-021",
+        "programmeTitle": "Graduate Certificate in Business Analytics",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business",
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Business Analytics",
+            "Information Technology"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Understand the emergence of biz analytics & the use of data for customer acqn, retention & revenue management",
+            "Modules include Business Analytic Concepts, Data mining for managers & Customer Relation Management",
+            "Classroom learning and hands-on practice. Use MS Excel to perform data analysis"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
             }
         ],
         "programmeStructure": {
@@ -1041,13 +1119,451 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, Jul",
+            "partTime": "Jan, May, Sep",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "2.5 Years",
+            "partTime": "1 Year",
             "fullTime": ""
         },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-022",
+        "programmeTitle": "Graduate Diploma in Business Analytics",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business",
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Business Analytics",
+            "Information Technology"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Equipped to identify, model and solve biz problems using appropriate analytical techniques and tools",
+            "Modules include Python for Data Analysis, Predictive Modelling & Data Visualisation",
+            "Students will be exposed to software such as Python, 'R' and Tableau"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-023",
+        "programmeTitle": "Graduate Diploma in Digital Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Marketing"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Learn & apply various digital mktg strategies to reach integratedmktg objectives for organisations",
+            "Modules include Digital Marketing, New Media Coomunications & Social Media Marketing",
+            "Explore the use of social media platforms to gain insights to support businss decision making"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-024",
+        "programmeTitle": "Graduate Diploma in Human Resource Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Human Resource Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Programme that allows HR and administrative staff to hone their HR skills.",
+            "Programme includes modules that deal with organisation development in a disruptive world.",
+            "Programme helps students to transition into human resource careers"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-025",
+        "programmeTitle": "Postgraduate Award in Engineering Business Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Engineering and Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "The University of Warwick",
+        "programOverview": [
+            "Flexibility to choose from a variety of modules to match learning needs",
+            "Modular delivery with application-based assignments",
+            "Fully taught by global experienced practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "November 2020 Intake",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "January 2021 Intake",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "March 2021 Intake",
+                "period": "Now till 15 February 2021"
+            },
+            {
+                "intake": "May 2021 Intake",
+                "period": "Now till 17 April 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-026",
+        "programmeTitle": "Postgraduate Award in Programme and Project Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Project Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "The University of Warwick",
+        "programOverview": [
+            "Flexibility to choose from a variety of modules to match learning needs",
+            "Modular delivery with application-based assignments",
+            "Fully taught by global experienced practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "November 2020 Intake",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "January 2021 Intake",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "March 2021 Intake",
+                "period": "Now till 15 February 2021"
+            },
+            {
+                "intake": "May 2021 Intake",
+                "period": "Now till 17 April 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-027",
+        "programmeTitle": "Postgraduate Award in Supply Chain and Logistics Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Logistics and Supply Chain Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "The University of Warwick",
+        "programOverview": [
+            "Flexibility to choose from a variety of modules to match learning needs",
+            "Modular delivery with application-based assignments",
+            "Fully taught by global experienced practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "November 2020 Intake",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "January 2021 Intake",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "March 2021 Intake",
+                "period": "Now till 15 February 2021"
+            },
+            {
+                "intake": "May 2021 Intake",
+                "period": "Now till 17 April 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-028",
+        "programmeTitle": "Master of Business Administration",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "The University of Birmingham",
+        "programOverview": [
+            "Triple-crown accredited Busiess School by AACSB, AMBA & EQUIS",
+            "Learn best practices from participants across industries",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-Time - January 2021 Intake",
+                "period": "Now till 05 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, Jul, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-028",
+        "programmeTitle": "Master of Business Administration",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "The University of Birmingham",
+        "programOverview": [
+            "Triple-crown accredited Busiess School by AACSB, AMBA & EQUIS",
+            "Learn best practices from participants across industries",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-Time - January 2021 Intake",
+                "period": "Now till 05 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, Jul, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     }
 ]
