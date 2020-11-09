@@ -30,7 +30,7 @@ const StudySIMMain: React.FC<RouteComponentProps> = () => {
                                 <IonSelect id="studySIMProgSelect" name="studySIMProgSelect" value={studySIMProgSelect} onIonChange={(e) => setStudySIMProgSelect(e.detail.value)}>
                                     <IonSelectOption value="Diploma" className="studySIMProgSelectOption">Diploma Programmes</IonSelectOption>
                                     <IonSelectOption value="Bachelor" className="studySIMProgSelectOption">Undergraduate Programmes</IonSelectOption>
-                                    <IonSelectOption value="Masters" className="studySIMProgSelectOption">Postgraduate/ Masters Programmes</IonSelectOption>
+                                    <IonSelectOption value="Postgraduate/Masters" className="studySIMProgSelectOption">Postgraduate/ Masters Programmes</IonSelectOption>
                                 </IonSelect>
                             </IonItem>
                         </IonCol>

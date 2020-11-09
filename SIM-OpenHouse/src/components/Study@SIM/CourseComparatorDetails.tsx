@@ -100,7 +100,10 @@ const CourseComparatorDetails: React.FC<{
                                         <div className="ion-text-wrap"> {Array.isArray(programme.applicationPeriod) ? programme.applicationPeriod.map((overview: any, index: any) => {
                                             return (<div key={overview + index}>
                                                 <p>{overview.intake}</p>
-                                                <p>{overview.period}</p>
+                                                {overview.period.split('\n').map((line: string) => {
+                                                    return (<p key={line}>{line}</p>)
+                                                })}
+
                                             </div>)
                                         })
 
@@ -269,8 +272,8 @@ const CourseComparatorDetails: React.FC<{
                                     {/* About Prog Text */}
                                     <IonText className="courseComparatorAbtProgText">
                                         <div className="ion-text-wrap">
-                                            {typeof programme.modeOfStudy.partTime !== 'undefined' ? <p>Part Time: {programme.modeOfStudy.partTime ? 'True' : 'False'}</p> : ''}
-                                            {typeof programme.modeOfStudy.fullTime !== 'undefined' ? <p>Full Time: {programme.modeOfStudy.fullTime ? 'True' : 'False'}</p> : ''}
+                                            {typeof programme.modeOfStudy.partTime !== 'undefined' ? <p>Part Time: {programme.modeOfStudy.partTime ? 'Yes' : 'No'}</p> : ''}
+                                            {typeof programme.modeOfStudy.fullTime !== 'undefined' ? <p>Full Time: {programme.modeOfStudy.fullTime ? 'Yes' : 'No'}</p> : ''}
 
                                         </div>
                                     </IonText>

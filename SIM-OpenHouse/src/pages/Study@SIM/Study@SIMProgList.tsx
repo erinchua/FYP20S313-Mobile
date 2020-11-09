@@ -66,7 +66,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         /*Fetching Programmes Data from firestore*/
         const fetchData = async (discipline: string, category: string) => {
             const programmes: any = []
-            await db.collection('TestProgrammes')
+            await db.collection('ProgrammesMobile')
                 .where("discipline", "array-contains", discipline)
                 .where("academicLevel", '==', category)
                 .get()
@@ -133,7 +133,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
 
 
 
-    //Filter function
+    //Filter functions
     const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
         mos: ['fullPartTime', 'partTime', 'fullTime'],
         discipline: [discipline],
@@ -170,7 +170,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
         let filteredList: Programme[] = []
         let segmentFilter: Programme[] = []
 
-        await db.collection('TestProgrammes')
+        await db.collection('ProgrammesMobile')
             .get()
             .then(snapshot => {
                 snapshot.docs.forEach((doc: any) => {
@@ -359,7 +359,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                                                 <IonCol size="8" sizeSm="8" className="studySIMProgListColDetails" class="ion-text-left">
                                                     {/* Programme Title */}
                                                     <IonRow className="progCourseRow">
-                                                        {/* <IonRouterLink id="progCourseTitleLink" href={`/u/study@SIMMain/Study@SIMProgInfo/${programme.id}`}> */}
                                                         <IonRouterLink id="progCourseTitleLink" href={`/u/study@SIMMain/Study@SIMProgInfo/${programme.id}/${discipline}/${category}`}>
                                                             <IonTitle className="progCourseTitle">
                                                                 <div className="ion-text-wrap">{programme.programmeTitle}</div>

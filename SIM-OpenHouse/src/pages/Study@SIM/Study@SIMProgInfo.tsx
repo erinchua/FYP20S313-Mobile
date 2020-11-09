@@ -67,7 +67,7 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
 
     const discipline = match.params.discipline
     const category = match.params.category
-    
+
     const [programme, setProgrammes] = useState<Programme>({
         id: "",
         programmeTitle: "",
@@ -119,7 +119,7 @@ const StudySIMProgInfo: React.FC<StudySIMProgInfo_Props> = ({ match }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const programmeRef = db.collection('TestProgrammes').doc(match.params.id);
+            const programmeRef = db.collection('ProgrammesMobile').doc(match.params.id);
             const doc: any = (await programmeRef.get()).data();
             setProgrammes(doc);
         };
