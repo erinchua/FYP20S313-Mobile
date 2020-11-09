@@ -175,7 +175,7 @@
         "programOverview": [
             "Apply skills & understand the interdependence of global localised & regional logistics issues",
             "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
-            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities",
+            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
         ],
         "applicationPeriod": [
             {
@@ -868,25 +868,25 @@
     },
     {
         "id": "programme-017",
-        "programmeTitle": "Bachelor of Advance nursing (Top-up)",
+        "programmeTitle": "Bachelor of Arts (Honours) Events Management",
         "modeOfStudy": {
             "partTime": true,
-            "fullTime": false
+            "fullTime": true
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Nursing"
+            "Business"
         ],
         "subDiscipline": [
             "Aviation"
         ],
         "entryQualifications": {
-            "aLevel": false,
+            "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
-        "awardedBy": "RMIT University",
+        "awardedBy": "University of Stirling",
         "programOverview": [
             "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
             "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
@@ -914,34 +914,28 @@
             "partTime": "2.5 Years",
             "fullTime": ""
         },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
     {
         "id": "programme-018",
-        "programmeTitle": "Bachelor of IT com science (Top-up)",
+        "programmeTitle": "Bachelor of Arts (Honours) Marketing",
         "modeOfStudy": {
             "partTime": true,
-            "fullTime": false
+            "fullTime": true
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "IT & Computer Science"
+            "Business"
         ],
-        "subDiscipline": [
-            "Aviation"
-        ],
+        "subDiscipline": [],
         "entryQualifications": {
-            "aLevel": false,
+            "aLevel": true,
             "oLevel": false,
             "degree": false,
             "diploma": true
         },
-        "awardedBy": "RMIT University",
-        "programOverview": [
-            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
-            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
-            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
-        ],
+        "awardedBy": "University of Stirling",
+        "programOverview": [],
         "applicationPeriod": [
             {
                 "intake": "Jan 2021",
@@ -964,6 +958,94 @@
             "partTime": "2.5 Years",
             "fullTime": ""
         },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-019",
+        "programmeTitle": "Bachelor of Arts (Honours) Retail Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
+    },
+    {
+        "id": "programme-020",
+        "programmeTitle": "Bachelor of Arts (Honours) Sports Studies and Marketing",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Stirling",
+        "programOverview": [],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     }
 ]
