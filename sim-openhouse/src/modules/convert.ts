@@ -21,7 +21,7 @@ export function toDateObject(date: string, time: string) {
     const seconds = 0, milliseconds = 0;
 
     
-    if (hours == 12 && meridiem.toUpperCase() == "AM") hours = 0;
+    if (hours === 12 && meridiem.toUpperCase() === "AM") hours = 0;
     if ((hours > 0 && hours < 12) && meridiem.toUpperCase() === "PM") hours += 12;
 
     return new Date(year, month, day, hours, minutes, seconds, milliseconds);
@@ -29,4 +29,9 @@ export function toDateObject(date: string, time: string) {
 
 export function camalize(str: string) {
     return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m: string, chr: string) => chr.toUpperCase());
+}
+
+export function sentence(str: string) {
+    const split = str.replace( /([A-Z])/g, " $1" );
+    return split.charAt(0).toUpperCase() + split.slice(1);
 }

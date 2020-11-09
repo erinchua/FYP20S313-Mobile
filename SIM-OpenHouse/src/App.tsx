@@ -5,21 +5,17 @@ import { IonReactRouter } from "@ionic/react-router";
 
 import Main from "./pages/Main";
 import ForgetPassword1 from "./pages/ForgetPassword/ForgetPassword1";
-import ForgetPassword2 from "./pages/ForgetPassword/ForgetPassword2";
+import ForgetPassword2 from "./pages/unused/ForgetPassword2";
 import ForgetPassword3 from "./pages/ForgetPassword/ForgetPassword3";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import AppU from "./AppU";
-import SingleSignIn from "./pages/SingleSignIn";
 import Menu from "./components/Menu";
 
 import { AuthContext, useAuthInit } from "./modules/auth";
 import "./css/TopNav.css";
 import "./css/Global.css";
 import "./css/Menu.css";
-
-/* Temp files */
-import VincentTest from "./temp/VincentTest";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -40,12 +36,13 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 
+/* Temp files */
+import VincentTest from "./temp/VincentTest";
+
 const App: React.FC = () => {
   const { loading, auth } = useAuthInit();
 
   if (loading) return <IonLoading isOpen />;
-
-  console.log(auth);
 
   return (
     <IonApp>
@@ -54,11 +51,9 @@ const App: React.FC = () => {
         <IonReactRouter>
           <IonRouterOutlet>
             <Switch>
-              {/* <Route path="/main" component={VincentTest} exact={true} /> */}
               <Route path="/main" component={Main} exact={true} />
               <Route path="/registration" component={Registration} exact={true} />
               <Route path="/login" component={Login} exact={true} />
-              <Route path="/singleSignIn" component={SingleSignIn} exact={true} />
               <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
               <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
               <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />

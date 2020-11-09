@@ -4,21 +4,26 @@ import moment from 'moment';
 
 const { LocalNotifications } = Plugins;
 
-const notification = async (date: string, time: string, description: string, type: string) => {
+export async function notification(date: string, time: string, description: string, type: string) {
 
-    const allowAnnoucement = window.sessionStorage.getItem('allowAnnoucementNotif');
+    const allowAnnouncement = window.sessionStorage.getItem('allowAnnouncementNotif');
     const allowOpenhouse = window.sessionStorage.getItem('allowOpenhouseNotif');
     const isAllowOpenhouse: boolean = (allowOpenhouse == 'true');
-    const isAllowAnnouncement: boolean = (allowAnnoucement == 'true');
+    const isAllowAnnouncement: boolean = (allowAnnouncement == 'true');
 
     try {
         // Request/ check permissions
-        if (!(await LocalNotifications.requestPermission()).granted || !isAllowOpenhouse || !isAllowAnnouncement) return;
+        if (type === 'programme') {
+            if (!(await LocalNotifications.requestPermission()).granted || !isAllowOpenhouse) return;
+        }
 
-        // Clear old notifications in prep for refresh (OPTIONAL)
-        const pending = await LocalNotifications.getPending();
-        if (pending.notifications.length > 0)
-            await LocalNotifications.cancel(pending);
+        if (type === 'announcement') {
+            console.log("In notification announcement")
+            if (!(await LocalNotifications.requestPermission()).granted || !isAllowAnnouncement) {
+                console.log("Permission denied")
+                return;
+            }
+        }
 
         const subTime = toDateObject(date, time);
         const sysTime = moment().toDate();
@@ -26,7 +31,7 @@ const notification = async (date: string, time: string, description: string, typ
         if (type === "programme") {
             //schedule notification at 5 min before the actual start time
             const scheduled = moment(subTime).subtract(60 * 4.7, 's').toDate();
-            
+
             if (scheduled > sysTime) {
                 await LocalNotifications.schedule({
                     notifications: [{
@@ -53,14 +58,15 @@ const notification = async (date: string, time: string, description: string, typ
         }
 
         if (type === "announcement") {
-            if (sysTime >= subTime) {
+            if (sysTime <= subTime) {
+                const scheduled = moment(subTime).toDate();
                 await LocalNotifications.schedule({
                     notifications: [{
                         title: 'New announcement from SIM Openhouse',
                         body: description,
                         id: 1,
                         schedule: {
-                            at: new Date(Date.now() + 1000 * 5)
+                            at: scheduled
                         }
                     }]
                 });
@@ -71,5 +77,3 @@ const notification = async (date: string, time: string, description: string, typ
         return console.error(error);
     }
 }
-
-export default notification;

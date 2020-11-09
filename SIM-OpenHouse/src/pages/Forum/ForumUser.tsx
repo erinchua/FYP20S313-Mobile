@@ -137,7 +137,7 @@ const ForumUser: React.FC = () => {
                     <IonRow id="forumUser-ionRowCol">
                         <IonCol id="forumUser-ionRowCol">
                             <IonToolbar>
-                                <IonSegment scrollable value={qnsCom} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                                <IonSegment scrollable value={qnsCom}>
                                     <IonSegmentButton value="forum-myQuestions" onClick={() => handleQuestions()} className="forumUser-heading">My Questions</IonSegmentButton>
                                     <IonSegmentButton value="forum-myComments" onClick={() => handleComments()} className="forumUser-heading">My Comments</IonSegmentButton>
                                 </IonSegment>
@@ -172,7 +172,7 @@ const ForumUser: React.FC = () => {
 
             <IonFooter>
                 <IonToolbar>
-                    <IonSegment scrollable value={modalSegmentValue} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                    <IonSegment scrollable value={modalSegmentValue}>
                         <IonSegmentButton className="forum-segmentBtn" value="postQuestionBtn" onClick={() => [setShowPostModal(true), setModalSegmentValue('postQuestionBtn')]}><IonIcon icon={addCircleSharp} /></IonSegmentButton>
                         <IonSegmentButton className="forum-segmentBtn" value="forumUserBtn" onClick={(e) => { e.preventDefault(); history.push('/u/forumUser'); }}><IonIcon icon={personSharp} /></IonSegmentButton>
                     </IonSegment>

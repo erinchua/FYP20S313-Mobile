@@ -7,16 +7,14 @@ import TopNav from '../components/TopNav';
 import { db } from '../firebase';
 import { Announcement, toAnnouncement } from '../modules/map';
 import { toDateObject } from '../modules/convert';
-import { sortTimeAsc } from '../modules/compare';
-import notification from '../modules/Notifications';
+import { sortDsc } from '../modules/compare';
 
 
 const Announcements: React.FC = () => {
 
     const [announcements, setAnnouncements] = useState<Announcement[]>([]);
 
-    const current = announcements.filter(news => { return new Date().getTime() > toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortTimeAsc(a.time, b.time));
-    announcements.map(alert => notification(alert.date, alert.time, alert.title, "announcement"));
+    const current = announcements.filter(news => { return new Date().getTime() > toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortDsc(a.ms, b.ms));
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,8 +24,6 @@ const Announcements: React.FC = () => {
         }
         fetchData();
     }, []);
-
-    //console.log(current)
 
     return (
         <IonPage>

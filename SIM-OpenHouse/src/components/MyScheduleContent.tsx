@@ -68,7 +68,6 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                         role: 'cancel',
                         cssClass: 'secondary',
                         handler: () => {
-                            console.log('Confirm Cancel: cancel delete');
                             setAlert({ confirmRemove: false, removeSuccess: false, loading: false });
                         }
                     }, {

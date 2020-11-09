@@ -13,7 +13,7 @@ import ForumRules from '../../components/Forum/ForumRules';
 import Forum_FlagModal from "../../components/Forum/Forum_FlagModal";
 import { db } from "../../firebase";
 import { useAuth } from "../../modules/auth";
-import { forumPostsDsc } from "../../modules/compare";
+import { sortDsc } from "../../modules/compare";
 
 const Forum: React.FC = () => {
     const { userID } = useAuth();
@@ -41,7 +41,7 @@ const Forum: React.FC = () => {
     const handleQuestion = async () => {
         try {
             setLoading(true);
-            const time = new Date();
+            const time = Date.now();
             let name: string;
 
             if (entry !== "") {
@@ -49,13 +49,13 @@ const Forum: React.FC = () => {
                     name = doc.data().firstName + " " + doc.data().lastName;
                 });
 
-                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
+                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc(time.toString());
                 await docRef.set({
                     id: +docRef.id,
                     entry: entry,
                     posterName: name!,
                     posterId: userID,
-                    dateTime: time.toLocaleString().replace(/\//g, "-"),
+                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
                     noOfComments: 0,
                     deleted: false,
                     reported: false
@@ -112,7 +112,7 @@ const Forum: React.FC = () => {
                             });
 
                             setTimeout(() => {
-                                questions.sort(forumPostsDsc);
+                                questions.sort((a: any, b: any) => sortDsc(a.id, b.id));
                                 setQuestions(questions);
                                 setLoading(false);
                             }, 500);
@@ -282,7 +282,7 @@ const Forum: React.FC = () => {
                 <>
                     <IonFooter>
                         <IonToolbar>
-                            <IonSegment scrollable value={modalSegmentValue} onIonChange={(e) => console.log(`${e.detail.value}`)}>
+                            <IonSegment scrollable value={modalSegmentValue}>
                                 <IonSegmentButton className="forum-segmentBtn" value="postQuestionBtn" onClick={() => [setShowPostModal(true), setModalSegmentValue('postQuestionBtn')]}><IonIcon icon={addCircleSharp} /></IonSegmentButton>
                                 <IonSegmentButton className="forum-segmentBtn" value="forumUserBtn" onClick={(e) => { e.preventDefault(); history.push('/u/forumUser'); }}><IonIcon icon={personSharp} /></IonSegmentButton>
                             </IonSegment>

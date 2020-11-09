@@ -32,7 +32,7 @@ const Bursary: React.FC = () => {
             await db.collection('Brochures').where('description', 'in', ['Bursary-FAQ']).get().then(({ docs }) => {
                 const brocs = docs.map(toBrochure);
     
-                if (brocs.length == 1)
+                if (brocs.length === 1)
                     setBrochure(brocs[0]);
             });
         }
@@ -45,7 +45,7 @@ const Bursary: React.FC = () => {
                 <TopNav title="Bursary" route="/u/studentLife@SIM" backarrow={ true } hamburger={ true }/>
 
                 <IonToolbar>
-                    <IonSegment scrollable value={heading} id="bursary-mainHeader" onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+                    <IonSegment scrollable value={heading} id="bursary-mainHeader">
                         <IonSegmentButton value="simGeBursary" className="bursary-heading" onClick={() => handleHeading()}><div>SIM GE Bursary</div></IonSegmentButton>
                         <IonSegmentButton value="otherFinancialAssistance" className="bursary-heading" onClick={() => handleHeading2()}><div className="ion-text-wrap">Other Financial Assistance</div></IonSegmentButton>
                     </IonSegment>

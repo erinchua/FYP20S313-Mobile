@@ -8,7 +8,7 @@ import '../../css/Global.css';
 import '../../css/OpenHouseActivities.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
-import notification from '../../modules/Notifications';
+import { notification } from '../../modules/notifications';
 
 const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
@@ -29,7 +29,7 @@ const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openh
             setAlert({ registerSuccess: true, registerFail: false, loading: false });
         } catch (e) {
             setAlert({ registerSuccess: false, registerFail: false, loading: false });
-            console.log(e);
+            return console.log(e);
         }
     };
 

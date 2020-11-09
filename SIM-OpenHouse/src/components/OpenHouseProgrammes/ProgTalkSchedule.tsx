@@ -10,7 +10,7 @@ import '../../css/ProgrammeTalks.css'
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
-import notification from '../../modules/Notifications';
+import { notification } from '../../modules/notifications';
 
 const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();

@@ -32,7 +32,7 @@ const OpenHouseFeedback: React.FC = () => {
     }, []);
 
     const submitNewFeedback = async (date: string, feedbackNature: string, feedbackDesc: string) => {
-        const msTime = new Date().getTime();
+        const msTime = Date.now();
 
         await db.collection('Feedback').doc(msTime.toString()).set({
             id: msTime,
@@ -40,22 +40,15 @@ const OpenHouseFeedback: React.FC = () => {
             natureOfFeedback: feedbackNature,
             feedbackDescription: feedbackDesc
         });
-
-        //console.log(date)
-        //console.log(feedbackNature)
-        //console.log(feedbackDesc)
     }
 
-    const onSubmit = (data: any) => {
+    const onSubmit = () => {
         const attendedDate = getValues("attendedDate");
         const feedbackNature = getValues("feedbackNature");
         const feedbackTextarea = getValues("feedbackTextarea");
 
         if ((attendedDate !== "" && feedbackNature !== "" && feedbackTextarea !== "") &&
             (attendedDate !== null && feedbackNature !== null && feedbackTextarea !== null)) {
-            //console.log("Date: " + data.attendedDate);
-            //console.log("Feedback Nature: " + data.feedbackNature);
-            //console.log("Feedback: " + data.feedbackTextarea);
             submitNewFeedback(attendedDate, feedbackNature, feedbackTextarea)
             setSubmitFeedbackSuccess(true);
         }
