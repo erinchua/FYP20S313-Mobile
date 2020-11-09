@@ -27,21 +27,6 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
     const { params: { discipline, category } } = match
 
     //Frontend
-    /*To remove selected programmes in comparePopOver */
-    const removeProg = (programme: Programme) => {
-        const newProgList = [...compareProgList]
-        const newProgID = programme.id
-        const updatedProgList = newProgList.filter(programme => { return programme.id !== newProgID })
-        setCompareProgList(updatedProgList)
-
-    }
-    /*To remove all selected programmes in comparePopOver */
-    const removeAllProg = (programmes: Programme[]) => {
-        const newProgList = [...compareProgList]
-        const updatedProgList = newProgList.filter(programme => { return programme.id === '' })
-        setCompareProgList(updatedProgList)
-
-    }
 
     /* Display Compare Prog Popover */
     const [showCompareProgPopover, setShowCompareProgPopover] = useState<{ open: boolean, event: Event | undefined }>({
@@ -132,6 +117,23 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
             }
         }
     };
+
+    /*To remove selected programmes in comparePopOver */
+    const removeProg = (programme: Programme) => {
+        const newProgList = [...compareProgList]
+        const newProgID = programme.id
+        const updatedProgList = newProgList.filter(programme => { return programme.id !== newProgID })
+        setCompareProgList(updatedProgList)
+
+    }
+    /*To remove all selected programmes in comparePopOver */
+    const removeAllProg = (programmes: Programme[]) => {
+        const newProgList = [...compareProgList]
+        const updatedProgList = newProgList.filter(programme => { return programme.id === '' })
+        setCompareProgList(updatedProgList)
+        setShowCompareProgPopover({ open: false, event: undefined })
+
+    }
 
 
 

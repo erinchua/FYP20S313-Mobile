@@ -27,7 +27,7 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
+                "intake": "Jan 2021 Intake",
                 "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
             }
         ],
@@ -77,7 +77,7 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
+                "intake": "Jan 2021 Intake",
                 "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
             }
         ],
@@ -127,7 +127,7 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
+                "intake": "Jan 2021 Intake",
                 "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
             }
         ],
@@ -177,7 +177,7 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
+                "intake": "Jan 2021 Intake",
                 "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
             }
         ],
@@ -227,7 +227,7 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "Jan 2021",
+                "intake": "Jan 2021 Intake",
                 "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
             }
         ],
@@ -1565,5 +1565,67 @@
             "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
-    }
+    },
+    {
+        "id": "programme-029",
+        "programmeTitle": "Postgraduate Award in Cyber Security and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Cyber Security and Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick",
+        "programOverview": [
+            "Flexibility to choose from a variety of modules to match learning needs",
+            "Modular delivery with application-based assignments",
+            "Fully taught by global experience's practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "November 2020 Intake",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "January 2021 Intake",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "March 2021 Intake",
+                "period": "Now till 15 February 2021"
+            },
+            {
+                "intake": "May 2021 Intake",
+                "period": "Now till 17 April 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
 ]
