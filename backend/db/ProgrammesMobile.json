@@ -1,0 +1,969 @@
+[
+    {
+        "id": "programme-001",
+        "programmeTitle": "Bachelor of Business (Marketing)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Marketing"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Acquire practical skills in market research, advertising, business development & branding",
+            "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-002",
+        "programmeTitle": "Bachelor of Business (Accountancy)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Accountancy"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Gain insights into modern finance industry, analyse economic context relating to real issues",
+            "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-003",
+        "programmeTitle": "Bachelor of Business (Economics and Finance)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Economics and Finance"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Gain insights into modern finance industry, analyse economic context relating to real issues",
+            "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-004",
+        "programmeTitle": "Bachelor of Business (Logistics and Supply Chain Management)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Logistics and Supply Chain Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Apply skills & understand the interdependence of global localised & regional logistics issues",
+            "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities",
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-005",
+        "programmeTitle": "Bachelor of Business (Management)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Gain the knowledge, competence and attitudes necessaary for managing complex organisations",
+            "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-006",
+        "programmeTitle": "Master of Science in Engineering Business Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Engineering and Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick",
+        "programOverview": [
+            "Industry-relevant",
+            "Gain multidisciplinary skillset for graduate employement",
+            "Fully taught by global experience's practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - April 2021",
+                "period": "Now till 6 February 2021"
+            },
+            {
+                "intake": "Part-time - November 2020",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "Part-time - January 2021",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "Part-time - March 2021",
+                "period": "Now till 15 Febraury 2020"
+            },
+            {
+                "intake": "Part-time - May 2021",
+                "period": "Now till 17 Aptil 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Apr, Oct"
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-007",
+        "programmeTitle": "Master of Science in Programme and Project Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Project Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick",
+        "programOverview": [
+            "Industry-relevant",
+            "Gain multidisciplinary skillset for graduate employement",
+            "Fully taught by global experience's practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - April 2021",
+                "period": "Now till 6 February 2021"
+            },
+            {
+                "intake": "Part-time - November 2020",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "Part-time - January 2021",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "Part-time - March 2021",
+                "period": "Now till 15 Febraury 2020"
+            },
+            {
+                "intake": "Part-time - May 2021",
+                "period": "Now till 17 Aptil 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Apr, Oct"
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-008",
+        "programmeTitle": "Master of Science in Supply Chain & Logistics Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Logistics and Supply Chain Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick",
+        "programOverview": [
+            "Industry-relevant",
+            "Gain multidisciplinary skillset for graduate employement",
+            "Fully taught by global experience's practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - April 2021",
+                "period": "Now till 6 February 2021"
+            },
+            {
+                "intake": "Part-time - November 2020",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "Part-time - January 2021",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "Part-time - March 2021",
+                "period": "Now till 15 Febraury 2020"
+            },
+            {
+                "intake": "Part-time - May 2021",
+                "period": "Now till 17 Aptil 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-009",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Flagship broad-based business",
+            "Out-of-class learning i.e. guestlectures, panel discussion, coding bootcamp by industry experts'",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "2021 Intake",
+                "period": "Now till 31 Jan 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jul",
+            "fullTime": "Jul"
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-010",
+        "programmeTitle": "Bachelor of Science (Honours) in Accounting and Finance",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Accounting and Finance"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 5th globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "Our past graduates have gained employment opportunities in the Big Four acounting firms",
+            "Graduates articule to the major professional accounting qualifications with exemption"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA / EMFSS",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Sep",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-011",
+        "programmeTitle": "Bachelor of Science (Honours) in Banking and Finance",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Banking and Finance"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 5th globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "Widely recognized by professional accountancy associations such as ACCA and CPA Australia",
+            "Alumni have gone on to pursue master's at Cambridge and oter reputable UK universities"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA / EMFSS",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Sep",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-012",
+        "programmeTitle": "Bachelor of Science (Honours) in Business and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "Top choice of UOL-EMFSS degree and the most popular business degree programmes at SIM",
+            "Recent graduate have progressed into taxation, business analytics and management consultancy"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA / EMFSS",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Sep",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-013",
+        "programmeTitle": "Graduate Diploma in Finance",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Finance"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 5th globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "All pre-requisites are waived for the Graduate Diploma"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Sep",
+            "fullTime": "Sep"
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-014",
+        "programmeTitle": "Graduate Diploma in Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Management",
+            "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "Expand your career options in the management of people & business activities with this diploma"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Sep",
+            "fullTime": "Sep"
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-015",
+        "programmeTitle": "Graduate Diploma in Management Digital Innovation",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Discuss theories and evolution of digital technology, services and ogranisational infrastructures",
+            "Earn a University of London qualifcation examined by London School of Economics in a year"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Intake Month",
+                "period": "Full-time: Sep\nPart-time: Sep"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Sep",
+            "fullTime": "Sep"
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-016",
+        "programmeTitle": "Master of Science in Professional Accountancy",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Accounting and Finance"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Awarded bu UOL with direction from UCL - a world leading multi-disciplinary Uni, QS Ranking Top 10 in Worldwide",
+            "Actual engagement with lcturers/peers to solve problems/develop strategies",
+            "Enhances your employability which also count towards ACCA CPD units"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time - Jan 2021 Intake (last intake of 2021)",
+                "period": "Now till 25 Nov 2020"
+            },
+            {
+                "intake": "Full-time - June 2021 Intake (last intake of 2021)",
+                "period": "International application: now till 30 April 2021\nLocal application: now till 24 May 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": "0.5 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-017",
+        "programmeTitle": "Bachelor of Advance nursing (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Nursing"
+        ],
+        "subDiscipline": [
+            "Aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-018",
+        "programmeTitle": "Bachelor of IT com science (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021",
+                "period": "15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    }
+]

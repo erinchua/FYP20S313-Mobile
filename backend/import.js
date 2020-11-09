@@ -2,7 +2,7 @@ const db = require("./config/adminConfig");
 
 const fs = require("fs");
 const path = require("path");
-const pathDir = "./data/";
+const pathDir = "./db/";
 // const pathDir = "./db/";
 
 
