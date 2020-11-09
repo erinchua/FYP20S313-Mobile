@@ -60,6 +60,7 @@ export async function notification(date: string, time: string, description: stri
         if (type === "announcement") {
             if (sysTime <= subTime) {
                 const scheduled = moment(subTime).toDate();
+                
                 await LocalNotifications.schedule({
                     notifications: [{
                         title: 'New announcement from SIM Openhouse',
