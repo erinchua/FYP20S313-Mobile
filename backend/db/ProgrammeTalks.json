@@ -123,9 +123,9 @@
 		"venue": "SIM HQ BLK B LT B.3.03",
 		"capacityLimit": 200,
 		"noRegistered": 0,
-		"isLive": false,
+		"isLive": true,
 		"hasRecording": false,
-		"url": ""
+		"url": "https://www.facebook.com/permalink.php?story_fbid=128990558973984&id=112728337266873"
 	},
 	{
 		"id": "talk-008",
@@ -251,9 +251,9 @@
 		"venue": "SIM HQ BLK B LT B.3.04",
 		"capacityLimit": 150,
 		"noRegistered": 0,
-		"isLive": false,
+		"isLive": true,
 		"hasRecording": false,
-		"url": ""
+		"url": "https://www.facebook.com/permalink.php?story_fbid=135399435002258&id=109981057544096"
 	},
 	{
 		"id": "talk-015",
@@ -270,8 +270,8 @@
 		"capacityLimit": 192,
 		"noRegistered": 0,
 		"isLive": false,
-		"hasRecording": false,
-		"url": ""
+		"hasRecording": true,
+		"url": "https://www.facebook.com/112728337266873/videos/2689211381389483/"
 	},
 	{
 		"id": "talk-016",
@@ -288,8 +288,8 @@
 		"capacityLimit": 112,
 		"noRegistered": 0,
 		"isLive": false,
-		"hasRecording": false,
-		"url": ""
+		"hasRecording": true,
+		"url": "https://www.facebook.com/109981057544096/videos/355877758816433/"
 	},
 	{
 		"id": "talk-017",
