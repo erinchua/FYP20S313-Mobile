@@ -1021,7 +1021,11 @@
             "diploma": true
         },
         "awardedBy": "University of Stirling",
-        "programOverview": [],
+        "programOverview": [
+            "Critical understanding of sports policy, planning, management and delivery of sporting opportunities",
+            "Contemporary issues in sports and marketing, and core sports marketing principles",
+            "Unique features of marketing in a sports environment"
+        ],
         "applicationPeriod": [
             {
                 "intake": "Jan 2021",

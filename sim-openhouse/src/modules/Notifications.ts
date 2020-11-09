@@ -6,10 +6,10 @@ const { LocalNotifications } = Plugins;
 
 export async function notification(date: string, time: string, description: string, type: string) {
 
-    const allowAnnoucement = window.sessionStorage.getItem('allowAnnoucementNotif');
+    const allowAnnouncement = window.sessionStorage.getItem('allowAnnouncementNotif');
     const allowOpenhouse = window.sessionStorage.getItem('allowOpenhouseNotif');
-    const isAllowOpenhouse: boolean = (allowOpenhouse === 'true');
-    const isAllowAnnouncement: boolean = (allowAnnoucement === 'true');
+    const isAllowOpenhouse: boolean = (allowOpenhouse == 'true');
+    const isAllowAnnouncement: boolean = (allowAnnouncement == 'true');
 
     try {
         // Request/ check permissions
@@ -18,7 +18,11 @@ export async function notification(date: string, time: string, description: stri
         }
 
         if (type === 'announcement') {
-            if (!(await LocalNotifications.requestPermission()).granted || !isAllowAnnouncement) return;
+            console.log("In notification announcement")
+            if (!(await LocalNotifications.requestPermission()).granted || !isAllowAnnouncement) {
+                console.log("Permission denied")
+                return;
+            }
         }
 
         const subTime = toDateObject(date, time);
@@ -54,14 +58,15 @@ export async function notification(date: string, time: string, description: stri
         }
 
         if (type === "announcement") {
-            if (sysTime >= subTime) {
+            if (sysTime <= subTime) {
+                const scheduled = moment(subTime).toDate();
                 await LocalNotifications.schedule({
                     notifications: [{
                         title: 'New announcement from SIM Openhouse',
                         body: description,
                         id: 1,
                         schedule: {
-                            at: new Date(Date.now() + 1000 * 5)
+                            at: scheduled
                         }
                     }]
                 });

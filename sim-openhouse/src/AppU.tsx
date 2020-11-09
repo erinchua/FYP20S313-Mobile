@@ -65,32 +65,52 @@ const App: React.FC = () => {
 	const { loggedIn, userID } = useAuth();
 
 	const [allowNotif, setAllowNotif] = useState({ openhouse: false, announcement: false });
-
+	const [upcomingNotif, setUpcomingNotif] = useState<Announcement[]>([])
 	useEffect(() => {
+		console.log("UserID useeffect")
+		console.log(userID)
+
 		if (userID) {
-			return db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
+			console.log("Retrieving mobile settings")
+			db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
 				setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
 			});
+
+			console.log("Retrieving announcement")
+			db.collection('Announcements').onSnapshot(({ docs }) => {
+				const upcoming = docs.map(toAnnouncement).filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
+				setUpcomingNotif(upcoming)
+
+			});
 		}
+
+
 	}, [userID]);
 
 	useEffect(() => {
-		if (userID) {
-			return db.collection('Announcements').onSnapshot(({ docs }) => {
-				const upcoming = docs.map(toAnnouncement).filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
 
-				if (upcoming.length > 0) {
-					upcoming.map(alert => notification(alert.date, alert.time, alert.title, "announcement"));
-				}
-			});
-		}
+
 	}, []);
 
 	useEffect(() => {
-		return () => {
-			window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowNotif.openhouse));
-			window.sessionStorage.setItem("allowAnnoucementNotif", JSON.stringify(allowNotif.announcement));
+
+		if (upcomingNotif.length > 0) {
+			upcomingNotif.map(alert => {
+				notification(alert.date, alert.time, alert.title, "announcement")
+				console.log("notified " + JSON.stringify(alert))
+
+			});
 		}
+
+	}, [upcomingNotif])
+
+	useEffect(() => {
+
+		window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowNotif.openhouse));
+		window.sessionStorage.setItem("allowAnnouncementNotif", JSON.stringify(allowNotif.announcement));
+
+
+
 	}, [allowNotif.openhouse, allowNotif.announcement]);
 
 
