@@ -1,6 +1,6 @@
 [
     {
-        "id": "activity-10",
+        "id": "activity-100",
         "gameBoothName": "Amazing Race - Campus Xplore",
         "boothNumber": "10",
         "venue": "BLK D Multi-Purpose Sports Hall",
@@ -9,7 +9,7 @@
         "pointsAward": 4
     },
     {
-        "id": "activity-11",
+        "id": "activity-101",
         "gameBoothName": "Guess the place - An SIM Edition",
         "boothNumber": "1B",
         "venue": "BLK B Cyber Lounge",
@@ -18,7 +18,7 @@
         "pointsAward": 2
     },
     {
-        "id": "activity-12",
+        "id": "activity-102",
         "gameBoothName": "DIY Temporary Tattoos",
         "boothNumber": "2B",
         "venue": "Blk B Student Activity Hub",
@@ -27,7 +27,7 @@
         "pointsAward": 2
     },
     {
-        "id": "activity-13",
+        "id": "activity-103",
         "gameBoothName": "CSI: SIM Edition",
         "boothNumber": "5",
         "venue": "SIM HQ BLK B MPH A1",
@@ -36,7 +36,7 @@
         "pointsAward": 4
     },
     {
-        "id": "activity-14",
+        "id": "activity-104",
         "gameBoothName": "Concentration - Match Match: SIM Edition ",
         "boothNumber": "1A",
         "venue": "SIM HQ BLK A Atrium",
@@ -45,7 +45,7 @@
         "pointsAward": 3
     },
     {
-        "id": "activity-15",
+        "id": "activity-105",
         "gameBoothName": "Writing Prompt contest ",
         "boothNumber": "4B",
         "venue": "BLK B Open Study Area",
@@ -54,7 +54,7 @@
         "pointsAward": 3
     },
     {
-        "id": "activity-16",
+        "id": "activity-106",
         "gameBoothName": "Reverse Jenga",
         "boothNumber": "3",
         "venue": "BLK B Student Activity Hub",
@@ -63,7 +63,7 @@
         "pointsAward": 2
     },
     {
-        "id": "activity-17",
+        "id": "activity-107",
         "gameBoothName": "Beer Pong Extreme",
         "boothNumber": "2A",
         "venue": "BLK A Multi-purpose Hall",
@@ -72,7 +72,7 @@
         "pointsAward": 3
     },
     {
-        "id": "activity-18",
+        "id": "activity-108",
         "gameBoothName": "The Generic Orientation Game",
         "boothNumber": "4",
         "venue": "BLK A Multi-Purpose Hall",
@@ -81,7 +81,7 @@
         "pointsAward": 2
     },
     {
-        "id": "activity-20",
+        "id": "activity-200",
         "gameBoothName": "Amazing Race - Campus Xplore",
         "boothNumber": "10",
         "venue": "BLK D Multi-Purpose Sports Hall",
@@ -90,7 +90,7 @@
         "pointsAward": 4
     },
     {
-        "id": "activity-21",
+        "id": "activity-201",
         "gameBoothName": "Guess the place - An SIM Edition",
         "boothNumber": "1B",
         "venue": "BLK B Cyber Lounge",
@@ -99,7 +99,7 @@
         "pointsAward": 2
     },
     {
-        "id": "activity-22",
+        "id": "activity-202",
         "gameBoothName": "DIY Temporary Tattoos",
         "boothNumber": "2B",
         "venue": "Blk B Student Activity Hub",
@@ -108,7 +108,7 @@
         "pointsAward": 2
     },
     {
-        "id": "activity-23",
+        "id": "activity-203",
         "gameBoothName": "CSI: SIM Edition",
         "boothNumber": "5",
         "venue": "SIM HQ BLK B MPH A1",
@@ -117,7 +117,7 @@
         "pointsAward": 4
     },
     {
-        "id": "activity-24",
+        "id": "activity-204",
         "gameBoothName": "Concentration - Match Match: SIM Edition ",
         "boothNumber": "1A",
         "venue": "SIM HQ BLK A Atrium",
@@ -126,7 +126,7 @@
         "pointsAward": 3
     },
     {
-        "id": "activity-25",
+        "id": "activity-205",
         "gameBoothName": "Writing Prompt contest ",
         "boothNumber": "4B",
         "venue": "BLK B Open Study Area",
@@ -135,7 +135,7 @@
         "pointsAward": 3
     },
     {
-        "id": "activity-26",
+        "id": "activity-206",
         "gameBoothName": "Reverse Jenga",
         "boothNumber": "3",
         "venue": "BLK B Student Activity Hub",
@@ -144,7 +144,7 @@
         "pointsAward": 2
     },
     {
-        "id": "activity-27",
+        "id": "activity-207",
         "gameBoothName": "Beer Pong Extreme",
         "boothNumber": "2A",
         "venue": "BLK A Multi-purpose Hall",
@@ -153,7 +153,7 @@
         "pointsAward": 3
     },
     {
-        "id": "activity-28",
+        "id": "activity-208",
         "gameBoothName": "The Generic Orientation Game",
         "boothNumber": "4",
         "venue": "BLK A Multi-Purpose Hall",
