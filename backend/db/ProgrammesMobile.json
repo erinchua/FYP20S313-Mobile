@@ -2058,7 +2058,8 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Nursing"
+            "Nursing",
+            "Specialty"
         ],
         "subDiscipline": [
             "Nursing"
@@ -2108,7 +2109,8 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Nursing"
+            "Nursing",
+            "Specialty"
         ],
         "subDiscipline": [
             "Nursing"
@@ -2248,6 +2250,2272 @@
             "fullTime": ""
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
-    } 
-    Part-time, Specialty, start SIM
+    },
+    {
+        "id": "programme-042",
+        "programmeTitle": "Specialist Diploma in Aviation Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "Specialty"
+        ],
+        "subDiscipline": [
+            "Aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "SkillFuture programme launched in collaboration with SATS, a Gateway Services provider",
+            "Grants/ fundings from SkillsFuture are available for eligible students",
+            "Programme is a platform to further develop industry-specific skills in aviation industry"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Not Applicable",
+                "period": ""
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-043",
+        "programmeTitle": "Monash University Foundation Year",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "Arts & Social Sciences",
+            "Business",
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Monash College",
+        "programOverview": [
+            "Guaranteed pathway to Monash University",
+            "Recognition in Australia and beyond",
+            "Non-discipline specific foundation program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-Time - July 2021 Intake",
+                "period": "Application opens in January 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FMonashCollege.png?alt=media&token=fce20eb0-a39d-477f-bfa7-2281375b7b87"
+    },
+    {
+        "id": "programme-044",
+        "programmeTitle": "Bachelor of Communication (Professional Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 50 universities for Communication & Media Studies (QS 2019)",
+            "Broad range of skills through a combination of practical training in communication and media",
+            "Pracitical Curricula, designed with industry inputs; integration of theory with practice"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021 Intake Category B",
+                "period": "Local Applicant: 15 Aug 2020 to 1 Nov 2020\nInternational Applicant: 15 Aug 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Jul, Nov"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-045",
+        "programmeTitle": "Bachelor of Design (Communication Design) (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Design"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked 12th in the world & highest in Australia for Art & Design (QS 2019)",
+            "Graduation exhibition showcasing student's creative ideas to industry professionals & visitors",
+            "Two-week Study Tour to RMIT's Melbourne Campus, exposure to other communication design cultures"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time Jul 2020 Intake",
+                "period": "Local Applicant: 9 Jan 2020 to 4 May 2020\nInternational Applicant: 9 Jan 2020 to 15 Apr 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-046",
+        "programmeTitle": "Bachelor of Science (Business Administration and Geographic Information Science)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Business administration",
+            "Geographic Information Science"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "SIM-UB scholarships are available for this programme"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2020 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-047",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Business administration",
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2020 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-048",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Business administration",
+            "Economics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2020 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-049",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Business administration",
+            "International Trade"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2020 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-050",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Business administration",
+            "Psychology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2020 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-051",
+        "programmeTitle": "Bachelor of Science (Business Administration) and Bachelor of Arts (Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Business administration",
+            "Sociology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2020 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-052",
+        "programmeTitle": "Bachelor of Arts (Communication and Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics",
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-053",
+        "programmeTitle": "Bachelor of Arts (Communication and International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "International Trade",
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-054",
+        "programmeTitle": "Bachelor of Arts (Communication and Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Psychology",
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-055",
+        "programmeTitle": "Bachelor of Arts (Communication and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Sociology",
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-056",
+        "programmeTitle": "Bachelor of Arts (Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "One of the top 25 communication programs in US",
+            "Students will learn cutting-edge scientific & comprehensive study of human communication"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-057",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Communication)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Communication",
+            "Geographic Information Science"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "SIM-UB scholarships are available for this programme"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-058",
+        "programmeTitle": "Bachelor of Arts (Economics and International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics",
+            "International Trade"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-059",
+        "programmeTitle": "Bachelor of Arts (Economics and Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics",
+            "Psychology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-060",
+        "programmeTitle": "Bachelor of Arts (Economics and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics",
+            "Sociology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-061",
+        "programmeTitle": "Bachelor of Arts (Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "Integrates economics theories with applied topics, hands-on experiences, best practices"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time Jan 2021 Intake",
+                "period": "Now till 29 October 2020"
+            },
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 30 October 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-062",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Geographic Information Science"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "Provide students with cutting-edge knowledge, skills & abilities in using geospatial sciences"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time Jan 2021 Intake",
+                "period": "Now till 29 Cctober 2020"
+            },
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 30 Cctober 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-063",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Geographic Information Science",
+            "International Trade"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "SIM-UB scholarships are available for this programme"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-064",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Geographic Information Science",
+            "Psychology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "SIM-UB scholarships are available for this programme"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-065",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Geographic Information Science",
+            "Sociology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "SIM-UB scholarships are available for this programme"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-066",
+        "programmeTitle": "Bachelor of Arts (International Trade and Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "International Trade",
+            "Psychology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-067",
+        "programmeTitle": "Bachelor of Arts (International Trade and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "International Trade",
+            "Sociology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-068",
+        "programmeTitle": "Bachelor of Arts (International Trade)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "International Trade"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "Learn the insights of globalization operations, critical social, economic & environmental challenges"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time Jan 2021 Intake",
+                "period": "Now till 29 October 2020"
+            },
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 30 October 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-069",
+        "programmeTitle": "Bachelor of Arts (Psychology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Psychology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "Study of psychological principles & scientific ways to evaluate theories & researches"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time Jan 2021 Intake",
+                "period": "Now till 29 October 2020"
+            },
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 30 October 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-070",
+        "programmeTitle": "Bachelor of Arts (Psychology and Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Psychology",
+            "Sociology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "More than 50% modules are taught by overseas faculty for full semester throughout the entire program"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-071",
+        "programmeTitle": "Bachelor of Arts (Sociology)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Sociology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "Learn the art & process of dynamic social systems & issues related to each other & societal issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time Jan 2021 Intake",
+                "period": "Now till 29 October 2020"
+            },
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 30 October 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-072",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 6th globally in the 2019 QS WU subject rankings for Economics",
+            "our alumni have pursued Master's and PhD programmes, especially at the LSE",
+            "Graduate will learn an approach to a logical analysis of social and individual decision making"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-073",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics and Politics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics",
+            "Politics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, ranked 4th globally for Politics and International Studies (QSWU)",
+            "This degree programme is akin to the Oxford or LSE PPE in Philosophy, Politics and Economics",
+            "Suitable for those who wish to pursue a career in finance, government and international business"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-072",
+        "programmeTitle": "Bachelor of Science (Honours) in International Relations",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "International Relations",
+            "Politics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, ranked 4th globally for Politics and International Studies (QSWU)",
+            "Suitable for those who wish to pursue a career in private and public sectors",
+            "SIM students apply what they learn by representing Singapore at the annual HNMUN in Boston"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-073",
+        "programmeTitle": "International Foundation Programme",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": [
+            "Arts & Social Sciences",
+            "Business"
+        ],
+        "subDiscipline": [
+            "Social Sciences"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "A one-year pre-university in Economics, Psychology, International Relations and/or Accounting",
+            "Graduate will gain guaranteed entry to any LSE-led degree and Goldsmiths' computing degree in SIM",
+            "20% of SIM graduates enrolled into overseas universities like LSE, Leeds, Manchester, Nottingham"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time- August 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-074",
+        "programmeTitle": "Graduate Diploma in Economics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 6th globally in the 2019 QS WU subject rankings for Economics",
+            "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "All pre-requisites are waived for the Graduate Diploma"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time- Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": " Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-075",
+        "programmeTitle": "MSc Fashion, Design and Luxury Management",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Grenoble Ecole de Management",
+        "programOverview": [
+            "Degree is of the same standard and standing as those awarded in France",
+            "Learn from research-led GEM faculty and local specialists on the latest challenges faced by these industries such as sustainability and digitalization",
+            "Gain practical insights on Fashion and Luxury experience through the Specialized Study Trip in Europe"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Oct 2021 Intake",
+                "period": "Now till 15 July 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLogo_Grenoble_Ecole_de_Management.png?alt=media&token=c47ff5ac-4d62-4f6f-86c0-d3f7ca45b0ac"
+    },
+    {
+        "id": "programme-076",
+        "programmeTitle": "MSc Management in International Business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "International Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Grenoble Ecole de Management",
+        "programOverview": [
+            "Learn foreign language skills that are essential in today's business world",
+            "Multicultural learning enviornment, diversity in teaching faculty and students",
+            "Recognised by French Ministry of Education offers competitive advantage to work in France"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Jan 2021 Intake",
+                "period": "Now till 15 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLogo_Grenoble_Ecole_de_Management.png?alt=media&token=c47ff5ac-4d62-4f6f-86c0-d3f7ca45b0ac"
+    },
+    {
+        "id": "programme-077",
+        "programmeTitle": "Bachelor of Business (International Business)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "International",
+            "International Business"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Develop critical perspectives across key areas of international business practice & management",
+            "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021 Intake",
+                "period": "Local Applicant: 15 Jul 2020 to 16 Nov 2020\nInternational Applicant: 15 Jul 2020 to 20 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-078",
+        "programmeTitle": "Diploma in Accounting",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Accounting",
+            "Business"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Offers specialised modules such as: Auditing, Company Law, Financial Reporting and Taxation",
+            "Students will learn how to use ABSS, an accounting software, during the course of their studies",
+            "Programme is accredited by three professional bodies, namely ACCA, ICAEW and CIMA"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-079",
+        "programmeTitle": "Diploma in Banking and Finance",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Banking and Finance",
+            "Business"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Exposes students to various roles in banking & finance sector, broad understanding of finance institute",
+            "Offers specialist modules: Fin Mkts & Instn, Credit Risk Analysis & Mgmt, Investment, Fin Trading",
+            "Classroom learning with real-world simulations of trading activities in the Financial Training Centre"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-080",
+        "programmeTitle": "Diploma in International Business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "International Business"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Students able to understand the principles of business in the context of world enviornments",
+            "Study specialized subjects like global supply chain mangement and negotiation",
+            "Study global business subjects from accounting and law to international trade"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-081",
+        "programmeTitle": "Diploma in Management Studies",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Programme launched since 1973, producing 19,000 graduates at SIM",
+            "Broad-based management program for executive eudation & leadership development",
+            "Articulation into the degree programmes of reputable universities"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-082",
+        "programmeTitle": "Management Foundation Studies",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Programme designed to bridge Business Management Studies at Diploma level",
+            "Suitable for one who wants to understand the fundamentals of mangement & business practice"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "January 2021 Intake",
+                "period": "14 July 2020 till 16 December 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, May, Sep",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
 ]

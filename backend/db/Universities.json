@@ -70,5 +70,11 @@
         "universityName": "University of Wollongong",
         "url": "https://www.uow.edu.au/index.html",
         "logo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
+    },
+    {
+        "id": "MonashC",
+        "universityName": "Monash College",
+        "url": "https://www.monashcollege.edu.au/",
+        "logo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FMonashCollege.png?alt=media&token=fce20eb0-a39d-477f-bfa7-2281375b7b87"
     }
 ]
