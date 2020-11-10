@@ -1517,56 +1517,6 @@
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
     {
-        "id": "programme-028",
-        "programmeTitle": "Master of Business Administration",
-        "modeOfStudy": {
-            "partTime": true,
-            "fullTime": false
-        },
-        "academicLevel": "Postgraduate/Masters",
-        "discipline": [
-            "Business"
-        ],
-        "subDiscipline": [
-            "Business"
-        ],
-        "entryQualifications": {
-            "aLevel": false,
-            "oLevel": false,
-            "degree": true,
-            "diploma": false
-        },
-        "awardedBy": "The University of Birmingham",
-        "programOverview": [
-            "Triple-crown accredited Busiess School by AACSB, AMBA & EQUIS",
-            "Learn best practices from participants across industries",
-            "Fully taught by Birmingham academics from the UK home campus."
-        ],
-        "applicationPeriod": [
-            {
-                "intake": "Part-Time - January 2021 Intake",
-                "period": "Now till 05 December 2020"
-            }
-        ],
-        "programmeStructure": {
-            "coursework": true,
-            "examination": true
-        },
-        "overseaOpportunity": {
-            "exchange": true,
-            "transfer": true
-        },
-        "intakeMonths": {
-            "partTime": "Jan, Mar, Jul, Sep",
-            "fullTime": ""
-        },
-        "duration": {
-            "partTime": "2 Years",
-            "fullTime": ""
-        },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
-    },
-    {
         "id": "programme-029",
         "programmeTitle": "Postgraduate Award in Cyber Security and Management",
         "modeOfStudy": {
@@ -2308,7 +2258,7 @@
             "partTime": false,
             "fullTime": true
         },
-        "academicLevel": "Diploma",
+        "academicLevel": "Certificate",
         "discipline": [
             "Arts & Social Sciences",
             "Business",
@@ -2460,7 +2410,9 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Arts & Social Sciences"
+            "Arts & Social Sciences",
+            "Business",
+            "Specialty"
         ],
         "subDiscipline": [
             "Business administration",
@@ -3054,7 +3006,8 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Arts & Social Sciences"
+            "Arts & Social Sciences",
+            "Specialty"
         ],
         "subDiscipline": [
             "Communication",
@@ -3376,7 +3329,8 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Arts & Social Sciences"
+            "Arts & Social Sciences",
+            "Specialty"
         ],
         "subDiscipline": [
             "Geographic Information Science",
@@ -3430,7 +3384,8 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Arts & Social Sciences"
+            "Arts & Social Sciences",
+            "Specialty"
         ],
         "subDiscipline": [
             "Geographic Information Science",
@@ -3484,7 +3439,8 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Arts & Social Sciences"
+            "Arts & Social Sciences",
+            "Specialty"
         ],
         "subDiscipline": [
             "Geographic Information Science",
@@ -4294,8 +4250,8 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "January 2021 Intake",
-                "period": "14 July 2020 till 16 December 2020"
+                "intake": "April 2021 Intake",
+                "period": "Singaporeans/PR\n1 September 2020 - 21 February 2021\nInternational Applicants:\n1 September 2020- 7 February 2021"
             }
         ],
         "programmeStructure": {
@@ -4307,12 +4263,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, May, Sep",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "Apr, Oct"
         },
         "duration": {
-            "partTime": "1 Year",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "1.5 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -4345,8 +4301,8 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "January 2021 Intake",
-                "period": "14 July 2020 till 16 December 2020"
+                "intake": "April 2021 Intake",
+                "period": "Singaporeans/PR\n1 September 2020 - 21 February 2021\nInternational Applicants:\n1 September 2020- 7 February 2021"
             }
         ],
         "programmeStructure": {
@@ -4358,12 +4314,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, May, Sep",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "Apr, Oct"
         },
         "duration": {
-            "partTime": "1 Year",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "1.5 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -4396,8 +4352,8 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "January 2021 Intake",
-                "period": "14 July 2020 till 16 December 2020"
+                "intake": "April 2021 Intake",
+                "period": "Singaporeans/PR\n1 September 2020 - 21 February 2021\nInternational Applicants:\n1 September 2020- 7 February 2021"
             }
         ],
         "programmeStructure": {
@@ -4409,12 +4365,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, May, Sep",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "Apr, Oct"
         },
         "duration": {
-            "partTime": "1 Year",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "1.5 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -4446,8 +4402,12 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "January 2021 Intake",
-                "period": "14 July 2020 till 16 December 2020"
+                "intake": "Full-Time - Jan 2021 Intake",
+                "period": "Now till 29 Nov 2020"
+            },
+            {
+                "intake": "Full-Time - Apr 2021 Intake",
+                "period": "Local Applicants\nNow till 21 Feb 2021\nInternational Applicants\nNow till 7 Feb 2021"
             }
         ],
         "programmeStructure": {
@@ -4459,12 +4419,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, May, Sep",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
-            "partTime": "1 Year",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "1.5 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -4496,8 +4456,12 @@
         ],
         "applicationPeriod": [
             {
-                "intake": "January 2021 Intake",
-                "period": "14 July 2020 till 16 December 2020"
+                "intake": "Full-Time - Jan 2021 Intake",
+                "period": "Now till 29 Nov 2020"
+            },
+            {
+                "intake": "Full-Time - Apr 2021 Intake",
+                "period": "Local Applicants\nNow till 21 Feb 2021\nInternational Applicants\nNow till 7 Feb 2021"
             }
         ],
         "programmeStructure": {
@@ -4509,13 +4473,1762 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "Jan, May, Sep",
+            "partTime": "Jan, Apr, Jul, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "1 Year",
-            "fullTime": ""
+            "partTime": "",
+            "fullTime": "0.5 Year"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
+    {
+        "id": "programme-083",
+        "programmeTitle": "Bachelor of Science (Honours) Accounting and Finance (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Accounting and Finance"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Exemptions available for selected professional Accreditations",
+            "Electives to match learning needs eg, to engage in real work experience; data and coding etc",
+            "Taught by Birmingham academics and local specialists"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-Time - Sep 2021 Intake",
+                "period": "Now till 11 Apr 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-084",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management with Communications (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Management",
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Unique combination i.e. business + communications specialisms",
+            "Gain communications-related work experience through a company project",
+            "Fully taught by Birmingham academics from the UK home campus"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "2021 Intake",
+                "period": "Now till 31 Jan 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-085",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management with Communications and Year in Industry (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Management",
+            "Communication"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Unique combination i.e. business + compulsaory internship",
+            "Exclusive career workshops and coaching delivered by University",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "2021 Intake",
+                "period": "Now till 31 Jan 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jl",
+            "fullTime": "Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years 4 months"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-086",
+        "programmeTitle": "Bachelor of Science (Honours) Business Management with Industrial Placement (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Broad-based business with compulsory internship to gain a career headstart",
+            "Exclusive career workshops and coaching delivered by University",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "2021 Intake",
+                "period": "Now till 31 Jan 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-087",
+        "programmeTitle": "Bachelor of Science (Honours) International Business (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "International Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Study in 3 different countries and gain a global perspective",
+            "Gain cross cultural skills with opportunity to work with international students",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "2021 Intake",
+                "period": "Now till 31 Jan 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-088",
+        "programmeTitle": "Master of Science International Business",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "International Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Gain cross cultural skills with opportunity to work with international students",
+            "Tailored industry-relevant workshops by University for employability",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-Time - Apr 2021 Intake",
+                "period": "Now till 20 Feb 2021"
+            },
+            {
+                "intake": "Full-Time - Oct 2021 Intake",
+                "period": "Now till 7 Aug 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Apr, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-089",
+        "programmeTitle": "Master of Science Management",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Management",
+            "International Business"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Gain cross cultural skills with opportunity to work with international students",
+            "Tailored industry-relevant workshops by University for employability",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-Time - Oct 2021 Intake",
+                "period": "Now till 7 Aug 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-090",
+        "programmeTitle": "Master of Science Management: Entrepreneurship and Innovation",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Entrepreneurship and Innovation",
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Gain cross cultural skills with opportunity to work with international students",
+            "Tailored industry-relevant workshops by University for employability",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-Time - Oct 2021 Intake",
+                "period": "Now till 7 Aug 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-091",
+        "programmeTitle": "Master of Science Management: Organisational Leadership and Change",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Management",
+            "Organisational Leadership and Change"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Gain cross cultural skills with opportunity to work with international students",
+            "Tailored industry-relevant workshops by University for employability",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-Time - Oct 2021 Intake",
+                "period": "Now till 7 Aug 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-092",
+        "programmeTitle": "Master of Science Management: Strategy",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Management",
+            "Strategy"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Birmingham",
+        "programOverview": [
+            "Gain cross cultural skills with opportunity to work with international students",
+            "Tailored industry-relevant workshops by University for employability",
+            "Fully taught by Birmingham academics from the UK home campus."
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-Time - Oct 2021 Intake",
+                "period": "Now till 7 Aug 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
+    },
+    {
+        "id": "programme-093",
+        "programmeTitle": "Bachelor of Science (Honours) in Data Science and Business Analytics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business",
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "International Relations",
+            "Politics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Social Sciences",
+            "SIM is one of the three schools worldwide where LSE permitted this programme to be launched in 2018",
+            "Students are exposed to a mixture of R and SPSS in the three statistics courses"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging Mathematics and Bridging Economics",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-094",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics and Finance",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "International Relations",
+            "Politics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 5th and 6th globally for Finance and Economics (QSWU)",
+            "Graduates are accepted by world leading universities for Master's degrees including LSE, NTU",
+            "Average of 23% from each graduating cohort achieve First Class Honours"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-095",
+        "programmeTitle": "Bachelor of Science (Honours) in Economics and Management",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "International Relations",
+            "Politics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 2nd and 6th globally for Management and Finance (QSWU)",
+            "Ideal for those keen on management, further training in management & corporate disciplines",
+            "Recent graduates have been employed by Ernst & Young Advisory, Global Microelectronics & Cloudfare"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-096",
+        "programmeTitle": "Bachelor of Science (Honours) in Management and Digital Innovation",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "International Relations",
+            "Politics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Management",
+            "This programme uses a mixtrure of assessment methods",
+            "LSE was ahead of its time when it first launched, includes skills for current knowledge economy"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-097",
+        "programmeTitle": "Diploma in Information Technology",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Diploma",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Information Technology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Articulation into the degree programmes of reputable universities",
+            "Emphasis on practical problem-solving & decision making skills to today's knowledge-based economy",
+            "Provide training on broad-based software to support business needs & achieve competitive advantage"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Apr 2021 Intake",
+                "period": "Local Applicants\nNow till 21 Feb 2020\nInternational Applicants\nNow till 7 Feb 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-098",
+        "programmeTitle": "Information Technology Foundation Studies",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Information Technology"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "Singapore Institute of Management",
+        "programOverview": [
+            "Provide the fundamentals of computing and information technology",
+            "Alternative route for one to join inforcomm industry"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Jan 2021 Intake",
+                "period": "Now till 29 Nov 2020"
+            },
+            {
+                "intake": "Full-time - Apr 2021 Intake",
+                "period": "Local Applicants\nNow till 21 Feb 2020\nInternational Applicants\nNow till 7 Feb 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Apr, Jul, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "0.5 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
+    },
+    {
+        "id": "programme-099",
+        "programmeTitle": "Bachelor of Science (Honours) in Computer Science",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Artificial Intelligence",
+            "Data Science",
+            "Machine Learning",
+            "Web and Mobile Development"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Transfer to the London campus at Goldsmiths after one or two years at SIM",
+            "Collaboration between UOL, Goldsmiths, Coursera and SIM using flip classroom technology",
+            "IT diploma graduates stand to gain exemptions for up to one year"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "BSc programmes - April 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging courses - January 2021 Intake",
+                "period": "International application: 30 Oct 2020\nLocal application: 30 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Apr, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-100",
+        "programmeTitle": "Bachelor of Science (Honours) in Computer Science (Machine Learning and Artificial Intelligence)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Artificial Intelligence",
+            "Data Science",
+            "Machine Learning",
+            "Web and Mobile Development"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Transfer to the London campus at Goldsmiths after one or two years at SIM",
+            "Prestigious qualification that is valued across the world",
+            "Students will start their specialisation in the final year of study"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "BSc programmes - April 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging courses - January 2021 Intake",
+                "period": "International application: 30 Oct 2020\nLocal application: 30 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Apr, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-101",
+        "programmeTitle": "Bachelor of Science (Honours) in Computer Science (Web and Mobile Development)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Artificial Intelligence",
+            "Data Science",
+            "Machine Learning",
+            "Web and Mobile Development"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Be equpped with knowledge and skills to face technical challenges and expand your IT career",
+            "Students will be using creative interactive approaches delivered through Coursera",
+            "IT diploma graduates stand to gain exemptions for up to one year"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "BSc programmes - April 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging courses - January 2021 Intake",
+                "period": "International application: 30 Oct 2020\nLocal application: 30 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Apr, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-102",
+        "programmeTitle": "Graduate Diploma in Business Analytics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "Business",
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Business Analytics",
+            "Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn to perform independent data analysis for managerial decision-making",
+            "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "All pre-requisites are waived for the Graduate Diploma"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging Mathematics and Bridging Economics",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-103",
+        "programmeTitle": "Bachelor of Business Information Systems",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Business",
+            "Information Technology"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": [
+            "Degree is accredited by Australia Computer Society",
+            "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "Mobility options are available for students to spend a semester in UOW"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Jan 2021 Intake",
+                "period": "Closing data:\nInternational Students: 23 oct 2020\nLocal Students: 13 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Apr, Jul, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
+    },
+    {
+        "id": "programme-104",
+        "programmeTitle": "Bachelor of Computer Science (Cyber Security)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Cyber Security"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": [
+            "Degree is accredited by Australia Computer Society",
+            "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "Mobility options are available for students to spend a semester in UOW"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Jan 2021 Intake",
+                "period": "Closing data:\nInternational Students: 23 oct 2020\nLocal Students: 13 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Apr, Jul, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
+    },
+    {
+        "id": "programme-105",
+        "programmeTitle": "Bachelor of Computer Science (Game and Mobile Development)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Game and Mobile Development"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": [
+            "Degree is accredited by Australia Computer Society",
+            "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "Mobility options are available for students to spend a semester in UOW"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Jan 2021 Intake",
+                "period": "Closing data:\nInternational Students: 23 oct 2020\nLocal Students: 13 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Apr, Jul, Oct"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
+    },
+    {
+        "id": "programme-106",
+        "programmeTitle": "Bachelor of Science (Geographic Information Science) and Bachelor of Arts (Economics)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences",
+            "Specialty"
+        ],
+        "subDiscipline": [
+            "Geographic Information Science",
+            "Economics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "SIM-UB scholarships are available for this programme"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Now till 16 March 2021"
+            },
+            {
+                "intake": "Full-time Aug 2021 Intake",
+                "period": "Now till 17 March 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3-4 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-107",
+        "programmeTitle": "Bachelor of Computer Science (Big Data)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": [
+            "Degree is accredited by Australia Computer Society",
+            "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "Mobility options are available for students to spend a semester in UOW"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Jan 2021 Intake",
+                "period": "Closing data:\nInternational Students: 23 oct 2020\nLocal Students: 13 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Apr, Jul, Oct",
+            "fullTime": "Jan, Apr, Jul, Oct"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
+    },
+    {
+        "id": "programme-108",
+        "programmeTitle": "Bachelor of Computer Science (Digital Systems Security)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Digital Systems Security"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": [
+            "Degree is accredited by Australia Computer Society",
+            "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "Mobility options are available for students to spend a semester in UOW"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Jan 2021 Intake",
+                "period": "Closing data:\nInternational Students: 23 oct 2020\nLocal Students: 13 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Apr, Jul, Oct",
+            "fullTime": "Jan, Apr, Jul, Oct"
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
+    },
+    {
+        "id": "programme-109",
+        "programmeTitle": "Master of Science in Cyber Security and Management",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Cyber Security and Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of Warwick",
+        "programOverview": [
+            "Industry-relevant",
+            "Gain multidisciplinary skillset for graduate employement",
+            "Fully taught by global experience's practitioners"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - April 2021",
+                "period": "Now till 6 February 2021"
+            },
+            {
+                "intake": "Part-time - November 2020",
+                "period": "Now till 17 October 2020"
+            },
+            {
+                "intake": "Part-time - January 2021",
+                "period": "Now till 5 December 2020"
+            },
+            {
+                "intake": "Part-time - March 2021",
+                "period": "Now till 15 Febraury 2020"
+            },
+            {
+                "intake": "Part-time - May 2021",
+                "period": "Now till 17 Aptil 2021"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Oct"
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
+    },
+    {
+        "id": "programme-110",
+        "programmeTitle": "Certificate of Higher Education in Social Sciences",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Accountancy",
+            "Banking",
+            "Business",
+            "Economics",
+            "Finance"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Alternative way for overseas high school graduates to enrol for Year 1 of the Bachelor's programme",
+            "This programme has a coursework and attendance requirement which helps to keep students motivated",
+            "The academic staff develop a closer rapport with students as their schoolwork is closely monitored"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time- Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-111",
+        "programmeTitle": "Graduate Diploma in Data Science",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Discuss theories and evolution of digital technology, services and ogranisational infrastructures",
+            "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "All pre-requisites are waived for the Graduate Diploma"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-112",
+        "programmeTitle": "Bachelor of Business (Event Management) (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Tourism , Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "La Trobe University",
+        "programOverview": [
+            "Ranked among the world's top 50 universities for Hospitality & Tourism Management subjects (2019)",
+            "Practical curricula to equip students with disciplinary knowledge, research & problem-solving skills"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Jan 2021 Intake",
+                "period": "Local Applicants\nNow till 27 Nov 2020\nInternational Applicants\nNow till 10 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1.5 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLTU_Int_H_RGB_V3-200x76px.png?alt=media&token=2098d10d-5cbe-4430-9499-011de6e1d49b"
+    },
+    {
+        "id": "programme-113",
+        "programmeTitle": "Bachelor of Business (Tourism and Hospitality) (Top-up)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Tourism , Hospitality & Events Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "La Trobe University",
+        "programOverview": [
+            "Ranked among the world's top 50 universities for Hospitality & Tourism Management subjects (2019)",
+            "Practical curricula to equip students with disciplinary knowledge, research & problem-solving skills"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time & Part-time - Jan 2021 Intake",
+                "period": "Local Applicants\nNow till 27 Nov 2020\nInternational Applicants\nNow till 10 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1.5 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLTU_Int_H_RGB_V3-200x76px.png?alt=media&token=2098d10d-5cbe-4430-9499-011de6e1d49b"
+    },
+    {
+        "id": "programme-114",
+        "programmeTitle": "Bachelor of Psychological Science",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Psychology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": [
+            "Degree is accredited by Australia Psychology Accreditation Council",
+            "option to pursue 4th Year Honours programme at UOW at discounted fees",
+            "Mobility options are available for students to spend a semester in UOW"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Jan 2021 Intake",
+                "period": "Now till 16 Oct 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
+    },
+    {
+        "id": "programme-117",
+        "programmeTitle": "Bachelor of Science (Business Administration)",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Business"
+        ],
+        "subDiscipline": [
+            "Business"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": true,
+            "diploma": true
+        },
+        "awardedBy": "University at Buffalo",
+        "programOverview": [
+            "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "Acredited by AACSB International",
+            "Students will be able to learn insights and skills about business world"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time Jan 2021 Intake",
+                "period": "Now till 29 October 2020"
+            },
+            {
+                "intake": "Full-time May 2021 Intake",
+                "period": "Opens on 30 October 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    }
 ]
