@@ -1,33 +1,114 @@
 [
     {
-        "id": "activity-001",
+        "id": "activity-10",
         "gameBoothName": "Amazing Race - Campus Xplore",
         "boothNumber": "1",
-        "venue": "SIM HQ BLK A Atrium",
+        "venue": "BLK D Multi-Purpose Sports Hall",
         "date": "21-Nov-2020",
-        "startTime": "10:00AM",
+        "startTime": "11:00AM",
         "pointsAward": 4
     },
     {
-        "id": "activity-002",
+        "id": "activity-11",
         "gameBoothName": "Guess the place - An SIM Edition",
         "boothNumber": "2",
-        "venue": "SIM HQ BLK B Lvl 1",
+        "venue": "BLK A Cyber Lounge",
         "date": "21-Nov-2020",
-        "startTime": "10:00AM",
+        "startTime": "11:00AM",
         "pointsAward": 3
     },
     {
-        "id": "activity-003",
+        "id": "activity-12",
         "gameBoothName": "DIY Temporary Tattoos",
         "boothNumber": "1A",
-        "venue": "SIM HQ BLK A Atrium",
+        "venue": "Blk B Student Activity Hub",
         "date": "21-Nov-2020",
         "startTime": "12:00PM",
         "pointsAward": 2
     },
     {
-        "id": "activity-004",
+        "id": "activity-13",
+        "gameBoothName": "CSI: SIM Edition",
+        "boothNumber": "10",
+        "venue": "SIM HQ BLK B MPH A1",
+        "date": "21-Nov-2020",
+        "startTime": "11:00AM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-14",
+        "gameBoothName": "Concentration - Match Match: SIM Edition ",
+        "boothNumber": "4",
+        "venue": "SIM HQ BLK A Atrium",
+        "date": "21-Nov-2020",
+        "startTime": "1:00PM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-15",
+        "gameBoothName": "Writing Prompt contest ",
+        "boothNumber": "4",
+        "venue": "BLK B Open Study Area",
+        "date": "21-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-16",
+        "gameBoothName": "Reverse Jenga",
+        "boothNumber": "1A",
+        "venue": "BLK B Student Activity Hub",
+        "date": "21-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 2
+    },
+    {
+        "id": "activity-17",
+        "gameBoothName": "Beer Pong Extreme",
+        "boothNumber": "10",
+        "venue": "BLK A Multi-purpose Hall",
+        "date": "21-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-18",
+        "gameBoothName": "The Generic Orientation Game",
+        "boothNumber": "4",
+        "venue": "BLK A Multi-Purpose Hall",
+        "date": "21-Nov-2020",
+        "startTime": "10:00AM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-20",
+        "gameBoothName": "Amazing Race - Campus Xplore",
+        "boothNumber": "1",
+        "venue": "BLK D Multi-Purpose Sports Hall",
+        "date": "22-Nov-2020",
+        "startTime": "11:00AM",
+        "pointsAward": 4
+    },
+    {
+        "id": "activity-21",
+        "gameBoothName": "Guess the place - An SIM Edition",
+        "boothNumber": "2",
+        "venue": "BLK A Cyber Lounge",
+        "date": "22-Nov-2020",
+        "startTime": "11:00AM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-22",
+        "gameBoothName": "DIY Temporary Tattoos",
+        "boothNumber": "1A",
+        "venue": "Blk B Student Activity Hub",
+        "date": "22-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 2
+    },
+    {
+        "id": "activity-23",
         "gameBoothName": "CSI: SIM Edition",
         "boothNumber": "10",
         "venue": "SIM HQ BLK B MPH A1",
@@ -36,10 +117,46 @@
         "pointsAward": 3
     },
     {
-        "id": "activity-005",
+        "id": "activity-24",
         "gameBoothName": "Concentration - Match Match: SIM Edition ",
         "boothNumber": "4",
         "venue": "SIM HQ BLK A Atrium",
+        "date": "22-Nov-2020",
+        "startTime": "1:00PM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-25",
+        "gameBoothName": "Writing Prompt contest ",
+        "boothNumber": "4",
+        "venue": "BLK B Open Study Area",
+        "date": "22-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-26",
+        "gameBoothName": "Reverse Jenga",
+        "boothNumber": "1A",
+        "venue": "BLK B Student Activity Hub",
+        "date": "22-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 2
+    },
+    {
+        "id": "activity-27",
+        "gameBoothName": "Beer Pong Extreme",
+        "boothNumber": "10",
+        "venue": "BLK A Multi-purpose Hall",
+        "date": "22-Nov-2020",
+        "startTime": "12:00PM",
+        "pointsAward": 3
+    },
+    {
+        "id": "activity-28",
+        "gameBoothName": "The Generic Orientation Game",
+        "boothNumber": "4",
+        "venue": "BLK A Multi-Purpose Hall",
         "date": "22-Nov-2020",
         "startTime": "10:00AM",
         "pointsAward": 3
