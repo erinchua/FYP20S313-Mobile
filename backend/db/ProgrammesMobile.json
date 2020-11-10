@@ -559,7 +559,7 @@
             "partTime": true,
             "fullTime": true
         },
-        "academicLevel": "Masters",
+        "academicLevel": "Postgraduate/Masters",
         "discipline": [
             "Business"
         ],
@@ -1628,4 +1628,626 @@
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
+    {
+        "id": "programme-030",
+        "programmeTitle": "Master of Science in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn statistical skills and computational techniques to analyse very large data sets well",
+            "Learn applications such as social media, biomedical data and financial data with Hadoop, R",
+            "Excellent opportunity for getting valuable skills in advanced data processing"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time April 2021 Intake",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Apr, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-031",
+        "programmeTitle": "Master of Science in Data Science and Artificial Intelligence",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn fundamental knowledge and practical skills needed to design, build and apply AI systems",
+            "Develop skills with clear applications for data mining, pattern recognition & machine learning",
+            "Excellent opportunity for getting valuable skills in advanced data processing"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time April 2021 Intake",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Apr, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-032",
+        "programmeTitle": "Master of Science in Data Science and Financial Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn technical and practical skills to analyse the financial data and modern financial markets",
+            "Be equipped with in-demand quantitative and analytical skills needed to go into roles",
+            "Learn skills to effectively improve organisational performance"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time April 2021 Intake",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Apr, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-033",
+        "programmeTitle": "Postgraduate Certificate in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn statistical skills and computational techniques to analyse very large data sets well",
+            "Learn applications such as social media, biomedical data and financial data with Hadoop, R",
+            "Progress from the Postgraduate Certificate to the Postgraduate Diploma and then onto the Master's"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time April 2021 Intake",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Apr, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-034",
+        "programmeTitle": "Postgraduate Diploma in Data Science",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn statistical skills and computational techniques to analyse very large data sets well",
+            "Learn applications such as social media, biomedical data and financial data with Hadoop, R",
+            "Progress from the Postgraduate Diploma and then onto the Master's"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time April 2021 Intake",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Apr, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1.5 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-035",
+        "programmeTitle": "Postgraduate Diploma in Data Science and Artificial Intelligence",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn fundamental knowledge and practical skills needed to design, build and apply AI systems",
+            "Develop skills with clear applications for data mining, pattern recognition & machine learning",
+            "Progress from the Postgraduate Diploma and then onto the Master's"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time April 2021 Intake",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Apr, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1.5 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-036",
+        "programmeTitle": "Postgraduate Diploma in Data Science and Financial Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Big Data",
+            "Artificial Intelligence",
+            "Data Science",
+            "Financial Technology FinTech)"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Learn technical and practical skills to analyse the financial data and modern financial markets",
+            "Progress from the Postgraduate Diploma and then onto the Master's",
+            "Learn skills required by Data Scientists to effectively improve organisational performance"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time April 2021 Intake",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "Apr, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1.5 Year",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-037",
+        "programmeTitle": "Bachelor of Information Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Information Technology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": [
+            "Degree is accredited by Australia Computer Society",
+            "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "Mobility options are available for students to spend a semester in UOW"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time Jan 2021 Intake",
+                "period": "Closing data: 13 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Apr, Jul, Oct",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
+    },
+    {
+        "id": "programme-038",
+        "programmeTitle": "Bachelor of Nursing (Honours)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Nursing"
+        ],
+        "subDiscipline": [
+            "Nursing"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Sydney",
+        "programOverview": [
+            "Ranked 2nd in AUstralia and 15th in the world for 2019 QS subject ranking",
+            "Programme includes experienced supervisors, who understands the local nursing context",
+            "Programme is accredited by the Singapore Nursing Board"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time Jan 2021 Intake",
+                "period": "Singaporeans & PRs:\nNow till 27 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": false
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fthe-university-of-sydney-logo.png?alt=media&token=6068fcaf-27ec-48c4-8405-15c15018ed35"
+    },
+    {
+        "id": "programme-039",
+        "programmeTitle": "Bachelor of Nursing (Post-Registration)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Nursing"
+        ],
+        "subDiscipline": [
+            "Nursing"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of Sydney",
+        "programOverview": [
+            "Ranked 2nd in AUstralia and 15th in the world for 2019 QS subject ranking",
+            "Programme fully taught by experience teaching staff, who understands the local nursing context",
+            "Programme is accredited by the Singapore Nursing Board"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Part-time Jan 2021 Intake",
+                "period": "Singaporeans & PRs:\nNow till 27 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "2 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fthe-university-of-sydney-logo.png?alt=media&token=6068fcaf-27ec-48c4-8405-15c15018ed35"
+    },
+    {
+        "id": "programme-040",
+        "programmeTitle": "Bachelor of Applied Science (Aviation)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Specialty"
+        ],
+        "subDiscipline": [
+            "Aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engneering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning, readings, case studies on contemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021 Intake",
+                "period": "15 Jul 2020 to 1 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "2.5 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    },
+    {
+        "id": "programme-041",
+        "programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Specialty"
+        ],
+        "subDiscipline": [
+            "Construction and Management"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked 22nd in the world & 3rd highest in Australia for Architectural & Built Enviornment (QS2019)",
+            "Accreditation by Professional Bodies, including AIB, AIQS, CIOB, RICS, SISV",
+            "Pracitical Curricula, designed with industry inputs; integration of thoery with practice"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Jan 2021 Intake",
+                "period": "15 Jul 2020 to 1 Nov 2020"
+            }
+        ],
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "3 Years",
+            "fullTime": ""
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
+    } 
+    Part-time, Specialty, start SIM
 ]
