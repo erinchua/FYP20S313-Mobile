@@ -14,6 +14,7 @@ import FilterPopoverContent from '../../components/FilterPopoverContent';
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { ProgrammeTalk, TalkFilter, ProgrammeFilter } from '../../modules/map'
+import { sortTimeAsc } from '../../modules/compare';
 
 
 const ProgrammeTalks: React.FC = () => {
@@ -77,8 +78,9 @@ const ProgrammeTalks: React.FC = () => {
 					const data = doc.data();
 					programmeTalk.push(data);
 				});
-				setIntialProgTalk(programmeTalk)
-				setProgrammeTalk(programmeTalk);
+				const sortedProgTalks = programmeTalk.sort((a: any, b: any) => sortTimeAsc(a.startTime, b.startTime));
+				setIntialProgTalk(sortedProgTalks)
+				setProgrammeTalk(sortedProgTalks);
 			})
 			.catch((error) => console.log(error));
 
