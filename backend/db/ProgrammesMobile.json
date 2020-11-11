@@ -11,6 +11,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Marketing"
         ],
         "entryQualifications": {
@@ -61,6 +62,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Accountancy"
         ],
         "entryQualifications": {
@@ -111,6 +113,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Economics and Finance"
         ],
         "entryQualifications": {
@@ -161,6 +164,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Logistics and Supply Chain Management"
         ],
         "entryQualifications": {
@@ -211,6 +215,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Management"
         ],
         "entryQualifications": {
@@ -393,6 +398,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Logistics and Supply Chain Management"
         ],
         "entryQualifications": {
@@ -618,6 +624,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Management"
         ],
         "entryQualifications": {
@@ -672,6 +679,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Banking",
             "Finance"
         ],
         "entryQualifications": {
@@ -722,6 +730,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Management"
         ],
         "entryQualifications": {
@@ -1416,6 +1425,7 @@
             "Business"
         ],
         "subDiscipline": [
+            "Business",
             "Logistics and Supply Chain Management"
         ],
         "entryQualifications": {
@@ -1755,9 +1765,9 @@
             "Financial Technology FinTech)"
         ],
         "entryQualifications": {
-            "aLevel": false,
+            "aLevel": true,
             "oLevel": false,
-            "degree": true,
+            "degree": false,
             "diploma": false
         },
         "awardedBy": "University of London",
@@ -2103,7 +2113,7 @@
     },
     {
         "id": "programme-040",
-        "programmeTitle": "Bachelor of Applied Science (Aviation)",
+        "programmeTitle": "Bachelor of Applied Science (Aviation) (Top-up)",
         "modeOfStudy": {
             "partTime": true,
             "fullTime": false
@@ -2116,7 +2126,7 @@
             "Aviation"
         ],
         "entryQualifications": {
-            "aLevel": true,
+            "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
@@ -2166,7 +2176,7 @@
             "Construction and Management"
         ],
         "entryQualifications": {
-            "aLevel": true,
+            "aLevel": false,
             "oLevel": false,
             "degree": false,
             "diploma": true
@@ -2410,7 +2420,6 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Arts & Social Sciences",
             "Business",
             "Specialty"
         ],
@@ -2466,6 +2475,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
+            "Business",
             "Arts & Social Sciences"
         ],
         "subDiscipline": [
@@ -2520,6 +2530,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
+            "Business",
             "Arts & Social Sciences"
         ],
         "subDiscipline": [
@@ -2574,6 +2585,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
+            "Business",
             "Arts & Social Sciences"
         ],
         "subDiscipline": [
@@ -2628,6 +2640,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
+            "Business",
             "Arts & Social Sciences"
         ],
         "subDiscipline": [
@@ -2682,6 +2695,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
+            "Business",
             "Arts & Social Sciences"
         ],
         "subDiscipline": [
@@ -3276,7 +3290,7 @@
         },
         "academicLevel": "Bachelor",
         "discipline": [
-            "Arts & Social Sciences"
+            "Specialty"
         ],
         "subDiscipline": [
             "Geographic Information Science"
@@ -4182,7 +4196,6 @@
         ],
         "subDiscipline": [
             "Business",
-            "International",
             "International Business"
         ],
         "entryQualifications": {
@@ -4233,8 +4246,7 @@
             "Business"
         ],
         "subDiscipline": [
-            "Accounting",
-            "Business"
+            "Accounting"
         ],
         "entryQualifications": {
             "aLevel": true,
@@ -4756,8 +4768,8 @@
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
-            "degree": false,
-            "diploma": true
+            "degree": true,
+            "diploma": false
         },
         "awardedBy": "University of Birmingham",
         "programOverview": [
@@ -4805,15 +4817,13 @@
             "Business"
         ],
         "subDiscipline": [
-            "Business",
-            "Management",
-            "International Business"
+            "Management"
         ],
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
-            "degree": false,
-            "diploma": true
+            "degree": true,
+            "diploma": false
         },
         "awardedBy": "University of Birmingham",
         "programOverview": [
@@ -4863,8 +4873,8 @@
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
-            "degree": false,
-            "diploma": true
+            "degree": true,
+            "diploma": false
         },
         "awardedBy": "University of Birmingham",
         "programOverview": [
@@ -4914,8 +4924,8 @@
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
-            "degree": false,
-            "diploma": true
+            "degree": true,
+            "diploma": false
         },
         "awardedBy": "University of Birmingham",
         "programOverview": [
@@ -4965,8 +4975,8 @@
         "entryQualifications": {
             "aLevel": false,
             "oLevel": false,
-            "degree": false,
-            "diploma": true
+            "degree": true,
+            "diploma": false
         },
         "awardedBy": "University of Birmingham",
         "programOverview": [
@@ -5011,8 +5021,9 @@
             "IT & Computer Science"
         ],
         "subDiscipline": [
-            "International Relations",
-            "Politics"
+            "Business",
+            "Business Analytics",
+            "Management"
         ],
         "entryQualifications": {
             "aLevel": true,
@@ -5066,8 +5077,9 @@
             "Business"
         ],
         "subDiscipline": [
-            "International Relations",
-            "Politics"
+            "Economics",
+            "Finance",
+            "Management"
         ],
         "entryQualifications": {
             "aLevel": true,
@@ -5121,8 +5133,8 @@
             "Business"
         ],
         "subDiscipline": [
-            "International Relations",
-            "Politics"
+            "Economics",
+            "Management"
         ],
         "entryQualifications": {
             "aLevel": true,
@@ -5176,8 +5188,8 @@
             "Business"
         ],
         "subDiscipline": [
-            "International Relations",
-            "Politics"
+            "Business",
+            "Management"
         ],
         "entryQualifications": {
             "aLevel": true,
@@ -5824,7 +5836,7 @@
             "aLevel": true,
             "oLevel": false,
             "degree": false,
-            "diploma": false
+            "diploma": true
         },
         "awardedBy": "University of Wollongong",
         "programOverview": [
@@ -5988,10 +6000,9 @@
             "IT & Computer Science"
         ],
         "subDiscipline": [
-            "Big Data",
-            "Artificial Intelligence",
-            "Data Science",
-            "Financial Technology FinTech)"
+            "Business",
+            "Management",
+            "Mathematics"
         ],
         "entryQualifications": {
             "aLevel": false,
