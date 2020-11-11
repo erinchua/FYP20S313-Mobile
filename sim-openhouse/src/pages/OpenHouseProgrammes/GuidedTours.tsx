@@ -7,6 +7,7 @@ import TopNav from '../../components/TopNav';
 import GuidedTourContent from '../../components/OpenHouseProgrammes/GuidedTourContent';
 import { db } from "../../firebase";
 import { useAuth } from '../../modules/auth';
+import { sortTimeAsc } from '../../modules/compare';
 
 const GuidedTours: React.FC = () => {
 	const { userID } = useAuth();
@@ -48,7 +49,7 @@ const GuidedTours: React.FC = () => {
                     const data = doc.data();
                     tours.push(data);
                 });
-                setGuidedTours(tours);
+                setGuidedTours(tours.sort((a: any, b: any) => sortTimeAsc(a.startTime, b.startTime)));
             })
             .catch((error) => console.log(error));
 
