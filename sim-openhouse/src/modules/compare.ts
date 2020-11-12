@@ -54,3 +54,23 @@ export function sortTimeDsc(a: any, b: any) {
 
     return 0;
 }
+
+export function sortNumAlphaAsc(a: any, b: any) {
+    const aNum = +a.match(/[a-zA-Z]+|\d+/ig)[0], bNum = +b.match(/[a-zA-Z]+|\d+/ig)[0];
+    const aAlpha = a.match(/[a-zA-Z]+|\d+/ig)[1], bAlpha = b.match(/[a-zA-Z]+|\d+/ig)[1];
+
+    if (aNum < bNum) return -1;
+    if (aNum > bNum) return 1;
+
+    if (aNum === bNum) {
+        if (!aAlpha && bAlpha) return -1;
+        if (aAlpha && !bAlpha) return 1;
+
+        if (aAlpha && bAlpha) {
+            if (aAlpha < bAlpha) return -1;
+            if (aAlpha > bAlpha) return 1;
+        }
+    }
+
+    return 0;
+}
