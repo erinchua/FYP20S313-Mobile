@@ -26,27 +26,27 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     const [discFilter, setDiscFilter] = useState<string[]>([])
     const [subDiscFilter, setSubDiscFilter] = useState<string[]>([])
     const [uniFilter, setUniFilter] = useState<string[]>([])
-    const acadlvlFilter: string[] = ['Diploma', 'Bachelor', 'Masters']
+    const acadlvlFilter: string[] = ['Diploma', 'Bachelor', 'Masters', 'Certificate']
     const entryFilter: string[] = ['aLevel', 'oLevel', 'degree', 'diploma']
 
     //Current selected filters
     const currentMosFilter = useRef<string[]>([])
-    currentMosFilter.current= (props.filterCondition as ProgrammeFilter).mos
+    currentMosFilter.current = (props.filterCondition as ProgrammeFilter).mos
 
     const currentDiscFilter = useRef<string[]>([])
     currentDiscFilter.current = props.filterCondition.discipline
 
     const currentSubDiscFilter = useRef<string[]>([])
-    currentSubDiscFilter.current= (props.filterCondition as ProgrammeFilter).subDisc
+    currentSubDiscFilter.current = (props.filterCondition as ProgrammeFilter).subDisc
 
     const currentUniFilter = useRef<string[]>([])
     currentUniFilter.current = props.filterCondition.uni
 
     const currentAcadlvlFilter = useRef<string[]>([])
-    currentAcadlvlFilter.current= (props.filterCondition as ProgrammeFilter).acadLvl
+    currentAcadlvlFilter.current = (props.filterCondition as ProgrammeFilter).acadLvl
 
     const currentEntryFilter = useRef<string[]>([])
-    currentEntryFilter.current= (props.filterCondition as ProgrammeFilter).entry
+    currentEntryFilter.current = (props.filterCondition as ProgrammeFilter).entry
 
     //When filter first render
     useEffect(() => {
@@ -102,7 +102,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
             showMOSIcon.current!.icon = chevronDownOutline;
     };
 
-    /* Display Discipline Filters */ 
+    /* Display Discipline Filters */
     const disciplineInfo = useRef<HTMLIonRowElement>(null);
     const showDisciplineIcon = useRef<HTMLIonIconElement>(null);
 
@@ -168,42 +168,42 @@ const FilterPopoverContent: React.FC<myProps> = props => {
     const handleCheck = (value: string, currentFilter: string[], category: string) => {
         const currentIndex = currentFilter.indexOf(value)
 
-        if(category == 'mos'){
+        if (category == 'mos') {
             if (currentIndex === -1) {
                 currentMosFilter.current.push(value)
             } else {
                 currentMosFilter.current.splice(currentIndex, 1)
             }
         }
-        else if(category == 'disc'){
+        else if (category == 'disc') {
             if (currentIndex === -1) {
                 currentDiscFilter.current.push(value)
             } else {
                 currentDiscFilter.current.splice(currentIndex, 1)
             }
         }
-        else if(category == 'subdisc'){
+        else if (category == 'subdisc') {
             if (currentIndex === -1) {
                 currentSubDiscFilter.current.push(value)
             } else {
                 currentSubDiscFilter.current.splice(currentIndex, 1)
             }
         }
-        else if(category == 'uni'){
+        else if (category == 'uni') {
             if (currentIndex === -1) {
                 currentUniFilter.current.push(value)
             } else {
                 currentUniFilter.current.splice(currentIndex, 1)
             }
         }
-        else if(category == 'acad'){
+        else if (category == 'acad') {
             if (currentIndex === -1) {
                 currentAcadlvlFilter.current.push(value)
             } else {
                 currentAcadlvlFilter.current.splice(currentIndex, 1)
             }
         }
-        else if(category == 'entry'){
+        else if (category == 'entry') {
             if (currentIndex === -1) {
                 currentEntryFilter.current.push(value)
             } else {
@@ -212,7 +212,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
         }
 
     }
-   
+
     return (
         <>
             {/* Filter for Study@SIM */}
@@ -243,9 +243,11 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                             return (
                                                 <div key={filter}>
                                                     <IonItem className="courseFilterItem" lines="none">
-                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => {handleCheck(e.detail.value, currentMosFilter.current, 'mos')}} value={filter} checked={currentMosFilter.current.indexOf(filter) === -1 ? false : true} />
+                                                        <IonCheckbox className="courseFilterCheckbox" onIonChange={e => { handleCheck(e.detail.value, currentMosFilter.current, 'mos') }} value={filter} checked={currentMosFilter.current.indexOf(filter) === -1 ? false : true} />
                                                         <IonLabel className="courseFilterLabel">
-                                                            <div className="ion-text-wrap">{filter}</div>
+                                                            {filter === 'fullPartTime' ? <div className="ion-text-wrap">Full Time & Part Time</div> : ''}
+                                                            {filter === 'partTime' ? <div className="ion-text-wrap">Part Time</div> : ''}
+                                                            {filter === 'fullTime' ? <div className="ion-text-wrap">Full Time</div> : ''}
                                                         </IonLabel>
                                                         <IonBadge slot="end" className="courseFilterCountBadge">
                                                             {
@@ -366,7 +368,10 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                                                     <IonCheckbox className="courseFilterCheckbox" onIonChange={e => handleCheck(e.detail.value, currentAcadlvlFilter.current, 'acad')} value={filter} checked={currentAcadlvlFilter.current.indexOf(filter) === -1 ? false : true} />
 
                                                     <IonLabel className="courseFilterLabel">
-                                                        <div className="ion-text-wrap">{filter}</div>
+                                                        {filter === 'Diploma' ? <div className="ion-text-wrap">Diploma</div> : ''}
+                                                        {filter === 'Bachelor' ? <div className="ion-text-wrap">Bachelor</div> : ''}
+                                                        {filter === 'Masters' ? <div className="ion-text-wrap">Postgraduate/Masters</div> : ''}
+                                                        {filter === 'Certificate' ? <div className="ion-text-wrap">Certificate</div> : ''}
                                                     </IonLabel>
 
                                                     <IonBadge slot="end" className="courseFilterCountBadge">{(props.programmes as Programme[]).filter(programme => programme.academicLevel === filter).length}</IonBadge>
