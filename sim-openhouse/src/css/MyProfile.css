@@ -1,0 +1,107 @@
+#profileGrid {
+    background: #efefef;
+    padding: 0 0 5% 0;
+    min-height: 100%;
+}
+
+#editProfileBtnCol {
+    padding-bottom: 3%;
+}
+
+#editProfileBtn {
+    --background: #37474F;
+    font-size: 80%;
+}
+
+.profileMainRow {
+    padding-top: 3%;
+}
+
+.profileRow {
+    margin-right: 2%;
+}
+
+.profileIconCol {
+    color: #424242;
+}
+
+.readOnlyIonInput {
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 80%;
+    color: #434343;
+}
+
+#highestQualSelect {
+    min-width: 100%;
+    padding-left: 0;
+}
+
+#editPasswordBtn {
+    color: #434343;
+}
+
+/* Modal CSS */
+.editPasswordModalContent {
+    --background: #efefef;
+}
+
+.editPasswordModal .modal-wrapper {
+    position: absolute;
+    bottom: initial;
+    min-height: initial;
+    top: initial;
+    height: 65%;
+    width: 95%;
+}
+
+#editPasswordModalGrid {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.editPasswordModalItem {
+    --background: #efefef;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 80%;
+}
+
+.passwordInput {
+    color: #434343;
+    --placeholder-color: #424242;
+    font-size: 85%;
+}
+
+.editPasswordBtn {
+    --background: #37474F;
+}
+
+#contactNoField .native-input{
+    padding-left: 0;
+}
+
+#saveEditProfileBtnCol {
+    padding-top: 10%;
+}
+
+#saveEditProfileBtn {
+    --background: #37474F;
+    font-size: 80%;
+    min-width: 60%;
+}
+
+#cancelEditProfileBtnCol {
+    padding-top: 5%;
+}
+
+#cancelEditProfileBtn {
+    --background: efefef;
+    color: #37474F;
+    border: 1px solid #37474F;
+    border-radius: 6px;
+    font-size: 80%;
+    min-width: 60%;
+}
+

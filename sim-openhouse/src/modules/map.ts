@@ -1,3 +1,5 @@
+import { toDateObject } from "./convert";
+
 export interface ScheduleItem {
     id: string;
     name: string;
@@ -38,22 +40,24 @@ export function toBrochure(doc: any): Brochure {
     }
 }
 
-export function toScholarshipBursary(doc: any) {
-    return {
-        id: doc.id,
-        ...doc.data()
-    }
-}
-
 export interface Announcement {
     id: string;
     title: string;
     date: string;
     time: string;
     details: string;
+    ms: number;
 }
 
 export function toAnnouncement(doc: any): Announcement {
+    return {
+        id: doc.id,
+        ...doc.data(),
+        ms: toDateObject(doc.data().date, doc.data().time).getTime()
+    }
+}
+
+export function toScholarshipBursary(doc: any) {
     return {
         id: doc.id,
         ...doc.data()

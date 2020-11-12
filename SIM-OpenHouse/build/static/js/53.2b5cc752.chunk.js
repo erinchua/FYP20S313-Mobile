@@ -1,0 +1,2 @@
+(this["webpackJsonpsim-openhouse"]=this["webpackJsonpsim-openhouse"]||[]).push([[53],{264:function(n,t,e){"use strict";e.r(t),e.d(t,"startStatusTap",(function(){return i}));var o=e(15),i=function(){var n=window;n.addEventListener("statusTap",(function(){Object(o.j)((function(){var t=n.innerWidth,e=n.innerHeight,i=document.elementFromPoint(t/2,e/2);if(i){var s=i.closest("ion-content");s&&s.componentOnReady().then((function(){Object(o.g)((function(){return s.scrollToTop(300)}))}))}}))}))}}}]);
+//# sourceMappingURL=53.2b5cc752.chunk.js.map

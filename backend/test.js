@@ -454,5 +454,40 @@ anno.set({
 
 //console.log(new Date(Date.now() + 1000 * 5).toLocaleString())
 //console.log(new Date(Date.now()).toLocaleString())
-console.log(Date.now())
-console.log(new Date().toLocaleString())
+//console.log(Date.now())
+//console.log(new Date().toLocaleString())
+
+/* db.collection('StudentCare').get().then(docs => {
+    const studCare = [];
+
+    docs.forEach(doc => {
+        let data = doc.data();
+
+        if (data.id === "workPlayLiveWell") {
+            const activitiesData = doc.data().activities;
+            const activities = [];
+            
+            for (let i = 0; i < Object.keys(activitiesData).length; i++) {
+                const activity = {
+                    id: Object.keys(activitiesData)[i],
+                    ...activitiesData[Object.keys(activitiesData)[i]]
+                }
+                activities.push(activity)
+            }
+
+            data = {
+                ...doc.data(),
+                activities: activities
+            }
+        }
+
+        studCare.push(data);
+        //console.log(data)
+    });
+    console.log(studCare.reduce((accu, curr) => (accu[curr.id] = curr, accu), {}))
+}); */
+
+var text = 'workPlayLiveWell';
+var result = text.replace( /([A-Z])/g, " $1" );
+var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+console.log(result);
