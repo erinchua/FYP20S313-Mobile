@@ -135,12 +135,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Degree is accredited by Australia Computer Society",
+            "aboutProgramme2": "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "aboutProgramme3": "Mobility options are available for students to spend a semester in UOW"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Closing data: 13 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -148,15 +148,15 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Apr, Jul, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "3 Years",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
@@ -186,15 +186,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Triple-crown accredited Busiess School by AACSB, AMBA & EQUIS",
+            "aboutProgramme2": "Learn best practices from participants across industries",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 05 December 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -202,15 +201,15 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Mar, Jul, Sep",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "2 Years",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
@@ -243,28 +242,28 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Sydney",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Ranked 2nd in AUstralia and 15th in the world for 2019 QS subject ranking",
+            "aboutProgramme2": "Programme includes experienced supervisors, who understands the local nursing context",
+            "aboutProgramme3": "Programme is accredited by the Singapore Nursing Board"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 27 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Jul",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "2 Years",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fthe-university-of-sydney-logo.png?alt=media&token=6068fcaf-27ec-48c4-8405-15c15018ed35"
@@ -297,12 +296,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Sydney",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Ranked 2nd in AUstralia and 15th in the world for 2019 QS subject ranking",
+            "aboutProgramme2": "Programme fully taught by experience teaching staff, who understands the local nursing context",
+            "aboutProgramme3": "Programme is accredited by the Singapore Nursing Board"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 27 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -314,11 +313,11 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Jul",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "2 Years",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fthe-university-of-sydney-logo.png?alt=media&token=6068fcaf-27ec-48c4-8405-15c15018ed35"
@@ -348,12 +347,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Flexibility to choose from a variety of modules to match learning needs",
+            "aboutProgramme2": "Modular delivery with application-based assignments",
+            "aboutProgramme3": "Fully taught by global experience's practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -361,18 +359,18 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
@@ -402,12 +400,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Flexibility to choose from a variety of modules to match learning needs",
+            "aboutProgramme2": "Modular delivery with application-based assignments",
+            "aboutProgramme3": "Fully taught by global experienced practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -415,18 +412,18 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
@@ -456,12 +453,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Flexibility to choose from a variety of modules to match learning needs",
+            "aboutProgramme2": "Modular delivery with application-based assignments",
+            "aboutProgramme3": "Fully taught by global experienced practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -469,18 +465,18 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
@@ -510,12 +506,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Flexibility to choose from a variety of modules to match learning needs",
+            "aboutProgramme2": "Modular delivery with application-based assignments",
+            "aboutProgramme3": "Fully taught by global experienced practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -523,18 +518,18 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
@@ -564,15 +559,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn statistical skills and computational techniques to analyse very large data sets well",
+            "aboutProgramme2": "Learn applications such as social media, biomedical data and financial data with Hadoop, R",
+            "aboutProgramme3": "Excellent opportunity for getting valuable skills in advanced data processing"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -581,14 +575,14 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Apr, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "2 Years",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
@@ -618,15 +612,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn fundamental knowledge and practical skills needed to design, build and apply AI systems",
+            "aboutProgramme2": "Develop skills with clear applications for data mining, pattern recognition & machine learning",
+            "aboutProgramme3": "Excellent opportunity for getting valuable skills in advanced data processing"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -635,14 +628,14 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Apr, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "2 Years",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
@@ -672,15 +665,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn technical and practical skills to analyse the financial data and modern financial markets",
+            "aboutProgramme2": "Be equipped with in-demand quantitative and analytical skills needed to go into roles",
+            "aboutProgramme3": "Learn skills to effectively improve organisational performance"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -689,14 +681,14 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Apr, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "2 Years",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
@@ -726,15 +718,14 @@
             "degree": false,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn statistical skills and computational techniques to analyse very large data sets well",
+            "aboutProgramme2": "Learn applications such as social media, biomedical data and financial data with Hadoop, R",
+            "aboutProgramme3": "Progress from the Postgraduate Certificate to the Postgraduate Diploma and then onto the Master's"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -743,14 +734,14 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Apr, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
@@ -780,15 +771,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn statistical skills and computational techniques to analyse very large data sets well",
+            "aboutProgramme2": "Learn applications such as social media, biomedical data and financial data with Hadoop, R",
+            "aboutProgramme3": "Progress from the Postgraduate Diploma and then onto the Master's"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -797,14 +787,14 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Apr, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1.5 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
@@ -834,15 +824,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn fundamental knowledge and practical skills needed to design, build and apply AI systems",
+            "aboutProgramme2": "Develop skills with clear applications for data mining, pattern recognition & machine learning",
+            "aboutProgramme3": "Progress from the Postgraduate Diploma and then onto the Master's"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -851,14 +840,14 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Apr, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1.5 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
@@ -888,15 +877,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn technical and practical skills to analyse the financial data and modern financial markets",
+            "aboutProgramme2": "Progress from the Postgraduate Diploma and then onto the Master's",
+            "aboutProgramme3": "Learn skills required by Data Scientists to effectively improve organisational performance"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -905,14 +893,14 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Apr, Oct",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1.5 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
@@ -942,15 +930,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Understand the emergence of biz analytics & the use of data for customer acqn, retention & revenue management",
+            "aboutProgramme2": "Modules include Business Analytic Concepts, Data mining for managers & Customer Relation Management",
+            "aboutProgramme3": "Classroom learning and hands-on practice. Use MS Excel to perform data analysis"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "14 July 2020 till 16 December 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -962,11 +949,11 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, May, Sep",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
@@ -996,15 +983,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Equipped to identify, model and solve biz problems using appropriate analytical techniques and tools",
+            "aboutProgramme2": "Modules include Python for Data Analysis, Predictive Modelling & Data Visualisation",
+            "aboutProgramme3": "Students will be exposed to software such as Python, 'R' and Tableau"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "14 July 2020 till 16 December 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -1016,11 +1002,11 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, May, Sep",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
@@ -1050,15 +1036,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn & apply various digital mktg strategies to reach integratedmktg objectives for organisations",
+            "aboutProgramme2": "Modules include Digital Marketing, New Media Coomunications & Social Media Marketing",
+            "aboutProgramme3": "Explore the use of social media platforms to gain insights to support businss decision making"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "14 July 2020 till 16 December 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -1070,11 +1055,11 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, May, Sep",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
@@ -1104,15 +1089,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Programme that allows HR and administrative staff to hone their HR skills.",
+            "aboutProgramme2": "Programme includes modules that deal with organisation development in a disruptive world.",
+            "aboutProgramme3": "Programme helps students to transition into human resource careers"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "14 July 2020 till 16 December 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -1124,11 +1108,11 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, May, Sep",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
@@ -1161,9 +1145,9 @@
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "SkillFuture programme launched in collaboration with SATS, a Gateway Services provider",
+            "aboutProgramme2": "Grants/ fundings from SkillsFuture are available for eligible students",
+            "aboutProgramme3": "Programme is a platform to further develop industry-specific skills in aviation industry"
         },
         "applicationPeriod": {
             "period1": "",
@@ -1171,18 +1155,18 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Jul",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
+            "partTime": "1 Year",
             "fullTime": ""
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
@@ -1215,12 +1199,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Flagship broad-based business",
+            "aboutProgramme2": "Out-of-class learning i.e. guestlectures, panel discussion, coding bootcamp by industry experts'",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 31 Jan 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -1232,12 +1216,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jul",
+            "fullTime": "Jul"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "2 Years",
+            "fullTime": "2 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -1269,12 +1253,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Degree is accredited by Australia Computer Society",
+            "aboutProgramme2": "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "aboutProgramme3": "Mobility options are available for students to spend a semester in UOW"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "13 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -1282,16 +1266,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Apr, Jul, Oct",
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
@@ -1323,12 +1307,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Degree is accredited by Australia Computer Society",
+            "aboutProgramme2": "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "aboutProgramme3": "Mobility options are available for students to spend a semester in UOW"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "13 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -1336,16 +1320,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Apr, Jul, Oct",
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
@@ -1374,12 +1358,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Industry-relevant",
+            "aboutProgramme2": "Gain multidisciplinary skillset for graduate employement",
+            "aboutProgramme3": "Fully taught by global experience's practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -1387,19 +1370,19 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Oct"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
@@ -1428,12 +1411,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Industry-relevant",
+            "aboutProgramme2": "Gain multidisciplinary skillset for graduate employement",
+            "aboutProgramme3": "Fully taught by global experience's practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -1441,19 +1423,19 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Apr, Oct"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
@@ -1482,12 +1464,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Industry-relevant",
+            "aboutProgramme2": "Gain multidisciplinary skillset for graduate employement",
+            "aboutProgramme3": "Fully taught by global experience's practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -1495,19 +1476,19 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Apr, Oct"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
@@ -1536,12 +1517,11 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Warwick",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Industry-relevant",
+            "aboutProgramme2": "Gain multidisciplinary skillset for graduate employement",
+            "aboutProgramme3": "Fully taught by global experience's practitioners"
         },
         "applicationPeriod": {
             "period1": "",
@@ -1549,19 +1529,19 @@
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Mar, May, Jul, Sep, Nov",
+            "fullTime": "Oct"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "2 Years",
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FWMG-logo.png?alt=media&token=cd546211-0c22-4768-881a-391f5b2b6bab"
     },
@@ -1593,29 +1573,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Key principles of sustainability on the environment, social impact and commercial success of events",
+            "aboutProgramme2": "Focus on management of experiential events",
+            "aboutProgramme3": "Apply analytical techniques, business and management sills in events management"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 20 July 2020",
+            "period2": "Now till 30 Apr 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Aug",
+            "fullTime": "Aug"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -1647,12 +1627,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Marketing with digital focus in today's digital age and competitive marketing landscape",
+            "aboutProgramme2": "Apply digital communication and information technologies in business and marketing",
+            "aboutProgramme3": "Creative thinking with strategic analysis in digital marketing"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 20 July 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -1660,16 +1640,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Aug",
+            "fullTime": "Aug"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -1701,29 +1681,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Fundamental principles of retailing as an important service sector that is customer-focused",
+            "aboutProgramme2": "Practical curriculum reflecting current retail landscape, including omni-channel retail marketing",
+            "aboutProgramme3": "Specialised retail or general management careers with a Retail Marketing degree from Stirling"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 20 July 2020",
+            "period2": "Now till 30 Apr 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Aug",
+            "fullTime": "Aug"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -1755,29 +1735,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Stirling",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Critical understanding of sports policy, planning, management and delivery of sporting opportunities",
+            "aboutProgramme2": "Contemporary issues in sports and marketing, and core sports marketing principles",
+            "aboutProgramme3": "Unique features of marketing in a sports environment"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 20 July 2020",
+            "period2": "Now till 30 Apr 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Aug",
+            "fullTime": "Aug"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Fsim000875-2.png?alt=media&token=83673f98-f7ac-4cb2-9e3b-8b77710cf52b"
     },
@@ -1809,29 +1789,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 5th globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "aboutProgramme2": "Our past graduates have gained employment opportunities in the Big Four acounting firms",
+            "aboutProgramme3": "Graduates articule to the major professional accounting qualifications with exemption"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Sep",
+            "fullTime": "Aug, Sep"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -1863,29 +1843,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 5th globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "aboutProgramme2": "Widely recognized by professional accountancy associations such as ACCA and CPA Australia",
+            "aboutProgramme3": "Alumni have gone on to pursue master's at Cambridge and oter reputable UK universities"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Sep",
+            "fullTime": "Aug, Sep"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -1917,29 +1897,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "aboutProgramme2": "Top choice of UOL-EMFSS degree and the most popular business degree programmes at SIM",
+            "aboutProgramme3": "Recent graduate have progressed into taxation, business analytics and management consultancy"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Sep",
+            "fullTime": "Aug, Sep"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -1968,32 +1948,31 @@
             "degree": true,
             "diploma": true
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Awarded bu UOL with direction from UCL - a world leading multi-disciplinary Uni, QS Ranking Top 10 in Worldwide",
+            "aboutProgramme2": "Actual engagement with lcturers/peers to solve problems/develop strategies",
+            "aboutProgramme3": "Enhances your employability which also count towards ACCA CPD units"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 25 Nov 2020",
+            "period2": "Now till 24 May 2021"
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "1 Year",
+            "fullTime": "0.5 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -2022,19 +2001,18 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 5th globally in 2019 QS WU subject rankings for Accounting and Finance",
+            "aboutProgramme2": "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "aboutProgramme3": "All pre-requisites are waived for the Graduate Diploma"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
@@ -2042,12 +2020,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Sep",
+            "fullTime": "Sep"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "1 Year",
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -2076,19 +2054,18 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Management",
+            "aboutProgramme2": "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "aboutProgramme3": "Expand your career options in the management of people & business activities with this diploma"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
@@ -2096,12 +2073,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Sep",
+            "fullTime": "Sep"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "1 Year",
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -2133,12 +2110,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain insights into modern finance industry, analyse economic context relating to real issues",
+            "aboutProgramme2": "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "aboutProgramme3": "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "15 Jul 2020 to 16 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2146,16 +2123,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2187,12 +2164,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain insights into modern finance industry, analyse economic context relating to real issues",
+            "aboutProgramme2": "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "aboutProgramme3": "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "15 Jul 2020 to 16 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2200,16 +2177,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Jul",
             "fullTime": ""
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2241,12 +2218,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Apply skills & understand the interdependence of global localised & regional logistics issues",
+            "aboutProgramme2": "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "aboutProgramme3": "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "15 Jul 2020 to 16 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2254,16 +2231,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2295,12 +2272,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain the knowledge, competence and attitudes necessaary for managing complex organisations",
+            "aboutProgramme2": "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "aboutProgramme3": "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "15 Jul 2020 to 16 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2308,16 +2285,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2349,12 +2326,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Acquire practical skills in market research, advertising, business development & branding",
+            "aboutProgramme2": "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "aboutProgramme3": "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "15 Jul 2020 to 16 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2362,16 +2339,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jan, Jul",
+            "fullTime": "Jan, Jul"
         },
         "duration": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "3 Years",
+            "fullTime": "4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2400,15 +2377,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "Grenoble Ecole de Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn foreign language skills that are essential in today's business world",
+            "aboutProgramme2": "Multicultural learning enviornment, diversity in teaching faculty and students",
+            "aboutProgramme3": "Recognised by French Ministry of Education offers competitive advantage to work in France"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 15 Oct 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2421,11 +2397,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLogo_Grenoble_Ecole_de_Management.png?alt=media&token=c47ff5ac-4d62-4f6f-86c0-d3f7ca45b0ac"
     },
@@ -2457,12 +2433,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "La Trobe University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Ranked among the world's top 50 universities for Hospitality & Tourism Management subjects (2019)",
+            "aboutProgramme2": "Practical curricula to equip students with disciplinary knowledge, research & problem-solving skills",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 27 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2475,11 +2451,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1.5 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLTU_Int_H_RGB_V3-200x76px.png?alt=media&token=2098d10d-5cbe-4430-9499-011de6e1d49b"
     },
@@ -2511,12 +2487,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "La Trobe University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Ranked among the world's top 50 universities for Hospitality & Tourism Management subjects (2019)",
+            "aboutProgramme2": "Practical curricula to equip students with disciplinary knowledge, research & problem-solving skills",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 27 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2529,11 +2505,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1.5 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLTU_Int_H_RGB_V3-200x76px.png?alt=media&token=2098d10d-5cbe-4430-9499-011de6e1d49b"
     },
@@ -2565,12 +2541,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Develop critical perspectives across key areas of international business practice & management",
+            "aboutProgramme2": "Practical Curricula, designed with industry inputs & flexibility to specialise in skills / interests",
+            "aboutProgramme3": "Global Mobility Programe, option to study one semester at RMIT campuses / RMIT partner universities"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "15 Jul 2020 to 16 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2578,16 +2554,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2619,29 +2595,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Ranked among the world's top 50 universities for Communication & Media Studies (QS 2019)",
+            "aboutProgramme2": "Broad range of skills through a combination of practical training in communication and media",
+            "aboutProgramme3": "Pracitical Curricula, designed with industry inputs; integration of theory with practice"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "15 Aug 2020 to 1 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Jul, Nov"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2673,12 +2649,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "RMIT University",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Ranked 12th in the world & highest in Australia for Art & Design (QS 2019)",
+            "aboutProgramme2": "Graduation exhibition showcasing student's creative ideas to industry professionals & visitors",
+            "aboutProgramme3": "Two-week Study Tour to RMIT's Melbourne Campus, exposure to other communication design cultures"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "9 Jan 2020 to 4 May 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2686,16 +2662,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FRMIT_POS_RGB_High-res-210x85px.png?alt=media&token=ff4b1ed9-2ff4-4009-9d3a-314a4c07c22f"
     },
@@ -2727,9 +2703,9 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Degree is accredited by Australia Computer Society",
+            "aboutProgramme2": "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "aboutProgramme3": "Mobility options are available for students to spend a semester in UOW"
         },
         "applicationPeriod": {
             "period1": "",
@@ -2740,16 +2716,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
@@ -2781,12 +2757,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Degree is accredited by Australia Computer Society",
+            "aboutProgramme2": "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "aboutProgramme3": "Mobility options are available for students to spend a semester in UOW"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "13 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2794,16 +2770,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
@@ -2835,12 +2811,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Degree is accredited by Australia Computer Society",
+            "aboutProgramme2": "Hands-on approach to teaching by world class researchers and industry practitioners",
+            "aboutProgramme3": "Mobility options are available for students to spend a semester in UOW"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "13 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2848,16 +2824,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
@@ -2889,12 +2865,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Wollongong",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Degree is accredited by Australia Psychology Accreditation Council",
+            "aboutProgramme2": "option to pursue 4th Year Honours programme at UOW at discounted fees",
+            "aboutProgramme3": "Mobility options are available for students to spend a semester in UOW"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 16 Oct 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -2902,16 +2878,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-wollongong-logo.png?alt=media&token=d9ff618a-4b4c-4fb0-ab17-05e1cfb56d15"
     },
@@ -2943,17 +2919,17 @@
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Articulation into the degree programmes of reputable universities",
+            "aboutProgramme2": "Emphasis on practical problem-solving & decision making skills to today's knowledge-based economy",
+            "aboutProgramme3": "Provide training on broad-based software to support business needs & achieve competitive advantage"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 21 Feb 2020",
             "period2": ""
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
@@ -2961,11 +2937,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -2994,20 +2970,20 @@
             "degree": false,
             "diploma": false
         },
-        "category": "Foundation Programme",
+        "category": "",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Provide the fundamentals of computing and information technology",
+            "aboutProgramme2": "Alternative route for one to join inforcomm industry",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 29 Nov 2020",
+            "period2": "Now till 21 Feb 2020"
         },
         "programmeStructure": {
             "coursework": true,
-            "examination": true
+            "examination": false
         },
         "overseaOpportunity": {
             "exchange": false,
@@ -3015,11 +2991,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "0.5 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -3048,16 +3024,16 @@
             "degree": false,
             "diploma": false
         },
-        "category": "Foundation Programme",
+        "category": "",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Programme designed to bridge Business Management Studies at Diploma level",
+            "aboutProgramme2": "Suitable for one who wants to understand the fundamentals of mangement & business practice",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 29 Nov 2020",
+            "period2": "Now till 21 Feb 2021"
         },
         "programmeStructure": {
             "coursework": true,
@@ -3068,12 +3044,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
+            "partTime": "Jan, Apr, Jul, Oct",
             "fullTime": ""
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "0.5 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -3105,12 +3081,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Offers specialised modules such as: Auditing, Company Law, Financial Reporting and Taxation",
+            "aboutProgramme2": "Students will learn how to use ABSS, an accounting software, during the course of their studies",
+            "aboutProgramme3": "Programme is accredited by three professional bodies, namely ACCA, ICAEW and CIMA"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "1 September 2020 - 21 February 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -3123,11 +3099,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Apr, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1.5 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -3159,12 +3135,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Exposes students to various roles in banking & finance sector, broad understanding of finance institute",
+            "aboutProgramme2": "Offers specialist modules: Fin Mkts & Instn, Credit Risk Analysis & Mgmt, Investment, Fin Trading",
+            "aboutProgramme3": "Classroom learning with real-world simulations of trading activities in the Financial Training Centre"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "1 September 2020 - 21 February 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -3177,11 +3153,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Apr, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1.5 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -3213,12 +3189,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Students able to understand the principles of business in the context of world enviornments",
+            "aboutProgramme2": "Study specialized subjects like global supply chain mangement and negotiation",
+            "aboutProgramme3": "Study global business subjects from accounting and law to international trade"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "1 September 2020 - 21 February 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -3231,11 +3207,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Apr, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1.5 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -3267,12 +3243,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "Singapore Institute of Management",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Programme launched since 1973, producing 19,000 graduates at SIM",
+            "aboutProgramme2": "Broad-based management program for executive eudation & leadership development",
+            "aboutProgramme3": "Articulation into the degree programmes of reputable universities"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 29 Nov 2020",
             "period2": ""
         },
         "programmeStructure": {
@@ -3285,11 +3261,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, Apr, Jul, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1.5 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FSIMGE-transparent-logo.png?alt=media&token=98a50df2-7b92-4719-be18-8323b49bc52d"
     },
@@ -3318,16 +3294,15 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Learn to perform independent data analysis for managerial decision-making",
+            "aboutProgramme2": "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "aboutProgramme3": "All pre-requisites are waived for the Graduate Diploma"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
             "coursework": true,
@@ -3339,11 +3314,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3369,19 +3344,19 @@
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
-            "degree": true,
-            "diploma": false
+            "degree": false,
+            "diploma": true
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Transfer to the London campus at Goldsmiths after one or two years at SIM",
+            "aboutProgramme2": "Collaboration between UOL, Goldsmiths, Coursera and SIM using flip classroom technology",
+            "aboutProgramme3": "IT diploma graduates stand to gain exemptions for up to one year"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "30 Nov 2020"
         },
         "programmeStructure": {
             "coursework": true,
@@ -3389,15 +3364,15 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Apr, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3423,19 +3398,19 @@
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
-            "degree": true,
-            "diploma": false
+            "degree": false,
+            "diploma": true
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Transfer to the London campus at Goldsmiths after one or two years at SIM",
+            "aboutProgramme2": "Prestigious qualification that is valued across the world",
+            "aboutProgramme3": "Students will start their specialisation in the final year of study"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "30 Nov 2020"
         },
         "programmeStructure": {
             "coursework": true,
@@ -3443,15 +3418,15 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Apr, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3477,19 +3452,19 @@
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
-            "degree": true,
-            "diploma": false
+            "degree": false,
+            "diploma": true
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Be equpped with knowledge and skills to face technical challenges and expand your IT career",
+            "aboutProgramme2": "Students will be using creative interactive approaches delivered through Coursera",
+            "aboutProgramme3": "IT diploma graduates stand to gain exemptions for up to one year"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "30 Nov 2020"
         },
         "programmeStructure": {
             "coursework": true,
@@ -3497,15 +3472,15 @@
         },
         "overseaOpportunity": {
             "exchange": false,
-            "transfer": false
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Apr, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3531,35 +3506,35 @@
         "entryQualifications": {
             "aLevel": true,
             "oLevel": false,
-            "degree": true,
-            "diploma": false
+            "degree": false,
+            "diploma": true
         },
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Social Sciences",
+            "aboutProgramme2": "SIM is one of the three schools worldwide where LSE permitted this programme to be launched in 2018",
+            "aboutProgramme3": "Students are exposed to a mixture of R and SPSS in the three statistics courses"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug, Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3588,19 +3563,19 @@
             "degree": false,
             "diploma": false
         },
-        "category": "Foundation Programme",
+        "category": "",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "A one-year pre-university in Economics, Psychology, International Relations and/or Accounting",
+            "aboutProgramme2": "Graduate will gain guaranteed entry to any LSE-led degree and Goldsmiths' computing degree in SIM",
+            "aboutProgramme3": "20% of SIM graduates enrolled into overseas universities like LSE, Leeds, Manchester, Nottingham"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
@@ -3609,11 +3584,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3642,19 +3617,18 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 6th globally in the 2019 QS WU subject rankings for Economics",
+            "aboutProgramme2": "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "aboutProgramme3": "All pre-requisites are waived for the Graduate Diploma"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
@@ -3663,11 +3637,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3699,29 +3673,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 6th globally in the 2019 QS WU subject rankings for Economics",
+            "aboutProgramme2": "our alumni have pursued Master's and PhD programmes, especially at the LSE",
+            "aboutProgramme3": "Graduate will learn an approach to a logical analysis of social and individual decision making"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug, Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3753,29 +3727,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, ranked 4th globally for Politics and International Studies (QSWU)",
+            "aboutProgramme2": "This degree programme is akin to the Oxford or LSE PPE in Philosophy, Politics and Economics",
+            "aboutProgramme3": "Suitable for those who wish to pursue a career in finance, government and international business"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug, Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3807,29 +3781,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, ranked 4th globally for Politics and International Studies (QSWU)",
+            "aboutProgramme2": "Suitable for those who wish to pursue a career in private and public sectors",
+            "aboutProgramme3": "SIM students apply what they learn by representing Singapore at the annual HNMUN in Boston"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug, Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3861,29 +3835,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 5th and 6th globally for Finance and Economics (QSWU)",
+            "aboutProgramme2": "Graduates are accepted by world leading universities for Master's degrees including LSE, NTU",
+            "aboutProgramme3": "Average of 23% from each graduating cohort achieve First Class Honours"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug, Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3915,29 +3889,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 2nd and 6th globally for Management and Finance (QSWU)",
+            "aboutProgramme2": "Ideal for those keen on management, further training in management & corporate disciplines",
+            "aboutProgramme3": "Recent graduates have been employed by Ernst & Young Advisory, Global Microelectronics & Cloudfare"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug, Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -3969,29 +3943,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Curriculum is by LSE, 2nd globally in 2019 QS WU subject rankings for Management",
+            "aboutProgramme2": "This programme uses a mixtrure of assessment methods",
+            "aboutProgramme3": "LSE was ahead of its time when it first launched, includes skills for current knowledge economy"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Application is now open.",
+            "period2": "Application is now open."
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Aug, Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -4023,16 +3997,16 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Alternative way for overseas high school graduates to enrol for Year 1 of the Bachelor's programme",
+            "aboutProgramme2": "This programme has a coursework and attendance requirement which helps to keep students motivated",
+            "aboutProgramme3": "The academic staff develop a closer rapport with students as their schoolwork is closely monitored"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
-            "coursework": true,
+            "coursework": false,
             "examination": true
         },
         "overseaOpportunity": {
@@ -4041,11 +4015,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -4074,15 +4048,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of London",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Discuss theories and evolution of digital technology, services and ogranisational infrastructures",
+            "aboutProgramme2": "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "aboutProgramme3": "All pre-requisites are waived for the Graduate Diploma"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Application is now open.",
             "period2": ""
         },
         "programmeStructure": {
@@ -4095,11 +4068,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Sep"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
@@ -4131,12 +4104,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Exemptions available for selected professional Accreditations",
+            "aboutProgramme2": "Electives to match learning needs eg, to engage in real work experience; data and coding etc",
+            "aboutProgramme3": "Taught by Birmingham academics and local specialists"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 11 Apr 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4149,11 +4122,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4185,12 +4158,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Unique combination i.e. business + communications specialisms",
+            "aboutProgramme2": "Gain communications-related work experience through a company project",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus"
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 31 Jan 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4203,11 +4176,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4239,12 +4212,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Unique combination i.e. business + compulsaory internship",
+            "aboutProgramme2": "Exclusive career workshops and coaching delivered by University",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 31 Jan 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4256,12 +4229,12 @@
             "transfer": false
         },
         "intakeMonths": {
-            "partTime": "",
-            "fullTime": ""
+            "partTime": "Jl",
+            "fullTime": "Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years 4 months"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4293,12 +4266,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Broad-based business with compulsory internship to gain a career headstart",
+            "aboutProgramme2": "Exclusive career workshops and coaching delivered by University",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 31 Jan 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4306,16 +4279,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4347,12 +4320,12 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Study in 3 different countries and gain a global perspective",
+            "aboutProgramme2": "Gain cross cultural skills with opportunity to work with international students",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 31 Jan 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4360,16 +4333,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jul"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4398,16 +4371,15 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain cross cultural skills with opportunity to work with international students",
+            "aboutProgramme2": "Tailored industry-relevant workshops by University for employability",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 20 Feb 2021",
+            "period2": "Now till 7 Aug 2021"
         },
         "programmeStructure": {
             "coursework": true,
@@ -4419,11 +4391,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Apr, Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4452,15 +4424,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain cross cultural skills with opportunity to work with international students",
+            "aboutProgramme2": "Tailored industry-relevant workshops by University for employability",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 7 Aug 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4473,11 +4444,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4506,15 +4477,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain cross cultural skills with opportunity to work with international students",
+            "aboutProgramme2": "Tailored industry-relevant workshops by University for employability",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 7 Aug 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4527,11 +4497,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4560,15 +4530,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain cross cultural skills with opportunity to work with international students",
+            "aboutProgramme2": "Tailored industry-relevant workshops by University for employability",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 7 Aug 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4581,11 +4550,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4614,15 +4583,14 @@
             "degree": true,
             "diploma": false
         },
-        "category": "Postgraduate Programme",
         "awardedBy": "University of Birmingham",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Gain cross cultural skills with opportunity to work with international students",
+            "aboutProgramme2": "Tailored industry-relevant workshops by University for employability",
+            "aboutProgramme3": "Fully taught by Birmingham academics from the UK home campus."
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 7 Aug 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -4635,11 +4603,11 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "1 Year"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiversity-of-birmingham-logo.png?alt=media&token=97b839c7-a15a-4c62-8edc-17c3ce54e8b1"
     },
@@ -4671,29 +4639,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "SIM-UB scholarships are available for this programme",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
+            "exchange": true,
             "transfer": false
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -4725,29 +4693,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "SIM-UB scholarships are available for this programme",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -4779,29 +4747,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "SIM-UB scholarships are available for this programme",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -4833,29 +4801,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "SIM-UB scholarships are available for this programme",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -4887,29 +4855,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "SIM-UB scholarships are available for this programme",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -4941,29 +4909,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "SIM-UB scholarships are available for this programme",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -4995,29 +4963,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "Provide students with cutting-edge knowledge, skills & abilities in using geospatial sciences",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 29 Cctober 2020",
+            "period2": "Now till 30 Cctober 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2-3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5049,29 +5017,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5103,29 +5071,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5157,29 +5125,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5211,29 +5179,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5265,29 +5233,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5319,29 +5287,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "Acredited by AACSB International",
+            "aboutProgramme3": "Students will be able to learn insights and skills about business world"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 29 October 2020",
+            "period2": "Opens on 30 October 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2-3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5373,29 +5341,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5427,29 +5395,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5481,29 +5449,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5535,29 +5503,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5589,29 +5557,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
-            "aboutProgramme3": ""
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "One of the top 25 communication programs in US",
+            "aboutProgramme3": "Students will learn cutting-edge scientific & comprehensive study of human communication"
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2-3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5643,29 +5611,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5697,29 +5665,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5751,29 +5719,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5805,29 +5773,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "Integrates economics theories with applied topics, hands-on experiences, best practices",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 29 October 2020",
+            "period2": "Now till 30 October 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2-3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5859,8 +5827,8 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
@@ -5872,16 +5840,16 @@
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5913,29 +5881,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -5967,29 +5935,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "Learn the insights of globalization operations, critical social, economic & environmental challenges",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 29 October 2020",
+            "period2": "Now till 30 October 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2-3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -6021,29 +5989,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "More than 50% modules are taught by overseas faculty for full semester throughout the entire program",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 16 March 2021",
+            "period2": "Now till 17 March 2021"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "3-4 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -6075,29 +6043,29 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "Study of psychological principles & scientific ways to evaluate theories & researches",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
-            "period2": ""
+            "period1": "Now till 29 October 2020",
+            "period2": "Now till 30 October 2020"
         },
         "programmeStructure": {
             "coursework": true,
             "examination": true
         },
         "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
+            "exchange": true,
+            "transfer": true
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Jan, May, Aug"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2-3 Years"
         },
         "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
     },
@@ -6129,12 +6097,172 @@
         "category": "Undergraduate Programme",
         "awardedBy": "University of Buffalo",
         "programmeOverview": {
-            "aboutProgramme1": "",
-            "aboutProgramme2": "",
+            "aboutProgramme1": "Liberal arts orientation with interactive & interdisciplinary apporach",
+            "aboutProgramme2": "Learn the art & process of dynamic social systems & issues related to each other & societal issues",
             "aboutProgramme3": ""
         },
         "applicationPeriod": {
-            "period1": "",
+            "period1": "Now till 29 October 2020",
+            "period2": "Now till 30 October 2020"
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Jan, May, Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "2-3 Years"
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-115",
+        "programmeTitle": "Graduate Diploma in Management Digital Innovation",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": ""
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "Business",
+            "subDisciplineName2": "Management",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
+        },
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programmeOverview": {
+            "aboutProgramme1": "Discuss theories and evolution of digital technology, services and ogranisational infrastructures",
+            "aboutProgramme2": "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "aboutProgramme3": ""
+        },
+        "applicationPeriod": {
+            "period1": "Sep",
+            "period2": ""
+        },
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Sep",
+            "fullTime": "Sep"
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": "1 Year"
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-116",
+        "programmeTitle": "Monash University Foundation Year",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": {
+            "disciplineName1": "Arts & Social Sciences",
+            "disciplineName2": "Business"
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
+        },
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "category": "",
+        "awardedBy": "Monash College",
+        "programmeOverview": {
+            "aboutProgramme1": "Guaranteed pathway to Monash University",
+            "aboutProgramme2": "Recognition in Australia and beyond",
+            "aboutProgramme3": "Non-discipline specific foundation program"
+        },
+        "applicationPeriod": {
+            "period1": "Application opens in January 2021",
+            "period2": ""
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul",
+            "fullTime": ""
+        },
+        "duration": {
+            "partTime": "1 Year",
+            "fullTime": ""
+        },
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FMonashCollege.png?alt=media&token=fce20eb0-a39d-477f-bfa7-2281375b7b87"
+    },
+    {
+        "id": "programme-117",
+        "programmeTitle": "MSc Fashion, Design and Luxury Management",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Postgraduate/Masters",
+        "discipline": {
+            "disciplineName1": "Business",
+            "disciplineName2": ""
+        },
+        "subDiscipline": {
+            "subDisciplineName1": "",
+            "subDisciplineName2": "",
+            "subDisciplineName3": "",
+            "subDisciplineName4": "",
+            "subDisciplineName5": ""
+        },
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "Grenoble Ecole de Management",
+        "programmeOverview": {
+            "aboutProgramme1": "Degree is of the same standard and standing as those awarded in France",
+            "aboutProgramme2": "Learn from research-led GEM faculty and local specialists on the latest challenges faced by these industries such as sustainability and digitalization",
+            "aboutProgramme3": "Gain practical insights on Fashion and Luxury experience through the Specialized Study Trip in Europe"
+        },
+        "applicationPeriod": {
+            "period1": "Now till 15 July 2021",
             "period2": ""
         },
         "programmeStructure": {
@@ -6147,12 +6275,12 @@
         },
         "intakeMonths": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "Oct"
         },
         "duration": {
             "partTime": "",
-            "fullTime": ""
+            "fullTime": "2 Years"
         },
-        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+        "logoUrl": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FLogo_Grenoble_Ecole_de_Management.png?alt=media&token=c47ff5ac-4d62-4f6f-86c0-d3f7ca45b0ac"
     }
 ]

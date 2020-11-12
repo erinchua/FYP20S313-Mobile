@@ -65,52 +65,34 @@ const App: React.FC = () => {
 	const { loggedIn, userID } = useAuth();
 
 	const [allowNotif, setAllowNotif] = useState({ openhouse: false, announcement: false });
-	const [upcomingNotif, setUpcomingNotif] = useState<Announcement[]>([])
+	const [upcomingNotif, setUpcomingNotif] = useState<Announcement[]>([]);
+
 	useEffect(() => {
-		console.log("UserID useeffect")
-		console.log(userID)
-
 		if (userID) {
-			console.log("Retrieving mobile settings")
-			db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
-				setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
-			});
+			return (
+				db.collection('MobileSettings').doc(userID).onSnapshot(doc => {
+					setAllowNotif({ openhouse: doc.data()?.openhouseNotif, announcement: doc.data()?.announcementNotif });
+				}),
 
-			console.log("Retrieving announcement")
-			db.collection('Announcements').onSnapshot(({ docs }) => {
-				const upcoming = docs.map(toAnnouncement).filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
-				setUpcomingNotif(upcoming)
-
-			});
+				db.collection('Announcements').onSnapshot(({ docs }) => {
+					const upcoming = docs.map(toAnnouncement).filter(news => { return new Date().getTime() < toDateObject(news.date, news.time).getTime() }).sort((a, b) => sortAsc(a.ms, b.ms));
+					setUpcomingNotif(upcoming)
+				})
+			)
 		}
-
-
 	}, [userID]);
 
 	useEffect(() => {
-
-
-	}, []);
-
-	useEffect(() => {
-
 		if (upcomingNotif.length > 0) {
 			upcomingNotif.map(alert => {
 				notification(alert.date, alert.time, alert.title, "announcement")
-				console.log("notified " + JSON.stringify(alert))
-
 			});
 		}
-
-	}, [upcomingNotif])
+	}, [upcomingNotif]);
 
 	useEffect(() => {
-
 		window.sessionStorage.setItem("allowOpenhouseNotif", JSON.stringify(allowNotif.openhouse));
 		window.sessionStorage.setItem("allowAnnouncementNotif", JSON.stringify(allowNotif.announcement));
-
-
-
 	}, [allowNotif.openhouse, allowNotif.announcement]);
 
 
