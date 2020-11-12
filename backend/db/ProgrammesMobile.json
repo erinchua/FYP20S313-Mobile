@@ -210,7 +210,7 @@
             "partTime": true,
             "fullTime": true
         },
-        "academicLevel": "Diploma",
+        "academicLevel": "Bachelor",
         "discipline": [
             "Business"
         ],
@@ -565,7 +565,7 @@
             "partTime": true,
             "fullTime": true
         },
-        "academicLevel": "Masters",
+        "academicLevel": "Bachelor",
         "discipline": [
             "Business"
         ],
@@ -3930,162 +3930,6 @@
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     },
     {
-        "id": "programme-072",
-        "programmeTitle": "Bachelor of Science (Honours) in International Relations",
-        "modeOfStudy": {
-            "partTime": false,
-            "fullTime": true
-        },
-        "academicLevel": "Bachelor",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "International Relations",
-            "Politics"
-        ],
-        "entryQualifications": {
-            "aLevel": true,
-            "oLevel": false,
-            "degree": false,
-            "diploma": true
-        },
-        "awardedBy": "University of London",
-        "programOverview": [
-            "Curriculum is by LSE, ranked 4th globally for Politics and International Studies (QSWU)",
-            "Suitable for those who wish to pursue a career in private and public sectors",
-            "SIM students apply what they learn by representing Singapore at the annual HNMUN in Boston"
-        ],
-        "applicationPeriod": [
-            {
-                "intake": "Full-time - Aug/Sep 2021 Intake",
-                "period": "For local and international applicants:\n Application is now open."
-            },
-            {
-                "intake": "Bridging EMA",
-                "period": "Application is now open."
-            }
-        ],
-        "programmeStructure": {
-            "coursework": false,
-            "examination": true
-        },
-        "overseaOpportunity": {
-            "exchange": true,
-            "transfer": true
-        },
-        "intakeMonths": {
-            "partTime": "",
-            "fullTime": "Aug, Sep"
-        },
-        "duration": {
-            "partTime": "",
-            "fullTime": "3 Years"
-        },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
-    },
-    {
-        "id": "programme-073",
-        "programmeTitle": "International Foundation Programme",
-        "modeOfStudy": {
-            "partTime": false,
-            "fullTime": true
-        },
-        "academicLevel": "Certificate",
-        "discipline": [
-            "Arts & Social Sciences",
-            "Business"
-        ],
-        "subDiscipline": [
-            "Social Sciences"
-        ],
-        "entryQualifications": {
-            "aLevel": true,
-            "oLevel": true,
-            "degree": false,
-            "diploma": false
-        },
-        "awardedBy": "University of London",
-        "programOverview": [
-            "A one-year pre-university in Economics, Psychology, International Relations and/or Accounting",
-            "Graduate will gain guaranteed entry to any LSE-led degree and Goldsmiths' computing degree in SIM",
-            "20% of SIM graduates enrolled into overseas universities like LSE, Leeds, Manchester, Nottingham"
-        ],
-        "applicationPeriod": [
-            {
-                "intake": "Full-time- August 2021 Intake",
-                "period": "For local and international applicants:\n Application is now open."
-            }
-        ],
-        "programmeStructure": {
-            "coursework": false,
-            "examination": true
-        },
-        "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
-        },
-        "intakeMonths": {
-            "partTime": "",
-            "fullTime": "Aug"
-        },
-        "duration": {
-            "partTime": "",
-            "fullTime": "1 Year"
-        },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
-    },
-    {
-        "id": "programme-074",
-        "programmeTitle": "Graduate Diploma in Economics",
-        "modeOfStudy": {
-            "partTime": false,
-            "fullTime": true
-        },
-        "academicLevel": "Masters",
-        "discipline": [
-            "Arts & Social Sciences"
-        ],
-        "subDiscipline": [
-            "Economics"
-        ],
-        "entryQualifications": {
-            "aLevel": false,
-            "oLevel": false,
-            "degree": true,
-            "diploma": false
-        },
-        "awardedBy": "University of London",
-        "programOverview": [
-            "Curriculum is by LSE, 6th globally in the 2019 QS WU subject rankings for Economics",
-            "Earn a University of London qualifcation examined by London School of Economics in a year",
-            "All pre-requisites are waived for the Graduate Diploma"
-        ],
-        "applicationPeriod": [
-            {
-                "intake": "Full-time- Sep 2021 Intake",
-                "period": "For local and international applicants:\n Application is now open."
-            }
-        ],
-        "programmeStructure": {
-            "coursework": false,
-            "examination": true
-        },
-        "overseaOpportunity": {
-            "exchange": false,
-            "transfer": false
-        },
-        "intakeMonths": {
-            "partTime": "",
-            "fullTime": " Sep"
-        },
-        "duration": {
-            "partTime": "",
-            "fullTime": "1 Year"
-        },
-        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
-    },
-    {
         "id": "programme-075",
         "programmeTitle": "MSc Fashion, Design and Luxury Management",
         "modeOfStudy": {
@@ -6189,6 +6033,112 @@
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUniversityOfWollongong.png?alt=media&token=8b923185-a4ec-4d81-85e7-7fc1782600cb"
     },
     {
+        "id": "programme-115",
+        "programmeTitle": "Bachelor of Science (Honours) in International Relations",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "International Relations",
+            "Politics"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, ranked 4th globally for Politics and International Studies (QSWU)",
+            "Suitable for those who wish to pursue a career in private and public sectors",
+            "SIM students apply what they learn by representing Singapore at the annual HNMUN in Boston"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time - Aug/Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            },
+            {
+                "intake": "Bridging EMA",
+                "period": "Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": true,
+            "transfer": true
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug, Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "3 Years"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
+        "id": "programme-116",
+        "programmeTitle": "International Foundation Programme",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Certificate",
+        "discipline": [
+            "Arts & Social Sciences",
+            "Business"
+        ],
+        "subDiscipline": [
+            "Social Sciences"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": true,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "A one-year pre-university in Economics, Psychology, International Relations and/or Accounting",
+            "Graduate will gain guaranteed entry to any LSE-led degree and Goldsmiths' computing degree in SIM",
+            "20% of SIM graduates enrolled into overseas universities like LSE, Leeds, Manchester, Nottingham"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time- August 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": "Aug"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
+    },
+    {
         "id": "programme-117",
         "programmeTitle": "Bachelor of Science (Business Administration)",
         "modeOfStudy": {
@@ -6241,5 +6191,55 @@
             "fullTime": "2-3 Years"
         },
         "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2Funiveristy-of-buffalo-logo.png?alt=media&token=d1c0dfc0-e090-49cb-a4b8-dcba4ed58359"
+    },
+    {
+        "id": "programme-118",
+        "programmeTitle": "Graduate Diploma in Economics",
+        "modeOfStudy": {
+            "partTime": false,
+            "fullTime": true
+        },
+        "academicLevel": "Masters",
+        "discipline": [
+            "Arts & Social Sciences"
+        ],
+        "subDiscipline": [
+            "Economics"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": true,
+            "diploma": false
+        },
+        "awardedBy": "University of London",
+        "programOverview": [
+            "Curriculum is by LSE, 6th globally in the 2019 QS WU subject rankings for Economics",
+            "Earn a University of London qualifcation examined by London School of Economics in a year",
+            "All pre-requisites are waived for the Graduate Diploma"
+        ],
+        "applicationPeriod": [
+            {
+                "intake": "Full-time- Sep 2021 Intake",
+                "period": "For local and international applicants:\n Application is now open."
+            }
+        ],
+        "programmeStructure": {
+            "coursework": false,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "",
+            "fullTime": " Sep"
+        },
+        "duration": {
+            "partTime": "",
+            "fullTime": "1 Year"
+        },
+        "uniLogo": "https://firebasestorage.googleapis.com/v0/b/fyp20s3-13.appspot.com/o/Universities%2FUOL-logo.png?alt=media&token=573177e1-2170-47a7-a3ed-a07344253a61"
     }
 ]
