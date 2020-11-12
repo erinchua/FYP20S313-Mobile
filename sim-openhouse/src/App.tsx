@@ -11,10 +11,10 @@ import Login from "./pages/Login";
 import AppU from "./AppU";
 import Menu from "./components/Menu";
 
-import { AuthContext, useAuthInit } from "./modules/auth";
 import "./css/TopNav.css";
 import "./css/Global.css";
 import "./css/Menu.css";
+import { AuthContext, useAuthInit } from "./modules/auth";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -35,9 +35,6 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 
-/* Temp files */
-import VincentTest from "./temp/VincentTest";
-
 const App: React.FC = () => {
   const { loading, auth } = useAuthInit();
 
@@ -56,9 +53,6 @@ const App: React.FC = () => {
               <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
               <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
               <Route path="/home" render={() => <Redirect to="/u/home" />} />
-
-              {/* Test components */}
-              <Route path="/vincenttest" component={VincentTest} exact={true} />
 
               <Route path="/u" component={AppU} exact={false} />
               <Route exact path="/" render={() => <Redirect to="/main" />} />

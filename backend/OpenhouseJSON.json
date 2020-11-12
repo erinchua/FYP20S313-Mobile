@@ -1,0 +1,210 @@
+[
+    {
+        "sim": {
+            "openhouse": {
+                "day": [
+                    {
+                        "date": "",
+                        "startTime": "",
+                        "endTime": ""
+                    }
+                ],
+                "programmes": {
+                    "programmeTalks": {
+                        "talkName": "The University of Warwick - Postgraduate Programme",
+                        "details": "Postgraduate Programme Seminar",
+                        "discipline": [],
+                        "awardingUni": "University of Warwick",
+                        "date": "21-Nov-2020",
+                        "startTime": "2:30PM",
+                        "endTime": "4:00PM",
+                        "venue": "SIM HQ BLK A LT A.2.17A",
+                        "capacityLimit": 80,
+                        "noRegistered": 0,
+                        "isLive": false,
+                        "hasRecording": false,
+                        "url": ""
+                    },
+                    "guidedTours": {
+                        "tourName": "",
+                        "date": "",
+                        "startTime": "",
+                        "endTime": "",
+                        "venue": ""
+                    },
+                    "gamesActivities": {
+                        "performances": {
+                            "performanceName": "",
+                            "date": "",
+                            "startTime": "",
+                            "endTime": "",
+                            "venue": ""
+                        },
+                        "games": {
+                            "gameBoothName": "Amazing Race - Campus Xplore",
+                            "boothNumber": "",
+                            "date": "",
+                            "startTime": "",
+                            "venue": "",
+                            "pointsAward": 0,
+                            "prizes": {
+                                "prizeName": "",
+                                "prizePointsCost": 0,
+                                "stock": 0,
+                                "venue": {
+                                    "day": [
+                                        {
+                                            "date": "",
+                                            "venue": ""
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "students": {
+                    "scheduler": {
+                        "registeredProgrammes": []
+                    },
+                    "forum": {
+                        "question": {},
+                        "comments": {
+                            "replies": {}
+                        }
+                    },
+                    "games": {
+                        "points": 0,
+                        "redeemed": []
+                    },
+                    "mobileSetting": {
+                        "announcementNotif": false,
+                        "openhouseNotif": false
+                    }
+                },
+                "information": {
+                    "feeback": {
+                        "attendedDate": "",
+                        "feedbackDescription": "",
+                        "natureOfFeedback": ""
+                    },
+                    "commonFAQ": {
+                        "faqQuestion": "",
+                        "faqAnswer": "",
+                        "faqType": ""
+                    },
+                    "announcements": {
+                        "title": "hello world",
+                        "details": "beep boop",
+                        "date": "10-Nov-2020",
+                        "time": "12:16AM",
+                        "datePosted": "4-Nov-2020"
+                    }
+                }
+            },
+            "information": {
+                "universities": {
+                    "universityName": "",
+                    "url": "",
+                    "logo": ""
+                },
+                "programmes": {
+                    "programmeTitle": "",
+                    "modeOfStudy": {
+                        "partTime": false,
+                        "fullTime": false
+                    },
+                    "academicLevel": "",
+                    "discipline": [],
+                    "subDiscipline": [],
+                    "entryQualifications": {
+                        "aLevel": false,
+                        "oLevel": false,
+                        "degree": false,
+                        "diploma": false
+                    },
+                    "awardedBy": "",
+                    "programOverview": [],
+                    "applicationPeriod": [
+                        {
+                            "intake": "",
+                            "period": ""
+                        }
+                    ],
+                    "programmeStructure": {
+                        "coursework": false,
+                        "examination": false
+                    },
+                    "overseaOpportunity": {
+                        "exchange": false,
+                        "transfer": false
+                    },
+                    "intakeMonths": {
+                        "partTime": "",
+                        "fullTime": ""
+                    },
+                    "duration": {
+                        "partTime": "",
+                        "fullTime": ""
+                    },
+                    "uniLogo": ""
+                },
+                "clubsAndCouncils": {
+                    "clubsAndCouncilTitle": "",
+                    "clubsAndCouncilDescription": "",
+                    "clubsAndCouncilsLogo": "",
+                    "categoryType": ""
+                },
+                "campusFacilities": {
+                    "facilityName": "Library",
+                    "blockName": "A",
+                    "location": "Blk A, Level 1"
+                },
+                "gettingToSim": {
+                    "car": {
+                        "carDescription": "",
+                        "carParkingDescription": ""
+                    },
+                    "bus": {
+                        "busStop": []
+                    },
+                    "mrt": {
+                        "line": [
+                            {
+                                "description": "",
+                                "stations": []
+                            }
+                        ]
+                    }
+                },
+                "contactInfo": {
+                    "contactTitle": "",
+                    "operatingHours": {
+                        "weekday": "",
+                        "weekend": "",
+                        "noOperation": ""
+                    },
+                    "contactNo": "",
+                    "email": "",
+                    "country": ""
+                },
+                "supportAndServices": {
+                    "scholarship": {
+                        "segment": "",
+                        "header": "",
+                        "content": ""
+                    },
+                    "bursary": {
+                        "segment": "",
+                        "header": "",
+                        "content": ""
+                    }
+                },
+                "studentCare": {
+                    "desc": "",
+                    "logo": ""
+                }
+            }
+        }
+    }
+]
