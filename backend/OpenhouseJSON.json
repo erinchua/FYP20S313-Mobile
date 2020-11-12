@@ -11,15 +11,15 @@
                 ],
                 "programmes": {
                     "programmeTalks": {
-                        "talkName": "The University of Warwick - Postgraduate Programme",
-                        "details": "Postgraduate Programme Seminar",
+                        "talkName": "",
+                        "details": "",
                         "discipline": [],
-                        "awardingUni": "University of Warwick",
-                        "date": "21-Nov-2020",
-                        "startTime": "2:30PM",
-                        "endTime": "4:00PM",
-                        "venue": "SIM HQ BLK A LT A.2.17A",
-                        "capacityLimit": 80,
+                        "awardingUni": "",
+                        "date": "",
+                        "startTime": "",
+                        "endTime": "",
+                        "venue": "",
+                        "capacityLimit": 0,
                         "noRegistered": 0,
                         "isLive": false,
                         "hasRecording": false,
@@ -41,7 +41,7 @@
                             "venue": ""
                         },
                         "games": {
-                            "gameBoothName": "Amazing Race - Campus Xplore",
+                            "gameBoothName": "",
                             "boothNumber": "",
                             "date": "",
                             "startTime": "",
@@ -94,11 +94,11 @@
                         "faqType": ""
                     },
                     "announcements": {
-                        "title": "hello world",
-                        "details": "beep boop",
-                        "date": "10-Nov-2020",
-                        "time": "12:16AM",
-                        "datePosted": "4-Nov-2020"
+                        "title": "",
+                        "details": "",
+                        "date": "",
+                        "time": "",
+                        "datePosted": ""
                     }
                 }
             },
@@ -156,9 +156,9 @@
                     "categoryType": ""
                 },
                 "campusFacilities": {
-                    "facilityName": "Library",
-                    "blockName": "A",
-                    "location": "Blk A, Level 1"
+                    "facilityName": "",
+                    "blockName": "",
+                    "location": ""
                 },
                 "gettingToSim": {
                     "car": {
