@@ -143,10 +143,12 @@ const Forum: React.FC = () => {
                 {agreedTOC === true ?
                     <>
                         <IonGrid id="forum-searchbar-container">
-                            <IonRow>
-                                <form onSubmit={e => { e.preventDefault(); history.push(`/u/forumSearch/${keyword}`); }}>
-                                    <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} enterkeyhint="search" id="forum-searchbar" animated></IonSearchbar>
-                                </form>
+                            <IonRow className="ion-justify-content-start">
+                                <IonCol size="12" className="ion-align-self-center forum-col">
+                                    <form onSubmit={e => { e.preventDefault(); history.push(`/u/forumSearch/${keyword}`); }}>
+                                        <IonSearchbar value={keyword} onIonChange={e => setKeyword(e.detail.value!)} enterkeyhint="search" id="forum-searchbar" animated></IonSearchbar>
+                                    </form>
+                                </IonCol>
                             </IonRow>
                         </IonGrid>
 

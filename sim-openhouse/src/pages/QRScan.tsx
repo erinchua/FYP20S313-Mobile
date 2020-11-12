@@ -34,7 +34,7 @@ const QRScan: React.FC = () => {
         <IonGrid>
           <IonRow className="ion-justify-content-center">
             <IonCol>
-              <IonButton color="dark" expand="block" onClick={openScanner}>Scan barcode</IonButton>
+              <IonButton color="dark" expand="block" onClick={openScanner}>Scan QR Code</IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>
