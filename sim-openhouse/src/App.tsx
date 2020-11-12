@@ -11,10 +11,10 @@ import Login from "./pages/Login";
 import AppU from "./AppU";
 import Menu from "./components/Menu";
 
+import { AuthContext, useAuthInit } from "./modules/auth";
 import "./css/TopNav.css";
 import "./css/Global.css";
 import "./css/Menu.css";
-import { AuthContext, useAuthInit } from "./modules/auth";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -34,6 +34,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+
 
 const App: React.FC = () => {
   const { loading, auth } = useAuthInit();
