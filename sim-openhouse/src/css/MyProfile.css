@@ -13,11 +13,10 @@
     font-size: 80%;
 }
 
-#qrCodeCol {
-    min-width: 40%;
-    min-height: 40%;
-    padding: 5%;
+.profileMainRow {
+    padding-top: 3%;
 }
+
 .profileRow {
     margin-right: 2%;
 }
@@ -84,15 +83,25 @@
 }
 
 #saveEditProfileBtnCol {
-    padding-top: 5%;
+    padding-top: 10%;
 }
 
 #saveEditProfileBtn {
     --background: #37474F;
     font-size: 80%;
+    min-width: 60%;
 }
 
-.errorMsg {
-    color: red;
-    font-size: small;
+#cancelEditProfileBtnCol {
+    padding-top: 5%;
 }
+
+#cancelEditProfileBtn {
+    --background: efefef;
+    color: #37474F;
+    border: 1px solid #37474F;
+    border-radius: 6px;
+    font-size: 80%;
+    min-width: 60%;
+}
+
