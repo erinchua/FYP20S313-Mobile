@@ -141,7 +141,7 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                 onDidDismiss={() => setAlert({ registerSuccess: false, registerFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
-                header={'Error Occurred'}
+                header={'Registration Unsuccessful'}
                 message={'There exists a performance in your scheduler at this timing. Please remove the existing performance from your scheduler first!'}
                 buttons={['Close']}
             ></IonAlert>

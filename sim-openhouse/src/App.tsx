@@ -5,7 +5,6 @@ import { IonReactRouter } from "@ionic/react-router";
 
 import Main from "./pages/Main";
 import ForgetPassword1 from "./pages/ForgetPassword/ForgetPassword1";
-import ForgetPassword2 from "./pages/unused/ForgetPassword2";
 import ForgetPassword3 from "./pages/ForgetPassword/ForgetPassword3";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
@@ -55,7 +54,6 @@ const App: React.FC = () => {
               <Route path="/registration" component={Registration} exact={true} />
               <Route path="/login" component={Login} exact={true} />
               <Route path="/forgetPassword1" component={ForgetPassword1} exact={true} />
-              <Route path="/forgetPassword2" component={ForgetPassword2} exact={true} />
               <Route path="/forgetPassword3" component={ForgetPassword3} exact={true} />
               <Route path="/home" render={() => <Redirect to="/u/home" />} />
 

@@ -17,7 +17,7 @@ const ForgetPassword1: React.FC = () => {
     const onSubmit = (data: any) => {
         try {
             if (data.emailID) {
-                auth.sendPasswordResetEmail(data.emailID, { url: 'http://localhost:8100/login', handleCodeInApp: true });
+                auth.sendPasswordResetEmail(data.emailID);
             } else {
                 throw data;
             }

@@ -11,7 +11,7 @@ import PrizesContent from '../../components/OpenHouseProgrammes/PrizesContent';
 import TopNav from '../../components/TopNav';
 import { db } from '../../firebase'
 import { useAuth } from '../../modules/auth';
-import { sortTimeAsc } from '../../modules/compare';
+import { sortNumAlphaAsc, sortTimeAsc } from '../../modules/compare';
 
 const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
     const { userID } = useAuth();
@@ -77,7 +77,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                 const data = doc.data();
                 activities.push(data);
             });
-            setGamesActivities(activities.sort((a: any, b: any) => sortTimeAsc(a.startTime, b.startTime)));
+            setGamesActivities(activities.sort((a: any, b: any) => sortNumAlphaAsc(a.boothNumber, b.boothNumber)));
         }).catch((error) => console.log(error));
 
         db.collection("Prizes").get().then((snapshot) => {
