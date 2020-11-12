@@ -18,7 +18,6 @@ export async function notification(date: string, time: string, description: stri
         }
 
         if (type === 'announcement') {
-            console.log("In notification announcement")
             if (!(await LocalNotifications.requestPermission()).granted || !isAllowAnnouncement) {
                 console.log("Permission denied")
                 return;
@@ -60,7 +59,7 @@ export async function notification(date: string, time: string, description: stri
         if (type === "announcement") {
             if (sysTime <= subTime) {
                 const scheduled = moment(subTime).toDate();
-                
+
                 await LocalNotifications.schedule({
                     notifications: [{
                         title: 'New announcement from SIM Openhouse',
