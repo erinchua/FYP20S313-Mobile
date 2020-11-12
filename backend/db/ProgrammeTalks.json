@@ -6,7 +6,7 @@
 		"details": "Postgraduate Programme Seminar",
 		"discipline": [
 			"Business",
-            "IT & Computer Science "
+			"IT & Computer Science "
 		],
 		"date": "21-Nov-2020",
 		"startTime": "2:30PM",
@@ -20,7 +20,7 @@
 	},
 	{
 		"id": "talk-200",
-		"talkName": "University of London – Master of Science in Professional Accountancy Programme",
+		"talkName": "University of London - Master of Science in Professional Accountancy Programme",
 		"awardingUni": "University of London",
 		"details": "Master of Science in Professional Accountancy Programme Seminar",
 		"discipline": [
@@ -38,11 +38,11 @@
 	},
 	{
 		"id": "talk-201",
-		"talkName": "University of London – MSc / Postgraduate Diploma in Data Science / Data Science and Artificial Intelligence / Data Science and Financial Technology, Postgraduate Certificate in Data Science Programme",
+		"talkName": "University of London - MSc / Postgraduate Diploma in Data Science / Data Science and Artificial Intelligence / Data Science and Financial Technology, Postgraduate Certificate in Data Science Programme",
 		"awardingUni": "University of London",
 		"details": "MSc / Postgraduate Diploma in Data Science / Data Science and Artificial Intelligence / Data Science and Financial Technology, Postgraduate Certificate in Data Science Programme Seminar",
 		"discipline": [
-            "IT & Computer Science"
+			"IT & Computer Science"
 		],
 		"date": "22-Nov-2020",
 		"startTime": "12:00PM",
@@ -78,7 +78,7 @@
 		"awardingUni": "University of Birmingham",
 		"details": "Master of Business Administration Programme Seminar",
 		"discipline": [
-            "Business"
+			"Business"
 		],
 		"date": "22-Nov-2020",
 		"startTime": "1:00PM",
@@ -92,11 +92,11 @@
 	},
 	{
 		"id": "talk-204",
-		"talkName": "University of Birmingham – Undergraduate Programme",
+		"talkName": "University of Birmingham - Undergraduate Programme",
 		"awardingUni": "University of Birmingham",
 		"details": "Undergraduate Programme Seminar",
 		"discipline": [
-            "Business"
+			"Business"
 		],
 		"date": "22-Nov-2020",
 		"startTime": "11:30AM",
@@ -110,7 +110,7 @@
 	},
 	{
 		"id": "talk-101",
-		"talkName": "University of London – Economics, Management, Finance and Social Sciences Programme",
+		"talkName": "University of London - Economics, Management, Finance and Social Sciences Programme",
 		"awardingUni": "University of London",
 		"details": "Economics, Management, Finance and Social Sciences Programme Seminar",
 		"discipline": [
@@ -129,11 +129,11 @@
 	},
 	{
 		"id": "talk-102",
-		"talkName": "University of London – Computer Science Undergraduate Programme",
+		"talkName": "University of London - Computer Science Undergraduate Programme",
 		"awardingUni": "University of London",
 		"details": "Computer Science Undergraduate Programme Seminar",
 		"discipline": [
-            "IT & Computer Science"
+			"IT & Computer Science"
 		],
 		"date": "21-Nov-2020",
 		"startTime": "11:30AM",
@@ -147,7 +147,7 @@
 	},
 	{
 		"id": "talk-205",
-		"talkName": "University of Birmingham – Undergraduate Programme",
+		"talkName": "University of Birmingham - Undergraduate Programme",
 		"awardingUni": "University of Birmingham",
 		"details": "Undergraduate Programme Seminar",
 		"discipline": [
@@ -165,7 +165,7 @@
 	},
 	{
 		"id": "talk-103",
-		"talkName": "University of Birmingham – Master of Science",
+		"talkName": "University of Birmingham - Master of Science",
 		"awardingUni": "University of Birmingham Seminar",
 		"details": "Master of Science",
 		"discipline": [
@@ -188,7 +188,7 @@
 		"details": "Postgraduate Programme Seminar",
 		"discipline": [
 			"Business",
-            "IT & Computer Science "
+			"IT & Computer Science "
 		],
 		"date": "21-Nov-2020",
 		"startTime": "2:30PM",
@@ -220,7 +220,7 @@
 	},
 	{
 		"id": "talk-105",
-		"talkName": "University of London – International Foundation Programme Briefing",
+		"talkName": "University of London - International Foundation Programme Briefing",
 		"awardingUni": "University of London",
 		"details": "International Foundation Programme Briefing",
 		"discipline": [
