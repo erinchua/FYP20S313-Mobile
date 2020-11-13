@@ -1,4 +1,4 @@
-import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRow, IonTextarea } from '@ionic/react';
+import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRouterLink, IonRow, IonTextarea } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
@@ -9,10 +9,10 @@ import "../../css/Forum.css";
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 
-const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
+const ForumQuestions: React.FC<{ comments: any[] }> = () => {
     const { userID } = useAuth();
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [showEditCommentModal, setShowEditCommentModal] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [comments, setComments] = useState([]);
@@ -51,15 +51,17 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
     useEffect(() => {
         return db.collection('Forum').doc(userID).collection('Comments').where("deleted", "==", false).onSnapshot(snaps => {
             const posts: any = [];
-            
+
             snaps.forEach(async (snap) => {
                 let post: any = { ...snap.data() }
 
                 await db.collection('Forum').get().then(users => {
                     users.forEach(user => {
                         return db.collection('Forum').doc(user.id).collection('Questions').doc(snap.data().questionId.toString()).onSnapshot(question => {
-                            if(question.exists) {
+                            if (question.exists) {
+                                post.questionId = +question.data()?.id;
                                 post.question = question.data()?.entry;
+                                post.askerId = question.data()?.posterId;
                                 post.questionRemoved = question.data()?.deleted;
                             }
                         });
@@ -88,7 +90,12 @@ const ForumQuestions: React.FC<{ comments: any[] }> = (props) => {
                 </IonRow>
                 {comments.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.questionRemoved === false ? post.question : "[deleted]"}</IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">
+                            {post.questionRemoved === false ?
+                                <IonRouterLink href={`/u/forumViewQuestion/${post.questionId}/${post.askerId}`}>{post.question}</IonRouterLink>
+                                : "[deleted]"
+                            }
+                        </IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.hasOwnProperty('commentId') === false ? post.noOfReplies : "-"}</IonCol>
