@@ -49,6 +49,7 @@ const MyProfile: React.FC = () => {
     };
 
     const [changePasswordModal, setChangePasswordModal] = useState(false);
+    const [changePasswordErrorAlert, setChangePasswordErrorAlert] = useState(false);
 
     const currentPasswordRef = useRef({});
     const newPasswordRef = useRef({});
@@ -71,6 +72,7 @@ const MyProfile: React.FC = () => {
             }
         } catch (e) {
             setPasswordAlert({ success: false, error: true });
+            setChangePasswordErrorAlert(true);
             return console.log(e);
         } finally {
             setLoading(false);
@@ -172,6 +174,7 @@ const MyProfile: React.FC = () => {
                 </IonContent>
             </IonModal>
 
+            {/* Change Password Success Alert */}
             <IonAlert
                 isOpen={passwordAlert.success}
                 onDidDismiss={() => setPasswordAlert({ success: false, error: false })}
@@ -184,6 +187,24 @@ const MyProfile: React.FC = () => {
                         text: 'Close',
                         handler: () => {
                             setChangePasswordModal(false);
+                        }
+                    }
+                ]}
+            ></IonAlert>
+
+            {/* Change Password Fail Alert */}
+            <IonAlert
+                isOpen={changePasswordErrorAlert}
+                onDidDismiss={() => setChangePasswordErrorAlert(false)}
+                cssClass='alertBox'
+                mode='md'
+                header={'Failed to Change Password'}
+                message={'Please check your current password!'}
+                buttons={[
+                    {
+                        text: 'Close',
+                        handler: () => {
+                            setChangePasswordErrorAlert(false);
                         }
                     }
                 ]}
