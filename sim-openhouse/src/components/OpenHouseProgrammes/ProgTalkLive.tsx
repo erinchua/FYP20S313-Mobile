@@ -25,7 +25,7 @@ const ProgTalkLive: React.FC = () => {
                 <IonGrid className="iframeGrid">
                     <IonRow style={{paddingTop: "2%"}}>
                         <IonCol size="12" sizeSm="12" className="ion-text-center">
-                            <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&width=360`} className="iframVid" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                            <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&width=640`} width="360" height="480" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
