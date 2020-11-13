@@ -17,10 +17,10 @@ const CourseComparatorDetails: React.FC<{
                 <IonCol style={{ padding: "0" }}>
 
                     {/* Row 1: Programme */}
-                    <IonRow className="courseComparatorRow" class="ion-align-items-center">
+                    <IonRow className="courseComparatorRow">
                         {/* Header */}
-                        <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-text-center">
-                            <IonTitle className="courseComparatorTitle">
+                        <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-align-self-center">
+                            <IonTitle className="courseComparatorTitle" class="ion-text-center">
                                 <div className="ion-text-wrap">Programme</div>
                             </IonTitle>
                         </IonCol>
@@ -30,8 +30,8 @@ const CourseComparatorDetails: React.FC<{
                             return (
                                 <IonCol size="4" sizeSm="4" className="courseComparatorProgCol" key={programme.id + "row1"}>
                                     {/* Uni Img */}
-                                    <IonRow class="ion-align-items-center">
-                                        <IonCol class="ion-text-center">
+                                    <IonRow class="ion-align-items-center" className="courseComparatorUniLogoRow">
+                                        <IonCol class="ion-text-center" className="courseComparatorUniLogoCol">
                                             <img src={programme.uniLogo} alt={programme.programmeTitle} className="courseComparatorUniImg"></img>
                                         </IonCol>
                                     </IonRow>
@@ -57,9 +57,9 @@ const CourseComparatorDetails: React.FC<{
 
 
                     {/* Row 2: About The Programme */}
-                    <IonRow className="courseComparatorRow" class="ion-align-items-center">
+                    <IonRow className="courseComparatorRow">
                         {/* Header */}
-                        <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-text-center">
+                        <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-align-self-center">
                             <IonTitle className="courseComparatorTitle">
                                 <div className="ion-text-wrap">About The Programme</div>
                             </IonTitle>
@@ -88,9 +88,9 @@ const CourseComparatorDetails: React.FC<{
 
 
                     {/* Row 3: Application Period */}
-                    <IonRow className="courseComparatorRow" class="ion-align-items-center">
+                    <IonRow className="courseComparatorRow">
                         {/* Header */}
-                        <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-text-center">
+                        <IonCol size="4" sizeSm="4" className="courseComparatorTitleCol" class="ion-align-self-center">
                             <IonTitle className="courseComparatorTitle">
                                 <div className="ion-text-wrap">Application Period</div>
                             </IonTitle>
