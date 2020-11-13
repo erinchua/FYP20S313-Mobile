@@ -90,13 +90,13 @@ const ForumQuestions: React.FC = () => {
                 </IonRow>
                 {comments.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">
+                        <IonCol className="forumQnsCom-Data ion-text-wrap ion-text-left">
                             {post.questionRemoved === false ?
-                                <IonRouterLink href={`/u/forumViewQuestion/${post.questionId}/${post.askerId}`}>{post.question}</IonRouterLink>
+                                <IonRouterLink href={`/u/forumViewQuestion/${post.questionId}/${post.askerId}`} className="forumViewLink">{post.question}</IonRouterLink>
                                 : "[deleted]"
                             }
                         </IonCol>
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap ion-text-left">{post.entry}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.hasOwnProperty('commentId') === false ? post.noOfReplies : "-"}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">

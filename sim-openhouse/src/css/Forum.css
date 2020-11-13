@@ -199,7 +199,7 @@
     text-align: center;
     min-width: 15%;
     font-size: 70%;
-    padding: 1% 0%;
+    padding: 1%;
 }
 
 .forumQnsCom-DataBtn {
@@ -225,6 +225,14 @@
 #addComment-commentText {
     font-weight: bold;
     font-size: 90%;
+}
+
+.forumViewLink {
+    color: #434343;
+}
+
+.forumViewLink:hover {
+    color: #537A94;
 }
 
 /* No Comment at Forum View Question */
