@@ -9,15 +9,15 @@ import "../../css/Forum.css";
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 
-const ForumQuestions: React.FC<{ questions: any[] }> = () => {
+const ForumQuestions: React.FC = () => {
     const { userID } = useAuth();
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [showEditQuestionModal, setShowEditQuestionModal] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [entry, setEntry] = useState("");
-    const [toBeEdited, setToBeEdited] = useState("");
+    const [toBeEdited, setToBeEdited] = useState(0);
     const [toBeDeleted, setToBeDeleted] = useState("");
 
     const handleDelete = async (postId: string) => {
@@ -54,7 +54,6 @@ const ForumQuestions: React.FC<{ questions: any[] }> = () => {
 
             snaps.forEach(snap => posts.push(snap.data()));
             setQuestions(posts);
-            setLoading(false);
         });
     }, []);
 
@@ -70,16 +69,14 @@ const ForumQuestions: React.FC<{ questions: any[] }> = () => {
                 </IonRow>
                 {questions.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">
-                            <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.posterId}`}>
-                                {post.entry}
-                            </IonRouterLink>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap ion-text-left">
+                            <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.posterId}`} className="forumViewLink">{post.entry}</IonRouterLink>
                         </IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.noOfComments}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
                             {/* <Forum_EditQuestionModal /> */}
-                            <IonButton onClick={() => [setShowEditQuestionModal(true), setToBeEdited(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
+                            <IonButton onClick={() => [setShowEditQuestionModal(true), setToBeEdited(post.id), setEntry(post.entry)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
                         </IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
                             {/* <Forum_DeleteQuestion /> */}
