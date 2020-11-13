@@ -1,4 +1,4 @@
-import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRow, IonTextarea } from '@ionic/react';
+import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRouterLink, IonRow, IonTextarea } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
@@ -9,10 +9,10 @@ import "../../css/Forum.css";
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 
-const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
+const ForumQuestions: React.FC<{ questions: any[] }> = () => {
     const { userID } = useAuth();
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [deleteAlert, setDeleteAlert] = useState({ alert: false, loading: false });
     const [showEditQuestionModal, setShowEditQuestionModal] = useState(false);
     const [questions, setQuestions] = useState([]);
@@ -26,7 +26,7 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
             await db.collection('Forum').doc(userID).collection('Questions').doc(postId).update({
                 deleted: true
             });
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         } finally {
             setDeleteAlert({ alert: false, loading: false });
@@ -39,7 +39,7 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
             await db.collection('Forum').doc(userID).collection('Questions').doc(postId).update({
                 entry: entry
             });
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         } finally {
             setShowEditQuestionModal(false);
@@ -51,9 +51,10 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
     useEffect(() => {
         return db.collection('Forum').doc(userID).collection('Questions').where("deleted", "==", false).onSnapshot(snaps => {
             const posts: any = [];
-            
+
             snaps.forEach(snap => posts.push(snap.data()));
             setQuestions(posts);
+            setLoading(false);
         });
     }, []);
 
@@ -69,7 +70,11 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
                 </IonRow>
                 {questions.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap">
+                            <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.posterId}`}>
+                                {post.entry}
+                            </IonRouterLink>
+                        </IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.noOfComments}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
@@ -86,7 +91,7 @@ const ForumQuestions: React.FC<{ questions: any[] }> = (props) => {
             <IonModal isOpen={showEditQuestionModal} cssClass='post-question-modal' onDidDismiss={() => setShowEditQuestionModal(false)}>
                 <IonContent>
                     <IonGrid id="postQns-modal-container">
-                        <IonRow style={{paddingTop: '1%'}}>
+                        <IonRow style={{ paddingTop: '1%' }}>
                             <IonLabel id="postQns-title">Edit Question</IonLabel>
                         </IonRow>
                         <IonItemDivider />
