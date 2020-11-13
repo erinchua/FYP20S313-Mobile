@@ -69,9 +69,9 @@ const ForumQuestions: React.FC = () => {
                 </IonRow>
                 {questions.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
-                        <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.posterId}`}>
-                            {post.entry}
-                        </IonRouterLink>
+                        <IonCol className="forumQnsCom-Data ion-text-wrap ion-text-left">
+                            <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.posterId}`} className="forumViewLink">{post.entry}</IonRouterLink>
+                        </IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.noOfComments}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
