@@ -166,8 +166,8 @@
 	{
 		"id": "talk-103",
 		"talkName": "University of Birmingham - Master of Science",
-		"awardingUni": "University of Birmingham Seminar",
-		"details": "Master of Science",
+		"awardingUni": "University of Birmingham",
+		"details": "Master of Science Seminar",
 		"discipline": [
 			"Business"
 		],
@@ -176,25 +176,6 @@
 		"endTime": "5:30PM",
 		"venue": "SIM HQ BLK B LT B.2.01",
 		"capacityLimit": 150,
-		"noRegistered": 0,
-		"isLive": false,
-		"hasRecording": false,
-		"url": ""
-	},
-	{
-		"id": "talk-104",
-		"talkName": "The University of Warwick - Postgraduate Programme",
-		"awardingUni": "University of Warwick",
-		"details": "Postgraduate Programme Seminar",
-		"discipline": [
-			"Business",
-			"IT & Computer Science "
-		],
-		"date": "21-Nov-2020",
-		"startTime": "2:30PM",
-		"endTime": "4:00PM",
-		"venue": "SIM HQ BLK A LT A.2.17A",
-		"capacityLimit": 80,
 		"noRegistered": 0,
 		"isLive": false,
 		"hasRecording": false,
@@ -219,7 +200,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-105",
+		"id": "talk-104",
 		"talkName": "University of London - International Foundation Programme Briefing",
 		"awardingUni": "University of London",
 		"details": "International Foundation Programme Briefing",
@@ -238,7 +219,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-106",
+		"id": "talk-105",
 		"talkName": "University of Wollongong - Computer Science Undergraduate",
 		"awardingUni": "University of Wollongong",
 		"details": "Computer Science Undergraduate Seminar",
@@ -256,7 +237,7 @@
 		"url": "https://www.facebook.com/permalink.php?story_fbid=135399435002258&id=109981057544096"
 	},
 	{
-		"id": "talk-107",
+		"id": "talk-106",
 		"talkName": "RMIT - Business Undergraduate",
 		"awardingUni": "RMIT University",
 		"details": "Business Undergraduate Seminar",
@@ -292,7 +273,7 @@
 		"url": "https://www.facebook.com/109981057544096/videos/355877758816433/"
 	},
 	{
-		"id": "talk-108",
+		"id": "talk-107",
 		"talkName": "La Trobe - Business Undergraduate Programme",
 		"awardingUni": "La Trobe University",
 		"details": "Business Undergraduate Programme Seminar",
@@ -328,7 +309,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-109",
+		"id": "talk-108",
 		"talkName": "The University of Sydney - Nursing Undergraduate Programme",
 		"awardingUni": "University of Sydney",
 		"details": "Nursing Undergraduate Programme Seminar",
@@ -347,7 +328,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-110",
+		"id": "talk-109",
 		"talkName": "SIM Global Education - Business Graduate Programme",
 		"awardingUni": "Singapore Institute of Management",
 		"details": "Business Graduate Programme Briefing",
@@ -365,7 +346,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-111",
+		"id": "talk-110",
 		"talkName": "SIM Global Education - IT Graduate Diploma Programme",
 		"awardingUni": "Singapore Institute of Management",
 		"details": "IT Graduate Diploma Programme Briefing",
