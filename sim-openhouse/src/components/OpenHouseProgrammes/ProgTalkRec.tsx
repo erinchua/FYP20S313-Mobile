@@ -25,10 +25,13 @@ const ProgTalkRec: React.FC = () => {
                 <IonGrid className="progTalk-TableGrid">
                     <IonRow className="ion-justify-content-center">
                         <IonCol size="12" sizeSm="12">
-                            <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&show_text=0&width=640`} width="360" height="480" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                            <div style={{height: "50%"}}>
+                                <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&show_text=0&width=360`} className="iframeVideo" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                            </div>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
+
             </IonContent>
         </IonPage>
     );
