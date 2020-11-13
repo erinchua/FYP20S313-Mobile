@@ -1,4 +1,4 @@
-import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRow, IonTextarea } from '@ionic/react';
+import { IonAlert, IonButton, IonCol, IonContent, IonGrid, IonItemDivider, IonLabel, IonLoading, IonModal, IonRouterLink, IonRow, IonTextarea } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faEdit } from '@fortawesome/free-regular-svg-icons';
@@ -26,7 +26,7 @@ const ForumQuestions: React.FC = () => {
             await db.collection('Forum').doc(userID).collection('Questions').doc(postId).update({
                 deleted: true
             });
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         } finally {
             setDeleteAlert({ alert: false, loading: false });
@@ -39,7 +39,7 @@ const ForumQuestions: React.FC = () => {
             await db.collection('Forum').doc(userID).collection('Questions').doc(postId).update({
                 entry: entry
             });
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         } finally {
             setShowEditQuestionModal(false);
@@ -51,7 +51,7 @@ const ForumQuestions: React.FC = () => {
     useEffect(() => {
         return db.collection('Forum').doc(userID).collection('Questions').where("deleted", "==", false).onSnapshot(snaps => {
             const posts: any = [];
-            
+
             snaps.forEach(snap => posts.push(snap.data()));
             setQuestions(posts);
         });
@@ -69,7 +69,9 @@ const ForumQuestions: React.FC = () => {
                 </IonRow>
                 {questions.map((post: any) => (
                     <IonRow className="ion-justify-content-center" key={post.id}>
-                        <IonCol className="forumQnsCom-Data ion-text-wrap">{post.entry}</IonCol>
+                        <IonRouterLink href={`/u/forumViewQuestion/${post.id}/${post.posterId}`}>
+                            {post.entry}
+                        </IonRouterLink>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.dateTime}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.noOfComments}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
@@ -86,7 +88,7 @@ const ForumQuestions: React.FC = () => {
             <IonModal isOpen={showEditQuestionModal} cssClass='post-question-modal' onDidDismiss={() => setShowEditQuestionModal(false)}>
                 <IonContent>
                     <IonGrid id="postQns-modal-container">
-                        <IonRow style={{paddingTop: '1%'}}>
+                        <IonRow style={{ paddingTop: '1%' }}>
                             <IonLabel id="postQns-title">Edit Question</IonLabel>
                         </IonRow>
                         <IonItemDivider />
