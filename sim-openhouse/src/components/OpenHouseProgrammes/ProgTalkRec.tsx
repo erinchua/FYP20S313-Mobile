@@ -23,8 +23,8 @@ const ProgTalkRec: React.FC = () => {
 
             <IonContent fullscreen className="progTalkIonContent">
                 <IonGrid className="progTalk-TableGrid">
-                    <IonRow className="ion-justify-content-center progTalk-TableHeader">
-                        <IonCol size="12" sizeSm="12" className="progTalk-DataHeader ion-text-wrap">
+                    <IonRow className="ion-justify-content-center">
+                        <IonCol size="12" sizeSm="12">
                             <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&show_text=0&width=640`} width="360" height="480" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
                         </IonCol>
                     </IonRow>
