@@ -129,3 +129,19 @@
     width: 50%;
     font-size: medium;
 }
+
+/************************ Iframe ************************/
+
+.iframeVid {
+    border: none;
+    height: 100vh;
+    width: 100%;
+}
+
+.iframeGrid {
+    --ion-grid-width-xs: 100%;
+    --ion-grid-width-lg: 100%;
+    --ion-grid-width-md: 100%;
+    --ion-grid-width-sm: 100%;
+    --ion-grid-width-xl: 100%;
+}

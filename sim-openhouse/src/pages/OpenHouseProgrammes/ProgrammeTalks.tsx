@@ -249,123 +249,92 @@ const ProgrammeTalks: React.FC = () => {
 
 				<IonToolbar className="segmentHeader">
 					<IonSegment scrollable value={tab} className="segmentHeader">
-						<IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>
-							Schedule
-            </IonSegmentButton>
-						<IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>
-							Live Talks
-            </IonSegmentButton>
-						<IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>
-							Past Recordings
-            </IonSegmentButton>
+						<IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>Schedule</IonSegmentButton>
+
+						<IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>Live Talks</IonSegmentButton>
+						
+						<IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>Past Recordings</IonSegmentButton>
 					</IonSegment>
 				</IonToolbar>
+
+				{tab === "schedule" &&
+					<>
+						<IonToolbar>
+							<IonSegment scrollable value={dayNum}>
+								<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+									Day 1: {openhouseDates[0]}
+								</IonSegmentButton>
+								<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+									Day 2: {openhouseDates[1]}
+								</IonSegmentButton>
+							</IonSegment>
+						</IonToolbar>
+
+						{/* Filter Button */}
+						<IonToolbar className="filterHeaderToolBar">
+							<IonButtons slot="end" id="filterIcon">
+								<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
+									<FontAwesomeIcon size="lg" icon={faFilter} />
+								</IonButton>
+							</IonButtons>
+						</IonToolbar>
+					</>
+				}
+
+				{tab === "liveTalks" &&
+					<IonToolbar>
+						<IonSegment scrollable value={dayNum}>
+							<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+								Day 1: {openhouseDates[0]}
+							</IonSegmentButton>
+							<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+								Day 2: {openhouseDates[1]}
+							</IonSegmentButton>
+						</IonSegment>
+					</IonToolbar>
+				}
+
+				{tab === "pastRecordings" &&
+					<>
+						<IonToolbar>
+							<IonSegment scrollable value={dayNum}>
+								<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
+									Day 1: {openhouseDates[0]}
+								</IonSegmentButton>
+								<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
+									Day 2: {openhouseDates[1]}
+								</IonSegmentButton>
+							</IonSegment>
+						</IonToolbar>
+				
+						{/* Filter Button */}
+						<IonToolbar className="filterHeaderToolBar">
+							<IonButtons slot="end" id="filterIcon">
+								<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
+									<FontAwesomeIcon size="lg" icon={faFilter} />
+								</IonButton>
+							</IonButtons>
+						</IonToolbar>
+					</>
+				}
 
 			</IonHeader>
 
 			<IonContent fullscreen className="progTalkIonContent">
 
 				{/* Programme Talks Schedule */}
-				{tab === "schedule" ? (
-					<>
-						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-							<IonRow className="progTalk-IonRowCol">
-								<IonToolbar>
-									<IonSegment scrollable value={dayNum}>
-										<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-											Day 1: {openhouseDates[0]}
-										</IonSegmentButton>
-										<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-											Day 2: {openhouseDates[1]}
-										</IonSegmentButton>
-									</IonSegment>
-								</IonToolbar>
-							</IonRow>
-
-							{/* Filter Button */}
-							<IonRow>
-								<IonHeader className="filterHeader">
-									<IonToolbar className="filterHeaderToolBar">
-										<IonButtons slot="end" id="filterIcon">
-											<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
-												<FontAwesomeIcon size="lg" icon={faFilter} />
-											</IonButton>
-										</IonButtons>
-									</IonToolbar>
-								</IonHeader>
-							</IonRow>
-
-						</IonGrid>
-
-						<ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
-					</>
-				) : (
-						""
-					)
+				{tab === "schedule" &&
+					<ProgTalkSchedule day1={dayNum} day2={dayNum} programmeTalk={programmeTalk} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
 				}
 
 				{/* Live Talks */}
-				{tab === "liveTalks" ? (
-					<>
-						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-							<IonRow className="progTalk-IonRowCol">
-								<IonCol className="progTalk-IonRowCol">
-									<IonToolbar>
-										<IonSegment scrollable value={dayNum}>
-											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-												Day 1: {openhouseDates[0]}
-											</IonSegmentButton>
-											<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-												Day 2: {openhouseDates[1]}
-											</IonSegmentButton>
-										</IonSegment>
-									</IonToolbar>
-								</IonCol>
-							</IonRow>
-						</IonGrid>
-
-						<ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
-					</>
-				) : ("")
+				{tab === "liveTalks" &&
+					<ProgTalkLiveTalks day1={dayNum} day2={dayNum} liveTalk={liveTalk} openhouseDates={openhouseDates} />
 				}
 
 				{/* Past Recordings */}
-				{tab === "pastRecordings" ? (
-					<>
-						<IonGrid className="progTalk-IonRowCol progTalkIonGrid">
-							<IonRow className="progTalk-IonRowCol">
-								<IonCol className="progTalk-IonRowCol">
-									<IonToolbar>
-										<IonSegment scrollable value={dayNum}>
-											<IonSegmentButton value="day1" onClick={() => handleDayOne()} className="progTalk-DayTab">
-												Day 1: {openhouseDates[0]}
-											</IonSegmentButton>
-											<IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="progTalk-DayTab">
-												Day 2: {openhouseDates[1]}
-											</IonSegmentButton>
-										</IonSegment>
-									</IonToolbar>
-								</IonCol>
-							</IonRow>
-
-
-							{/* Filter Button */}
-							<IonRow>
-								<IonHeader className="filterHeader">
-									<IonToolbar className="filterHeaderToolBar">
-										<IonButtons slot="end" id="filterIcon">
-											<IonButton onClick={(e) => { setShowProgTalkFilterPopover({ open: true, event: e.nativeEvent }) }}>
-												<FontAwesomeIcon size="lg" icon={faFilter} />
-											</IonButton>
-										</IonButtons>
-									</IonToolbar>
-								</IonHeader>
-							</IonRow>
-						</IonGrid>
-
-						<ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
-					</>
-				) : ("")
+				{tab === "pastRecordings" &&
+					<ProgTalkPastRec day1={dayNum} day2={dayNum} recordedTalk={recordedTalk} openhouseDates={openhouseDates} />
 				}
 
 
