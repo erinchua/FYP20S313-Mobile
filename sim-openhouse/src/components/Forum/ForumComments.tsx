@@ -9,7 +9,7 @@ import "../../css/Forum.css";
 import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 
-const ForumQuestions: React.FC<{ comments: any[] }> = () => {
+const ForumQuestions: React.FC = () => {
     const { userID } = useAuth();
 
     const [loading, setLoading] = useState(true);
@@ -101,7 +101,7 @@ const ForumQuestions: React.FC<{ comments: any[] }> = () => {
                         <IonCol className="forumQnsCom-Data ion-text-wrap">{post.hasOwnProperty('commentId') === false ? post.noOfReplies : "-"}</IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
                             {/* <Forum_EditCommentModal /> */}
-                            <IonButton onClick={() => [setShowEditCommentModal(true), setToBeEdited(post.id)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
+                            <IonButton onClick={() => [setShowEditCommentModal(true), setToBeEdited(post.id), setEntry(post.entry)]} className="forumQnsCom-DataBtn" size="small" style={{ marginTop: "-5%", marginBottom: "-5%" }}><FontAwesomeIcon icon={faEdit} size="lg" /></IonButton>
                         </IonCol>
                         <IonCol className="forumQnsCom-Data ion-text-wrap">
                             {/* <Forum_DeleteComment /> */}
