@@ -11,7 +11,6 @@ import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { toDateObject } from '../../modules/convert';
 import { notification } from '../../modules/notifications';
-import { sortTimeAsc } from '../../modules/compare';
 
 const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, openhouseDates: any, scheduleItems: any[] }> = props => {
     const { userID } = useAuth();
@@ -53,6 +52,12 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                                                 if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                     check = true;
                                                 }
+
+                                                if (progStart < itemStart && progEnd > itemEnd) {
+                                                    if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                        check = true;
+                                                    }
+                                                }
                                             }
                                         });
 
@@ -69,6 +74,12 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
                                                 if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                     check = true;
                                                 }
+
+                                                if (progStart < itemStart && progEnd > itemEnd) {
+                                                    if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                        check = true;
+                                                    }
+                                                }
                                             }
                                         });
 
@@ -84,6 +95,12 @@ const ProgTalkSchedule: React.FC<{ day1: any, day2: any, programmeTalk: any, ope
 
                                                 if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                     check = true;
+                                                }
+
+                                                if (progStart < itemStart && progEnd > itemEnd) {
+                                                    if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                        check = true;
+                                                    }
                                                 }
                                             }
                                         });

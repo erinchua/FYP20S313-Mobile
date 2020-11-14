@@ -572,7 +572,7 @@ const FilterPopoverContent: React.FC<myProps> = props => {
                             <IonToolbar id="courseFilterPopoverBtnToolbar" class="ion-align-items-center">
                                 <IonRow class="ion-align-items-center" style={{ width: "100%" }}>
                                     <IonCol size="12" sizeSm="12" class="ion-text-center" style={{ padding: "0" }}>
-                                        <IonButton id="courseProgFilterBtn" onClick={() => props.filterFunction(props.filterCondition, props.setState)}>FILTER</IonButton>
+                                        <IonButton id="courseProgFilterBtn" onClick={() => props.onUpdateFilter(currentDiscFilter.current, currentUniFilter.current)}>FILTER</IonButton>
                                     </IonCol>
                                 </IonRow>
                             </IonToolbar>

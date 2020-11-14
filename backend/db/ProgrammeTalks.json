@@ -167,7 +167,7 @@
 		"id": "talk-104",
 		"talkName": "University of Birmingham - Master of Science",
 		"awardingUni": "University of Birmingham",
-		"details": "Master of Science Seminar",
+		"details": "Master of Science",
 		"discipline": [
 			"Business"
 		],
@@ -175,43 +175,6 @@
 		"startTime": "4:00PM",
 		"endTime": "5:30PM",
 		"venue": "SIM HQ BLK B LT B.2.01",
-		"capacityLimit": 150,
-		"noRegistered": 0,
-		"isLive": false,
-		"hasRecording": false,
-		"url": ""
-	},
-	{
-		"id": "talk-205",
-		"talkName": "The University of Warwick - Postgraduate Programme",
-		"awardingUni": "University of Warwick",
-		"details": "Postgraduate Programme Seminar",
-		"discipline": [
-			"Business",
-			"IT & Computer Science "
-		],
-		"date": "22-Nov-2020",
-		"startTime": "2:30PM",
-		"endTime": "4:00PM",
-		"venue": "SIM HQ BLK A LT A.2.17A",
-		"capacityLimit": 80,
-		"noRegistered": 0,
-		"isLive": false,
-		"hasRecording": false,
-		"url": ""
-	},
-	{
-		"id": "talk-206",
-		"talkName": "University of Birmingham - Master of Business Administration Programme",
-		"awardingUni": "University of Birmingham",
-		"details": "Master of Business Administration Programme Seminar",
-		"discipline": [
-			"Business"
-		],
-		"date": "22-Nov-2020",
-		"startTime": "1:00PM",
-		"endTime": "2:30PM",
-		"venue": "SIM HQ BLK B LT B.2.04",
 		"capacityLimit": 150,
 		"noRegistered": 0,
 		"isLive": false,

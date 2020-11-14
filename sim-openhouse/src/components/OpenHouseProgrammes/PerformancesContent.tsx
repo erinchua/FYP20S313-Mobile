@@ -46,6 +46,12 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 check = true;
                                             }
+
+                                            if (progStart < itemStart && progEnd > itemEnd) {
+                                                if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                    check = true;
+                                                }
+                                            }
                                         }
                                     });
 
@@ -62,6 +68,12 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 check = true;
                                             }
+
+                                            if (progStart < itemStart && progEnd > itemEnd) {
+                                                if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                    check = true;
+                                                }
+                                            }
                                         }
                                     });
 
@@ -77,6 +89,12 @@ const PerformancesContent: React.FC<{ day1: any, day2: any, performances: any, o
 
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 check = true;
+                                            }
+
+                                            if (progStart < itemStart && progEnd > itemEnd) {
+                                                if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                    check = true;
+                                                }
                                             }
                                         }
                                     });

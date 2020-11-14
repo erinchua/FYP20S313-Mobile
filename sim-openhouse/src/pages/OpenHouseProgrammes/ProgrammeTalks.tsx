@@ -15,6 +15,7 @@ import { db } from '../../firebase';
 import { useAuth } from '../../modules/auth';
 import { ProgrammeTalk, TalkFilter, ProgrammeFilter } from '../../modules/map'
 import { sortTimeAsc } from '../../modules/compare';
+import { disc } from 'ionicons/icons';
 
 
 const ProgrammeTalks: React.FC = () => {
@@ -106,14 +107,12 @@ const ProgrammeTalks: React.FC = () => {
 
 	//For Filters
 
-	const [filterCondition, setFilterCondition] = useState<ProgrammeFilter>({
-		mos: [],
+	const [filterCondition, setFilterCondition] = useState<TalkFilter>({
 		discipline: ['Arts & Social Sciences', 'Business', 'IT & Computer Science', 'Nursing', 'Specialty'],
-		uni: [],
-		acadLvl: [],
-		entry: [],
-		subDisc: []
+		uni: []
 	})
+
+
 
 	const updateScheduleTalks = (data: ProgrammeTalk[]) => {
 		setProgrammeTalk(data)
@@ -124,8 +123,8 @@ const ProgrammeTalks: React.FC = () => {
 	}
 
 
-	const filterTalks = async (condition: TalkFilter, callback: any) => {
-
+	const filterTalks = async (condition: TalkFilter) => {
+		console.log(JSON.stringify(condition))
 		const initialList: ProgrammeTalk[] = []
 		let filteredList: ProgrammeTalk[] = []
 		let segmentFilter: ProgrammeTalk[] = []
@@ -147,6 +146,8 @@ const ProgrammeTalks: React.FC = () => {
 						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
+					//Removed the duplicated talks
+					discFiltered = Array.from(new Set(discFiltered))
 					filteredList = discFiltered
 				}
 				else {
@@ -168,11 +169,11 @@ const ProgrammeTalks: React.FC = () => {
 
 		}
 		)
-		callback(filteredList)
+		setProgrammeTalk(filteredList)
 
 	}
 
-	const filterRecTalks = async (condition: TalkFilter, callback: any) => {
+	const filterRecTalks = async (condition: TalkFilter) => {
 
 		const initialList: ProgrammeTalk[] = []
 		let filteredList: ProgrammeTalk[] = []
@@ -196,6 +197,7 @@ const ProgrammeTalks: React.FC = () => {
 						segmentFilter = initialList.filter(programme => programme.discipline.includes(value))
 						discFiltered = discFiltered.concat(segmentFilter)
 					})
+					discFiltered = Array.from(new Set(discFiltered))
 					filteredList = discFiltered
 				}
 				else {
@@ -217,26 +219,27 @@ const ProgrammeTalks: React.FC = () => {
 
 		}
 		)
-		callback(filteredList)
+		setRecordedTalk(filteredList)
 	}
 
-	const onUpdateFilter = (mosFilter: string[], discFilter: string[], uniFilter: string[], acadLvlFilter: string[], entryFilter: string[], subDiscFilter: string[]) => {
+	useEffect(() => {
+		if (tab === 'schedule')
+			filterTalks(filterCondition)
+
+		else if (tab === 'pastRecordings')
+			filterRecTalks(filterCondition)
+
+	}, [filterCondition])
+
+	const onUpdateFilter = (discFilter: string[], uniFilter: string[]) => {
 
 		setFilterCondition(prevState => {
 			let filter = { ...prevState };
 			Object.keys(filter).map(key => {
-				if (key === 'mos')
-					filter[key] = mosFilter;
 				if (key === 'discipline')
 					filter[key] = discFilter;
 				if (key === 'uni')
 					filter[key] = uniFilter;
-				if (key === 'acadLvl')
-					filter[key] = acadLvlFilter;
-				if (key === 'entry')
-					filter[key] = entryFilter;
-				if (key === 'subDisc')
-					filter[key] = subDiscFilter;
 			})
 			return filter;
 		})
@@ -252,7 +255,7 @@ const ProgrammeTalks: React.FC = () => {
 						<IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>Schedule</IonSegmentButton>
 
 						<IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>Live Talks</IonSegmentButton>
-						
+
 						<IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>Past Recordings</IonSegmentButton>
 					</IonSegment>
 				</IonToolbar>
@@ -306,7 +309,7 @@ const ProgrammeTalks: React.FC = () => {
 								</IonSegmentButton>
 							</IonSegment>
 						</IonToolbar>
-				
+
 						{/* Filter Button */}
 						<IonToolbar className="filterHeaderToolBar">
 							<IonButtons slot="end" id="filterIcon">

@@ -217,6 +217,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         segmentFilter = filteredList.filter(programme => programme.discipline.includes(value))
                         discFiltered = discFiltered.concat(segmentFilter)
                     })
+                    discFiltered = Array.from(new Set(discFiltered))
                     filteredList = discFiltered
                 }
 
@@ -275,6 +276,7 @@ const StudySIMProgList: React.FC<myProps & StudySIMProgList_Props> = (props) => 
                         segmentFilter = filteredList.filter(programme => programme.subDiscipline.includes(value))
                         subDiscFiltered = subDiscFiltered.concat(segmentFilter)
                     })
+                    subDiscFiltered = Array.from(new Set(subDiscFiltered))
                     filteredList = subDiscFiltered
 
                 }
