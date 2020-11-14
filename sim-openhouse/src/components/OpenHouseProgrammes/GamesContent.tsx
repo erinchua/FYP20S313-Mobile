@@ -51,7 +51,7 @@ const GamesContent: React.FC<{ day1: any, day2: any, gamesActivities: any, openh
                 cssClass='alertBox'
                 mode='md'
                 header={'Error Occurred'}
-                message={'There exists a game/ activity in your scheduler at this timing. Please remove the existing activity from your scheduler first!'}
+                message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
                 buttons={['Close']}
             ></IonAlert>
 
