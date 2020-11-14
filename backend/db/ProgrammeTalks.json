@@ -73,14 +73,14 @@
 		"url": ""
 	},
 	{
-		"id": "talk-203",
+		"id": "talk-101",
 		"talkName": "University of Birmingham - Master of Business Administration Programme",
 		"awardingUni": "University of Birmingham",
 		"details": "Master of Business Administration Programme Seminar",
 		"discipline": [
 			"Business"
 		],
-		"date": "22-Nov-2020",
+		"date": "21-Nov-2020",
 		"startTime": "1:00PM",
 		"endTime": "2:30PM",
 		"venue": "SIM HQ BLK B LT B.2.04",
@@ -91,7 +91,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-204",
+		"id": "talk-203",
 		"talkName": "University of Birmingham - Undergraduate Programme",
 		"awardingUni": "University of Birmingham",
 		"details": "Undergraduate Programme Seminar",
@@ -109,7 +109,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-101",
+		"id": "talk-102",
 		"talkName": "University of London - Economics, Management, Finance and Social Sciences Programme",
 		"awardingUni": "University of London",
 		"details": "Economics, Management, Finance and Social Sciences Programme Seminar",
@@ -128,7 +128,7 @@
 		"url": "https://www.facebook.com/permalink.php?story_fbid=128990558973984&id=112728337266873"
 	},
 	{
-		"id": "talk-102",
+		"id": "talk-103",
 		"talkName": "University of London - Computer Science Undergraduate Programme",
 		"awardingUni": "University of London",
 		"details": "Computer Science Undergraduate Programme Seminar",
@@ -146,7 +146,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-205",
+		"id": "talk-204",
 		"talkName": "University of Birmingham - Undergraduate Programme",
 		"awardingUni": "University of Birmingham",
 		"details": "Undergraduate Programme Seminar",
@@ -164,7 +164,7 @@
 		"url": ""
 	},
 	{
-		"id": "talk-103",
+		"id": "talk-104",
 		"talkName": "University of Birmingham - Master of Science",
 		"awardingUni": "University of Birmingham",
 		"details": "Master of Science",

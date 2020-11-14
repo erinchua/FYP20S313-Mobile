@@ -65,20 +65,17 @@ const GuidedTours: React.FC = () => {
                 <IonToolbar id="guidedTours-schedule">
                     <IonTitle id="guidedTours-schedule-text">Schedule</IonTitle>
                 </IonToolbar>
+
+                <IonToolbar>
+                    <IonSegment scrollable value={dayNum} id="guidedTours-mainHeader">
+                        <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleDayOne}>Day 1: {openhouseDates[0]}</IonSegmentButton>
+                        <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleDayTwo}>Day 2: {openhouseDates[1]}</IonSegmentButton>
+                    </IonSegment>
+                </IonToolbar>
             </IonHeader>
 
             <IonContent fullscreen id="guidedTours-content">
                 <IonGrid id="guidedTours-ionRowCol">
-                    <IonRow id="guidedTours-ionRowCol">
-                        <IonCol id="guidedTours-ionRowCol">
-                            <IonToolbar>
-                                <IonSegment scrollable value={dayNum} id="guidedTours-mainHeader">
-                                    <IonSegmentButton value="day1" className="guidedTours-heading" onClick={handleDayOne}>Day 1: {openhouseDates[0]}</IonSegmentButton>
-                                    <IonSegmentButton value="day2" className="guidedTours-heading" onClick={handleDayTwo}>Day 2: {openhouseDates[1]}</IonSegmentButton>
-                                </IonSegment>
-                            </IonToolbar>
-                        </IonCol>
-                    </IonRow>
                     <GuidedTourContent day1={dayNum} day2={dayNum} guidedTours={guidedTours} openhouseDates={openhouseDates} scheduleItems={scheduleItems} />
                 </IonGrid>
             </IonContent>

@@ -45,6 +45,12 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 check = true;
                                             }
+
+                                            if (progStart < itemStart && progEnd > itemEnd) {
+                                                if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                    check = true;
+                                                }
+                                            }
                                         }
                                     });
 
@@ -61,6 +67,12 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 check = true;
                                             }
+
+                                            if (progStart < itemStart && progEnd > itemEnd) {
+                                                if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                    check = true;
+                                                }
+                                            }
                                         }
                                     });
 
@@ -76,6 +88,12 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
 
                                             if ((progStart >= itemStart && progStart < itemEnd) || (progEnd > itemStart && progEnd <= itemEnd)) {
                                                 check = true;
+                                            }
+
+                                            if (progStart < itemStart && progEnd > itemEnd) {
+                                                if ((progEnd.getTime() - progStart.getTime()) > (itemEnd.getTime() - itemStart.getTime())) {
+                                                    check = true;
+                                                }
                                             }
                                         }
                                     });
@@ -142,7 +160,7 @@ const GuidedTourContent: React.FC<{ day1: any, day2: any, guidedTours: any, open
                 cssClass='alertBox'
                 mode='md'
                 header={'Registration Unsuccessful'}
-                message={'There exists a guided tour in your scheduler at this timing. Please remove the existing tour from your scheduler first!'}
+                message={'There exists an open house programme in your scheduler at this timing. Please remove the existing programme from your scheduler first!'}
                 buttons={['Close']}
             ></IonAlert>
 

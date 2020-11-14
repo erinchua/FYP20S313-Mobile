@@ -21,14 +21,17 @@ const ProgTalkLive: React.FC = () => {
                 <TopNav title="Live Talk" route="/u/openHouseMain/programmeTalks" backarrow={true} hamburger={true} />
             </IonHeader>
 
-            <IonContent fullscreen className="progTalkIonContent">
-                <IonGrid className="progTalk-TableGrid">
-                    <IonRow className="ion-justify-content-center progTalk-TableHeader">
-                        <IonCol size="12" sizeSm="12" className="progTalk-DataHeader ion-text-wrap">
-                            <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&width=360`} width="360" height="720" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen></iframe>
+            <IonContent fullscreen className="progTalkIonContent">            
+                <IonGrid className="progTalkIframeGrid">
+                    <IonRow className="ion-justify-content-center">
+                        <IonCol size="12" sizeSm="12" className="ion-text-center">
+                            <div style={{height: "50%"}}>
+                                <iframe src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${fbid}%2Fvideos%2F${id}%2F&width=360`} className="iframeVideo" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                            </div>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
+
             </IonContent>
         </IonPage>
     );
