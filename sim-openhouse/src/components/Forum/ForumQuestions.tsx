@@ -36,9 +36,11 @@ const ForumQuestions: React.FC = () => {
     const handleEdit = async (postId: string) => {
         try {
             setLoading(true);
-            await db.collection('Forum').doc(userID).collection('Questions').doc(postId).update({
-                entry: entry
-            });
+            if (entry !== "") {
+                await db.collection('Forum').doc(userID).collection('Questions').doc(postId).update({
+                    entry: entry
+                });
+            }
         } catch (e) {
             return console.log(e);
         } finally {
