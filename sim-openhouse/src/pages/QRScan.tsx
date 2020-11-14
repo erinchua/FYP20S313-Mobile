@@ -1,5 +1,5 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow } from '@ionic/react';
-import React from 'react';
+import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonAlert } from '@ionic/react';
+import React, { useState } from 'react';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import firebase from 'firebase';
 
@@ -11,6 +11,7 @@ import { useAuth } from '../modules/auth';
 
 const QRScan: React.FC = () => {
   const { userID } = useAuth();
+  const [qrErrorAlert, setQrErrorAlert] = useState(false);
 
   const openScanner = async () => {
     const data = await BarcodeScanner.scan();
@@ -21,25 +22,49 @@ const QRScan: React.FC = () => {
       await db.collection('Games').doc(userID).update({
         points: increment,
       });
+    } 
+    else {
+      setQrErrorAlert(true);
     }
   };
 
   return (
-    <IonPage>
-      <IonHeader>
-        <TopNav title="QR Scanner" route="/u/home" backarrow={ true } hamburger={ true }/>
-      </IonHeader>
+    <React.Fragment>
 
-      <IonContent fullscreen className="QR-content">
-        <IonGrid>
-          <IonRow className="ion-justify-content-center">
-            <IonCol>
-              <IonButton color="dark" expand="block" onClick={openScanner}>Scan QR Code</IonButton>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonContent>
-    </IonPage>
+      {/* Change Password Fail Alert */}
+      <IonAlert
+        isOpen={qrErrorAlert}
+        onDidDismiss={() => setQrErrorAlert(false)}
+        cssClass='alertBox'
+        mode='md'
+        header={'Invalid QR Code'}
+        message={'Please scan a valid QR code!'}
+        buttons={[
+          {
+            text: 'Close',
+            handler: () => {
+              setQrErrorAlert(false);
+            }
+          }
+        ]}
+      ></IonAlert>
+
+      <IonPage>
+        <IonHeader>
+          <TopNav title="QR Scanner" route="/u/home" backarrow={ true } hamburger={ true }/>
+        </IonHeader>
+
+        <IonContent fullscreen className="QR-content">
+          <IonGrid>
+            <IonRow className="ion-justify-content-center">
+              <IonCol>
+                <IonButton color="dark" expand="block" onClick={openScanner}>Scan QR Code</IonButton>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonContent>
+      </IonPage>
+    </React.Fragment>
   );
 };
 
