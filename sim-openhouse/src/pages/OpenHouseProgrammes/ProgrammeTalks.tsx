@@ -169,7 +169,6 @@ const ProgrammeTalks: React.FC = () => {
 
 		}
 		)
-		console.log("filteredList are " + filteredList.length)
 		setProgrammeTalk(filteredList)
 
 	}
@@ -256,7 +255,7 @@ const ProgrammeTalks: React.FC = () => {
 						<IonSegmentButton value="schedule" className="segmentBtn ion-text-wrap" id="progTalkSchedule" onClick={handleSchedule}>Schedule</IonSegmentButton>
 
 						<IonSegmentButton value="liveTalks" className="segmentBtn ion-text-wrap" id="progTalkLiveTalk" onClick={handleLiveTalks}>Live Talks</IonSegmentButton>
-						
+
 						<IonSegmentButton value="pastRecordings" className="segmentBtn ion-text-wrap" id="progTalkPastRec" onClick={handlePastRec}>Past Recordings</IonSegmentButton>
 					</IonSegment>
 				</IonToolbar>
@@ -310,7 +309,7 @@ const ProgrammeTalks: React.FC = () => {
 								</IonSegmentButton>
 							</IonSegment>
 						</IonToolbar>
-				
+
 						{/* Filter Button */}
 						<IonToolbar className="filterHeaderToolBar">
 							<IonButtons slot="end" id="filterIcon">
