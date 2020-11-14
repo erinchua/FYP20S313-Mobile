@@ -41,16 +41,26 @@ const Announcements: React.FC = () => {
                             return (
                                 <IonRow className="announcementRow" key={news.id}>
                                     <IonCol className="announcementColDetails">
-                                        <IonRow>
-                                            <IonTitle id="announcementTitle">{news.title}</IonTitle>
+                                        <IonRow style={{paddingTop: "0%"}}>
+                                            <IonCol>
+                                                <IonTitle id="announcementTitle">
+                                                    <div className="ion-text-wrap">{news.title}</div>
+                                                </IonTitle>
+                                            </IonCol>
                                         </IonRow>
 
-                                        <IonRow>
-                                            <IonLabel id="announcementDate">Posted on {news.date} ({day}), {news.time}</IonLabel>
+                                        <IonRow style={{paddingTop: "0%"}}>
+                                            <IonCol>
+                                                <IonLabel id="announcementDate">Posted on {news.date} ({day}), {news.time}</IonLabel>
+                                            </IonCol>
                                         </IonRow>
 
-                                        <IonRow>
-                                            <IonLabel id="announcementDetails">{news.details}</IonLabel>
+                                        <IonRow style={{paddingTop: "0%"}}>
+                                            <IonCol className="announcementCol">
+                                                <IonLabel id="announcementDetails">
+                                                    <div className="ion-text-wrap">{news.details}</div>
+                                                </IonLabel>
+                                            </IonCol>
                                         </IonRow>
                                     </IonCol>
                                 </IonRow>
