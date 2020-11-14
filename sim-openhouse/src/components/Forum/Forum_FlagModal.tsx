@@ -18,43 +18,46 @@ const Forum_FlagModal: React.FC<{ disabled: boolean, postId: number, postType: s
     const handleReport = async () => {
         try {
             setLoading(true);
-            const time = Date.now();
-            let name: string;
 
-            await db.collection('Students').doc(userID).get().then((doc: any) => {
-                name = doc.data().firstName + " " + doc.data().lastName;
-            });
+            if (reason !== "") {
+                const time = Date.now();
+                let name: string;
 
-            const batch = db.batch();
-
-            const reportRef = db.collection('Forum').doc(userID).collection('Reports').doc(time.toString());
-            batch.set(reportRef, {
-                id: +reportRef.id,
-                entry: reason,
-                postId: +props.postId,
-                postType: props.postType,
-                postContent: props.postContent,
-                offender: props.offender,
-                offenderId: props.offenderId,
-                reporter: name!,
-                reporterId: userID,
-                dateTime: new Date(time).toLocaleString().replace(/\//g, "-")
-            });
-
-            if (props.postType === "Question") {
-                const questionRef = db.collection('Forum').doc(props.offenderId).collection('Questions').doc(props.postId.toString());
-                batch.update(questionRef, {
-                    reported: true
+                await db.collection('Students').doc(userID).get().then((doc: any) => {
+                    name = doc.data().firstName + " " + doc.data().lastName;
                 });
-            }
-            if (props.postType === "Comment" || props.postType === "Reply") {
-                const questionRef = db.collection('Forum').doc(props.offenderId).collection('Comments').doc(props.postId.toString());
-                batch.update(questionRef, {
-                    reported: true
-                });
-            }
 
-            await batch.commit();
+                const batch = db.batch();
+
+                const reportRef = db.collection('Forum').doc(userID).collection('Reports').doc(time.toString());
+                batch.set(reportRef, {
+                    id: +reportRef.id,
+                    entry: reason,
+                    postId: +props.postId,
+                    postType: props.postType,
+                    postContent: props.postContent,
+                    offender: props.offender,
+                    offenderId: props.offenderId,
+                    reporter: name!,
+                    reporterId: userID,
+                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-")
+                });
+
+                if (props.postType === "Question") {
+                    const questionRef = db.collection('Forum').doc(props.offenderId).collection('Questions').doc(props.postId.toString());
+                    batch.update(questionRef, {
+                        reported: true
+                    });
+                }
+                if (props.postType === "Comment" || props.postType === "Reply") {
+                    const questionRef = db.collection('Forum').doc(props.offenderId).collection('Comments').doc(props.postId.toString());
+                    batch.update(questionRef, {
+                        reported: true
+                    });
+                }
+
+                await batch.commit();
+            }
         } catch (e) {
             return console.log(e);
         } finally {
