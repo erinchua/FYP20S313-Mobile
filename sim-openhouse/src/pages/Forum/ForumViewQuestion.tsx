@@ -80,28 +80,30 @@ const ForumViewQuestion: React.FC = () => {
             const time = Date.now();
             let name: string;
 
-            await db.collection('Students').doc(userID).get().then(doc => {
-                if (doc.exists)
-                    name = doc.data()?.firstName + " " + doc.data()?.lastName;
-            });
-            
-            const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
-            await docRef.set({
-                id: +docRef.id,
-                entry: entry,
-                posterName: name!,
-                posterId: userID,
-                dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
-                deleted: false,
-                reported: false,
-                commentId: +commentId,
-                questionId: +id
-            });
+            if (entry !== "") {
+                await db.collection('Students').doc(userID).get().then(doc => {
+                    if (doc.exists)
+                        name = doc.data()?.firstName + " " + doc.data()?.lastName;
+                });
 
-            const increment = firebase.firestore.FieldValue.increment(1);
-            await db.collection('Forum').doc(commenterId).collection('Comments').doc(commentId).update({
-                noOfReplies: increment,
-            });
+                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
+                await docRef.set({
+                    id: +docRef.id,
+                    entry: entry,
+                    posterName: name!,
+                    posterId: userID,
+                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
+                    deleted: false,
+                    reported: false,
+                    commentId: +commentId,
+                    questionId: +id
+                });
+
+                const increment = firebase.firestore.FieldValue.increment(1);
+                await db.collection('Forum').doc(commenterId).collection('Comments').doc(commentId).update({
+                    noOfReplies: increment,
+                });
+            }
         } catch (e) {
             return console.log(e);
         } finally {
@@ -151,10 +153,10 @@ const ForumViewQuestion: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true }/>
+                <TopNav title="Forum" route="/u/forum" backarrow={true} hamburger={true} />
             </IonHeader>
-            
-            <IonContent  fullscreen id="forum-content">
+
+            <IonContent fullscreen id="forum-content">
                 <IonGrid id="forum-searchbar-container">
                     <IonRow className="ion-justify-content-start">
                         <IonCol size="10" className="forum-col">
@@ -177,13 +179,13 @@ const ForumViewQuestion: React.FC = () => {
                         </IonRow>
                         <IonRow className="ion-align-items-end ion-justify-content-start" id="forum-question-detail-container">
                             <IonCol size="1" className="forum-col ion-align-self-end">
-                                <FontAwesomeIcon icon={faClock} size="sm"/>
+                                <FontAwesomeIcon icon={faClock} size="sm" />
                             </IonCol>
                             <IonCol size="6" className="forum-col ion-align-self-end">
                                 <IonText className="forum-question-details">{question.dateTime}</IonText>
                             </IonCol>
                             <IonCol size="1" className="forum-col ion-align-self-end">
-                                <FontAwesomeIcon icon={faCommentAlt} size="sm"/>
+                                <FontAwesomeIcon icon={faCommentAlt} size="sm" />
                             </IonCol>
                             <IonCol size="3" className="forum-col ion-align-self-end">
                                 <IonText className="forum-question-details">{question.commentCount}</IonText>
@@ -203,7 +205,7 @@ const ForumViewQuestion: React.FC = () => {
                         <IonCol className="ion-align-self-center">
                             <IonButton id="forum-addCommentBtn" size="small" onClick={() => setShowAddCommentModal(true)}>
                                 <FontAwesomeIcon icon={faComment} size="sm" />
-                                <IonText style={{marginLeft: '5%', fontSize: '90%'}}>Add Comment</IonText>
+                                <IonText style={{ marginLeft: '5%', fontSize: '90%' }}>Add Comment</IonText>
                             </IonButton>
                         </IonCol>
                     </IonRow>
@@ -211,7 +213,7 @@ const ForumViewQuestion: React.FC = () => {
 
                 {/* COMMENT */}
                 <IonGrid id="comment-main-container">
-                    { comments.length > 0 ? 
+                    {comments.length > 0 ?
                         comments.map((post: any) => {
                             if (post.commentId === null) {
                                 return (
@@ -225,16 +227,16 @@ const ForumViewQuestion: React.FC = () => {
                                             </IonRow>
                                             <IonRow className="ion-align-items-end ion-justify-content-start" id="comment-detail-container">
                                                 <IonCol size="1" className="forum-col ion-align-self-end">
-                                                    <FontAwesomeIcon icon={faClock} size="sm"/>
+                                                    <FontAwesomeIcon icon={faClock} size="sm" />
                                                 </IonCol>
                                                 <IonCol size="6" className="forum-col ion-align-self-end">
                                                     <IonText id="comment-details">{post.dateTime}</IonText>
                                                 </IonCol>
                                                 <IonCol size="4" className="forum-col ion-align-self-end">
-                                                    { (question.askerId === userID! || post.uid === userID!) ?
+                                                    {(question.askerId === userID! || post.uid === userID!) ?
                                                         <IonButton onClick={() => [setShowReplyCommentModal(true), setCommentDetails({ commenter: post.user, commentId: post.id, commenterId: post.uid })]} id="comment-replyBtn" size="small" disabled={post.removed === false ? false : true}>
-                                                            <FontAwesomeIcon icon={faCommentDots} size="sm"/>
-                                                            <IonText style={{marginLeft: '5%'}}>Reply</IonText>
+                                                            <FontAwesomeIcon icon={faCommentDots} size="sm" />
+                                                            <IonText style={{ marginLeft: '5%' }}>Reply</IonText>
                                                         </IonButton>
                                                         :
                                                         null
@@ -261,7 +263,7 @@ const ForumViewQuestion: React.FC = () => {
                                                         </IonRow>
                                                         <IonRow className="ion-align-items-end ion-justify-content-start" id="comment-detail-container">
                                                             <IonCol size="1" className="forum-col ion-align-self-end">
-                                                                <FontAwesomeIcon icon={faClock} size="sm"/>
+                                                                <FontAwesomeIcon icon={faClock} size="sm" />
                                                             </IonCol>
                                                             <IonCol size="10" className="forum-col ion-align-self-end">
                                                                 <IonText id="comment-details">{reply.dateTime}</IonText>
@@ -272,24 +274,24 @@ const ForumViewQuestion: React.FC = () => {
                                                         </IonRow>
                                                     </IonGrid>
                                                 )
-                                            }   
+                                            }
                                         })}
                                     </IonList>
                                 )
                             }
                         }
-                    ) : (
-                        <IonGrid>
-                            <IonRow className="ion-justify-content-center">
-                                <IonText color="medium" id="no-comment-text">There are currently no comments for this part.</IonText>
-                            </IonRow>
-                        </IonGrid>
-                    )}
+                        ) : (
+                            <IonGrid>
+                                <IonRow className="ion-justify-content-center">
+                                    <IonText color="medium" id="no-comment-text">There are currently no comments for this part.</IonText>
+                                </IonRow>
+                            </IonGrid>
+                        )}
                 </IonGrid>
                 <IonModal isOpen={showAddCommentModal} cssClass='post-question-modal' onDidDismiss={() => setShowAddCommentModal(false)}>
                     <IonContent>
                         <IonGrid id="postQns-modal-container">
-                            <IonRow style={{paddingTop: '1%'}}>
+                            <IonRow style={{ paddingTop: '1%' }}>
                                 <IonLabel id="postQns-title">Add Comment</IonLabel>
                             </IonRow>
                             <IonItemDivider />
@@ -306,7 +308,7 @@ const ForumViewQuestion: React.FC = () => {
                 <IonModal isOpen={showReplyCommentModal} cssClass='post-question-modal' onDidDismiss={() => setShowReplyCommentModal(false)}>
                     <IonContent>
                         <IonGrid id="postQns-modal-container">
-                            <IonRow style={{paddingTop: '1%'}}>
+                            <IonRow style={{ paddingTop: '1%' }}>
                                 <IonLabel id="postQns-title">Reply to {commentDetails.commenter}'s comment</IonLabel>
                             </IonRow>
                             <IonItemDivider />

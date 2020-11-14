@@ -38,22 +38,24 @@ const ForumUser: React.FC = () => {
             const time = new Date();
             let name: string;
 
-            await db.collection('Students').doc(userID).get().then(doc => {
-                if (doc.exists)
-                    name = doc.data()?.firstName + " " + doc.data()?.lastName;
-            });
+            if (entry !== "") {
+                await db.collection('Students').doc(userID).get().then(doc => {
+                    if (doc.exists)
+                        name = doc.data()?.firstName + " " + doc.data()?.lastName;
+                });
 
-            const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
-            await docRef.set({
-                id: +docRef.id,
-                entry: entry,
-                posterName: name!,
-                posterId: userID,
-                dateTime: time.toLocaleString().replace(/\//g, "-"),
-                noOfComments: 0,
-                deleted: false,
-                reported: false
-            });
+                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc((time.getTime()).toString());
+                await docRef.set({
+                    id: +docRef.id,
+                    entry: entry,
+                    posterName: name!,
+                    posterId: userID,
+                    dateTime: time.toLocaleString().replace(/\//g, "-"),
+                    noOfComments: 0,
+                    deleted: false,
+                    reported: false
+                });
+            }
         } catch (e) {
             return console.log(e);
         } finally {
