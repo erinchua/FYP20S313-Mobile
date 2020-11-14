@@ -110,9 +110,7 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
         <IonPage>
             <IonHeader>
                 <TopNav title="Open House Activities" route="/u/openHouseMain" backarrow={true} hamburger={true} />
-            </IonHeader>
 
-            <IonContent fullscreen id="openHouseActivities-content">
                 {/* Main Heading */}
                 <IonGrid className="openHouseActivities-grid">
                     <IonRow className="openHouseActivities-grid">
@@ -142,53 +140,46 @@ const OpenHouseActivities: React.FC<{ headingTitle: any }> = () => {
                 </IonGrid>
 
                 {/* Performances */}
-                {headingTitle === 'Performances' ?
-                    <>
-                        <IonGrid id="performancesContent-ionRowCol">
-                            <IonRow id="performancesContent-ionRowCol">
-                                <IonCol id="performancesContent-ionRowCol">
-                                    <IonToolbar>
-                                        <IonSegment scrollable value={dayNum}>
-                                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="performancesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
-                                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="performancesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
-                                        </IonSegment>
-                                    </IonToolbar>
-                                </IonCol>
-                            </IonRow>
-                        </IonGrid>
-                        <PerformancesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} performances={performances} scheduleItems={scheduleItems} />
-                    </> : ''
+                {headingTitle === 'Performances' &&
+                    <IonToolbar>
+                        <IonSegment scrollable value={dayNum}>
+                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="performancesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
+                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="performancesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
+                        </IonSegment>
+                    </IonToolbar>
                 }
 
                 {/* Games & Activities */}
-                {headingTitle === 'GamesNActivities' ?
-                    <>
-                        <IonGrid id="gamesContent-ionRowCol">
-                            <IonRow id="gamesContent-ionRowCol">
-                                <IonCol id="gamesContent-ionRowCol">
-                                    <IonToolbar>
-                                        <IonSegment scrollable value={dayNum}>
-                                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="gamesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
-                                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="gamesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
-                                        </IonSegment>
-                                    </IonToolbar>
-                                </IonCol>
-                            </IonRow>
-                        </IonGrid>
-                        <GamesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} gamesActivities={gamesActivities} scheduleItems={scheduleItems} />
-                    </> : ''
+                {headingTitle === 'GamesNActivities' &&
+                    <IonToolbar>
+                        <IonSegment scrollable value={dayNum}>
+                            <IonSegmentButton value="day1" onClick={() => handleDayOne()} className="gamesContent-heading">Day 1: {openhouseDates[0]}</IonSegmentButton>
+                            <IonSegmentButton value="day2" onClick={() => handleDayTwo()} className="gamesContent-heading">Day 2: {openhouseDates[1]}</IonSegmentButton>
+                        </IonSegment>
+                    </IonToolbar>
+                }
+            
+            </IonHeader>
+
+            <IonContent fullscreen id="openHouseActivities-content">
+                {/* Performances */}
+                {headingTitle === 'Performances' &&
+                    <PerformancesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} performances={performances} scheduleItems={scheduleItems} />
+                }
+
+                {/* Games & Activities */}
+                {headingTitle === 'GamesNActivities' &&
+                    <GamesContent day1={dayNum} day2={dayNum} openhouseDates={openhouseDates} gamesActivities={gamesActivities} scheduleItems={scheduleItems} />
                 }
 
                 {/* Prizes */}
-                {headingTitle === 'Prizes' ?
-                    <>
-                        <PrizesContent prizes={prizes} venue={venue} />
-                    </> : ''
+                {headingTitle === 'Prizes' &&
+                    <PrizesContent prizes={prizes} venue={venue} />
                 }
 
                 {/* QR Scanner */}
-                {headingTitle === 'QR' ?
-                    <Redirect to="/u/QRScan" from="/u/openHouseMain/openHouseActivities" /> : ''
+                {headingTitle === 'QR' &&
+                    <Redirect to="/u/QRScan" from="/u/openHouseMain/openHouseActivities" /> 
                 }
 
             </IonContent>
