@@ -42,54 +42,56 @@ const ForumSearch: React.FC = () => {
     }
 
     useEffect(() => {
-        db.collection('Forum').get().then(users => {
-            const all: any = [];
+        if (keyword !== "") {
+            db.collection('Forum').get().then(users => {
+                const all: any = [];
 
-            users.forEach(async user => {
-                await db.collection('Forum').doc(user.id).collection('Questions').get().then(docs => {
-                    docs.forEach(doc => {
-                        all.push({
-                            id: +doc.id,
-                            entry: doc.data().entry,
-                            dateTime: doc.data().dateTime,
-                            user: doc.data().posterName,
-                            uid: doc.data().posterId,
-                            commentCount: doc.data().noOfComments,
-                            removed: doc.data().deleted
+                users.forEach(async user => {
+                    await db.collection('Forum').doc(user.id).collection('Questions').get().then(docs => {
+                        docs.forEach(doc => {
+                            all.push({
+                                id: +doc.id,
+                                entry: doc.data().entry,
+                                dateTime: doc.data().dateTime,
+                                user: doc.data().posterName,
+                                uid: doc.data().posterId,
+                                commentCount: doc.data().noOfComments,
+                                removed: doc.data().deleted
+                            });
+                        });
+                    });
+
+                    await db.collection('Forum').doc(user.id).collection('Comments').get().then(docs => {
+                        docs.forEach(doc => {
+                            all.push({
+                                id: +doc.id,
+                                entry: doc.data().entry,
+                                questionId: +doc.data().questionId
+                            });
                         });
                     });
                 });
-                
-                await db.collection('Forum').doc(user.id).collection('Comments').get().then(docs => {
-                    docs.forEach(doc => {
-                        all.push({
-                            id: +doc.id,
-                            entry: doc.data().entry,
-                            questionId: +doc.data().questionId
-                        });
-                    });
-                });
+
+                setTimeout(() => {
+                    getSearchResults(all);
+                    setLoading(false);
+                }, 500);
             });
-
-            setTimeout(() => {
-                getSearchResults(all);
-                setLoading(false);
-            }, 500);
-        });
+        }
     }, []);
 
     return (
         <IonPage>
             <IonHeader>
-                <TopNav title="Forum" route="/u/forum" backarrow={ true } hamburger={ true }/>
+                <TopNav title="Forum" route="/u/forum" backarrow={true} hamburger={true} />
             </IonHeader>
 
-            <IonContent  fullscreen id="forum-content">
+            <IonContent fullscreen id="forum-content">
                 <IonGrid id="forum-heading-container">
                     <IonRow className="ion-justify-content-start">
                         <IonCol size="10" className="ion-align-self-center forum-col">
-                            <IonTitle id="forum-heading">Search Results for: <span style={{color: 'black'}}>{keyword}</span></IonTitle>
-                        </IonCol>                            
+                            <IonTitle id="forum-heading">Search Results for: <span style={{ color: 'black' }}>{keyword}</span></IonTitle>
+                        </IonCol>
                         <IonCol size="2" className="forum-col">
                             <ForumRules />
                         </IonCol>

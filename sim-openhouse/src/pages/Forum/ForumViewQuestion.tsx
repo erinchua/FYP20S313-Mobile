@@ -39,7 +39,7 @@ const ForumViewQuestion: React.FC = () => {
         try {
             setLoading(true);
 
-            if (entry !== "")
+            if (entry === "")
                 throw "Emtpy entry"
                 
             const time = Date.now();

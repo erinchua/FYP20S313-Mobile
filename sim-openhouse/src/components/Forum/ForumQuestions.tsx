@@ -37,7 +37,7 @@ const ForumQuestions: React.FC = () => {
         try {
             setLoading(true);
             
-            if (entry !== "")
+            if (entry === "")
                 throw "Empty entry"
 
             await db.collection('Forum').doc(userID).collection('Questions').doc(postId).update({
