@@ -37,11 +37,12 @@ const ForumQuestions: React.FC = () => {
         try {
             setLoading(true);
 
-            if (entry !== "") {
-                await db.collection('Forum').doc(userID).collection('Comments').doc(postId).update({
-                    entry: entry
-                });
-            }
+            if (entry !== "")
+                throw "Empty entry"
+
+            await db.collection('Forum').doc(userID).collection('Comments').doc(postId).update({
+                entry: entry
+            });
         } catch (e) {
             return console.log(e);
         } finally {
