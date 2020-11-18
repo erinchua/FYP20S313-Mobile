@@ -1,0 +1,118 @@
+[
+    {
+        "id": "programme-001",
+        "programmeTitle": "Bachelor of Applied Science (Aviation) (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Specialty"
+        ],
+        "subDiscipline": [
+            "Aviation"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked among the world's top 150 universities for Aeronautical Engineering (QS 2019)",
+            "Project on a real-world aviation industry problem or issue, supervised by Faculty/Industry expert",
+            "Problem-based learning,readings, case studies on comtemporary aviation-industry related issues"
+        ],
+        "applicationPeriod": {
+            "jan2021": "15 Jul 2020 to 20 Oct 2020"
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "2.5 Years"
+        }
+    },
+    {
+        "id": "programme-002",
+        "programmeTitle": "Bachelor of Applied Science (Construction Management) (Honours) (Top-up)",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "Specialty"
+        ],
+        "subDiscipline": [
+            "Construction and Management"
+        ],
+        "entryQualifications": {
+            "aLevel": false,
+            "oLevel": false,
+            "degree": false,
+            "diploma": true
+        },
+        "awardedBy": "RMIT University",
+        "programOverview": [
+            "Ranked 22nd in the world & 3rd highest in Australia for Architectural & Built Environment (QS 2019)",
+            "Accrediation by Professional Bodies, including AIB, AIQS, CIOB, RICS and SISV",
+            "Practical Curricula, designed with industry inputs; integration of theory with practice"
+        ],
+        "applicationPeriod": {
+            "jan2021": "15 Jul 2020 to 20 Oct 2020"
+        },
+        "programmeStructure": {
+            "coursework": true,
+            "examination": true
+        },
+        "overseaOpportunity": {
+            "exchange": false,
+            "transfer": false
+        },
+        "intakeMonths": {
+            "partTime": "Jan, Jul"
+        },
+        "duration": {
+            "partTime": "3 Years"
+        }
+    },
+    {
+        "id": "programme-003",
+        "programmeTitle": "Bachelor of Information Technology",
+        "modeOfStudy": {
+            "partTime": true,
+            "fullTime": false
+        },
+        "academicLevel": "Bachelor",
+        "discipline": [
+            "IT & Computer Science"
+        ],
+        "subDiscipline": [
+            "Information Technology"
+        ],
+        "entryQualifications": {
+            "aLevel": true,
+            "oLevel": false,
+            "degree": false,
+            "diploma": false
+        },
+        "awardedBy": "University of Wollongong",
+        "programOverview": "",
+        "applicationPeriod": "",
+        "programmeStructure": "",
+        "overseaOpportunity": "",
+        "intakeMonths": "",
+        "duration": ""
+    }
+]
