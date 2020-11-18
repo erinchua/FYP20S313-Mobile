@@ -30,6 +30,7 @@ const Forum: React.FC = () => {
     const [entry, setEntry] = useState("");
     const [questions, setQuestions] = useState([]);
     const [keyword, setKeyword] = useState("");
+    const [alert, setAlert] = useState({ isSuspended: false });
 
     const onSubmit = async () => {
         setLoading(true);
@@ -89,15 +90,16 @@ const Forum: React.FC = () => {
                 let readRules = false;
                 return db.collection('Forum').doc(userID).onSnapshot(snapshot => {
                     if (snapshot.exists) {
-                        if (snapshot.data()?.suspended)
-                            return history.goBack();
+                        if (snapshot.data()?.suspended){
+                            setAlert({ isSuspended: true })
+                        }
 
                         if (snapshot.data()?.readRules)
                             readRules = true;
                     }
                     setAgreedTOC(readRules);
 
-                    if (readRules) {
+                    if (readRules && !snapshot.data()?.suspended) {
                         setLoading(true);
                         return db.collectionGroup('Questions').onSnapshot(entries => {
                             const questions: any = [];
@@ -127,6 +129,16 @@ const Forum: React.FC = () => {
 
     return (
         <IonPage>
+            <IonAlert
+                isOpen={alert.isSuspended}
+                onDidDismiss={() => {setAlert({ isSuspended: false }); history.goBack();}}
+                cssClass='alertBox'
+                mode='md'
+                header={'Error Occurred!'}
+                message={'Sorry, you have been suspended from the forum.'}
+                buttons={['Close']}
+            ></IonAlert>
+
             <IonHeader>
                 <TopNav title="Forum" route="/u/home" backarrow={true} hamburger={true} />
             </IonHeader>

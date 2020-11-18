@@ -296,3 +296,8 @@
     margin: 3%;
     border-radius: 10px;
 }
+
+/* Alert */
+.alertBox {
+    --backdrop-opacity: 0.8;
+}
