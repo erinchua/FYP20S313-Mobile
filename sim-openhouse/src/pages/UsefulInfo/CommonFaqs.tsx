@@ -22,16 +22,24 @@ const CommonFaqs: React.FC = () => {
 
 
     const info = useRef<HTMLIonIconElement[]>([]);
-    const showIcon = useRef<HTMLIonIconElement>(null);
+    const showIcon = useRef<HTMLIonIconElement[]>([]);
+    showIcon.current = []
     info.current =[]
 
     const displayInfoCol = (index:number) => {
         info.current[index]!.hidden = !info.current[index]!.hidden;
-        if (showIcon.current!.icon === addCircle)
-            showIcon.current!.icon = removeCircle;
+        if (showIcon.current[index]!.icon == addCircle)
+            showIcon.current![index].icon = removeCircle;
+            
         else
-            showIcon.current!.icon = addCircle;
+            showIcon.current![index].icon = addCircle;
     };
+
+    //Adding each answer into their own ref.
+    const addtoIconRef = (el:HTMLIonIconElement)=>{
+        if(el && !showIcon.current.includes(el))
+        showIcon.current.push(el)
+    }
 
     //Adding each answer into their own ref.
     const addtoRef = (el:HTMLIonIconElement)=>{
@@ -94,7 +102,7 @@ const CommonFaqs: React.FC = () => {
 
                                                 <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
                                                     <IonButton className="toggleFaqInfoBtn" onClick={e=>{displayInfoCol(index)}} fill="clear" size="default">
-                                                        <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
+                                                        <IonIcon slot="icon-only" ref={addtoIconRef} icon={addCircle} />
                                                     </IonButton>
                                                 </IonCol>
                                             </IonRow>
@@ -131,7 +139,7 @@ const CommonFaqs: React.FC = () => {
 
                                             <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
                                                 <IonButton className="toggleFaqInfoBtn" onClick={e=>{displayInfoCol(index)}} fill="clear" size="default">
-                                                    <IonIcon slot="icon-only" ref={showIcon} icon={addCircle} />
+                                                    <IonIcon slot="icon-only" ref={addtoIconRef} icon={addCircle} />
                                                 </IonButton>
                                             </IonCol>
                                         </IonRow>
