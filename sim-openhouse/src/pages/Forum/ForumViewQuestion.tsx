@@ -38,33 +38,35 @@ const ForumViewQuestion: React.FC = () => {
     const handleComment = async () => {
         try {
             setLoading(true);
+
+            if (entry === "")
+                throw "Emtpy entry"
+                
             const time = Date.now();
             let name: string;
 
-            if (entry !== "") {
-                await db.collection('Students').doc(userID).get().then(doc => {
-                    if (doc.exists)
-                        name = doc.data()?.firstName + " " + doc.data()?.lastName;
-                });
+            await db.collection('Students').doc(userID).get().then(doc => {
+                if (doc.exists)
+                    name = doc.data()?.firstName + " " + doc.data()?.lastName;
+            });
 
-                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
-                await docRef.set({
-                    id: +docRef.id,
-                    entry: entry,
-                    questionId: +id,
-                    posterName: name!,
-                    posterId: userID,
-                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
-                    deleted: false,
-                    reported: false,
-                    noOfReplies: 0
-                });
+            const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
+            await docRef.set({
+                id: +docRef.id,
+                entry: entry,
+                questionId: +id,
+                posterName: name!,
+                posterId: userID,
+                dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
+                deleted: false,
+                reported: false,
+                noOfReplies: 0
+            });
 
-                const increment = firebase.firestore.FieldValue.increment(1);
-                await db.collection('Forum').doc(uid).collection('Questions').doc(id).update({
-                    noOfComments: increment,
-                });
-            }
+            const increment = firebase.firestore.FieldValue.increment(1);
+            await db.collection('Forum').doc(uid).collection('Questions').doc(id).update({
+                noOfComments: increment,
+            });
         } catch (e) {
             return console.log(e);
         } finally {
@@ -80,30 +82,31 @@ const ForumViewQuestion: React.FC = () => {
             const time = Date.now();
             let name: string;
 
-            if (entry !== "") {
-                await db.collection('Students').doc(userID).get().then(doc => {
-                    if (doc.exists)
-                        name = doc.data()?.firstName + " " + doc.data()?.lastName;
-                });
+            if (entry !== "")
+                throw "Empty entry"
 
-                const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
-                await docRef.set({
-                    id: +docRef.id,
-                    entry: entry,
-                    posterName: name!,
-                    posterId: userID,
-                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
-                    deleted: false,
-                    reported: false,
-                    commentId: +commentId,
-                    questionId: +id
-                });
+            await db.collection('Students').doc(userID).get().then(doc => {
+                if (doc.exists)
+                    name = doc.data()?.firstName + " " + doc.data()?.lastName;
+            });
 
-                const increment = firebase.firestore.FieldValue.increment(1);
-                await db.collection('Forum').doc(commenterId).collection('Comments').doc(commentId).update({
-                    noOfReplies: increment,
-                });
-            }
+            const docRef = db.collection('Forum').doc(userID).collection('Comments').doc(time.toString());
+            await docRef.set({
+                id: +docRef.id,
+                entry: entry,
+                posterName: name!,
+                posterId: userID,
+                dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
+                deleted: false,
+                reported: false,
+                commentId: +commentId,
+                questionId: +id
+            });
+
+            const increment = firebase.firestore.FieldValue.increment(1);
+            await db.collection('Forum').doc(commenterId).collection('Comments').doc(commentId).update({
+                noOfReplies: increment,
+            });
         } catch (e) {
             return console.log(e);
         } finally {

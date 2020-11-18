@@ -41,26 +41,28 @@ const Forum: React.FC = () => {
     const handleQuestion = async () => {
         try {
             setLoading(true);
+
+            if (entry === "")
+                throw "Empty entry"
+
             const time = Date.now();
             let name: string;
+            
+            await db.collection('Students').doc(userID).get().then((doc: any) => {
+                name = doc.data().firstName + " " + doc.data().lastName;
+            });
 
-            if (entry !== "") {
-                await db.collection('Students').doc(userID).get().then((doc: any) => {
-                    name = doc.data().firstName + " " + doc.data().lastName;
-                });
-
-                const docRef = db.collection('Forum').doc(userID).collection('Questions').doc(time.toString());
-                await docRef.set({
-                    id: +docRef.id,
-                    entry: entry,
-                    posterName: name!,
-                    posterId: userID,
-                    dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
-                    noOfComments: 0,
-                    deleted: false,
-                    reported: false
-                });
-            }
+            const docRef = db.collection('Forum').doc(userID).collection('Questions').doc(time.toString());
+            await docRef.set({
+                id: +docRef.id,
+                entry: entry,
+                posterName: name!,
+                posterId: userID,
+                dateTime: new Date(time).toLocaleString().replace(/\//g, "-"),
+                noOfComments: 0,
+                deleted: false,
+                reported: false
+            });
         } catch (e) {
             return console.log(e);
         } finally {
@@ -90,7 +92,7 @@ const Forum: React.FC = () => {
                         if (snapshot.data()?.suspended)
                             return history.goBack();
 
-                        if (snapshot.data()?.readRules) 
+                        if (snapshot.data()?.readRules)
                             readRules = true;
                     }
                     setAgreedTOC(readRules);

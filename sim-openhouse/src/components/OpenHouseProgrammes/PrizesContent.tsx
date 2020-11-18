@@ -12,7 +12,6 @@ const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
     const { userID } = useAuth();
 
     const [alert, setAlert] = useState({ redeemSuccess: false, redeemFail: false, loading: false });
-    const [errorMessage, setErrorMessage] = useState("");
     const [gameProfile, setGameProfile] = useState<any>({ points: 0, redeemed: [] });
     const [venue, setVenue] = useState("");
 
@@ -20,34 +19,27 @@ const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
         try {
             setAlert({ redeemSuccess: false, redeemFail: false, loading: true });
 
-            if (gameProfile.points >= prize.prizePointsCost && !gameProfile.redeemed.includes(prize.id)) {
-                const batch = db.batch();
-
-                const pointsDeduct = firebase.firestore.FieldValue.increment(-prize.prizePointsCost);
-                const gamesRef = db.collection('Games').doc(userID);
-                batch.update(gamesRef, {
-                    redeemed: firebase.firestore.FieldValue.arrayUnion(prize.id),
-                    points: pointsDeduct
-                });
-
-                const stockDecrement = firebase.firestore.FieldValue.increment(-1);
-                const prizeRef = db.collection('Prizes').doc(prize.id);
-                batch.update(prizeRef, {
-                    stock: stockDecrement
-                });
-
-                await batch.commit();
-            } else {
-                if (gameProfile.points < prize.prizePointsCost)
-                    setErrorMessage("You don't have enough points to redeem that.");
-                else if (gameProfile.redeemed.includes(prize.id))
-                    setErrorMessage("You have already redeemed that prize.");
-
+            if (!(gameProfile.points >= prize.prizePointsCost))
                 throw "Error occured";
-            }
 
+            const batch = db.batch();
+
+            const pointsDeduct = firebase.firestore.FieldValue.increment(-prize.prizePointsCost);
+            const gamesRef = db.collection('Games').doc(userID);
+            batch.update(gamesRef, {
+                redeemed: firebase.firestore.FieldValue.arrayUnion(prize.id),
+                points: pointsDeduct
+            });
+
+            const stockDecrement = firebase.firestore.FieldValue.increment(-1);
+            const prizeRef = db.collection('Prizes').doc(prize.id);
+            batch.update(prizeRef, {
+                stock: stockDecrement
+            });
+
+            await batch.commit();
             setAlert({ redeemSuccess: true, redeemFail: false, loading: false });
-        } catch(e) {
+        } catch (e) {
             setAlert({ redeemSuccess: false, redeemFail: true, loading: false });
             return console.log(e);
         }
@@ -86,8 +78,8 @@ const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
                 onDidDismiss={() => setAlert({ redeemSuccess: false, redeemFail: false, loading: false })}
                 cssClass='alertBox'
                 mode='md'
-                header={'Oops! Something went wrong.'}
-                message={errorMessage}
+                header={'Insufficient points'}
+                message={"You don't have enough points to redeem that."}
                 buttons={['Close']}
             ></IonAlert>
 
@@ -110,7 +102,7 @@ const PrizesContent: React.FC<{ prizes: any, venue: any }> = props => {
                             <IonCol sizeSm="2" size="2" className="prizesContent-Data ion-text-wrap">{prize.stock}</IonCol>
                             <IonCol sizeSm="2" size="2" className="prizesContent-Data ion-text-wrap">{prize.prizePointsCost}</IonCol>
                             <IonCol sizeSm="4" className="prizesContent-Data ion-text-wrap">
-                                <IonButton size="small" id="redeemButton" onClick={() => handleRedeem(prize)} disabled={prize.stock <= 0 ? true : false}>Redeem</IonButton>
+                                <IonButton size="small" id="redeemButton" onClick={() => handleRedeem(prize)} disabled={(prize.stock <= 0 || gameProfile.redeemed.includes(prize.id)) ? true : false}>Redeem</IonButton>
                             </IonCol>
                         </IonRow>
                     )
