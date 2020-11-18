@@ -19,23 +19,22 @@ const CommonFaqs: React.FC = () => {
     const handleGeneralFAQs = () => {
         setTab("generalFAQs");
     };
-
-
     const info = useRef<HTMLIonIconElement[]>([]);
     const showIcon = useRef<HTMLIonIconElement[]>([]);
     showIcon.current = []
     info.current =[]
+    
 
     const displayInfoCol = (index:number) => {
         info.current[index]!.hidden = !info.current[index]!.hidden;
         if (showIcon.current[index]!.icon == addCircle)
             showIcon.current![index].icon = removeCircle;
-            
+
         else
             showIcon.current![index].icon = addCircle;
     };
 
-    //Adding each answer into their own ref.
+    //Adding each icon into their own ref.
     const addtoIconRef = (el:HTMLIonIconElement)=>{
         if(el && !showIcon.current.includes(el))
         showIcon.current.push(el)
