@@ -19,32 +19,35 @@ const CommonFaqs: React.FC = () => {
     const handleGeneralFAQs = () => {
         setTab("generalFAQs");
     };
-    const info = useRef<HTMLIonIconElement[]>([]);
-    const showIcon = useRef<HTMLIonIconElement[]>([]);
-    showIcon.current = []
-    info.current =[]
+    const info = useRef<any>([]);
+    const showIcon = useRef<any>([]);
     
 
     const displayInfoCol = (index:number) => {
         info.current[index]!.hidden = !info.current[index]!.hidden;
         if (showIcon.current[index]!.icon == addCircle)
-            showIcon.current![index].icon = removeCircle;
+            showIcon.current[index]!.icon = removeCircle;
 
         else
-            showIcon.current![index].icon = addCircle;
+            showIcon.current[index]!.icon = addCircle;
     };
 
     //Adding each icon into their own ref.
-    const addtoIconRef = (el:HTMLIonIconElement)=>{
-        if(el && !showIcon.current.includes(el))
-        showIcon.current.push(el)
-    }
+    // const addtoIconRef = (el:HTMLIonIconElement)=>{
+    //     if(el && !showIcon.current.includes(el))
+    //     showIcon.current.push(el)
+    // }
 
     //Adding each answer into their own ref.
-    const addtoRef = (el:HTMLIonIconElement)=>{
-        if(el && !info.current.includes(el))
-        info.current.push(el)
-    }
+    // const addtoRef = (el:HTMLIonIconElement)=>{
+    //     if(el && !info.current.includes(el)){
+    //         info.current.push(el)
+    //         console.log("I am"+el)
+    //     }
+    //     else{
+
+    //     }
+    // }
 
     useEffect(() => {
         db.collection('CommonFAQ').get().then((snapshot) => {
@@ -91,7 +94,7 @@ const CommonFaqs: React.FC = () => {
                             <IonCol className="faqHeaderCol">
                                 {faqs.openhouse.map((faq: Faq,index ) => {
                                     return (
-                                        <div key={faq.id}>
+                                        <div key={index}>
                                             <IonRow className="faqHeaderInnerRow">
                                                 <IonCol size="10" sizeSm="10" style={{ padding: "0" }}>
                                                     <IonTitle className="faqInfoHeader">
@@ -101,13 +104,13 @@ const CommonFaqs: React.FC = () => {
 
                                                 <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
                                                     <IonButton className="toggleFaqInfoBtn" onClick={e=>{displayInfoCol(index)}} fill="clear" size="default">
-                                                        <IonIcon slot="icon-only" ref={addtoIconRef} icon={addCircle} />
+                                                        <IonIcon slot="icon-only" ref={el=>showIcon.current[index] = el} icon={addCircle} />
                                                     </IonButton>
                                                 </IonCol>
                                             </IonRow>
 
                                             <IonRow>
-                                                <IonCol sizeSm="12" className="faqInfo" ref={addtoRef} hidden={true}>
+                                                <IonCol sizeSm="12" className="faqInfo" ref={el=> info.current[index] = el} hidden={true}>
                                                     <div className="ion-text-wrap">
                                                         <p>{faq.faqAnswer}</p>
                                                     </div>
@@ -138,13 +141,13 @@ const CommonFaqs: React.FC = () => {
 
                                             <IonCol size="2" sizeSm="2" className="toggleFaqInfoBtnCol">
                                                 <IonButton className="toggleFaqInfoBtn" onClick={e=>{displayInfoCol(index)}} fill="clear" size="default">
-                                                    <IonIcon slot="icon-only" ref={addtoIconRef} icon={addCircle} />
+                                                    <IonIcon slot="icon-only" ref={el=>showIcon.current[index] = el} icon={addCircle} />
                                                 </IonButton>
                                             </IonCol>
                                         </IonRow>
 
                                         <IonRow>
-                                            <IonCol sizeSm="12" className="faqInfo" ref={addtoRef} hidden={true}>
+                                            <IonCol sizeSm="12" className="faqInfo" ref={el=> info.current[index] = el} hidden={true}>
                                                 <div className="ion-text-wrap">
                                                     <p>{faq.faqAnswer}</p>
                                                 </div>
