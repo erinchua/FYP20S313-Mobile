@@ -32,22 +32,6 @@ const CommonFaqs: React.FC = () => {
             showIcon.current[index]!.icon = addCircle;
     };
 
-    //Adding each icon into their own ref.
-    // const addtoIconRef = (el:HTMLIonIconElement)=>{
-    //     if(el && !showIcon.current.includes(el))
-    //     showIcon.current.push(el)
-    // }
-
-    //Adding each answer into their own ref.
-    // const addtoRef = (el:HTMLIonIconElement)=>{
-    //     if(el && !info.current.includes(el)){
-    //         info.current.push(el)
-    //         console.log("I am"+el)
-    //     }
-    //     else{
-
-    //     }
-    // }
 
     useEffect(() => {
         db.collection('CommonFAQ').get().then((snapshot) => {
