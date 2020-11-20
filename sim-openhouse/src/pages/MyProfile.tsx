@@ -12,7 +12,6 @@ import TopNav from '../components/TopNav';
 import { db } from '../firebase';
 import { useAuth } from '../modules/auth';
 import { auth } from '../firebase';
-import QRCode from "qrcode.react";
 
 
 const MyProfile: React.FC = () => {
