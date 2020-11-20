@@ -210,7 +210,7 @@ const MyScheduleContent: React.FC<{ day1: any, day2: any, openhouseDates: any, o
                         </IonCardHeader>
 
                         <IonCardContent className="ion-text-center">
-                            <QRCode value={`${firstName},${lastName},${email},${progInfo.talkName},${progInfo.talkDate},${progInfo.talkBy}`} />{" "}
+                            <QRCode value={`${firstName}~${lastName}~${email}~${progInfo.talkName}~${progInfo.talkDate}~${progInfo.talkBy}`} />{" "}
                         </IonCardContent>
                     </IonCard>
 
