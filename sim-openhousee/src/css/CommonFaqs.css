@@ -1,0 +1,72 @@
+#faqTabGrid {
+    --ion-grid-width-xs: 100%;
+    padding: 0;
+}
+
+.faqSegmentHeader {
+    padding: 0;
+    min-width: 100%;
+}
+
+.faqSegmentBtn {
+    --background: #d9d9d9;
+    --background-checked: #A9DBD9;
+    --color: #424242;
+    --color-checked: #424242;
+    --indicator-color: transparent;
+    font-size: 80%;
+    font-weight: bold;
+    max-width: 100%;
+    --border-color: transparent;
+}
+
+#faqGrid {
+    background: #ffffff;
+    padding: 0;
+    min-height: 100%;
+}
+
+.faqHeaderRow {
+    padding: 0;
+    border-bottom: 2px solid #c8c8c8;
+}
+
+.faqHeaderCol {
+    min-width: 100%;
+    padding: 0;
+}
+
+.faqHeaderInnerRow {
+    --background: #efefef;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.faqInfoHeader {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    color: #424242;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.toggleFaqInfoBtnCol {
+    text-align: right; 
+    padding: 0;
+}
+
+.toggleFaqInfoBtn {
+    --color: #424242;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-right: 0;
+}
+
+.faqInfo {
+    background: #ffffff;
+    padding: 0 3% 3% 3%;
+    color: #434343;
+    font-size: 80%;
+    text-align: left;
+}

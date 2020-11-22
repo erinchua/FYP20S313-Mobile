@@ -1,0 +1,143 @@
+.progTalkIonContent {
+    --background: #efefef;
+}
+
+#progTalkInfoGrid {
+    padding: 0;
+}
+
+#progTalksGrid {
+    --ion-grid-width-xs: 100%;
+    padding: 0;
+}
+
+.segmentHeader {
+    padding: 0;
+    min-width: 100%;
+}
+
+.segmentBtn {
+    --background: #E8D091;
+    --background-checked: #A9DBD9;
+    --color: #424242;
+    --color-checked: #424242;
+    --indicator-color: transparent;
+    font-size: 80%;
+    font-weight: bold;
+    max-width: 100%;
+    --border-color: transparent;
+}
+
+.filterHeader {
+    --min-height: 30%;
+    height: 30%;
+    padding: 0;
+}
+
+.filterHeaderToolBar {
+    --min-height: 30%;
+    --background: #ffffff;
+}
+
+#filterIcon {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.progTalk-IonRowCol {
+    padding: 0;
+}
+
+.progTalk-DayTab {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+/* Programme Talks Schedule Component*/
+.progTalk-TableGrid {
+    padding: 0;
+}
+
+.progTalk-TableHeader {
+    font-weight: bold;
+    font-size: 85%;
+    text-align: center;
+}
+
+.progTalk-DataHeader {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    font-size: 75%;
+    min-height: 20%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.progTalk-DataInfo {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    font-size: 70%;
+    min-height: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: #434343;
+}
+
+.progTalk-DataBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+}
+
+.progName {
+    text-align: left;
+}
+
+#uniLink {
+    color: #424242;
+    text-decoration: none;
+}
+
+/* Programme Talks Info Component*/
+#progTalkInfoGrid {
+    --ion-grid-width-xs: 100%;
+}
+
+.progTalkInfoHeader {
+    font-size: 85%;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid#C8C8C8;
+}
+
+.progTalkInfoData {
+    font-size: 80%;
+    text-align: left;
+    border: 1px solid#C8C8C8;
+}
+
+#registerProgTalkBtn {
+    --background: #37474F;
+    width: 50%;
+    font-size: medium;
+}
+
+/************************ Iframe ************************/
+
+.iframeVideo {
+    border: none;
+    height: 100vh;
+    width: 100%;
+    top:0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+}

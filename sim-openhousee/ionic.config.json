@@ -1,0 +1,7 @@
+{
+  "name": "sim-openhouse",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

@@ -1,0 +1,43 @@
+.compareProgPopover .popover-content  {
+    min-height: 45%;
+    background: #efefef;
+    width: 80%;
+}
+
+#compareProgPopoverGrid {
+    min-height: 100%;
+}
+
+.compareProgPopoverMainRow {
+    border-bottom: 2px solid #c0c0c0;
+}
+
+.compareProgPopoverItem {
+    --background: #efefef;
+}
+
+.compareProgPopoverSlider {
+    --background: #37474F;
+    --color: #ffffff;
+}
+
+#compareProgPopoverBtnRow {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#compareProgPopoverBtnToolbar {
+    --background: #efefef;
+}
+
+#removeAllProgBtn {
+    --color: #37474F;
+    margin: 0;
+    font-size: 80%;
+}
+
+#viewResultsBtn {
+    --background: #37474F;
+    margin: 0;
+    font-size: 80%;
+}

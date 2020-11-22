@@ -1,0 +1,303 @@
+#forum-content {
+    --background: #EFEFEF;
+}
+
+/* Forum Rules */
+#forumRulesGrid {
+    margin-left: 3%;
+}
+
+#important-notice {
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#forum-rules {
+    color: #537A94;
+    font-weight: bold;
+    margin-top: 3%;
+    font-size: 90%;
+}
+
+#forum-instructions {
+    color: #537A94;
+    margin-top: 3%;
+    font-size: 80%;
+}
+
+#forum-checkbox-container {
+    margin-top: 10%;
+    --background: #EFEFEF;
+    --inner-border-width: 0;
+}
+
+#forum-checkbox-text {
+    font-size: 75%;
+    color: #424242;
+}
+
+#forumRulesBtn {
+    --background: #37474F;
+    margin-top: 10%;
+}
+
+/* View Forum */
+.forum-container {
+    margin-bottom: 3%;
+    padding: 3%;
+}
+
+
+#forum-searchbar-container {
+    background: #A9DBD9;
+    padding: 0;
+}
+
+#forum-searchbar {
+    --border-radius: 5px;
+}
+
+#forum-heading-container {
+    --background: transparent;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#forum-heading {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+    padding-left: 1%;
+}
+
+.forum-question {
+    font-size: 90%;
+    font-weight: bold;
+    color: #424242;
+}
+
+.forum-col {
+    padding: 0;
+}
+
+.forum-question-details {
+    font-size: 75%;
+    color: #434343;
+}
+
+#forum-question-flagBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+    float: right;
+    margin-bottom: -10%;
+}
+
+#forum-question-detail-container {
+    margin-top: 5%;
+}
+
+#forum-userName {
+    font-style: italic;
+    color: #434343;
+    margin-top: 3%;
+}
+
+#forum-informationBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+    float: right;
+}
+
+#popover-infoDetails {
+    color: #434343;
+    margin-top: 5%;
+    font-size: 80%;
+}
+
+.forum-segmentBtn {
+    max-width: 100%;
+}
+
+/* Post Question Modal */
+.post-question-modal .modal-wrapper{
+    --max-width: 90%;
+    --border-radius: 3%;
+    --max-height: 60%;
+}
+
+#postQns-modal-container {
+    width: 100%;
+}
+
+#postQns-title {
+    font-weight: bold;
+    color: #434343;
+    font-size: 90%;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: -6%;
+}
+
+#postQns-modal-inputArea {
+    height: 70%;
+    border: 1px solid #C8C8C8;
+    margin: 3% 0%;
+    width: 100%;
+}
+
+#postQns-close-button {
+    --border-color: #37474F;
+    color: #37474F;
+    width: 30%;
+}
+
+#postQns-post-button {
+    --background: #37474F;
+    width: 30%;
+}
+
+/* Forum User */
+#forumUser-ionRowCol {
+    padding: 0;
+}
+
+.forumUser-heading {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 70%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+/* Forum User - My Questions/Comments */
+#forumQnsCom-tableGrid {
+    padding: 0;
+}
+
+#forumQnsCom-tableHeader {
+    font-weight: bold;
+    text-align: center;
+}
+
+.forumQnsCom-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 15%;
+    font-size: 72%;
+    padding: 2% 0%;
+}
+
+.forumQnsCom-Data {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 15%;
+    font-size: 70%;
+    padding: 1%;
+}
+
+.forumQnsCom-DataBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+}
+
+/* Forum View Question */
+#forum-addCommentBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+    float: right;
+}
+
+#add-comment-container {
+    background: #DBE1E7;
+    margin-top: -3%;
+    padding: 0% 3%;
+}
+
+#addComment-commentText {
+    font-weight: bold;
+    font-size: 90%;
+}
+
+.forumViewLink {
+    color: #434343;
+}
+
+.forumViewLink:hover {
+    color: #537A94;
+}
+
+/* No Comment at Forum View Question */
+#no-comment-text {
+    font-size: 90%;
+    margin-top: 45%;
+    margin-bottom: 45%;
+    color: #434343;
+}
+
+/* When there's 2 comment at Forum View Question */
+#comment-main-container {
+    padding: 0;
+}
+
+#comment-text {
+    font-size: 80%;
+    color: #424242;
+}
+
+#comment-userName {
+    font-size: 80%;
+    font-style: italic;
+    color: #434343;
+    margin-top: 3%;
+}
+
+#comment-details {
+    font-size: 75%;
+    color: #434343;
+}
+
+#comment-detail-container {
+    margin-top: 5%;
+}
+
+#comment-replyBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+    margin-bottom: -5%;
+    text-transform: none !important;
+}
+
+#comment-flagBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+    float: right;
+    margin-bottom: -15%;
+}
+
+#comment-list {
+    margin-bottom: 3%;
+    background: #E6EAEE;
+}
+
+/* When there's a reply to the comment */
+#comment-reply-container {
+    background: white;
+    margin: 3%;
+    border-radius: 10px;
+}
+
+/* Alert */
+.alertBox {
+    --backdrop-opacity: 0.8;
+}

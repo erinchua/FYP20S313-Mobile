@@ -1,0 +1,309 @@
+.myScheduleIonContent {
+    --background: #efefef;
+}
+
+.myScheduleGrid {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Open House Date */
+.openHouseDateRow {
+    background: #d0ba8e;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    max-width: 100%;
+}
+
+.openHouseDateCol {
+    text-align: center;
+    font-size: small;
+}
+
+.openHouseDateTitleText {
+    font-weight: bold;
+}
+
+.openHouseDateText {
+    font-size: small;
+}
+
+/* Day Tabs */
+.mySchedule-IonRowCol {
+    padding: 0;
+}
+
+.mySchedule-DayTab {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+/* Schedule Table Grid */
+.myScheduleGridCol {
+    width: 100%;
+    padding: 0;
+}
+
+.myScheduleTableHeader {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 20%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+}
+
+.myScheduleTableHeader_ProgName {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 30%;
+    min-width: 30%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+    
+}
+
+.myScheduleTableHeader_Btn {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 15%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+}
+
+/******************* My Schedule Table Data *******************/
+.myScheduleTableData {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleTableData_ProgName {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 30%;
+    min-width: 30%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleTableData_QRCode {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-decoration: underline;
+}
+
+.myScheduleTableData_BtnCol {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleTableData_Btn {
+    --background: transparent;
+    --color: #434343;
+    --box-shadow: transparent;
+}
+
+/***********************************************/
+/* Open House Activities Table */
+.openHouseActTableRow {
+    max-width: 100%;
+    background: #C7B198;
+}
+
+.openHouseActTableTitle {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+#myScheduleActTableHeader_BoothNo {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+}
+
+.myScheduleActTableHeader_ProgName {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 30%;
+    min-width: 30%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+}
+
+.myScheduleActTableHeader_Venue {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+}
+
+.myScheduleActTableHeader_Points {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+}
+
+.myScheduleActTableHeader_Btn {
+    background: #DFD3C3;
+    color: #424242;
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding: 2%;
+}
+
+/******************* My Schedule Activities Table Data *******************/
+.myScheduleActTableData_Booth {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleActTableData_ProgName {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 30%;
+    min-width: 30%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleActTableData_Venue {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 20%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleActTableData_Points {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.myScheduleActTableData_Btn {
+    background: #efefef;
+    color: #434343;
+    text-align: center;
+    font-size: 75%;
+    width: 15%;
+    min-height: 20%;
+    border: 1px solid #dddddd;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/***********************************************/
+/******************* Programme QR Code Modal *******************/
+.progQRCodeModal {
+    height: 100%;
+    justify-content: center;
+}
+
+.progQRCodeModalCard {
+    height: 80%;
+    background: #efefef;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.progQRCodeModal #progQRCodeModalCloseBtn {
+    --background: #37474F;
+    color: #ffffff;
+    
+}
+
+.progQRCodeModalCardHeader {
+    color: #424242;
+    font-weight: bold;
+}

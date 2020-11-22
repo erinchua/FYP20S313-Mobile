@@ -1,0 +1,52 @@
+#studySIMMainGrid {
+    background: #efefef;
+    padding: 0;
+    min-height: 100%;
+}
+
+.studySIMMainRow {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+}
+
+.studySIMMainTitle {
+    font-size: 85%;
+    margin-top: 10%;
+    color: #424242;
+    font-weight: bold;
+}
+
+.studySIMSelectRow {
+    width: 100%;
+    --background: #efefef;
+    --padding-start: 3%;
+    --padding-end: 3%;
+}
+
+#studySIMProgSelect {
+    min-width: 100%;
+    text-align: center;
+    font-size: 80%;
+    color: #424242;
+}
+
+.mainRow {
+    margin-top: 5%;
+}
+
+.mainCol {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.studySIMMainIcons {
+    color: #434343;
+} 
+
+.studySIMMainText {
+    font-size: 80%;
+    margin-top: 10%;
+    text-align: center;
+    color: #434343;
+}

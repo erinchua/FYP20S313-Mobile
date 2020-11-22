@@ -1,0 +1,40 @@
+.TopHalf {
+    background-color: #44B5B5;
+    min-height: 50%;
+    margin: 0;
+}
+
+.BottomHalf {
+    background-color: white;
+    height: 50%;
+}
+
+#heading {
+    padding-left: 10px;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+#information {
+    padding-left: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 90%;
+    margin: 1%;
+}
+
+#registrationBtn {
+    --background: #37474F;
+    width: 50%;
+    height: 50px;
+    margin-top: 20%;
+}
+
+#loginBtn {
+    --background: #CCCCCC;
+    width: 50%;
+    height: 50px;
+    color: #5E5E5E;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

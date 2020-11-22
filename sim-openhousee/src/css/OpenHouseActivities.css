@@ -1,0 +1,180 @@
+#openHouseActivities-content {
+    --background: #EFEFEF;
+}
+
+.openHouseActivities-grid {
+    padding: 0;
+}
+
+.openHouseActivities-heading {
+    --background: #E8D091;
+    --indicator-color: transparent;
+    --background-checked: #A9DBD9;
+    text-align: center;
+    --color: #424242;
+    --color-checked: #424242;
+    font-size: 70%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+    min-height: 100%;
+}
+
+#openHouseActivities-prizesHeader {
+    --background: #D0BA8E;
+    --indicator-color: transparent;
+    --background-checked: #A9DBD9;
+    --color: #424242;
+    --color-checked: #424242;
+    --border-color: transparent;
+    max-width: 100%;
+    min-height: 50%;
+}
+
+.openHouseActivities-dayHeading {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+/* Performances */
+#performancesContent-ionRowCol {
+    padding: 0;
+}
+
+.performancesContent-heading {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+#performancesContent-tableGrid {
+    padding: 0;
+}
+
+#performancesContent-tableHeader {
+    font-weight: bold;
+    text-align: center;
+}
+
+.performancesContent-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 75%;
+    padding: 2% 0%;
+}
+
+.performancesContent-Data {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 70%;
+}
+
+.performancesContent-DataBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+}
+
+/* Games & Activities */
+#gamesContent-ionRowCol {
+    padding: 0;
+}
+
+.gamesContent-heading {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+#gamesContent-tableGrid {
+    padding: 0;
+}
+
+#gamesContent-tableHeader {
+    font-weight: bold;
+    text-align: center;
+}
+
+.gamesContent-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 75%;
+    padding: 2% 0%;
+}
+
+.gamesContent-Data {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 70%;
+}
+
+.gamesContent-DataBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+}
+
+/* Prizes */
+#prizesContent-tableGrid {
+    padding: 0;
+}
+
+#prizesContent-tableHeader {
+    font-weight: bold;
+    text-align: center;
+}
+
+.prizesContent-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    font-size: 75%;
+    padding: 2% 0%;
+}
+
+.prizesContent-Data {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    font-size: 70%;
+}
+
+#redeemButton {
+    font-size: 80%;
+    --background: #D0BA8E;
+}
+
+#redeemDisabledButton {
+    font-size: 80%;
+    --background: #999999;
+    
+}
+
+/* QR */
+.QR-content {
+    --background: #EFEFEF;
+}

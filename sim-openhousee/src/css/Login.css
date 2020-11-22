@@ -1,0 +1,27 @@
+.inputField {
+    font-size: 90%;
+    border-bottom: 1px solid #C8C8C8;
+}
+
+#login_loginBtn {
+    --background: #37474F;
+    width: 50%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    height: 50px;
+    font-size: 100%;
+}
+
+#login_googleBtn {
+    --background: #4185F4;
+    width: 70%;
+    margin: 5% 0%;
+    height: 50px;
+}
+
+#login_facebookBtn {
+    --background: #4267B3;
+    width: 70%;
+    margin-bottom: 5%;
+    height: 50px;
+}

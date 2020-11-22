@@ -1,0 +1,29 @@
+#openHouseMain-grid {
+    background: #efefef;
+    padding: 0;
+    min-height: 100%;
+}
+
+.gifCol {
+    padding: 0;
+}
+
+#openHouseMainText {
+    font-size: 80%;
+    margin-top: 10%;
+    text-align: center;
+    color: #434343;
+}
+
+.openHouseMainRow {
+    padding-top: 3%;
+}
+
+.openHouseMainCol {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.openHouseMain-icons {
+    color: #434343;
+}

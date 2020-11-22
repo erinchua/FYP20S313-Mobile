@@ -1,0 +1,31 @@
+#guidedTours-content {
+    --background: #EFEFEF;
+}
+
+#guidedTours-schedule {
+    --background: #A9DBD9;
+}
+
+#guidedTours-schedule-text {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: #424242;
+}
+
+.guidedTours-heading {
+    --background: #65979E;
+    --indicator-color: transparent;
+    --background-checked: #5f777E;
+    text-align: center;
+    --color: white;
+    --color-checked: white;
+    font-size: 80%;
+    font-weight: bold;
+    --border-color: transparent;
+    max-width: 100%;
+}
+
+#guidedTours-ionRowCol{
+    padding: 0;
+}

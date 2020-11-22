@@ -1,0 +1,75 @@
+#settingsIonContent {
+    --background: #efefef;
+    --max-height: 100%;
+}
+
+#settingsGrid {
+    max-height: 100%;
+    background: #efefef;
+    padding: 2%;
+}
+
+.settingsRow {
+    background: #ffffff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 12px;
+    margin-bottom: 2%;
+}
+
+.settingsColDetails {
+    padding-top: 0;
+}
+
+.settingsTitle {
+    font-size: 85%;
+    color: #424242;
+    font-weight: bold;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: left;
+}
+
+.settingsDetails {
+    font-size: 80%;
+    color: #808080;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: left;
+}
+
+.settingsItem {
+    width: 100%;
+    --padding-start: 0;
+}
+
+.settingsToggleBtn {
+    --background-checked: #273237;
+    --handle-background-checked: #d7dadc;
+}
+
+#simWebsiteUrl {
+    color: #424242;
+}
+
+.simWebsiteRow {
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.simWebsiteItem {
+    width: 100%;
+    --padding-start: 0;
+}
+
+#settingsFooter {
+    --background: #efefef;
+}
+
+.footerText {
+    font-size: 80%;
+    color: #424242;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: left;
+}

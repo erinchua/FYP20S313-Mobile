@@ -1,0 +1,27 @@
+:root {
+    /* Set the font family of the entire app */
+    --ion-font-family: -apple-system, BlinkMacSystemFont, "Arial", "Helvetica", sans-serif;
+}
+
+/* Forget Password Button */
+.otpBtn {
+    --background: #37474F;
+    width: 50%;
+    font-size: medium;
+}
+
+/* Alert Box */
+.alertBox .alert-button-group {
+    justify-content: center;
+}
+
+.alertBox .alert-title {
+    font-size: medium;
+    color: #434343;
+    font-weight: bold;
+}
+
+.alertBox .alert-message {
+    font-size: small;
+    color: #434343;
+}

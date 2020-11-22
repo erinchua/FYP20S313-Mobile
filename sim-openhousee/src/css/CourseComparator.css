@@ -1,0 +1,51 @@
+#courseComparatorGrid {
+    background: #efefef;
+    padding: 0;
+    min-height: 100%;
+    min-width: 70%;
+}
+
+.courseComparatorRowScroll {
+    overflow-x: auto;
+    min-height: 100%;
+}
+
+.courseComparatorRow {
+    flex-wrap: nowrap;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.courseComparatorTitle {
+    font-size: 75%;
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+    color: #424242;
+}
+
+.courseComparatorProgCol {
+    background: #efefef;
+}
+
+.courseComparatorUniImg {
+    max-width: 50%;
+    margin-right: 0;
+}
+
+.courseComparatorProgName {
+    font-size: 75%;
+    font-weight: bold;
+    color: #434343;
+    text-align: left;
+}
+
+.courseComparatorAbtProgText {
+    font-size: 70%;
+    color: #434343;
+    text-align: left;
+}
+
+.courseComparatorUniLogoRow {
+    height: 80px;
+}

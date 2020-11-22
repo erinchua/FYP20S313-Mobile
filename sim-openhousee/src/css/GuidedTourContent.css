@@ -1,0 +1,29 @@
+#guidedTours-tableGrid {
+    padding: 0;
+}
+
+#guidedTours-tableHeader {
+    font-weight: bold;
+    text-align: center;
+}
+
+.guidedTours-Header {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 75%;
+    padding: 2% 0%;
+}
+
+.guidedTours-Data {
+    border: 1px solid #C8C8C8;
+    text-align: center;
+    min-width: 20%;
+    font-size: 70%;
+}
+
+.guidedTours-DataBtn {
+    --background: transparent;
+    --color: black;
+    --box-shadow: transparent;
+}
