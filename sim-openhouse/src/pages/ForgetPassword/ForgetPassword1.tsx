@@ -1,5 +1,5 @@
 import { IonContent, IonPage, IonGrid, IonRow, IonCol, IonButton, IonItem, IonInput, IonHeader, IonAlert } from '@ionic/react';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,15 +15,16 @@ const ForgetPassword1: React.FC = () => {
     const { register, handleSubmit, errors, reset } = useForm();
     const [sendEmailSuccess, setSendEmailSuccess] = useState(false);
 
-    const onSubmit = (data: any) => {
+    const onSubmit = async (data: any) => {
         try {
             if (data.emailID) {
-                auth.sendPasswordResetEmail(data.emailID);
-                setSendEmailSuccess(true);
+                await auth.sendPasswordResetEmail(data.emailID).then(() => {
+                    setSendEmailSuccess(true);
+                });
             } else {
                 throw data;
             }
-        } catch(e) {
+        } catch (e) {
             return console.log(e);
         }
     };
@@ -54,15 +55,15 @@ const ForgetPassword1: React.FC = () => {
 
             <IonPage>
                 <IonHeader>
-                    <TopNav title="Forget Password?" route="/main" backarrow={ true } hamburger = { false }/>
+                    <TopNav title="Forget Password?" route="/main" backarrow={true} hamburger={false} />
                 </IonHeader>
-                
+
                 <IonContent fullscreen>
                     <IonGrid className="forgetPwdGrid">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <IonRow class="ion-justify-content-center">
                                 <IonCol></IonCol>
-                                <IonCol size="6" style={{textAlign: "center"}}>
+                                <IonCol size="6" style={{ textAlign: "center" }}>
                                     <FontAwesomeIcon id="registeredEmail_logo" size="5x" icon={faPaperPlane} />
                                 </IonCol>
                                 <IonCol></IonCol>
@@ -74,14 +75,14 @@ const ForgetPassword1: React.FC = () => {
                                     <p id="text1"><b>Please enter your registered Email ID</b></p>
                                     <p id="text2">We will send a verification code to your registered email ID.</p>
                                     <IonItem>
-                                        <IonInput id="emailID" type="email" placeholder="Email ID" name="emailID" 
-                                        ref={register({
-                                            required: "Email ID is required!",
-                                            pattern: {
-                                            value: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                            message: "Invalid Email ID!"
-                                            }
-                                        })}>
+                                        <IonInput id="emailID" type="email" placeholder="Email ID" name="emailID"
+                                            ref={register({
+                                                required: "Email ID is required!",
+                                                pattern: {
+                                                    value: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                                    message: "Invalid Email ID!"
+                                                }
+                                            })}>
                                         </IonInput>
                                     </IonItem>
                                     <p id="errorMsg">
@@ -93,7 +94,7 @@ const ForgetPassword1: React.FC = () => {
                                 <IonCol></IonCol>
                             </IonRow>
 
-                            <IonRow class="ion-justify-content-center" style={{marginTop:"10%"}}>
+                            <IonRow class="ion-justify-content-center" style={{ marginTop: "10%" }}>
                                 <IonButton size="large" className="otpBtn" type="submit">SEND EMAIL</IonButton>
                             </IonRow>
                         </form>
@@ -102,6 +103,6 @@ const ForgetPassword1: React.FC = () => {
             </IonPage>
         </React.Fragment>
     );
-  };
-  
-  export default withRouter(ForgetPassword1);
+};
+
+export default withRouter(ForgetPassword1);
